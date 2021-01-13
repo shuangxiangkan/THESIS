@@ -1,0 +1,296 @@
+
+%% Thesis Template of Chinese Academy of Sciences
+%%   for using CASthesis package with LaTeX2e
+%%
+%% Created by Ling-Yun Wu <aloft@ctex.org>
+%%
+%% Version 0.1 (2004-08-15)
+%% Modified by Qiang Lv, 2006-07-27
+
+%%\documentclass[dvipdfmx, openany]{SUDAthesis}    %% 初始
+%\documentclass[dvipdfm, openany]{SUDAthesis}       %% 新版  dumanyi
+\documentclass[openany]{SUDAthesis}
+
+%% 初始版没有的包，在此处添加  begin    dumanyi
+\usepackage{latexsym}
+\usepackage{stmaryrd}
+\usepackage{txfonts}
+\usepackage{mathrsfs}
+\usepackage{ccmap} %pdf可复制
+\usepackage{algorithm,algpseudocode,float}
+%%初始版没有的包，在此处添加  end
+
+%%\usepackage{algorithm}
+%%\usepackage{algorithmic}
+
+\usepackage{cite}
+\usepackage{tabularx}
+\usepackage[normalsize,center]{caption2}
+\usepackage{bbding}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{longtable,lscape}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{graphicx}
+%%\usepackage{epstopdf}
+\usepackage[top=3.3cm, bottom=2.7cm, left=2.75cm, right=2.75cm]{geometry}
+\usepackage{CJKnumb}
+\usepackage{hyperref}
+%表格中合并行时用到此包
+\usepackage{multirow}
+%表格中合旋转表格
+\usepackage[figuresright]{rotating}
+%一行中并列放两个图时要用到此包
+\usepackage{graphicx}
+
+\usepackage{subfigure}
+%插图放在指定位置时要用到此包
+\usepackage{setspace}
+%全篇英语使用Times New Roman字体
+\usepackage{times}
+\usepackage{float}
+%引用网页时候
+\usepackage{hyperref}
+\usepackage{url}
+%%生成标准格式参考文献时要用到下面两个包，但是要先去掉cite 包
+%\usepackage[numbers,sort&compress]{natbib}
+%\usepackage{hypernat}
+%\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+%\usepackage{mathcomp}
+\usepackage{enumitem}
+\setenumerate{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setitemize{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+
+
+\hypersetup{CJKbookmarks=true,bookmarks=true,bookmarksnumbered=true,bookmarksopen=true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%使参考文献成上标，用\mycite{}引用的是上标，用\cite{}引用的不是
+\newcommand\mycite[1]{\raisebox{0.5em}{\tiny\cite{#1}}}    %% 原版引用参考文献右上角   dumanyi
+%%%\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}       %% 原版引用参考文献右上角   dumanyi
+\newcommand\upcite[1]{\raisebox{0.5em}{\tiny\cite{#1}}}       %% 因为我们右上角用的是upcite 所以此处改名  dumanyi
+%\renewcommand{\baselinestretch}{1.5}
+%\setlength{\baselineskip}{20pt}
+%%参考文献上标，用\cite{}引用，very good！
+%\makeatletter
+%\let\asas=\cite
+%\renewcommand\cite[1]{\textsuperscript{\asas{#1}}}
+%\makeatother
+
+%%参考文献上标，上标的不是[1],而是标识
+%\let\citea=\cite
+%\renewcommand\cite[1]{\textsuperscript{\citea{#1}}}
+%\let\citea\relax
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 初始版本没有的  begin   dumanyi
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{property}
+\newtheorem{prp}{Property}
+\newtheorem{property}{Property}
+%% 初始版本没有的  end
+
+
+% 取消链接的颜色
+\hypersetup{colorlinks=true}
+
+\renewenvironment{quote}{\vspace{2ex} \newline \kaishu “}{”  \vspace{2ex} \newline }
+\renewcommand*\listalgorithmname{算\CASTspace 法}
+\renewcommand{\captionlabeldelim}{}
+\renewcommand{\captionlabelsep}{\hspace{0.8em}}
+\captionsetup{font={small}}
+\newcommand{\song}{\CJKfamily{song}}
+%%\floatname{algorithm}{\song{\small{算法}}}   %% 原版的算法   dumanyi
+\floatname{algorithm}{算法}                    %% 新版的算法   dumanyi
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.65}
+\renewcommand{\floatpagefraction}{0.60}
+\newcommand{\kai}{\CJKfamily{kai}}       % 楷体
+
+%%\renewcommand{\algorithmicrequire}{\textbf{Input:}}  %% 原版的算法输入  dumanyi
+%%\renewcommand{\algorithmicensure}{\textbf{Output:}}   %% 原版版的算法输出  dumanyi
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}      %% 新版的算法输入  dumanyi
+\renewcommand{\algorithmicensure}{\textbf{输出:}}       %% 新版的算法输出  dumanyi
+
+\newcommand{\bol}[1]{\textbf{#1}}
+\newcommand{\diff}{\mathrm{d}}
+\newtheorem{theorem}{定理}
+
+\newcommand{\Caption}[1]{\caption{\heiti{#1}}}     %%原版的修改图表为黑体五号   dumanyi
+\newcommand{\smallcaption}[1]{\caption{\wuhao\heiti{#1}}}  %% 新版的修改图表为黑体五号，因为用的就是这个，所以改名  dumanyi
+
+%% 新增加  原来的图片尺寸大小参数  dumanyi
+\newcommand{\imgsize}{0.55}
+\newcommand{\middleimgsize}{0.75}
+\newcommand{\secondaryimgsize}{0.65}
+\newcommand{\largeimgsize}{0.95}
+\newcommand{\minilargeimgsize}{0.85}
+\newcommand{\smallimgsize}{0.35}
+\newcommand{\somesmallimgsize}{0.45}
+
+%% 新版的对算法格式进行修改     dumanyi
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\small{算法}~\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+   \end{center}
+  }
+\makeatother
+
+\setlength{\belowcaptionskip}{4pt} %% 优化表格标题距离表格太近的问题
+\setlength{\abovecaptionskip}{4pt} %% 优化图名和图距离太远的问题，具体参数因人而异
+
+\intextsep=8pt plus 3pt minus 1pt  %% 调整图和正文之间的距离
+
+%%%%\CTEXsetup[format+={\zihao{-2}\heiti}]{chapter}%章标题，独占行，居中，小二黑体，段前后0.5行
+%%%%\CTEXsetup[beforeskip={-25pt}]{chapter}
+%%%%\CTEXsetup[afterskip={5pt}]{chapter}
+
+\CTEXsetup[format+={\zihao{4}\heiti\flushleft}]{section}%二级标题：x.x 标题内容，独占行，左对齐，顶格，四号黑体常规，段前后0.5 行
+\CTEXsetup[beforeskip={9pt}]{section}
+\CTEXsetup[afterskip={7pt}]{section}
+
+\CTEXsetup[format+={\zihao{-4}\kaishu\bfseries\flushleft}]{subsection}% 三级标题：x.x.x 标题内容，独占行，左对齐，顶格，小四楷体加粗，段前后0.5行
+\CTEXsetup[beforeskip={8pt}]{subsection}
+\CTEXsetup[afterskip={6pt}]{subsection}
+
+%%%%\CTEXsetup[format+={\zihao{-4}\heiti\flushleft}]{subsubsection}% 四级标题（如果有）：x．标题内容，独占行，左对齐，缩进2中文字符，小四黑体常规，段前后0.3 行
+%%%%\CTEXsetup[beforeskip={3.6pt}]{subsubsection}
+%%%%\CTEXsetup[afterskip={3.6pt}]{subsubsection}
+
+
+
+\begin{document}
+
+% 小节标题靠左对齐(必须在 \begin{document} 之后，否则无效}
+\CTEXsetup[format+={\flushleft}]{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % 中文封面内容
+  \title{扩展立方体网络的容错性质研究}
+  \author{阚双祥}
+  \advisor{樊建席\quad }
+  \degree{硕~士~}
+  \major{计算机技术}
+  %%\minor{并行与分布式系统}
+  \minor{并行与分布式系统}
+  \submitdate{2020~年~5~月}
+  \grade{2~0~2~1~届}
+
+  % 英文封面内容
+  \englishtitle{Research on Fault-tolerant Properties of Augmented Cubes}
+  \englishauthor{Shuangxiang Kan}
+  \englishadvisor{Professor Jianxi Fan}
+
+  % 封面
+  \CoverPage
+
+  % 版权页
+  \CopyrightPageNew
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 前言部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+  % 中英文摘要
+  \pagenumbering{Roman}
+  \setstyle
+  %\setlength{\baselineskip}{22pt}{
+  \begin{spacing}{1.5}
+  \include{./chapter/abstract}
+
+   \setnewstyle
+  % \include{./chapter/englishabstract}
+	\end{spacing}
+  % }
+
+  % 目录
+  \setlength{\baselineskip}{18pt}{
+  \tableofcontents
+  % 插图目录
+  %%\listoffigures
+  % 表格目录
+ %% \listoftables
+  % 算法目录
+  %%%\listofalgorithms
+  \thispagestyle{empty}
+
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+\setstyle
+\setlength{\baselineskip}{23pt}{
+%\begin{spacing}{1.5}
+%\setlength\parskip{.2\baselineskip}{
+
+    \graphicspath{{./figures/}}  %% 新增 设置图的默认存储  dumanyi
+    \include{./chapter/chap01}
+    \include{./chapter/chap02}
+    \include{./chapter/chap03}
+    \include{./chapter/chap04}
+    \include{./chapter/chap05}
+   % \include{./chapter/chap06}
+    %\include{./chapter/chap07}
+   % }
+%\end{spacing}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%z
+%% 附件部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+  % 参考文献
+ \begin{spacing}{1.5}
+% \begin{CJK*}{UTF-8}{kai}
+ \bibliographystyle{sudabst}
+% \bibliography{../bib/Reference}
+% \bibliography{./MainFile}
+
+% \bibliographystyle{elsarticle-num}
+ \bibliography{bibliography}
+% \end{CJK*}
+
+ %%%%\end{CJK*}
+
+
+  % 发表文章目录\widetilde{}
+  \include{./chapter/pub}
+
+  % 致谢
+
+  \include{./chapter/thanks}
+  \end{spacing}
+  %附录
+ % \appendix
+  %\include{./chapter/appendix}
+
+\end{document}
+
+
+

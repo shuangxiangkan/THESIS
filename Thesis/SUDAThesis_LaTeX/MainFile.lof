@@ -1,0 +1,59 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1-1}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{简单图$H$}}}{6}{figure.1.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2-1}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{二维网格网络$M_{4,5}$}}}{12}{figure.2.1}
+\contentsline {figure}{\numberline {2-2}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{旋转$M_{3,4}$得到$M_{4,3}$的示例}}}{14}{figure.2.2}
+\contentsline {figure}{\numberline {2-3}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{二维环绕网络$T_{4,6}$}}}{15}{figure.2.3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3-1}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{3,3}$中顶点$u$和顶点$v$之间的$1^*$-容器}}}{19}{figure.3.1}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{3,3}$中顶点$u$和顶点$v$之间的$3^*$-容器}}}{20}{figure.3.2}
+\contentsline {figure}{\numberline {3-3}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{3,5}$中$u = (0,0)$且$v = (0,2)$时的$1^{*}$-容器}}}{21}{figure.3.3}
+\contentsline {figure}{\numberline {3-4}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{3,5}$中$u = (0,0)$且$v = (0,4)$时的$1^{*}$-容器}}}{22}{figure.3.4}
+\contentsline {figure}{\numberline {3-5}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{3,5}$中$u = (0,1)$且$v = (1,2)$时的$3^{*}$-容器}}}{23}{figure.3.5}
+\contentsline {figure}{\numberline {3-6}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{3,5}$中$u = (0,1)$且$v = (0,3)$时的$3^{*}$-容器}}}{23}{figure.3.6}
+\contentsline {figure}{\numberline {3-7}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{5,5}$中$u = (0,1)$且$v = (3,4)$时的$3^{*}$-容器}}}{25}{figure.3.7}
+\contentsline {figure}{\numberline {3-8}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{4,4}$中顶点$u$和顶点$v$之间的$3^*$-容器}}}{25}{figure.3.8}
+\contentsline {figure}{\numberline {3-9}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{6,4}$中$u = (1,1)$且$v = (3,0)$时的$3^{*}$-容器}}}{26}{figure.3.9}
+\contentsline {figure}{\numberline {3-10}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{6,4}$中$u = (1,1)$且$v = (3,2)$时的$3^{*}$-容器}}}{27}{figure.3.10}
+\contentsline {figure}{\numberline {3-11}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{6,4}$中$u = (1,1)$且$v = (4,1)$时的$3^{*}$-容器}}}{29}{figure.3.11}
+\contentsline {figure}{\numberline {3-12}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{4,5}$中顶点$u$和顶点$v$之间距离为1时的$3^*$-容器}}}{29}{figure.3.12}
+\contentsline {figure}{\numberline {3-13}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{4,5}$中顶点$u$和顶点$v$之间距离为3时的$3^*$-容器}}}{30}{figure.3.13}
+\contentsline {figure}{\numberline {3-14}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{4,5}$中顶点$u$和顶点$v$之间距离为5时的$3^*$-容器}}}{30}{figure.3.14}
+\contentsline {figure}{\numberline {3-15}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{6,6}$中顶点$u$和顶点$v$之间的$4^*$-容器}}}{32}{figure.3.15}
+\contentsline {figure}{\numberline {3-16}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{情形1中不能由归纳基础得到的$M_{6,n}$}}}{32}{figure.3.16}
+\contentsline {figure}{\numberline {3-17}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{8,6}$中$u = (1,3)$且$v = (6,3)$时的$4^{*}$-容器}}}{34}{figure.3.17}
+\contentsline {figure}{\numberline {3-18}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{8,6}$中$u = (1,3)$且$v = (5,2)$时的$4^{*}$-容器}}}{35}{figure.3.18}
+\contentsline {figure}{\numberline {3-19}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{6,7}$中顶点$u$和顶点$v$之间距离为1时的$4^*$-容器}}}{36}{figure.3.19}
+\contentsline {figure}{\numberline {3-20}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{6,7}$中顶点$u$和顶点$v$之间距离为3时的$4^*$-容器}}}{37}{figure.3.20}
+\contentsline {figure}{\numberline {3-21}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{6,7}$中顶点$u$和顶点$v$之间距离为5时的$4^*$-容器}}}{37}{figure.3.21}
+\contentsline {figure}{\numberline {3-22}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{情形2中无法由归纳基础得到的三种情形}}}{38}{figure.3.22}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4-1}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{6,6}$中顶点$u$和顶点$v$之间的一个$4^*$-容器}}}{41}{figure.4.1}
+\contentsline {figure}{\numberline {4-2}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{6,12}$中顶点$u$和顶点$v$之间的一个$4^*$-容器}}}{41}{figure.4.2}
+\contentsline {figure}{\numberline {4-3}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$Column$-$T_{8,6}$中$u = (0,0)$且$v = (0,5)$之间的一个$3^*$-容器}}}{43}{figure.4.3}
+\contentsline {figure}{\numberline {4-4}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中顶点$u=(0,2)$和顶点$v=(0,9)$之间的一个$4^*$-容器}}}{44}{figure.4.4}
+\contentsline {figure}{\numberline {4-5}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中顶点$u=(0,1)$和顶点$v=(0,10)$之间的一个$4^*$-容器}}}{45}{figure.4.5}
+\contentsline {figure}{\numberline {4-6}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(0,3)$和顶点$v=(0,8)$之间的$P_{1}$和$P_{2}$}}}{46}{figure.4.6}
+\contentsline {figure}{\numberline {4-7}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(0,3)$和顶点$v=(0,8)$之间的$P_{2}$}}}{46}{figure.4.7}
+\contentsline {figure}{\numberline {4-8}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(0,3)$和顶点$v=(0,8)$之间的$P_{3}$和$P_{4}$}}}{47}{figure.4.8}
+\contentsline {figure}{\numberline {4-9}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中调整顶点$u=(0,3)$和顶点$v=(0,8)$之间的$P_{3}$和$P_{4}$}}}{47}{figure.4.9}
+\contentsline {figure}{\numberline {4-10}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(2,3)$和顶点$v=(5,7)$之间$4^*$-容器的第一步}}}{49}{figure.4.10}
+\contentsline {figure}{\numberline {4-11}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(2,3)$和顶点$v=(5,7)$之间$4^*$-容器的第二步}}}{49}{figure.4.11}
+\contentsline {figure}{\numberline {4-12}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(2,3)$和顶点$v=(5,7)$之间$4^*$-容器的第三步}}}{50}{figure.4.12}
+\contentsline {figure}{\numberline {4-13}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(2,3)$和顶点$v=(5,7)$之间$4^*$-容器的第四步}}}{51}{figure.4.13}
+\contentsline {figure}{\numberline {4-14}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,12}$中构造顶点$u=(2,3)$和顶点$v=(5,7)$之间$4^*$-容器的第五步}}}{51}{figure.4.14}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5-1}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,8}$中出现故障$M_{3,4}$时的两种切割方式}}}{55}{figure.5.1}
+\contentsline {figure}{\numberline {5-2}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,8}$中出现故障$M_{2,3}$时的$u=(2,7)$和$v=(7,7)$之间的一条最长无故障路径}}}{56}{figure.5.2}
+\contentsline {figure}{\numberline {5-3}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,8}$中出现故障$M_{3,3}$时的$u=(3,0)$和$v=(1,7)$之间的一条最长无故障路径}}}{57}{figure.5.3}
+\contentsline {figure}{\numberline {5-4}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,8}$中某个顶点及其邻居顶点出现故障时的两种切割方式}}}{61}{figure.5.4}
+\contentsline {figure}{\numberline {5-5}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$T_{8,8}$中某个顶点及其邻居顶点出现故障时的$u=(5,1)$和$v=(5,6)$之间的一条最长无故障路径}}}{62}{figure.5.5}
+\contentsline {figure}{\numberline {5-6}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{$M_{12,12}$中出现故障$M_{4,4}$时的切割方式}}}{66}{figure.5.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6-1}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{实验一：执行100组的平均路径长度之和}}}{83}{figure.6.1}
+\contentsline {figure}{\numberline {6-2}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{实验二：执行100组的平均路径长度之和}}}{83}{figure.6.2}
+\contentsline {figure}{\numberline {6-3}{\ignorespaces \fontsize {10.5pt}{14pt}\selectfont \CJKfamily {zhhei}{实验三：执行100组的平均路径长度之和}}}{84}{figure.6.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

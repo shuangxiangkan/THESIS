@@ -1,0 +1,15 @@
+\contentsline {algorithm}{\numberline {1}SeqLongestPath($M_{m,n}$, $s$, $t$)}{72}{algorithm.1}
+\contentsline {algorithm}{\numberline {2}JudgeWhichPartiteofVertex($x$, $T_{m,n}$)}{73}{algorithm.2}
+\contentsline {algorithm}{\numberline {3}CombineTwoPathsIntoOnePath($P_{1}$, $a$, $b$, $P_{2}$, $a^{'}$, $b^{'}$)}{73}{algorithm.3}
+\contentsline {algorithm}{\numberline {4}ReversePath($P$)}{73}{algorithm.4}
+\contentsline {algorithm}{\numberline {5}JudgeWhetherVerticesCanBeCutInSamePart($T_{m,n}$, $M_{s,t}$, $u$, $v$)}{74}{algorithm.5}
+\contentsline {algorithm}{\numberline {6}LongestPathWithTransverseCutting($T_{m,n}$, $M_{s,t}$, $u$, $v$)}{74}{algorithm.6}
+\contentsline {algorithm}{\numberline {7}LongestPathWithLengthwiseCutting($T_{m,n}$, $M_{s,t}$, $u$, $v$)}{74}{algorithm.7}
+\contentsline {algorithm}{\numberline {8}LongestPathWithAFaultyMeshAndInTwoPartite($T_{m,n}$, $M_{s,t}$, $u$, $v$)}{75}{algorithm.8}
+\contentsline {algorithm}{\numberline {9}LongestPathWithAFaultyMeshAndInPartiteB($T_{m,n}$, $M_{s,t}$, $u$, $v$)}{76}{algorithm.9}
+\contentsline {algorithm}{\numberline {10}LongestPathWithAFaultyMeshAndInPartiteA($T_{m,n}$, $M_{s,t}$, $u$, $v$)}{77}{algorithm.10}
+\contentsline {algorithm}{\numberline {11}LongestPathWithAFaultyMesh($T_{m,n}$, $M_{s,t}$, $u$, $v$)}{77}{algorithm.11}
+\contentsline {algorithm}{\numberline {12} LongestPathWithOneHopFaultAndInTwoPartite($T_{m,n}$, faultyVerticesList, $u$, $v$)}{78}{algorithm.12}
+\contentsline {algorithm}{\numberline {13}LongestPathWithOneHopFaultAndInPartiteA($T_{m,n}$, faultyVerticesList, $u$, $v$)}{79}{algorithm.13}
+\contentsline {algorithm}{\numberline {14}LongestPathWithOneHopFaultAndInPartiteB($T_{m,n}$, faultyVerticesList, $u$, $v$)}{80}{algorithm.14}
+\contentsline {algorithm}{\numberline {15}LongestPathWithOneHopFault($T_{m,n}$, faultyVerticesList, $u$, $v$)}{80}{algorithm.15}

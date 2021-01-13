@@ -1,0 +1,849 @@
+\chapter{扩展立方体的结构连通度和子结构连通度}
+\label{Chap03}
+连通度是衡量网络容错性的重要标准之一。
+而限制条件连通度可以更好地衡量一个网络的容错性。
+本章中，首先给出广义超体方体的$1$-限制连通度，并给出其证明，
+然后给出广义超立方体的$1$-限制连通度条件下的容错路由算法GHCFP。
+
+本章研究了广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$的$1$-限制连通度，得出的主要结论如下：
+(1)$r-$维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$的$1$-限制连通度是$2\kappa(G)-n$，
+其中$n=\max\{m_{1},m_{2},\ldots,m_{r}\}$。
+(2)给出一个$1-$限制连通度下的容错路由算法，其时间复杂度为$O(\kappa(G)^{3})$。
+\vspace{-1pt}
+\section{广义超立方体的$1$-限制连通度}
+
+%首先，本节提出广义超立方体的一些基本性质，
+%然后给出广义超立方体的$1$-限制连通度，
+%并给出其详细证明过程。
+本节中，在给出广义超立方体的$1$-限制连通度及其具体证明之前，
+先给出证明相关的引理\ref{cycles}、\ref{leftConnected}和定理\ref{largerthan}。
+
+%关于广义超立方体的$1$-限制连通度，
+%%我们得出的结论是，除了$G(2,2)$和
+%%$G(2,3)$以外，
+%$G(m_{r},m_{r-1},\ldots,m_{1})$的
+%$1$-限制连通度是$\kappa^{1}(G)=2\kappa(G)-n$，
+%其中$r\geq2$，且$\kappa(G)$表示$G(m_{r},m_{r-1},\ldots,m_{1})$的连通度，
+%$n$的值为集合$\{m_{1},m_{2},\ldots,m_{r}\}$中的最大值。
+
+
+\begin{lem}
+\label{cycles}
+若$u$和$x$在$G(m_{r},m_{r-1},\ldots,m_{1})$中相邻，
+则$|N_{G}(u) \cap N_{G}(x)| \leq n-2$，
+其中$n=\max\{m_1,m_2,\ldots,m_{r}\}$。
+\end{lem}
+
+\begin{proof}
+令$u=u_{r}u_{r-1}\dots u_{1}$且$x=x_{r}x_{r-1}\dots x_{1}$。
+根据定义\ref{GeneralizedHypercube}可知，
+存在唯一一个整数$i$使得$u_{i}\neq x_{i}$，
+其中$i\in \langle r \rangle \setminus \{0\}$。
+因此，$|N_{G}(u) \cap N_{G}(x)=\{y_{r}y_{r-1}\dots y_{1}\mid
+y_{i}\in \langle m_{i}-1 \rangle \setminus \{u_{i},x_{i}\}$
+且对于所有的$j \neq i$，有$y_{j}=u_{j}=x_{j}\}|= m_{i}-2 \leq n-2$。
+\end{proof}
+
+\begin{lem}
+ \label{leftConnected}
+若$F$为$G(m_{r},m_{r-1},\ldots,m_{1})$中的一个顶点集合，
+且对于$\langle m_{r}-1 \rangle$中的任意的一个元素$i$，
+都有$|F \cap V(G-V(G^r[i]))|\leq \kappa(G)-2$，
+则$G(m_{r},m_{r-1},\ldots,m_{1})-(V(G^{r}[i])\cup F)$是连通的。
+\end{lem}
+
+\begin{proof}
+因为当$m_{r}=2$时，$G(m_r,m_{r-1},\ldots,m_1)-V(G^r[i])$和
+$G(m_{r-1},\ldots,m_{1})$同构。
+当$m_{r}\geq3$时，$G(m_r,m_{r-1},\ldots,m_1)-V(G^r[i])$和$G(m_{r}-1,m_{r-1},\ldots,m_{1})$同构。
+根据定义\ref{GeneralizedHypercube}可知，
+\begin{align*}
+        &\kappa(G(m_r,m_{r-1},\ldots,m_1)-V(G^{r}[i]))=&
+        \left\{\begin{array}{ll}
+            \kappa(G(m_{r-1},\ldots,m_{1}))=\kappa(G)-1 \mbox{，若}m_{r} = 2； \\
+            \kappa(G(m_{r}-1,m_{r-1},\ldots,m_{1}))=\kappa(G)-1 \mbox{，若}m_{r} \geq 3\\
+        \end{array}\right.
+\end{align*}
+因为$|F \cap V(G-V(G^r[i]))|\leq \kappa(G) -2$且$G(m_r,m_{r-1},\ldots,m_1)-V(G^{r}[i])$的连通度为$\kappa(G)-1$，
+所以$G(m_{r},m_{r-1},\ldots,m_{1})-(V(G^{r}[i])\cup F)$是连通的。
+\end{proof}
+
+
+\begin{thm}
+  \label{largerthan}
+$G(m_{r},m_{r-1},\ldots,m_{1})$的$1-$限制连通度
+$\kappa^{1}(G)\geq 2\kappa(G)-n$，其中$r \geq 2$
+且$n=\max\{m_{1},m_{2},\ldots,m_{r}\}$。
+\end{thm}
+
+\begin{proof}
+令$F$为$G(m_{r},m_{r-1},\ldots,m_{1})$的一个顶点集合。
+要证明本定理等价于证明下列叙述：
+当$|F|\leq 2\kappa(G)-n-1$
+且$G-F$中任意一个顶点都至少有一个无故障邻居时，
+那么，$G-F$中对于任意两个顶点$u$和$v$
+都存在一条从$u$到$v$的无故障路径。
+
+若$u$和$v$相邻，则本定理得证。
+因此，下面我们讨论$u$和$v$不相邻的情况。
+假设$u \in G^{r}[\alpha]$且$v \in G^{r}[\beta]$，
+其中$\alpha,\beta \in \langle m_{r}-1\rangle$。
+令$F_{\alpha}=V(G^{r}[\alpha]) \cap F$
+且$F_{\beta}=V(G^{r}[\beta])\cap F$。
+接下来，我们讨论以下两种情形进行。
+
+情形1. $\alpha \neq \beta$。
+
+情形1.1. $|F_{\alpha}| \geq \kappa(G^{r}[\alpha])$或$|F_{\beta}| \geq \kappa(G^{r}[\beta])$。
+
+不失一般性，假设$|F_{\alpha}| \geq \kappa(G^{r}[\alpha])$。
+令$J=\langle m_r-1\rangle\setminus\{\alpha\}$且$F_J = \cup_{j \in J}F_j$。
+则有$G^r[J]=G-V(G^r[\alpha])$。
+显然$|F \cap V(G- V(G^r[\alpha]))|=|F \setminus F_{\alpha}|\leq 2\kappa(G)-n-1-(\kappa(G)-m_{r}+1)
+=\kappa(G)-n + m_{r}-2 \leq \kappa(G) -2$。根据引理\ref{leftConnected}可知$G^{r}[J]-F_{J}$是连通的。
+接下来，我们讨论以下两种情形。
+
+情形1.1.1. $N_{G}(u)\cap V(G^r[J]) \nsubseteq F$。
+
+显然，在$N_{G}(u)\cap V(G^r[J])$中，
+必定存在一个无故障顶点$x$，其中$x \neq v$。
+因为$G^r[J]-F_{J}$是连通的，
+所以$G^r[J]-F_{J}$中必定存在一条从$u$到$v$的无故障路径$P$。
+因此，$(u,P)$是$G-F$中的一条从$u$到$v$的无故障路径。
+如图\ref{illu1}(a)所示。
+
+情形1.1.2. $N_{G}(u)\cap G^r[J] \subseteq F$。
+
+因为$u$在$G$中至少有一个无故障邻居且$u$在子图$G^r[J]$
+中的邻居都是故障的，所以$u$在子图$G^r[\alpha]$中一定存在无故障邻居$x$。
+令$u_1,u_2,\ldots,u_{\kappa(G)-m_r}$为$u$在子图$G^{r}[\alpha]$中除了$x$之外的所有邻居，
+且令$u_1',u_2',\ldots,u'_{\kappa(G)-m_r}$
+分别为$u_1,u_2,\ldots,u_{\kappa(G)-m_r}$在子图$G^{r}[J]$中的邻居。
+同样的，令$x_1,x_2,\ldots,x_{\kappa(G)-m_r}$
+为$x$在子图$G^{r}[\alpha]$中除了$u$之外的所有邻居。
+根据引理\ref{cycles}可知，
+$|\{u_1,u_2,\ldots,u_{\kappa(G)-m_r}\} \cap \{x_1,x_2,\ldots,$
+$x_{\kappa(G)-m_r}\}|$
+$\leq n-2$，其中$n=\max$ $\{m_1,$ $m_2,\ldots,$ $m_r\}$。
+令$\{u_1,u_2,\ldots,u_{\kappa(G)-m_r}\} \cap \{x_1,x_2,\ldots,x_{\kappa(G)-m_r}\}
+=\{u_{1},u_{2},\ldots,u_{l}\}$，其中$l\leq n-2$。
+不失一般性，假设$\{u_1, u_2, \ldots,u_{\kappa(G)-m_{r}}\} \cap \{x_{1}, x_{2},\ldots,x_{\kappa(G)-m_{r}-l}\} = \emptyset$。
+令$x_1',$ $x_2',\ldots,x'_{\kappa(G)-m_r-l}$分别为
+$x_1,x_2,\ldots,$
+$x_{\kappa(G)-m_r-l}$在$G^{r}[J]$中的邻居且$W=\{w_{i}\mid w_{i}\in N_{G}(x)\cap V(G^{r}[J])\}$。
+根据定义\ref{GeneralizedHypercube}可知，
+$\{u'_{1}, $ $u'_{2}, \ldots, $ $u'_{\kappa(G)-m_{r}}\} \cap \{x'_{1}, x'_{2}, \ldots, x'_{\kappa(G)-m_{r}-l}\} = \emptyset$
+且$W\cap (\{u'_{1}, $ $u'_{2}, \ldots, u'_{\kappa(G)-m_{r}}\} $ $\cup$ $ \{x'_{1},$ $ x'_{2}, \ldots, x'_{\kappa(G)-m_{r}-l}$ $\}) = \emptyset$。
+因此，必定存在$2\kappa(G)-2m_{r}-l+|J|$条以$u$为起点且以子图$G^{r}[J]$中顶点为终点的路径，如图\ref{paths}所示。
+具体路径列举如下：
+%\begin{align*}
+%P_i =& (u, u_i, u'_i)  \mbox{ for }  1 \leq i \leq \kappa(G)-m_{r} \\
+%Q_i =& (u, x, x_{i}, x_{i}') \mbox{ for } 1 \leq i \leq \kappa(G)-m_r-l  \\
+%Q_i =& (u, x, w_{i}) \mbox{ for } \kappa(G)-m_r-l+1\leq i\leq  \kappa(G)-m_r-l+|J|\\
+%\end{align*}
+%\begin{align}
+%      \left\{ \begin{array}{ll}\notagf
+
+$P_i =(u, u_i, u'_i)  \mbox{，其中 }  1 \leq i \leq \kappa(G)-m_{r}$；
+
+$Q_i =(u, x, x_{i}, x_{i}') \mbox{，其中 } 1 \leq i \leq \kappa(G)-m_r-l$；
+
+$Q_i =(u, x, w_{i}) \mbox{，其中 } \kappa(G)-m_r-l+1\leq i\leq \kappa(G)-m_r-l+|J|$。
+
+%   \end{array}\right.
+%\end{align}
+%\begin{figure}[!htbp]
+\begin{figure}[!h]
+\centering
+\includegraphics[width=14cm]{paths.eps}
+\smallcaption{$u$连通到$G^r[J]$的$2\kappa(G)-2m_{r}-n+2+|J|$条路径}
+\label{paths}
+\end{figure}
+
+因为$l\leq n-2$，所以$2\kappa(G)-2m_{r}-l+|J|\geq 2\kappa(G)-2m_{r}-n+2+|J|$。
+因为$|J|=|\langle m_{r}-1 \rangle \setminus \{\alpha\}|=m_r-1$，
+所以$2\kappa(G)-2m_{r}+|J|-n+2=2\kappa(G)-m_{r}-n+1$。
+因此，至少有$2\kappa(G)-m_{r}-n+1$条以$G^{r}[\alpha]$中的顶点$u$为起点且以$G^{r}[J]$的顶点为终点的路径。
+目前在$N_{G}(u)\cap V(G^r[J])$中的故障的顶点数为
+$|F-(N_{G}(u)\cap V(G^{r}[J]))|$，
+既然$|F-(N_{G}(u)\cap V(G^{r}[J]))|\leq (2\kappa(G)-n-1)-|J|=2\kappa(G)-m_{r}-n$，
+那么在上述的$2\kappa(G)-m_{r}-n+1$条路径中至少存在一条无故障路径$P$。
+假设$z$为$P$的终点。
+若$z=v$，则$P$即为$u$和$v$在$G-F$中的一条无故障路径。
+若$z\neq v$，因为$G^r[J]-F_{J}$是连通的且$z$和$v$都在子图$G^r[J]$中，
+所以子图$G^r[J]$中必定存在一条从$z$到$v$的无故障路径$P'$。
+因此，路径$(P,P')$为$G$中一条从$u$到$v$的无故障路径。
+
+情形1.2. $|F_{\alpha}| < \kappa(G^{r}[\alpha])$且$|F_{\beta}| < \kappa(G^{r}[\beta])$。
+
+因为$|F_{\beta}| < \kappa(G^{r}[\beta])$且$G^{r}[\beta]$的连通度为$\kappa(G^{r}[\beta])$，
+所以子图$G^r[\beta]-F_{\beta}$是连通的。
+令$x$是$u$在子图$G^r[\beta]$中的邻居。
+若$x \notin F$，
+因为$G^r[\beta]-F_{\beta}$是连通的，
+所以子图$G^r[\beta]-F_{\beta}$中必定存在一条从$x$到$v$的无故障路径$P$。
+因此，路径$(u,P)$即为在$G-F$中一条从$u$到$v$的无故障路径。
+若$x \in F$，我们分以下两种情况讨论。
+
+情形1.2.1. $|F_{\alpha}\cup F_{\beta}|\leq 2\kappa(G)-2m_r-n+3$。
+
+既然$|F_{\alpha}| < \kappa(G^{r}[\alpha])$，
+那么在$G^r[\alpha]$中$u$至少有一个无故障邻居$y$。
+令$J=\{\beta\}$。
+类似于情形1.1.2的讨论(如图\ref{paths})，
+$G$中存在$2\kappa(G)-2m_{r}+|J|-n+2=2\kappa-2m_{r}-n+3$
+条以子图$G^{r}[\alpha]$中的$u$为起点并以$G^{r}[\beta]$的顶点为终点的路径。
+既然$2\kappa(G)-2m_{r}-n+3-|(F_{\alpha}\cup F_{\beta})\setminus \{x\}|\geq 1$，
+那么在上述的路径中至少存在一条无故障路径$P$。
+假设$z$为$P$的终点。若$z=v$，则$P$即为$u$和$v$在$G-F$中的一条无故障路径。
+若$z\neq v$，因为$G^r[J]-F_{J}$是连通的，且$z$和$v$都在子图$G^r[\beta]$ 中，
+所以在子图$G^r[J]-F_{J}$中必定存在一条从$z$到$v$的无故障路径$P'$。
+因此，路径$(P,P')$为$G-F$中的一条从$x$到$v$的无故障路径(如图\ref{illu1}(b)所示)。
+
+情形1.2.2. $|F_{\alpha}\cup F_{\beta}| > 2\kappa(G)-2m_r-n+3$。
+
+首先声明，由于$|F_{\alpha} \cup F_{\beta}|\leq\kappa(G^{r}[\alpha])-1+\kappa(G^{r}[\beta])-1=2\kappa(G)-2m_r$，
+该情形在$r=2$时是不存在的。
+显然$|F\setminus (F_{\alpha}\cup F_{\beta})|\leq (2\kappa(G)-n-1)-(2\kappa(G)-2m_r-n+4)= 2m_r-5$，
+因为$G\setminus (G^r[\alpha]\cup G^r[\beta])$中的每个子图为$G^r[i]$，
+其中$i\in \langle m_k\rangle\setminus \{0,\alpha,\beta\}$，
+那么共有$|\langle m_k\rangle\setminus \{0,\alpha,\beta\}|= m_k-2$个子图。
+假设每个子图中的总故障顶点数都大于等于$2$，
+则有$|F\setminus (F_{\alpha}\cup F_{\beta})|\geq 2(m_r-2)=2m_r-4>2m_r-5$，
+这和$|F\setminus (F_{\alpha}\cup F_{\beta})|\leq 2m_r-5$相矛盾。
+因此该假设不成立，即一定存在一个子图的总故障顶点数小于等于$1$。
+不妨假设子图$G^r[\gamma]$的总故障顶点数小于等于$1$。
+令$y$与$z$分别为$u$与$v$在子图$G^r[\gamma]$中的邻居。
+因为$|F_{\gamma}|\leq 1$且$y \neq z$，
+则$y$和$z$中至少有一个无故障顶点$z$。
+若$y \notin F_{\gamma}$，
+则$y$和$z$在$G^r[\gamma]-F_{\gamma}$中必定存在$1$条无故障路径$P$。
+则路径$(u,P,v)$即是$G-F$中一条从$u$到$v$的无故障路径。
+若$y \in F_{\gamma}$，
+既然$u$在图$G$中至少存在一个无故障邻居，
+则$u$在$G-G^r[\gamma]$中存在一个无故障邻居$u'$。
+显然$u'$在子图$G^r[\gamma]$中的邻居$u''$是无故障的。
+同理可得，顶点$G^r[\gamma]-F_{\gamma}$中必定存在一条从$u''$到$z$无故障路径$P$。
+因此，路径$(u,u',P,v)$是$G-F$中一条从$u$到$v$的无故障路径(如图\ref{illu1}(c))。
+
+情形2. $\alpha=\beta$。
+
+若$|F_{\alpha}|<\kappa(G^{r}[\alpha])$，
+则$G^r[\alpha]-F_\alpha$是连通的，因此本引理得证。
+接下来我们考虑$|F_{\alpha}|\geq \kappa(G^{r}[\alpha])$的情况。
+令$J=\langle m_r-1 \rangle \setminus \{\alpha\}$，
+则$G^r[J]=G-G^r[\alpha]$。
+类似于情形1.1的讨论，
+可以推出在$G^r[J]-F_J$中
+必定存在一条从$u$到$x$的无故障路径$P_1$，同时也
+必定存在一条从$v$到$y$的无故障路径$P_2$。
+假设$V(P_1)\cap V(P_2)\neq \emptyset$。
+不妨令$z$为$P_1$和$P_2$的首个公共顶点，
+则路径(Path$(P_1,u,z)$, Path$(P_2^{-1},z,v))$即为
+$u$和$v$在$G-F$中的一条无故障路径，因此本引理得证。
+假设$V(P_1)\cap V(P_2)=\emptyset$，
+因为$|F \cap (G-V(G^r[\alpha]))|=|F\setminus F_{\alpha}|\leq (2\kappa(G)-n-1)-(\kappa(G)-m_{r}+1)
+=\kappa(G)-n + m_{r}-2 \leq \kappa(G) -2$，根据引理\ref{leftConnected}可知$G^r[J]-F_{J}=G-(V(G^r[\alpha])\cup F)$是连通的，
+所以在$G^r[J]-F_{J}$中必定存在一条从$x$到$y$的无故障路径$P_3$。
+因此，路径$(P_1,P_3,P_2^{-1})$则是$G-F$中一条从$u$到$v$的无故障路径(如图\ref{illu1}(d))。
+
+%\begin{figure}[!htbp]
+%\centering
+%\includegraphics[width=11cm]{illustrations.eps}
+%\smallcaption{$G$中从$u$到$v$的无故障路径}
+%\label{illu1}
+%\end{figure}
+
+%\begin{figure}[b]
+%\centerline{\includegraphics[width=11cm]{illustrations}}
+%\vspace*{8pt}
+%\caption{Illustrations of path between $u$ and $v$ in $G$.}
+%\label{illu1}
+%\end{figure}
+
+综上所述，对于$G-F$中任意两个无故障顶点$u$和$v$，都有一条从$x$到$v$的无故障路径，
+也就是说$G-F$是连通的，因此$\kappa^{1}(G)\geq 2\kappa(G)-n$。
+\end{proof}
+
+接下来，在给出定理\ref{smallerthan}之前，我们先给出引理\ref{commonNeighbor}。
+
+\begin{lem}
+ \label{commonNeighbor}
+若$u$和$x$是$G(m_{r},m_{r-1},\ldots,m_{1})$中任意两个相邻的顶点，
+$y$是图中的另外一个顶点，且$y \notin N_{G}(\{u,x\})$，
+则$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2,3\}$。
+特别地，若$G$同构于超立方体，则$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2\}$。
+\end{lem}
+
+\begin{proof}
+
+不失一般性，假设$dist(u,y)\geq$ $dist(x,y)$。
+因为$y \notin N_{G}(\{u,x\})$，
+可以推出$dist(u,y)\geq$ $dist(x,y)\geq 2$。
+因此，我们讨论以下两种情形。
+
+情形1. $dist(x,y)\geq 3$。
+
+根据定义\ref{GeneralizedHypercube}可知$N_{G}(x) \cap N_{G}(y)=\emptyset$。
+因为$dist(u,y)\geq$ $dist(x,y)\geq 3$，
+所以$N_{G}(u) \cap N_{G}(y)=\emptyset$。
+因此$|N_{G}(y) \cap N_{G}(\{u,x\})|=
+|(N_{G}(x) \cap N_{G}(y))\cup(N_{G}(u) \cap N_{G}(y))|=0$。
+
+情形2. $dist(x,y)=2$。
+
+令$u=u_{r}u_{r-1}\dots u_{1}$，$x=x_{r}x_{r-1}\dots x_{1}$
+且$y=y_{r}y_{r-1}\dots y_{1}$。
+若$\alpha,\beta \in V(G)$，
+令顶点$z^{j,\alpha,\beta}=z_{r}z_{r-1}\dots z_{1}$，
+其中$i \in \langle r \rangle \setminus \{0,j\}$，
+$z_{i}=\beta_{i}$且$z_{j}=\alpha_{j}$。
+因为$dist(x,y)=2$，
+所以存在两个非负整数$w_{1}$和$w_{2}$，
+满足$x_{w_{1}}\neq y_{w_{1}}$， $x_{w_{2}}\neq y_{w_{2}}$
+和$x_{i}=y_{i}$，其中$i \in \langle r\rangle \setminus \{0,w_{1},w_{2}\}$。
+根据定义\ref{GeneralizedHypercube}可知
+$N_{G}(x)\cap N_{G}(y)= \{z^{w_{1},x,y}, z^{w_{2},x,y}\}$。
+接下来，我们讨论以下两种情形。
+
+情形2.1. $dist(u,y)\geq 3$。
+
+根据定义\ref{GeneralizedHypercube}可知
+$N_{G}(y)\cap N_{G}(u)=\emptyset$。
+因此$|N_{G}(y)\cap N_{G}(\{u,x\})|=
+|\{z^{w_{1},x}, z^{w_{2},x}\}|=2$。
+
+情形2.2. $dist(u,y)=2$。
+
+因为$dist(u,y)=2$，
+所以存在两个非负整数$s_{1}$和$s_{2}$，
+满足$u_{s_{1}}\neq y_{s_{1}}$，$u_{s_{2}}\neq y_{s_{2}}$
+和$u_{i}=y_{i}$，其中$i \in \langle r\rangle \setminus \{0,s_{1},s_{2}\}$。
+由$(u,x)\in E(G)$和定义\ref{GeneralizedHypercube}可知，
+必存在一个非负整数$t$，满足$u_{t}\neq y_{t}$且$u_{i}\neq y_{i}$，
+其中$i \in \langle r\rangle \setminus \{0,t\}$。
+假设$t \notin \{s_{1},s_{2}\}$，
+则$y_{s_{1}}\neq u_{s_{1}} = x_{s_{1}}$，
+$y_{s_{2}}\neq u_{s_{2}}=x_{s_{2}}$且$y_{t}= u_{t} \neq x_{t}$。
+显然，$dist(u,x)=3$，与上述的假设矛盾。
+因此，我们考虑$t \in \{s_{1},s_{2}\}$。
+类似地，可以推出$t \in \{w_{1},w_{2}\}$。
+不失一般性，假设$t =s_{1}=w_{1}$。
+因为$u_{s_{1}}\neq y_{s_{1}}$，
+$u_{t}\neq x_{t}$和$x_{w_{1}}\neq y_{w_{1}}$，
+所以$u_{t}\neq x_{t}\neq y_{t}$，且$m_{t} \geq 3$。
+因此$N_{G}(u)\cap N_{G}(y)=
+\{z^{s_{1},u,y}, z^{s_{2},u,y}\}$。
+因为$u_{s_{2}}=x_{w_{2}}$，
+所以$z^{s_{2},u,y}=z^{w_{2},x,y}$。
+从而，$|N_{G}(y)\cap N_{G}(\{u,x\})|=|\{z^{w_{1},x,y}, z^{w_{2},x,y}, z^{s_{1},u,y}\}|=3$。
+特别地，当该图同构于超立方体时，
+不存在$dist(x,y)=2$且$dist(u,y)=2$这种情况。
+
+综上所述，$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2,3\}$。
+特别地，当$G$同构于超立方体时，有
+$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2\}$。
+\end{proof}
+
+接下来，基于引理\ref{commonNeighbor}，我们给出定理\ref{smallerthan}。
+\begin{thm}
+  \label{smallerthan}
+$G(m_{r},m_{r-1},\ldots,m_{1})$的$1-$限制连通度
+$\kappa^{1}(G)\leq 2\kappa(G)-n$，其中$r \geq 2$，
+且$n=\max\{m_{1},m_{2},\ldots,m_{r}\}$。
+\end{thm}
+
+\begin{proof}
+若$m_{i}=n$，
+则假设$u=u_{r}u_{r-1}\dots u_{1} \in V(G)$
+且$x=x_{r}x_{r-1}\dots x_{1} \in N_{G}(u)$。
+若$j \in \langle r \rangle \setminus \{0,i\}$，
+则$u_i\neq x_i$，$u_{j}=x_{j}$。
+因此$|N_{G}(x) \cap N_{G}(u)|=
+|\{y_{r}y_{r-1}\dots y_{1}\mid y_{i}\in \langle m_{i}-1 \rangle \setminus \{u_{i},x_{i}\}$
+和$y_{j}=u_{j}=x_{j}$，其中$j \neq i\}|=m_{i}-2=n-2$。
+根据定义\ref{GeneralizedHypercube}可知，
+$|N_{G}(\{u,x\})| = |N_{G}(u)\cup N_{G}(x)\setminus (N_{G}(x) \cap N_{G}(u))|
+=(|N_{G}(u)| -1)+(|N_{G}(x)| -1)-(n-2)
+=2(\kappa(G) -1)-(n-2) =2\kappa(G) -n$，其中$|N_{G}(u)|=|N_{G}(x)|=\kappa(G)$。
+若$F=N_{G}(\{u,x\})$，
+显然$G-F$中有两个子图，
+其中一个子图包含$\{u,x\}$两个顶点，
+另一个子图是$G-(N_{G}(\{u,x\}) \cup \{u,x\})$。
+子图$N_{G}(\{u,x\}) \cup G[\{u,x\}]$中的
+每个顶点都至少有一个无故障邻居可以通过如下断言得出。
+
+\noindent\textbf{断言}
+\emph{子图$G-(N_{G}(\{u,x\})\cup\{u,x\})$中的每个顶点都至少有一个无故障邻居。}
+
+令$y \in V(G)\setminus (N_{G}(\{u,x\})\cup \{u,x\})$。
+若$|N_{G}(y) \cap N_{G}(\{u,x\})|< |N_{G}(y)|$，
+则$y$至少有一个无故障邻居。
+
+根据引理\ref{commonNeighbor}可知$|N_{G}(y) \cap N_{G}(\{x,u\})|\in\{0,2,3\}$。
+根据定义\ref{GeneralizedHypercube}可知，
+除了$G(2,$ $2)$和$G(2,$ $3)$之外，$|N_{G}(y)|=\kappa(G)$，
+其中$r\geq 2$。
+当$\kappa(G)>3$，本定理显然成立。
+因此，我们只需要证明上述的\noindent\textbf{断言}在$\kappa(G)=3$时成立。
+显然除$G(2,3)$以外， 我们只需考虑$G(2,2,2)$。
+根据引理\ref{commonNeighbor}
+可知$|N_{G(2,2,2)}(y) \cap N_{G(2,2,2)}(\{u,x\})|\in \{0,2\}$，
+也就是说$|N_{G(2,2,2)}(y) $ $\cap $ $N_{G(2,2,2)}$ $(\{u,x\})|< 3$。
+因为$\kappa(G(2,2,2))=3$，
+所以$G(2,2,2)-(N_{G(2,2,2)}(\{u,x\})\cup\{u,x\})$中的
+每一个顶点$y$都至少有一个无故障邻居。
+因此，上述的\noindent\textbf{断言}适用于$G(2,2,2)$。
+
+综上所述，本定理成立。
+\end{proof}
+
+综合定理\ref{largerthan}和定理\ref{smallerthan}的结果可以推出定理\ref{restricted}。
+\begin{thm}
+  \label{restricted}
+除了$G(2,2)$和$G(2,3)$以外，
+$G(m_{r},m_{r-1},\ldots,m_{1})$的
+$1$-限制连通度为$\kappa^{1}(G)=2\kappa(G)-n$，
+其中$r\geq2$且$n=\max\{m_{1},m_{2},\ldots,m_{r}\}$。
+\end{thm}
+
+
+\section{$1$-限制连通度条件下的容错路由}
+
+在本小节中， 我们给出当广义超立方体的总故障顶点数小于其$1$-限制连通度
+且每个无故障顶点都至少有一个无故障邻居时，
+构造$G(m_{r},m_{r-1},\ldots,m_{1})$中任意两个无故障顶点之间的一条无故障路径的
+容错路由算法GHCFP。之后，我们会分析并证明该算法的时间复杂度。
+
+我们给出的GHCFP算法引用了Guo等人的算法BuildPathSet\upcite{Guo2009BCube}。
+其算法给出$G$中任意两个顶点$u$和$v$之间的$\kappa(G)$条不相交路径，
+得到的最短路径的长度为$dist(u,v)$，最长路径的长度为$dist(u,v)+2$，
+且该算法的时间复杂度为$O(\kappa(G)^2)$。
+接下来，在给出GHCFP之前，我们先给出BuildPathSet。
+
+\subsection{$1$-限制连通度条件下的路由算法}
+%\algnewcommand\AND{\textbf{and~}}
+%\algnewcommand\OR{\textbf{or~}}
+\begin{breakablealgorithm}
+\small
+\label{alg:buildPathSet}
+    \caption{BuildPathSet($u,v$)}
+\begin{algorithmic}[1]
+    \Require
+    $G(m_{r},m_{r-1},\ldots,m_{1})$中两个不同的顶点$u=u_{r}u_{r-1}\dots u_{1}$和$v=v_{r}v_{r-1}\dots v_{1}$
+    \Ensure  $G$中，以$u$为起点，$v$为终点的$m_{r} + m_{r-1} + ... + m_{1} -r$条路径。
+    \Function{BuildPathSet}{$u,v$} %\BuildPathSet
+        \State $PathSet \gets \emptyset$;
+        \For{$i=k$\;to\;$0$}
+            \If{$u_i \neq v_i$}
+                \State $P_i = DCRouting(u,v,i)$;
+            \Else
+                \State $c =$ a neighbor of $u$ at level $i$;
+                \State $P_i = AltDCRouting(u,v,i,c)$;
+            \EndIf
+            \State add $P_i$ to $PathSet$;
+        \EndFor
+        \State \Return $PathSet$;
+    \EndFunction%
+
+    \Function{DCRouting}{$u,v,i$} %DCRouting
+        \State $m = k$;
+        \For{$j=i$\;to\;$i-k$}
+            \State $\prod[m] = j$ mod $(k+1)$;
+            \State $m = m - 1$; /*$\prod$ is a permutation of $[k,k-1,\dots,1,0]$*/
+        \EndFor
+        \State \Return $BCubeRouting(u,v,\prod)$;
+    \EndFunction%
+
+    \Function{AltDCRouting}{$u,v,i,c$} %DCRouting
+        \State $path \gets \emptyset$; add $u$ to path;
+        \State $m = k$;
+        \For{$j=i-1$\;to\;$i-1-k$}
+            \State $\prod[m] = j$ mod $(k+1)$;
+            \State $m = m - 1$;
+        \EndFor
+        \State $path += BCubeRouting(c,v,\prod)$;
+        \State \Return $path$;
+    \EndFunction%
+
+    \Function{BCubeRouting}{$u,v,\prod$} %\BuildPathSet
+        \State $Path \gets \emptyset$;
+        \State add $u$ to path;
+        \State $Node \gets u$;
+        \For{$i=k$\;to\;$0$}
+            \If{$u_{\prod[i]} \neq v_{\prod[i]}$}
+                \State $Node_{\prod[i]} = v_{\prod[i]}$;
+                \State append $Node$ to $path$;
+            \EndIf
+        \EndFor
+        \State \Return $path$;
+    \EndFunction%
+\end{algorithmic}
+\end{breakablealgorithm}
+
+接下来，我们给出容错路由算法GHCFP，
+该算法可以给出$G-F$中，
+任意两个无故障顶点$u$和$v$之间的一条无故障路径，
+其中$F$为$G$中的故障顶点集合。
+
+\algnewcommand\AND{\textbf{and~}}
+\algnewcommand\OR{\textbf{or~}}
+
+\begin{breakablealgorithm}
+\small
+\label{alg:ghcfp}
+    \caption{GHCFP($r,u,v,F,G(m_{r},m_{r-1},\ldots,m_{1})$)}
+\begin{algorithmic}[1]
+    \Require
+    $r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$，
+    一个故障顶点集合$F \subset V(G)$，
+    两个不同的无故障顶点$u=u_{r}u_{r-1}\dots u_{1}$
+    和$v=v_{r}v_{r-1}\dots v_{1}$。
+    \Ensure  $G-F$中一条从$u$到$v$的无故障路径。
+    \Function{GHCFP}{$r,u,v,F,G(m_{r},m_{r-1},\ldots,m_{1})$} %\GHCHP
+    \State $G \gets G(m_{r},m_{-1},\ldots,m_{1})$;
+    \If{$F= \emptyset $}  \ \Return GHCP$(u,v,G,F)$;
+    \ElsIf{$(u,v)\in E(G)$}   \ \Return ($u,v$);
+    \EndIf
+    \State $n \gets \max\{m_{1},m_{2},\ldots, m_{r}\}$;
+    \State $k_1 \gets \sum^{r}_{i=0}(m_{i}-1)$, $k_2 \gets \sum^{r-1}_{i=0}(m_{i}-1)$, $\alpha \gets u_{r}$, $\beta \gets v_{r}$;
+    \State $F_{\alpha} \gets F \cap V(G^{r}[\alpha])$, $F_{\beta} \gets F \cap V(G^{r}[\beta])$;
+    \If{$ \alpha \neq \beta $}
+        \If {$|F_{\alpha}|\geq k_2$}
+            \State $P_1 \gets $PATHSEQ$(u, F, G^r[\alpha],G - V(G^{r}[\alpha]))$;
+            \State 令$z$为$P_1$的最后一个顶点;
+            \If{$z=v$} \ \Return $P_1$;
+            \EndIf
+            \State \ \Return ($P_1$, GHCP$(z,v,G - V(G^{r}[\alpha]),F\setminus F_{\alpha})$);
+        \ElsIf{$|F_{\beta}|\geq k_2$}
+            \State $P_1 \gets $PATHSEQ$(v, F, G^r[\beta],G - V(G^{r}[\beta]))$;
+            \State 令$z$为$P_1$的最后一个顶点;
+            \If{$z=v$} \ \Return $P_1$;
+            \EndIf
+            \State \Return (GHCP$(u,z,G - V(G^{r}[\beta]), F\setminus F_{\beta})$, $P_1^{-1}$);
+        \ElsIf{$|F_{\alpha}|+|F_{\beta}|\leq 2k_1-2m_{r}-n+3$}
+            \State $P_1 \gets $ PATHSEQ $(u, G^r[\alpha],G^r[\beta])$
+            \State 令$z$为$P_1$的最后一个顶点;
+            \If{$z=v$} \ \Return $P_1$;
+            \EndIf
+            \State $P_1 += $GHCP$(z,v,G^r[\beta],F_{\beta})$;
+            \State \Return $P_1$;
+        \Else
+            \State 选取一个子图$G^r[i]$，使得$|F\cap G^r[i]|=1$，其中$i \in \langle m_r-1 \rangle\setminus \{\alpha,\beta\}$;
+            \State $G_{1} \gets G^r[i], F_{1} \gets F\cap V(G_{1})$;
+            \State $P_1 \gets$ PATHSEQ$(u, F_{\alpha}\cup F_{1}, G^r[\alpha],G_{1})$;
+            \State 令$x$为$P_1$的最后一个顶点;
+            \State $P_2 \gets $ PATHSEQ$(v, F_{\beta}\cup F_{1}, G^r[\beta],G_{1})$;
+            \State 令$y$为$P_2$的最后一个顶点;
+            \If{$x=y$} \ \Return $P_1 + P_{2}^{-1}$;
+            \EndIf
+            \State $P_1 += $GHCP$(x,y,G_{1},F_1)$;
+            \State \ \Return $P_{1} + P_{2}^{-1}$;
+        \EndIf
+    \ElsIf{$|F_{\alpha}|< k_2$} \ \Return (GHCP$(u,v,G^r[\alpha],F_{\alpha})$);
+    \Else
+        \State $P_1 \gets $PATHSEQ$(u, F, G^r[\alpha], G - V(G^{r}[\alpha]))$;
+        \State 令$x$为$P_1$的最后一个顶点;
+        \State $P_2 \gets $PATHSEQ$(v, F, G^r[\alpha], G - V(G^{r}[\alpha]))$;
+        \State 令$y$为$P_2$的最后一个顶点;
+        \If{$z$为$P_{1}$和$P_{2}$的第一个公共顶点}\ \Return Path$(P_{1},u,z) + $ Path$(P_{2}^{-1},z,v)$;
+        \EndIf
+        \State $P_1 += $GHCP$(x, y, G - V(G^{r}[\alpha]), F \setminus F_{\alpha})$;
+        \State \ \Return $P_1 + P_{2}^{-1}$;
+   \EndIf
+\EndFunction%
+
+ \Function{PATHSEQ}{$u,F,H_{1},H_{2}$} %\P
+    \If {$(N_{G}(u)\cap V(H_{2})) \setminus F \neq \emptyset$}
+        \State 从$(N_{G}(u)\cap V(H_{2})) \setminus F$中选择一个顶点$u_{1}$;
+        \State \Return $(u,u_{1})$;
+    \Else
+        \ForAll {$(u_{1} \in N_{G}(u)\cap V(H_{1}))\setminus F$}
+            \If {$(N_{G}(u_{1})\cap V(H_{2})) \setminus F \neq \emptyset$}
+                \State 从$(N_{G}(u_{1})\cap V(H_{2})) \setminus F$ 中选择一个顶点$u_{2}$;
+                \State \Return $(u,u_{1}, u_{2})$;
+            \EndIf
+        \EndFor
+    \EndIf
+    \State 从$(N_{G}(u)\cap V(H_{1})) \setminus F$ 中选择一个顶点$u_{1}$;
+    \State $S \gets (N_{G}(u_1)\cap V(H_{1}))\setminus (F \cup (N_{G}(u)\cap V(H_{1})))$;
+    \ForAll {$u_{2} \in S$}
+        \If $(N_{G}(u_{2})\cap V(H_{2})) \setminus F \neq \emptyset$
+            \State 从$(N_{G}(u_{2})\cap V(H_{2})) \setminus F$中选择一个顶点$u_{3}$;
+            \State \Return $(u,u_{1},u_{2},u_{3})$;
+        \EndIf
+    \EndFor
+ \EndFunction%
+
+  \Function{GHCP}{$u,v,G,F$} %\P
+    \State 在$G-F$中，从BuildPathSet$(u,v)$的$k_1$条路径中选一条无故障路径;
+  \EndFunction%
+\end{algorithmic}
+\end{breakablealgorithm}
+
+\subsection{容错路由算法分析}
+在分析GHCFP的时间复杂度之前，
+我们先分析PATHSEQ$(u,F,H_{1},H_{2})$
+和GHCP$(x,$ $y,G,$ $F)$的时间复杂度。
+对于函数PATHSEQ$(u,F,H_{1},H_{2})$，
+其中$H_{1}$和$H_{2}$
+是$G$的两个子图且$u$在子图$H_{1}$中。
+依据不同的情况，该函数可能会给出$u$到子图$H_{2}$的路径$(u,$ $u_1)$、$(u,$ $u_1,$ $u_2)$或$(u,$ $u_1,$ $u_2,$ $u_3)$。
+PATHSEQ在不同的情形下执行的时间复杂度如下：
+情形1. 所得到的路径为$(u,u_1)$。
+若$(N_{G}(u)\cap V(H_{2}))\setminus F \neq \emptyset$，
+则该函数从$(N_{G}(u)\cap V(H_{2})) \setminus F$中选择一个顶点$u_{1}$，
+最后返回路径$(u,u_1)$。
+该情况下的时间复杂度为$O(1)$。
+情形2. 所得到的路径为$(u,u_1,u_2)$。
+该函数首先会遍历集合$(N_{G}(u)\cap V(H_{1}))\setminus F$，令集合中每个顶点为$u_{1}$，
+然后从$(N_{G}(u_{1})\cap V(H_{2})) \setminus F$ 中选择一个顶点$u_{2}$，
+最终返回路径$(u,u_1,u_2)$。
+该情况下的时间复杂度为$(O(|N_{G}(u)\cap V(H_{1})|))\leq O(\kappa(G))$。
+情形3. 所得到的路径为$(u,u_1,u_2,u_3)$。
+在该情形下，该函数首先从$(N_{G}(u)\cap V(H_{1})) \setminus F$中选择一个顶点$u_{1}$，
+并取集合$S \gets (N_{G}(u_1)\cap V(H_{1}))\setminus (F \cup (N_{G}(u)\cap V(H_{1}))$。
+该过程的时间复杂度为$0(1)$。
+然后函数会遍历集合$S$，令集合中每个顶点为$u_{2}$。
+之后从$(N_{G}(u_{2})\cap V(H_{2}))\setminus F$中选择一个顶点$u_{3}$，
+最后返回路径$(u,u_1,u_2,u_3)$。
+该情况的时间复杂度为$(O(|S|)\leq O(\kappa(G))$。
+综合情况1、情况2和情况3可得到函数PATHSEQ$(u,F,H_{1},H_{2})$的时间复杂度为$O(\kappa(G))$。
+%如果存在一个无故障顶点$u_{1} \in N_{G}(u)\cap V(H_{2}) \setminus F$，
+%那么这个函数会返回$(u,u_{1})$。
+%因为$|N_{G}(u)\cap V(H_{2})|\leq|N_{G}(u)|=\kappa(G)$，
+%所以得到路径$(u,u_{1})$的时间复杂度小于$O(\kappa(G))$。
+%如果不存在无故障顶点$u_{1}$,
+%该函数将继续寻找顶点$u_{2} \in N_{G}(u)\cap V(H_{1}) \setminus F$，
+%然后调用函数PATHSEQ$(u_{2},F+\{u\},H_{1},H_{2})$ 来得到
+%$u_{2}$到$H_{2}$的一条路径。
+%接下来，该函数会返回一条无故障路径$(u,PATHSEQ(u_{2},F+\{u\},H_{1},H_{2}))$。
+%类似地，找到顶点$u_{2}$的时间复杂度小于$O(\kappa(G))$。
+%且，找到拼接顶点$u$和路径PATHSEQ$(u_{2},F+\{u\},H_{1},H_{2})$ 的时间复杂度为 $O(1)$。
+%那么函数PATHSEQ$(u,F,H_{1},
+%\\H_{2})$的时间复杂度
+%小于$O(\kappa(G)+\kappa(G)+1)=O(\kappa(G))$。
+%既然从 $u$到$H_{2}$的无故障路径的长度最大为$3$
+%那么函数PATHSEQ$(u,F,H_{1},H_{2})$将被调用至多3 次，
+%因此, 函数PATHSEQ$(u,F,H_{1},H_{2})$的时间复杂度是$O(\kappa(G)^3)$.
+
+接下来，我们分析函数GHCP$(u,v,G,F)$的时间复杂度。
+该函数首先调用函数BuildPathSet$(u,v)$\upcite{Guo2009BCube}，
+得到$u$和$v$在$G-F$中的$\kappa(G)$条不相交路径。
+该过程的时间复杂度为$O(\kappa(G)^2)$。
+然后函数GHCP遍历这些不相交路径，
+从中找出一条无故障路径。
+其中，若判断一条路径是否为无故障路径需要判断路径中的每个顶点是否在故障集合$F$中。
+因为每条路径中至多有$dist(u,v)+2$个顶点且$|F|=2\times\kappa(G)-n-1$，
+所以该过程的时间复杂度为$O(dist(u,v)+2)\times O(2\times\kappa(G)-n-1)\leq O(\kappa^2)$。
+因为调用BuildPathSet总共得到$\kappa(G)$条路径，那么该判断至多执行$\kappa(G)$次。
+综上所述，找到一条无故障路径的时间复杂度为$O(\kappa^2)\times O(\kappa)=O(\kappa(G)^3)$。
+
+最后，我们分析GHCFP的时间复杂度。
+CHCFP在$\alpha \neq \beta$和$\alpha = \beta$两种情形下的时间复杂度如下。
+
+情形1. $\alpha \neq \beta$。
+
+情形1.1. $F_{\alpha}\geq k_2$。
+GHCFP首先通过PATHSEQ$(u,G^r[\alpha],G - V(G^{r}[\alpha]))$
+得到一条从$u$到$G-V(G^{r}[\alpha])$中的顶点$z$的$P_{1}$，
+该过程的时间复杂度为$O(\kappa(G))$。
+然后，若$z=v$，则GHCFP返回$P_{1}$。
+因此，得到$u$和$v$在$G-F$中的一条无故障路径$P_{1}$的时间复杂度为$O(\kappa(G))$。
+若$z\neq v$，GHCFP会返回路径$(P_{1},$GHCP$(z,v,G - V(G^{r}[\alpha]),F\setminus F_{\beta}))$。
+该过程需要首先调用函数GHCP$(z,v,G - V(G^{r}[\alpha]),F\setminus F_{\beta})$建立一条无故障路径，
+其时间复杂度为$O(\kappa(G)^3)$。
+然后拼接$P_{1}$和上述GHCP$(z,v,G - V(G^{r}[\alpha]),F\setminus F_{\beta})$所构建的无故障路径，该过程的时间复杂度是$O(1)$。
+因此，得到$u$和$v$在$G-F$中的无故障路径的时间复杂度为$O(\kappa(G))+O(\kappa(G)^3)+O(1)=O(\kappa(G)^3)$。
+
+情形1.2. ($|F_{\beta}|\geq k_2$)或($|F_{\alpha}+F_{\beta}|\leq 2k_1-2m_{r}-n+3$)。
+类似于在情形1.1中的讨论，我们得到$u$和$v$在$G-F$中的无故障路径的时间复杂度为$O(\kappa(G)^3)$。
+
+情形1.3. $|F_{\alpha}+F_{\beta}|> 2k_1-2m_{r}-n+3$。
+GHCFP首先会选择一个满足条件$|F\cap G^r[i]|=1$的子图$G^r[i]$，其中
+$i \in \langle m_r \rangle\setminus \{\alpha,\beta\}$。令$G_{1}=G^r[i]$。
+则该过程的由于时间复杂度为$O(m_{r}-2)\leq O(\kappa(G))$。
+然后，GHCFP将得到一条从$u$到子图$G_{1}$中顶点$x$的无故障路径$P_{1}$
+以及一条从$v$到子图$G_{1}$中顶点$u$的无故障路径$P_{2}$，
+得到这两条路径的时间按复杂度分别为$O(\kappa(G))$。
+接下来，若$x=y$，则GHCFP返回$P_{1}$。
+因此，得到$G-F$中一条从$u$到$v$的无故障路径的时间复杂度为
+$ O(\kappa(G)+2\times\kappa(G))=O(\kappa(G))$；
+若$x\neq y$，则GHCFP返回路径$(P_{1},$GHCP$(x,y,G_{1},F\cap V(G_{1})),P_{2}^{-1})$。
+该过程需要首先调用函数GHCP$(x,y,G_{1},F\cap V(G_{1}))$建议一条无故障路径，其时间复杂度为$O(\kappa(G)^3)$。
+然后拼接$P_{1}$、上述GHCP$(x,y,G_{1},F\cap V(G_{1}))$所构建的无故障路径和$P_{2}^{-1}$，该过程的时间复杂度是$O(1)$。
+因此，得到$G-F$中一条从$u$到$v$的一条无故障路径的时间复杂度为
+$O(\kappa(G)+2\times\kappa(G)+\kappa(G)^3+1)=O(\kappa(G)^3)$。
+
+情形2. $\alpha = \beta$。
+
+情形2.1. $F_{\alpha}\leq k_2$。
+GHCFP将直接调用算法GHCP$(u,v,G^r[\alpha],F_{\alpha})$建立一条无故障路径，
+则该过程的时间复杂度为$O(\kappa(G)^3)$。
+
+情形2.2. $F_{\alpha}>k_2$。
+GHCFP将首先调用函数PATHSEQ得到一条从$u$到子图$G-V(G^r[\alpha])$中$x$的无故障路径$P_{1}$，
+以及一条从$v$到子图$G-V(G^r[\alpha])$中的顶点$y$的无故障路径$P_{2}$。
+这里得到$P_{1}$和$P_{2}$的时间复杂度分别为$O(\kappa(G))$。
+然后，若$P_{1}$和$P_{2}$的存在公共顶点，令$z$为第一个公共顶点，
+那么GHCFP将返回路径(Path$(P_{1},u,z)$, Path$(P_{2}^{-1},z,v))$。
+因为$P_{1}$和$P_{2}$中至多有$dist(u,v)+2$个顶点，
+所以得到公共顶点$z$的时间复杂度为$O(|V(P_{1})|\times |V(P_{2})|)\leq O((dist(u,v)+2)\times(dist(u,v)+2))\leq O(\kappa(G)^2)$。
+因为得到路径$(P_{1},u,z)$的时间复杂度为$O(1)$，
+因此，得到顶点$u$和$v$在$G-F$中的一条无故障路径(Path$(P_{1},u,z)$, Path$(P_{2}^{-1},z,v))$
+的时间复杂度为$O(2\times\kappa(G))+O(\kappa(G)^2)=O(\kappa(G)^2)$。
+若$P_{1}$和$P_{2}$无公共顶点，GHCFP会返回路径
+$(P_{1},$GHCP$(x,y,G - V(G^{r}[\alpha]),F \setminus F_{\alpha}),P_{2}^{-1})$。
+该过程会先调用算法GHCP$(x,y,G - V(G^{r}[\alpha]),F \setminus F_{\alpha})$建立一条无故障路径，
+它的时间复杂度为$O(\kappa(G)^3)$。
+然后拼接$P_{1}$、上述GHCP$(x,y,G - V(G^{r}[\alpha]),F \setminus F_{\alpha})$所构建的无故障路径和$P_{2}^{-1}$，
+该过程的时间复杂度为$O(1)$。
+因此, 得到$u$和$v$在$G-F$中的一条无故障路径
+$(P_{1},GHCP(x,y,G - V(G^{r}[\alpha]),F \setminus F_{\alpha}),P_{2}^{-1})$的时间复杂度为
+$O(2\times\kappa(G)^2)+O(\kappa(G)^3)+O(1)=O(\kappa(G)^3)$。
+
+综合以上所有情形，GHCFP的时间复杂度为$O(\kappa(G)^3)$。
+
+\subsection{模拟实验}
+
+本小节中对GHCFP用Python语言编程实现，
+用一台配置为Intel Core i5-7200 CPU 2.71GHz与8 GB 内存的计算机进行模拟实验
+并分析实验结果。
+%根据定义\ref{GeneralizedHypercube}，广义超立方体的每个维度所包含的顶点数是随机的。
+%实验中，我们设定广义超立方体的每个维度所包含的顶点数为$3$，
+%及对于图$G(m_{r},m_{r-1},\ldots,m_{1})$，
+%对于所有的$1 \leq  i\leq  r$，在模拟实验中令$m_i = 3$。
+基于容错路由算法的目的是如何在较短时间内找到两个顶点之间尽可能短的一条无故障路径。
+本实验从执行效率和所获得的路径长度两个方面对算法的性能进行测试。
+同时，为了更好地模拟网络规模不断增大时，GHCFP和广度优先搜索算法(BFS)在执行效率和所获得路径长度两个方面的表现。
+本实验中，我们分别从改变维数和改变维度的大小两个方面来进行实验。
+另外，GHCFP给出的是给出当广义超立方体的总故障顶点数小于其$1$-限制连通度
+且每个无故障顶点都至少有一个无故障邻居条件时，
+$G(m_{r},m_{r-1},\ldots,m_{1})$中任意两个无故障顶点之间的一条无故障路径。
+在以下的实验中，我们取总故障顶点数$F \subset V(G)$且$|F|=\kappa^1(G)-1$。
+
+实验一：在$G(m_{r},m_{r-1},\ldots,m_{1})$中，
+使用$random$函数随机生成故障顶点集合$F$，
+且保证$G-F$中每个顶点都存在至少一个邻接点。
+在$G-F$中，
+随机生成一个无故障顶点$x$，
+然后利用GHCFP和BFS分别构造出
+顶点$x$到$G$中其余所有无故障顶点之间的无故障路径。
+我将上述过程分别重复执行$100$次，
+然后计算这两个算法得到一条无故障路径需要花费的平均时间并进行对比，
+实验结果如图\ref{test1_1}和图\ref{test2_1}所示。
+%根据实验结果，随着维度r的增加，两个算法得到一条无故障路径的所花费的平均CPU时长如图\ref{ch3_test3}所示，
+%同时相同维度下，随着每维顶点个数的增加，实验结果如图\ref{test2_1}所示。
+
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=15cm]{test1_1.eps}
+%\smallcaption{改变维数的情况下，得到一条无故障路径需要花费的平均时间}
+%\label{test1_1}
+%\end{figure}
+%
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=15cm]{test2_1.eps}
+%\smallcaption{改变维度大小的情况下，得到一条无故障路径需要花费的平均时间}
+%\label{test2_1}
+%\end{figure}
+
+%正如我们对算法时间复杂度的理论分析，
+从图\ref{test1_1}中可以看出GHCFP所花费的平均时长小于
+BFS。尽管在维度较小时，GHCFP的所花费的时间与BFS所花费的时间相差不大(如图$3$-维$G(3,3,3)$和
+$4$-维$G(3,3,3,3)$)。
+但是随着维数的增加，GHCFP执行效率明显较BFS好。
+根据实验结果可知，当$r = 7$时，
+GHCFP和BFS所花费的平均CPU时间分别为$0.4$毫秒和$15.8$毫秒。
+同时，从图\ref{test2_1}中可以看出，
+在维数相同的情况下，随着每一维度渐增大，BFS增长速度要远大于GHCFP。
+因此，从实验数据可以得到，本文算法的执行效率优于BFS的效率。
+
+实验二：
+由于BFS所得到的路径一定是最短路径，因此它可以用来衡量GHCFP所得出的路径长度的优劣。
+因此本实验中我们在$G(m_{r},m_{r-1},\ldots,m_{1})$中，
+使用$random$函数随机生成故障顶点集合$F$，
+且保证$G-F$中每个顶点都存在至少一个邻接点。
+随机生成一个无故障顶点$x$，分别利用GHCFP和BFS构造出
+从顶点$v$到$G$中其余所有无故障路径之间的无故障路径。
+我们将上述过程重复100次，
+然后分别计算GHCFP和BFS所得到的
+所有路径的平均长度并进行对比，
+实验结果如图\ref{test1_2}和图\ref{test2_2}所示。
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=15cm]{test1_2.eps}
+%\smallcaption{改变维数情况下，GHCFP和BFS得到所有路径的平均长度}
+%\label{test1_2}
+%\end{figure}
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=15cm]{test2_2.eps}
+%\smallcaption{改变维度大小情况下，GHCFP和BFS得到所有路径的平均长度}
+%\label{test2_2}
+%\end{figure}
+
+对比图中的数据可以看出，GHCFP所得到的所有路径的平均长度略大于BFS的结果。
+随着维数的增加或者维度的增大，
+两者的差值逐渐减小，并接近于0。
+也就是说，随着网络规模的扩大，
+GHCFP所得到的路径长度很接近最短路径的长度或者等于最短路径的长度。
+
+%实验3：
+%在保证$G(m_{r},m_{r-1},\ldots,m_{1})$-条件连通且分别具有25到200 个故障顶点（以25递增）的前提下，
+%由任一无故障顶点出发，构建到网络中所有无故障顶点的路径，计算成功率。
+%该过程执行100次，得出三种算法的平均成功率。
+%实验结果如图\ref{fig:4_3}所示。
+%
+%
+%
+%由于$Q_{10}$保证连通，所以BFS总能得出任意两个无故障顶点之间的最短路径。
+%ABT算法和SPR算法在成功率上的表现差距不大。
+%$Q_{10}$中共有1024个顶点，在故障顶点数达到200时（接近20\%），两种算法都能保持97\%以上的成功率。
+%
+实验三：实验三的实验环境与实验二相同，
+本实验首先利用GHCFP和BFS分别构造从任意一个无故障顶点到$G$中其余所有无故障顶点间的无故障路径，
+将上述过程重复100次，
+然后计算两种算法获得的每一条路径的差值，最后得出所有路径的差值的最小值、平均值和最大值并进行对比。
+实验结果如图\ref{test1_3}和图\ref{test2_3}所示。
+
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=15cm]{test1_3.eps}
+%\smallcaption{改变维数的情况下，两个算法所构造的路径差值的最小值、平均值和最大值}
+%\label{test1_3}
+%\end{figure}
+%
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=15cm]{test2_3.eps}
+%\smallcaption{改变维度大小的情况下，两个算法所构造的路径差值的最小值、平均值和最大值}
+%\label{test2_3}
+%\end{figure}
+
+从图中可以看出，
+GHCFP所构造路径长度与BFS所构造路径长度的差值
+的最小值始终为$0$，也就是说GHCFP所得到路径中的部分路径为最短路径。
+同时从图\ref{test1_3}可以看出，
+随着网络维数的增加，GHCFP构造的路径长度和BFS构造的路径长度的差值平均值和最大值都逐渐减小，
+也就是GHCFP所得到的路径长度逐渐接近于最短路径。
+另外，明显可以看出两个算法所得到的路径长度差值的平均值接近于最小值，
+也就是说GHCFP所构造的路径中路径长度等于或者接近于最短路径的比例较大。
+该实验结果更加详细的说明，GHCFP所得到的路径的路径长度整体是较优的。
+
+\section{本章小结}
+
+本章基于$1$-限制连通度的定义，
+我们求出了广义超立方体的$1$-限制连通度，
+并给出了满足总故障顶点数小于$1$-限制连通度，
+且故障网络中每个无故障顶点都至少有一个无故障邻居条件的
+容错路由算法。
+我们取得如下研究成果：
+
+1. $r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$
+的$1$-限制连通度是$2\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))-n$，
+其中$n=\max\{m_{1},m_{2},\ldots,m_{r}\}$。
+
+2. 给出了一个满足$1$-限制连通度条件的无故障单播路由算法GHCFP，
+且该算法的时间复杂度为$O(\kappa(G)^{3})$。

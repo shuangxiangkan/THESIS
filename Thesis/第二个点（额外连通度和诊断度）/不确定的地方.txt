@@ -1,0 +1,1 @@
+连通分量是:component还是connected component

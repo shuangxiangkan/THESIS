@@ -1,0 +1,635 @@
+\documentclass{article}
+\usepackage{CJK}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{cite}
+%两图并排，需要宏包
+\usepackage{subfigure}
+\newtheorem{dfn}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{prof}{Proof}
+\newtheorem{prop}{Property}
+
+\renewcommand{\algorithmicrequire}{ \textbf{Input:}}
+\renewcommand{\algorithmicensure}{ \textbf{Output:}}
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\normalsize{Algorithm}~\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+   \end{center}
+  }
+\makeatother
+
+
+\begin{document}
+\begin{CJK}{GBK}{song}
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-Measures-for-Large,On-self-diagnosable-multiprocessor}
+\label{MM*}
+对于图$G$中的两个不同的顶点子集$F_1 \neq F_2 \subseteq V(G)$。 $(F_1,F_2)$在$MM^*$模型下是可区分的当且仅当下面三个条件中的一个成立（见图\ref{MM*}）：
+
+(1) $\exists x,z \in V(G)-(F_1 \cup F_2)$和$y \in (F_1-F_2) \cup (F_2-F_1)$，且$xz,yz \in E(G)$；
+
+(2) $\exists x,y \in F_1-F_2$和$z \in V(G)-(F_1 \cup F_2)$，且$xz,yz \in E(G)$；
+
+(3) $\exists x,y \in F_2-F_1$和$z \in V(G)-(F_1 \cup F_2)$，且$xz,yz \in E(G)$。
+\end{lemma}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.25]{MM.eps}\\
+  \caption{$MM^*$模型下两个可区分的顶点集合$F_1$和$F_2$}\label{MM*}
+\end{figure}
+
+
+
+在传统的诊断度的测算时，如果一个顶点$u$的所有邻居顶点同时发生故障，则不可能判断顶点$u$是否是一个故障顶点。比如，在一个$n$为的扩展立方体中，包含$2n-1$个顶点的子集个数是$\binom{2^n}{2n-1}$。在这其中只有$2^n$的顶点子集包含某个顶点的所有邻居节点。因为$\frac{2^n}{\binom{2^n}{2n-1}}$这个概率对于比较大的$n$来说是非常小的，这也就意味着一个顶点的所有邻居顶点发生故障的概率是非常小的。基于这个原因，Lai\cite{Conditional-Diagnosability-Measures-for-Large} 等人提出了一种新的限制性诊断度，叫做条件连通度。他们考虑了这样一种情况：任意的一个故障集合不能包含某个顶点的所有邻居顶点。更精确的定义为：一个故障集合$F \subseteq V(G)$叫做条件故障集合，如果对于一个顶点$u \in V(G)$，有$N_G(u)\subseteq F$。
+
+接着，我们给出条件$t$可诊断系统的定义：
+
+\begin{dfn}
+一个系统$G$是条件$t$-可诊断的，当且仅当两个不同的条件故障集合$F_1,F_2 \subseteq V(G)$ 是可区分的，且$|F_1|,|F_2| \leq t$。
+\end{dfn}
+
+$G$的条件诊断度，记为$t_c(G)$，定义为$t$的最大值，使得$G$是条件$t$诊断的。
+
+\begin{lemma}
+对于$n \geq 6$，$t_c(AQ_n)=6n-17$。
+\end{lemma}
+
+接下来，我们给出$g$-额外连通度的定义：
+
+\begin{dfn}
+\cite{The-g-extra-conditional-sequential}
+\label{extra diagnosability definition}
+
+(1) 图$G$的一个$h$-额外集是一个顶点的集合，当从$G$中删除这个集合后，$G$ 变为不连通的，且每个连通分量所包含的顶点个数大于等于$h+1$。
+
+(2) 图$G$的一个$h$-额外割是$G$的一个$h$-额外集，将其删除将会导致$G$变为不连通的。
+
+(3) 图$G$的$h$-额外连通度，记为$\kappa_h(G)$, 是$h$-额外割的最小基数。
+\end{dfn}
+
+因为条件诊断度和$2$-额外连通诊断度具有密切的联系，在得到条件诊断度或者$2$-额外连通诊断度的条件下，如果满足某些条件，另一个诊断度可以直接得到。Hao\cite{Relationship-between-Conditional-and-extra}等人给出了的充分条件。
+
+\begin{theorem}
+\cite{Relationship-between-Conditional-and-extra}
+\label{hao}
+设$G$为$n$正则图，其中$t=min\{|N(T)|:T$ 是$G$中一条长度为$3$的路径或者长度为$3$的圈$\}$。 如果$G$满足下面的条件：
+
+(1) 对于一个顶点集合$F \subset V(G)$，$|F|\leq t-1$，$G-F$有一个大的连通分量和小的连通分量，且这些小的连通分量的所有顶点个数最多为$2$个；
+
+(2) $n \geq 2\gamma(G)+2$ 如果$G$中不包含长度为$5$的圈；或者$n \geq 3\gamma(G)+2$；
+
+(3)$|V(G)|>(n+1)(t-1)+4$；
+
+则$t_c(G)=t=\kappa_2(G)$。
+\end{theorem}
+
+其中$\gamma(G)$的定义为：对于$G$中两个不想交的顶点$x$和$y$，$\gamma(x,y)=|N(x) \cap N(y)|$，$\gamma(G)=$max$\{\gamma(x,y):x,y \in V(G)$ and $xy \notin E(G)\}$。
+
+因为$AQ_n$满足定理\ref{hao}的条件，所以我们可以直接得到$AQ_n$的$2$-额外连通度。
+
+\begin{theorem}
+对于$n \geq 6$，$\kappa_2(AQ_n)=6n-17$。
+\end{theorem}
+
+\begin{theorem}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{6n-15<=}
+设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 4n-9$, $n \geq 4$。那么, $AQ_n-S$满足以下四个条件之一:
+
+(1) $AQ_n-S$是连通的；
+
+(2) $AQ_n-S$有两个分支，其中一个是$K_1$，另一个包含$2^n-|S|-1$个顶点；
+\end{theorem}
+
+\begin{prop}
+\cite{The-super-connectivity-of-augmented-cubes}
+\label{complement-pair}
+设$AQ_n=L \bigodot R$，其中$L \cong AQ^0_{n-1},R \cong AQ^1_{n-1}$。$u$和$v$是$L$中的两个顶点。$(u,v)($即，$v=\bar{u}_{n-1})$是$L$中的一条补边，如果$(u,v)$在$R$中有两个相同的邻居顶点。此外，如果$(u,v)$不是$L$中的一条补边，则$(u,v)$在$R$中没有相同的邻居顶点。
+\end{prop}
+
+
+\begin{theorem}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{6n-18<=}
+设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 6n-18$, $n \geq 6$。那么, $AQ_n-S$满足以下四个条件之一:
+
+(1) $AQ_n-S$是连通的；
+
+(2) $AQ_n-S$有两个分支，其中一个是$K_1$，另一个包含$2^n-|S|-1$个顶点；
+
+(3) $AQ_n-S$有两个分支，其中一个是$K_2$，另一个包含$2^n-|S|-2$个顶点；
+
+(4) $AQ_n-S$有三个分支，其中有两个是$K_1$，且第三个包含$2^n-|S|-2$个顶点。
+\end{theorem}
+
+
+
+\begin{dfn}
+\cite{The-g-extra-conditional-sequential}
+\label{extra diagnosability definition}
+
+(1) 图$G$的一个$h$-额外集是一个顶点的集合，当从$G$中删除这个集合后，$G$ 变为不连通的，且每个连通分量所包含的顶点个数大于等于$h+1$。
+
+(2) 图$G$的一个$h$-额外割是$G$的一个$h$-额外集，将其删除将会导致$G$变为不连通的。
+
+(3) 图$G$的$h$-额外连通度，记为$\kappa_h(G)$, 是$h$-额外割的最小基数。
+\end{dfn}
+
+
+
+
+
+
+\begin{dfn}
+\cite{The-g-extra-conditional-sequential}
+\label{MM*-distinguishable}
+
+(1) 在$MM^*$模型下，一个图$G$是$h$-额外，$t$-可诊断的，当且仅当对任意两个不同的$h$-额外集$F_1 \subseteq V(G)$，$F_2 \subseteq V(G)$，其中$|F_1| \leq t$，$|F_2| \leq t$且$F_1$和$F_2$是可区分的。
+
+(2) $G$在$MM^*$下的$h$-额外诊断度记为$t^{\tilde{m}}_h(G)$，其中$t$是$G$ 在$h$-额外，$t$-可诊断下的最大值。
+\end{dfn}
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{2nodes}
+设$x,y$是$AQ_n(n \geq 4)$中任意两个顶点，则$|N_{AQ_n}({x,y})| \geq 4n-8$。
+\end{lemma}
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{3nodes}
+设$x,y,z$是$AQ_n(n \geq 4)$中任意三个顶点，则$|N_{AQ_n}({x,y,z})| \geq 6n-17$。
+\end{lemma}
+
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{4nodes}
+设$x,y,s,t$是$AQ_n(n \geq 4)$中任意四个顶点，则$|N_{AQ_n}({x,y,s,t})| \geq 8n-28$。
+\end{lemma}
+
+在写这部分内容的时候，已经有两篇文章\cite{Lv-extra-connectivity-and-extra-diagnosability,A-New-Proof-for-Exact-Relationship} 在某些条件下将额外连通度和额外条件诊断度联系了起来。但是扩展立方体并不满足这两篇文章的条件。下面我们将对这两篇文章的条件进行逐一说明:
+
+(1) \cite{Lv-extra-connectivity-and-extra-diagnosability}针对的是$n$-连接的网络来建立$MM^*$模型下额外连通度和额外诊断度的的联系。但是扩展立方体的$2n-1$连接的网络，因此不符合该论文的适用条件。
+
+(2) \cite{A-New-Proof-for-Exact-Relationship}的定理1对于$MM^*$模型下将额外连通度和额外诊断度的联系起来有三个条件，其中扩展立方体满足其中的第一和第二个条件，但是对于第三个条件，并没有已知的定理满足，因此也无法将这三个条件适用于扩展立方体，以此来根据额外连通度来直接得到扩展立方体的额外诊断度。\\
+
+因为没有已知的条件将$2$-额外连通度和$2$-额外连通诊断度联系起来，所以下面我们将自己来证明扩展立方体的$2$-额外连通诊断度。
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{4-vertices-neighbors}
+设$x,y,s,t$是$AQ_n(n \geq 4)$中的4个顶点，那么$|N_{AQ_n}(\{x,y,s,t\})| \geq 8n-28$.
+\end{lemma}
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{5-vertices-2-complement-pairs}
+是$x,y,s,t,u$是$AQ_n(n \geq 4)$中的5个顶点，如果$AQ_n$在$x,y,s,t,u$包含两条补边，则$|N_{AQ_n}(\{x,y,s,t,u\})| \geq 10n-35$。
+\end{lemma}
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{5-vertices-1-complement-pairs}
+是$x,y,s,t,u$是$AQ_n(n \geq 4)$中的5个顶点，如果$AQ_n$在$x,y,s,t,u$包含一条补边，则$|N_{AQ_n}(\{x,y,s,t,u\})| \geq 10n-39$。
+\end{lemma}
+
+\begin{lemma}
+\label{6-vertices-2-complement-pairs}
+是$x,y,s,t,u,v$是$AQ_n(n \geq 4)$中的6个顶点，如果$AQ_n$在$x,y,s,t,u,v$包含2条补边，则$|N_{AQ_n}(\{x,y,s,t,u,v\})| \geq 12n-48$。
+\end{lemma}
+
+\begin{prof}
+设$(x,y),(s,t)$是$AQ_n=L \bigodot R$中的2条补边，其中$L \cong AQ^0_{n-1},R \cong AQ^1_{n-1}$。不是一般性，我们设$x,s \in V(L),y,t\in V(R)$。然后我们有下面几种情况：
+
+\textbf{情形1}：$u,v \in L$或$u,v \in R$中。不失一般性，我们假设$u,v \in L$，根据引理\ref{4-vertices-neighbors}和引理\ref{2nodes}，我们有$|N_L(\{x,s,u,m\})| \geq 8(n-1)-28=8n-36,|N_L(\{y,t\})|=4(n-1)-8$。因此
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v\})| &\geq |N_L(\{x,s,u,v\})|+|N_R(\{y,t\})|\\
+                        &\geq (8n-36)+(4n-12)=12n-48.
+\end{align*}
+
+
+
+\textbf{情形2}：$u,v$其中一个在$L$中，另一个在$R$中。
+根据引理\ref{3nodes}，我们有$|N_L(\{x,s,u\})| \geq 6(n-1)-17=6n-23,|N_R(\{y,t,v\})| \geq 6(n-1)-17=6n-23$，因此
+
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v\})| &\geq |N_L(\{x,s,u\})|+|N_R(\{y,t,v\})|\\
+                            &\geq 2(6n-23)=12n-46.
+\end{align*}
+\end{prof}
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{6-vertices-3-complement-pairs}
+是$x,y,s,t,u,v$是$AQ_n(n \geq 4)$中的6个顶点，如果$AQ_n$在$x,y,s,t,u,v$包含3条补边，则$|N_{AQ_n}(\{x,y,s,t,u,v\})| \geq 12n-46$。
+\end{lemma}
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{7-vertices-3-complement-pairs}
+是$x,y,s,t,u,v,m$是$AQ_n(n \geq 4)$中的7个顶点，如果$AQ_n$在$x,y,s,t,u,v,m$包含3条补边，则$|N_{AQ_n}(\{x,y,s,t,u,v,m\})| \geq 14n-59$。
+\end{lemma}
+
+
+\begin{prof}
+设$(x,y),(s,t),(u,v)$是$AQ_n=L \bigodot R$中的3条补边，其中$L \cong AQ^0_{n-1},R \cong AQ^1_{n-1}$。不是一般性，我们设$x,s,u \in V(L),y,t,v\in V(R)$。$m$属于$L$和$R$ 中的一个，不失一般性，我们设$m \in V(L)$。根据引理\ref{4nodes}和引理\ref{3nodes}，我们有$|N_L(\{x,s,u,m\})| \geq 8(n-1)-28=8n-36,|N_L(\{y,t,v\})|=6(n-1)-17=6n-23$。因此
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v\})| &\geq |N_L(\{x,s,u,v\})|+|N_R(\{y,t,v\})|\\
+                        &\geq (8n-36)+(6n-23)=14n-59.
+\end{align*}
+
+\end{prof}
+
+\begin{lemma}
+\label{8-vertices-4-complement-pairs}
+是$x,y,s,t,u,v,m,n$是$AQ_n(n \geq 4)$中的8个顶点，如果$AQ_n$在$x,y,s,t,u,v,m,n$包含4条补边，则$|N_{AQ_n}(\{x,y,s,t,u,v,m,n\})| \geq 16n-72$。
+\end{lemma}
+
+\begin{prof}
+设$(x,y),(s,t),(u,v),(m,n)$是$AQ_n=L \bigodot R$中的4条补边，其中$L \cong AQ^0_{n-1},R \cong AQ^1_{n-1}$。不是一般性，我们设$x,s,u,m \in V(L),y,t,v,n \in V(R)$。根据引理\ref{4-vertices-neighbors}，我们有$|N_L(\{x,s,u,m\})| \geq 8(n-1)-28=8n-36,|N_R(\{y,t,v,n\})| \geq 8(n-1)-28=8n-36$，因此
+
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v,m,n\})| &\geq |N_L(\{x,s,u,m\})|+|N_R(\{y,t,v,n\})|\\
+                            &\geq 2(8n-36)=16n-72.
+\end{align*}
+\end{prof}
+
+\begin{lemma}
+\cite{t/t-Diagnosability-and-t/k-Diagnosability}
+\label{k-nodes}
+对于顶点集合$X \subset V(AQ_n)$，其中$|X|=k, 0 \leq k \leq 2n-1$，那么$|N_{AQ_n}(X)| \geq 2kn- \frac{3k(k+1)}{2}$+1。
+\end{lemma}
+
+
+
+\begin{lemma}
+\label{2-extra diagnosability <=}
+对于$n \geq 6$，$t^{\tilde{m}}_2(AQ_n) \leq 6n-15$。
+\end{lemma}
+
+\begin{prof}
+设$S=\{u,\bar{u}_{n-1},\bar{u}_{n-3}\}$，设$F_1=N(V(S))$和$F_2=N[(V(S))]$。根据定义，我们有$|F_1|=6n-17$和$|F_2|=N(V(S))+|V(S)|=6n-14$。$AQ_n[S]$是一个连通子图且$AQ_n-F_1$中的任意一个连通分量的顶点数都大于等于3。显然，我们有\\
+
+$F_1 \leq 6n-14$, $F_2 \leq 6n-14$。\\\\
+并且$F_1$和$F_2$都是$AQ_n$的$2$-额外集（见图\ref{F_1andF_2-extra-sets}）。
+
+因为$F_1 \Delta F_2=V(S)$，$E[F_1 \Delta F_2,V(AQ_n)-(F_1 \cup F_2)]=\emptyset$。根据引理\ref{MM*}，$(F_1,F_2)$在$MM^*$下是不可区分的。由定义\ref{MM*-distinguishable}，$AQ_n$不是$MM^*$下$2$-额外，$6n-14$ 可诊断的，因此$t^{\tilde{m}}_2(AQ_n) \leq 6n-15$。
+\end{prof}
+
+
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.2]{F_1andF_2-extra-sets.eps}\\
+  \caption{$G$的两个$2$-额外集}\label{F_1andF_2-extra-sets}
+\end{figure}
+
+
+接下来，我们证明$t^{\tilde{m}}_2(AQ_n) \geq 6n-15$。
+
+\begin{lemma}
+\label{2-extra diagnosability >=}
+对于$n \geq 8$，$t^{\tilde{m}}_2(AQ_n) \geq 6n-15$。
+\end{lemma}
+
+\begin{prof}
+我们将通过反证法来证明$t^{\tilde{m}}_2(AQ_n) \geq 6n-15$。假设$t^{\tilde{m}}_2(AQ_n) \leq 6n-16$。设$F_1$和$F_2$是两个不同的$2$- 额外集且$|F_1|=|F_2| = 6n-15$。则在$MM^*$模型下，$F_1$ 和$F_2$ 是不可区分的。另外，对于$n \geq 8$
+\begin{align*}
+|V(AQ_n)|-|F_1 \cup F_2| &\geq |V(AQ_n)|-|F_1|-|F_2|\\
+                          &\geq |V(AQ_n)|-2(6n-15)\\
+                          &\geq 2^n-2(6n-15)\\
+                          &\geq 0
+\end{align*}
+因此，$V(AQ_n)-(F_1 \cup F_2) \neq \emptyset$。\\
+
+断言：$AQ_n-(F_1 \cup F_2)$不包含孤立顶点。\\
+
+假设在$AQ_n-(F_1 \cup F_2)$存在一个孤立顶点$w$。设$W$是$AQ_n-(F_1 \cup F_2)$中孤立顶点的集合，并且$H$是$AQ_n-(F_1 \cup F_2)$的导出子图。因为$F_1$是$AQ_n$的一个$2$-额外集且$(F_1,F_2)$在$MM^*$ 下是不可区分的。则在$F_2 - F_1$存在唯一一个顶点$u$且$uw \in E(AQ_n)$。 类似的，因为$F_2$是$AQ_n$的一个$2$-额外集且$(F_1,F_2)$ 在$MM^*$ 下是不可区分的。则在$F_1 - F_2$存在唯一一个顶点$v$且$vw \in E(AQ_n)$。 因为$AQ_n$是$2n-1$连通图，则$w$剩下的$2n-3$个邻居顶点都在$F_1 \cap F_2$ 中。此外，因为还有其他边把$F_1 \cap F_2$ 中的顶点与$W$外的其他顶点连接起来。因此我们有下面的不等式：
+\begin{align*}
+(2n-3)|W| &\leq \sum_{s\in F_1 \cap F_2}|N(s)|\\
+          &= |F_1 \cap F_2| \times (2n-1)\\
+          &\leq (6n-16) \times (2n-1)
+\end{align*}
+则
+\begin{align*}
+|W| &\leq \frac{(6n-16) \times (2n-1)}{2n-3}\\
+    &= \frac{(6n-16) \times (2n-3+2)}{2n-3}\\
+    &= \frac{(6n-16) \times (2n-3)+(6n-16) \times 2}{2n-3}\\
+    &= 6n-16+ \frac{6(2n-3)-14}{2n-3}\\
+    &= 6n-10-\frac{14}{2n-3}\\
+    &\leq 6n-10
+\end{align*}
+假设$V(H)=\emptyset$，我们有
+
+\begin{align*}
+|V(AQ_n)| &= |F_1 \cup F_2|+ |W|\\
+       &= |F_1| + |F_2| - |F_1 \cap F_2| + |W|\\
+       &\leq 2 \times (6n-15) - (2n-3) + 6n-10\\
+       &= 16n-37
+\end{align*}
+当$n \geq 8$时，$2^n > 16n-37$。因此，$V(H)\neq \emptyset$。
+
+因为$W$是$AQ_n-(F_1 \cup F_2)$中所有孤立顶点的集合，并且$H$ 是$V(AQ_n)-(F_1 \cup F_2)$的导出子图，我们有$N(V(H))\cap W=\emptyset$.
+
+假设$N(V(H)) \cap (F_1 \bigtriangleup F_2)\neq \emptyset$, 那么在$V(H)$中存在一个顶点$z$使得$z$在$F_1 \bigtriangleup F_2$中至少有1 个邻居顶点。因为在$V(H)$中的任意一个顶点在$AQ_n-(F_1 \cup F_2)]$都不是一个孤立的顶点, $z$在$V(H)$中存在一个邻居顶点$x$。因此, $x,z \in V(G)-(F_1 \cup F_2)\neq \emptyset$，$y \in F_1 \bigtriangleup F_2$ 且$xz,yz \in E(AQ_n)$。根据引理\ref{MM*}, $F_1$ 和$F_2$是可区分的，这与$(F_1,F_2)$在$MM^*$模型下是不可区分的相矛盾。因此$N(V(H)) \cap (F_1 \bigtriangleup F_2)= \emptyset$。
+
+如果$F_1 \cap F_2 = \emptyset$，那么$F_1 \bigtriangleup F_2=F_1 \cup F_2$。所以，$N(V(H)) \cap F_1 = \emptyset$ 和$N(V(H)) \cap F_2 = \emptyset$。进一步的，$N(V(H)) \cap (F_1 \cup F_2 \cup W) = \emptyset$。因为，$V(AQ_n)=N(V(H)) \cup F_1 \cup F_2 \cup W$，这意味着$AQ_n$ 是不连通的，这与$AQ_n$是连通图相矛盾。因此，$F_1 \cap F_2 \neq \emptyset$。
+
+因为$F_1 \neq F_2$，不失一般性，$F_1 - F_2 \neq \emptyset$。 因为$F_2$是$AQ_n$的一个额外集，因此存在一个顶点$u \in F_1 - F_2$使得$uw \in E(AQ_n)$。因为$(F_1,F_2)$并不满足引理\ref{MM*}中的条件，$u$是$F_1 - F_2$中唯一顶点使得$uw \in E(AQ_n)$。如果$F_1 - F_2 = \emptyset$，那么$F_2 \subseteq F_1$, 所以$AQ_n-(F_1 \cup F_2)=AQ_n-F_1$，并且$w$是$AQ_n-F_1$ 中的一个孤立顶点。这与$F_1$是$AQ_n$中的一个$2$-额外集相矛盾。因此，$F_2 - F_1 \neq \emptyset$。 类似的，我们可以得到存在一个顶点$v\in F_2 - F_1$ 使得$vw_1 \in E(AQ_n)$。 当从$AQ_n$中删除$F_2 \cap F_1$时，因为$N(V(H))\cap W = \emptyset$和$N(V(H))\cap (F_1 \cap F_2) = \emptyset$，$AQ_n - F_1 \cap F_2$是不连通的。而且，我们还可以知道$AQ_n-(F_1 \cap F_2)$ 包含一个连通分量$Y$且$|V(Y)| \geq 4$，如图\cite{a big compoent with at last 4 vertices}。根据$|V(Y)|$ 的大小，我们有以下两种情况：\\
+
+情形1：$4 \leq |V(Y)| \leq 6$。因为$N(V(Y)) \subseteq F_1 \cap F_2$，根据引理\ref{k-nodes}，有$|F_1 \cap F_2| \geq |N(V(Y))| \geq 6n-15$。 因为$F_2 \cap F_1 \neq \emptyset$，我们有$|F_2|=|F_1 \cap F_2|+|F_2 \cap F_1| \geq 6n-15+1$，这与$|F_2| \leq 6n-15$。因此，$AQ_n-(F_1 \cup F_2)$不包含孤立顶点。\\
+
+情形2：$|V(Y)| \geq 7$。因为$W$中的顶点在$F_1$和$F_2$中各仅有一个邻居顶点，那么$|F_1-F_2| \geq 3$或者$|F_2-F_1| \geq 3$。 不失一般性，我们设$|F_1-F_2| \geq 3$。因为$|F_1|=6n-15$，那么$|F_1 \cap F_2| =|F_1|-|F_1-F_2| \leq 6n-18$。 根据定理\ref{6n-18<=}，$AQ_n-F_1 \cap F_2$只包含一个顶点个数大于2的连通分量。但是当$n \geq 8$ 时，$|H|>2^n - (16-37) > 2$，且$|Y|>2$。 这意味着$AQ_n-F_1 \cap F_2$中包含两个顶点个数大于2 的连通分量，与定理\ref{6n-18<=}矛盾。因此，$AQ_n-(F_1 \cup F_2)$ 不包含孤立顶点。\\
+
+对于顶点$p \in V(G)-(F_1 \cup F_2)$, 根据断言，$N(p) \cap (V(G)-(F_1 \cup F_2))$。因为$(F_1, F_2)$并不满足引理\ref{MM*} 中的条件，也就是说$p$在$F_1 \bigtriangleup F_2$中没有邻居顶点。因为$p $ 是任意选取的，则$E[V(G)-(F_1 \cap F_2),F_1 \bigtriangleup F_2]=\emptyset$. 因为$F_1-F_2 \neq \emptyset$ 和$F_2$是$AQ_n$的一个$2$-额外集，则$|F_1-F_2| \geq 3$。因为$F_1$ 和$F_2$是两个不同的$2$- 额外集，$AQ_n-F_1$和$AQ_n-F_2$的任意分量的顶点数都大于$3$。当从$AQ_n$中删除$F_1 \cap F_2$时，$AQ_n-(F_1 \cap F_2)$ 是不连通的且其中的每个连通分量的顶点数都大于等于$3$。根据定义\ref{extra diagnosability definition}(2)，$F_1 \cap F_2$是$AQ_n$ 的一个2-额外割。根据定义\ref{extra diagnosability definition}(3)，$|F_1 \cap F_2| \geq 6n-18$。那么, $|F_1|=|F_1 \cap F_2|+|F_1 - F_2| \geq 6n-14 > 6n-15$，矛盾。
+
+因此，$t^{\tilde{m}}_2(AQ_n) \geq 6n-15$。
+\end{prof}
+
+根据引理\ref{2-extra diagnosability <=}和引理\ref{2-extra diagnosability >=}，我们可以得到以下的定理:
+
+\begin{theorem}
+对于$n \geq 6$，$t^{\tilde{m}}_2(AQ_n) = 6n-15$。
+\end{theorem}
+
+%\begin{figure}
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.2]{a big compoent with at last 4 vertices.eps}\\
+%  \caption{$G-F_1 \cap F_2$包含一个顶点个数大于等于$4$的连通分支}
+%  \label{a big compoent with at last 4 vertices}
+%\end{figure}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.2]{a-big-compoent-with-at-last-4-vertices.eps}\\
+  \caption{$G-F_1 \cap F_2$包含一个顶点个数大于等于$4$的连通分支}\label{a big compoent with at last 4 vertices}
+\end{figure}
+
+
+
+\begin{dfn}
+\cite{Reliability-analysis-of-data-center-networks}
+一个系统$G=(V,E)$和由一个故障顶点集在$G$上产生的症状$\sigma$。设$i \subseteq V$，$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(i,j)_k=0\}$。$G$的$0$- 比较子图，记为$T_0(G)$，是$G$的一个子图，定义为$V(T_0(G)) \subseteq V$和$E(T_0(G))=\{(i,j)\in E \mid j \in C_0(i),i \in C_0(j)\}$。
+\end{dfn}
+
+\begin{lemma}
+\cite{Reliability-analysis-of-data-center-networks}
+给定一个最多有$t$故障顶点的系统$G=(V,E)$，和一个在$MM^*$模型下的$G$上的症状$\sigma$。
+
+(1) 对于任意两个顶点$i,j \in V,(i,j) \in E$，其中$j \in C_0(i),i \in C_0(j)$，那么$i$和$j$ 有相同的状态（故障或无故障）。
+
+(2) 对于任意一个连通分支$R \subseteq T_0(G)$，那么在$R$中的所有顶点，要么都是故障定的，要么都是无故障顶点。
+
+(3) 如果$T_0(G)$的连通分支$R$的顶点个数$|V(R) \geq t+1|$，那么$R$中的所有顶点都是无故障的。
+\end{lemma}
+
+对于$AQ_n$中的一个顶点集合$S$，设$AQ_n=L \bigodot R$，其中$L \cong AQ^0_{n-1},R \cong AQ^1_{n-1}$。设$S_L=S \cap V(L),S_R=S \cap V(R)$。一个在$L-S_L$中的顶点$u$被称为是\textbf{孤单顶点}，如果$S_R$包含$u$的两个在$R$中的邻居顶点。否则称$u$为\textbf{非孤单顶点}。
+
+\begin{lemma}
+\label{<=6n-15}
+设$S$是$AQ_n$的一个顶点集合且$|S| \leq 6n-15$，则$AQ_n-S$包含一个顶点个数至少为$2^n-6n+18$ 的连通分量。
+\end{lemma}
+\begin{prof}
+我们用数学归纳法来证明这个引理。当$n=6$时，该引理成立。假设当$n \geq 7$时，该引理对于$AQ_{n-1}$成立。现在，我们考虑$AQ_n=L \bigodot R$，其中$L \cong AQ^0_{n-1},R \cong AQ^1_{n-1}$。设$S_L=S \cap V(L),S_R=S \cap V(R)$。对于$L-S_L$和$R-S_R$是否是连通的，我们有下面几种情况:
+
+\textbf{情形1}：$L-S_L$和$R-S_R$都是不连通的。我们有$2n-3 \leq |S_L| \leq 4n-12$和$2n-3 \leq |S_R| \leq 4n-12$。根据定理\ref{6n-15<=}，我们有以下几种情形。
+
+\textbf{情形1.1}：那么$L-S_L(R-S_R)$包含两个分量，其中一个是孤立的顶点，另一个是包含顶点个数为$2^{n-1}-|S_L|-1$ 的连通分量，记为$C_0(C_1)$。因为对于$n \geq 5$，有
+
+\begin{align*}
+|V(C_0)|-(|S_R+1|) &= 2^{n-1}-|S_L|-1-|S_R|-1\\
+                   &= 2^{n-1} - |S| - 2\\
+                   &\geq 2^{n-1}-(6n-18)-2\\
+                   &= 2^{n-1}-6n+16 >0
+\end{align*}
+
+那么$C_0$连接于$C_1$。因此，$AQ_n-S$有一个连通分量，其顶点个数至少为：
+
+\begin{align*}
+(2^{n-1}-|S_L|-1)+(2^{n-1}-|S_R|-1)=2^n-|S|-2=2^n-6n-17
+\end{align*}
+
+\textbf{情形1.2}：$L-S_L$包含两个分量，其中一个是孤立的顶点，另一个是包含顶点个数为$2^{n-1}-|S_L|-1$ 的连通分量$C_0$；$R-S_R$包含两个分量，其中一个是$K_2$，另一个是包含顶点个数为$2^{n-1}-|S_R|-2$ 的连通分量$C_1$。因为对于$n \geq 5$，有
+
+\begin{align*}
+|V(C_0)|-(|S_R+1|) &= 2^{n-1}-|S_L|-1-|S_R|-2\\
+                   &= 2^{n-1} - |S| - 3\\
+                   &\geq 2^{n-1}-(6n-18)-3\\
+                   &= 2^{n-1}-6n+15 >0
+\end{align*}
+
+那么$C_0$连接于$C_1$。因此，$AQ_n-S$有一个连通分量，其顶点个数至少为：
+
+\begin{align*}
+(2^{n-1}-|S_L|-1)+(2^{n-1}-|S_R|-2)=2^n-|S|-2=2^n-6n-18
+\end{align*}
+
+$R-S_R$包含两个分量，其中一个是孤立的顶点，另一个是包含顶点个数为$2^{n-1}-|S_R|-1$ 的连通分量$C_1$；$L-S_L$包含两个分量，其中一个是$K_2$，另一个是包含顶点个数为$2^{n-1}-|S_L|-2$ 的连通分量$C_L$，这种情形的证明过程与上面一样。
+
+
+\textbf{情形1.3}：那么$L-S_L(R-S_R)$包含两个分量，其中一个是$K_2$，另一个是包含顶点个数为$2^{n-1}-|S_L|-2$ 的连通分量，记为$C_0(C_1)$。这种情形不存在，如果存在这种情形的话，有$|S_L|=|S_R| \geq 4(n-1)-8=4n-12$，也就是$S=|S_L|+|S_R| \geq (4n-12)+(4n-12)=8n-24>6n-15$，对于$n \geq 6$。矛盾。
+
+\textbf{情形2}：$L-S_L$和$R-S_R$都是连通的。设$C_0=L-S_L,C_1=L-S_R$。在$L$和$R$之间有$2^n$ 条边，而最多只有$2|S|$条边其至少有一个顶点属于这些边。因为$2^n \geq 2(6n-15)$，则$C_0$ 和$C_1$是相连的。因此，$AQ_n-S$是连通的，其顶点个数为$2^n-6n+15$。
+
+
+\textbf{情形3}：在$L-S_L$和$R-S_R$中，其中一个是连通的，另一个是不连通的。不失一般性，我们假设$L-S_L$是不连通的，$R-S_R$是连通的。根据$S_L$中的顶点个数，我们有下面几种情况。
+
+\textbf{情形3.1}：$2n-3 \leq |S_L| \leq 6n-24$。根据定理\ref{6n-18<=}，$|S_L| \leq 6n-24=6(n-1)-18$，$L-S_L$有一个顶点个数不少于$2^{n-1}-|S_L|-2$的连通分量，记为$C_0$。又因为对于$n \geq 6$，
+
+\begin{align*}
+|V(C_0)|-(|S_R|) &= 2^{n-1}-|S_L|-2-|S_R|\\
+                   &= 2^{n-1} - |S| - 2\\
+                   &\geq 2^{n-1}-(6n-18)-2\\
+                   &= 2^{n-1}-6n+16 >0
+\end{align*}
+，则$C_0$连接于$R-S_R$，因此$AQ_n-S$有一个连通分量，其顶点个数至少为：
+
+\begin{align*}
+(2^{n-1}-|S_L|-2)+(2^{n-1}-|S_R|)=2^n-|S|-2=2^n-6n-17
+\end{align*}
+
+\textbf{情形3.2}：$6n-23 \leq |S_L| \leq 6n-15$。那么$|S_R| \leq 8$。根据性质\ref{complement-pair}，$L-S_L$中最多有8个孤单顶点。根据孤单顶点的个数，我们有下面几种情况：
+
+\textbf{情形3.2.1}：$L-S_L$中包含最多3个孤单顶点。显然，$L-S_L$含有至少$2^{n-1}-|S_L|-3$个非孤单顶点。因此，$AQ_n-S$中存在一个连通分量，其顶点个数至少为：
+\begin{align*}
+(2^{n-1}-|S_L|-3)+(2^{n-1}-|S_R|)=2^n-|S|-2=2^n-6n-18.
+\end{align*}
+
+\textbf{情形3.2.2}：$L-S_L$中包含4个孤单节点。设$x,y,s,t$为$L-S_L$中的4个孤单节点。显然，$L-S_L$含有$2^{n-1}-|S_L|-4$个非孤单节点。根据引理\ref{4-vertices-neighbors}，$4 \leq |S_R| \leq 8$，对于$n \geq 8$，有$N_L(\{x,y,s,t\}) \geq 8(n-1)-24=8n-32>6n-15-4$，则在$x,y,s,t$中至少存在一个顶点不是非孤单顶点。因此，$AQ_n-S$中存在一个连通分量，其顶点个数为：
+\begin{align*}
+(2^{n-1}-|S_L|-3)+(2^{n-1}-|S_R|)=2^n-|S|-2=2^n-6n-18.
+\end{align*}
+
+\textbf{情形3.2.3}：$L-S_L$中包含5个孤单顶点，设$x,y,s,t,u$为$L-S_L$中的5个孤单节点。显然，$L-S_L$含有$2^{n-1}-|S_L|-5$个非孤单节点。根据引理
+\ref{complement-pair}，$x,y,s,t,u$包含一个或两个补边。根据引理\ref{5-vertices-2-complement-pairs}和引理\ref{5-vertices-1-complement-pairs}，对于$n \geq 8$，有$N_L(\{x,y,s,t,u\}) \geq 10(n-1)-39=10n-49>6n-15-6$，则在$x,y,s,t$中至少存在一个顶点不是非孤单顶点。因此，$L-S_L$中包含4个孤单顶点，此时该情形变为情形3.2.2。下面的证明与情形3.2.2相似。
+
+\textbf{情形3.2.4}：$L-S_L$中包含6个孤单顶点，设$x,y,s,t,u,v$为$L-S_L$中的6个孤单节点。显然，$L-S_L$含有$2^{n-1}-|S_L|-6$个非孤单节点。根据引理
+\ref{complement-pair}，$x,y,s,t,u,v$包含$2$个或$3$个补边。根据引理\ref{6-vertices-2-complement-pairs}和引理\ref{6-vertices-3-complement-pairs}。对于$n \geq 8$，有$N_L(\{x,y,s,t,u\}) \geq 12(n-1)-48=12n-60>6n-15-6$，则在$x,y,s,t,u$中至少存在一个顶点不是非孤单顶点。因此，$L-S_L$中包含5个孤单顶点，此时该情形变为情形3.2.3。下面的证明与情形3.2.3相似。
+
+对于$L-S_L$中包含7个或者8个孤单顶点的情况，证明方法与情形3.2.3和3.2.2类似，在此不再赘述。
+\end{prof}
+
+引理\ref{6n-15}可以由引理\ref{<=6n-15}直接得到。
+
+\begin{lemma}
+\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\label{6n-15}
+设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 6n-15$, $n \geq 6$。那么, $AQ_n-S$满足以下四个条件之一:
+
+(1) $AQ_n-S$是连通的；
+
+(2) $AQ_n-S$有两个分支，其中一个是$K_1$，另一个包含$2^n-|S|-1$个顶点；
+
+(3) $AQ_n-S$有两个分支，其中一个是$K_2$，另一个包含$2^n-|S|-2$个顶点；
+
+(4) $AQ_n-S$有两个分支，其中一个包含$3$个顶点，另一个包含$2^n-|S|-3$个顶点；
+
+(5) $AQ_n-S$有三个分支，其中有两个是$K_1$，且第三个包含$2^n-|S|-2$个顶点。
+
+(6) $AQ_n-S$有三个分支，其中一个是$K_1$，另一个是$K_2$，且第三个包含$2^n-|S|-3$个顶点。
+
+(7) $AQ_n-S$有四个分支，其中有三个是$K_1$，且第三个包含$2^n-|S|-3$个顶点。
+\end{lemma}
+
+根据引理\ref{6n-15}，我么可以得到下面的定理：
+
+\begin{lemma}
+\label{two-components}
+
+设$F$是$AQ_n$的一个额外集，其中$|F| \leq 6n-15$, $n \geq 6$。那么, $AQ_n-S$满足以下四个条件之一:
+
+(1) $AQ_n-F$是连通的；
+
+(2) $AQ_n-F$包含两个连通分量，其中一个包含一个顶点个数为$3$的连通分量，另一个是包含顶点个数为$2^n-|F|-3$的连通分量。
+\end{lemma}
+
+
+
+
+接下来，我们将提出一个$MM^*$模型下$AQ_n$的$2$-额外，$6n-15$诊断算法。该算法基于$AQ_n$ 的两个性质：(1) 对于$AQ_n$中的故障顶点集$|F| \leq 6n-15$，$AQ_n-F$只包含一个顶点个数至少为$2^n-6n-18$的连通分量；(2) $AQ_n$在$MM^*$模型下$AQ_n$的$2$-额外，$6n-15$可诊断的。这个算法可以正确的诊断出$AQ_n$中的所有的故障顶点。首先，我们先给出一个通过深度优先可以确定$AQ_n$中具有同一症状（顶点都为故障或者无故障）的连通分量。
+
+\begin{breakablealgorithm}
+\footnotesize
+\label{AQn-DFS-MM*}
+\caption{\texttt{{AQn-DFS-MM*}}}
+\begin{algorithmic}[1]
+    \Require 故障顶点集$F$在$G$上生成的症状$\sigma$，其中$|F| \leq 6n-15, n \geq 8$，以及两个无故障的顶点$i,k \in V(AQ_n), (i,k)\in E(AQ_n)$。
+    \Ensure  集合$T$。
+   \State $T \leftarrow \{i,k\}$;
+   \Function{\texttt{DFS-MM*}}{$AQ_n,i,k$}
+   \For{$j \in N_{AQ_n}(k)- T$}
+        \If{$\sigma(i,j)_k=0$}
+            \State $T \leftarrow T \cup \{j\}$;
+            \State \texttt{DFS-MM*}($AQ_n,k,j$);
+        \EndIf
+   \EndFor\\
+   \Return $T$
+   \EndFunction
+
+
+  \end{algorithmic}
+\end{breakablealgorithm}
+
+\begin{breakablealgorithm}
+\footnotesize
+\label{AQn-2-extra-diagnosability}
+\caption{\texttt{{AQn-$2$-extra-diagnosability}}}
+\begin{algorithmic}[1]
+    \Require 故障顶点集$F$在$G$上生成的症状$\sigma$，其中$|F| \leq 6n-15, n \geq 8$。
+    \Ensure  集合$T,F',H$。
+    \State $T \leftarrow \emptyset, F' \leftarrow \emptyset, R\leftarrow V(AQ_n)$;
+   \State 在$R$中选择$2$个无故障顶点$i,k$;
+   \State $T \leftarrow \texttt{DFS-MM*}(AQ_n,i,k)$;
+   \If{$|T| \leq 3$}
+        %\State $F' \leftarrow N_{AQ_n}(T)$;
+        \State 重新选择$2$个无故障顶点$u,v$;
+        %\State $T \leftarrow \emptyset$;
+        \State $T \leftarrow T \cup \texttt{DFS-MM*}(AQ_n,u,v)$;
+        \State $F' \leftarrow R-T$;\\
+        \Return $T,F'$;
+   \EndIf
+   \State
+   \For{对于顶点$x \in N_{AQ_n}(T),y,r \in T$，有$(x,r) \in E(AQ_n)$和$(y,r)$}
+            \If{$\sigma(x,y)_r=1$}
+                \State $F'=F' \cup \{x\}$;
+            \EndIf
+        \EndFor
+   \State $T \leftarrow F'$;\\
+   \Return $T,F'$;
+  \end{algorithmic}
+\end{breakablealgorithm}
+
+
+\begin{thebibliography}{00}
+%1
+\bibitem{Conditional-Diagnosability-of-Augmented-Cubes}
+Chang N W and Hsieh S Y. Conditional Diagnosability of Augmented Cubes under the PMC Model[J]. IEEE Transactions on Dependable $\&$ Secure Computing, 2011, 9(1):46-60.
+%2
+\bibitem{Conditional-Diagnosability-Measures-for-Large}
+Lai P L, Tan J J M, Chang C P, and Hsu L H. Conditional
+Diagnosability Measures for Large Multiprocessor Systems[J]. IEEE
+Transactions on Computers, 2005, 54(2):165-175.
+%3
+\bibitem{On-self-diagnosable-multiprocessor}
+Sengupta A and Dahbura A T. On self-diagnosable multiprocessor systems: diagnosis by the comparison approach[J]. IEEE Transactions on Computers, 1992, 41(11):1386-1396.
+%4
+\bibitem{The-g-extra-conditional-sequential}
+Zhang S and Yang W. The $g$-extra conditional diagnosability and sequential $t/k$ -diagnosability of hypercubes[J]. International Journal of Computer Mathematics, 2015, 93(3):1-20.
+%5
+\bibitem{t/t-Diagnosability-and-t/k-Diagnosability}
+Jiarong L, Fang C , Qian Z and Min X. $t/t$-Diagnosability and $t/k$-Diagnosability for Augmented Cube Networks[J]. IEEE Access, 2018, PP:1-1.
+%6
+\bibitem{Strong-Diagnosability-and-Conditional-Diagnosability}
+Hong W S and Hsieh S Y. Strong Diagnosability and Conditional Diagnosability of Augmented Cubes Under the Comparison Diagnosis Model[J]. Reliability, IEEE Transactions on, 2012, 61(1):p.140-148.
+%7
+\bibitem{Relationship-between-Conditional-and-extra}
+Hao R X , Tian Z X , Xu J M . Relationship between Conditional Diagnosability and 2-extra Connectivity of Symmetric Graphs[J]. Theoretical Computer Science, 2016:36-53.
+%8
+\bibitem{Lv-extra-connectivity-and-extra-diagnosability}
+Lv M , Fan J , Zhou J , et al. The extra connectivity and extra diagnosability of regular interconnection networks[J]. Theoretical Computer Science, 2019, 809.
+
+%9
+\bibitem{A-New-Proof-for-Exact-Relationship}
+Huang Y , Lin L , Xu L. A New Proof for Exact Relationship between Extra Connectivity and Extra Diagnosability of Regular Connected Graphs under MM* Model[J]. Theoretical Computer Science, 2020.
+
+%10
+\bibitem{Reliability-analysis-of-data-center-networks}
+Li X, Jia X, Fan J, Lin C. Reliability analysis of data center networks based on precise and imprecise diagnosis strategies[J]. Theoretical Computer Science, (2020), 809: 189-203.
+
+%11
+\bibitem{The-super-connectivity-of-augmented-cubes}
+Ma M, Liu G and Xu J M . The super connectivity of augmented cubes[J].Information Processing Letters, (2008), 106(2):59-63.
+
+\end{thebibliography}
+\end{CJK}
+\end{document}

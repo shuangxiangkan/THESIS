@@ -1,0 +1,315 @@
+\begin{thebibliography}{10}
+
+\bibitem{Zang2016HighPerformance}
+臧大伟，曹政，孙凝晖.
+\newblock 高性能计算的发展[J].
+\newblock 科技导报, 2016, 34(14): 22--28.
+
+\bibitem{Chen2015HighPerformance}
+陈国良，毛睿， 蔡晔.
+\newblock 高性能计算及其相关新兴技术[J].
+\newblock 深圳大学学报(理工版), 2015, 32(1): 25--31.
+
+\bibitem{Xu2015BigData}
+徐子沛.
+\newblock 大数据:正在到来的数据革命，以及它如何改变政府、商业与我们的生活[M].
+\newblock 广西师范大学出版社, 2015.
+
+\bibitem{liaoxiangke2016HPC}
+廖湘科，肖侬.
+\newblock 新型高性能计算系统与技术[J].
+\newblock 中国科学:信息科学, 2016, 46(9): 1175.
+
+\bibitem{Zhang2006Parallel}
+张林波.
+\newblock 并行计算导论[M].
+\newblock 清华大学出版社, 2006.
+
+\bibitem{Liu2015HPC}
+刘晓婷，贾志淳.
+\newblock 高性能计算机中互连网络的可靠性研究[J].
+\newblock 电子制作, 2015, 7z: 151--152.
+
+\bibitem{Song2012Network}
+宋玉艳.
+\newblock 并行计算机的互连网络[J].
+\newblock 电大理工, 2012, 2: 41--42.
+
+\bibitem{Bhuyan1984Generalized}
+Bhuyan~L N and Agrawal~D P.
+\newblock Generalized hypercube and hyperbus structures for a computer
+  network[J].
+\newblock IEEE Transactions on Computers, 2006, C-33(4): 323--333.
+
+\bibitem{Duh1996combinatorial}
+Duh~D R, Chen~G H and Hsu~D F.
+\newblock Combinatorial properties of generalized hypercube graphs[J].
+\newblock Information Processing Letters, 1996, 57(1): 41--45.
+
+\bibitem{Lawson2001i}
+Lawson~L M, Boland~J W and Ringeisen~R D.
+\newblock $i$-connectivity in a generalized hypercube[J].
+\newblock Combinatorial Mathematics Combinatorial Computing, 2001, 39:
+  127--137.
+
+\bibitem{Shao2002An}
+Shao~D C, Hong S and Topor R.
+\newblock An efficient algorithm for constructing hamiltonian paths in
+  meshes[J].
+\newblock Parallel Computing, 2002, 28(9): 1293--1305.
+
+\bibitem{Latifi1997On}
+Latifi S and Zheng~S Q.
+\newblock On link-disjoint hamiltonian cycles of torus networks[J].
+\newblock Computers Electrical Engineering, 1997, 23(1): 25--32.
+
+\bibitem{Day1993Unidirectional}
+Day K and Tripathi A.
+\newblock Unidirectional star graphs[J].
+\newblock Information Processing Letters, 1993, 45(3): 123--129.
+
+\bibitem{Harary1988A}
+Harary F, Hayes~J P and Wu~H J.
+\newblock A survey of the theory of hypercube graphs[J].
+\newblock Computers Mathematics with Applications, 1988, 15(4): 277--289.
+
+\bibitem{Efe1992The}
+Efe K.
+\newblock The crossed cube architecture for parallel computation[J].
+\newblock IEEE Transactions on Parallel Distributed Systems, 1992, 3(5):
+  513--524.
+
+\bibitem{Wang2007On}
+Wang D.
+\newblock On embedding hamiltonian cycles in crossed cubes[J].
+\newblock IEEE Transactions on Parallel Distributed Systems, 2007, 19(3):
+  334--346.
+
+\bibitem{Cull1995The}
+Cull P and Larson~S M.
+\newblock The M\"{o}bius cubes[J].
+\newblock IEEE Transactions on Computers, 1995, 44(5): 647--659.
+
+\bibitem{Fan2002Hamilton}
+Fan J.
+\newblock Hamilton-connectivity and cycle-embedding of the M\"{o}bius cubes[J].
+\newblock Information Processing Letters, 2002, 82(2): 113--117.
+
+\bibitem{Lai1990Network}
+来光明.
+\newblock 多级互连网络[C].
+\newblock  中国电子学会数据通信学术会议, 1990.
+
+\bibitem{Zhao2010Interconnect}
+赵成贵.
+\newblock 若干多级互连网络的扩展Cayley图模型[J].
+\newblock 计算机工程与应用, 3 2010, (36): 118--121.
+
+\bibitem{Fang2008Multi}
+方志斌，安学军，胡鹏.
+\newblock 多处理器芯片组中交叉开关的设计与性能优化[J].
+\newblock 计算机工程, 2008, 34(5): 36--38.
+
+\bibitem{Liu2011Based}
+刘衍伟，陈渊睿.
+\newblock 基于RS485总线的监控系统研究与设计[J].
+\newblock 微处理机, 2011, 32(2): 64--67.
+
+\bibitem{S1998hierarchy}
+Lakshmivarahan S and Dhall~S K.
+\newblock A new hierarchy of hypercube interconnection schemes for parallel
+  computers[J].
+\newblock Journal of Supercomputing, 1988, 2(1): 81--108.
+
+\bibitem{P1996optimal}
+Fragopoulou P, Akl~S G and Meijer H.
+\newblock Optimal communication primitives on the generalized hypercube
+  network[J].
+\newblock Journal of Parallel and Distributed Computing, 1996, 32(2): 173--187.
+
+\bibitem{SG1999evaluation}
+Ziavras~S G and Krishnamurthy S.
+\newblock Evaluating the communications capabilities of the generalized
+  hypercube interconnection network[J].
+\newblock Concurrency: Practice and Experience, 1999, 11(6): 281--300.
+
+\bibitem{SG1995scalable}
+Ziavras~S G.
+\newblock Scalable multifolded hypercubes for versatile parallel computers[J].
+\newblock Parallel Processing Letters, 1995, 5(2): 241--250.
+
+\bibitem{SG1996low}
+Ziavras~S G, Grebel H and Chronopoulos A.
+\newblock A low-complexity parallel system for gracious scalable performance.
+  Case study for near PetaFLOPS computing[C].
+\newblock  Proceedings of the Sixth Symposium on the Frontiers of Massively
+  Parallel Computing, 1996: 363--370.
+
+\bibitem{T1990fiber}
+Szymanski T.
+\newblock A fiber optic hypermesh for SIMD/MIMD machines[C].
+\newblock  Proceedings of IEEE Conference on Supercomputing, 1990: 710--719.
+
+\bibitem{Guo2009BCube}
+Guo C, Lu~G, Li~D, Wu~H, Zhang X, Shi Y, Chen T, Zhang Y and Lu~S.
+\newblock BCube: a high performance, server-centric network architecture for
+  modular data centers[C].
+\newblock  Proceedings of Special Interest Group on Data Communication
+  (SIGCOMM), 2009: 63--74.
+
+\bibitem{Li2014SWcube}
+Li~D and Wu~J.
+\newblock On the design and analysis of Data Center Network architectures for
+  interconnecting dual-port servers[C].
+\newblock  Proceedings of IEEE Conference on Computer Communications, 2014:
+  1851--1859.
+
+\bibitem{Li2015On}
+D~Li and J~Wu.
+\newblock On Data Center Network Architectures for Interconnecting Dual-Port
+  Servers[J].
+\newblock IEEE Transactions on Computers, 2015, 64(11): 3210--3222.
+
+\bibitem{Abts2010Energy}
+Abts D, Marty~M R, Wells~P M, Klausler P and Liu H.
+\newblock Energy proportional datacenter networks[C].
+\newblock  Proceedings of International Symposium on Computer Architecture,
+  2010: 338--347.
+
+\bibitem{Ahn2009HyperX}
+Ahn~J H, Binkert N, Davis A, McLaren M and Schreiber~R S.
+\newblock HyperX: topology, routing, and packaging of efficient large-scale
+  networks[C].
+\newblock  Proceedings of the IEEE Conference on High Performance Computing
+  Networking, Storage and Analysis, 2009: 1--11.
+
+\bibitem{hsien2009fault}
+Hsien S$-$Y and Weng Y$-$F.
+\newblock Fault-tolerant embedding of pairwise independent hamiltonian paths on
+  a faulty hypercube with edge faults[J].
+\newblock Theory of Computing Systems, 2009, 45(2): 407--425.
+
+\bibitem{lin2012embedding}
+Lin T$-$J, Hsien S$-$Y and Juan S$-$T.
+\newblock Embedding cycles and paths in product networks and their applications
+  to multiprocessor systems[J].
+\newblock IEEE Transactions on Parallel and Distributed Systems, 2012, 23(6):
+  1081--1089.
+
+\bibitem{k1997highly}
+Wada K, Ikeo T, Kawaguchi K and Chen W.
+\newblock Highly fault-tolerant routings and fault-induced diameter for
+  generalized hypercube graphs[J].
+\newblock Journal of Parallel and Distributed Computing, 1997, 43(1): 57--62.
+
+\bibitem{Harary1983Conditional}
+Harary F.
+\newblock Conditional connectivity[J].
+\newblock Networks, 1983, 13(3): 347--357.
+
+\bibitem{Esfahanian2015Generalized}
+Esfahanian~A H.
+\newblock Generalized measures of fault tolerance with application to $n$-cube
+  networks[J].
+\newblock IEEE Transactions on Computers, 2015, 38(11): 1586--1591.
+
+\bibitem{Latifi1994Conditional}
+Latifi S, Hegde M and Naraghi-Pour M.
+\newblock Conditional connectivity measures for large multiprocessor
+  systems[J].
+\newblock IEEE Transactions on Computers, 1994, 43(2): 218--222.
+
+\bibitem{Wu1998Fault}
+Wu~J and Guo G.
+\newblock Fault tolerance measures for $m$-ary $n$-dimensional hypercubes based
+  on forbidden faulty sets[J].
+\newblock IEEE Transactions on Computers, 1998, 47(8): 888--893.
+
+\bibitem{Li2013Generalized}
+Li~X J and Xu~J M.
+\newblock Generalized measures of fault tolerance in exchanged hypercubes[J].
+\newblock Information Processing Letters, 2013, 113(14-16): 533--537.
+
+\bibitem{Liangcheng2016On}
+Ye~L and Liang J.
+\newblock On conditional $h$-vertex Connectivity of some networks[J].
+\newblock Chinese Journal of Electronics, 2016, 25(3): 556--560.
+
+\bibitem{Hsieh2017}
+Hsieh S$-$Y, Huang H$-$W and Lee C$-$W.
+\newblock $\{2,3\}$-Restricted connectivity of locally twisted cubes[J].
+\newblock Theoretical Computer Science, 2016, 615: 78--90.
+
+\bibitem{Fabrega1996On}
+Fabrega J and Fiol~M A.
+\newblock On the extraconnectivity of graphs[J].
+\newblock Discrete Mathematics, 1996, 155(1-3): 49--57.
+
+\bibitem{Yang2010Extraconnectivity}
+Yang W and Meng J.
+\newblock Extraconnectivity of hypercubes (II)[J].
+\newblock Applied Mathematics Letters, 2010, 22(6): 887--891.
+
+\bibitem{Li2013Bounding}
+Li~H and Yang W.
+\newblock Bounding the size of the subgraph induced by $m$ vertices and extra
+  edge-connectivity of hypercubes[J].
+\newblock Discrete Applied Mathematics, 2013, 161(16-17): 2753--2757.
+
+\bibitem{Chang2013}
+Chang N$-$W and Hsieh S$-$Y.
+\newblock $\{2,3\}$-Extraconnectivities of hypercube-like networks[J].
+\newblock Computer and System Sciences, 2013, 79(5): 669--688.
+
+\bibitem{Yang2014Reliability}
+Yang W and Lin H.
+\newblock Reliability evaluation of BC networks in terms of the extra vertex-
+  and edge-connectivity[J].
+\newblock IEEE Transactions on Computers, 2014, 63(10): 2540--2548.
+
+\bibitem{Gu1999Unicast}
+Gu~Q P and Peng S.
+\newblock Unicast in hypercubes with large number of faulty nodes[J].
+\newblock IEEE Transactions on Parallel Distributed Systems, 1999, 10(10):
+  964--975.
+
+\bibitem{Li2008An}
+Li~Y, Peng S and Chu W.
+\newblock An ffficient algorithm for fault tolerant routing based on adaptive
+  binomial-tree technique in hypercubes[C].
+\newblock  Proceedings of Applications and Technologies International
+  Conference on Parallel and Distributed Computing, 2008: 196--201.
+
+\bibitem{Wu1997Reliable}
+Wu~J.
+\newblock Reliable unicasting in faulty hypercubes using safety levels[J].
+\newblock IEEE Transactions on Computers, 1997, 46(2): 241--247.
+
+\bibitem{Wu1998Adaptive}
+Wu~J.
+\newblock Adaptive fault-tolerant routing in cube-based multicomputers using
+  safety vectors[J].
+\newblock IEEE Transactions on Parallel Distributed Systems, 1998, 9(4):
+  321--334.
+
+\bibitem{Dong1998Generalized}
+童明生，刘长河，范天佑.
+\newblock 一般化超立方网络的容错寻径算法[J].
+\newblock 计算机学报, 1998, 21(12): 1074--1083.
+
+\bibitem{Liu2006Generalized}
+刘红美.
+\newblock 广义超立方体网络容错路由算法[J].
+\newblock 武汉理工大学学报(交通科学与工程版), 2006, 30(4): 682--685.
+
+\bibitem{Sun2004Geography}
+孙惠泉.
+\newblock 图论及其应用[M].
+\newblock 科学出版社, 2004.
+
+\bibitem{Hsu2008Graph}
+Hsu L$-$H and Lin C$-$K.
+\newblock Graph theory and interconnection networks[M].
+\newblock CRC Press, Inc., 2008.
+
+\end{thebibliography}

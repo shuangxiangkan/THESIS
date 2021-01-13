@@ -1,0 +1,55 @@
+
+\begin{englishabstract}
+With the development of computer science and information network technologies,
+high performance computers are playing an increasingly important role in all areas of society,
+and become one of the most important topics in computer science research.
+Performance of high performance computers depends largely on the connection mode of internal processors of the system (interconnection network).
+The research on the topology and the properties of interconnection network is one of the key researches in the field of parallel computing.
+An interconnection network can be represented by a simple graph $G=(V(G),E(G))$,
+where $V(G)$ is the vertex set, representing the processors in interconnection network,
+and $E(G)$ is the edge set, representing the links between the processors.
+
+With the continuous expansion of the scale of the interconnection network,
+the number of processors and links in the network is gradually increasing,
+and the probability of failure will also increase.
+Whether the properties of the network will maintain in case of failure?
+This is the fault tolerance of the network, which is a key indicator to measure the performance of the interconnection network.
+
+Hypercube network is a common interconnection network in multiprocessor systems.
+It has many excellent properties, for example, small diameter, symmetrical structure, recursive construction, strong scalability, etc..
+Based on hypercubes,
+some hypercube variant networks with superior properties were also presented, such as crossed cube, twisted cube, M\"{o}bius cube, etc..
+Therefore, the hypercube network model has become one of the most basic and most important in multiprocessor systems.
+
+In this paper, based on theoretical analysis,
+a new measurement method is proposed for the fault tolerance of hypercubes.
+Besides that, under the limitation of the method,
+we research on the conditional connectivity ,routing algorithm as well as the hamiltonian properties of hypercubes.
+The major contributions are listed as follows.
+
+1. This paper presents a new conditional connectivity associated with distance: $(g,d,k)$-conditional (edge) connectivity.
+Compared to other conditional connectivity, $(g,d,k)$-conditional (edge) connectivity is more realistic.
+And it allows more faulty nodes or edges.
+It provides a new measure to study the fault tolerance of hypercubes and other networks.
+
+2. This paper studies some $(g,d,k)$-conditional (edge) connectivity of hypercubes, including $\kappa^{1,1,k}(Q_{n})$, $\kappa^{1,d,2}(Q_{n})$, $\lambda^{1,1,1}(Q_{n})$ and $\lambda^{1,d,2}(Q_{n})$.
+These results provide a reference for the further research on other $(g,d,k)$-conditional (edge) connectivities of hypercubes,
+and also provide methodological guidance for the research on other networks.
+
+3. In the case of $(1,1,1)$-conditional connection, we  presents a fault tolerant unicast routing algorithm based on local information.
+This algorithm chooses the routing dimension through the spanning path of length not more than 3.
+We analysis the time complexity of the algorithm, and also compare with several existing unicast routing algorithms in terms of success rate, running time and path length.
+
+4. Based on the concept of $(g,d,k)$-conditional edge connectivity, a new fault tolerant Hamiltonian property is proposed, which is $f$-$(g,d,k)$ conditional edge fault tolerant hamiltonian.
+This paper studies that, when $n\geq 4$, the $n$-dimensional hypercube is $(4n-13)$-$(3,0,0)$ conditional edge fault tolerant hamiltonian.
+
+Finally, the work of this paper is summarized, and the future research work is prospected.
+
+\englishkeywords{High performance, Interconnection network, Conditional connectivity, fault tolerant unicast routing algorithm, Fault tolerant hamiltonian Property}
+
+\end{englishabstract}
+
+\ensoochowauthor{Liang Ma\quad }
+
+\ensoochowtutor{Jianxi Fan and Cheng-Kuan Lin\quad}
+

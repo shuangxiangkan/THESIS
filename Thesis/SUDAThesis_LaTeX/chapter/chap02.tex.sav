@@ -1,0 +1,644 @@
+\chapter{相关知识}
+\label{chap:chap02}
+
+本章首先介绍本文需要用到的图论中的一些基本概念和符号表示，然后介绍广义超立方体的概念及其主要性质。
+
+\section{基本概念和符号表示}
+
+因为互连网络的拓扑结构可以抽象成图来表示：图中的顶点表示互连网络中的处理器，图中的边表示处理器之间的链路。
+所以，研究互连网络拓扑结构的性质问题可以归结为研究图结构的性质问题。
+因为图结构可以看作是互连网络结构的数学模型，所以对应的图结构及其性质可以用来衡量互连网络的性能。
+因此，图论成为研究网络拓扑结构最常用的数学工具。
+
+在不同的文献中，对图论中的一些概念的描述和符号的表示存在差异。
+因此为了不产生混淆，本文中我们主要参考孙惠泉所著的“图论及其应用”\upcite{Sun2004Geography}，
+以及Hsu等人所著的“Graph Theory and Interconnection Networks”\upcite{Hsu2008Graph}
+给出本文用到的图论中的一些基本概念和符号表示。
+
+%Given a simple graph $G$, we use $V(G)$ and $E(G)$ to
+%denote the $vertex$ $set$ and the $edge$ $set$, respectively.
+%%By $d(u)$ we denote the degree of vertex $u$ in $G$.
+%The number of vertices in $G$ is called $the$ $order$ $of$
+%$G$. An edge with end vertices $u$ and $v$ is denoted by $(u, v)$.
+%For each vertex $v \in V (G)$, if $(u, v) \in E(G)$,
+%we say that $u$ is a $neighbor$ of $v$ or $u$ is $adjacent$ to $v$.
+%An $(u_1,u_{n})-path$ in a graph is a sequence of vertices,
+%$P = ( u_1, u_2, \ldots, u_{n} )$,
+%in which no vertex is repeated and $u_j, u_{j+1}$ are adjacent for any integer $1 \leq j < n$.
+%We also write the path $( u_1, u_2, \ldots, u_n )$ as
+%$(u_1,Q, u_i, \ldots, u_n )$, where $Q$ is the path
+%$(u_2, u_3, \ldots , u_{i-1})$.
+%The reverse of $P$ is $( u_n, u_{n-1}, \ldots, u_2, u_1)$, denoted by  $P^{-1}$.
+%And we use $Path(P,u_{1},u_{i})$
+%to denote the path $(u_1,u_2,\ldots,u_i)$.
+%If $P_{1}$ is a path between $u$ and $x$, and $P_{2}$ is a path between $x$ and $v$ in $G$,
+%then let $(P_{1},P_{2})$ be a path between $u$ and $v$ in $G$.
+
+图（Graph）$G$定义为一个有序的二元组$G(V(G),E(G))$，可以简写为$G(V,E)$。
+其中，$V(G)$是$G$的非空顶点集合（Vertex Set），$E(G)$是$G$的边集合（Edge Set）。
+$V(G)$中的元素称为$G$的顶点（Vertex），$E(G)$中的元素称为$G$的边（Edge），
+并且$E(G)\subseteq V(G) \times V(G)$。
+如果$V(G) \times V(G)$是无序顶点对集合，那么称$G$为无向图。
+本文所考虑的图都是无向图。
+如果$G$中任意两个顶点之间存在至多一条边且每个顶点都没有到它自身的边，那么称$G$为简单图。
+本文中的图都是简单图。
+如果图$G$中仅有一个顶点，那么称$G$为平凡图（Trivial Graph）。
+
+在图$G$中，两个顶点$u$和$v$称为边$(u, v)$的两个端点（End Vertices）。
+如果两个顶点$u$和$v$之间有边相连，那么我们称这两个顶点是相邻的，
+并称$u$是$v$的一个邻接点或邻居。
+%如果两条边有一个共同的端点，那么我们称这两条边是相邻的。
+在图$G$中，顶点$u$的所有邻居集合用$N_{G}(u)$来表示。
+集合$N_{G}(u)$的大小为顶点$u$的度（Degree），用$deg_{G}(u)$表示。
+$G$中所有顶点的度的最大值和最小值分别记为$\Delta(G)$和$\delta(G)$。
+如果$G$中每个顶点的度都为$d$，那么称$G$为$d$-正则图。
+
+对于图$G$，令$F$为图$G$的一个故障顶点集合，
+即$F\subset V(G)$。
+如果，顶点$u$满足$u \in F$，则称$u$是故障顶点；
+否则，称$u$是图$G-F$的一个无故障顶点。
+同时，如果$x \in N_{G}(u)$且$x \notin F$,
+那么$x$则是$u$的一个无故障邻居。
+
+如果$V'$是图$G$中顶点集合$V(G)$的一个一个非空子集，
+即$V'\subset V(G)$，
+那集合$V'$的邻居集合为$N_{G}(V')$，
+其中$N_{G}(V') = (\bigcup\nolimits_{x \in V'} N_{G}(x)) \setminus V' $。
+
+
+%If $V'\subseteq V(G)$, we use $G[V']$ to denote the subgraph of $G$
+%induced by the vertex subset $V'$ in $G$. Furthermore, we use $G-V'$ to denote $G[V (G) \setminus V']$.
+%The set of all the neighborhoods of $v$ is called the $neighbor$ $set$ of $v$ in $G$, denoted by $N_{G}(v)$.
+%Furthermore, for a set of vertices $V' \subseteq V (G)$,
+%we define $the$ $neighbor$ $set$ of $V'$ as
+%$N_{G}(V') = (\bigcup\nolimits_{x \in V'} N_{G}(x)) \setminus V' $.
+
+对于两个图$G_{1}=(V(G_{1}),E(G_{1}))$和$G_{2}=(V(G_{2}),E(G_{2}))$，若$V(G_{1})$
+$ \subseteq V(G_{2})$且$E(G_{1}) \subseteq E(G_{2})$，则称$G_{1}$ 是$G_{2}$的子图。
+设$V^{'}$是图$G$的顶点集合$V$的一个非空子集。
+以$V^{'}$为顶点集合，以图$G$中两端点都在$V^{'}$中的所有边作为边集合的子图，
+称为$G$中由非空顶点子集$V^{'}$导出的子图，记为$G[V^{'}]$。
+%对于两个图$G_{1}=(V(G_{1}),E(G_{1}))$和$G_{2}=(V(G_{2}),$
+%$E(G_{2}))$，如果$E(G_{1}) \subseteq E(G_{2})$且$V(G_{1}) = V(G_{2})$，那么称$G_{1}$是$G_{2}$的生成子图。
+
+
+
+
+
+
+
+
+%%\begin{figure}[H]
+%%\centering
+%%\includegraphics[width=\imgsize\textwidth]{ghc}
+%%\caption{The structure of $G(4,3,2)$.}
+%%\label{figSmallDCell}
+%%\end{figure}
+
+%\begin{theorem}
+%  \label{ConnectivityDefinition}
+%\emph{\cite{Duh1996combinatorial}}. The connectivity of $G(m_{r},m_{r-1},\ldots,m_{1})$ is
+%$\sum_{i=1}^{r}(m_{i}-1)$.
+%\end{theorem}
+
+
+
+
+%%无向图（Undigraph）：如果$V(G) \times V(G)$是无序顶点对集合，则称图$G$为无向图。
+%%本文所考虑的图都是无向图。
+
+%简单图（Simple Graph）：如果图$G$中任意两个顶点之间至多存在一条边且每个顶点都没有到它自身的边，则称图$G$为简单图。本文中的图都是简单图。
+
+%平凡图（Trivial Graph）：仅有一个顶点的图称为平凡图。
+
+%%完全图（Complete Graph）：若一个简单图$G$的任意两个不同顶点都相邻，则称$G$为完全图。
+%%我们把$n$个顶点的完全图记为$K_{n}$。
+
+%%独立集（Independent Graph）：对于$V' \subseteq V(G)$，如果$V'$ 中任两个顶点都互不相邻，我们称$V'$是图$G$中的独立集。
+
+%%二部图（Bipartite Graph）：如果图$G$中存在$V(G)$的一个2-划分（$X$,$Y$）（Bipartition，满足条件$V(G)=X\cup Y$，$X \neq \emptyset$，$Y \neq \emptyset$，
+%%且$X \cap Y=\emptyset$），使$X$与$Y$都是独立集，那么我们称图$G$ 是二部图或偶图，称$X$和$Y$为二部图$G$的两个部，$G$可表示为$(X\cup Y, E)$。
+
+
+
+%顶点度（Vertex Degree）：图中与顶点$u$相关联的边的数目称为$u$的顶点度，简称为度（Degree），用$deg_{G}(u)$表示。
+
+%新增加的
+%图的最大顶点度：图中顶点的顶点度的最大值，记为$\Delta(G)$。
+
+%图的连通度（Connectivity）：给定图$G$的连通度，记为$\kappa(G)$，是指使得$G$变成不连通或者平凡图所需去掉的最少顶点数。
+
+
+%%$d$-正则图（$d$-Regular Graph）：如果图$G$中每个顶点的度都为$d$，那么称图$G$为$d$-正则图。
+
+%图$G$中两个顶点$x_{0}$与$x_{n}$之间的一条途径 $W= \langle x_{0}, e_{1}, x_{1}, e_{2},...,x_{n-1}, e_{n},$
+%$ x_{n} \rangle$
+%是一个顶点和边的非空有限交替序列，其中$x_{0}$和$x_{n}$分别称为该途径的起点和终点，
+%且每条边$e_{j} = (x_{j-1}, x_{j})$，$1\leq j \leq n$，$W$中的顶点和边可重复出现。
+%途径所经过的边的数目称为$W$的长度。
+%我们用$V(W)$表示$W$经过的所有顶点的集合，$E(W)$表示$W$经过的所有边的集合。
+%$W$也可简写为$\langle x_{0}, x_{1},..., x_{n} \rangle$。
+%如果途径$W=\langle x_{0}, x_{1},..., x_{n} \rangle$的顶点各不相同，那么称该途径为路或路径，
+%其中$x_{0}$和$x_{n}$分别称为该路的起点和终点。
+%起点为$x_{0}$且终点为$x_{n}$的路可以表示为$(x_{0},x_{n})$-路或$P(x_{0},x_{n})$。
+%路中的所有顶点集合可表示为$V(P)$，路中的所有边集合可表示为$E(P)$。
+%路的长度，记为$len(P)$，是指路中边的个数。
+%如果顶点$u$在路径$P$中，那么称顶点$u$被路径$P$覆盖。
+%起点和终点相同的路称为圈（Cycle）。
+%长度为奇数的圈称为奇圈，否则称为偶圈。
+令$W = ( u_1, u_2, \ldots, u_{n} )$为图$G$中
+从$u_1$到$u_{n}$的一条途径（Walk）。
+$W$是一个顶点和边的非空有限交替序列，
+其中$u_1$和$u_{n}$分别为该途径的源点和目的点，并且
+对于任意一个$1 \leq j < n$，
+都有$u_j \in V(G)$且$u_j$和$u_{j+1}$ 是相邻的。
+$W$中的顶点和边可以重复出现。途径中所经过的边的数目称为$W$的长度。
+如果$W$中不存在重复的顶点， 那么就称该途径$W$为从$u_1$到$u_{n}$之间的一条路或路径，
+常用$P = ( u_1, u_2, \ldots, u_{n} )$表示一条路径。
+%其中$u_1$和$u_{n}$分别为该途径的起点和终点。
+同时，也可以令$(u_1,Q, u_i, \ldots, u_n)$表示路径$( u_1, u_2, \ldots, u_n)$，
+其中$Q$表示路径$(u_2, u_3, \ldots, u_{i-1})$。
+令$P^{-1}$表示路径$(u_n, u_{n-1}, \ldots, u_2, u_1)$，
+即路径$P$中顶点的逆序排列。
+同时，我们使用$Path(P,u_{1},u_{i})$
+来表示路径$(u_1,u_2,\ldots,u_i)$。
+%如果路径$P_{1}$表示图$G$中从$u$到$x$之间的一条路径，
+%$P_{2}$表示$G$中从$x$到$v$的一条路径。
+%那么我们令$(P_{1},P_{2})$表示$G$中从$u$到$v$的一条途径。
+如果路径$P$中不包含故障顶点，
+那么我们称该路径为无故障路径。
+%假设$u$和$v$是图$G$中的两个不同顶点。
+%设$P$和$Q$是$u$与$v$之间的两条路径，
+%如果$V(P) \cap V(Q)= \{u, v\}$，
+%那么称$P$和$Q$是顶点不相交（Vertex-Disjoint）路径，简称不相交路径或不交路。
+
+
+在给定图$G$中，任意两个顶点$u$和$v$之间最短路的长度称为它们之间的距离（Distance），
+记作$dist(G,u,v)$，简写为$dist(u,v)$。
+我们将$G$的直径（Diameter）定义为$D(G)=max\{dist(G, u, v) | u,v \in V(G)$ 且 $u \neq v$$\}$。
+可以看出，直径是图中任何两个顶点之间的距离的最大值，因此图的直径是网络通信性能最坏情形的度量。
+
+
+如果$G$中任意两个顶点之间都存在一条无故障路径，那么称$G$是连通的（Connected）。
+反之，称$G$是不连通的。
+$G$的顶点连通度（Vertex Connectivity）就是使$G$变成不连通的或平凡图，所需去掉的最少的顶点数，用$\kappa(G)$表示。
+顶点连通度简称为连通度。
+%相似地，$G$的边连通度（Edge Connectivity）就是使$G$变成不连通的或平凡图，所需去掉的最少的边数，记为$\lambda(G)$。
+图$G$的$g$-限制连通度是使$G$不连通，且使$G-F$中的每个点都至少有$g$个无故障邻居，
+所需要除去的最少顶点的数目，用$\kappa^{g}(G)$表示。
+另外，图$G$的$g$-外连通度是使$G$不连通，且使$G-F$的剩余每个分支中至少有$g+1$个无故障顶点，
+所需要除去的最少顶点的数目，用$\kappa_{g}(G)$表示。
+
+简单地，对于一个整数$r$， 令$\langle r \rangle = {0, 1, 2, ..., r}$。
+
+%两个简单图$G_{1}$和$G_{2}$ 为同构的（Isomorphism），记为$G_{1} \cong G_{2}$，当且仅当存在
+%一个双射$\Psi: V(G_{1}) \rightarrow V(G_{2})$，
+%使得$(x,y) \in E(G_{1})$ 当且仅当 $(\Psi(x), \Psi(y)) \in E(G_{2})$。
+
+%假设$u$和$v$是图$G$中的两个不同顶点。
+%如果$(u,v)$-路覆盖了$G$中的所有顶点，那么称其为$G$的一条$(u,v)$- 哈密顿路（Hamiltonian Path），
+%可表示为$HP(u, v, G)$。
+%相似地，覆盖$G$中的所有顶点的圈称为$G$的哈密顿圈（Hamiltonian Cycle）。
+%含有哈密顿圈的图称为哈密顿图（Hamiltonian Graph）。
+%如果$G$ 中任意两个不同顶点间都存在一条哈密顿路，
+%那么称$G$是哈密顿连通的（Hamiltonian Connected）或$G$是哈密顿连通图。
+
+
+
+%边不交（Edge-Disjoint）路：设$P$和$Q$是顶点$x$ 与顶点$y$之间的两条不同的路，如果$E(P) \bigcap E(Q)= \emptyset$，则称$P$和$Q$是边不交（Edge-Disjoint）路。
+
+
+
+%对于$G$中$k$个起点$s_1, s_2,..., s_k$和$k$个终点$t_1, t_2,..., t_k$，如果$k$条$s_{i}$到$t_{\phi(i)}$的路径两两互不相交，那么称这$k$条路为多对多$k$-不相交路径（Many-to-Many $k$-Disjoint Paths）。
+%这里的$\phi$是$k$元集$\{1,2,\ldots,k\}$到自身的一个双射。
+%如果$\phi$是恒等映射，那么称$k$条路径是配对的（Paired），否则称$k$条路径是非配对的（Unpaired）。
+%如果这$k$条路径能够覆盖$G$中所有顶点，那么对应的称其为配对的多对多$k$-不相交路径覆盖（Paired Many-to-Many $k$-Disjoint Paths Cover）或
+%非配对的多对多$k$-不相交路径覆盖（Unpaired Paired Many-to-Many $k$-Disjoint Paths Cover）。
+%%多对多$k$-不交路覆盖（Many-to-Many $k$-Disjoint Paths Cover）：
+%%给定图$G$中$k$个起点$s_1, s_2, \ldots, s_k$和$k$个终点$t_1, t_2, \ldots, t_k$，图$G$的一个配对的（非配对的）多对多$k$-不交路覆盖定义为
+%%$s_1, s_2, $$\ldots, s_k$到$t_1, t_2, \ldots, t_k$的配对的（非配对的）多对多$k$-不交路径的集合，且这$k$条路径能够覆盖$G$中所有顶点。
+
+
+%新添加
+%假设$u$和$v$是图$G$中的两个不同顶点。
+%$u$和$v$之间的$k$条不相交路径，被称为$u$和$v$的$k$-容器（$k$-Container $C(u,v)$）。
+%对于$u$和$v$之间的$k$条不相交路径，如果$G$中所有顶点都在$k$条不相交路径中，那么称这$k$条不相交路径是$u$和$v$的$k^{*}$-容器（$k^{*}$-Container $C(u,v)$）。
+%$u$和$v$的一个$k$-容器中路径长度的最大值称作$u$和$v$的$k$-容器的长度。
+%$u$和$v$的$k$-宽距离（$k$-Wide Distance），记为$d_{k}(u,v)$，是$u$和$v$的所有$k$-容器的长度中的最小值。
+%$G$的$k$-直径（$k$-Diameter），记为$D_{k}(G)$，是$G$中任意两个不同顶点$u$和$v$的$k$-宽距离的最大值。
+%$G$的宽直径（Wide Diameter），记为$D_{\kappa(G)}(G)$，是$G$中任意两个不同顶点$u$和$v$的$\kappa(G)$-宽距离的最大值。
+%如果$G$中任意两个顶点之间都存在$k^{*}$-容器，那么称$G$是$k^{*}$- 连通的（$k^{*}$-Connected）。
+%$G$的生成连通度（Spanning Connectivity），记为$\kappa^*(G)$，是满足$1 \leq k \leq \kappa^*(G)$，且$G$是$k^{*}$-连通的最大值。
+
+%在给定二部图$G$中，任意两个属于不同部的顶点$u$和$v$的$k^{*}$-交织距离（$k^{*}$-Lacable Distance），记为$d^{s_{L}}_{k}(u,v)$，是$u$和$v$的所有$k^{*}$-容器的长度最小值。
+%$G$的$k^{*L}$-直径（$k^{*L}$-Diameter），记为$D^{s_{L}}_{k}(G)$，是$G$中任意两个属于不同部的顶点$u$和$v$的$k^{*}$-交织距离的最大值。
+%$G$的宽生成直径（Wide Spanning Diameter），记为$D^{s_{L}}_{\kappa(G)}(G)$，是$G$中任意两个属于不同部的顶点$u$和$v$的$\kappa(G)^{*}$-交织距离的最大值。
+%如果$G$中任意两个属于不同部的顶点之间都存在$k^{*}$-容器，那么图$G$是$k^{*}$-交织的（$k^{*}$-Laceable）。
+%$G$的生成交织度（Spanning Laceability），记为$\kappa^{*_L}(G)$，是满足$1 \leq k \leq \kappa^{*_L}(G)$，且$G$是$k^{*}$-交织的最大值。
+
+
+
+%%$G$的连通度（Connectivity），记为$\kappa(G)$，是指使得$G$变成不连通或者平凡图所需去掉的最少顶点数。
+%%割集（Cut Set）：设$S$是图$G$的顶点集$V(G)$的一个子集。如果$G-S$是不连通的，则称$S$为图$G$的割集。
+%%
+%%连通分支（Connected Component）：图$G$的每个极大连通子图称为$G$ 的连通分支。
+%%如果$G$只有一个连通分支，则$G$是连通的。
+%%称图$G$的顶点个数最少的连通分支为$G$的最小连通分支。
+%%
+
+
+%%条件连通度（Conditional Connectivity）：给定一个条件$\rho$，图$G$的条件连通度就是使图$G$变得不连通所需去掉的最少的顶点数，并且剩余的连通分支仍然满足条件$\rho$。
+
+%%限制（边）连通度（Restricted (Edge) Connectivity）：图$G$的限制（边）连通度就是使图$G$ 变得不连通所需去掉的最少的顶点数（边数），并且去掉的顶点（边）集合不能包含图$G$中任一顶点的所有邻居（关联边）。
+%%换言之，去掉图$G$的顶点（边）集合后，所得图中任一顶点至少存在一个无故障的邻居。
+
+%%$g$-限制（边）连通度（$R_{g}$-Restricted （Edge） Connectivity）：又可以表示为$R_{g}$- （边）连通度，该条件连通度是在限制（边）连通度的基础上定义的，
+%%它要求去掉图$G$的顶点（边）集合后，所得图中任一顶点至少存在$g$ 个无故障邻居，用$\kappa^{g}(G)$ （$\lambda^{g}(G)$）表示。
+
+%%外（边）连通度（Extra (Edge) Connectivity）：图$G$的外（边）连通度就是使图$G$变得不连通所需去掉的最少的顶点数（边数），并且剩余的连通分支都至少包含2 个顶点。
+
+%%$g$-外（边）连通度（$g$-Extra (Edge) Connectivity）：该条件连通度是在外（边）连通度的基础上定义的，它要求去掉图$G$的顶点（边）集合后，所得图中剩余的每个连通分支至少包含$g+1$个顶点，用$\kappa_{g}(G)$ （$\lambda_{g}(G)$）表示。
+
+
+
+%%$f$-边容错哈密顿的（$f$-Edge Fault-Tolerant Hamiltonian）：如果删除$G$的任意至多$f$条边，所得到的图仍是一个哈密顿图，则称$G$是$f$-边容错哈密顿的。
+
+%%$f$-边容错哈密顿连通的（$f$-Edge Fault-Tolerant Hamiltonian Connected）：若删除$G$的任意至多$f$条边，所得到的图仍是哈密顿连通的，
+%%则称$G$是$f$-边容错哈密顿连通的。
+
+%%$f$-条件边容错哈密顿的（$f$-Conditional Edge Fault-Tolerant Hamiltonian）：假设图$G$中任一顶点至少与两条无故障的边相关联，若删除任意至多$f$ 条边，所得到的图仍是一个哈密顿图，则称$G$ 是$f$- 条件边容错哈密顿的。
+
+
+%$f$-条件边容错哈密顿连通的（$f$-Conditional Edge Fault-Tolerant Hamiltonian Connected）：假设图$G$中任一顶点至少与两条无故障的边相关联，如果删除$G$的%任意至多$f$条边，所得到的图仍是哈密顿连通的，则称$G$是$f$-条件边容错哈密顿连通的。
+
+%泛圈的（Pancyclic）：如果图$G$中存在从$3$到$|V(G)|$之间每个长度的圈，那么称图$G$为泛圈的。
+
+%$k$-泛圈的（k-Pancyclic）：如果图$G$中存在从$k$ 到$|V(G)|$之间每个长度的圈，那么称图$G$ 为$k$-泛圈的。
+
+%$k$-点（边）泛圈（k-Node(Edge)-Pancyclic）：如果图$G$中的每个顶点（每条边）包含在从$k$到$|V(G)|$ 之间每个长度的圈中，则称$G$为$k$-点（边）泛圈的。
+%一个图是$k$-边泛圈的必然是$k$-点泛圈的。
+
+%$f$-容错泛圈（f-Fault-Tolerant Pancyclic）：如果删除$G$的任意至多$f$个顶点或边，所得到的图仍存在从$3$到$|V(G)|$之间每个长度的圈，那么称图$G$为$f$-容错泛圈的。
+
+%%笛卡尔乘积图（Cartesian Product Graph）：设$G_{1}$和$G_{2}$为两个无向图，$G_{1}$和$G_{2}$的笛卡尔乘积记为$G_{1} \times G_{2}$ 也是无向图，
+%%其中$V(G_{1}\times G_{2})=V (G_{1}) \times V (G_{2})$，
+%%不同的顶点$x_{1}x_{2}$和$y_{1}y_{2}$（其中，$x_{1}y_{1}\in V(G_{1})$，$x_{2}y_{2}\in V(G_{2})$）相邻
+%%当且仅当$x_{1}=y_{1}$且$(x_{2},y_{2}) \in E(G_{2})$或者$x_{2}=y_{2}$且$(x_{1},y_{1}) \in E(G_{1})$。
+
+
+\section{广义超立方体及其性质}
+近三十年来，互连网络拓扑结构一直是并行计算领域的一个研究重点。
+到目前为止，学者们提出了各种各样的互连网络结构，其中较为著名的有：
+超立方体、广义超立方体、交叉立方体、莫比乌斯立方体、环绕、星图
+扭立方体（Twisted Cube）\upcite{Abraham1991The}、
+$k$元$n$立方体（$k$-ary $n$-cube）\upcite{Dally1990Performance}和
+网格\upcite{ShaoMesh2002}等。
+%Circuit-switched broadcasting in torus networks
+%The star graph: an attractive alternative to the n-cube
+%Performance Analysis of k-ary n-cube Interconnection Networks
+
+其中，广义超立方体网络是目前最为重要的和最有吸引力的网络模型之一。
+具有良好的正则性、低直径、对称性、可嵌入性、良好的沟通性能和可扩展性等优点。
+因此，它不仅是许多大型多处理器并行计算机系统所采用的拓扑结构，
+同时广泛应用在数据中心网络中，如BCube、 FBFLY和HyperX，
+而且还被应用在光纤通讯网络中。
+一直以来都受到学者们的广泛关注和研究。
+%在众多的网格网络模型中，较为有用并且最为流行的是二维网格网络，被国内外许多多处理机系统的拓扑结构所采用。
+%如 Intel Paragon、 Standford DASH、Touchstone DELTA、Symult 2010 和国内的曙光系列\upcite{wanggaocaimesh2003}。
+
+%2014年，Wu等人将超立方体的特性引入人类联系网络，提出了一种多路径社会特征提取的路由算法\cite{wu2014HCN}。
+%另一方面，学者们提出了许多超立方体的扩展和变型网络，例如广义超立方体（Generalized Hypercube）\cite{ghc1986}、交叉立方体\cite{crossedcube1992}、扭立方体\cite{twistedcube1991}、莫比乌斯立方体\cite{mobiuscube1990}等等。%参考文献
+%Generalized Hypercube and Hyperbus Structures for a Computer Network
+%The Crossed Cube Architecture for Parallel Computation
+%The twisted cube topology for multiprocessors: A study in network asymmetry
+%The "Mobius Cube" : an interconnection network for parallel computation
+%这些网络结构也以其许多优越的性质得到研究者的青睐。
+%例如广义超立方体，Guo在文献\cite{bcube2009}%BCube: a high performance, server-centric network architecture for modular data centers
+%中基于该网络提出了一种新的数据中心网络模型BCube，该结构具有许多优越的性质，例如递归可构造性以及低成本等等。
+%因此，以超立方体为基础的网络结构在互连网络结构中占有重要的地位。
+
+\subsection{广义超立方体的定义}
+
+$r$-维广义超立方体
+可以用如下方式来定义\upcite{laxmi1984generalized}：
+%The generalized hypercube is the generalized graph of hypercube
+%which is proposed for building massively parallel
+%computer systems. The definition of a $r$-dimensional generalized hypercube is given as
+%follows \cite{laxmi1984generalized}.
+\begin{defn}
+\label{GeneralizedHypercube}
+$r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$中，
+共有$\prod^{r}_{i=1}m_{i}$个顶点，
+其中对于所有的$1 \leq i \leq r$，有$r \geq 1$且$m_{i} \geq 2 $。
+$G(m_{r},m_{r-1},\ldots,m_{1})$中的
+每一个顶点可以用长度为$r$的字符串$u_{r}u_{r-1}\dots u_{1}$来表示，
+其中对于所有的$1 \leq i\leq r$，有$u_{i} \in \{0, 1,\ldots,m_{i }-1\}$。
+图中的两个顶点相邻当且仅当它们有一位不同。
+\end{defn}
+
+图~\ref{figSmallDCell2}是$1$为的广义超立方体$G(2)$和$2$-维的广义超立方体$G(3,2)$。
+然后，图~\ref{figSmallDCell}是一个3-维广义超立方体$G(4,3,2)$，共有$4\times3\times2 = 24$个顶点。
+根据广义超立方体的定义，我们可以任意调整$m_{r},m_{r-1},\ldots,m_{1}$的次序，
+都不会影响广义超立方体的结构。例如$G(4,3,2)$同构于$G(3,4,2)$和$G(4,2,3)$。
+接下来，我们给出广义超立方体相关的概念和符号表示。
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=7cm]{ghc2.eps}
+\smallcaption{广义超立方体$G(2)$和$G(3,2)$.}
+\label{figSmallDCell2}
+\vspace*{8pt}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=7cm]{ghc.eps}
+\smallcaption{广义超立方体$G(4,3,2)$.}
+\label{figSmallDCell}
+\vspace*{8pt}
+\end{figure}
+
+令$u=u_{r}u_{r-1}\dots u_{1}$，$v=v_{r}v_{r-1}\dots v_{1}$
+且$(u,v)\in E(G)$。
+若$u_{j}\neq v_{j}$，且对于任意一个$i \in \langle r \rangle \setminus \{j,0\}$都有$u_{i}=v_{i}$。
+我们则称边$(u, v)$为第$j$维的边。
+
+%Given a positive integer $m$, we use $\langle m\rangle$ to denote
+%the set $\{0,1,\ldots,m\}$.
+%In this paper, when the context is clear, $G(m_{r},m_{r-1},\ldots,m_{1})$ is
+%simply written as $G$.
+%For a $G(m_{r},m_{r-1},\ldots,m_{1})$,
+%let $G^{r}[j]$ for $j \in \langle m_{r}-1\rangle$
+%be the subgraph of $G$
+%induced by the vertex set $V(G^{r}[j])=\{ju_{r-1}\dots u_{1}|
+%u_{i} \in \langle m_{i}-1\rangle$ for $i \in \langle r-1 \rangle \setminus \{0\}\}$.
+
+对于图$G(m_{r},m_{r-1},\ldots,m_{1})$，
+对于任意的一个$j \in \langle m_{i}-1\rangle$，
+我们用$G^{i}[j]$表示由顶点集合
+$\{u_{r}\dots u_{i+1}ju_{i-1}\dots u_{2}u_{1}|u_{i} \in \langle m_{i}-1\rangle\}$导出的子图，
+其中$i \in \langle r \rangle \setminus \{0\}\}$。
+子图$G^{r}[j]$中有$\frac{\prod^{r}_{i=1}m_{i}}{m_j}$个顶点，
+且$\kappa(G^{i}[j])=\kappa(G) - m_{i}+1$。
+并且子图$G^{r}[j]$中有
+$\prod ^{r-1}_{i=1}m_{i}$个顶点，
+我们令子图$G^{i}[{J}]=\bigcup_{j \in {J}} G^{r}[j]$，
+其中$J \subseteq \langle m_{r}-1 \rangle$.
+
+对于任意一个顶点集合$F\subset V(G)$,
+我们令$F_j = F \cap V(G^{i}[j])$，
+其中$j \in \langle m_i-1 \rangle$。
+我们令$F_J = \bigcup_{j \in J}F_j$
+其中$J \subseteq \langle m_{i}-1 \rangle$。
+
+%角落顶点（Corner Vertex）：在$M_{m,n}$中顶点度数是2的$(0,0)$，$(0,n-1)$，$(m-1,0)$和$(m-1,n-1)$四个顶点称作角落顶点。
+%
+%$A_{m,n}$：表示横坐标和纵坐标之和是偶数的顶点集合，即$A_{m,n} =\{(i,j)|(i,j) \in V(M_{m,n})$, $(i+j)$ $mod$ $2 = 0$ $\}$。
+%
+%$|A_{m,n}|$：表示横坐标和纵坐标之和是偶数的顶点个数。
+%
+%$B_{m,n}$：表示横坐标和纵坐标之和是奇数的顶点集合，即$B_{m,n} =\{(i,j)|(i,j) \in V(M_{m,n})$, $(i+j)$ $mod$ $2 = 1$ $\}$。
+%
+%$|B_{m,n}|$：表示横坐标和纵坐标之和是奇数的顶点个数。
+%
+%$Mesh(i_{1}:i_{2},j_{1}:j_{2})$: 表示在二维网格网络$M_{m,n}$中，由顶点集合$\{(k,l)| i_{1} \leq k \leq i_{2}, j_{1}\leq l \leq j_{2}\}$导出的子图。
+%
+%$R(x:y,z)$：若$x < y$，则$R(x:y,z)$为一条从$(x,z)$到$(y,z)$的路径$\langle (x,z), (x+1,z), \ldots, (y,z) \rangle$；若$x > y$，则$R(x:y,z)$一条从$(x,z)$到$(y,z)$ 的路径$\langle (x,z), (x-1,z), \ldots, (y,z) \rangle$。
+%
+%$R(a,b:c)$：若$b < c$，则$R(a,b:c)$为一条从$(a,b)$到$(a,c)$的路径$\langle (a,b), (a,b+1), \ldots, (a,c) \rangle$；若$b > c$，则$R(a,b:c)$为一条从$(a,b)$ 到$(a,c)$的路径$\langle (a,b), (a,b-1), \ldots, (a,c+1), (a,c) \rangle$。
+%
+%$Q(a:a+1,c:d)$：若$c < d$，则$Q(a:a+1,c:d)$为一条从$(a,c)$到$(a,d)$的路径$\langle (a,c), (a+1,c), (a+1,c+1), (a,c+1), \ldots, (a,d-1), (a+1,d-1), (a+1,d), (a,d) \rangle$。
+%
+%$Q(a:b,c:c+1)$：若$a < b$，则$Q(a:b,c:c+1)$为一条从$(a,c)$到$(b,c)$的路径$\langle (a,c), (a,c+1), (a+1,c+1), (a+1,c), \ldots, (b-1,c), (b-1,c+1), (b,c+1), (b,c) \rangle$。
+%
+%$Q(a:b,c:c-1)$：若$a < b$，则$Q(a:b,c:c-1)$为一条从$(a,c)$到$(b,c)$的路径$\langle (a,c), (a,c-1), (a+1,c-1), (a+1,c), \ldots, (b-1,c), (b-1,c-1), (b,c-1), (b,c) \rangle$。
+
+
+
+
+%$N_{Q_{n}}(S)$：表示$Q_{n}$中顶点集合$S$中所有顶点的所有邻居的集合，$N_{Q_{n}}(S)=\{v  |  (u,v)\in E(Q_{n}), u\in S, v \notin S \}$。
+
+%$NE_{Q_{n}}(S)$：表示$Q_{n}$中顶点集合$S$中所有顶点的所有关联边的集合，$NE_{Q_{n}}(S)=\{uv  |  (u,v)\in E(Q_{n}), u\in S, v \notin S \}$。
+
+
+\subsection{广义超立方体的性质}
+
+$r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$中
+与本文相关的主要性质如下：
+
+（1）$G(m_{r},m_{r-1},\ldots,m_{1})$共有$\prod^{r}_{i=1} m_i$个顶点；
+
+（2）$G(m_{r},m_{r-1},\ldots,m_{1})$共有$\frac{\prod^{r}_{i=1} m_i \times \sum^{r}_{i=1}(m_i - 1)}{2}$条边；
+
+（3）$G(m_{r},m_{r-1},\ldots,m_{1})$的直径是$r$；
+
+（4）$G(m_{r},m_{r-1},\ldots,m_{1})$是$\sum^{r}_{i=1}(m_i - 1)-$正则的，图中的每个顶点都有$\sum^{r}_{i=1} (m_i - 1)$个邻居；
+
+（5）$G(m_{r},m_{r-1},\ldots,m_{1})$的顶点连通度是$\sum^{r}_{i=1}(m_i - 1)$。
+
+%$Q_{n}$的$g$-限制（边）连通度$\kappa^{g}(Q_{n})$（$\lambda^{g}(Q_{n})$）$=(n-g)2^{g}$，其中$1\leq g\leq n/2$ \upcite{latifi1994}；
+
+%（7）对于$n\geq 4$，$Q_{n}$的$g$-外连通度 \upcite{yang2009extra}：
+%\begin{align}
+% \kappa_{g}(Q_{n}) = \left\{ \begin{array}{l}
+%        (k+2)n-2(k+1)+\binom{k+1}{2}  \makebox{ \; ，其中 $k\leq n-5$,} \\
+%        n(n-1)/2  \makebox{ \; ，其中 $n-4\leq k \leq n-1$,}；
+%    \end{array}\right. \nonumber
+%    \label{eq:Cskip}
+%\end{align}
+%
+%（8）$Q_{n}$中的每个顶点都在长度从$4$到$2^{n}$的偶圈中，其中包括哈密顿圈，因此$Q_{n}$是哈密顿图；
+%
+%（9）$Q_{n}$中任意两个不同部的顶点之间存在哈密顿路；任意两个同部的顶点之间不存在哈密顿路，它们之间存在长度为$2^{n}-2$的路（长度比哈密顿路小1）；
+%
+%%Edge fault tolerance in graphs
+%（10）$Q_{n}$是($n-2$)-边容错哈密顿的；
+%
+%（11）$Q_{n}$是($2n-5$)-条件边容错哈密顿的\upcite{tsai2004}；
+%
+%（12）对于一个$Q_{n}$，如果$n> 2k\geq 4$，那么$Q_{n}$中存在配对的多对多$k$-不交路径覆盖\upcite{kdpc2008}。%$m$行$n$列的二维网格中与本文相关的主要性质如下：
+%%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}  %%原来是2em
+%（1）在$m \geq 3$，$n \geq 3$ 的$M_{m,n}$中共有$mn$个顶点和$m(n-1) + n(m-1)$条边；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（2）$M_{m,n}$是二部图；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（3）$M_{m,n}$的点连通度和边连通度都是$2$；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（4）旋转性：可以通过旋转$M_{s,t}$得到$M_{t,s}$，如图\ref{example_mesh_rotate}所示，我们给出了旋转$M_{3,4}$得到$M_{4,3}$的示例；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（5）在$m \geq 4$，$n \geq 4$ 的$M_{m,n}$中，如果$|A_{m,n}|=|B_{m,n}|$，那么对于任意的顶点$s$和顶点$t$，$s \in A_{m,n}$ 且$t \in B_{m,n}$，存在一条从顶点$s$ 到顶点$t$ 的哈密顿路\upcite{Itali1982}；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（6）在$m \geq 4$，$n \geq 4$ 的$M_{m,n}$中，如果$|A_{m,n}|=|B_{m,n}|+1$，那么对于任意的顶点$s \in A_{m,n}$和$t \in A_{m,n}$，总存在一条从顶点$s$到顶点$t$ 的哈密顿路\upcite{Itali1982}；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（7）在$M_{m,n}$中，如果$mn$是偶数，那么对于任意一个角落顶点$s$ 和任意一个与$s$不同部的顶点$t$，总存在一条从$s$到$t$的哈密顿路\upcite{Chen1980}；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（8）在$M_{m,n}$中，如果$mn$是奇数，那么对于任意一个角落顶点$s$ 和任意一个与$s$ 同部的顶点$t$，总存在一条从$s$到$t$的哈密顿路\upcite{Chen1980}；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（9）在$M_{m,n}$中，对于任意两个不同部的顶点$s$ 和顶点$t$，$s$和$t$之间最长路径的长度是$mn-2$，其中$m$和$n$均是奇数且$\min \{m, n\} \geq 3$\upcite{FKeshavarz-Kohjerdi2012longestpath}；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（10）在$M_{m,n}$中，对于任意两个同部的顶点$s$ 和顶点$t$，$s$和$t$之间最长路径的长度是$mn-2$，其中$mn$是偶数且$\min \{m, n\} \geq 3$\upcite{FKeshavarz-Kohjerdi2012longestpath}。
+%
+%\begin{figure}[!htbp]
+%\centering
+%\includegraphics[width=\imgsize\textwidth]{example_mesh_rotate.eps}
+%\smallcaption{旋转$M_{3,4}$得到$M_{4,3}$的示例}
+%\label{example_mesh_rotate}
+%\vspace{-10pt}
+%\end{figure}
+
+%\section{环绕网络及其性质}
+%环绕网络是一种完全对称直连网络拓扑形式，具有很多优秀的网络特性，如规则对称性，路径多样性以及良好的扩展性，因此广泛应用于许多商用系统中。
+%
+%\subsection{环绕网络的定义}
+%二维$m$行$n$列的环绕（记为$T_{m,n}$）可以用以下方式来定义：
+
+%\begin{defn}
+%二维环绕网络$T_{m,n}$由$m$行$n$列共$mn$个顶点组成，每个顶点用一个二维坐标$(i,j)$来表示，其中 $0 \leq i \leq m-1$, $0 \leq j \leq n-1$，$i$称作横坐标，$j$称作纵坐标。
+%$T_{m,n}$中的两个顶点$u=(u_{i}, u_{j})$和$v=(v_{i}, v_{j})$相邻当且仅当：
+%\begin{equation} %\begin{align}
+%\setlength{\abovedisplayskip}{3pt} %%% 3pt 个人觉得稍妥，可自行设置
+%\setlength{\belowdisplayskip}{3pt}
+%u_{i} = v_{i}
+%\ \textrm{且} \
+%u_{j} = (v_{j} \pm 1)\ mod \ n
+%\ \textrm{或} \
+%u_{j} = v_{j}
+%\ \textrm{且} \
+%u_{i} = (v_{i} \pm 1)\ mod \ m \textrm{。}
+%\end{equation} %\end{align}
+%\end{defn}
+
+
+%图\ref{example_torus}是一个二维环绕网络$T_{4,6}$，共有$4 \times 6$个顶点。
+%接下来，我们给出环绕网络的相关参数的定义或表示。
+%
+%\begin{figure}[!htbp]
+%\centering
+%\includegraphics[width=\imgsize\textwidth]{example_torus.eps}
+%\smallcaption{二维环绕网络$T_{4,6}$}
+%\label{example_torus}
+%\vspace{-10pt}
+%\end{figure}
+%
+%行跨边（Row-wraparound Edge）：在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$中，边$((i,0),$
+%$(i,n-1))$称作行跨边，其中$0 \leq i \leq m-1$。
+%
+%列跨边（Column-wraparound Edge）：在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$中，边$((0,j),(m-1,j))$称作行跨边，其中$0 \leq j \leq n-1$。
+%
+%跨边（Wraparound Edge）：在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$中，行跨边和列跨边统称为跨边。
+%
+%$Row$-$T_{m,n}$：表示在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$中，去掉所有的列跨边的子图。
+%
+%$Column$-$T_{m,n}$：表示在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$中，去掉所有的行跨边的子图。
+%
+%$Row(i: j)$: 表示在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$ 中，由顶点集合$\{(k,l)| i \leq k \leq j, 0\leq l \leq n-1\}$导出的子图。
+%
+%$Row(i)$: 表示在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$ 中，由顶点集合$\{(k,l)| k = i, 0\leq l \leq n-1\}$导出的子图。
+%
+%$Col(i: j)$: 表示在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$ 中，由顶点集合$\{(k,l)| 0 \leq k \leq m-1, i\leq l \leq j\}$导出的子图。
+%
+%$Col(i)$: 表示在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$ 中，由顶点集合$\{(k,l)| 0 \leq k \leq m-1, l = i\}$导出的子图。
+%
+%$Mesh(i_{1}:i_{2},j_{1}:j_{2})$: 表示在$m \geq 3$且$n \geq 3$的二维环绕网络$T_{m,n}$中，去掉所有的跨边，由顶点集合$\{(k,l)| i_{1} \leq k \leq i_{2}, j_{1}\leq l \leq j_{2}\}$导出的子图。
+%
+%类似地，我们可以和前文一样给出$A_{m,n}$，$|A_{m,n}|$，$B_{m,n}$，$|B_{m,n}|$，$R(x:y,z)$和$R(a,b:c)$的定义。
+
+
+
+%%$A_{m,n}$：表示横坐标和纵坐标之和是偶数的顶点集合，即$A_{m,n} =\{(i,j)|(i,j) \in V(T_{m,n})$, $(i+j)$ $mod$ $2 = 0$ $\}$。
+
+%%$|A_{m,n}|$：表示横坐标和纵坐标之和是偶数的顶点个数。
+
+%%$B_{m,n}$：表示横坐标和纵坐标之和是奇数的顶点集合，即$B_{m,n} =\{(i,j)|(i,j) \in V(T_{m,n})$, $(i+j)$ $mod$ $2 = 1$ $\}$。
+
+%%$|B_{m,n}|$：表示横坐标和纵坐标之和是奇数的顶点个数。
+
+%%$R(x:y,z)$：如果$x < y$，我们定义一条从$(x,z)$到$(y,z)$的路径为$\langle (x,z), (x+1,z), \ldots, (y,z) \rangle$；如果$x > y$，则路径为 $\langle (x,z), (x-1,z),$ $\ldots, (y,z) \rangle$。
+
+%%$R(a,b:c)$：如果$b < c$，我们定义一条从$(a,b)$到$(a,c)$的路径为$\langle (a,b), (a,b+1), \ldots, (a,c) \rangle$；如果$b > c$， 则路径为$\langle (a,b), (a,b-1), \ldots, (a,c) \rangle$。
+
+%$Q(a:a+1,c:d)$：如果$c < d$，我们定义一条从$(a,c)$到$(a,d)$的路径为$\langle (a,c), (a+1,c), (a+1,c+1), (a,c+1), \ldots, (a,d-1), (a+1,d-1), (a+1,d), (a,d) \rangle$。
+
+%$Q(a:b,c:c+1)$：如果$a < b$，我们定义一条从$(a,c)$到$(b,c)$的路径为$\langle (a,c), (a,c+1), (a+1,c+1), (a+1,c), \ldots, (b-1,c), (b-1,c+1), (b,c+1), (b,c) \rangle$。
+
+%$Q(a:b,c:c-1)$：如果$a < b$，我们定义一条从$(a,c)$到$(b,c)$的路径为$\langle (a,c), (a,c-1), (a+1,c-1), (a+1,c), \ldots, (b-1,c), (b-1,c-1), (b,c-1), (b,c) \rangle$。
+
+
+%\subsection{环绕网络的性质}
+%$m$行$n$列的二维环绕中与本文相关的主要性质如下：
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（1）$m \geq 3$且$n \geq 3$的$T_{m,n}$共有$mn$个顶点和$2mn$条边；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（2）$m$和$n$均是偶数的$T_{m,n}$是二部图；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（3）$m \geq 3$且$n \geq 3$的$T_{m,n}$的点连通度和边连通度都是$4$；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（4）$m \geq 3$且$n \geq 3$的$T_{m,n}$是$4$-正则图；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（5）$T_{m,n}$是顶点对称的；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（6）令$F$是$T_{m,n}$中的故障元素集合，如果$|F| \leq 1$，那么$T_{m,n} - F$是哈密顿连通的，其中$m \geq 3$，$n \geq 3$且$n$是奇数\upcite{JHPark-FHofTorus2000}；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（7）令$F$是$T_{m,n}$中的故障元素集合，如果$|F| \leq 2$，那么$T_{m,n} - F$是哈密顿图，其中$m \geq 3$，$n \geq 3$且$n$是奇数\upcite{JHPark-FHofTorus2000}；
+%
+%%%\noindent
+%\hangafter=1
+%\setlength{\hangindent}{4em}
+%（8）在$Row$-$T_{m,n}$中，对于顶点集合$S = \{s_{1},s_{2}\}$和$T = \{t_{1},t_{2}\}$，存在非配对的多对多2-不相交路径覆盖当且仅当$S$ 和$T$中有两个顶点属于$A_{m,n}$且另外两个顶点属于$B_{m,n}$，其中$m \geq 4$，$n$是偶数且$n \geq 6$\upcite{JHPark2015}。
+
+
+\section{本章小结}
+本章介绍了与本文密切相关的图论知识。
+首先，我们介绍了本文用到的图论知识相关的一些基本概念和符号表示。
+然后，我们介绍了广义超立方体的定义，其相关的概念和符号表示以及它的一些主要性质。

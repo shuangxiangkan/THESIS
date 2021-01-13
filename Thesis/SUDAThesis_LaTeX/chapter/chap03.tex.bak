@@ -1,0 +1,1396 @@
+\chapter{扩展立方体的结构连通度和子结构连通度}
+\label{Chap03}
+
+在这一章中，我们研究了扩展立方体的$H$-结构连通度和$H$-子结构连通度，其中$H \in \{K_{1,M}，P_L,C_N\}$，
+且$1 \leq M \leq 6, 1 \leq L \leq 2n-1, 3 \leq N \leq 2n-1$。
+设$u$ 是$AQ_n$中的任意一个顶点。为了使我们的证明更加的简便和简洁，
+我们引入了一些符号$v^{[1]},v^{[2]},\ldots,v^{[2n-1]}$，
+其中$ v^{[1]},v^{[2]},\ldots,v^{[2n-1]}$和$u$的所有邻居节点
+$u^1,u^2,\bar{u}^{2},\ldots,u^{n},\bar{u}^{n}$形成一一对应的关系。
+$u^j$和 $v^{[i]}$ 的对应关系为：
+（1）如果$i$是偶数，则$j=\frac{i}{2}+1$和$u^j=v^{[i]}$；
+（2）如果$i$是奇数，则$j=\lfloor\frac{i}{2}\rfloor+1$和$\bar{u}^j=v^{[i]}$。
+$(v^{[i]})^l$ 和$(\overline{v^{[i]}})^l$的定义类似于$u^l$和$\bar{u}^l$的定义。
+例如，如果$u=000000$ 是$AQ_6$的一个顶点，那么$u^4=v^{[6]}=001000$,
+$\bar{u}^5=v^{[9]}=011111, (v^{[6]})^2=001010$和$(\overline{v^{[9]}})^3=011000$。
+在这篇文章中，我们对这两种表示方法不加以区分。
+
+\section{预备知识}
+
+在给出扩展立方体结构连通度和子结构连通度的证明之前，我们先给出在本节需要用到的扩展立方体的
+一些定理和性质：
+
+\begin{thm}
+\cite{Choudum2002}
+\label{k(AQ123)}
+$\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$， 对于  $ n \geq 4,\kappa(AQ_n) = 2n-1$。
+\end{thm}
+
+根据\ref{k(AQ123)}，我们可以得到下面的定理。
+
+\begin{thm}
+对于$n \geq 4,\kappa(AQ_n,K_1)=\kappa^s(AQ_n,K_1)=2n-1$。
+\end{thm}
+
+
+\begin{thm}
+\cite{Ma2008}
+\label{1_extraconnectivity}
+对于$n \geq 6, \kappa_1(AQ_n)= 4n - 8$。
+\end{thm}
+
+
+%下面几个应该是性质，而不是引理
+\begin{lem}
+\cite{Ma2008}
+\label{hypercube_edge}
+如果$(u,u^i)$是$AQ_n$的$i$维的一条超立方体边$(1 \leq i \leq n)$，那么
+\[
+{N_{AQ_n}(u)}\cap {N_{AQ_n}(u^i)}=\left\{
+             \begin{array}{lcr}
+             \{\bar{u}^i,\bar{u}^{i-1}\} & &2\leq i\leq n,\\
+             \{\bar{u}^2,u^2\} & &i=1.
+             \end{array}
+\right.
+\]
+
+也就是$u$和$u^i$在$AQ_n$中有$2$个共同的邻居顶点并且$|{N_{AQ_n}}(\{u,u^i\})|= 4n-6$。
+\end{lem}
+
+\begin{lem}
+\cite{Ma2008}
+\label{complement_edge}
+如果$(u,\bar{u}^i)$是$AQ_n$的$i$维的一条补边$(2 \leq i \leq n)$，那么
+\[
+{N_{AQ_n}(u)}\cap {N_{AQ_n}(\bar{u}^i)}=\left\{
+             \begin{array}{lcr}
+             \{\bar{u}^{i-1},u^i,u^{i+1},\bar{u}^{i+1}\} & &2\leq i\leq n-1,\\
+             \{\bar{u}^{n-1},u^n\} & &i=n.
+             \end{array}
+\right.
+\]
+
+也就是$u$和$\bar{u}^i$在$AQ_n$中有$4$个共同的邻居顶点，对于$2 \leq i \leq n-1$，$|{N_{AQ_n}}(\{u,\bar{u}^i\})|= 4n-8$。类似的，$u$和$\bar{u}^n$在$AQ_n$中有$2$个共同的邻居，且$|{N_{AQ_n}}(\{u,\bar{u}^i\})|= 4n-6$。
+\end{lem}
+
+\begin{lem}
+\cite{Ma2008}
+\label{common_verticles}
+对于$n \geq 3$， $AQ_n$中的任意两个顶点最多有$4$个共同的邻居顶点。
+\end{lem}
+
+根据定义\ref{AugmentedCube1}，我们可以很容易地得到下面的关于扩展立方体的性质：
+
+\begin{lem}
+\label{two_hypercube_edges}
+如果$(u,u^i)$和$(u,u^j)$是$AQ_n$的$i$和$j$维的两条超立方体边$(1 \leq i \neq j \leq n)$。不失一般性，设$i < j$，有
+\[
+{N_{AQ_n}(u^i)}\cap {N_{AQ_n}(u^j)}=\left\{
+             \begin{array}{lcr}
+             \{u,(u^i)^j,\bar{u}^i,({\bar{u}^j})^i\}  & & j=i+1\textnormal{ and }i > 1,\\
+             \{u,(u^i)^j\}  & & j>i+1,\\
+             \{u,(u^1)^2\}  & & i=1\textnormal{ and }j=2.
+             \end{array}
+\right.
+\]
+\end{lem}
+
+\begin{lem}
+\label{two_complement_edges}
+如果$(u,\bar{u}^i)$和$(u,\bar{u}^j)$是$AQ_n$的$i$和$j$维的两条补边$(1 \leq i \neq j \leq n)$。 不失一般性，设$i < j$，有
+\[
+{N_{AQ_n}(\bar{u}^i)}\cap {N_{AQ_n}(\bar{u}^j)}=\left\{
+             \begin{array}{lcr}
+             \{u,\bar{u}^{i+1},(u^j)^{j-1},(\bar{u}^j)^{j-1}\}  & & j=i+2  ,\\
+             \{u,(\overline{\bar{u}^j})^i\}  & & j=i+1 \quad\textnormal{or}\quad j>i+2.
+             \end{array}
+\right.
+\]
+\end{lem}
+
+\begin{lem}
+\label{hypercube_edge_and_complement_edge}
+如果$(u,u^i)$是$AQ_n$的一条$i$维的超立方体边，$(u,\bar{u}^j)$是$AQ_n$的一条$j$维的补边$(i \leq i,j \leq n)$，那么
+\[
+{N_{AQ_n}(u^i)}\cap {N_{AQ_n}(\bar{u}^j)}=\left\{
+             \begin{array}{lcr}
+             \{u,(u^i)^{i-1},(\bar{u}^i)^{i-1},\bar{u}^{i-1}\}  & & i=j\textnormal{ and }i>1,\\
+
+             \{u,\bar{u}^i,(\bar{u}^j)^{i+1},({u}^i)^{i+1}\}  & & i=j+1\textnormal{ and }i<n,\\
+             \{u,\bar{u}^i\}  & & i=n\textnormal{ and }j=n-1,\\
+             \{u,(u^i)^{i-1},(\bar{u}^i)^{i-1},\bar{u}^{i-1}\}  & & \quad i=j+2,\\
+             \{u,(\bar{u}^j)^i\}  & & |i-j|>2,\\
+             \{u,(u^j)^i,(\bar{u}^j)^i,\bar{u}^i\}  & & j=i+1\textnormal{ and }i>1,\\
+             \{u,(u)^2\}  & & i = 1\textnormal{ and }j = 2,\\
+             \{u,(\bar{u}^j)^i\}  & & j=i+2\textnormal{ and }i>1,\\
+             \{u,\bar{u}^2,(\bar{u}^3)^1,(u^1)^3\}  & & i = 1\textnormal{ and }j = 3.
+             \end{array}
+\right.
+\]
+\end{lem}
+
+
+\section{扩展立方体的$K_{1,M}-$结构连通度和子结构连通度}
+
+根据扩展立方体的定义，性质\ref{hypercube_edge}和性质\ref{complement_edge}，
+如果$u$是$AQ_n$ 的任意一个顶点且$(u,\bar{u}^i)$是$AQ_n$的$i(2\leq i \leq n-1)$维的补边，
+那么$N_{AQ_n}(u)\cap N_{AQ_n}(\bar{u}^i)=\{\bar{u}^{i-1},u^i,u^{i+1},\bar{u}^{i+1}\}$。
+$\{\bar{u}^i,\bar{u}^{i-1},u^i,u^{i+1}, \bar{u}^{i+1}\}$ $(2\leq i \leq n-1)$的导出子图
+与$K_{1,4}$同构。如果$(u,\bar{u}^n)$是$AQ_n$的$n$维的补边，
+那么$N_{AQ_n}(u)\cap N_{AQ_n}(\bar{u}^n)=\{\bar{u}^{n-1},u^n\}$
+且$\{\bar{u}^n,\bar{u}^{n-1},u^n\}$的生成子图与$K_{1,2}$同构。类似的，
+如果$(u,u^i)$是$AQ_n$ 的$i$ $(1\leq i \leq n)$维的超立方体边，
+那么$N_{AQ_n}(u)\cap N_{AQ_n}(u^i)=\{\bar{u}^{i},\bar{u}^{i-1}\}(2\leq i \leq n)$
+和$N_{AQ_n}(u)\cap N_{AQ_n}(u^1)=\{u^{2},\bar{u}^{2}\}$。$\{u^i,\bar{u}^i$,$\bar{u}^{i-1}\}(2\leq i \leq n)$
+的导出子图与$K_{1,2}$同构。
+
+接下来，我们将讨论$\kappa(AQ_n,K_{1,M})$和$\kappa^s(AQ_n,K_{1,M})$，
+其中$1 \leq M \leq 3,4 \leq M \leq 6$。
+
+\subsection{$1 \leq M \leq 3$}
+
+\begin{lem}
+\label{1<=M<=3(1)}
+对于$n \geq 4$和$1 \leq M \leq 3$, $\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$和$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$.
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$的任意一个顶点，接下来，我们将根据$M$和$n$的值来分为下面几种情况：
+
+\textbf{情形1}. $M=1$。设
+\begin{flushleft}
+$S_1=\{
+\{
+v^{[(M+1)i+1]},
+v^{[(M+1)i+2]}
+\}
+\mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$ and
+$S_2=\{\{
+v^{[2n-1]},
+(v^{[2n-1]})^1
+\}\}$.
+
+\end{flushleft}
+
+\textbf{情形2}. $M=2$。
+
+情形2.1. $n\equiv0$(mod 3). 设
+\begin{flushleft}
+$S_1=\{\{
+v^{[(M+1)i+1]},
+v^{[(M+1)i+2]},
+v^{[(M+1)i+3]}
+\}
+\mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$.
+
+\end{flushleft}
+
+\textbf{情形2.2.} $n\equiv1$(mod 3)。设
+\begin{flushleft}
+$S_1=\{\{
+v^{[(M+1)i+1]},
+v^{[(M+1)i+2]},
+v^{[(M+1)i+3]}
+\}
+\mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$
+and $S_2=\{\{
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2
+\}\}$.
+
+\end{flushleft}
+
+\textbf{情形2.3.} $n\equiv2$(mod 3)。设
+\begin{flushleft}
+$S_1=\{\{
+v^{[(M+1)i+1]},
+v^{[(M+1)i+2]},
+v^{[(M+1)i+3]}
+\}
+\mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$
+and
+$S_2=\{\{
+v^{[2n-2]},
+v^{[2n-1]},
+(v^{[2n-1]})^1
+\}\}$.
+
+\end{flushleft}
+
+\textbf{情形3.} $M=3$。
+
+\textbf{情形3.1.} $n\equiv1$(mod 4)。设
+\begin{flushleft}
+$S_1=\{\{
+v^{[(M+1)i+1]},
+v^{[(M+1)i+2]},
+v^{[(M+1)i+3]},
+v^{[(M+1)i+4]}
+\}
+\mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$
+and
+$S_2=\{\{
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(v^{[2n-1]})^3
+\}\}$.
+
+\end{flushleft}
+
+\textbf{情形3.2.} $n\equiv3$(mod 4)。设
+\begin{flushleft}
+$S_1=\{\{
+v^{[(M+1)i+1]},
+v^{[(M+1)i+2]},
+v^{[(M+1)i+3]},
+v^{[(M+1)i+4]}
+\}
+\mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$
+and
+$S_2=\{\{
+v^{[2n-3]},
+v^{[2n-2]},
+v^{[2n-1]},
+(v^{[2n-1]})^1
+\}\}$.
+
+\end{flushleft}
+
+当$M = 2,n \equiv 0(mod 3)$时，设$S=S_1$或者$(S=S_1 \cup S_2)$。显然，如果$M=1$，$S_1 \cup S_2$中的每个元素的导出子图和$K_{1,1}$同构；如果$M=2$，顶点$v^{[(M+1)i+2]}$邻接于顶点$v^{[(M+1)i+1]}$和$v^{[(M+1)i+3]},0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor$，顶点$v^{[2n-1]}$邻接于$v^{[2n-2]}$, $(v^{[2n-1]})^1$，和 $(v^{[2n-1]})^2$。因此，$S$中的每个元素的导出子图和$K_{1,2}$同构；如果$M=3$，顶点$v^{[(M+1)i+3]}$邻接于顶点$v^{[(M+1)i+1]}$, $v^{[(M+1)i+2]}$，和$v^{[(M+1)i+4]},0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor$，顶点$v^{[2n-1]}$邻接于$v^{[2n-3]}, v^{[2n-2]},(v^{[2n-1]})^1$, $(v^{[2n-1]})^2$，和 $(v^{[2n-1]})^3$。这样，$S$中每个元素的导出子图和$K_{1,3}$同构。显然，$|S|$ = $\lceil\frac{2n-1}{1+M}\rceil$。设$W(S)=\cup_{f \in S}f$，因为$AQ_n-W(S)$是不连通的且其中一个连通分量是\{$u$\}，所以$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$和$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$。
+\end{proof}
+
+图~\ref{K_1_1 and K_1_2}显示了$AQ_6$的$K_{1,1}$-结构割和$K_{1,2}$-结构割。
+
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[A $K_{1,1}$-structure-cut in $AQ_5$]{
+    \begin{minipage}{8cm}
+    \centering
+        \includegraphics[scale=0.3]{K_1_1.eps}
+    \end{minipage}
+    }
+    \subfigure[A $K_{1,2}$-structure-cut in $AQ_6$]{
+    \begin{minipage}{8cm}
+    \centering
+        \includegraphics[scale=0.3]{K_1_2.eps}
+    \end{minipage}
+    }
+    \caption{A $K_{1,1}$-structure-cut in $AQ_5$ and a $K_{1,2}$-structure-cut in $AQ_6$}
+    \label{K_1_1 and K_1_2}
+\end{figure}
+
+
+
+
+\begin{lem}
+\label{1<=M<=3(2)}
+对于$n\geq4$和$1 \leq M \leq 3$, $\kappa^s(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{2n-1}{1+M}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$F_n^*$是$AQ_n$中的一个连通子图的集合，这个集合中的每个元素都同构于$K_{1,M}$且$|F_n^*|\leq \lceil\frac{2n-1}{1+M}\rceil-1$。因此$|V(F_n^*)|\leq (1+M)\times(\lceil\frac{2n-1}{1+M}\rceil-1)< 2n-1$。因为$\kappa(AQ_n)= 2n-1$, $AQ_n-F_n^*$ 是连通的。因此引理成立。
+\end{proof}
+
+因为$\kappa(Q_n,K_{1,M})\geq \kappa^s(Q_n,K_{1,M})$,  $\kappa(Q_n,K_{1,M})\geq \lceil\frac{2n-1}{1+M}\rceil$。根据引理\ref{1<=M<=3(1)}和引理\ref{1<=M<=3(2)}，我们有下面的定理。
+
+
+
+
+\begin{thm}
+\label{smallerthan}
+对于$n \geq 4$和$1 \leq M \leq 3$, $\kappa(AQ_n,K_{1,M})=\lceil\frac{2n-1}{1+M}\rceil$，$\kappa^s(AQ_n,K_{1,M})=\lceil\frac{2n-1}{1+M}\rceil$。
+\end{thm}
+
+
+\subsection{$4 \leq M \leq 6$}
+
+\begin{lem}
+\label{4<=M<=6(1)}
+对于$n \geq 6$和$4 \leq M \leq 6$, $\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$，$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$中的任意一个顶点。接下来，我们将根据$M$和$n$的值有下面几种情况：
+
+\textbf{情形1.} $M=4$。
+
+\textbf{情形1.1.} $n$是奇数。设
+
+\begin{flushleft}
+$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]}\}\}$ 和
+
+$S_2=\{\{
+v^{[5+4i+1]},
+v^{[5+4i+2]},
+v^{[5+4i+3]},
+v^{[5+4i+4]},
+(v^{[5+4i+2]})^1
+\} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}.
+
+\end{flushleft}
+
+\textbf{情形1.2.} $n$是偶数。设
+
+\begin{flushleft}
+$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]}\}\}$,
+
+$S_2=\{\{
+v^{[5+4i+1]},
+v^{[5+4i+2]},
+v^{[5+4i+3]},
+v^{[5+4i+4]},
+(v^{[5+4i+2]})^1
+\} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}, 和\\
+
+$S_3=\{\{
+v^{[2n-2]},
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(v^{[2n-1]})^3
+\}$\}.\\
+
+\end{flushleft}
+
+
+\textbf{情形2.} $M=5$。
+
+\textbf{情形2.1.} $n$是奇数。设
+
+\begin{flushleft}
+$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n\}\}$ 和
+
+$S_2=\{\{
+v^{[5+4i+1]},
+v^{[5+4i+2]},
+v^{[5+4i+3]},
+v^{[5+4i+4]},
+(v^{[5+4i+2]})^1,
+(v^{[5+4i+2]})^2
+\} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}.
+
+\end{flushleft}
+
+\textbf{情形2.2.} $n$是偶数。设
+\begin{flushleft}
+$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n\}\}$,
+
+$S_2=\{\{
+v^{[5+4i+1]},
+v^{[5+4i+2]},
+v^{[5+4i+3]},
+v^{[5+4i+4]},
+(v^{[5+4i+2]})^1,
+(v^{[5+4i+2]})^2
+\} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}, 和\\
+
+$S_3=\{\{
+v^{[2n-2]},
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(v^{[2n-1]})^3,
+(v^{[2n-1]})^4
+\}$\}.\\
+
+\end{flushleft}
+
+\textbf{情形3.} $M=6$。
+
+\textbf{情形3.1.} $n$是奇数。设
+
+\begin{flushleft}
+$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n,(\overline{v^{[3]}})^n\}\}$ 和
+
+$S_2=\{\{
+v^{[5+4i+1]},
+v^{[5+4i+2]},
+v^{[5+4i+3]},
+v^{[5+4i+4]},
+(v^{[5+4i+2]})^1,
+(v^{[5+4i+2]})^2,
+(v^{[5+4i+2]})^3
+\} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}.
+
+\end{flushleft}
+
+\textbf{情形3.2.} $n$是偶数。设
+
+\begin{flushleft}
+$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n,(\overline{v^{[3]}})^n\}\}$,
+
+$S_2=\{\{
+v^{[5+4i+1]},
+v^{[5+4i+2]},
+v^{[5+4i+3]},
+v^{[5+4i+4]},
+(v^{[5+4i+2]})^1,
+(v^{[5+4i+2]})^2,
+(v^{[5+4i+2]})^3
+\} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}, 和\\
+
+$S_3=\{\{
+v^{[2n-2]},
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(v^{[2n-1]})^3,
+(v^{[2n-1]})^4,
+(v^{[2n-1]})^5
+\}$\}.\\
+
+\end{flushleft}
+
+
+显然，$S_1$中的每个元素的导出子图和$K_{1,M}$同构。对于$0\leq i< \lfloor\frac{n-1}{2}\rfloor-1$, 顶点$v^{[5+4i+2]}$邻接于顶点$v^{[{5+4i}+j]}j=1,3,4$ 和$(v^{[5+4i+2]})^p,1\leq p \leq 1+M-4$。这样，$S_2$中的每个元素的导出子图和$K_{1,M}$ 同构。顶点$v^{[2n-1]}$邻接于顶点$v^{[2n-2]},(v^{([2n-1]})^q,1\leq q\leq 1+M-(2n-2-4\times\lfloor\frac{n-1}{2}\rfloor)$。这样，$S_3$中的每个元素的导出子图和$K_{1,M}$。假设当$n$时奇数时，$S=S_1\cup S_2$（否则，$S=S_1\cup S_2\cup S_3$），并且$|S|=\lceil\frac{n-1}{2}\rceil$。设$W(S)=\cup_{f \in S}f$。因为$AQ_n - W(S)$是不连通的且它的一个连通分量是$\{u\}$，那么$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$和$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil,4 \leq M \leq 6$。
+\end{proof}
+
+图~\ref{K_1_5}显示了$AQ_6$的一个$K_{1,5}$-结构割。
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.3]{K_1_5.eps}\\
+  \caption{A $K_{1,5}$-structure-cut in $AQ_6$}
+  \label{K_1_5}
+\end{figure}
+
+\begin{lem}
+\label{min_K_1_M}
+设$F_n$是$AQ_n$中的一个$K_{1,M}$-子结构集，其中$n \geq 6,4 \leq M \leq 6$. 如果在$AQ_n - V(F_n)$存在一个孤立的顶点，那么$|F_n|\geq \lceil\frac{n-1}{2}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$中的任意一个顶点。
+我们设$W=\{x \mid (x,u)$是一条超立方体边，$x \in V(G)\}$和$Z=\{y \mid (y,u)$是一条补边，$y \in V(G)\}$。显然，$|W|=n,|Z|=n-1$。根据性质\ref{complement_edge}和性质\ref{common_verticles}，$F_n$中的每个元素最多包含$N(u)$中的$5$个顶点，及, $\bar{u}^i,\bar{u}^{i-1},u^i,u^{i+1}$，和$\bar{u}^{i+1},2 \leq i \leq n-1$。因为 $\{(\bar{u}^i,\bar{u}^{i-1}),(\bar{u}^i,u^i),(\bar{u}^i,u^{i+1}),(\bar{u}^i,\bar{u}^{i+1})\} \subseteq E(AQ_n)$， $\{\bar{u}^i,\bar{u}^{i-1},u^i,u^{i+1},\bar{u}^{i+1}\}$的导出子图和$K_{1,4}$同构。我们设$B=\{b_i\mid b_i\in F_n \textnormal{和} \{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)\cap N(u)\}$。 因为每个$V(b_i)$包含$Z$中的$3$个顶点和$W$中的$2$个顶点，那么 $|B|<\lfloor\frac{2n-1}{5}\rfloor$。
+接下来，我们将根据$|B|$的值来划分下面几种情况：
+
+\textbf{情形1.} \quad $|B|=0$。因为$F_n$中的每个元素包含$N(u)$中最多$4$个顶点，那么$|F_n| \geq \lceil \frac{2n-1}{4} \rceil$。
+
+\textbf{情形2.} \quad $|B|=1$。假设$\{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i),2 \leq i \leq n-1$. 因为$F_n-B$中的每个元素包含$N(u)-V(B)$中最多$4$ 个顶点，$|F_n| \geq 1+\lceil \frac{2n-6}{4} \rceil=\lceil \frac{n-1}{2} \rceil$。
+
+\textbf{情形3.} \quad $|B|=2$。假设$\{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i),
+\{\bar{u}^{j-1},u^j,\bar{u}^j,u^{j+1},\bar{u}^{j+1}\} \subseteq V(b_j),2 \leq i,j \leq n-1$，和$|i-j|\geq 3$。 不失一般性，我们设$j>i$。
+
+\textbf{情形3.1.} $j-i=3$。
+那么$\{\bar{u}^{j-1},u^j,\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+2},u^{i+3},\bar{u}^{i+3},u^{i+4},\bar{u}^{i+4}\}$。
+假设$w_1,w_2 \in N(u)-V(B)-\{u^{i+2}\}$且$w_1 \neq w_2$。根据性质 \ref{two_hypercube_edges}, \ref{two_complement_edges}和\ref{hypercube_edge_and_complement_edge}, $N(u^{i+2}) \cap N(w_1) \cap N(w_2)=\emptyset$。
+此外，顶点$u^{i+2}$不与$N(u)-V(B)$中的顶点相连。
+因此，存在一个顶点$a \in F_n-B$使得$u^{i+2} \in V(a)$和$V(a) \cap \{N(u)-V(B)\} \leq 2$。因为$F_n-B-\{a\}$中的每个元素最多包含$N(u)-V(B)-V(a)$中的四个顶点，$|F_n| \geq 2+1+\lceil\frac{2n-13}{4}\rceil=\lceil\frac{2n-1}{4}\rceil$。
+
+\textbf{情形3.2.} $j-i=4$。那么$\{\bar{u}^{j-1},u^j,\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+3},u^{i+4},\bar{u}^{i+4},u^{i+5},\bar{u}^{i+5}\}$.
+下面，我们将根据$F_n-B$中包含三个顶点$u^{i+2},\bar{u}^{i+2}$和$u^{i+3}$的元素个数来讨论下面几种情况。我们用$S$来表示这样的元素个数。
+
+\textbf{情形3.2.1.} $S=3$。那么在$N(u)-V(B)$中有是$3$个不同的元素分别包含着三个顶点$u^{i+2},\bar{u}^{i+2}$，和$u^{i+3}$中的一个。 假设$w_1,w_2 \in N(u)-V(B)-\{u^{i+2},\bar{u}^{i+2},u^{i+3}\}$和$w_1 \neq w_2$。根据性质\ref{two_hypercube_edges}, \ref{two_complement_edges} and \ref{hypercube_edge_and_complement_edge}, $N(u^{i+2}) \cap N(w_1) \cap N(w_2)=\emptyset$。顶点，顶点$u^{i+2}$不和$N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}$中的顶点相连。因此，存在一个元素$a_1 \in F_n-B$ such that $u^{i+2} \in V(a_1)$且$V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\} \leq 2$。对于顶点$\bar{u}^{i+2}$和$u^{i+3}$的情况， 证明和顶点$u^{i+2}$类似且我们设$\bar{u}^{i+2}\in a_2$, $u^{i+3}\in a_3$。 因为$F_n-B-\{a_1,a_2,a_3\}$中的每个元素包含$N(u)-V(B)-V(a_1)-V(a_2)-V(a_3)$中最多四个顶点，所以$|F_n| \geq 2+3+\lceil\frac{2n-17}{4}\rceil=\lceil\frac{2n+3}{4}\rceil$。
+
+\textbf{情形3.2.2.} $S=2$。那么$N(u)-V(B)$中存在$2$个元素，其中一个元素包含$u^{i+2},\bar{u}^{i+2}$，和$u^{i+3}$中的$1$个顶点，另一个元素包含另外$2$个顶点。我们假设$a_1$包含$u^{i+2},\bar{u}^{i+2}$和$u^{i+3}$中的$1$顶点，$a_2$包含另外$2$个顶点。
+
+\textbf{情形3.2.2.1.} $u^{i+2} \in V(a_1)$和$\{\bar{u}^{i+2}, u^{i+3}\} \subseteq V(a_2)$。 类似于情形3.2.1中讨论，我们有
+$V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\} \leq 2$。因为$N(\bar{u}^{i+2}) \cap N(u^{i+3})-\{u,\bar{u}^{i+3}\}=\{(\bar{u}^{i+2})^{i+4},(u^{i+3})^{i+4}\}$，$\{(\bar{u}^{i+2})^{i+4},(u^{i+3})^{i+4}\}$中的每个顶点不与$N(u)-V(B)-\{u^{i+2},\bar{u}^{i+2}, u^{i+3}\}$中的顶点相连且$\{\bar{u}^{i+2},u^{i+3}\}$中的每个顶点不与$N(u)-V(B)-\{u^{i+2}\}$, $V(a_2) \cap \{N(u)-V(B)-\{u^{i+2}\}\}=2$ and  $\{\bar{u}^{i+2},u^{i+3}\} \subseteq V(a_2)$中的顶点相连。因为$F_n-B-\{a_1,a_2\}$中的每个元素最多包含$N(u)-V(B)-V(a_1)-V(a_2)$中的$4$个顶点，所以$|F_n| \geq 2+1+1+\lceil\frac{2n-15}{4}\rceil=\lceil \frac{2n+1}{4} \rceil$。对于$u^{i+3} \in V(a_1)$和$\{\bar{u}^{i+2}$ $u^{i+2}\} \subseteq V(a_2)$这种情况，证明类似，在此不再赘述。
+
+\textbf{情形3.2.2.2.} $\bar{u}^{i+2} \in V(a_1)$和$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$。类似于情形3.2.1中的讨论，我们有$V(a_1) \cap \{N(u)-V(B)-\{u^{i+2},u^{i+3}\}\} \leq 2$。 因为$N(u^{i+2}) \cap N(u^{i+3})-\{u,\bar{u}^{i+2}\}=\{(u^{i+2})^{i+3},(\bar{u}^{i+3})^{i+2}\}$，$\{(u^{i+2})^{i+3},(\bar{u}^{i+3})^{i+2}\}$中的每个顶点不与$N(u)-V(B)-\{\bar{u}^{i+2}\}$中的顶点相连且$(u^{i+2},u^{i+3}) \notin E(AQ_n)$, $V(a_2) \cap \{N(u)-V(B)-\{\bar{u}^{i+2}\}\}=2$以及$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$。因为$F_n-B-\{a_1,a_2\}$中的每个元素最多包含$N(u)-V(B)-V(a_1)-V(a_2)$中的$4$个顶点，$|F_n| \geq 2+1+1+\lceil\frac{2n-15}{4}\rceil=\lceil \frac{2n+1}{4} \rceil$。
+
+\textbf{情形3.2.3.} $S=1$。根据情形3.2.1和情形3.2.2中的讨论，$a \in F_n-B$中存在一个元素使得 $V(a) \cap \{N(u)-V(B)\} = 3$和$\{u^{i+2},\bar{u}^{i+2},u^{i+3}\} \subseteq V(a)$。 Since each element in 因为$F_n-B-\{a\}$中的每个元素最多包含$N(u)-V(B)-V(a)$中的四个顶点，所以$|F_n| \geq 2+1+\lceil\frac{2n-14}{4}\rceil=\lceil \frac{n-1}{2} \rceil$。
+
+\textbf{情形3.3.} $j-i\geq 5$。我们设$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$。接下来，我们将计算$F_n-B$中包含$U_{ij}$的元素的数量。因为$5 \leq |U_{ij}| \leq 2n-11$且每个元素最多包含$N(u)-V(B)$中的$4$个顶点，我们将根据$|U_{ij}|$的值进行讨论。
+
+\textbf{情形3.3.1.} $|U_{ij}|\equiv1(\textnormal{mod }4)$。类似于情形3.1中的讨论，我们有$|F_n| \geq 2+1+\lceil\frac{2n-13}{4}\rceil=\lceil\frac{2n-1}{4}\rceil$。
+
+\textbf{情形3.3.2.} $|U_{ij}|\equiv3(\textnormal{mod }4)$。 类似于情形3.2中的讨论，我们有$|F_n| \geq 2+1+\lceil\frac{2n-14}{4}\rceil=\lceil\frac{n-1}{2}\rceil$。
+
+\textbf{情形4.} $|B| \geq 3$。If $b_i,b_j \in B$且$B$中不存在$b_k(i<k<j)$，我们设$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$。根据情形3中讨论，如果$|U_{ij}|\equiv3(\textnormal{mod }4)$，那么$F_n$的值将会是最小的。这样，$|F_n| \geq |B|+(|B|-1)+\lceil\frac{2n-1-5\times|B|-3\times(|B|-1)}{4}\rceil=\lceil\frac{n-1}{2}\rceil$。
+
+所以，定理成立。
+\end{proof}
+
+\begin{lem}
+\label{4<=M<=6(2)}
+当$n \geq 6$且$4 \leq M \leq 6$时，$\kappa(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{n-1}{2}\rceil$和$\kappa^s(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{n-1}{2}\rceil$。
+\end{lem}
+
+\begin{proof}
+我们将会用反证法来证明这个引理。设$F_n^*$是$AQ_n$的一个$K_{1,M}$-子结构集且$|F_n^*| \leq \lceil\frac{n-1}{2}\rceil-1$。如果$AQ_n-V(F_n^*)$是不连通的，那么我们设$R$是$AQ_n-V(F_n^*)$中最小的一个连通分量。注意到$|V(F_n^*)| \leq (1+M)\times(\lceil\frac{n-1}{2}\rceil-1) \leq 7\times(\lceil\frac{n-1}{2}\rceil-1)$。 根据引理\ref{1_extraconnectivity}，我们有$7\times(\lceil\frac{n-1}{2}\rceil-1) < 4n-8$对于$n \geq 6$，因此$|V(R)|=1$。此外，我们假设顶点$u \in V(R)$。根据引理\ref{min_K_1_M}，我们有$|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$，这意味着$AQ_n-V(F_n^*)$中$u$存在至少一个邻居节点。因此，我们有$|V(R)| \geq 2$，矛盾。因此，$AQ_n-V(F_n^*)$是连通度。引理成立。
+\end{proof}
+
+结合引理\ref{4<=M<=6(1)}，我们有$\kappa^s(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$。 因为$\kappa(Q_n,K_{1,M})\geq \kappa^s(Q_n,K_{1,M})$，所以$\kappa(Q_n,K_{1,M})\geq \lceil\frac{2n-1}{1+M}\rceil$。根据引理\ref{4<=M<=6(1)}和引理\ref{4<=M<=6(2)}，我们有下面的定理。
+
+\begin{thm}
+当$n \geq 6$合$4 \leq M \leq 6$，$\kappa(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$和 $\kappa^s(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$。
+\end{thm}
+
+\section{扩展立方体的$P_L-$结构连通度和子结构连通度}
+
+设$u$是$AQ_n$中的任意一个顶点，根据扩展立方体的定义，$(\bar{u}^{i-1},u^i)\in E(AQ)$ and $(u^i,\bar{u}^i)\in E(AQ)$ $(2\leq i \leq n)$。这样$\langle u^1,u^2,\bar{u}^{2},\ldots,u^{n},\bar{u}^{n}\rangle$可以形成一条长度为$2n-2$的路径。
+
+因为$P_2(P_3)$同构于$K_{1,1}(K_{1,2})$并且我们已经在3.1中给出了$\kappa(AQ_n,K_{1,1})$，$(\kappa(AQ_n,K_{1,2}))$\\
+和$\kappa^s(AQ_n,K_{1,1})$，$(\kappa^s(AQ_n,K_{1,2}))$的证明，所以下面我们假设$L \geq 4$。
+
+\begin{lem}
+\label{P_Q<=}
+当$n \geq 3$和$4 \leq L \leq 2n-1$, $\kappa(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$和$\kappa^s(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$中的任意一个顶点。设
+\begin{flushleft}
+$S_1 =
+\{\{v^{[i\times L+1)]},v^{[i\times L+2]},\ldots,v^{[i\times L+L]}\}\mid 0 \leq i < \lfloor\frac{2n-1}{L}\rfloor\}$。
+\end{flushleft}
+如果$(2n-1)\equiv0$(mod $L$)，设$S_2=\emptyset$。否则的话，根据$L$和$\lceil\frac{2n-1}{L}\rceil\times L-2n+1$的值，我们有下面的讨论：
+
+\textbf{情形1.} $L$是奇数且$L\leq 2n-3$。
+
+\textbf{情形1.1.} $\lceil\frac{2n-1}{L}\rceil \times L-2n+1$设偶数。设
+\begin{flushleft}
+$S_2=\{\{
+v^{[
+\lfloor\frac{2n-1}{L}\rfloor\times L+1]},
+\ldots,
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(\overline{v^{[2n-1]}})^2,
+(v^{[2n-1]})^3,
+(\overline{v^{[2n-1]}})^3,
+\ldots,
+(v^{[2n-1]})^{\frac{\lceil\frac{2n-1}{L}\rceil\times L-2n+1}{2}+1}\}
+\}$。
+\end{flushleft}
+\textbf{情形1.2.} $\lceil\frac{2n-1}{L}\rceil \times L-2n+1$是奇数。设
+\begin{flushleft}
+$S_2=\{\{
+v^{[\lfloor\frac{2n-1}{L}\rfloor\times L+1]},
+\ldots,
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(\overline{v^{[2n-1]}})^2,
+(v^{[2n-1]})^3,
+(\overline{v^{[2n-1]}})^3,
+\ldots,
+(\overline{v^{[2n-1]}})^{\frac{\lceil\frac{2n-1}{L}\rceil\times L-2n}{2}+1}\}
+$\}。
+\end{flushleft}
+\textbf{情形2.} $L$是偶数且$L\leq 2n-4$。设
+\begin{flushleft}
+$S_2=\{\{
+v^{[\lfloor\frac{2n-1}{L}\rfloor\times L+1]},
+\ldots,
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(\overline{v^{[2n-1]}})^2,
+(v^{[2n-1]})^3,
+(\overline{v^{[2n-1]}})^3,
+\ldots,
+(\overline{v^{[2n-1]}})^{\frac{\lceil\frac{2n-1}{L}\rceil\times L-2n}{2}+1}\}
+$\}。
+\end{flushleft}
+\textbf{情形3.} $ L = 2n-2$。设
+\begin{flushleft}
+$S_2=\{\{
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(\overline{v^{[2n-1]}})^2,
+(v^{[2n-1]})^3,
+(\overline{v^{[2n-1]}})^3,
+\ldots,
+(v^{[2n-1]})^{n-1},
+((v^{[2n-1]})^{n-1})^1
+\}$\}。
+\end{flushleft}
+假设当$(2n-1)  \equiv 0$ (mod $L$)时$S=S_1$，（否则，$S=S_1 \cup S_2$）。显然，$S$中每个元素的导出子图和同构且$|S|$ = $\lceil\frac{2n-1}{L}\rceil$。设$W(S)=\cup_{f \in S}f$。因为$AQ_n-W(S)$是不连通的，且它的一个连通分量是\{$u$\}，那么$\kappa(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$ and $\kappa^s(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$。
+\end{proof}
+
+\begin{lem}
+\label{P_Q>=}
+当$n \geq 3$和$4 \leq L \leq 2n-1$，$\kappa^s(AQ_n,P_L)$ $\geq$ $\lceil\frac{2n-1}{L}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$F_n^*$是$AQ_n$中一个连通子图的集合，这个集合中的每个元素同构于$P_L$中的一个连通子图且$|F_n^*|\leq \lceil\frac{2n-1}{L}\rceil-1$。因此$|V(F_n^*)|\leq L\times(\lceil\frac{2n-1}{L}\rceil-1)< 2n-1$。因为$\kappa(AQ_n)= 2n-1$，所以$AQ_n-F_n^*$是连通的。引理成立。
+\end{proof}
+
+根据引理\ref{P_Q<=}和引理\ref{P_Q>=}，我们有下面的定理：
+
+\begin{thm}
+\label{P_Q}
+当$n \geq 3$和$4 \leq L \leq 2n-1$时，$\kappa(AQ_n,P_L)=\kappa^s(AQ_n,P_L)=\lceil\frac{2n-1}{L}\rceil$。
+\end{thm}
+
+\section{扩展立方体的$C_N-$结构连通度和子结构连通度}
+
+我们首先证明$\kappa^s(AQ_n,C_N)$，然后我们再证明$\kappa(AQ_n,C_N)$。
+
+\subsection{$3 \leq N \leq 2n-1$}
+因为$P_N$是$C_N$的一个连通子图，所以我们有下面的引理：
+
+
+\begin{lem}
+\label{k_s(AQ_n,C_N)<=}
+当$n \geq 3$和$3 \leq N \leq 2n-1$，$\kappa^s(AQ_n,C_N)$ $\leq$ $\lceil\frac{2n-1}{N}\rceil$。
+\end{lem}
+
+\begin{lem}
+\label{k_s(AQ_n,C_N)>=}
+当$n \geq 3$和$3 \leq N \leq 2n-1$，$\kappa^s(AQ_n,C_N)$ $\geq$ $\lceil\frac{2n-1}{N}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$F_n^*$是$AQ_n$中一个连通子图的集合，这个集合中的每个元素和$C_N$的一个连通子图同构且$|F_n^*|\leq \lceil\frac{2n-1}{N}\rceil-1$。因此$V(F_n^*)\leq N\times(\lceil\frac{2n-1}{N}\rceil-1)< 2n-1$。因为$\kappa(AQ_n)$ = $2n-1$，所以  $AQ_n-F_n^*$是连通的。引理成立。
+\end{proof}
+
+根据引理\ref{k_s(AQ_n,C_N)<=}和引理\ref{k_s(AQ_n,C_N)>=}，我们有下面的定理：
+
+\begin{thm}
+当$n \geq 3$和$3 \leq N \leq 2n-1$时， $\kappa^s(AQ_n,C_N) = \lceil\frac{2n-1}{N}\rceil$。\\
+\end{thm}
+
+下面，我们将讨论$\kappa(AQ_n,C_3)$和$\kappa(AQ_n,C_N)$其中$4 \leq N \leq 2n-1$。
+
+\subsection{$N=3$}
+
+\begin{lem}
+\label{C_3<=}
+当$n \geq 6$时，$\kappa(AQ_n,C_3) \leq n-1$。
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$中的任意一个元素。我们设
+\begin{flushleft}
+$S_1=\{\{u^1,u^2,\bar{u}^2\}\}$和
+
+$S_2=\{\{u^i,\bar{u}^i,(u^i)^{i-1}\}\mid 3\leq i \leq n\}$。
+\end{flushleft}
+显然，$S_1$中的每个元素的导出子图和$C_3$同构。 对于$3\leq i \leq n$，$\{\{u^i,\bar{u}^i\},
+\{\bar{u}^i,(u^i)^{i-1}\},\\
+\{(u^i)^{i-1},u^i\}\} \subseteq E(AQ_n)$。因此，$S=S_1\cup S_2$中每个元素的导出子图和$C_3$同构且$|S|$ = $n-1$。设$W(S)=\cup_{f \in S}f$。因为$AQ_n-W(S)$是不连通的且它的一个连通分量是
+\{$u$\}，所以$\kappa(AQ_n,C_3)$ $\leq$ $n-1$。
+\end{proof}
+
+\begin{lem}
+\label{min_C_3}
+设$F_n$是$AQ_n$的一个$C_3$-结构集且$n \geq$ 6。如果$AQ_n - V(F_n)$存在一个孤立的节点，那么$|F_n|\geq n-1$。
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$中的任意一个顶点。我们设$W=\{x \mid (x,u)\textnormal{是一个超立方体边}, x \in V(G)\}$和
+$Z=\{y \mid (y,u)\textnormal{是一个补边}, y \in V(G)\}$。显然， $|W|=n$，$|Z|=n-1$。
+根据性质\ref{hypercube_edge}和性质\ref{complement_edge}，
+$F_n$中的每个元素最多包含$N(u)$中的三个顶点，即，$\bar{u}^i,u^{i+1}$和$\bar{u}^{i+1},1 \leq i \leq n-1$
+以及$\{(\bar{u}^i,u^{i+1}),(\bar{u}^i,\bar{u}^{i+1}),(u^{i+1},\bar{u}^{i+1})\} \subseteq E(AQ_n)$。
+因此，$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\}$的导出子图和$C_3$同构.
+我们设 $B=\{b_i\mid b_i\in F_n \textnormal{ and } \{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i) \cap N(u)\}$。
+因为每个$V(b_i)$包含$Z$中的两个顶点和$W$中的一个顶点，所以$|B|<\lfloor\frac{2n-1}{3}\rfloor$。
+下面，我们将根据$|B|$的值讨论下面几种情况：
+
+\textbf{情形1.} $|B|=0$。因为$F_n$中的每个元素最多包含$N(u)$中的$4$个顶点，所以$|F_n| \geq \lceil \frac{2n-1}{2} \rceil$。
+
+\textbf{情形2.} $|B|=1$。设$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$其中$1 \leq i \leq n-1$。因为$F_n-B$中的每个元素最多包含$N(u)-V(B)$中的四个顶点，所以$|F_n| \geq 1+\lceil \frac{2n-4}{2} \rceil= n-1$。
+
+\textbf{情形3.} $|B|=2$。设$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i),
+\{\bar{u}^j,u^{j+1},\bar{u}^{j+1}\} \subseteq V(b_j)$其中$1 \leq i,j \leq n-1$且 $|i-j|\geq 2$。不失一般性，我们设$j>i$。
+
+\textbf{情形3.1.} $j-i=2$。那么$\{\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+2},u^{i+3},\bar{u}^{i+3}\}$. 根据扩展立方体的定义，顶点$u^{i+2}$不和$N(u)-V(B)$中的顶点邻接。因此，存在一个元素$a\in F_n-B$使得$u^{i+2} \in V(a)$且$V(a) \cap \{N(u)-V(B)\} = 1$。因为$F-B-\{a\}$中的元素最多包含$N(u)-V(B)-V(a)$中的$2$个顶点，所以$|F_n| \geq 2+1+\lceil\frac{2n-8}{2}\rceil=n-1$。
+
+\textbf{情形3.2.} $j-i=3$。那么$\{\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+3},u^{i+4},\bar{u}^{i+4}\}$.
+接下来，我们将根据$F_n-B$中包含三个顶点$u^{i+2},\bar{u}^{i+2}$，和$u^{i+3}$的元素个数来讨论下面几种情况。我们用$S$来表示这样的元素个数。
+
+\textbf{情形3.2.1.} $S=3$。那么在$N(u)-V(B)$中有$3$g 个元素分别包含$3$个顶点$u^{i+2},\bar{u}^{i+2}$，和$u^{i+3}$中的一个。根据扩展立方体的定义，顶点$u^{i+2}$不与 $N(u)-V(B)-\{\bar{u}^{i+2}$,$u^{i+3}\}$中的顶点相连。所以存在一个元素$a_1 \in F_n-B$ 使得$u^{i+2} \in V(a_1)$和$V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2}$,$u^{i+3}\}\} = 1$。对于$\bar{u}^{i+2}$和$u^{i+3}$的情况，证明和顶点$u^{i+2}$的情形类似且我们设$\bar{u}^{i+2}\in a_2$, $u^{i+3}\in a_3$。因为$F_n-B-\{a_1,a_2,a_3\}$中的每个元素最多包含$N(u)-V(B)-V(a_1)-V(a_2)-V(a_3)$中的$2$个元素，所以$|F_n| \geq 2+3+\lceil\frac{2n-10}{2}\rceil=n$。
+
+\textbf{情形3.2.2}. $S=2$。那么在$N(u)-V(B)$中存在$2$ 个元素，其中一个元素包含$u^{i+2},\bar{u}^{i+2}$和$u^{i+3}$中的一个顶点，另一个元素包含另外$2$个顶点。我们假设$a_1$包含$u^{i+2},\bar{u}^{i+2}$和$u^{i+3}$中的一个顶点， $a_2$包含另外$2$个顶点。
+
+\textbf{情形3.2.2.1.} $u^{i+2} \in V(a_1)$和$\{\bar{u}^{i+2}, u^{i+3}\} \subseteq V(a_2)$。 类似于情形3.2.1中的讨论，我们有$V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\}=1$。顶点$\bar{u}^{i+2}$或$u^{i+3}$并不与$N(u)-V(B)-\{u^{i+2}\}$和$\{\bar{u}^{i+2},u^{i+3}\} \in E(AQ_n)$中的顶点相连接。那么 $\{\bar{u}^{i+2},u^{i+3}\} \subseteq a_2$和$V(a_2) \cap \{N(u)-V(B)-\{u^{i+2}\}\}=2$。因为$F_n-B-\{a_1, a_2\}$中的每个元素最多包含$N(u)-V(B)-V(a_1)-V(a_2)$中的$2$个顶点，那么$|F_n| \geq 2+1+1+\lceil\frac{2n-10}{2}\rceil=n-1$。对于$u^{i+3} \in V(a_1)$ and $\{\bar{u}^{i+2}$ $u^{i+2}\} \subseteq V(a_2)$情形，证明类似，在此不再赘述。
+
+\textbf{情形3.2.2.2.} $\bar{u}^{i+2} \in V(a_1)$和$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$。因为$\{u^{i+2},u^{i+3}\} \notin E(AQ_n)$，所以这种情形不存在。
+
+\textbf{情形3.2.3.} $S=1$。因为$\{u^{i+2},u^{i+3}\} \notin E(AQ_n)$。所以这种情形不存在。
+
+\textbf{情形3.3.} $j-i \geq 4 $。我们设$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$。我们将计算在$F_n-B$中包含$U_{ij}$元素的个数。显然，$5 \leq |U| \leq 2n-7$。因为每个元素最多包含$F_n-B$中$N(u)-V(B)$的$2$个元素且$U \equiv 1$(mod 2)，类似于情形 3.2.1中的讨论，我们有$|F_n| \geq 2+1+\lceil\frac{2n-8}{2}\rceil=n-1$。
+
+\textbf{情形4.} $|B| \geq 3$。如果$b_i,b_j \in B$且不存在$b_k \in B(i<k<j)$，我们设$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$。根据情形3的讨论，包含$F_n-B$中的$U_{ij}$所有顶点的最少的元素个数是$\lceil\frac{|U_{ij}|}{2}\rceil$。因此，$|F_n| \geq |B|+(|B|-1)+\lceil\frac{2n-1-3\times|B|-(|B|-1)}{2}\rceil=n-1$。
+
+所以引理成立。
+\end{proof}
+
+\begin{lem}
+\label{C_3>=}
+当$n \geq 6$时，$\kappa(AQ_n,C_3) \geq n-1$。
+\end{lem}
+
+\begin{proof}
+我们将用反证法来证明这个引理。设$F_n^*$是$AQ_n$中的一个$C_3$-结构集且
+$|F_n^*| \leq n-2$。如果$AQ_n-V(F_n^*)$是不连通的，那么我们设$R$是$AQ_n-V(F_n^*)$中的一个最小的
+连通分支，且 $|V(F_n^*)| \leq 3\times(n-2) = 3n-6$。
+根据引理\ref{1_extraconnectivity}，我们有$3n-6 < 4n-8$ for $n \geq 6$。
+因此$|V(R)|=1$。此外，我们假设顶点$u \in V(R)$，
+根据引理\ref{min_C_3}，$|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$，
+这意味着在$AQ_n-V(F_n^*)$中的$u$至少
+存在一个邻居顶点。因此，我们有$|V(R)| \geq 2$，矛盾。
+这样，$AQ_n-V(F_n^*)$是连通的。引理成立。
+\end{proof}
+
+根据引理\ref{C_3<=}和引理\ref{C_3>=}，我们有下面的定理：
+
+\begin{thm}
+当$n \geq 6$时，$\kappa(AQ_n,C_3)=n-1$。
+\end{thm}
+
+\begin{proof}
+我们将通过反证法来证明这个引理。设$F_n^*$是$AQ_n$中的一个$C_3$-结构集且
+$|F_n^*| \leq n-2$。如果$AQ_n-V(F_n^*)$是不连通的，那么我们设$R$
+是$AQ_n-V(F_n^*)$中的一个最小的连通分量，且$|V(F_n^*)| \leq 3\times(n-2) = 3n-6$。
+根据引理\ref{1_extraconnectivity}，我么有$3n-6 < 4n-8,n \geq 6$。因此$|V(R)|=1$。
+此外，我们假设$u \in V(R)$。根据引理\ref{min_C_3}，
+$|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$，这意味着
+$AQ_n-V(F_n^*)$中的顶点$u$至少存在一个邻居节点。
+因此，我们有$|V(R)| \geq 2$，矛盾。因此，$AQ_n-V(F_n^*)$是连通的。引理成立。
+\end{proof}
+
+根据引理\ref{C_3<=}和引理\ref{C_3>=}，我们有下面的定理：
+
+\begin{thm}
+当$n \geq 6$时，$\kappa(AQ_n,C_3)=n-1$。
+\end{thm}
+
+\subsubsection{$\kappa(AQ_n,C_N )$ \textnormal{和} $4 \leq N \leq 2n-1$}
+
+\begin{lem}
+\label{C_N<=}
+当$n \geq 6$和$4 \leq N \leq 2n-1$时，$\kappa(AQ_n,C_N) \leq \lceil\frac{2n-1}{N-1}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$中的任意一个顶点。根据$N$的值，我们将讨论下面的情形：
+
+\textbf{情形1.} $N$是奇数. 设\\
+$S_1=\{\{
+v^{[(N-1)i+1]},
+v^{[(N-1)i+2]},
+\ldots,
+v^{[(i+1)(N-1)]},
+(\overline{v^{[(i+1)(N-1)]}})^{\lfloor\frac{(N-1)i+1}{2}\rfloor+1}
+\}\mid 0 \leq i < \lfloor\frac{2n-1}{N-1}\rfloor\}$。
+
+\textbf{情形1.1.} $(2n-1)\equiv1$(mod $(N-1)$)。
+
+\textbf{情形1.1.1.} $N \leq 2n-3$. 设\\
+$S_2=\{\{
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(\overline{v^{[2n-1]}})^2,
+\ldots,
+(v^{[2n-1]})^{\lfloor\frac{N}{2}\rfloor},
+(\overline{v^{[2n-1]}})^{\lfloor\frac{N}{2}\rfloor},
+(v^{[2n-1]})^{\lceil\frac{N}{2}\rceil}
+\}\}$。
+
+\textbf{情形1.1.2.} $N = 2n-1$. 设\\
+$S_2=\{\{
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(\overline{v^{[2n-1]}})^2,
+\ldots,
+(v^{[2n-1]})^{n-3},
+(\overline{v^{[2n-1]}})^{n-3},
+(\overline{v^{[2n-1]}})^{n-2},\\
+((\overline{v^{[2n-1]}})^{n-2})^{n-4},
+(\overline{(\overline{v^{[2n-1]}})^{n-2}})^{n-4},
+((\overline{v^{[2n-1]}})^{n-2})^{n-3},
+(\overline{(\overline{v^{[2n-1]}})^{n-2}})^{n-3}
+\}\}$。
+
+\textbf{情形1.2.} $(2n-1)\equiv3$(mod $(N-1)$). 设\\
+$S_2=\{\{
+v^{[2n-1]},
+v^{[2n-3]},
+v^{[2n-2]},
+(v^{[2n-2]})^{n-1-\frac{N-3}{2}},
+(\overline{v^{[2n-2]}})^{n-1-\frac{N-3}{2}},
+(v^{[2n-2]})^{n-\frac{N-3}{2}},
+\ldots,
+(v^{[2n-2]})^{n-2},\\
+(\overline{v^{[2n-2]}})^{n-2}
+\}\}$。
+
+\textbf{情形1.3.} $(2n-1)>3$(mod $(N-1)$). 设\\
+$S_2=\{\{
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
+\ldots,
+v^{[2n-3]},
+v^{[2n-1]},
+v^{[2n-2]},\\
+(v^{[2n-2]})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+2-\frac{N-(2n-1-{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1))}{2}},
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+2-\frac{N-(2n-1-{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1))}{2}},\\
+(v^{[2n-2]})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+3-\frac{N-(2n-1-{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1))}{2}},
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+3-\frac{N-(2n-1-{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1))}{2}},\\
+\ldots,
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
+\}\}$。
+
+\textbf{情形2.} $N$是偶数. 设\\\\
+$
+{S_1}=\left\{
+\begin{array}{lcr}
+\{\{
+v^{[3i+1]},
+v^{[3i+3]},
+v^{[3i+2]},
+(v^{[3i+1]})^{\lfloor\frac{3i+1}{2}\rfloor+3}\}
+\mid {0\leq i<\lfloor\frac{2n-1}{N-1}\rfloor\textnormal{ and }i \equiv0(\textnormal{ mod }2)\textnormal{ and }N=4}\},\\
+\{\{
+v^{[(N-1)i+1]},
+v^{[(N-1)i+2]},
+\ldots,
+v^{[(i+1)(N-1)]},
+(\overline{{v^{[(i+1)(N-1)]}}})^{\lfloor\frac{(N-1)i+1}{2}\rfloor+1}\}
+\mid 0\leq i<\lfloor\frac{2n-1}{N-1}\rfloor\textnormal{ and }\\i=0(\textnormal{mod }2)\textnormal{ and }N\neq4\}.\\
+\end{array}\right.
+$\\\\
+$S_2=\{\{
+v^{[(N-1)i+1]},
+v^{[(N-1)i+2]},
+\ldots,
+v^{[(i+1)(N-1)]},
+({v^{[(i+1)(N-1)]}})^{\lfloor\frac{(N-1)i+1}{2}\rfloor+1}
+\}\mid 0\leq i< \lfloor\frac{2n-1}{N-1}\rfloor$ and $i=1$(mod 2)$\}$。
+
+如果$(2n-1)  \equiv 0$ (mod $(N-1)$)，那么$S_3=\emptyset$；否则的话，我们将讨论下面几种情形：
+
+\textbf{情形2.1.}  $(2n-1)\equiv1$(mod $(N-1)$). 设\\
+%此时N的取值只能小于等于n，N-1的取值不能等于2n-2，否则N是奇数，与前提条件矛盾
+$S_3=\{\{
+v^{[2n-1]},
+(v^{[2n-1]})^1,
+(v^{[2n-1]})^2,
+(\overline{v^{[2n-1]}})^2,
+(v^{[2n-1]})^3,
+(\overline{v^{[2n-1]}})^3,
+\ldots,
+(v^{[2n-1]})^{\frac{N}{2}},
+(\overline{v^{[2n-1]}})^{\frac{N}{2}}
+\}\}$。
+
+\textbf{情形2.2.}  $(2n-1)\equiv2$(mod $(N-1)$).
+
+\textbf{情形2.2.1.}  $N < n$. 设\\
+$S_3=\{\{
+v^{[2n-1]},
+v^{[2n-2]},
+(v^{[2n-2]})^{n-1},
+((v^{[2n-2]})^{n-1})^{n-2},
+\ldots,
+(((v^{[2n-2]})^{n-1})\ldots)^{n-(N-2)}
+\}\}$。
+
+\textbf{情形2.2.2.}  $N = 2n-2$. 设\\
+$S_3=\{\{
+v^{[2n-1]},
+v^{[2n-2]},
+(v^{[2n-2]})^1,
+(v^{[2n-2]})^2,
+(\overline{(v^{[2n-2]}})^2,
+(v^{[2n-2]})^3,
+(\overline{(v^{[2n-2]}})^3,
+\ldots,
+(v^{[2n-2]})^{n-2},\\
+(\overline{(v^{[2n-2]}})^{n-2},
+(v^{[2n-2]})^{n-1}
+\}\}$。
+
+
+\textbf{情形2.3.} $(2n-1)\equiv3$(mod $(N-1)$). 设\\
+$S_3=\{\{
+v^{[2n-2)]},
+v^{[2n-3]},
+v^{[2n-1]},
+(\overline{v^{[2n-1]}})^{2+n-N},
+(\overline{v^{[2n-1]}})^{3+n-N},
+\ldots,
+(\overline{v^{[2n-1]}})^{n-2}
+\}\}$。
+
+\textbf{情形2.4.} $(2n-1)\equiv4$(mod $(N-1)$). 设
+
+\textbf{情形2.4.1.}  $N < n$. 设\\
+$S_3=\{\{
+v^{[2n-4]},
+v^{[2n-3]},
+v^{[2n-1]},
+v^{[2n-2]},
+(v^{[2n-2)]})^{4+n-N},
+(v^{[2n-2]})^{5+n-N},
+\ldots,
+(v^{[2n-2]})^{n-1}
+\}\}$。
+
+\textbf{情形2.4.2.}  $N = 2n-4$. 设\\
+$S_3=\{\{
+v^{[2n-4]},
+v^{[2n-3]},
+v^{[2n-1]},
+v^{[2n-2]},
+(\overline{v^{[2n-2]}})^3,
+(v^{[2n-2]})^4,
+(\overline{v^{[2n-2]}})^4,
+(v^{[2n-2]})^5,
+(\overline{v^{[2n-2]}})^5,
+\ldots,\\
+(\overline{v^{[2n-2]}})^{n-2},
+(v^{[2n-2]})^{n-1}
+\}\}$。
+
+\textbf{情形2.5.}  $(2n-1)$是奇数(mod $(N-1)$)(除了1和3). 设\\
+$S_3=\{\{
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},\ldots,
+v^{[2n-3]},
+v^{[2n-1]},
+v^{[2n-2]},\\
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor-N+2n-\lfloor\frac{2n-1}{N-1}\rfloor(N-1)+1},
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor-N+2n-\lfloor\frac{2n-1}{N-1}\rfloor(N-1)+2},\\
+\ldots,
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
+\}\}$。
+
+\textbf{情形2.6.}  $(2n-1)$是偶数(mod $(N-1)$)(处理0，2和4). 设
+
+\textbf{情形2.6.1.}  $N < n$.  设\\
+$S_3=\{\{
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
+\ldots,
+v^{[2n-3]},
+v^{[2n-1]},
+v^{[2n-2]},\\
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1},
+(\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor-N+2n-\lfloor\frac{2n-1}{N-1}\rfloor(N-1)+1},\\
+(\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor-N+2n-\lfloor\frac{2n-1}{N-1}\rfloor(N-1)+2},
+\ldots,\\
+(\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}
+\}\}$。
+
+\textbf{情形2.6.2.}  $ n \leq N \leq 2n-6$.
+
+\textbf{情形2.6.2.1.}  $ n = N -1$. 设\\
+$S_3=\{\{
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
+\ldots,
+v^{[2n-3]},
+v^{[2n-1]},
+v^{[2n-2]},
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1},\\
+(v^{[2n-2]})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
+\}\}$。
+
+\textbf{情形2.6.2.2.}  $ n \neq N -1$. 设\\
+$S_3=\{\{
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
+v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
+\ldots,
+v^{[2n-3]},
+v^{[2n-1]},
+v^{[2n-2]},\\
+(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1},\\
+((\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-N+n+1},
+(\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-N+n+1},\\
+((\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-N+n+2},
+(\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-N+n+2},\\
+\ldots,
+((\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-1},
+(\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-1},\\
+(v^{[2n-2]})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
+\}\}$。
+
+当$N$是奇数时或者$(2n-1) \equiv 0$ (mod $(N-1)$) (否则的话，$S=S_1\cup S_2\cup S_3$)，我们设$S=S_1\cup S_2$。
+根据扩展立方体的定义， $S$中每个元素的导出子图和$C_N$同构且$|S|$ = $\lceil\frac{2n-1}{N-1}\rceil$。设$W(S)=\cup_{f \in S}f$。
+因为$AQ_n- W(S)$是不连通的且它的一个连通分量是\{$u$\}，那么$\kappa(AQ_n,C_N)$ $\leq$ $\lceil\frac{2n-1}{N-1}\rceil$。
+图~\ref{C_5}展示了$AQ_6$中的一个$C_5$结构割。
+\end{proof}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.3]{C_5.eps}\\
+  \caption{A $C_5$-structure-cut in $AQ_6$}\label{C_5}
+\end{figure}
+
+\begin{lem}
+\label{min_C_N}
+设$F_n$是$AQ_n$中的一个$C_N$-结构集，其中$n \geq 6$和$4 \leq N \leq 2n-1$。
+如果$AQ_n - V(F_n)$中存在一个孤立顶点，那么$|F_n|\geq \lceil\frac{2n-1}{N-1}\rceil$。
+\end{lem}
+
+\begin{proof}
+设$u$是$AQ_n$中任意一个顶点。根据扩展立方体的定义、性质\ref{hypercube_edge}
+和性质\ref{complement_edge}，$u$的任意$N$个邻居顶点都不能形成一个$C_N$并且$F$中的每个元素最多包含
+$N-1$个$N(u)$中的顶点。因此，$|F_n|\geq \lceil\frac{2n-1}{N-1}\rceil$。
+\end{proof}
+
+\begin{lem}
+\label{C_N>=}
+当$n \geq 6$和$4 \leq N \leq 2n-1$时，$\kappa(AQ_n,C_N) \geq \lceil\frac{2n-1}{N-1}\rceil$。
+\end{lem}
+
+\begin{proof}
+我们将通过反证法来证明这个引理。设$F_n^*$是$AQ_n$中的一个$C_N$-结构集且
+$|F_n|^* \leq \lceil\frac{2n-1}{N-1}\rceil-1$。如果$AQ_n-V(F_n^*)$是不连通的，那么我们设$R$
+是$AQ_n-V(F_n^*)$中的最小的一个连通分量。此外$|V(F_n^*)| \leq N\times(\lceil\frac{2n-1}{N-1}\rceil-1)$。
+根据引理\ref{1_extraconnectivity}，我们有$N\times(\lceil\frac{2n-1}{N-1}\rceil-1) <4n-8$对于$n \geq 6$。
+因此$|V(R)|=1$。进一步的，我们假设顶点$u \in V(R)$。根据引理\ref{min_C_N}，
+$|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$，这意味着$AQ_n-V(F_n^*)$中的顶点$u$至少存在一个邻居节点。
+因此，我们有$|V(R)| \geq 2$，矛盾。所以，$AQ_n-V(F_n^*)$是连通的，引理成立。
+\end{proof}
+
+根据引理\ref{C_N<=}和引理\ref{C_N>=}，我们有下面的定理：
+
+\begin{thm}
+当$n \geq 6$和$4 \leq N \leq 2n-1$是，$\kappa(AQ_n,C_N)=\lceil\frac{2n-1}{N-1}\rceil$。
+\end{thm}
+
+\section{扩展立方体的容错能力分析}
+
+接下来，我们将比较扩展立方体在传统连通度和结构连通度所能容忍的故障顶点数，以此来分析
+扩展立方体在结构连通度下的容错能力。
+
+\begin{table}[!htb]
+\centering
+\smallcaption{传统连通度和结构连通度所能容忍的故障顶点数} \label{2connectivity}.
+%\vspace{+23pt}
+{%\small
+    \begin{tabular}{|l|c|c|c|c|c|}
+\hline
+$n$       &$\kappa(AQ_n)$  &$\kappa(AQ_n,K_{1,3})$  &$\kappa(AQ_n,K_{1,6})$ &$\kappa(AQ_n,P_7)$ &$\kappa(AQ_n,C_5)$\\
+\hline
+6           &11    &12            &21    &14          &15\\
+8           &15    &16            &28    &21          &20\\
+10          &19    &20            &35    &21          &25\\
+20          &39    &40            &70    &42          &50\\
+50          &99    &100           &175   &105         &100\\
+\hline
+\end{tabular}
+}
+\end{table}
+
+从表\ref{2connectivity}可以看出，结构$H$发生故障对于扩展立方体发生的影响相比于传统连通度
+要大得多。尤其当结构$H=K_{1,6}$时，随着维数$n$的变大，故障结构$K_{1,6}$影响的顶点数接近于
+传统连通度的$2$倍。
+
+\section{$K_{1,M}$-结构连通度下的容错路由}
+
+在本节中，我们将给出$K_{1,M}$-结构连通度下的容错路由算法。相对于结构$P_L$和$C_N$，$K_{1,M}$的
+结构更具有普遍性和实际意义，因此，在这里我们将给出$K_{1,6}$-结构连通度下的容错路由算法。
+同时我们将给出相应的容错路由算法分析以及模拟实验。
+\subsection{$K_{1,M}$-结构连通度下的容错路由算法}
+
+Choudum等人在\cite{Choudum2002}中给出了扩展立方体中的任意两个顶点间的路由算法，因为我们要在后面的
+容错路由算法中调用这个算法，在给出容错路由算法之前，我们先给出两个顶点间的路由算法，
+并且我们将这个算法命名为AQRouting.
+
+\begin{breakablealgorithm}
+\footnotesize
+\label{AQRouting}
+\caption{\texttt{{AQRouting}}}
+\begin{algorithmic}[1]
+    \Require $n$-维的扩展立方体$AQ_n$，两个顶点$u,v \in V(AQ_n)$。
+    \Ensure  一条$AQ_n$从$u$到$v$的路径。
+    \State $P \leftarrow \{u\}$;
+   \State $tag=u \bigoplus_2 v$;
+   \While{$tag \neq 0$}
+   \State 从左向右扫描$tag$，找到$tag$中第一个为$1$的二进制，即$tag_i=1$;
+   \If{$tag_{i+1}=0$}
+        \State $u \leftarrow u_i$;
+        \State $P \leftarrow P \cup \{u\}$;
+   \Else
+        \State $u \leftarrow \bar{u}_i$;
+        \State $P \leftarrow P \cup \{u\}$;
+   \EndIf
+   \State $tag=u \bigoplus_2 v$;
+   \EndWhile
+   \State $P \leftarrow P \cup \{v\}$;\\
+   \Return $P$;
+  \end{algorithmic}
+\end{breakablealgorithm}
+
+这里的$tag=u \bigoplus_2 v$表示$u$和$v$的每一个二进制位相加，然后对$2$取模，$tag$是一个$n$位的
+二进制串。例如，$u=01001$，$v=11010$，则$tag=10011$。
+
+因为算法AQRouting通过循环对顶点$u$和顶点$v$的每个二进制位进行运算然后进行相应操作，
+因此算法AQRouting的时间复杂度是$O(n)$。
+
+在给出扩展立方体顶点之间的容错路由算法之前AQFRouting，我们先给出两个子算法
+AQMapping和AQBinding。算法AQMapping主要基于扩展立方体的构造方式和引理\ref{3nodes}。
+根据定义\ref{AugmentedCube1}，子图$H$中的顶点$u$在子图$S$中只有$2$个邻接顶点
+$u_i$和$\bar{u}_i$。因此算法AQMapping的第$2 \sim 3$行的时间复杂度为$O(1)$。而$u$在$H$
+中的顶点个数为$2n-3$，我们可以很容易地得到算法$5 \sim 9$行的时间复杂度为$O(n)$，
+$10 \sim 16$行的时间复杂度为$O(n^2)$。所以，算法AQMapping的时间复杂度为$O(n^2)$。
+
+\begin{breakablealgorithm}
+\footnotesize
+\label{AQMapping}
+\caption{\texttt{{AQMapping}}}
+\begin{algorithmic}[1]
+    \Require 一个$n$-维的扩展立方体$AQ_n$的两个$(n-1)$-维子图$H,S$，
+    一个无故障顶点$u \in V(AQ_n)$，
+    一个故障顶点集$F\subset V(AQ_n)$且$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$。
+    \Ensure  一条从顶点$u$到子图$S$的无故障路径。
+   %\Function{\texttt{AQMapping1}}{$u,G,F$}
+%   \For{ $v \in N_{S-F}(u)$ }
+%   \State \Return($u,v$);
+%   \EndFor
+%   \EndFunction
+   %\Function{\texttt{AQMapping2}}{$u, H, S, G, F$}
+   \Function{\texttt{AQMapping}}{$u, H, S$}
+   \For{ $v \in N_{S-F}(u)$ }
+   \State \Return($u,v$);
+   \EndFor
+   \For{$v \in N_{H-F}(u)$}
+        \If{ $x \in N_{S-F}(v)$ }
+            \State \Return($u,v,x$);
+        \EndIf
+   \EndFor
+   \For{$v \in N_{H-F}(u)$}
+        \For{$x \in N_{H-F}(v)$}
+            \If{$y \in N_{S-F}(x)$}
+                \State \Return($u,v,x,y$);
+            \EndIf
+        \EndFor
+   \EndFor
+   \For{$v \in N_{H-F}(u)$}
+        \For{$x \in N_{H-F}(v)$}
+            \For{$y \in N_{H-F}(x)$}
+                \If{$z \in N_{S-F}(y)$}
+                    \State \Return($u,v,x,y,z$);
+                \EndIf
+             \EndFor
+        \EndFor
+   \EndFor
+   \EndFunction
+  \end{algorithmic}
+\end{breakablealgorithm}
+
+在算法AQBinding中，给定$2$个无故障的顶点$u,v \in V(AQ_n)$，一个子图$G \subset AQ_n$，
+两条路径$P$和$Q$，其中$u=P[1],v=Q[1]$，以及一个故障顶点集$F \subset V(AQ_n),|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$。
+我们将在$AQ_n-F$中构造一条从$u$到$v$的路径。该算法将会在算法AQFRouting中被调用。我们
+将会在给出算法AQFRouting之后来分析算法AQBinding中的第$2 \sim 5$，$13$和$19$行的时间复杂度，因为这几行
+调用了算法AQFRouting。在算法AQBinding的第$6$和第$7$行，选择两条路径$P$和$Q$的共同顶点的时间复杂度
+是$O(n)$，连接$P$和$Q$两条路径的子路径花费的时间是$O(1)$。在算法的$10 \sim 12$和$16 \sim 18$行，
+返回一条由直接$P$（或$Q$）构成的路径的时间复杂度为$O(1)$。
+
+\begin{breakablealgorithm}
+\footnotesize
+\label{AQBinding}
+\caption{\texttt{{AQBinding}}}
+\begin{algorithmic}[1]
+    \Require $2$个无故障的顶点$u,v \in V(AQ_n)$，一个子图$G \subset AQ_n$，
+两条路径$P$和$Q$，其中$u=P[1],v=Q[1]$，以及一个故障顶点集$F \subset V(AQ_n),|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$。
+    \Ensure  一条$AQ_n-F$中的从$u$到$v$的路径。
+    \Function{\texttt{AQBinding1}}{$G,F,u,v,P,Q$}
+    \If{$V(P) \cap V(Q) = \emptyset$}
+        \State $S \gets \texttt{AQFRouting}(G, F, P[-1], Q[-1])$;
+        \State \Return ($P$, $S$, $Q^{-1}$);
+    \EndIf
+    \State 找到$P$和$Q$中第一个公共顶点$x$;
+    \State \Return $(\texttt{Path}(P, u, x), \texttt{Path}(Q^{-1}, x, v)$);
+    \EndFunction
+
+    \Function{\texttt{AQBinding2}}{$G, F, u, v, Q$}
+    \If{$u \in V(Q)$}
+        \State \Return $\texttt{Path}(Q, u, v)$;
+    \EndIf
+    \State \Return (\texttt{AQFRouting}($G, F, u, Q[-1])$, $Q^{-1}$);
+    \EndFunction
+
+    \Function{\texttt{AQBinding3}}{$G, F, u, v, P$}
+    \If{$v \in V(P)$}
+        \State \Return \texttt{Path}$(P, u, v)$;
+    \EndIf
+    \State \Return ($P$, \texttt{AQFRouting}($G, F, P[-1], v)$);
+    \EndFunction
+  \end{algorithmic}
+\end{breakablealgorithm}
+
+接下来，我们将给出主算法AQFRouting。
+%其中的BFS算法表示深度优先算法。
+
+\begin{breakablealgorithm}
+\label{AQFRouting}
+\caption{\texttt{AQFRouting}}
+\footnotesize
+    \begin{algorithmic}[1]
+    \Require 一个$n$-维的扩展立方体$AQ_n$，
+    两个无故障顶点$u,v \in V(AQ_n)$，
+    一个故障顶点集$F\subset V(AQ_n)$，其中$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$。
+    \Ensure  一条$AQ_n-F$中的从$u$到$v$的路径。
+    \Function{\texttt{AQFRouting}}{$AQ_n,F,u,v$}%
+%    \If{$u = v$}  \ \Return ($u$);
+    \If{$(u,v)\in E(AQ_n)$}
+        \State \Return ($u,v$);
+    \ElsIf{$n = 2$}
+        \State \Return (返回$AQ_n - F$中$u$到$v$的一条无故障路径);
+    \ElsIf{$|F| = 0 $}
+        \State \Return \texttt{AQRouting}$(AQ_{n},u,v)$;
+    %\ElsIf{$|F| \geq 2n-2$}
+%         \State \Return \texttt{BFS}($AQ_n-F,u,v$);
+    \EndIf
+    \State $F_{0}\gets F \cap V(AQ^{0}_{n-1})$,
+    $F_{1}\gets F \cap V(AQ^{1}_{n-1})$;
+    \State $m \gets $min$\{|F_{0}|,|F_{1}|\}$;
+    \For{$i \in \{0,1\}$}
+        \State $B_0 \gets AQ^{i}_{n-1}$,  $B_1 \gets AQ^{1-i}_{n-1}$;
+        \If{$u,v \in V(B_0)$ \textbf{and} $|F_{i}| = m$}
+            \State \Return \texttt{AQFRouting}($B_0, F_{i}, u, v$);
+        \ElsIf{$u,v \in V(B_0)$ \textbf{and} $|F_{1-i}| = m$}
+            \State $P\gets$\texttt{AQMapping}$(u, B_0, B_1, F)$;
+            \State $Q\gets$\texttt{AQMapping}$(v, B_0, B_1, F)$;
+            \State \Return \texttt{{AQBinding1}}($B_1,F_{1-i},u,v,P,Q$);
+        %\ElsIf{$u,v \in S_{n}$}
+%            \State  Choose $j \in \{0,1\}$ such that $|F_{j}| =  m$;
+%            \State  $P\gets$\texttt{BMapping1}$(u, B^{{j}}_{n-1}, F)$;
+%            \State  $Q\gets$\texttt{BMapping1}$(v, B^{{j}}_{n-1}, F)$;
+%            \State  \Return \texttt{{BBinding1}}($B^{{j}}_{n-1},F_{j},u,v,P,Q$);
+        \ElsIf{$u \in V(B_0)$ \textbf{and} $v \in V(B_1)$ \textbf{and} $|F_{1-{i}}| = m$}
+            \State $P\gets$\texttt{AQMapping}$(u, B_0, B_1, F)$;
+            \State \Return \texttt{AQBinding3}($B_1, F_{1-{i}}, u, v$,$P)$;
+        \ElsIf{$u \in V(B_0)$ \textbf{and} $v \in V(B_1)$ \textbf{and} $|F_{i}| = m$}
+            \State $P\gets$\texttt{AQMapping}$(v,  B_1, B_0, F)$;
+            \State \Return \texttt{AQBinding2}($B_0, F_{i}, u, v$,$P)$;
+        %\ElsIf{$u \in V(B_0)$ \textbf{and} $v \in S_{n}$ \textbf{and} $|F_{i}| = m$}
+%            \State $P\gets$\texttt{BMapping1}$(v, B_1, F)$;
+%            \State \Return \texttt{BBinding2}($B_0, F_{i}, u, v$,$P$);
+%        \ElsIf{$u \in V(B_0)$ \textbf{and} $v \in S_{n}$ \textbf{and} $|F_{{\bar{i}}}| = m$}
+%            \State $P\gets$\texttt{BMapping2}$(u, B_0, S_{n}, B_1, F)$;
+%            \State  $Q\gets$\texttt{BMapping1}$(v, B_1, F)$;
+%            \State \Return \texttt{{BBinding1}}($B_1,F,u,v,P,Q$);
+%        \ElsIf{$u \in S_{n}$ \textbf{and} $v \in V(B_0)$ \textbf{and} $|F_{{i}}| = m$}
+%            \State $P\gets$\texttt{BMapping1}$(u, B_0, F)$;
+%            \State \Return \texttt{BBinding3}($B_0, F_{{i}}, u, v$, $P)$;
+%        \ElsIf{$u \in S_{n}$ \textbf{and} $v \in V(B_0)$ \textbf{and} $|F_{{\bar{i}}}| = m$}
+%            \State $P\gets$\texttt{BMapping1}$(u, B_1, F)$;
+%            \State  $Q\gets$\texttt{BMapping2}$(v, B_0, B_2, B_1, F)$;
+%            \State \Return \texttt{{BBinding1}}($B_1,F_{{\bar{i}}},u,v,P,Q$);
+        \EndIf
+   \EndFor
+   \EndFunction
+  \end{algorithmic}
+\end{breakablealgorithm}
+
+下面，我们将分析算法AQBinding和算法AQFRouting的时间复杂度。
+
+在算法AQFRouting的第$2 \sim 5$行，构造一条无故障路径的时间复杂度是$O(1)$。
+在算法AQFRouting的第$6 \sim 7$行，其调用算法AQRouting，所以构造一条无故障路径的时间复杂度是$O(n)$。
+而在第$9$，$10$和$12$行，构建$F_0$，$F_1$，$m$，$B_0$和$B_1$的时间复杂度是$O(1)$。
+
+我们用$U(u,v,n)$来表示在$B_n-F$中找到顶点$u$到$v$的一条无故障路径的时间复杂度。
+进一步的，我们设$n$足够大，设
+
+\begin{equation}\label{time-complexity}
+  T(n) = \textrm{max}\{U(u,v,n)|u,v \in V(AQ_n)\setminus F \ \textrm{和} \ u \neq v \}.
+\end{equation}
+
+显然，我们有$T(2)=O(1)$。在算法AQFRouting的第$13$和$14$行，我们有
+\begin{equation}\label{13-14}
+  T(n) \leq T(n-1) + O(1).
+\end{equation}
+
+在算法AQFRouting的第$15$和$24$行，我们有
+\begin{equation}\label{15-24}
+  T(n) \leq T(n-1) + O(n^3).
+\end{equation}
+
+因此，基于不等式\ref{13-14}，\ref{15-24}和定义\ref{AugmentedCube1}，我们有
+\begin{equation}\label{AQFRouting-result}
+  \begin{aligned}
+    %T(n) & \leq \textrm{max} \{ \sum_{i=1}^{\lceil \textrm{log}_2|F| \rceil } O((n-i+1)^3) + \\
+%         & \ \ \ \ \ \ \ \   O(n-\lceil \textrm{log}_2|F| \rceil), O(n^3), O(n)\}\\
+%         & \leq \textrm{max} \{O(\lceil \textrm{log}_2|F| \rceil n^3), O(n^2), O(n)\}\\
+%         & \leq O(\lceil \textrm{log}_2|F| \rceil n^3).
+     T(n) & \leq O(\lceil \textrm{log}_2|F| \rceil n^3).
+   \end{aligned}
+\end{equation}
+
+因此，根据不等式\ref{AQFRouting-result}，在最坏情况下和故障顶点数$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$，算法AQFRouting的时间复杂度为
+$T(n) \leq \lceil \textrm{log}_2|F| \rceil n^3$。
+
+为了分析由算法AQFRouting所构建的容错路径的最大长度，我们给出了以下的定理：
+
+\begin{thm}
+由算法AQFRouting所构建的容错路径的最大长度不超过$8m+\lceil \frac{n-m}{2} \rceil+1$，当
+故障顶点集$F$满足$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$。
+\end{thm}
+
+\begin{proof}
+我们用$M(n)$来表示由算法AQFRouting所构建的在两个无故障顶点$u$和$v$容错路径的长度。
+显然，如果$|F|=0$，我们有$M(n) \leq \lceil \frac{n}{2} \rceil+1$。
+如果$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$。
+在算法的$13 \sim 14$行，我们有$M(n) \leq M(n-1)$；
+在算法的$15 \sim 18$行，我们有$M(n) \leq M(n-1)+8$；
+在算法的$19 \sim 24$行，我们有$M(n) \leq M(n-1)+4$；
+设$m=\lceil \textrm{log}_2|F| \rceil$，我们有
+\begin{equation}\label{AQFRouting-length}
+  \begin{aligned}
+    M(n) & \leq \textrm{max} \{ \sum_{i=1}^{m} 8 +  \lceil\frac{n-m}{2}  \rceil  + 1,  \lceil\frac{n}{2}  \rceil  + 1\}\\
+         & \leq \textrm{max} \{8m+  \lceil\frac{n-m}{2}  \rceil  + 1,\lceil\frac{n}{2}  \rceil  + 1\} \\
+         & \leq 6m+  \lceil\frac{n-m}{2} \rceil  + 1.
+   \end{aligned}
+\end{equation}
+
+因此，根据不等式\ref{AQFRouting-length}，在最坏情况下，当$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$且
+$m=\lceil \textrm{log}_2|F| \rceil$时，
+由算法AQFRouting所构建的在两个无故障顶点$u$和$v$容错路径的长度为
+$M(n) \leq 6m+  \lceil\frac{n-m}{2} \rceil  + 1$。
+
+\end{proof}
+
+\subsection{模拟实验}
+
+
+在本节中，我们将通过模拟实验来比较算法AQFRouting和传统的深度优先算法BFS的性能，
+我们将通过Python语言来实现，版本为3.7，实验环境是一台处理器为Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz 2.40，
+内存8GB的计算机。我们将通过这台计算法模拟不同的算法并给出实验结果。
+
+我们研究了扩展立方体中多种不同的故障结构，其中包括二分图，路径和圈。在实验中我们将对
+其中最复杂的一种结构$K_{1,6}$进行实验，$K_{1,6}$结构涉及的顶点较多，且也是实际中最容易
+发生故障的结构。我们将在实验中找到两个无故障顶点之间的无故障路径，且故障顶点个数
+$F $
+\section{本章小结}
+本章研究了扩展立方体的$H$-结构连通度和$H$-子结构连通度，结果总结如下：
+
+(1) $\kappa(AQ_n,K_{1,M})=\kappa^s(AQ_n,K_{1,M})=\left\{
+\begin{array}{rcl}
+2n-1       &      &\textnormal{for }n \geq 4 \textnormal{ and } K_{1,M}=K_1,\\
+\lceil\frac{2n-1}{1+M}\rceil     &      &\textnormal{for }n \geq 4 \textnormal{ and } 1 \leq M \leq 3,\\
+\lceil\frac{n-1}{2}\rceil     &      &\textnormal{for } n \geq 6 \textnormal{ and } 4 \leq M \leq 6.
+\end{array} \right. $\\
+
+
+(2) $
+\kappa(AQ_n,P_L)=\kappa^s(AQ_n,P_L)=\lceil\frac{2n-1}{L}\rceil \quad \quad\textnormal{for } n \geq 3 \textnormal{ and } 1 \leq L \leq 2n-1.\\
+$
+
+(3) $
+\kappa^s(AQ_n,C_N)=\lceil\frac{2n-1}{N}\rceil \quad \quad\textnormal{for } n \geq 3 \textnormal{ and } 3 \leq N \leq 2n-1.\\
+$
+
+(4) $ \kappa(AQ_n,C_N)=\left\{
+\begin{array}{rcl}
+n-1     &      &\textnormal{for } n \geq 6 \textnormal{ and } N=3,\\
+\lceil\frac{2n-1}{N-1}\rceil       &      &\textnormal{for } n \geq 6 \textnormal{ and } 4 \leq N \leq 2n-1.
+\end{array} \right. $
+
+当$M$比较小时（$1\leq M\leq6$），我们研究了$K_{1,M}$。在确保稳定通信和理想的情况下，
+扩展立方体可以容忍的故障顶点数几乎是传统连通度的$2$倍。在以后的工作中，我们可能会
+关注$M \geq 7$的情形，这将使我们更加全面的了解扩展立方体的容错能力。另一方面，我们
+可能会关注扩展立方体的其他结构容错性质，比如哈密顿性质等\cite{LvY2018,LvY2017}。
+
+相关成果发表在SCI源期刊
+《Journal of Internet Technology》
+上(第一作者，2020年发表)。

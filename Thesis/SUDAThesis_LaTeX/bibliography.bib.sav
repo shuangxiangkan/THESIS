@@ -1,0 +1,2103 @@
+@article{Chen2015HighPerformance,
+author={陈国良 and 毛睿 and 蔡晔},
+title={高性能计算及其相关新兴技术},
+journal={深圳大学学报（理工版）},
+year={2015},
+number={1},
+pages={25-31},
+month={2},
+}
+
+@article{Zang2016HighPerformance,
+  title={高性能计算的发展},
+  author={臧大伟 and 曹政 and 孙凝晖},
+  journal={科技导报},
+  volume={34},
+  number={14},
+  pages={22-28},
+  year={2016},
+}
+
+@book{Xu2015BigData,
+  title={大数据:正在到来的数据革命、以及它如何改变政府、商业与我们的生活},
+  author={涂子沛},
+  publisher={广西师范大学出版社},
+  year={2015},
+}
+
+@book{Zhang2006Parallel,
+  title={并行计算导论},
+  author={张林波 ... [等},
+  publisher={清华大学出版社},
+  year={2006},
+}
+
+@article{Song2012Network,
+  title={并行计算机的互连网络},
+  author={宋玉艳},
+  journal={电大理工},
+  number={2},
+  pages={41-42},
+  year={2012},
+}
+
+@article{Shao2002An,
+  title={An efficient algorithm for constructing Hamiltonian paths in meshes},
+  author={Shao, Dong Chen and Hong, Shen and Topor, Rodney},
+  journal={Parallel Computing},
+  volume={28},
+  number={9},
+  pages={1293-1305},
+  year={2002},
+}
+
+@article{Latifi1997On,
+  title={On link-disjoint hamiltonian cycles of torus networks},
+  author={Latifi, S. and Zheng, S. Q.},
+  %journal={Computers & Electrical Engineering},
+  journal={Computers Electrical Engineering},
+  volume={23},
+  number={1},
+  pages={25-32},
+  year={1997},
+}
+
+@article{Day1993Unidirectional,
+  title={Unidirectional star graphs},
+  author={Day, Khaled and Tripathi, Anand},
+  journal={Information Processing Letters},
+  volume={45},
+  number={3},
+  pages={123-129},
+  year={1993},
+}
+
+@article{Harary1988A,
+  title={A survey of the theory of hypercube graphs},
+  author={Harary, Frank and Hayes, John P. and Wu, Horng Jyh},
+  %journal={Computers Mathematics with Applications},
+  journal={Computers Mathematics with Applications},
+  volume={15},
+  number={4},
+  pages={277-289},
+  year={1988},
+}
+
+@book{Fan2002Hamilton,
+  title={Hamilton-connectivity and cycle-embedding of the M?bius cubes},
+  author={Fan, Jianxi},
+  publisher={Elsevier North-Holland, Inc.},
+  pages={113-117},
+  year={2002},
+}
+
+@article{Efe1992The,
+  title={The Crossed Cube Architecture for Parallel Computation},
+  author={Efe, K.},
+  %journal={Parallel & Distributed Systems IEEE Transactions on},
+  journal={Parallel Distributed Systems IEEE Transactions on},
+  volume={3},
+  number={5},
+  pages={513-524},
+  year={1992},
+}
+
+@inproceedings{Lai1990Network,
+  title={多级互连网络},
+  author={来光明},
+  booktitle={中国电子学会数据通信学术会议},
+  year={1990},
+}
+
+@article{Fu1995Network,
+  title={基于交叉开关网络的多处理机系统研究},
+  author={傅海帆 and 陈良生},
+  journal={华中科技大学学报(自然科学版)},
+  number={9},
+  pages={43-46},
+  year={1995},
+}
+
+@article{Zhang2006RS485,
+  title={RS485总线网络可靠性研究},
+  author={张芳娥 and 衡君山 and 甄换强},
+  journal={仪器仪表学报},
+  volume={27},
+  number={z3},
+  pages={2458-2459},
+  year={2006},
+}
+
+
+@article{Jin2003Fault,
+  title={Fault—Tolerant Grid Architecture and Practice},
+  author={Jin, Hai and Zou, De Qing and Chen, Han Hua and Sun, Jian Hua and Wu, Song},
+  journal={计算机科学技术学报(英文版)},
+  volume={18},
+  number={4},
+  pages={423-433},
+  year={2003},
+}
+
+@article{Liu2015HPC,
+  title={高性能计算机中互连网络的可靠性研究},
+  author={刘晓婷 and 贾志淳},
+  journal={电子制作},
+  number={7z},
+  pages={151-152},
+  year={2015},
+}
+
+@article{Harary1983Conditional,
+  title={Conditional connectivity},
+  author={Harary, Frank},
+  journal={Networks},
+  volume={13},
+  number={3},
+  pages={347–357},
+  year={1983},
+}
+
+@article{Esfahanian2015Generalized,
+  title={Generalized measures of fault tolerance with application to N -cube networks},
+  author={Esfahanian, A. H},
+  journal={Computers IEEE Transactions on},
+  volume={38},
+  number={11},
+  pages={1586-1591},
+  year={2015},
+}
+
+@article{Latifi1994Conditional,
+  title={Conditional connectivity measures for large multiprocessor systems},
+  author={Latifi, S and Hegde, M and Naraghi-Pour, M},
+  journal={Computers IEEE Transactions on},
+  volume={43},
+  number={2},
+  pages={218-222},
+  year={1994},
+}
+
+@article{Wu1998Fault,
+  title={Fault tolerance measures for m-ary n-dimensional hypercubes based on forbidden faulty sets},
+  author={Wu, Jie and Guo, Guanghui},
+  journal={Computers IEEE Transactions on},
+  volume={47},
+  number={8},
+  pages={888-893},
+  year={1998},
+}
+
+@article{Yang2010Extraconnectivity,
+  title={Extraconnectivity of hypercubes (II)},
+  author={Yang, Weihua and Meng, Jixiang},
+  volume={22},
+  number={6},
+  pages={887-891},
+  year={2010},
+}
+
+@article{Liangcheng2016On,
+  title={On Conditional h-Vertex Connectivity of Some Networks},
+  author={Liangcheng, Y. E. and Liang, Jiarong},
+  journal={Chinese Journal of Electronics},
+  volume={25},
+  number={3},
+  pages={556-560},
+  year={2016},
+}
+
+@book{Li2013Generalized,
+  title={Generalized measures of fault tolerance in exchanged hypercubes},
+  author={Li, Xiang Jun and Xu, Jun Ming},
+  publisher={Elsevier North-Holland, Inc.},
+  pages={533-537},
+  year={2013},
+}
+
+@book{Hsieh2017,
+  title={{2,3}-Restricted connectivity of locally twisted cubes},
+  author={Hsieh, Sun Yuan and Huang, Hong Wen and Lee, Chia Wei},
+  publisher={Elsevier Science Publishers B. V.},
+  pages={78-90},
+  year={2017},
+}
+
+@article{Fabrega1996On,
+  title={On the extraconnectivity of graphs},
+  author={Fabrega, J and Fiol, M. A},
+  journal={Discrete Mathematics},
+  volume={155},
+  number={1-3},
+  pages={49-57},
+  year={1996},
+}
+
+@article{Yang2014Reliability,
+  title={Reliability Evaluation of BC Networks in Terms of the Extra Vertex- and Edge-Connectivity},
+  author={Yang, Weihua and Lin, Huiqiu},
+  journal={IEEE Transactions on Computers},
+  volume={63},
+  number={10},
+  pages={2540-2548},
+  year={2014},
+}
+
+@article{Liangcheng2016On,
+  title={On Conditional h-Vertex Connectivity of Some Networks},
+  author={Liangcheng, Y. E. and Liang, Jiarong},
+  journal={Chinese Journal of Electronics},
+  volume={25},
+  number={3},
+  pages={556-560},
+  year={2016},
+}
+
+@book{Chang2013,
+  title={{2,3}-Extraconnectivities of hypercube-like networks},
+  author={Chang, Nai Wen and Hsieh, Sun Yuan},
+  publisher={Academic Press, Inc.},
+  pages={669-688},
+  year={2013},
+}
+
+@book{Li2013Bounding,
+  title={Bounding the size of the subgraph induced by m vertices and extra edge-connectivity of hypercubes},
+  author={Li, Hao and Yang, Weihua},
+  publisher={Elsevier Science Publishers B. V.},
+  pages={2753-2757},
+  year={2013},
+}
+
+@article{Gu1999Unicast,
+  title={Unicast in Hypercubes with Large Number of Faulty Nodes},
+  author={Gu, Qian Ping and Peng, Shietung},
+  %  journal={Parallel & Distributed Systems IEEE Transactions on},
+  journal={Parallel Distributed Systems IEEE Transactions on},
+  volume={10},
+  number={10},
+  pages={964-975},
+  year={1999},
+}
+
+@inproceedings{Li2008An,
+  title={An Efficient Algorithm for Fault Tolerant Routing Based on Adaptive Binomial-Tree Technique in Hypercubes},
+  author={Li, Yamin and Peng, Shietung and Chu, Wanming},
+  booktitle={Parallel and Distributed Computing: Applications and Technologies,  International Conference, Pdcat 2004, Singapore, December 8-10, 2004, Proceedings},
+  pages={196-201},
+  year={2008},
+}
+
+@article{Wu1997Reliable,
+  title={Reliable unicasting in faulty hypercubes using safety levels},
+  author={Wu, Jie},
+  journal={IEEE Transactions on Computers},
+  volume={46},
+  number={2},
+  pages={241-247},
+  year={1997},
+}
+
+@article{Wu1998Adaptive,
+  title={Adaptive Fault-Tolerant Routing in Cube-Based Multicomputers Using Safety Vectors},
+  author={Wu, Ji},
+  %journal={IEEE Transactions on Parallel & Distributed Systems},
+  journal={IEEE Transactions on Parallel & Distributed Systems},
+  volume={9},
+  number={4},
+  pages={321-334},
+  year={1998},
+}
+
+@article{Guo2009BCube,
+  title={BCube:a high performance, server-centric network architecture for modular data centers},
+  author={Guo, Chuanxiong and Lu, Guohan and Li, Dan and Wu, Haitao and Zhang, Xuan and Shi, Yunfeng and Tian, Chen and Zhang, Yongguang and Lu, Songwu},
+  journal={Sigcomm},
+  volume={39},
+  number={4},
+  pages={63-74},
+  year={2009},
+}
+
+@article{Dong1998Generalized,
+  title={一般化超立方网络的容错寻径算法},
+  author={童明生 and 刘长河 and 范天佑},
+  journal={计算机学报},
+  volume={21},
+  number={12},
+  pages={1074-1083},
+  year={1998},
+}
+
+@article{Liu2006Generalized,
+  title={广义超立方体网络容错路由算法},
+  author={刘红美},
+  journal={武汉理工大学学报(交通科学与工程版)},
+  volume={30},
+  number={4},
+  pages={682-685},
+  year={2006},
+}
+
+@book{Sun2004Geography,
+  title={图论及其应用},
+  author={孙惠泉},
+  publisher={科学出版社},
+  year={2004},
+}
+
+@book{Hsu2008Graph,
+  title={Graph theory and interconnection networks},
+  author={Hsu, Lih Hsing and Lin, Cheng Kuan},
+  publisher={CRC Press, Inc.},
+  pages={xiv+706},
+  year={2008},
+}
+
+% This file was created with JabRef 2.10.
+% Encoding: GBK
+
+@article{efficient2011fan,
+  title={An efficient fault-tolerant routing algorithm in bijective connection networks with restricted faulty edges},
+  author={Fan, Jianxi and Jia, Xiaohua and Cheng, Baolei and Yu, Jia},
+  journal={Theoretical Computer Science},
+  volume={412},
+  number={29},
+  pages={3440-3450},
+  year={2011}
+}
+
+@article{efficientUni2011fan,
+  title={Efficient unicast in bijective connection networks with the restricted faulty node set},
+  author={Fan, Jianxi and Jia, Xiaohua and Liu, Xin and Zhang, Shukui and Yu, Jia},
+  journal={Information Sciences},
+  volume={181},
+  number={11},
+  pages={2303-2315},
+  year={2011}
+}
+
+@article{esfahanian1989generalized,
+  title={Generalized Measures of Fault tolerance with Application to $n$-cube Networks},
+  author={Esfahanian, A.-H.},
+  journal={IEEE Transactions on Computers},
+  volume={38},
+  number={11},
+  pages={1586-1591},
+  year={1989}
+}
+
+
+@article{laxmi1984generalized,
+  title={GENERALIZED HYPERCUBE AND HYPERBUS STRUCTURES FOR A COMPUTER NETWORK},
+  author={Bhuyan, Laxmi N. and Agrawal, Dharma P.},
+  journal={IEEE Transactions on Computers},
+  volume={C-33},
+  number={4},
+  pages={323-333},
+  year={1984}
+}
+
+@article{guo2009BCube,
+  title={BCube: a high performance, server-centric network architecture for modular data centers},
+  author={Guo, Chuanxiong and Lu, Guohan and Li, Dan and Wu, Haitao and Zhang, Xuan  and Shi, Yunfeng and Tian, Chen and Zhang, Yongguang and Lu, Songwu},
+  journal={Computer Communication Review},
+  volume={39},
+  number={4},
+  pages={63-74},
+  year={2009},
+  publisher={ACM}
+}
+
+@article{Duh1996combinatorial,
+  title={Combinatorial properties of generalized hypercube graphs},
+  author={Duh, Dyi-Rong and Chen, Gen-Huey and Hsu, D. F.},
+  journal={Information Processing Letters},
+  volume={57},
+  number={1},
+  pages={41-45},
+  year={1996}
+}
+
+
+@article{harary1983conditional,
+  title={Conditional connectivity},
+  author={Harary, F.},
+  journal={Networks},
+  volume={13},
+  number={3},
+  pages={347-357},
+  year={1983}
+}
+
+@article{Tsai2014topological,
+  title={Topological properties on the wide and fault diameters of exchanged hypercubes},
+  author={Tsai, Tsung-Han and Chen, Y-Chuang and  Tan, Jimmy J. M.},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={25},
+  number={12},
+  pages={3317-3327},
+  year={2014}
+}
+
+@article{xu2005restricted,
+  title={On restricted connectivity and extra connectivity of hypercubes and folded hypercubes},
+  author={Xu, Jun-Ming and Zhu, Qiang and Hou, Xin-Min and Zhou, Tao},
+  journal={Journal of Shanghai Jiaotong University (Science)},
+  volume={10E},
+  number={2},
+  pages={203-207},
+  year={2005}
+}
+
+
+@article{lin2016extra,
+  title={The Extra, Restricted Connectivity and Conditional Diagnosability of Split-Star Networks},
+  author={Lin, Limei and Xu, Li and Zhou, Shuming and Hsieh, Sun-Yuan},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={27},
+  number={2},
+  pages={533-545},
+  year={2016},
+  publisher={IEEE Computer Society}
+}
+
+@article{S1998hierarchy,
+  title={A new hierarchy of hypercube interconnection schemes for parallel computers},
+  author={Lakshmivarahan, S. and Dhall, S. K. },
+  journal={Journal of Supercomputing},
+  volume={2},
+  number={1},
+  pages={81-108},
+  year={1988}
+}
+
+@article{P1996optimal,
+  title={Optimal communication primitives on the generalized hypercube network},
+  author={Fragopoulou, P. and Akl, S. G. and Meijer, H.},
+  journal={Journal of Parallel and Distributed Computing},
+  volume={32},
+  number={2},
+  pages={173-187},
+  year={1996}
+}
+
+@article{gu1999unicast,
+  title={Unicast in hypercubes with large number of faulty nodes},
+  author={Gu, Qian-Ping and Peng, Shietung},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={10},
+  number={10},
+  pages={964-975},
+  year={1999},
+  publisher={IEEE}
+}
+
+
+@article{SG1999evaluation,
+  title={Evaluating the communications capabilities of the generalized hypercube interconnection network},
+  author={Ziavras, S. G. and Krishnamurthy, S.},
+  journal={Concurrency: Practice and Experience},
+  volume={11},
+  number={6},
+  pages={281-300},
+  year={1999}
+}
+
+@article{SG1995scalable,
+  title={Scalable multifolded hypercubes for versatile parallel computers},
+  author={Ziavras, S. G.},
+  journal={Parallel Processing Letters},
+  volume={5},
+  number={2},
+  pages={241-250},
+  year={1995}
+}
+
+@article{SG1996low,
+  title={A low-complexity parallel system for gracious scalable performance. Case study for near PetaFLOPS computing},
+  author={Ziavras, S. G. and Grebel, H. and Chronopoulos, A.},
+  journal={Proceedings Frontiers '96. The Sixth Symposium on the Frontiers of Massively Parallel Computing},
+  pages={363-370},
+  year={1996},
+  publisher={IEEE Comput. Soc. Press}
+}
+
+@article{hsien2009fault,
+  title={Fault-tolerant Embedding of Pairwise Independent Hamiltonian Paths on a Faulty Hypercube with Edge Faults},
+  author={Hsien, Sun-Yuan and Weng, Yu-Fen},
+  journal={Theory of Computing Systems},
+  volume={45},
+  number={2},
+  pages={407-25},
+  year={2009},
+  publisher={Springer-Verlag New York Inc}
+}
+
+
+@article{hsieh2016restricted,
+  title={\{2,3\}- Restricted connectivity of locally twisted cubes},
+  author={Hsieh, Sun-Yuan and Huang, Hong-Wen and Lee, Chia-Wei},
+  journal={Theoretical Computer Science},
+  volume={615},
+  number={32},
+  pages={78-90},
+  year={2016}
+}
+
+
+@article{lin2012embedding,
+  title={Embedding cycles and paths in product networks and their applications to multiprocessor systems},
+  author={Lin, Tsong-Jie and Hsien, Sun-Yuan and Juan, Justie Su-Tzu.},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={23},
+  number={6},
+  pages={1081-1089},
+  year={2012},
+  publisher={IEEE}
+}
+
+@article{k1997highly,
+  title={Highly fault-tolerant routings and fault-induced diameter for generalized hypercube graphs},
+  author={Wada, K. and lkeo, T. and Kawaguchi, K. and Chen, Wei},
+  journal={Journal of Parallel and Distributed Computing},
+  volume={43},
+  number={1},
+  pages={57--62},
+  year={1997},
+  publisher={Academic Press}
+}
+
+
+@article{chen1994topological,
+  title={Topological properties, communication, and computation on $WK$-recursive networks},
+  author={Chen, Gen-Huey and Duh, Dyi-Rong},
+  journal={Networks},
+  volume={24},
+  number={6},
+  pages={303-317},
+  year={1994}
+}
+
+@article{T1990fiber,
+  title={A fiber optic hypermesh for SIMD/MIMD machines},
+  author={Szymanski, T.},
+  journal={Proceedings of Supercomputing '90 (Cat. No.90CH2916-5)},
+  pages={710-719},
+  year={1990}
+}
+
+
+
+
+@article{wang2015restricted,
+  title={The restricted $h$-connectivity of the data center {networkDCell}},
+  author={Wang, Xi and Fan, Jianxi and Zhou, Jingya and Lin, Cheng-Kuan},
+  journal={Discrete Applied Mathematics},
+  volume={203},
+  pages={144-157},
+  year={2016},
+  publisher={Elsevier}
+}
+
+
+@article{liuExistence2010,
+  title={The existence and upper bound for two types of restricted connectivity},
+  author={Liu, Qinghai and Zhang, Zhao},
+  journal={Discrete Applied Mathematics},
+  volume={158},
+  pages={516-521},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{lin2015Restricted,
+  title={The Extra, Restricted Connectivity and Conditional Diagnosability of Split-Star Networks},
+  author={Lin, Limei and Xu, Li and Zhou, Shuming and Hsieh, Sun-Yuan},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={27},
+  number={2},
+  pages={533-545},
+  year={2016},
+  publisher={IEEE Computer Society}
+}
+
+@article{fan2010one,
+  title={One-to-one communication in twisted cubes under restricted connectivity},
+  author={Fan, Jianxi and Li, Kenli and Zhang Shukui and Zhou, Wujun and Cheng, Baolei},
+  journal={Frontiers of Computer Science in China},
+  volume={4},
+  number={4},
+  pages={488-499},
+  year={2010},
+  publisher={Springer}
+}
+
+@article{yang2014conditional,
+  title={Conditional connectivity of recursive interconnection networks respect to embedding restriction},
+  author={Yang, Yuxing and Wang, Shiying and Li, Jing},
+  journal={Information Sciences},
+  volume={279},
+  pages={273--279},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@article{angjeli2013linearly,
+  title={Linearly many faults in dual-cube-like networks},
+  author={Angjeli, Ariana and Cheng, Eddie and Lipt{\'a}k, L{\'a}szl{\'o}},
+  journal={Theoretical Computer Science},
+  volume={472},
+  pages={1--8},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@article{yu2013kind,
+  title={A kind of conditional connectivity of Cayley graphs generated by unicyclic graphs},
+  author={Yu, Xiangming and Huang, Xiaohui and Zhang, Zhao},
+  journal={Information Sciences},
+  volume={243},
+  pages={86--94},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@article{cheng2011kind,
+  title={A kind of conditional vertex connectivity of Cayley graphs generated by 2-trees},
+  author={Cheng, Eddie and Lipt{\'a}k, L{\'a}szl{\'o} and Yang, Weihua and Zhang, Zhao and Guo, Xiaofeng},
+  journal={Information Sciences},
+  volume={181},
+  number={19},
+  pages={4300--4308},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@article{yang2010kind,
+  title={A kind of conditional fault tolerance of ($n$, $k$)-star graphs},
+  author={Yang, Weihua and Li, Hengzhe and Guo, Xiaofeng},
+  journal={Information Processing Letters},
+  volume={110},
+  number={22},
+  pages={1007--1011},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{zhang2010kind,
+  title={A kind of conditional fault tolerance of alternating group graphs},
+  author={Zhang, Zhao and Xiong, Wei and Yang, Weihua},
+  journal={Information Processing Letters},
+  volume={110},
+  number={22},
+  pages={998--1002},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{li2014fault,
+  title={Fault-tolerance of ($n$, $k$)-star networks},
+  author={Li, Xiangjun and Xu, Junming},
+  journal={Applied Mathematics and Computation},
+  volume={248},
+  pages={525--530},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@article{li2013generalized,
+  title={Generalized measures of fault tolerance in exchanged hypercubes},
+  author={Li, Xiangjun and Xu, Junming},
+  journal={Information Processing Letters},
+  volume={113},
+  number={14},
+  pages={533--537},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@article{fan2011efficient,
+  title={Efficient unicast in bijective connection networks with the restricted faulty node set},
+  author={Fan, Jianxi and Jia, Xiaohua and Liu, Xin and Zhang, Shukui and Yu, Jia},
+  journal={Information Sciences},
+  volume={181},
+  number={11},
+  pages={2303--2315},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@article{zhang2010kind,
+  title={A kind of conditional fault tolerance of alternating group graphs},
+  author={Zhang, Zhao and Xiong, Wei and Yang, Weihua},
+  journal={Information Processing Letters},
+  volume={110},
+  number={22},
+  pages={998--1002},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{day2004conditional,
+  title={The conditional node connectivity of the $k$-ary $n$-cube},
+  author={Day, Khaled},
+  journal={Journal of Interconnection Networks},
+  volume={5},
+  number={1},
+  pages={13--26},
+  year={2004},
+  publisher={World Scientific}
+}
+
+@article{wan2009kind,
+  title={A kind of conditional vertex connectivity of star graphs},
+  author={Wan, Min and Zhang, Zhao},
+  journal={Applied Mathematics Letters},
+  volume={22},
+  number={2},
+  pages={264--267},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@article{latifi1994conditional,
+  title={Conditional connectivity measures for large multiprocessor systems},
+  author={Latifi, Shahram and Hegde, Manju and Naraghi-Pour, Morteza},
+  journal={IEEE Transactions on Computers},
+  volume={43},
+  number={2},
+  pages={218--222},
+  year={1994},
+  publisher={IEEE Computer Society}
+}
+
+@article{chang20133,
+  title={On 3-extra connectivity and 3-extra edge connectivity of folded hypercubes},
+  author={Chang, Nai-Wen and Tsai, Cheng-Yen and Hsieh, Sun-Yuan},
+  journal={IEEE Transactions on Computers},
+  volume={63},
+  number={6},
+  pages={1594-1600},
+  year={2014}
+}
+
+@article{hong2012edge,
+  title={Edge fault tolerance of graphs with respect to super edge connectivity},
+  author={Hong, Yanmei and Meng, Jixiang and Zhang, Zhao},
+  journal={Discrete Applied Mathematics},
+  volume={160},
+  number={4},
+  pages={579--587},
+  year={2012},
+  publisher={Elsevier}
+}
+
+@article{balbuena2013k,
+  title={The $k$-restricted edge-connectivity of a product of graphs},
+  author={Balbuena, Camino and Marcote, Xavier},
+  journal={Discrete Applied Mathematics},
+  volume={161},
+  number={1},
+  pages={52--59},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@article{li2014fault,
+  title={Fault-tolerance of ($n$, $k$)-star networks},
+  author={Li, Xiangjun and Xu, Junming},
+  journal={Applied Mathematics and Computation},
+  volume={248},
+  pages={525--530},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@article{tsai2007conditional,
+  title={Conditional edge-fault-tolerant edge-bipancyclicity of hypercubes},
+  author={Tsai, Chang-Hsiung and Lai, Yung-Chun},
+  journal={Information Sciences},
+  volume={177},
+  number={24},
+  pages={5590--5597},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@article{zhu2006edge,
+  title={Edge fault tolerance analysis of a class of interconnection networks},
+  author={Zhu, Qiang and Xu, Junming and Lv, Min},
+  journal={Applied Mathematics and Computation},
+  volume={172},
+  number={1},
+  pages={111--121},
+  year={2006},
+  publisher={Elsevier}
+}
+
+@article{xu2002restricted,
+  title={On restricted edge-connectivity of graphs},
+  author={Xu, Junming and Xu, Keli},
+  journal={Discrete Mathematics},
+  volume={243},
+  number={1},
+  pages={291--298},
+  year={2002},
+  publisher={Elsevier}
+}
+
+@article{li2014generalized,
+  title={Generalized measures for fault tolerance of star networks},
+  author={Li, Xiangjun and Xu, Junming},
+  journal={Networks},
+  volume={63},
+  number={3},
+  pages={225--230},
+  year={2014},
+  publisher={Wiley Online Library}
+}
+
+@article{restrictednode2010jxf,
+  author    = {Jianxi Fan and
+               Kenli Li and
+               Shukui Zhang and
+               Wujun Zhou and
+               Baolei Cheng},
+  title     = {One-to-one communication in twisted cubes under restricted connectivity},
+  journal   = {Frontiers of Computer Science in China},
+  volume    = {4},
+  number    = {4},
+  pages     = {489--499},
+  year      = {2010}
+}
+
+@article{restrictededge2011jxf,
+  author    = {Jianxi Fan and
+               Xiaohua Jia and
+               Baolei Cheng and
+               Jia Yu},
+  title     = {An efficient fault-tolerant routing algorithm in bijective connection
+               networks with restricted faulty edges},
+  journal   = {Theoretical Computer Science},
+  volume    = {412},
+  number    = {29},
+  pages     = {3440--3450},
+  year      = {2011}
+}
+
+@article{chen2008weak,
+  title={Weak-vertex-pancyclicity of ($n$, $k$)-star graphs},
+  author={Chen, Yingyou and Duh, Dyirong and Ye, Tailing and Fu, Jungsheng},
+  journal={Theoretical Computer Science},
+  volume={396},
+  number={1},
+  pages={191--199},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{yang2010conditional,
+  title={Conditional connectivity of Cayley graphs generated by transposition trees},
+  author={Yang, Weihua and Li, Hengzhe and Meng, Jixiang},
+  journal={Information Processing Letters},
+  volume={110},
+  number={23},
+  pages={1027--1030},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{wu1998fault,
+  title={Fault tolerance measures for $m$-ary $n$-dimensional hypercubes based on forbidden faulty sets},
+  author={Wu, Jie and Guo, Guanghui},
+  journal={IEEE Transactions on Computers},
+  volume={47},
+  number={8},
+  pages={888--893},
+  year={1998},
+  publisher={IEEE}
+}
+
+@article{zhou2011conditional,
+  title={Conditional fault tolerance of arrangement graphs},
+  author={Zhou, Shuming and Xu, Junming},
+  journal={Information Processing Letters},
+  volume={111},
+  number={21},
+  pages={1037--1043},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@article{lin2012,
+  title={Conditional connectivity for ($n$,$k$)-arrangement Graph},
+  author={Lin, Limei and Zhou, Shuming},
+  journal={Journal of mathematical study},
+  volume={45},
+  number={4},
+  pages={350--364},
+  year={2102}
+}
+
+@article{ma2010connectivity,
+  title={The connectivity of exchanged hypercubes},
+  author={Ma, Meijie},
+  journal={Discrete Mathematics, Algorithms and Applications},
+  volume={2},
+  number={2},
+  pages={213--220},
+  year={2010},
+  publisher={World Scientific}
+}
+
+@article{wan2009kind,
+  title={A kind of conditional vertex connectivity of star graphs},
+  author={Wan, Min and Zhang, Zhao},
+  journal={Applied Mathematics Letters},
+  volume={22},
+  number={2},
+  pages={264--267},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@article{hu1997fault,
+  title={Fault tolerance on star graphs},
+  author={Hu, Shuo-Cheng and Yang, Chang-Biau},
+  journal={International Journal of Foundations of Computer Science},
+  volume={8},
+  number={2},
+  pages={127--142},
+  year={1997},
+  publisher={World Scientific}
+}
+
+@article{oh1993generalized,
+  title={Generalized measures of fault tolerance in $n$-cube networks},
+  author={Oh, A. Duksu and Choi, Hyeong-Ah},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={4},
+  number={6},
+  pages={702--703},
+  year={1993},
+  publisher={IEEE}
+}
+
+@article{esfahanian1989generalized,
+  title={Generalized measures of fault tolerance with application to $n$-cube networks},
+  author={Esfahanian, A-H},
+  journal={IEEE Transactions on Computers},
+  volume={38},
+  number={11},
+  pages={1586--1591},
+  year={1989},
+  publisher={IEEE}
+}
+
+@article{harary1983conditional,
+  title={Conditional connectivity},
+  author={Harary, Frank},
+  journal={Networks},
+  volume={13},
+  number={3},
+  pages={347--357},
+  year={1983},
+  publisher={Wiley Online Library}
+}
+
+@misc{MicrosoftServerNum,
+  author = {Sebastian Anthony},
+  title = {Microsoft Now Has One Million Servers},
+  howpublished = {http://www.extremetech.com/extreme/161772-microsoft-now-has-one-million-servers-less-than-google-but-more-than-amazon-says-ballmer},
+  year = {2013}
+}
+
+
+@InProceedings{xione2one2013,
+  Title                    = {One-to-one Disjoint Path Covers in {DC}ell},
+  Author                   = {Xi Wang and
+ Jianxi Fan and
+ Baolei Cheng and
+ Wenjun Liu and
+ Yan Wang},
+  Booktitle                = {IFIP International Conference on Network and Parallel Computing (NPC)},
+  Year                     = {2013},
+  Pages                    = {61-70},
+}
+
+@inproceedings{LinLiuHamdi2012,
+	Author = {Lin Dong and Liu Yang and Hamdi Mounir and Muppala Jogesh K.},
+	Pages = {2918-2923},
+	Title = {Hyper-BCube: A scalable data center network},
+	Year = {2012},
+    Booktitle = {ICC},
+}
+
+
+
+
+
+
+@Article{xiHamiltonian2014,
+  Title                    = {Hamiltonian Properties of DCell Networks},
+  journal={The Computer Journal~},
+  doi = {10.1093/comjnl/bxv019},
+  Author = {Xi Wang and
+ Alejandro Erickson and
+ Jianxi Fan and
+ Xiaohua Jia},
+}
+
+@article{fan2005optimal,
+  title={Optimal Path Embedding in Crossed Cubes},
+  author={Jianxi Fan and Xiaola Lin and  Xiaohua Jia},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={16},
+  number={12},
+  pages={1190--1200},
+  year={2005}
+}
+
+@article{xiang2011deadlock,
+  title={Deadlock-free Adaptive Routing in Meshes with Fault-tolerance Ability Based on Channel Overlapping},
+  author={Dong Xiang},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  volume={8},
+  number={1},
+  pages={74--88},
+  year={2011},
+}
+
+@article{xiang2009practical,
+  title={Practical Deadlock-free Fault-tolerant Routing in Meshes Based on the Planar Network Fault Model},
+  author={Dong Xiang and Yueli Zhang and Yi Pan},
+  journal={IEEE Transactions on Computers},
+  volume={58},
+  number={5},
+  pages={620--633},
+  year={2009}
+}
+
+@article{yang2006oblivious,
+  title={{An Oblivious Shortest-path Routing Algorithm for Fully Connected Cubic Networks}},
+  author={Xiaofan Yang and Graham M Megson and David J Evans},
+  journal={Journal of Parallel and Distributed Computing},
+  volume={66},
+  number={10},
+  pages={1294--1303},
+  year={2006}
+}
+
+@article{yang2012optimal,
+  title={Optimal Broadcasting for Locally Twisted Cubes},
+  author={Xiaofan Yang and Lei Wang and Luxing Yang},
+  journal={Information Processing Letters},
+  volume={112},
+  number={4},
+  pages={129--134},
+  year={2012}
+}
+
+@article{fan2011efficientNode,
+  title={Efficient Unicast in Bijective Connection Networks with the Restricted Faulty Node Set},
+  author={Jianxi Fan and Xiaohua Jia and  Xin Liu and Shukui Zhang and Jia Yu},
+  journal={Information Sciences},
+  volume={181},
+  number={11},
+  pages={2303--2315},
+  year={2011}
+}
+
+@article{fan2011efficientEdges,
+  title={{An Efficient Fault-tolerant Routing Algorithm in Bijective Connection Networks with Restricted Faulty Edges}},
+  author={ Jianxi Fan and  Xiaohua Jia and  Baolei Cheng and  Jia Yu},
+  journal={Theoretical Computer Science},
+  volume={412},
+  number={29},
+  pages={3440--3450},
+  year={2011}
+}
+
+@inproceedings{abu2011symbiotic,
+author = {Hussam Libdeh and Paolo Costa and Antony Rowstron and Greg O'Shea and Austin Donnelly},
+title = {Symbiotic Routing in Future Data Centers},
+booktitle = {Special Interest Group on Data Communication (SIGCOMM)},
+year = {2010},
+  pages = {51--62},
+}
+
+@InProceedings{al2008scalable,
+author = {Mohammad Al-fares and Alexander Loukissas and Amin Vahdat},
+title = {A Scalable, Commodity Data Center Network Architecture},
+booktitle = {Special Interest Group on Data Communication (SIGCOMM)},
+year = {2008},
+pages = {63--74},
+}
+
+@PhdThesis{ascheuer1995hamiltonian,
+  Title                    = {Hamiltonian path problems in the on-line optimization of flexible manufacturing systems},
+  Author                   = {Ascheuer, Norbert},
+  School                   = {Technische Universit{\"a}t Berlin Germany},
+  Year                     = {1995}
+}
+
+@Article{bae2003edge,
+  Title                    = {Edge disjoint Hamiltonian cycles in k-ary n-cubes and hypercubes},
+  Author                   = {Bae, Myung M and Bose, Bella},
+  Journal                  = {Computers, IEEE Transactions on},
+  Year                     = {2003},
+  Number                   = {10},
+  Pages                    = {1271--1284},
+  Volume                   = {52},
+
+  Publisher                = {IEEE}
+}
+
+
+@Article{BondyChvatal1976,
+  Title                    = {A method in graph theory},
+  Author                   = {Bondy, John Adrian and Chv{\'a}tal, V},
+  Journal                  = {Discrete Mathematics},
+  Year                     = {1976},
+  Number                   = {2},
+  Pages                    = {111-135},
+  Volume                   = {15},
+
+   Date-modified            = {2014-05-16 16:19:34 +0000},
+  Doi                      = {http://dx.doi.org/10.1016/0012-365X(76)90078-9},
+  ISSN                     = {0012-365X},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/0012365X76900789}
+}
+
+@Book{buckley1990distance,
+  Title                    = {Distance in graphs},
+  Author                   = {Buckley, Fred and Harary, Frank},
+  Publisher                = {Addison-Wesley Redwood City},
+  Year                     = {1990},
+  Number                   = {0},
+  Volume                   = {199}
+}
+
+@Article{chang1999topological,
+  Title                    = {Topological properties of twisted cube},
+  Author                   = {Chang, Chien-Ping and Wang, Jyh-Nan and Hsu, Lih-Hsing},
+  Journal                  = {Information Sciences},
+  Year                     = {1999},
+  Number                   = {1},
+  Pages                    = {147--167},
+  Volume                   = {113},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{chen2010two,
+  Title                    = {Two-node-Hamiltonicity of enhanced pyramid networks},
+  Author                   = {Chen, Yi-Ching and Duh, Dyi-Rong},
+  Journal                  = {Information Sciences},
+  Year                     = {2010},
+  Number                   = {13},
+  Pages                    = {2588--2595},
+  Volume                   = {180},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{dean2008mapreduce,
+author = {Jeffrey Dean and Sanjay Ghemawat},
+title = {MapReduce: Simplified Data Processing on Large Clusters},
+journal = {Communications of The ACM},
+volume = {51},
+year = {2008},
+pages = {107--113},
+number = {1},
+}
+
+@Book{Diestel2012,
+  Title                    = {Graph Theory, 4th Edition},
+  Author                   = {Reinhard Diestel},
+  Publisher                = {Springer},
+  Year                     = {2012},
+  Series                   = {Graduate texts in mathematics},
+  Volume                   = {173},
+
+  Bibsource                = {DBLP, http://dblp.uni-trier.de},
+  Date-added               = {2014-05-30 15:19:04 +0000},
+  Date-modified            = {2014-05-30 15:19:04 +0000},
+  ISBN                     = {978-3-642-14278-9},
+  Pages                    = {I-XVIII, 1-436}
+}
+
+@Article{dong2010embedding,
+  Title                    = {Embedding paths and cycles in 3-ary $n$-cubes with faulty nodes and links},
+  Author                   = {Dong, Qiang and Yang, Xiaofan and Wang, Dajin},
+  Journal                  = {Information Sciences},
+  Year                     = {2010},
+  Number                   = {1},
+  Pages                    = {198--208},
+  Volume                   = {180},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{fan2002hamilton,
+  Title                    = {Hamilton-connectivity and cycle-embedding of the {M}{\"o}bius cubes},
+  Author                   = {Fan, Jianxi},
+  Journal                  = {Information Processing Letters},
+  Year                     = {2002},
+  Number                   = {2},
+  Pages                    = {113--117},
+  Volume                   = {82},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{fan2008embedding,
+  Title                    = {Embedding of cycles in twisted cubes with edge-pancyclic},
+  Author                   = {Fan, Jianxi and Jia, Xiaohua and Lin, Xiaola},
+  Journal                  = {Algorithmica},
+  Year                     = {2008},
+  Number                   = {3},
+  Pages                    = {264--282},
+  Volume                   = {51},
+
+  Publisher                = {Springer}
+}
+
+@Article{fan2007optimal,
+  Title                    = {Optimal fault-tolerant embedding of paths in twisted cubes},
+  Author                   = {Fan, Jianxi and Lin, Xiaola and Pan, Yi and Jia, Xiaohua},
+  Journal                  = {Journal of Parallel and Distributed Computing},
+  Year                     = {2007},
+  Number                   = {2},
+  Pages                    = {205--214},
+  Volume                   = {67},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{fu2002node,
+  Title                    = {Node-disjoint paths and related problems on hierarchical cubic networks},
+  Author                   = {Fu, Jung-Sheng and Chen, Gen-Huey and Duh, Dyi-Rong},
+  Journal                  = {Networks},
+  Year                     = {2002},
+  Number                   = {3},
+  Pages                    = {142--154},
+  Volume                   = {40},
+
+  Publisher                = {Wiley Online Library}
+}
+
+@InProceedings{fu2001combinatorial,
+  Title                    = {Combinatorial properties of hierarchical cubic networks},
+  Author                   = {Fu, Jung-Sheng and Chen, Gen-Huey and Duh, Dyi-Rong},
+  Booktitle                = {Parallel and Distributed Systems, 2001. ICPADS 2001. Proceedings. Eighth International Conference on},
+  Year                     = {2001},
+  Organization             = {IEEE},
+  Pages                    = {525--532}
+}
+
+@Misc{garey1979computers,
+  Title                    = {Computers and Intractability: a guide to NP-completeness},
+
+  Author                   = {Garey, Michael R and Johnson, David S},
+  Year                     = {1979},
+
+  Publisher                = {WH Freeman New York}
+}
+
+@Book{michael1979computers,
+  Title                    = {{Computers and Intractability: A Guide to the Theory of NP-Completeness}},
+  Author                   = {Michael Randolph Garey and David S. Johnson},
+  Year                     = {1979},
+
+  Booktitle                = {Artificial Evolution},
+  Masid                    = {694811}
+}
+
+@InProceedings{ghemawat2003google,
+author = {Sanjay Ghemawat and Howard Gobioff and Shun Leung},
+title = {The Google File System},
+  Booktitle           = {Symposium on Operating Systems Principles (SIGOPS)},
+year = {2003},
+pages = {29--43},
+}
+
+@InProceedings{greenberg2009vl2,
+  Title                    = {VL2: a Scalable and Flexible Data Center Network},
+  Author                   = {Albert Greenberg and
+               James Hamilton and
+               Navendu Jain and
+               Srikanth Kandula and
+               Changhoon Kim and
+               Parantap Lahiri and
+               David Maltz and
+               Parveen Patel and
+               Sudipta Sengupta},
+  Booktitle                = {Special Interest Group on Data Communication (SIGCOMM)},
+  Year                     = {2009},
+  Pages                    = {51--62},
+}
+
+
+
+@inproceedings{heller2010elastictree,
+  title={ElasticTree: Saving Energy in Data Center Networks},
+  author={Brandon Heller and
+               Srinivasan Seetharaman and
+               Priya Mahadevan and
+               Yiannis Yiakoumis and
+               Puneet Sharma and
+               Sujata Banerjee and
+               Nick McKeown},
+  booktitle={Symposium on Network System Design and Implementation},
+  pages={249--264},
+  year={2010}
+}
+
+@inproceedings{raiciu2011improving,
+author = {Costin Raiciu and Sebastien Barre and Christopher Pluntke and Adam Greenhalgh and Damon Wischik and Mark Handley},
+title = {Improving Datacenter Performance and Robustness with Multipath TCP},
+year = {2011},
+pages = {266--277},
+booktitle={Special Interest Group on Data Communication (SIGCOMM)},
+}
+
+@inproceedings{dpcpancake2006,
+author = {Keiichi Kaneko and Shietung Peng},
+title = {Disjoint Paths Routing in Pancake Graphs},
+booktitle = {Parallel and Distributed Computing: Applications and Technologies},
+year = {2006},
+pages = {254--259},
+}
+
+@article{ndprotatorgraph1996,
+author = {Yukihiro Hamada and Feng Bao and Aohan Mei and Yoshihide Igarashi},
+title = {Nonadaptive Fault-Tolerant File Transmission in Rotator Graphs},
+Journal = {IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences},
+year = {1996},
+pages = {477--482},
+  Number                   = {4},
+  Volume                   = {E79-A},
+}
+
+
+
+@InProceedings{kim2009cost,
+  title = {Cost-Efficient Dragonfly Topology for Large-Scale Systems},
+  author = {John Kim and William J. Dally and Steve Scott and Dennis Abts},
+  Booktitle={Optical Fiber Communication Conference},
+  pages={33--40},
+  year={2009},
+}
+
+@InProceedings{garcia2013ofar,
+  title={OFAR-CM: Efficient Dragonfly Networks with Simple Congestion Management},
+  author={Marina Garc\'{\i}a and
+               Enrique Vallejo and
+               Ram{\'o}n Beivide and
+               Mateo Valero and
+               Germ{\'a}n Rodr\'{\i}guez},
+  Booktitle={IEEE Hot Interconnects},
+  pages={55--62},
+  year={2013},
+}
+
+@inproceedings{abts2010energy,
+  title={{Energy Proportional Datacenter Networks}},
+  author={Abts, Dennis and Marty, Michael R and Wells, Philip M and Klausler, Peter and Liu, Hong},
+  Booktitle     = {Special Interest Group on Data Communication (SIGCOMM)},
+  pages={338--347},
+  year={2010},
+  organization={ACM}
+}
+
+@InProceedings{abu2011symbiotic,
+  title={{Symbiotic Routing in Future Data Centers}},
+  author={Abu-Libdeh, Hussam and Costa, Paolo and Rowstron, Antony and O'Shea, Greg and Donnelly, Austin},
+  Booktitle     = {Special Interest Group on Data Communication (SIGCOMM)},
+  pages={51--62},
+  year={2011}
+}
+
+@InProceedings{guo2009bcube,
+  Title                    = {{BC}ube: a High Performance, Server-centric Network Architecture for Modular Data Centers},
+  Author                   = {Guo, Chuanxiong  and
+               Lu, Guohan  and
+               Li, Dan  and
+               Wu, Haitao  and
+               Zhang, Xuan  and
+               Shi, Yunfeng  and
+               Tian, Chen  and
+               Zhang, Yongguang  and
+               Lu, Songwu},
+  Booktitle                = {Special Interest Group on Data Communication (SIGCOMM)},
+  Year                     = {2009},
+  pages     = {63--74},
+}
+
+@InProceedings{guo2008dcell,
+  Title                    = {D{C}ell: a Scalable and Fault-tolerant Network Structure for Data Centers},
+  Author                   = {Chuanxiong Guo and
+               Haitao Wu and
+               Kun Tan and
+               Lei Shi and
+               Yongguang Zhang and
+               Songwu Lu},
+  Booktitle                = {Special Interest Group on Data Communication (SIGCOMM)},
+  Year                     = {2008},
+  Pages                    = {75--86},
+}
+
+
+
+@Article{GyarmatiTrinh2010,
+  Title                    = {Scafida: A Scale-free Network Inspired Data Center Architecture},
+  Author                   = {Gyarmati, L{\'a}szl{\'o} and Trinh, Tuan Anh},
+  Journal                  = {{SIGCOMM} Comput. Commun. Rev.},
+  Year                     = {2010},
+
+  Month                    = oct,
+  Number                   = {5},
+  Pages                    = {4--12},
+  Volume                   = {40},
+
+  Abstract                 = {Data centers have a crucial role in current Internet architecture supporting content-centric networking. State-of-the-art data centers have different architectures like fat-tree, {DCell}, or {BCube.} However, their architectures share a common property: symmetry. Due to their symmetric nature, a tricky point with these architectures is that they are hard to be extended in small quantities. Contrary to state-of-the-art data center architectures, we propose an asymmetric data center topology generation method called Scafida inspired by scale-free networks; these data centers have not only small diameters and high fault tolerance, inherited by scale-free networks, but can also be scaled in smaller and less homogenous increments. We extend the original scale-free network generation algorithm of Barabasi and Albert to meet the physical constraints of switches and routers. Despite the fact that our method artificially limits the node degrees in the network, our data center architectures keep the preferable properties of scale-free networks. Based on extensive simulations we present preliminary results that are promising regarding the error tolerance, scalability, and flexibility of the architecture.},
+  Bdsk-file-1              = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QVi4uLy4uLy4uLy4uLy4uLy4uL1Jlc2VhcmNoL0JpYmxpb2dyYXBoeSBJbnRlcmNvbm5lY3Rpb24gTmV0d29ya3MvR3lhcm1hdGlUcmluaDIwMTAucGRm0hcLGBlXTlMuZGF0YU8RAjIAAAAAAjIAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAMnnjTRIKwAABLmv2RVHeWFybWF0aVRyaW5oMjAxMC5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFF9ILzzJiuwAAAAAAAAAAAAYAAwAACSAAAAAAAAAAAAAAAAAAAAAfQmlibGlvZ3JhcGh5IEludGVyY29ubmUjNEI5QUZEOQAAEAAIAADJ538kAAAAEQAIAADPMmK7AAAAAQAYBLmv2QSyU/cErScfAtAuugAIe3oAAJigAAIAdU1hY2ludG9zaCBIRDpVc2VyczoAYWxlam86AEdvb2dsZSBEcml2ZToAV29yayBDbG91ZDoAUmVzZWFyY2g6AEJpYmxpb2dyYXBoeSBJbnRlcmNvbm5lIzRCOUFGRDk6AEd5YXJtYXRpVHJpbmgyMDEwLnBkZgAADgAsABUARwB5AGEAcgBtAGEAdABpAFQAcgBpAG4AaAAyADAAMQAwAC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBoVXNlcnMvYWxlam8vR29vZ2xlIERyaXZlL1dvcmsgQ2xvdWQvUmVzZWFyY2gvQmlibGlvZ3JhcGh5IEludGVyY29ubmVjdGlvbiBOZXR3b3Jrcy9HeWFybWF0aVRyaW5oMjAxMC5wZGYAEwABLwAAFQACAAz//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDnAOwA9AMqAywDMQM8A0UDUwNXA14DZwNsA3kDfAOOA5EDlgAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAAOY},
+  Bdsk-url-1               = {http://doi.acm.org.ezproxy.library.uvic.ca/10.1145/1880153.1880155},
+  Bdsk-url-2               = {http://dx.doi.org/10.1145/1880153.1880155},
+  Date-added               = {2014-02-25 15:09:58 +0000},
+  Date-modified            = {2014-03-26 11:47:34 +0000},
+  Doi                      = {10.1145/1880153.1880155},
+  ISSN                     = {0146-4833},
+  Keywords                 = {scale-free network;no shared annotation; server-centric; data center network; data center topology; scafida; bcube; dcell; fat tree; symmetry; diameter; bisection width},
+  Shorttitle               = {Scafida},
+  Url                      = {http://doi.acm.org.ezproxy.library.uvic.ca/10.1145/1880153.1880155},
+  Urldate                  = {2014-02-25}
+}
+
+@Article{hsieh2006fault,
+  Title                    = {Fault-tolerant cycle embedding in the hypercube with more both faulty vertices and faulty edges},
+  Author                   = {Hsieh, Sun-Yuan},
+  Journal                  = {Parallel Computing},
+  Year                     = {2006},
+  Number                   = {1},
+  Pages                    = {84--91},
+  Volume                   = {32},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{hsieh2004efficient,
+  Title                    = {An efficient parallel strategy for the two-fixed-endpoint Hamiltonian path problem on distance-hereditary graphs},
+  Author                   = {Hsieh, Sun-Yuan},
+  Journal                  = {Journal of Parallel and Distributed Computing},
+  Year                     = {2004},
+  Number                   = {5},
+  Pages                    = {662--685},
+  Volume                   = {64},
+
+  Publisher                = {Elsevier}
+}
+
+@article{fan2008edge,
+  title={Edge-Pancyclicity and path-embeddability of bijective connection graphs},
+  author={Fan, Jianxi and Jia, Xiaohua},
+  journal={Information Sciences},
+  volume={178},
+  number={2},
+  pages={340--351},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{fan2011efficient,
+author = {Jianxi Fan and Xiaohua Jia and Xin Liu and Shukui Zhang and Jia Yu},
+title = {{Efficient Unicast in Bijective Connection Networks with the Restricted Faulty Node Set}},
+  journal={Information Sciences},
+  volume={181},
+  number={11},
+  pages={2303--2315},
+  year={2011},
+}
+
+@article{xu2010super,
+title = {{On Super and Restricted Connectivity of Some Interconnection Networks}},
+journal = {Ars Combinatoria},
+author = {Junming Xu and Jianwei Wang and Weiwei Wang},
+  volume={94},
+  pages={25--32},
+  year={2010}
+}
+
+@article{lin2013algorithmic,
+  title={{An Algorithmic Approach to Conditional-Fault Local Diagnosis of Regular Multiprocessor Interconnected Systems under the PMC Model}},
+  author={Cheng{-}kuan Lin and Tzu{-}liang Kung and Jimmy J.M. Tan},
+  journal={IEEE Transactions on Computers},
+  volume={62},
+  number={3},
+  pages={439--451},
+  year={2013},
+}
+
+@article{fan2005t,
+author = {Jianxi Fan and Xiaola Lin},
+title = {{The $t$/$k$-Diagnosability of the BC Graphs}},
+journal = {IEEE Transactions on Computers},
+  volume={54},
+  number={2},
+  pages={176--184},
+  year={2005},
+  publisher={IEEE}
+}
+
+@article{fan2005node,
+  title={{Node-Pancyclicity and Edge-Pancyclicity of Crossed Cubes}},
+  author={Fan, Jianxi and Lin, Xiaola and Jia, Xiaohua},
+  journal={Information Processing Letters},
+  volume={93},
+  number={3},
+  pages={133--138},
+  year={2005},
+  publisher={Elsevier}
+}
+
+
+
+
+
+@Article{hsu1994container,
+  Title                    = {{On Container Width and Length in Graphs, Groups, and Networks}},
+  Author                   = {Frank Hsu},
+  Journal                  = {IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences},
+  Year                     = {1994},
+  Number                   = {4},
+  Pages                    = {668--680},
+  Volume                   = {77},
+}
+
+@Article{hung2007fault,
+  Title                    = {Fault-free Hamiltonian cycles in crossed cubes with conditional link faults},
+  Author                   = {Hung, Hao-Shun and Fu, Jung-Sheng and Chen, Gen-Huey},
+  Journal                  = {Information Sciences},
+  Year                     = {2007},
+  Number                   = {24},
+  Pages                    = {5664--5674},
+  Volume                   = {177},
+
+  Publisher                = {Elsevier}
+}
+
+@inproceedings{isard2007dryad,
+author = {Michael Isard and Mihai Budiu and Yuan Yu and Andrew Birrell and Dennis Fetterly},
+title = {{Dryad: Distributed Data-parallel Programs from Sequential Building Blocks}},
+booktitle = {European Conference on Computer Systems (Eurosys)},
+year = {2007},
+pages = {59--72},
+}
+
+@Article{jia2009wide,
+  Title                    = {On Wide diameter of Cayley graphs},
+  Author                   = {Jia, Kevin E and Zhang, Alicia Q},
+  Journal                  = {Journal of Interconnection Networks},
+  Year                     = {2009},
+  Number                   = {03},
+  Pages                    = {219--231},
+  Volume                   = {10},
+
+  Publisher                = {World Scientific}
+}
+
+@Article{johnson1982np,
+  Title                    = {{The NP-completeness Column: An ongoing Gulde}},
+  Author                   = {Johnson, David S},
+  Journal                  = {Journal of Algorithms},
+  Year                     = {1982},
+  Number                   = {4},
+  Pages                    = {381--395},
+  Volume                   = {3}
+}
+
+@InProceedings{kaneko2006disjoint,
+  Title                    = {Disjoint Paths Routing in Pancake Graphs.},
+  Author                   = {Kaneko, Keiichi and Peng, Shietung},
+  Booktitle                = {PDCAT},
+  Year                     = {2006},
+  Pages                    = {254--259}
+}
+
+
+@InProceedings{kliegl2010generalized,
+    author = {Markus Kliegl and Jason Lee and Jun Li and Xinchao Zhang and Chuanxiong Guo and David Rincon},
+    title = {Generalized DCell Structure for Load-balanced Data Center Networks},
+    booktitle = { International Conference on Computer Communications (INFOCOM)},
+    year = {2010},
+    Pages                    = {1--5}
+}
+
+@Article{kojima2005wide,
+  Title                    = {Wide diameter and minimum length of disjoint Menger path systems},
+  Author                   = {Kojima, Toru},
+  Journal                  = {Networks},
+  Year                     = {2005},
+  Number                   = {3},
+  Pages                    = {136--141},
+  Volume                   = {46},
+
+  Publisher                = {Wiley Online Library}
+}
+
+@Article{kuo2007wide,
+  Title                    = {Wide diameters of de Bruijn graphs},
+  Author                   = {Kuo, Jyhmin and Fu, Hung-Lin},
+  Journal                  = {Journal of Combinatorial Optimization},
+  Year                     = {2007},
+  Number                   = {2-3},
+  Pages                    = {143--152},
+  Volume                   = {14},
+
+  Publisher                = {Springer}
+}
+
+@InProceedings{li2009ficonn,
+  Title                    = {FiConn: Using Backup Port for Server Interconnection in Data Centers},
+  Author                   = {Dan Li and Chuanxiong Guo and  Haitao Wu and  Kun Tan and Yongguang Zhang and  Songwu Lu},
+  Booktitle                = {International Conference on Computer Communications (INFOCOM)},
+  Year                     = {2009},
+  Pages                    = {2276--2285}
+}
+
+@Article{li2011scalable,
+  Title                    = {Scalable and cost-effective interconnection of data-center servers using dual server ports},
+  Author                   = {Li, Dan and Guo, Chuanxiong and Wu, Haitao and Tan, Kun and Zhang, Yongguang and Lu, Songwu and Wu, Jianping},
+  Journal                  = {Networking, IEEE/ACM Transactions on},
+  Year                     = {2011},
+  Number                   = {1},
+  Pages                    = {102--114},
+  Volume                   = {19},
+
+  Publisher                = {IEEE}
+}
+
+@Article{lin2006spanning,
+  Title                    = {On the spanning w-wide diameter of the star graph},
+  Author                   = {Lin, Cheng-Kuan and Huang, Hua-Min and Hsu, D Frank and Hsu, Lih-Hsing},
+  Journal                  = {Networks},
+  Year                     = {2006},
+  Number                   = {4},
+  Pages                    = {235--249},
+  Volume                   = {48},
+
+  Publisher                = {Wiley Online Library}
+}
+
+@InProceedings{LinLiuHamdi2012,
+  Title                    = {Hyper-BCube: A scalable data center network},
+  Author                   = {Lin, Dong and Liu, Yang and Hamdi, Mounir and Muppala, Jogesh K.},
+  Booktitle                = {ICC},
+  Year                     = {2012},
+  Pages                    = {2918-2923},
+  Publisher                = {IEEE},
+
+  Added-at                 = {2012-12-06T00:00:00.000+0100},
+  Bdsk-file-1              = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QVC4uLy4uLy4uLy4uLy4uLy4uL1Jlc2VhcmNoL0JpYmxpb2dyYXBoeSBJbnRlcmNvbm5lY3Rpb24gTmV0d29ya3MvTGluTGl1SGFtZGkyMDEyLnBkZtIXCxgZV05TLmRhdGFPEQIqAAAAAAIqAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADJ5400SCsAAAS5r9kTTGluTGl1SGFtZGkyMDEyLnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRg1VM8zoO8AAAAAAAAAAAAGAAMAAAkgAAAAAAAAAAAAAAAAAAAAH0JpYmxpb2dyYXBoeSBJbnRlcmNvbm5lIzRCOUFGRDkAABAACAAAyed/JAAAABEACAAAzzOg7wAAAAEAGAS5r9kEslP3BK0nHwLQLroACHt6AACYoAACAHNNYWNpbnRvc2ggSEQ6VXNlcnM6AGFsZWpvOgBHb29nbGUgRHJpdmU6AFdvcmsgQ2xvdWQ6AFJlc2VhcmNoOgBCaWJsaW9ncmFwaHkgSW50ZXJjb25uZSM0QjlBRkQ5OgBMaW5MaXVIYW1kaTIwMTIucGRmAAAOACgAEwBMAGkAbgBMAGkAdQBIAGEAbQBkAGkAMgAwADEAMgAuAHAAZABmAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAZlVzZXJzL2FsZWpvL0dvb2dsZSBEcml2ZS9Xb3JrIENsb3VkL1Jlc2VhcmNoL0JpYmxpb2dyYXBoeSBJbnRlcmNvbm5lY3Rpb24gTmV0d29ya3MvTGluTGl1SGFtZGkyMDEyLnBkZgATAAEvAAAVAAIADP//AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAOUA6gDyAyADIgMnAzIDOwNJA00DVANdA2IDbwNyA4QDhwOMAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAA44=},
+  Bdsk-url-1               = {http://dblp.uni-trier.de/db/conf/icc/icc2012.html#LinLHM12},
+  Biburl                   = {http://www.bibsonomy.org/bibtex/2bad3d70e2012e759e066f8e16e4bf228/dblp},
+  Date-added               = {2014-02-26 13:47:08 +0000},
+  Date-modified            = {2014-04-03 17:01:41 +0000},
+  Ee                       = {http://dx.doi.org/10.1109/ICC.2012.6363759},
+  Interhash                = {0045a5782f2f8f335880ce0d31652014},
+  Intrahash                = {bad3d70e2012e759e066f8e16e4bf228},
+  ISBN                     = {978-1-4577-2052-9},
+  Keywords                 = {shared annotation; data centre networks; container data centre; modular data centre; network topology;metrics; bcube; dcell; diameter; industry; scalability},
+  Timestamp                = {2012-12-06T00:00:00.000+0100},
+  Url                      = {http://dblp.uni-trier.de/db/conf/icc/icc2012.html#LinLHM12}
+}
+
+@InProceedings{LinLiuHamdi2012a,
+  Title                    = {FlatNet: Towards a flatter data center network},
+  Author                   = {Dong Lin and Yang Liu and Hamdi, M. and Muppala, Jogesh K.},
+  Booktitle                = {Global Communications Conference (GLOBECOM), 2012 IEEE},
+  Year                     = {2012},
+  Month                    = {Dec},
+  Pages                    = {2499-2504},
+
+  Bdsk-file-1              = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QVS4uLy4uLy4uLy4uLy4uLy4uL1Jlc2VhcmNoL0JpYmxpb2dyYXBoeSBJbnRlcmNvbm5lY3Rpb24gTmV0d29ya3MvTGluTGl1SGFtZGkyMDEyYS5wZGbSFwsYGVdOUy5kYXRhTxECLgAAAAACLgACAAAMTWFjaW50b3NoIEhEAAAAAAAAAAAAAAAAAAAAyeeNNEgrAAAEua/ZFExpbkxpdUhhbWRpMjAxMmEucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUnYEbPR2UYAAAAAAAAAAAABgADAAAJIAAAAAAAAAAAAAAAAAAAAB9CaWJsaW9ncmFwaHkgSW50ZXJjb25uZSM0QjlBRkQ5AAAQAAgAAMnnfyQAAAARAAgAAM9HZRgAAAABABgEua/ZBLJT9wStJx8C0C66AAh7egAAmKAAAgB0TWFjaW50b3NoIEhEOlVzZXJzOgBhbGVqbzoAR29vZ2xlIERyaXZlOgBXb3JrIENsb3VkOgBSZXNlYXJjaDoAQmlibGlvZ3JhcGh5IEludGVyY29ubmUjNEI5QUZEOToATGluTGl1SGFtZGkyMDEyYS5wZGYADgAqABQATABpAG4ATABpAHUASABhAG0AZABpADIAMAAxADIAYQAuAHAAZABmAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAZ1VzZXJzL2FsZWpvL0dvb2dsZSBEcml2ZS9Xb3JrIENsb3VkL1Jlc2VhcmNoL0JpYmxpb2dyYXBoeSBJbnRlcmNvbm5lY3Rpb24gTmV0d29ya3MvTGluTGl1SGFtZGkyMDEyYS5wZGYAABMAAS8AABUAAgAM//8AAIAG0hscHR5aJGNsYXNzbmFtZVgkY2xhc3Nlc11OU011dGFibGVEYXRhox0fIFZOU0RhdGFYTlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVkQXJjaGl2ZXLRJidUcm9vdIABAAgAEQAaACMALQAyADcAQABGAE0AVQBgAGcAagBsAG4AcQBzAHUAdwCEAI4A5gDrAPMDJQMnAywDNwNAA04DUgNZA2IDZwN0A3cDiQOMA5EAAAAAAAACAQAAAAAAAAAoAAAAAAAAAAAAAAAAAAADkw==},
+  Bdsk-url-1               = {http://dx.doi.org/10.1109/GLOCOM.2012.6503492},
+  Date-added               = {2014-03-13 13:37:23 +0000},
+  Date-modified            = {2014-03-31 12:00:58 +0000},
+  Doi                      = {10.1109/GLOCOM.2012.6503492},
+  ISSN                     = {1930-529X},
+  Keywords                 = {computer centres;interconnected systems;network servers;routing protocols;telecommunication network topology;BCube;DCell;FatTree;FlatNet;HyPaC;Portland;data center interconnection;data center network;equal-sized data center;interconnect topology;server interconnection;server-location;Data center;Fault tolerance;Network topology}
+}
+
+
+@Article{lin1994deadlock,
+  Title                    = {Deadlock-free multicast wormhole routing in 2-D mesh multicomputers},
+  Author                   = {Lin, Xiaola and McKinley, Philip K. and Ni, Lionel M.},
+  Journal                  = {Parallel and Distributed Systems, IEEE Transactions on},
+  Year                     = {1994},
+  Number                   = {8},
+  Pages                    = {793--804},
+  Volume                   = {5},
+
+  Publisher                = {IEEE}
+}
+
+@Article{ndp2007,
+  Title                    = {{Guaranteed on-demand discovery of node-disjoint paths in ad hoc networks}},
+  Author                   = {Changwen Liu and Mark D. Yarvis and W. Steven Conner and Xingang Guo},
+  Journal                  = {Computer Communications},
+  Year                     = {2007},
+  Pages                    = {2917--2930},
+  Volume                   = {30},
+
+  Doi                      = {10.1016/j.comcom.2007.05.028},
+  Issue                    = {14-15},
+  Masid                    = {4364379}
+}
+
+@Article{liu2014hamiltonian,
+  Title                    = {Hamiltonian cycles in hypercubes with faulty edges},
+  Author                   = {Liu, Jia-Jie and Wang, Yue-Li},
+  Journal                  = {Information Sciences},
+  Year                     = {2014},
+  Pages                    = {225--233},
+  Volume                   = {256},
+
+  Publisher                = {Elsevier}
+}
+
+@Book{LiuMuppalaVeeraraghavan2013,
+  Title                    = {Data Center Networks},
+  Author                   = {Yang Liu and Jogesh K. Muppala and Malathi Veeraraghavan and Dong Lin and Mounir Hamdi},
+  Publisher                = {Springer},
+  Year                     = {2013},
+
+  Date-added               = {2014-01-24 15:57:59 +0000},
+  Date-modified            = {2014-02-26 13:20:36 +0000},
+  Keywords                 = {no shared annotation; data centre, data centre topology, routing, traffic, Fault tolerance, survey, DCell, fat tree, BCube, Helios, clos network}
+}
+
+@InProceedings{madhavapeddy1990topological,
+  Title                    = {A topological property of hypercubes: node disjoint paths},
+  Author                   = {Madhavapeddy, Seshu and Sudborough, Ivan Hal},
+  Booktitle                = {Parallel and Distributed Processing, 1990. Proceedings of the Second IEEE Symposium on},
+  Year                     = {1990},
+  Organization             = {IEEE},
+  Pages                    = {532--539}
+}
+
+@Article{ManzanoConnectivityDCN2013,
+  Title                    = {On the Connectivity of Data Center Networks},
+  Author                   = {Marc Manzano and Kashif Bilal and Eusebi Calle  and Samee U. Khan},
+  Journal                  = {{IEEE Communications Letters}},
+  Year                     = {2013},
+  Number                   = {11},
+  Pages                    = {2172-2175},
+  Volume                   = {17},
+}f
+
+@InProceedings{mudigonda2010spain,
+author = {Jayaram Mudigonda and Praveen Yalagandula and Mohammad Al-Fares and Jeffrey C. Mogul},
+title = {{SPAIN: COTS Data-Center Ethernet for Multipathing over Arbitrary Topologies}},
+booktitle = {Networked Systems Design and Implementation},
+  Year                     = {2010},
+  Pages                    = {265--280}
+}
+
+@Article{o1974computing,
+  Title                    = {Computing the perceptual boundaries of dot patterns},
+  Author                   = {O'Callaghan, JF},
+  Journal                  = {Computer graphics and image processing},
+  Year                     = {1974},
+  Number                   = {2},
+  Pages                    = {141--162},
+  Volume                   = {3},
+
+  Publisher                = {Elsevier}
+}
+
+@InProceedings{park2005fault,
+  Title                    = {Fault-hamiltonicity of hypercube-like interconnection networks},
+  Author                   = {Park, Jung-Heum and Kim, Hee-Chul and Lim, Hyeong-Seok},
+  Booktitle                = {Parallel and Distributed Processing Symposium, 2005. Proceedings. 19th IEEE International},
+  Year                     = {2005},
+  Organization             = {IEEE},
+  Pages                    = {60a--60a}
+}
+
+@Book{preparatat1985computational,
+  Title                    = {Computational geometry: an introduction},
+  Author                   = {Preparatat, FP and Shamos, Michael Ian},
+  Publisher                = {Springer-Verlag},
+  Year                     = {1985}
+}
+
+@Article{szepietowski2012hamiltonian,
+  Title                    = {Hamiltonian cycles in hypercubes with 2n-4 faulty edges},
+  Author                   = {Szepietowski, Andrzej},
+  Journal                  = {Information Sciences},
+  Year                     = {2012},
+  Pages                    = {75--82},
+  Volume                   = {215},
+
+  Publisher                = {Elsevier}
+}
+
+@InProceedings{toussaint1980pattern,
+  Title                    = {Pattern recognition and geometrical complexity},
+  Author                   = {Toussaint, Godfried T},
+  Booktitle                = {Proceedings of the 5th International Conference on Pattern Recognition},
+  Year                     = {1980},
+  Pages                    = {1324--1347}
+}
+
+@Article{tsai2009embedding,
+  Title                    = {Embedding Hamiltonian cycles in alternating group graphs under conditional fault model},
+  Author                   = {Tsai, Ping-Ying and Fu, Jung-Sheng and Chen, Gen-Huey},
+  Journal                  = {Information Sciences},
+  Year                     = {2009},
+  Number                   = {6},
+  Pages                    = {851--857},
+  Volume                   = {179},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{wang2012hamiltonian,
+  Title                    = {Hamiltonian embedding in crossed cubes with failed links},
+  Author                   = {Wang, Dajin},
+  Journal                  = {Parallel and Distributed Systems, IEEE Transactions on},
+  Year                     = {2012},
+  Number                   = {11},
+  Pages                    = {2117--2124},
+  Volume                   = {23},
+
+  Publisher                = {IEEE}
+}
+
+@Article{wang2001embedding,
+  Title                    = {Embedding Hamiltonian cycles into folded hypercubes with faulty links},
+  Author                   = {Wang, Dajin},
+  Journal                  = {Journal of Parallel and Distributed Computing},
+  Year                     = {2001},
+  Number                   = {4},
+  Pages                    = {545--564},
+  Volume                   = {61},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{wang2005multicast,
+  Title                    = {Multicast communication in wormhole-routed symmetric networks with hamiltonian cycle model},
+  Author                   = {Wang, Nen-Chung and Yen, Cheng-Pang and Chu, Chih-Ping},
+  Journal                  = {Journal of Systems Architecture},
+  Year                     = {2005},
+  Number                   = {3},
+  Pages                    = {165--183},
+  Volume                   = {51},
+
+  Publisher                = {Elsevier}
+}
+
+@InCollection{WangGuZhao2014,
+  Title                    = {{CoCell:} A Low-Diameter, High-Performance Data Center Network Architecture},
+  Author                   = {Wang, Peng and Gu, Huaxi and Zhao, Yan and Yu, Xiaoshan},
+  Booktitle                = {Computer Engineering and Networking},
+  Publisher                = {Springer International Publishing},
+  Year                     = {2014},
+  Editor                   = {Wong, W. Eric and Zhu, Tingshao},
+  Month                    = jan,
+  Number                   = {277},
+  Pages                    = {429--436},
+  Series                   = {Lecture Notes in Electrical Engineering},
+
+  Abstract                 = {As critical infrastructures in the Internet, data centers play an important role in supporting large-scale distributed applications as well as data-intensive computing. This chapter presents {CoCell}, a server-centric architecture, which uses servers to relay packets. {CoCell} has several nice properties for desired data center networking. The average node degree in {CoCell} network is close to 3, and the longest routing path length is no larger than 7. Besides, {CoCell} network is able to provide high network capacity to support bandwidth-intensive applications. Leveraging the multi-paths between any pairs of servers in {CoCell} network, we propose relative routing schemes and make a comparison among these paths. The evaluation indicates that {CoCell} performs well in all-to-all traffic pattern.},
+  Bdsk-file-1              = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QUy4uLy4uLy4uLy4uLy4uLy4uL1Jlc2VhcmNoL0JpYmxpb2dyYXBoeSBJbnRlcmNvbm5lY3Rpb24gTmV0d29ya3MvV2FuZ0d1WmhhbzIwMTQucGRm0hcLGBlXTlMuZGF0YU8RAiYAAAAAAiYAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAMnnjTRIKwAABLmv2RJXYW5nR3VaaGFvMjAxNC5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFF8vhzzJggAAAAAAAAAAAAAYAAwAACSAAAAAAAAAAAAAAAAAAAAAfQmlibGlvZ3JhcGh5IEludGVyY29ubmUjNEI5QUZEOQAAEAAIAADJ538kAAAAEQAIAADPMmCAAAAAAQAYBLmv2QSyU/cErScfAtAuugAIe3oAAJigAAIAck1hY2ludG9zaCBIRDpVc2VyczoAYWxlam86AEdvb2dsZSBEcml2ZToAV29yayBDbG91ZDoAUmVzZWFyY2g6AEJpYmxpb2dyYXBoeSBJbnRlcmNvbm5lIzRCOUFGRDk6AFdhbmdHdVpoYW8yMDE0LnBkZgAOACYAEgBXAGEAbgBnAEcAdQBaAGgAYQBvADIAMAAxADQALgBwAGQAZgAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAGVVc2Vycy9hbGVqby9Hb29nbGUgRHJpdmUvV29yayBDbG91ZC9SZXNlYXJjaC9CaWJsaW9ncmFwaHkgSW50ZXJjb25uZWN0aW9uIE5ldHdvcmtzL1dhbmdHdVpoYW8yMDE0LnBkZgAAEwABLwAAFQACAAz//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDkAOkA8QMbAx0DIgMtAzYDRANIA08DWANdA2oDbQN/A4IDhwAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAAOJ},
+  Bdsk-url-1               = {http://link.springer.com.ezproxy.library.uvic.ca/chapter/10.1007/978-3-319-01766-2_49},
+  Copyright                = {{\copyright}2014 Springer International Publishing Switzerland},
+  Date-added               = {2014-02-25 15:00:42 +0000},
+  Date-modified            = {2014-03-12 11:27:45 +0000},
+  ISBN                     = {978-3-319-01765-5, 978-3-319-01766-2},
+  Keywords                 = {Communications Engineering, Networks, Computer Systems Organization and Communication Networks, Information Systems and Communication Service; unprocessed reference; server-centric; dcell},
+  Language                 = {en},
+  Shorttitle               = {{CoCell}},
+  Url                      = {http://link.springer.com.ezproxy.library.uvic.ca/chapter/10.1007/978-3-319-01766-2_49},
+  Urldate                  = {2014-02-25}
+}
+
+@Book{west2001introduction,
+  title                    = {{Introduction to Graph Theory}},
+  author={West, Douglas Brent and others},
+  volume={2},
+  year={2001},
+  publisher={Prentice hall Upper Saddle River}
+}
+
+@InProceedings{wu2009mdcube,
+  Title                    = {{MDCube: a high performance network structure for modular data center interconnection}},
+  Author                   = {Haitao Wu and Guohan Lu and Dan Li and Chuanxiong Guo and Yongguang Zhang},
+  Booktitle                = {Conference on Emerging Network Experiment and Technology},
+  Year                     = {2009},
+  Pages                    = {25--36},
+
+  Doi                      = {10.1145/1658939.1658943},
+  Masid                    = {6704003}
+}
+
+@Article{wu2007node,
+  Title                    = {Node-disjoint paths in hierarchical hypercube networks},
+  Author                   = {Wu, Ruei-Yu and Chen, Gen-Huey and Kuo, Yu-Liang and Chang, Gerard J},
+  Journal                  = {Information Sciences},
+  Year                     = {2007},
+  Number                   = {19},
+  Pages                    = {4200--4207},
+  Volume                   = {177},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{xu2013hamiltonian,
+  Title                    = {Hamiltonian properties of honeycomb meshes},
+  Author                   = {Xu, Dacheng and Fan, Jianxi and Jia, Xiaohua and Zhang, Shukui and Wang, Xi},
+  Journal                  = {Information Sciences},
+  Year                     = {2013},
+  Pages                    = {184--190},
+  Volume                   = {240},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{yang2007hamiltonian,
+  Title                    = {Hamiltonian circuit and linear array embeddings in faulty $k$-ary $n$-cubes},
+  Author                   = {Yang, Ming-Chien and Tan, Jimmy JM and Hsu, Lih-Hsing},
+  Journal                  = {Journal of Parallel and Distributed Computing},
+  Year                     = {2007},
+  Number                   = {4},
+  Pages                    = {362--368},
+  Volume                   = {67},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{yang2011hamiltonian,
+  Title                    = {Hamiltonian properties of twisted hypercube-like networks with more faulty elements},
+  Author                   = {Yang, Xiaofan and Dong, Qiang and Yang, Erjie and Cao, Jianqiu},
+  Journal                  = {Theoretical Computer Science},
+  Year                     = {2011},
+  Number                   = {22},
+  Pages                    = {2409--2417},
+  Volume                   = {412},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{yin2005fault,
+  Title                    = {On the fault-tolerant diameter and wide diameter of $\omega$-connected graphs},
+  Author                   = {Yin, Jian-Hua and Li, Jiong-Sheng and Chen, Guo-Liang and Zhong, Cheng},
+  Journal                  = {Networks},
+  Year                     = {2005},
+  Number                   = {2},
+  Pages                    = {88--94},
+  Volume                   = {45},
+
+  Publisher                = {Wiley Online Library}
+}
+
+@Article{zhou2010construction,
+  Title                    = {Construction of vertex-disjoint paths in alternating group networks},
+  Author                   = {Zhou, Shuming and Xiao, Wenjun and Parhami, Behrooz},
+  Journal                  = {The Journal of Supercomputing},
+  Year                     = {2010},
+  Number                   = {2},
+  Pages                    = {206--228},
+  Volume                   = {54},
+
+  Publisher                = {Springer}
+}
+
+@article{Liu2015HPC,
+  title={高性能计算机中互连网络的可靠性研究},
+  author={刘晓婷 and 贾志淳},
+  journal={电子制作},
+  number={7z},
+  pages={151-152},
+  year={2015},
+}
+
+@article{liaoxiangke2016HPC,
+  title={新型高性能计算系统与技术},
+  author={廖湘科 and 肖侬},
+  journal={中国科学:信息科学},
+  volume={46},
+  number={9},
+  pages={1175},
+  year={2016},
+}
+
+@inproceedings{Abts2010Energy,
+  title={Energy proportional datacenter networks},
+  author={Abts, Dennis and Marty, Michael R. and Wells, Philip M. and Klausler, Peter and Liu, Hong},
+  booktitle={International Symposium on Computer Architecture},
+  pages={338-347},
+  year={2010},
+}
+
+@inproceedings{Ahn2009HyperX,
+  title={HyperX: topology, routing, and packaging of efficient large-scale networks},
+  author={Ahn, Jung Ho and Binkert, N and Davis, A and Mclaren, M},
+  booktitle={High Performance Computing Networking, Storage and Analysis, Proceedings of the Conference on},
+  pages={1-11},
+  year={2009},
+}
+
+@article{Efe1992The,
+  title={The Crossed Cube Architecture for Parallel Computation},
+  author={Efe, K.},
+  journal={Parallel & Distributed Systems IEEE Transactions on},
+  volume={3},
+  number={5},
+  pages={513-524},
+  year={1992},
+}
+
+@article{Cull1995The,
+  title={The Mobius cubes},
+  author={Cull, P and Larson, S. M},
+  journal={IEEE Transactions on Computers},
+  volume={44},
+  number={5},
+  pages={647-659},
+  year={1995},
+}
+
+@article{Bhuyan2006Generalized,
+  title={Generalized Hypercube and Hyperbus Structures for a Computer Network},
+  author={Bhuyan, L. N. and Agrawal, D. P.},
+  journal={IEEE Transactions on Computers},
+  volume={C-33},
+  number={4},
+  pages={323-333},
+  year={2006},
+}
+
+@article{Abraham1991The,
+  title={The twisted cube topology for multiprocessors: A study in network asymmetry},
+  author={Abraham, Seth and Padmanabhan, Krishnan},
+  journal={Journal of Parallel & Distributed Computing},
+  volume={13},
+  number={1},
+  pages={104-110},
+  year={1991},
+}
+
+@article{Dally1990Performance,
+  title={Performance Analysis of k-ary n-cube Interconnection Networks},
+  author={Dally, W. J.},
+  journal={Computers IEEE Transactions on},
+  volume={39},
+  number={6},
+  pages={775-785},
+  year={1990},
+}
