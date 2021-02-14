@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2019.10.24)  13 JAN 2021 11:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2019.10.24)  14 FEB 2021 17:34
 entering extended mode
 **MainFile.tex
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\MainFile.tex
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\SUDAthesis.cls
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\SUDAthesis.cls
 Document Class: SUDAthesis 2005/10/11 v0.1e CASthesis document class
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\ctex\ctexbook.cls"
 Document Class: ctexbook 2011/03/11 v1.02c ctexbook document class
@@ -892,18 +892,18 @@ Package amsthm Warning: Unknown theoremstyle `property' on input line 93.
 \c@property=\count308
 Package hyperref Info: Option `colorlinks' set `true' on input line 100.
 \c@theorem=\count309
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\MainFile.aux
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\abstract.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap01.aux
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.aux
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\abstract.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap01.aux
 
 LaTeX Warning: Label `PMC' multiply defined.
 
-) (D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap02.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap03.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap04.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap05.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\pub.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\thanks.aux))
+) (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap02.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap03.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap04.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap05.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\pub.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\thanks.aux))
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 182.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 182
 .
@@ -1029,11 +1029,11 @@ LaTeX Info: Redefining \ref on input line 182.
 LaTeX Info: Redefining \pageref on input line 182.
 LaTeX Info: Redefining \nameref on input line 182.
 
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\MainFile.out)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\MainFile.out)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.out)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.out)
 \@outlinefile=\write4
 
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\SUDAthesis.cfg
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\SUDAthesis.cfg
 File: SUDAthesis.cfg 2005/10/11 v0.1e SUDAthesis configuration file
 \c@axiom=\count311
 \c@inferrule=\count312
@@ -1210,31 +1210,33 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.53> not available
 ] [6
 
 
-] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\abstract.tex
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 11.
+]
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\abstract.tex
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 12.
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12.05> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
  [1
 
 
 
 ]
 Package CJKpunct Info: punctuation spaces for family 'zhhei' do not exist. Use 
-family 'def' instead. on input line 28.
+family 'def' instead. on input line 29.
  [2]
 [3
 
-]) [4] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\MainFile.toc [5
+]) [4] (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.toc
+[5
 
 
 ])
 \tf@toc=\write5
  [6]
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap01.tex
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap01.tex
 µ⁄“ª’¬
 
 Underfull \vbox (badness 1057) has occurred while \output is active []
@@ -1244,42 +1246,32 @@ Underfull \vbox (badness 1057) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (14.4715pt too wide) in paragraph at lines 15--16
-[]\C19/rm/m/n/12.05/37  \C19/rm/m/n/12.05/58 © \C19/rm/m/n/12.05/60 Ô \C19/rm/
-m/n/12.05/46 ƒ \C19/rm/m/n/12.05/40  \C19/rm/m/n/12.05/44 p \C19/rm/m/n/12.05/
-48 È \C19/rm/m/n/12.05/58  \C19/rm/m/n/12.05/49 ‰ \C19/rm/m/n/12.05/57 ˇ \C19/
-rm/m/n/12.05/52 ¿ \C19/rm/m/n/12.05/46 ( \C19/rm/m/n/12.05/43  \C19/rm/m/n/12.
-05/55 ¥ \C19/rm/m/n/12.05/62 d\OT1/ptm/m/n/12.05 Choudum\C19/rm/m/n/12.05/40  
-\C19/rm/m/n/12.05/54 < \OT1/ptm/m/n/12.05 [[][]10[][]]\C19/rm/m/n/12.05/57 J \C
-19/rm/m/n/12.05/38 — \C19/rm/m/n/12.05/40  \C19/rm/m/n/12.05/48 * \C19/rm/m/n/
-12.05/63 – \C19/rm/m/n/12.05/48 · \C19/rm/m/n/12.05/41 ê \C19/rm/m/n/12.05/57 N
-\OT1/ptm/m/n/12.05 (Augmented
- []
+LaTeX Font Info:    Try loading font information for C19+kai on input line 29.
 
-LaTeX Font Info:    Try loading font information for C19+kai on input line 23.
 ("D:\Program Files(x86)\CTEX\CTeX\tex\latex\CJK\GB\c19kai.fd"
 File: c19kai.fd 2009/09/23 4.8.2
 ) [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 97--103
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--118
+Underfull \hbox (badness 10000) in paragraph at lines 119--124
 
  []
 
-[5]) [6] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap02.tex
+[5]) [6]
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap02.tex
 µ⁄∂˛’¬
 [7
 
@@ -1288,20 +1280,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--118
 ] [8]
 File: ./figures/AQ_1_2_3.eps Graphic file (type eps)
  <./figures/AQ_1_2_3.eps>
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 59.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 60.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 59.
+(Font)              size <10.95> substituted on input line 60.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 59.
+(Font)              size <10.95> substituted on input line 60.
 
 [9]
 Package CJKpunct Info: punctuation spaces for family 'zhkai' do not exist. Use 
-family 'def' instead. on input line 90.
-) [10] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap03.tex
+family 'def' instead. on input line 91.
+) [10]
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap03.tex
 µ⁄»˝’¬
 Missing character: There is no ß in font txr!
 [11
@@ -1338,309 +1331,215 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 150.
 
-
-Overfull \hbox (13.52487pt too wide) in paragraph at lines 261--262
-\C19/rm/m/n/12.05/40 :$\OML/txmi/m/it/12.05 v[]$\OT1/ptm/m/n/12.05 , $\OML/txmi
-/m/it/12.05 v[]$|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/12.05/43 ⁄$\OML/txmi/m/it/
-12.05 v[]; \OT1/txr/m/n/12.05 0 \OMS/txsy/m/n/12.05  \OML/txmi/m/it/12.05 i < 
-\OMS/txsy/m/n/12.05 b[]c$|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/12.05/40 ∫ :$\OML
-/txmi/m/it/12.05 v[]$\C19/rm/m/n/12.05/49  \C19/rm/m/n/12.05/46  \C19/rm/m/n/
-12.05/62 u$\OML/txmi/m/it/12.05 v[]; v[]; \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12
-.05 v[]\OT1/txr/m/n/12.05 )[]$\OT1/ptm/m/n/12.05 ,
- []
-
 [13]
 File: ./figures/K_1_1.eps Graphic file (type eps)
  <./figures/K_1_1.eps>
-Overfull \hbox (25.92778pt too wide) in paragraph at lines 274--274
+Overfull \hbox (9.02101pt too wide) in paragraph at lines 272--272
  [][] 
  []
 
 File: ./figures/K_1_2.eps Graphic file (type eps)
 <./figures/K_1_2.eps>
-Overfull \hbox (25.92778pt too wide) in paragraph at lines 280--280
+Overfull \hbox (9.02101pt too wide) in paragraph at lines 278--278
  [][] 
  []
 
+[14]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 308.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 308.
+(hyperref)                removing `math shift' on input line 306.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 308.
+(hyperref)                removing `\leq' on input line 306.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 308.
+(hyperref)                removing `\leq' on input line 306.
 
-[14] [15] [16]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 306.
+
+[15]
 File: ./figures/K_1_5.eps Graphic file (type eps)
- <./figures/K_1_5.eps>
-Overfull \hbox (32.74226pt too wide) in paragraph at lines 467--470
-\C19/rm/m/n/12.05/43 ⁄$[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 2 \OMS/txsy/
-m/n/12.05  \OML/txmi/m/it/12.05 i \OMS/txsy/m/n/12.05  \OML/txmi/m/it/12.05 n
- \OMS/txsy/m/n/12.05   \OT1/txr/m/n/12.05 1$|\C19/rm/m/n/12.05/25 "| \C19/rm/m/
-n/12.05/61 œ \C19/rm/m/n/12.05/58 è$\OMS/txsy/m/n/12.05 f\OT1/txr/m/n/12.05 ([]
-\OML/txmi/m/it/12.05 ; []\OT1/txr/m/n/12.05 )\OML/txmi/m/it/12.05 ; \OT1/txr/m/
-n/12.05 ([]\OML/txmi/m/it/12.05 ; u[]\OT1/txr/m/n/12.05 )\OML/txmi/m/it/12.05 ;
- \OT1/txr/m/n/12.05 ([]\OML/txmi/m/it/12.05 ; u[]\OT1/txr/m/n/12.05 )\OML/txmi/
-m/it/12.05 ; \OT1/txr/m/n/12.05 ([]\OML/txmi/m/it/12.05 ; []\OT1/txr/m/n/12.05 
-)\OMS/txsy/m/n/12.05 g  \OML/txmi/m/it/12.05 E\OT1/txr/m/n/12.05 (\OML/txmi/m/
-it/12.05 AQ[]\OT1/txr/m/n/12.05 )$|\C19/rm/m/n/12.05/26 ß| $\OMS/txsy/m/n/12.05
- f[]\OML/txmi/m/it/12.05 ; []; u[]; u[]; []\OMS/txsy/m/n/12.05 g$\C19/rm/m/n/12
-.05/40 
- []
-
-[17]
-Overfull \hbox (10.6931pt too wide) in paragraph at lines 475--477
-[]\C19/rm/bx/n/12.05/53 ú \C19/rm/bx/n/12.05/60 /\OT1/ptm/b/n/12.05 3.  $\OMS/t
-xsy/m/n/12.05 j\OML/txmi/m/it/12.05 B\OMS/txsy/m/n/12.05 j \OT1/txr/m/n/12.05 =
- 2$|\C19/rm/m/n/12.05/25 "| \C19/rm/m/n/12.05/45 b \C19/rm/m/n/12.05/55 $\OMS/
-txsy/m/n/12.05 f[]\OML/txmi/m/it/12.05 ; u[]; []; u[]; []\OMS/txsy/m/n/12.05 g 
- \OML/txmi/m/it/12.05 V\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 b[]\OT1/txr/m/
-n/12.05 )\OML/txmi/m/it/12.05 ; \OMS/txsy/m/n/12.05 f[]\OML/txmi/m/it/12.05 ; u
-[]; []; u[]; []\OMS/txsy/m/n/12.05 g  \OML/txmi/m/it/12.05 V\OT1/txr/m/n/12.05
- (\OML/txmi/m/it/12.05 b[]\OT1/txr/m/n/12.05 )\OML/txmi/m/it/12.05 ; \OT1/txr/m
-/n/12.05 2 \OMS/txsy/m/n/12.05 
- []
-
-
-Overfull \hbox (9.99867pt too wide) in paragraph at lines 491--493
-\C19/rm/m/n/12.05/62 k$\OML/txmi/m/it/12.05 V\OT1/txr/m/n/12.05 (\OML/txmi/m/it
-/12.05 a[]\OT1/txr/m/n/12.05 ) \OMS/txsy/m/n/12.05 \ f\OML/txmi/m/it/12.05 N\OT
-1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 u\OT1/txr/m/n/12.05 ) \OMS/txsy/m/n/12.05
-   \OML/txmi/m/it/12.05 V\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 B\OT1/txr/m/n
-/12.05 ) \OMS/txsy/m/n/12.05   f[]\OML/txmi/m/it/12.05 ; u[]\OMS/txsy/m/n/12.05
- gg  \OT1/txr/m/n/12.05 2$|\C19/rm/m/n/12.05/25 "| \C19/rm/m/n/12.05/61 œ \C19
-/rm/m/n/12.05/58 è$\OML/txmi/m/it/12.05 N\OT1/txr/m/n/12.05 ([]) \OMS/txsy/m/n/
-12.05 \ \OML/txmi/m/it/12.05 N\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 u[]\OT1/
-txr/m/n/12.05 ) \OMS/txsy/m/n/12.05   f\OML/txmi/m/it/12.05 u; []\OMS/txsy/m/n/
-12.05 g \OT1/txr/m/n/12.05 = \OMS/txsy/m/n/12.05 f\OT1/txr/m/n/12.05 ([])[]\OML
-/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 u[]\OT1/txr/m/n/12.
-05 )[]\OMS/txsy/m/n/12.05 g$|\C19/rm/m/n/12.05/26 ß|
- []
-
-
-Overfull \hbox (22.5323pt too wide) in paragraph at lines 491--493
-\OMS/txsy/m/n/12.05 f\OT1/txr/m/n/12.05 ([])[]\OML/txmi/m/it/12.05 ; \OT1/txr/m
-/n/12.05 (\OML/txmi/m/it/12.05 u[]\OT1/txr/m/n/12.05 )[]\OMS/txsy/m/n/12.05 g$\
-C19/rm/m/n/12.05/64 • \C19/rm/m/n/12.05/40  \C19/rm/m/n/12.05/50 z \C19/rm/m/n
-/12.05/42 á \C19/rm/m/n/12.05/40 ∫ : \C19/rm/m/n/12.05/37 ÿ \C19/rm/m/n/12.05/6
-2 Ü$\OML/txmi/m/it/12.05 N\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 u\OT1/txr/m/
-n/12.05 ) \OMS/txsy/m/n/12.05   \OML/txmi/m/it/12.05 V\OT1/txr/m/n/12.05 (\OML/
-txmi/m/it/12.05 B\OT1/txr/m/n/12.05 ) \OMS/txsy/m/n/12.05   f\OML/txmi/m/it/12.
-05 u[]; []; u[]\OMS/txsy/m/n/12.05 g$\C19/rm/m/n/12.05/64 • \C19/rm/m/n/12.05/4
-0  ∫ : \C19/rm/m/n/12.05/59 É \C19/rm/m/n/12.05/48 Î \C19/rm/m/n/12.05/53 Ö$\O
-MS/txsy/m/n/12.05 f[]\OML/txmi/m/it/12.05 ; u[]\OMS/txsy/m/n/12.05 g$\C19/rm/m/
-n/12.05/64 •
- []
-
-[18]
-Overfull \hbox (22.7164pt too wide) in paragraph at lines 504--505
-[]\C19/rm/bx/n/12.05/53 ú \C19/rm/bx/n/12.05/60 /\OT1/ptm/b/n/12.05 4. $\OMS/tx
-sy/m/n/12.05 j\OML/txmi/m/it/12.05 B\OMS/txsy/m/n/12.05 j  \OT1/txr/m/n/12.05 
-3$|\C19/rm/m/n/12.05/25 "| \OT1/ptm/m/n/12.05 If $\OML/txmi/m/it/12.05 b[]; b[]
- \OMS/txsy/m/n/12.05 2 \OML/txmi/m/it/12.05 B$\C19/rm/m/n/12.05/53 Ö$\OML/txmi/
-m/it/12.05 B$\C19/rm/m/n/12.05/64 • \C19/rm/m/n/12.05/37 ÿ \C19/rm/m/n/12.05/39
-  \C19/rm/m/n/12.05/63 3$\OML/txmi/m/it/12.05 b[]\OT1/txr/m/n/12.05 (\OML/txmi
-/m/it/12.05 i < k < j\OT1/txr/m/n/12.05 )$|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/
-12.05/58 ∑ \C19/rm/m/n/12.05/50 Ç \C19/rm/m/n/12.05/55 $\OML/txmi/m/it/12.05 U
-[] \OT1/txr/m/n/12.05 = \OMS/txsy/m/n/12.05 f\OML/txmi/m/it/12.05 u[]; []; [] ;
- u[]\OMS/txsy/m/n/12.05 g$|\C19/rm/m/n/12.05/25 "|
- []
-
-[19]
+ <./figures/K_1_5.eps> [16] [17] [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 524.
+(hyperref)                removing `math shift' on input line 522.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 524.
+(hyperref)                removing `subscript' on input line 522.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 524.
+(hyperref)                removing `math shift' on input line 522.
 
 
-Overfull \hbox (4.76698pt too wide) in paragraph at lines 528--530
+Overfull \hbox (1.29874pt too wide) in paragraph at lines 524--525
+[]\C19/rm/m/n/12.05/55 $\OML/txmi/m/it/12.05 u$\C19/rm/m/n/12.05/55 ¥$\OML/txm
+i/m/it/12.05 AQ[]$\C19/rm/m/n/12.05/64 • \C19/rm/m/n/12.05/40  \C19/rm/m/n/12.
+05/54 ? \C19/rm/m/n/12.05/61 ø ò \C19/rm/m/n/12.05/42 á \C19/rm/m/n/12.05/40 ∫ 
+:|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/12.05/42 ä \C19/rm/m/n/12.05/46 ‚ \C19/rm
+/m/n/12.05/48 * \C19/rm/m/n/12.05/63 – \C19/rm/m/n/12.05/48 · \C19/rm/m/n/12.05
+/41 ê \C19/rm/m/n/12.05/57 N \C19/rm/m/n/12.05/40  Ω \C19/rm/m/n/12.05/61 ¬|\C
+19/rm/m/n/12.05/26 ß| $\OT1/txr/m/n/12.05 ([]\OML/txmi/m/it/12.05 ; u[]\OT1/txr
+/m/n/12.05 ) \OMS/txsy/m/n/12.05 2 \OML/txmi/m/it/12.05 E\OT1/txr/m/n/12.05 (\O
+ML/txmi/m/it/12.05 AQ\OT1/txr/m/n/12.05 )$\C19/rm/m/n/12.05/43 ⁄$\OT1/txr/m/n/1
+2.05 (\OML/txmi/m/it/12.05 u[]; []\OT1/txr/m/n/12.05 )[] 
+ []
+
+
+Overfull \hbox (2.95935pt too wide) in paragraph at lines 526--528
 []\C19/rm/m/n/12.05/61 œ \C19/rm/m/n/12.05/58 è$\OML/txmi/m/it/12.05 P[]\OT1/tx
 r/m/n/12.05 (\OML/txmi/m/it/12.05 P[]\OT1/txr/m/n/12.05 )$\C19/rm/m/n/12.05/57 
 ” \C19/rm/m/n/12.05/43  \C19/rm/m/n/12.05/62 u$\OML/txmi/m/it/12.05 K[]\OT1/tx
 r/m/n/12.05 (\OML/txmi/m/it/12.05 K[]\OT1/txr/m/n/12.05 )$\C19/rm/m/n/12.05/37 
 ø \C19/rm/m/n/12.05/53 Ö \C19/rm/m/n/12.05/58 ∑ \C19/rm/m/n/12.05/50 Ç \C19/rm/
-m/n/12.05/61 Æ \C19/rm/m/n/12.05/46 ≤ \C19/rm/m/n/12.05/63 3\OT1/ptm/m/n/12.05 
-3.1\C19/rm/m/n/12.05/64 • \C19/rm/m/n/12.05/42 â \C19/rm/m/n/12.05/38 — \C19/rm
-/m/n/12.05/49 
+m/n/12.05/61 Æ \C19/rm/m/n/12.05/46 ≤ \C19/rm/m/n/12.05/63 3[][]\OT1/ptm/m/n/12
+.05 3.2.1[][]\C19/rm/m/n/12.05/64 • \C19/rm/m/n/12.05/42 â \C19/rm/m/n/12.05/38
+ — \C19/rm/m/n/12.05/49 
 $\OML/txmi/m/it/12.05 \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 AQ[]; K[]\OT1/t
-xr/m/n/12.05 )$|\C19/rm/m/n/12.05/26 ß| $\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.
-05 \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 AQ[]; K[]\OT1/txr/m/n/12.05 ))$ 
+xr/m/n/12.05 )(\OML/txmi/m/it/12.05 \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 A
+Q[]; K[]\OT1/txr/m/n/12.05 ))$ 
  []
 
-
-Overfull \hbox (31.67111pt too wide) in paragraph at lines 548--561
-\OMS/txsy/m/n/12.05 ff\OML/txmi/m/it/12.05 v[]; [] ; v[]; \OT1/txr/m/n/12.05 (\
-OML/txmi/m/it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/
-n/12.05 (\OML/txmi/m/it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \
-OT1/txr/m/n/12.05 ([])[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 (\OML/txmi/m/
-it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 ([]
-)[]\OML/txmi/m/it/12.05 ; [] ; \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 v[]\OT1
-/txr/m/n/12.05 )[]\OMS/txsy/m/n/12.05 gg$|\C19/rm/m/n/12.05/25 "| 
- []
-
-
-Overfull \hbox (26.92775pt too wide) in paragraph at lines 564--576
-\OMS/txsy/m/n/12.05 ff\OML/txmi/m/it/12.05 v[]; [] ; v[]; \OT1/txr/m/n/12.05 (\
-OML/txmi/m/it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/
-n/12.05 (\OML/txmi/m/it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \
-OT1/txr/m/n/12.05 ([])[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 (\OML/txmi/m/
-it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 ([]
-)[]\OML/txmi/m/it/12.05 ; [] ; \OT1/txr/m/n/12.05 ([])[]\OMS/txsy/m/n/12.05 g$\
-OMS/cmsy/m/n/12.05 g|\C19/rm/m/n/12.05/25 "| 
- []
-
-
-Overfull \hbox (26.92775pt too wide) in paragraph at lines 579--591
-\OMS/txsy/m/n/12.05 ff\OML/txmi/m/it/12.05 v[]; [] ; v[]; \OT1/txr/m/n/12.05 (\
-OML/txmi/m/it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/
-n/12.05 (\OML/txmi/m/it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \
-OT1/txr/m/n/12.05 ([])[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 (\OML/txmi/m/
-it/12.05 v[]\OT1/txr/m/n/12.05 )[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 ([]
-)[]\OML/txmi/m/it/12.05 ; [] ; \OT1/txr/m/n/12.05 ([])[]\OMS/txsy/m/n/12.05 g$\
-OMS/cmsy/m/n/12.05 g|\C19/rm/m/n/12.05/25 "| 
- []
-
-[20]
+[19] [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 625.
+(hyperref)                removing `math shift' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 625.
+(hyperref)                removing `subscript' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 625.
+(hyperref)                removing `math shift' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 629.
+(hyperref)                removing `math shift' on input line 631.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 629.
+(hyperref)                removing `\leq' on input line 631.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 629.
+(hyperref)                removing `\leq' on input line 631.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 629.
+(hyperref)                removing `math shift' on input line 631.
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 655.
+(hyperref)                removing `math shift' on input line 657.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 655.
+(hyperref)                removing `math shift' on input line 657.
 
-[22] [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 838--864
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 838--864
+[21] [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 840--866
 
  []
 
-[25] [26]
+
+Underfull \hbox (badness 10000) in paragraph at lines 840--866
+
+ []
+
+[24] [25]
 File: ./figures/C_5.eps Graphic file (type eps)
- <./figures/C_5.eps> [27]
+ <./figures/C_5.eps> [26]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1087.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1087.
+(hyperref)                removing `math shift' on input line 1090.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1087.
+(hyperref)                removing `subscript' on input line 1090.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1092.
+(hyperref)                removing `math shift' on input line 1090.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1092.
+(hyperref)                removing `math shift' on input line 1095.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1092.
+(hyperref)                removing `subscript' on input line 1095.
 
-[28]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1095.
+
+[27]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.03> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1101.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1104.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1101.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1101
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1104.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1104
 .
  ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 1101.
- [29]
-Overfull \hbox (15.04936pt too wide) in paragraph at lines 1180--1187
-\C19/rm/m/n/12.05/41 {\OT1/ptm/m/n/12.05 AQFRouting\C19/rm/m/n/12.05/64 • \C19/
-rm/m/n/12.05/37  \C19/rm/m/n/12.05/40 N \C19/rm/m/n/12.05/62 ^|\C19/rm/m/n/12.
-05/25 "| \C19/rm/m/n/12.05/58 ∑ \C19/rm/m/n/12.05/50 Ç \C19/rm/m/n/12.05/45 Ú \
-C19/rm/m/n/12.05/44 ¨ \C19/rm/m/n/12.05/63 3 \C19/rm/m/n/12.05/42 â \C19/rm/m/n
-/12.05/38 — \C19/rm/m/n/12.05/56 é \C19/rm/m/n/12.05/41 {\OT1/ptm/m/n/12.05 AQF
-Routing\C19/rm/m/n/12.05/64 É \C19/rm/m/n/12.05/44   \C19/rm/m/n/12.05/48 5 \C1
-9/rm/m/n/12.05/41 © \C19/rm/m/n/12.05/58 € \C19/rm/m/n/12.05/56 é \C19/rm/m/n/1
-2.05/41 {\OT1/ptm/m/n/12.05 AQBinding\C19/rm/m/n/12.05/64 •
+put line 1104.
+ [28]
+[29] [30]
+Overfull \hbox (5.38385pt too wide) in paragraph at lines 1327--1328
+[][]\C19/rm/bx/n/12.05/40 Ω \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 3.10. []
+\C19/rm/m/it/12.05/40  \C19/rm/m/it/12.05/43  \C19/rm/m/it/12.05/63 Ê \C19/rm
+/m/it/12.05/40 ∫ : \C19/rm/m/it/12.05/45 8$\OML/txmi/m/it/12.05 F$\C19/kai/bx/n
+/12.05/49 ˜ \C19/rm/m/it/12.05/65 v$\OMS/txsy/m/n/12.05 j\OML/txmi/m/it/12.05 F
+\OMS/txsy/m/n/12.05 j  \OT1/txr/m/n/12.05 7 \OMS/txsy/m/n/12.05  d[]e   \OT1/
+txr/m/n/12.05 1$\C19/rm/m/it/12.05/55 û|\C19/rm/m/it/12.05/26 ß| \C19/rm/m/it/1
+2.05/55 $\OML/txmi/m/it/12.05 m \OT1/txr/m/n/12.05 = \OMS/txsy/m/n/12.05 d[][]
+j\OML/txmi/m/it/12.05 F\OMS/txsy/m/n/12.05 je$|\C19/rm/m/it/12.05/26 ß| \C19/ka
+i/bx/n/12.05/56 é \C19/rm/m/it/12.05/41 {\OT1/ptm/m/it/12.05 AQFRouting\C19/kai
+/bx/n/12.05/56 §
  []
 
-[30] [31] [32] [33]
+[31] [32]
 File: ./figures/time-diagram.eps Graphic file (type eps)
  <./figures/time-diagram.eps>
 File: ./figures/length-diagram.eps Graphic file (type eps)
-
-<./figures/length-diagram.eps> [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1433--1439
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1441--1444
+ <./figures/length-diagram.eps> [33]
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1432--1438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1445--1448
+Underfull \hbox (badness 10000) in paragraph at lines 1440--1443
 
  []
 
-) [36] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap04.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 1444--1447
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1453
+
+ []
+
+) [35]
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap04.tex
 µ⁄Àƒ’¬
-[37
+[36
 
 
 
@@ -1653,31 +1552,31 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 78.
 
-[38]
+[37]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 134.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 134.
+(hyperref)                removing `math shift' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `superscript' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 135.
 
 
-Overfull \hbox (4.12904pt too wide) in paragraph at lines 137--140
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 135.
+
+
+Overfull \hbox (4.12904pt too wide) in paragraph at lines 138--141
 [][]\C19/rm/bx/n/12.05/61 ⁄ \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 4.7. [] 
-\OT1/ptm/m/it/12.05 [[][]45[][], [][]47[][]] []\C19/rm/m/it/12.05/40 È \C19/kai
+\OT1/ptm/m/it/12.05 [[][]44[][], [][]46[][]] []\C19/rm/m/it/12.05/40 È \C19/kai
 /bx/n/12.05/62 u \C19/rm/m/it/12.05/57 „$\OML/txmi/m/it/12.05 G$\C19/rm/m/it/12
 .05/64 • \C19/rm/m/it/12.05/40  \C19/rm/m/it/12.05/48 ¸ \C19/rm/m/it/12.05/42 
 á \C19/rm/m/it/12.05/37 ÿ \C19/rm/m/it/12.05/57 ” \C19/rm/m/it/12.05/40  ∫ : \
@@ -1690,22 +1589,10 @@ t/12.05/25 "| $\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 F[]; F[]\OT1/txr/m/n/12
  []
 
 File: ./figures/MM.eps Graphic file (type eps)
-<./figures/MM.eps> [39] [40]
-Overfull \hbox (2.32188pt too wide) in paragraph at lines 216--217
-[][]\C19/rm/bx/n/12.05/61 ⁄ \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 4.10. []
-\C19/kai/bx/n/12.05/55 ¥$\OML/txmi/m/it/12.05 x; y; s; t; u; v; m; n$\C19/kai/b
-x/n/12.05/55 ¥$\OML/txmi/m/it/12.05 AQ[]\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.0
-5 n \OMS/txsy/m/n/12.05  \OT1/txr/m/n/12.05 4)$\C19/rm/m/it/12.05/64 • \C19/rm
-/m/it/12.05/40 \OT1/ptm/m/it/12.05 8\C19/rm/m/it/12.05/42 á \C19/rm/m/it/12.05
-/40 ∫ :|\C19/rm/m/it/12.05/26 ß| \C19/kai/bx/n/12.05/54 X \C19/rm/m/it/12.05/43
- J$\OML/txmi/m/it/12.05 AQ[]$\C19/rm/m/it/12.05/63 3$\OML/txmi/m/it/12.05 x; y;
- s; t; u; v; m; n$\C19/rm/m/it/12.05/36 ù
- []
-
-[41]
+<./figures/MM.eps> [38] [39]
 File: ./figures/F_1andF_2-extra-sets.eps Graphic file (type eps)
  <./figures/F_1andF_2-extra-sets.eps>
-Overfull \hbox (1.72403pt too wide) in paragraph at lines 261--262
+Overfull \hbox (1.72403pt too wide) in paragraph at lines 212--213
 []\C19/rm/m/n/12.05/58 ∑ \C19/rm/m/n/12.05/50 Ç \C19/rm/m/n/12.05/45 Ú \C19/rm/
 m/n/12.05/57 œ \C19/rm/m/n/12.05/43 L \C19/rm/m/n/12.05/41 á \C19/rm/m/n/12.05/
 64 y \C19/rm/m/n/12.05/41 { \C19/rm/m/n/12.05/48 5 \C19/rm/m/n/12.05/64 y \C19/
@@ -1719,28 +1606,63 @@ m/n/12.05 16$|\C19/rm/m/n/12.05/25 "| \C19/rm/m/n/12.05/55 $\OML/txmi/m/it/12.
 05 F[]$\C19/rm/m/n/12.05/43 ⁄$\OML/txmi/m/it/12.05 F[]$\C19/rm/m/n/12.05/55 ¥
  []
 
-[42]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
-[44]
+[40] [41] [42]
 File: ./figures/a-big-compoent-with-at-last-4-vertices.eps Graphic file (type e
 ps)
- <./figures/a-big-compoent-with-at-last-4-vertices.eps> [45]
-Underfull \vbox (badness 1502) has occurred while \output is active []
+ <./figures/a-big-compoent-with-at-last-4-vertices.eps>
 
- [46]
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 283.
+
+[43]
+Overfull \hbox (7.15013pt too wide) in paragraph at lines 311--312
+[][]\C19/rm/bx/n/12.05/61 ⁄ \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 4.11. []
+\C19/rm/m/it/12.05/40 $\OML/txmi/m/it/12.05 n \OMS/txsy/m/n/12.05  \OT1/txr/m
+/n/12.05 4$\C19/kai/bx/n/12.05/55 û|\C19/rm/m/it/12.05/26 ß| \C19/kai/bx/n/12.0
+5/55 $\OML/txmi/m/it/12.05 x; y; s; t; u; v; m$\C19/kai/bx/n/12.05/55 ¥$\OML/t
+xmi/m/it/12.05 AQ[]$\C19/rm/m/it/12.05/64 • \C19/rm/m/it/12.05/40 \OT1/ptm/m/i
+t/12.05 7\C19/rm/m/it/12.05/42 á \C19/rm/m/it/12.05/40 ∫ :|\C19/rm/m/it/12.05/2
+6 ß| \C19/kai/bx/n/12.05/54 X \C19/rm/m/it/12.05/43 J$\OML/txmi/m/it/12.05 AQ[]
+$\C19/rm/m/it/12.05/63 3$\OML/txmi/m/it/12.05 x; y; s; t; u; v; m$\C19/rm/m/it/
+12.05/36 ù
+ []
+
+
+Overfull \hbox (29.24171pt too wide) in paragraph at lines 325--326
+[][]\C19/rm/bx/n/12.05/61 ⁄ \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 4.12. []
+\C19/rm/m/it/12.05/40 $\OML/txmi/m/it/12.05 n \OMS/txsy/m/n/12.05  \OT1/txr/m
+/n/12.05 4$\C19/kai/bx/n/12.05/55 û|\C19/rm/m/it/12.05/26 ß| \C19/kai/bx/n/12.0
+5/55 $\OML/txmi/m/it/12.05 x; y; s; t; u; v; m; n$\C19/kai/bx/n/12.05/55 ¥$\OM
+L/txmi/m/it/12.05 AQ[]$\C19/rm/m/it/12.05/64 • \C19/rm/m/it/12.05/40 \OT1/ptm/
+m/it/12.05 8\C19/rm/m/it/12.05/42 á \C19/rm/m/it/12.05/40 ∫ :|\C19/rm/m/it/12.0
+5/26 ß| \C19/kai/bx/n/12.05/54 X \C19/rm/m/it/12.05/43 J$\OML/txmi/m/it/12.05 A
+Q[]$\C19/rm/m/it/12.05/63 3$\OML/txmi/m/it/12.05 x; y; s; t; u; v; m; n$\C19/rm
+/m/it/12.05/36 ù
+ []
+
+[44]
+Underfull \vbox (badness 5091) has occurred while \output is active []
+
+ [45]
 Underfull \vbox (badness 1281) has occurred while \output is active []
 
- [47]
-[48] [49]
-Underfull \vbox (badness 8000) has occurred while \output is active []
+ [46]
+[47] [48]
+Underfull \vbox (badness 6859) has occurred while \output is active []
 
- [50]
-[51]
+ [49]
+[50]
 File: ./figures/AQ-EXTRA-DIAG-time-diagram.eps Graphic file (type eps)
- <./figures/AQ-EXTRA-DIAG-time-diagram.eps> [52]) [53]
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap05.tex
+ <./figures/AQ-EXTRA-DIAG-time-diagram.eps> [51]) [52]
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap05.tex
 µ⁄ŒÂ’¬
 
 Underfull \hbox (badness 10000) in paragraph at lines 14--20
@@ -1762,70 +1684,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--35
 
  []
 
-[54
+[53
 
 
 
-]) [55] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\MainFile.bbl
-Underfull \hbox (badness 6300) in paragraph at lines 4--8
-[]\OT1/ptm/m/n/12.05 Weinberger M.  Just how big is the A-ma-zon EC2 cloud[J]. 
- 2012,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--14
-[]\OT1/ptm/m/n/12.05 Koomey J.  2011, http: //www.koomey.com/.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--14
-\OT1/ptm/m/n/12.05 http: //www.sootoo.com/content/152687.shtml. http:
- []
-
-
-Underfull \hbox (badness 3690) in paragraph at lines 16--19
-[]\OT1/ptm/m/n/12.05 Snyder J.  Mi-crosoft: Dat-a-cen-ter growth de-fies Moore'
-s law[J].  2013,
- []
-
-[56
+]) [54] (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.bbl
+[55
 
 
 
-] [57] [58] [59]) [60] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\pub.tex
+] [56] [57] [58]) [59]
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\pub.tex
 
 LaTeX Warning: Empty `publications' environment on input line 2.
 
+) [60
+
+
+]
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\thanks.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \hskip 12.05pt
+(hyperref)                replaced by space on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \hskip 12.05pt
+(hyperref)                replaced by space on input line 1.
+
 ) [61
-
-
-] (D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\thanks.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \hskip 12.05pt
-(hyperref)                replaced by space on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \hskip 12.05pt
-(hyperref)                replaced by space on input line 1.
-
-) [62
 
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 291.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
- (D:\GitKraken\Thesis\SUDAThesis_LaTeX\MainFile.aux
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\abstract.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap01.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap02.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap03.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap04.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\chap05.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\pub.aux)
-(D:\GitKraken\Thesis\SUDAThesis_LaTeX\chapter\thanks.aux))
+ (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.aux
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\abstract.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap01.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap02.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap03.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap04.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap05.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\pub.aux)
+(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\thanks.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 291.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 291.
 
@@ -1835,8 +1738,8 @@ Package rerunfilecheck Warning: File `MainFile.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `MainFile.out':
-(rerunfilecheck)             Before: A9EB43DDC2A6A047B81C0E71B9264F72;6200
-(rerunfilecheck)             After:  5F5E7A4F5520D3772952281736BFEA2C;2645.
+(rerunfilecheck)             Before: 3C27F9C7A0E11ECB7EFE2A7F9B3A6E81;6400
+(rerunfilecheck)             After:  C17BFB9710C2CE24720F4B3B7B01F828;2718.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.66pt have occurred.
@@ -1847,12 +1750,12 @@ LaTeX Warning: There were multiply-defined labels.
  )
 (\end occurred when \iffalse on line 73 was incomplete) 
 Here is how much of TeX's memory you used:
- 20527 strings out of 495355
- 332258 string characters out of 3182817
- 391903 words of memory out of 3000000
- 23086 multiletter control sequences out of 15000+200000
- 173302 words of font info for 567 fonts, out of 3000000 for 9000
+ 20524 strings out of 495355
+ 333386 string characters out of 3182817
+ 392066 words of memory out of 3000000
+ 23084 multiletter control sequences out of 15000+200000
+ 174498 words of font info for 571 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,51p,1409b,1317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,51p,1472b,1317s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on MainFile.dvi (74 pages, 374360 bytes).
+Output written on MainFile.dvi (73 pages, 374876 bytes).

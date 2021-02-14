@@ -1,168 +1,75 @@
 
 \begin{abstract}
-随着信息化社会的飞速发展， 高性能计算已经成为继理论科学和实验科学之后科学研究的第三大支柱。
-从战略高度方面讲， 高性能计算技术是一个国家综合国力的表现，
-在国防安全、高科技发展和国民经济建设等各个领域都占有不可或缺的重要地位。
+随着社会信息化的发展，计算机应用深入到了各个行业，与此同时，网络资源和数据规模也不断扩大，对海量数据处理的要求也越来越高。在这样的背景下，云计算（Cloud Computing）迅速兴起。
+作为云计算的基础设施和下一代网络技术的创新平台，数据中心网络的研究成为了近年来学术界和工业界关注的热点。数据中心网络的性能在很大程度上决定云计算的性能，因此，可以通过构建性能良好的数据中心网络来提升云计算的性能。但是随着数据中心网络规模的扩大和复杂性的提高，数据中心网络中的服务器数量变得越来越庞大。比如，腾讯在2019 年底的服务器的数量就已经达到100 万台。
 
-在高性能计算的研究中，提升运行效率一直是其发展的首要目标。
-并行计算(Parallel Computing)是提高计算机系统计算速度和处理能力的一种有效手段。
-并行计算系统中的处理单元之间的连接方式可视为一个网络，我们称之为互连网络。
-互连网络一般可以抽象为一个简单图$G=(V(G),E(G))$，
-其中$G$中顶点集合$V(G)$表示互连网络中的处理器集合，
-$G$中边集合$E(G)$表示处理器之间的链路集合。
+在拥有如此庞大数量服务器的数据中心网络中，如何将这些服务器连接起来，使其构成一个性能良好的数据中心网络，是提升云计算性能所面临的重要挑战之一。迄今为止，人们已经提出了多种网络拓扑结构，如传统的树型结构、Fat-Tree、DCell、BCube、VL2、CamCube和Ficonn等。
 
 
+决定网络性能的因素有很多，主要包括如下几个方面：
 
-随着系统计算需求的不断增加，
-网络中处理器数目逐渐增多，继而导致处理器发生故障的概率增加。
-当网络中处理器发生故障时，
-网络能否继续保持正常运作取决于该网络的容错性，
-它是衡量互连网络优劣的一项关键指标。
-其中，连通度是衡量网络容错性的一个重要参数。
-然而在实际情况中，条件连通度中的
-限制连通度和额外连通度相较于传统的连通度能够更准确地衡量一个网络的容错性。
-同时，在某些处理器发生故障并删除后仍然保持连通的网络中如何进行处理器之间的路由
-是网络的容错性需要研究的重要课题。
+\begin{itemize}
+  \item 可扩展性和成本：可扩展性是指网络应能够根据数据处理要求的提高而可以比较容易地增加节点的数量；
+  \item 通信性能：数据通信是指服务器之间的数据传输能力；
+  \item 容错性能：容错是指当网络中的某些资源发生故障时，网络是否可以正常运行。
+\end{itemize}
 
-广义超立方体是多处理器系统中一种常用的互连网络，
-具有正则性、对称性、良好的嵌入性和可扩展性等许多优良特性。
-目前，广义超立方体已经被应用在多种大型多处理器并行系统、数据中心网络和光纤通讯网络的构建中。
+扩展立方体，是著名互联网络超立方体拓扑结构的一种重要变体。扩展立方体不仅保留了超立方体的许多优秀的性质，同时拥有超立方体和它的其他变体所不具备的优点。比如，扩展立方体的连通度是$2n-1$，几乎是超立方体的两倍。这也意味着扩展立方体的容错性能在一些方面远胜过超立方体。
 
-本文研究了广义超立方体的限制连通度和额外连通度，并给出了相应条件下的容错路由算法。
+本文主要研究了扩展立方体的容错方面的性质，主要包括结构连通度，额外连通度以及额外诊断度。同时提出了容错路由算法和诊断算法。具体成果如下：
 
-主要研究内容如下：
+（1）本文从故障结构而非故障节点的角度研究了扩展立方体的结构连通度和子结构连通度，同时提出了在$K_{1,6}$子结构连通度下的容错路由算法，同时通过模拟实验验证了算法的有效性和准确性。
 
-(1) 基于限制连通度的定义，
-本文给出了$r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$的$1$-限制连通度，并给出了其详细证明。
-同时，本文给出了$G(m_{r},m_{r-1},\ldots,m_{1})$中的故障顶点个数小于$1$-限制连通度，且满足$1$-限制连通度条件的容错路由算法，
-该算法的时间复杂度为$O(\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))^{3})$，
-其中$\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))$表示$G(m_{r},m_{r-1},\ldots,m_{1})$
-的连通度。
+（2）在额外连通度和额外诊断度的定义下，我们分别研究了扩展立方体的$2$-额外连通度和$2$-额外诊断度，并给出了详细的证明。同时我们基于$2$-额外诊断度提出了额外诊断算法。该算法可以帮助我们正确定位故障顶点来保证网络的的正常运行。
 
-(2) 基于额外连通度的定义，
-本文给出了$r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$ 的$1$-额外连通度和$2$-额外连通度，
-并给出了其详细证明。
-同时，本文给出了$G(m_{r},$ $m_{r-1},\ldots,$ $m_{1})$中的故障顶点个数小于$2$-额外连通度，
-且满足$2$-额外连通度条件的容错路由算法，
-该算法的时间复杂度为$O(\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))^{3})$。
 
-%在第三章中我们求出了广义超立方体的$1$-限制连通度，
-%并取得如下研究成果：
-%1. 对于一个$r$维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$，
-%取$n=$ max$\{m_{1},m_{2},\ldots,m_{r}\}$，
-%则该广义超立方体的$1$-限制连通度是$2\kappa(G)-n$。
-%
-%2. 给出一个时间复杂度为$O(\kappa(G)^{3})$的
-%无故障单播路由算法。
-%
-%二、广义超立方体的$1$-额外连通度，$2$-额外连通度问题
-%在第四章中我们求出了广义超立方体的$2$-额外连通度，
-%并取得如下研究成果：
-%
-%1. 对于广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$，
-%其中$r \geq 5$且对于每个$i \in \langle r \rangle \setminus \{0\}$ 都有$m_{i}\geq 3$
-%且$m_{i}\geq m_{i-1}$。
-%当$m_{r}>m_{r-1}$,
-%则广义超立方体的$2$-额外连通度为$3\kappa(G) - 2m_{r}$；
-%当$m_{r}=m_{r-1}$,
-%则那么该广义超立方体的$2$-额外连通度为$3\kappa(G) - 2m_{r}-1$。
-%
-%2. 给出一个时间复杂度为$O(\kappa(G)^{3})$的
-%无故障单播路由算法。
-%
-%1. 本文提出一种与距离相关的新的条件（边）连通度——$(g,d,k)$-条件（边）连通度。
-%与其他条件连通度相比，$(g,d,k)$-条件（边）连通度的要求更符合实际情况，并且允许存在更多的故障顶点（边）。
-%它为研究超立方体等网络的容错性提供了新的衡量指标。
-%
-%2. 本文研究了超立方体网络上某些特定的$(g,d,k)$-条件（边）连通度，包括$\kappa^{1,1,k}(Q_{n})$，$\kappa^{1,d,2}(Q_{n})$，$\lambda^{1,1,1}(Q_{n})$和$\lambda^{1,d,2}(Q_{n})$。
-%这些结果为后续研究超立方体网络上其他$(g,d,k)$-条件（边）连通度提供了参考，
-%也为在超立方体变型网络等其他网络上研究$(g,d,k)$-条件（边）连通度提供了方法上的指导。
-%
-%3. 本文在$(1,1,1)$-条件连通的情况下提出了一种基于局部信息的容错单播路由算法，该算法通过构建长度不超过3的跨越路径来选择用于路由的维度。
-%本文分析了该算法的时间复杂度以及空间复杂度，并且和现有的几种单播路由算法从成功率，运行时间，路径长度等方面进行了比较。
-%
-%4. 本文结合$(g,d,k)$-条件边连通的定义，提出了一种新的条件容错哈密顿性质：$f$-$(g,d,k)$条件边容错哈密顿。
-%本文证明，当$n\geq 4$时，$n$维超立方体是$(4n-13)$-$(3,0,0)$条件边容错哈密顿的，并且这一结果是最优的。
 
-\keywords{高性能计算，互连网络，广义超立方体，限制连通度，额外连通度，容错路由算法}
+
+
+\keywords{云计算，高性能计算，扩展立方体，结构连通度，子结构连通度，额外连通度，额外诊断度，容错路由算法，诊断算法}
 
 
 
 \end{abstract}
 
-\soochowauthor{郭莉莉\quad}
+\soochowauthor{阚双祥\quad}
 
-\soochowtutor{樊建席，林政宽\quad}
+\soochowtutor{樊建席\quad}
 
 \begin{englishabstract}
-With the rapid development of information society,
-high performance computing has been the third pillar of scientific research
-following theoretical sciences and experimental sciences.
-Speaking strategically,
-high performance computing technology
-is a manifestation of a country's comprehensive national strength,
-and plays an indispensable role in the field of national defense security,
-high-techology development and national economic construction.
+With the development of social information, the application of computer has gone deep into various industries. At the same time, the scale of network resources and data is also expanding, and the requirements for massive data processing are getting higher and higher. In this context, Cloud Computing is rising rapidly.
+As the infrastructure of cloud computing and the innovation platform of the next generation network technology, the research of data center network has become the focus of academic and industrial circles in recent years. The performance of the data center network largely determines the performance of cloud computing, so you can improve the performance of cloud computing by building a well-performing data center network. However, with the increase of the scale and complexity of the data center network, the number of servers in the data center network becomes more and more huge. Tencent, for example, had 1 million servers at the end of 2019.
 
-In the research of high performance computing,
-improving operation efficiency has always been the primary goal of its development.
-Parallel computing is an effective means to improve the computing speed of the systems.
-In a parallel computing system, the connection between processing units can be viewed as a network,
-which is named as the interconnection network.
-Interconnection network can be abstracted as a simple graph $G =(V(G), E(G))$,
-where $V(G)$ is the set of vertices in $G$, representing the set of processors in the interconnection network,
-and $E(G)$ is the set of edges in $G$,
-representing the set of links between various processors.
+In a data center network with such a large number of servers, how to connect these servers to form a well-performing data center network is one of the important challenges to improve the performance of cloud computing. So far, many kinds of network topologies have been proposed, such as traditional Tree structure, Fat Tree, DCell, BCube, VL2, CamCube and Ficonn, etc.
 
-With the increasing demand of computing,
-the number of processors is gradually increasing,
-which leads to an increase in the probability of processor failure.
-Whether the network with faulty processors can continue to operate normally
-or not depends on the fault-tolerance of this network,
-which is a key index to measure the performance of the interconnection network.
-And connectivity is an important parameter to measure the fault-tolerance of a network.
-However, restricted connectivity and extra connectivity which are two kinds of conditional connectivity
-can more accurately measure the fault-tolerance
-than traditional connectivity in actual situations.
-At the same time, how to perform routing between processors in a network
-which remains connected after deleting faulty processors
-is a problem which needs to be considered when studying the fault-tolerance of this network.
 
-Generalized hypercubes is a common interconnection network in multiprocessor system,
-which has many excellent properties such as regularity, symmetry, good embeddability and extensibility.
-At present, generalized hypercubes have been used in the structure of many large multi-processor parallel systems,
-data center networks and optical fiber communication networks.
+There are many factors that determine network performance, including the following aspects:
 
-In this paper, the restricted connectivity and extra connectivity of the $r$-dimensional generalized hypercubes
-$G(m_{r},m_{r-1},\ldots,m_{1})$ are studied,
-and two fault-tolerant routing algorithms are given.
-The major contributions are listed as follows.
+\begin{itemize}
+    \item Scalability and cost: Scalability means that the network should be able to increase the number of nodes relatively easily according to the improvement of data processing requirements;
+    \item Communication performance: Data communication refers to the ability of data transmission between servers;
+    \item Fault-tolerant performance: Fault-tolerant refers to whether the network can operate normally when some resources in the network fail.
+\end{itemize}
 
-1. Based on the definition of restricted connectivity,
-this paper gives the $1$-restricted connectivity of $G(m_{r},m_{r-1},\ldots,m_{1})$,
-and the detailed proof of this result is given.
-At the same time, this paper presents a fault-tolerant routing algorithm in $G(m_{r},m_{r-1},\ldots,m_{1})$
-with faulty vertices under the conditions that the number of faulty vertices is less than $1$-restricted connectivity
-and each fault-free vertex has at least one fault-free neighbor.
-The time complexity of this algorithm is $O(\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))^{3})$,
-where $\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))$ represents the restricted-connectivity of $G(m_{r},m_{r-1},\ldots,m_{1})$.
+The augmented cube is an important variant of the famous interconnection network hypercube. The augmented cube not only retains many of the great properties of the hypercube, but also has advantages that the hypercube and its other variants do not have. For example, the connectivity of the augmented cube is $2n-1$, almost twice that of the hypercube. This also means that the fault tolerance of the augmented cube is in some ways much better than that of the hypercube.
 
-2. Based on the definition of external connectivity,
-this paper presents the $1$-extra connectivity and $2$-extra connectivity of
-$G(m_{r},m_{r-1},\ldots,m_{1})$, and the detailed proofs are given.
-At the same time, this paper presents a fault-tolerant routing algorithm in $G(m_{r},$ $m_{r-1},$ $\ldots,$ $m_{1})$
-with fault vertices under the conditions that the number of faulty vertices is less than $2$-extra connectivity
-and each component left has at least three fault-free vertices.
-And the time complexity of the algorithm is $O(\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))^{3})$.
+In this paper, we mainly study the properties of fault tolerance of augmented cube, including structure connectivity, extra connectivity and extra diagnosability. At the same time, the fault-tolerant routing algorithm and diagnosis algorithm are proposed. Specific achievements are as follows:
 
-\englishkeywords{High performance computing, Interconnection network, Generalized hypercubes,
-Restricted connectivity, Extra connectivity, Fault-tolerant routing algorithm}
+(1) In this paper, the structure connectivity and substructure connectivity of the augmented cube are studied from the point of view of the fault structure rather than the fault node. At the same time, a fault-tolerant routing algorithm is proposed under the connectivity degree of $K_{1,6}$substructure. At the same time, the validity and accuracy of the algorithm are verified by simulation experiments.
+
+(2) Under the definition of extra connectivity and extra diagnosability, we study the $2$- extra connectivity and $2$-extra diagnosability of the augmented cube respectively, and give detailed proof. At the same time, we proposed an additional diagnosis algorithm based on $2$- extra diagnosis. This algorithm can help us locate the fault vertex correctly to ensure the normal operation of the network.
+
+
+
+
+
+\englishkeywords{Cloud computing, High performance computing, Augmented cube, Structure connectivity, Substructure connectivity, Extra connectivity, Extra diagnosability, Fault-tolerant routing algorithm, Diagnostic algorithm}
 
 \end{englishabstract}
 
 
-\ensoochowauthor{Lili Guo}
+\ensoochowauthor{Shuangxiang Kan}
 
-\ensoochowtutor{Janxi Fan, Cheng-Kuan Lin}
+\ensoochowtutor{Janxi Fan}
 
 

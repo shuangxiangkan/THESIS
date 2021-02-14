@@ -4,15 +4,10 @@ A level-1 auxiliary file: ./chapter/chap01.aux
 A level-1 auxiliary file: ./chapter/chap02.aux
 A level-1 auxiliary file: ./chapter/chap03.aux
 A level-1 auxiliary file: ./chapter/chap04.aux
+A level-1 auxiliary file: ./chapter/chap05.aux
 The style file: sudabst.bst
 A level-1 auxiliary file: ./chapter/pub.aux
 A level-1 auxiliary file: ./chapter/thanks.aux
 Database file #1: bibliography.bib
-Warning--empty journal in Amazon-EC2-cloud
-Warning--empty title in google
-Warning--empty journal in google
-Warning--empty journal in Microsoft
-Warning--empty author in Microsoft2
-Warning--empty title in Microsoft2
-Warning--empty journal in Microsoft2
-(There were 7 warnings)
+Warning--empty journal in The-g-extra-conditional-sequential
+(There was 1 warning)

@@ -369,31 +369,70 @@
   pages={140-148},
   year={2012},
 }
-%41
-@article{Amazon-EC2-cloud,
-  title={Just how big is the Amazon EC2 cloud},
-  author={Weinberger M},
-  volume={http://servicesangle.com/blog/2012/03/14/just-how-big-is-the-amazon-ec2-cloud/},
-  year={2012},
+%%41
+%@article{Amazon-EC2-cloud,
+%  title={Just how big is the Amazon EC2 cloud http://servicesangle.com/blog/2012/03/14/just-how-big-is-the-amazon-ec2-cloud/},
+%  author={Weinberger M},
+%  %journal={http://servicesangle.com/blog/2012/03/14/just-how-big-is-the-amazon-ec2-cloud/},
+%  year={2012},
+%}
+%%42
+%@article{google,
+%  author={Koomey J},
+%  journal={http: //www.koomey.com/. http: //www.sootoo.com/content/152687.shtml. http:
+%//www.cnbeta.com/articles/150607.htm},
+%  year={2011},
+%}
+%%43
+%@article{Microsoft,
+%  title={Microsoft: Datacenter growth defies Moore's law},
+%  author={Snyder J},
+%  journal={http://www.pcworld.com/article/130921/article.html},
+%  year={2013},
+%}
+%%44
+%@article{Microsoft2,
+%  journal={https://gigaom.com/2013/07/17/ballmers-million-server-claim-doesnt-seem-so-crazy/},
+%  year={2013},
+%}
+%@article{tecent,
+%  journal={http://www.bianews.com/news/details?id=36468},
+%}
+%@Misc{tecent,
+%howpublished = {\url{http://www.bianews.com/news/details?id=36468}},
+%}
+%
+%@Misc{aliyun,
+%howpublished = {\url{https://baijiahao.baidu.com/s?id=1673704660936721085}},
+%}
+@unpublished{tecent,
+  title={Survey on the access to
+finance of enterprises},
+  author={Sophie Doove and Petra Gibcus and
+Ton Kwaak and Lia Smit and Tommy Span},
+  year=2014,
+  note ={Accessed 16 June 2017. http://wwwe.ansa.it/documents/1415814222451\_Rapporto.pdf/ },
 }
-%42
-@article{google,
-  author={Koomey J},
-  volume={http: //www.koomey.com/. http: //www.sootoo.com/content/152687.shtml. http:
-//www.cnbeta.com/articles/150607.htm},
-  year={2011},
-}
-%43
-@article{Microsoft,
-  title={Microsoft: Datacenter growth defies Moore's law},
-  author={Snyder J},
-  volume={http://www.pcworld.com/article/130921/article.html},
-  year={2013},
-}
-%44
-@article{Microsoft2,
-  volume={https://gigaom.com/2013/07/17/ballmers-million-server-claim-doesnt-seem-so-crazy/},
-  year={2013},
+
+%@article{tecent,
+%  title={},
+%  author={},
+%  journal={},
+%  volume={},
+%  number={},
+%  pages={},
+% url = {http://www.bianews.com/news/details?id=36468},
+% year={2019},
+%}
+@article{aliyun,
+  title={},
+  author={},
+  journal={},
+  volume={},
+  number={},
+  pages={},
+  url = {https://baijiahao.baidu.com/s?id=1673704660936721085},
+  year={2020},
 }
 
 %45
@@ -460,4 +499,24 @@
   number={6},
   pages={848-854},
   year={2006},
+}
+
+%51
+@article{MM,
+  title={A comparison connection assignment for self-diagnosis of multiprocessors systems},
+  author={Maeng J and Malek M},
+  journal={Proceedings of IFTC},
+  pages={173-175},
+  year={1981},
+}
+
+%52
+@article{MM*,
+  title={On self-diagnosable multiprocessor systems: diagnosasis by the comparison Approach},
+  author={Sengupta A and Dahbura A T},
+  journal={IEEE Transactions on Computers},
+  volume={41},
+  number={11},
+  pages={1386-1396},
+  year={1992},
 }

@@ -1,25 +1,18 @@
 \begin{thebibliography}{10}
 
-\bibitem{Amazon-EC2-cloud}
-Weinberger M.
-\newblock Just how big is the Amazon EC2 cloud[J].
-\newblock 2012,
-  http://servicesangle.com/blog/2012/03/14/just-how-big-is-the-amazon-ec2-cloud/.
+\bibitem{tecent}
+腾讯全网服务器数量超过100万台[EB/OL].
+\newblock \url{http://www.bianews.com/news/details?id=36468}, 2019.
 
-\bibitem{google}
-Koomey J.
-\newblock 2011, http: //www.koomey.com/. http:
-  //www.sootoo.com/content/152687.shtml. http:
-  //www.cnbeta.com/articles/150607.htm.
+\bibitem{cloudComputing}
+工业和信息化部关于印发《云计算发展三年行动计划（2017－2019年）》的通知[EB/OL].
+\newblock
+  \url{https://www.miit.gov.cn/jgsj/xxjsfzs/zlgh/art/2020/art\_fb1e14b54f234fc7b4f52c062b9d3d08.html},
+  2017.
 
-\bibitem{Microsoft}
-Snyder J.
-\newblock Microsoft: Datacenter growth defies Moore's law[J].
-\newblock 2013, http://www.pcworld.com/article/130921/article.html.
-
-\bibitem{Microsoft2}
-2013,
-  https://gigaom.com/2013/07/17/ballmers-million-server-claim-doesnt-seem-so-crazy/.
+\bibitem{aliyun}
+阿里云：在全国已建成5大超级数据中心，新增百万台服务器[EB/OL].
+\newblock \url{https://baijiahao.baidu.com/s?id=1673704660936721085}, 2020.
 
 \bibitem{hypercube}
 Harary F, Hayes~J P and Wu~H J.
@@ -63,6 +56,11 @@ Harary F.
 F{\`{a}}brega J and Fiol~M A.
 \newblock On the extraconnectivity of graphs[J].
 \newblock Discrete Mathematics, 1996, 155(1-3): 49--57.
+
+\bibitem{Ma2008}
+Ma~M, Liu G and Xu~J-M.
+\newblock The super connectivity of augmented cubes[J].
+\newblock Information Processing Letters, 2008, 106(2): 59--63.
 
 \bibitem{Latifi1994}
 Latifi S, Hegde M and Naraghi-Pour M.
@@ -118,7 +116,7 @@ Wan M and Zhang Z.
 Guo L, Qin C and Xu~L.
 \newblock Subgraph fault tolerance of distance optimally edge connected
   hypercubes and folded hypercubes[J].
-\newblock Journal of Parallel and Distributed Computing, 2020.
+\newblock Journal of Parallel and Distributed Computing, 2020, 138: 190--198.
 
 \bibitem{LinL2015}
 Lin L, Xu~L, Zhou S and Hsieh S-Y.
@@ -153,11 +151,6 @@ Boesch~F T.
 Wang S and Wang M.
 \newblock The strong connectivity of bubble-sort star graphs[J].
 \newblock The Computer Journal, 1984, 62(5): 487--499.
-
-\bibitem{Ma2008}
-Ma~M, Liu G and Xu~J-M.
-\newblock The super connectivity of augmented cubes[J].
-\newblock Information Processing Letters, 2008, 106(2): 59--63.
 
 \bibitem{Lin2016}
 Lin C-K, Zhang L, Fan J and Wang D.
@@ -210,7 +203,7 @@ Sengupta A and Dahbura~A T.
 
 \bibitem{Conditional-Diagnosability-of-Augmented-Cubes}
 Chang~N W and Hsieh~S Y.
-\newblock Conditional Diagnosability of Augmented Cubes under the PMC Model[J].
+\newblock Conditional diagnosability of augmented cubes under the PMC model[J].
 \newblock IEEE Transactions on Dependable $\&$ Secure Computing, 2011, 9(1):
   46--60.
 
@@ -233,15 +226,15 @@ Ma~M, Liu G and Xu~J M.
 
 \bibitem{t/t-Diagnosability-and-t/k-Diagnosability}
 Jiarong L, Fang C, Qian Z and Min X.
-\newblock $t/t$-Diagnosability and $t/k$-Diagnosability for Augmented Cube
-  Networks[J].
+\newblock $t/t$-diagnosability and $t/k$-diagnosability for augmented cube
+  networks[J].
 \newblock IEEE Access, 2018, : 1--1.
 
 \bibitem{Relationship-between-Conditional-and-extra}
 Hao~R X, Tian~Z X and Xu~J M.
-\newblock Relationship between Conditional Diagnosability and 2-extra
-  Connectivity of Symmetric Graphs[J].
-\newblock Theoretical Computer Science, 2016, : 36--53.
+\newblock Relationship between conditional diagnosability and 2-extra
+  connectivity of symmetric graphs[J].
+\newblock Theoretical Computer Science, 2016, 627: 36--53.
 
 \bibitem{Conditional-Diagnosability-Measures-for-Large}
 Lai~P L, Tan J~J M, Chang~C P and Hsu~L H.
@@ -263,20 +256,20 @@ Sengupta A and Dahbura~A T.
 \bibitem{The-g-extra-conditional-sequential}
 Zhang S and Yang W.
 \newblock The $g$-extra conditional diagnosability and sequential $t/k$
-  -diagnosability of hypercubes[C].
-\newblock  International Journal of Computer Mathematics, 2015: 1--20.
+  -diagnosability of hypercubes[J].
+\newblock 2015, 93(3): 1--20.
 
 \bibitem{Lv-extra-connectivity-and-extra-diagnosability}
 Lv~M, Fan J, Zhou J and Jia X.
 \newblock The extra connectivity and extra diagnosability of regular
   interconnection networks[J].
-\newblock Theoretical Computer Science, 2019, : 809.
+\newblock Theoretical Computer Science, 2020, 809: 88--102.
 
 \bibitem{A-New-Proof-for-Exact-Relationship}
 Huang Y, Lin L and Xu~L.
-\newblock A New Proof for Exact Relationship between Extra Connectivity and
-  Extra Diagnosability of Regular Connected Graphs under MM* Model[J].
-\newblock Theoretical Computer Science, 2020.
+\newblock A new proof for exact relationship between extra connectivity and
+  extra diagnosability of regular connected graphs under MM* model[J].
+\newblock Theoretical Computer Science, 2020, 828-829: 70--80.
 
 \bibitem{Reliability-analysis-of-data-center-networks}
 Li~X, Jia X, Fan J and Lin C.
