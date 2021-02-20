@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2019.10.24)  14 FEB 2021 17:34
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2019.10.24)  20 FEB 2021 10:40
 entering extended mode
 **MainFile.tex
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.tex
@@ -876,21 +876,21 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box49
 \enitdp@description=\count305
 )
-Package hyperref Info: Option `CJKbookmarks' set `true' on input line 68.
+Package hyperref Info: Option `CJKbookmarks' set `true' on input line 69.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 68.
+(hyperref)                setting the option has no effect on input line 69.
 
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 68.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 68.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 69.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 69.
 \c@definition=\count306
 
-Package amsthm Warning: Unknown theoremstyle `property' on input line 93.
+Package amsthm Warning: Unknown theoremstyle `property' on input line 94.
 
 \c@prp=\count307
 \c@property=\count308
-Package hyperref Info: Option `colorlinks' set `true' on input line 100.
+Package hyperref Info: Option `colorlinks' set `true' on input line 101.
 \c@theorem=\count309
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.aux
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\abstract.aux)
@@ -904,118 +904,118 @@ LaTeX Warning: Label `PMC' multiply defined.
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap05.aux)
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\pub.aux)
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\thanks.aux))
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 182.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 182
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 183.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 183
 .
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\omltxmi.fd"
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 182.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 182
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 183.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 183
 .
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\omstxsy.fd"
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 182.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 182
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 183.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 183
 .
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\omxtxex.fd"
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 182.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 182.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 183.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 183.
 
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\utxexa.fd"
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 182.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 183.
 
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring ON on input line 182.
+Package hyperref Info: Link coloring ON on input line 183.
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1025,9 +1025,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count310
 )
-LaTeX Info: Redefining \ref on input line 182.
-LaTeX Info: Redefining \pageref on input line 182.
-LaTeX Info: Redefining \nameref on input line 182.
+LaTeX Info: Redefining \ref on input line 183.
+LaTeX Info: Redefining \pageref on input line 183.
+LaTeX Info: Redefining \nameref on input line 183.
 
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.out)
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.out)
@@ -1101,68 +1101,68 @@ File: soochowLogo.eps Graphic file (type eps)
 
 <soochowLogo.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <26.1> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 207.
-LaTeX Font Info:    Try loading font information for C19+rm on input line 207.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 208.
+LaTeX Font Info:    Try loading font information for C19+rm on input line 208.
  ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\ctex\fd\c19rm.fd"
 File: c19rm.fd 2007/05/06 v0.8a ctex font definition file
 )
 LaTeX Font Info:    Try loading font information for C19+zhsong on input line 2
-07.
+08.
  ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\zhmetrics\c19zhsong.fd"
 File: c19zhsong.fd 2009/09/23 4.8.2
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.09> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 207.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 208.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 207.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 207.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 208.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 208.
 
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\ot1txr.fd"
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 207.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 208.
 
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\utxsya.fd"
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 207.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 208.
 
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\utxsyb.fd"
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 207.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 208.
 
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\stmaryrd\ustmry.fd")
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <15.06> not available
-(Font)              size <14.4> substituted on input line 207.
+(Font)              size <14.4> substituted on input line 208.
 
-LaTeX Font Info:    Try loading font information for U+txmia on input line 207.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 208.
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\utxmia.fd"
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 207.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 208.
 
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\txfonts\utxsyc.fd"
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 207.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 208.
 
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.06> not available
-(Font)              size <14.4> substituted on input line 207.
+(Font)              size <14.4> substituted on input line 208.
 
 LaTeX Font Info:    Try loading font information for C19+zhkai on input line 20
-7.
+8.
 ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\zhmetrics\c19zhkai.fd"
 File: c19zhkai.fd 2009/09/23 4.8.2
 ) [1
@@ -1172,32 +1172,32 @@ File: c19zhkai.fd 2009/09/23 4.8.2
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.05> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 210.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 211.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <18.07> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 210.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 211.
 LaTeX Font Info:    Try loading font information for C19+zhhei on input line 21
-0.
+1.
  ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\zhmetrics\c19zhhei.fd"
 File: c19zhhei.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: punctuation spaces for family 'zhsong' do not exist. Use
- family 'def' instead. on input line 210.
+ family 'def' instead. on input line 211.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <10.54> not available
-(Font)              size <10.95> substituted on input line 210.
+(Font)              size <10.95> substituted on input line 211.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <7.53> not available
-(Font)              size <8> substituted on input line 210.
+(Font)              size <8> substituted on input line 211.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.54> not available
-(Font)              size <10.95> substituted on input line 210.
+(Font)              size <10.95> substituted on input line 211.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.53> not available
-(Font)              size <8> substituted on input line 210.
+(Font)              size <8> substituted on input line 211.
 
 [3
 
@@ -1297,6 +1297,16 @@ family 'def' instead. on input line 91.
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap03.tex
 µ⁄»˝’¬
 Missing character: There is no ß in font txr!
+
+Overfull \hbox (2.78848pt too wide) in paragraph at lines 12--23
+\C19/rm/m/n/12.05/41 Œ \C19/rm/m/n/12.05/43 “$\OML/txmi/m/it/12.05 v[]; v[]; []
+ ; v[]$|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/12.05/52 Ÿ \C19/rm/m/n/12.05/64 •$\
+OML/txmi/m/it/12.05 v[]; v[]; [] ; v[]$\C19/rm/m/n/12.05/43 ⁄$\OML/txmi/m/it/12
+.05 u$\C19/rm/m/n/12.05/40  \C19/rm/m/n/12.05/56 § \C19/rm/m/n/12.05/62 k \C19
+/rm/m/n/12.05/49  \C19/rm/m/n/12.05/46 ÿ \C19/rm/m/n/12.05/40 ∫ :$\OML/txmi/m/
+it/12.05 u[]; u[]; []; [] ; u[]; []$\C19/rm/m/n/12.05/60 /
+ []
+
 [11
 
 
@@ -1304,80 +1314,95 @@ Missing character: There is no ß in font txr!
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 133.
+(hyperref)                removing `math shift' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 133.
+(hyperref)                removing `subscript' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 133.
+(hyperref)                removing `math shift' on input line 134.
 
 [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 150.
+(hyperref)                removing `math shift' on input line 153.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 150.
+(hyperref)                removing `\leq' on input line 153.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 150.
+(hyperref)                removing `\leq' on input line 153.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 150.
+(hyperref)                removing `math shift' on input line 153.
 
 [13]
 File: ./figures/K_1_1.eps Graphic file (type eps)
  <./figures/K_1_1.eps>
-Overfull \hbox (9.02101pt too wide) in paragraph at lines 272--272
+Overfull \hbox (9.02101pt too wide) in paragraph at lines 275--275
  [][] 
  []
 
 File: ./figures/K_1_2.eps Graphic file (type eps)
 <./figures/K_1_2.eps>
-Overfull \hbox (9.02101pt too wide) in paragraph at lines 278--278
+Overfull \hbox (9.02101pt too wide) in paragraph at lines 281--281
  [][] 
  []
 
-[14]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 306.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 306.
+(hyperref)                removing `math shift' on input line 309.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 306.
+(hyperref)                removing `\leq' on input line 309.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 306.
+(hyperref)                removing `\leq' on input line 309.
 
-[15]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 309.
+
+[14] [15] [16]
 File: ./figures/K_1_5.eps Graphic file (type eps)
- <./figures/K_1_5.eps> [16] [17] [18]
+ <./figures/K_1_5.eps> [17]
+Overfull \hbox (11.47148pt too wide) in paragraph at lines 492--495
+\C19/rm/m/n/12.05/62 k$\OMS/txsy/m/n/12.05 j\OML/txmi/m/it/12.05 V\OT1/txr/m/n/
+12.05 (\OML/txmi/m/it/12.05 a[]\OT1/txr/m/n/12.05 ) \OMS/txsy/m/n/12.05 \ f\OML
+/txmi/m/it/12.05 N\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 u\OT1/txr/m/n/12.05 
+) \OMS/txsy/m/n/12.05   \OML/txmi/m/it/12.05 V\OT1/txr/m/n/12.05 (\OML/txmi/m/i
+t/12.05 B\OT1/txr/m/n/12.05 ) \OMS/txsy/m/n/12.05   f[]\OML/txmi/m/it/12.05 ; u
+[]\OMS/txsy/m/n/12.05 ggj  \OT1/txr/m/n/12.05 2$|\C19/rm/m/n/12.05/25 "| \C19/
+rm/m/n/12.05/61 œ \C19/rm/m/n/12.05/58 è$\OML/txmi/m/it/12.05 N\OT1/txr/m/n/12.
+05 ([]) \OMS/txsy/m/n/12.05 \ \OML/txmi/m/it/12.05 N\OT1/txr/m/n/12.05 (\OML/tx
+mi/m/it/12.05 u[]\OT1/txr/m/n/12.05 ) \OMS/txsy/m/n/12.05   f\OML/txmi/m/it/12.
+05 u; []\OMS/txsy/m/n/12.05 g \OT1/txr/m/n/12.05 =$$\OMS/txsy/m/n/12.05 f\OT1/t
+xr/m/n/12.05 ([])[]\OML/txmi/m/it/12.05 ; \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12
+.05 u[]\OT1/txr/m/n/12.05 )[]\OMS/txsy/m/n/12.05 g$|\C19/rm/m/n/12.05/26 ß|
+ []
+
+[18]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 522.
+(hyperref)                removing `math shift' on input line 526.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 522.
+(hyperref)                removing `subscript' on input line 526.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 522.
+(hyperref)                removing `math shift' on input line 526.
 
 
-Overfull \hbox (1.29874pt too wide) in paragraph at lines 524--525
+Overfull \hbox (1.29874pt too wide) in paragraph at lines 528--529
 []\C19/rm/m/n/12.05/55 $\OML/txmi/m/it/12.05 u$\C19/rm/m/n/12.05/55 ¥$\OML/txm
 i/m/it/12.05 AQ[]$\C19/rm/m/n/12.05/64 • \C19/rm/m/n/12.05/40  \C19/rm/m/n/12.
 05/54 ? \C19/rm/m/n/12.05/61 ø ò \C19/rm/m/n/12.05/42 á \C19/rm/m/n/12.05/40 ∫ 
@@ -1390,8 +1415,8 @@ ML/txmi/m/it/12.05 AQ\OT1/txr/m/n/12.05 )$\C19/rm/m/n/12.05/43 ⁄$\OT1/txr/m/n/1
 2.05 (\OML/txmi/m/it/12.05 u[]; []\OT1/txr/m/n/12.05 )[] 
  []
 
-
-Overfull \hbox (2.95935pt too wide) in paragraph at lines 526--528
+[19]
+Overfull \hbox (2.95935pt too wide) in paragraph at lines 530--532
 []\C19/rm/m/n/12.05/61 œ \C19/rm/m/n/12.05/58 è$\OML/txmi/m/it/12.05 P[]\OT1/tx
 r/m/n/12.05 (\OML/txmi/m/it/12.05 P[]\OT1/txr/m/n/12.05 )$\C19/rm/m/n/12.05/57 
 ” \C19/rm/m/n/12.05/43  \C19/rm/m/n/12.05/62 u$\OML/txmi/m/it/12.05 K[]\OT1/tx
@@ -1405,124 +1430,117 @@ xr/m/n/12.05 )(\OML/txmi/m/it/12.05 \OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 A
 Q[]; K[]\OT1/txr/m/n/12.05 ))$ 
  []
 
-[19] [20]
+[20]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 627.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 627.
+(hyperref)                removing `math shift' on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 627.
+(hyperref)                removing `subscript' on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 631.
+(hyperref)                removing `math shift' on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 631.
+(hyperref)                removing `math shift' on input line 636.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leq' on input line 631.
+(hyperref)                removing `\leq' on input line 636.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 631.
+(hyperref)                removing `\leq' on input line 636.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 652--653
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 636.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 657.
+(hyperref)                removing `math shift' on input line 662.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 657.
+(hyperref)                removing `math shift' on input line 662.
 
-[21] [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 840--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 840--866
+[21] [22] [23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 845--871
 
  []
 
-[24] [25]
+
+Underfull \hbox (badness 10000) in paragraph at lines 845--871
+
+ []
+
+[25]
 File: ./figures/C_5.eps Graphic file (type eps)
- <./figures/C_5.eps> [26]
+ <./figures/C_5.eps> [26] [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1090.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1090.
+(hyperref)                removing `math shift' on input line 1094.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1090.
+(hyperref)                removing `subscript' on input line 1094.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1095.
+(hyperref)                removing `math shift' on input line 1094.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1095.
+(hyperref)                removing `math shift' on input line 1099.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1095.
+(hyperref)                removing `subscript' on input line 1099.
 
-[27]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1099.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.03> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1104.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1108.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1104.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1104
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1108.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1108
 .
- ("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
+("D:\Program Files(x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 1104.
- [28]
-[29] [30]
-Overfull \hbox (5.38385pt too wide) in paragraph at lines 1327--1328
+put line 1108.
+ [28] [29]
+[30] [31]
+Overfull \hbox (5.38385pt too wide) in paragraph at lines 1331--1332
 [][]\C19/rm/bx/n/12.05/40 Ω \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 3.10. []
-\C19/rm/m/it/12.05/40  \C19/rm/m/it/12.05/43  \C19/rm/m/it/12.05/63 Ê \C19/rm
-/m/it/12.05/40 ∫ : \C19/rm/m/it/12.05/45 8$\OML/txmi/m/it/12.05 F$\C19/kai/bx/n
-/12.05/49 ˜ \C19/rm/m/it/12.05/65 v$\OMS/txsy/m/n/12.05 j\OML/txmi/m/it/12.05 F
-\OMS/txsy/m/n/12.05 j  \OT1/txr/m/n/12.05 7 \OMS/txsy/m/n/12.05  d[]e   \OT1/
-txr/m/n/12.05 1$\C19/rm/m/it/12.05/55 û|\C19/rm/m/it/12.05/26 ß| \C19/rm/m/it/1
-2.05/55 $\OML/txmi/m/it/12.05 m \OT1/txr/m/n/12.05 = \OMS/txsy/m/n/12.05 d[][]
-j\OML/txmi/m/it/12.05 F\OMS/txsy/m/n/12.05 je$|\C19/rm/m/it/12.05/26 ß| \C19/ka
-i/bx/n/12.05/56 é \C19/rm/m/it/12.05/41 {\OT1/ptm/m/it/12.05 AQFRouting\C19/kai
-/bx/n/12.05/56 §
+\C19/rm/m/it/12.05/40  \C19/kai/bx/n/12.05/43  \C19/rm/m/it/12.05/63 Ê \C19/r
+m/m/it/12.05/40 ∫ : \C19/rm/m/it/12.05/45 8$\OML/txmi/m/it/12.05 F$\C19/kai/bx/
+n/12.05/49 ˜ \C19/rm/m/it/12.05/65 v$\OMS/txsy/m/n/12.05 j\OML/txmi/m/it/12.05 
+F\OMS/txsy/m/n/12.05 j  \OT1/txr/m/n/12.05 7 \OMS/txsy/m/n/12.05  d[]e   \OT1
+/txr/m/n/12.05 1$\C19/rm/m/it/12.05/55 û|\C19/rm/m/it/12.05/26 ß| \C19/rm/m/it/
+12.05/55 $\OML/txmi/m/it/12.05 m \OT1/txr/m/n/12.05 = \OMS/txsy/m/n/12.05 d[][
+]j\OML/txmi/m/it/12.05 F\OMS/txsy/m/n/12.05 je$|\C19/rm/m/it/12.05/26 ß| \C19/k
+ai/bx/n/12.05/56 é \C19/rm/m/it/12.05/41 {\OT1/ptm/m/it/12.05 AQFRouting\C19/ka
+i/bx/n/12.05/56 §
  []
 
-[31] [32]
+[32] [33]
 File: ./figures/time-diagram.eps Graphic file (type eps)
  <./figures/time-diagram.eps>
 File: ./figures/length-diagram.eps Graphic file (type eps)
- <./figures/length-diagram.eps> [33]
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1438
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1440--1443
+ <./figures/length-diagram.eps> [34]
+Underfull \hbox (badness 10000) in paragraph at lines 1436--1442
 
  []
 
@@ -1532,14 +1550,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1444--1447
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1448--1453
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1451
 
  []
 
-) [35]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1452--1457
+
+ []
+
+[35]) [36]
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap04.tex
 µ⁄Àƒ’¬
-[36
+[37
 
 
 
@@ -1552,7 +1575,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 78.
 
-[37]
+[38]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 135.
@@ -1589,7 +1612,7 @@ t/12.05/25 "| $\OT1/txr/m/n/12.05 (\OML/txmi/m/it/12.05 F[]; F[]\OT1/txr/m/n/12
  []
 
 File: ./figures/MM.eps Graphic file (type eps)
-<./figures/MM.eps> [38] [39]
+<./figures/MM.eps> [39] [40]
 File: ./figures/F_1andF_2-extra-sets.eps Graphic file (type eps)
  <./figures/F_1andF_2-extra-sets.eps>
 Overfull \hbox (1.72403pt too wide) in paragraph at lines 212--213
@@ -1606,7 +1629,7 @@ m/n/12.05 16$|\C19/rm/m/n/12.05/25 "| \C19/rm/m/n/12.05/55 $\OML/txmi/m/it/12.
 05 F[]$\C19/rm/m/n/12.05/43 ⁄$\OML/txmi/m/it/12.05 F[]$\C19/rm/m/n/12.05/55 ¥
  []
 
-[40] [41] [42]
+[41] [42] [43]
 File: ./figures/a-big-compoent-with-at-last-4-vertices.eps Graphic file (type e
 ps)
  <./figures/a-big-compoent-with-at-last-4-vertices.eps>
@@ -1622,7 +1645,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 283.
 
-[43]
+[44]
 Overfull \hbox (7.15013pt too wide) in paragraph at lines 311--312
 [][]\C19/rm/bx/n/12.05/61 ⁄ \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 4.11. []
 \C19/rm/m/it/12.05/40 $\OML/txmi/m/it/12.05 n \OMS/txsy/m/n/12.05  \OT1/txr/m
@@ -1630,39 +1653,35 @@ Overfull \hbox (7.15013pt too wide) in paragraph at lines 311--312
 5/55 $\OML/txmi/m/it/12.05 x; y; s; t; u; v; m$\C19/kai/bx/n/12.05/55 ¥$\OML/t
 xmi/m/it/12.05 AQ[]$\C19/rm/m/it/12.05/64 • \C19/rm/m/it/12.05/40 \OT1/ptm/m/i
 t/12.05 7\C19/rm/m/it/12.05/42 á \C19/rm/m/it/12.05/40 ∫ :|\C19/rm/m/it/12.05/2
-6 ß| \C19/kai/bx/n/12.05/54 X \C19/rm/m/it/12.05/43 J$\OML/txmi/m/it/12.05 AQ[]
-$\C19/rm/m/it/12.05/63 3$\OML/txmi/m/it/12.05 x; y; s; t; u; v; m$\C19/rm/m/it/
-12.05/36 ù
+6 ß| \C19/kai/bx/n/12.05/54 X \C19/kai/bx/n/12.05/43 J$\OML/txmi/m/it/12.05 AQ[
+]$\C19/rm/m/it/12.05/63 3$\OML/txmi/m/it/12.05 x; y; s; t; u; v; m$\C19/rm/m/it
+/12.05/36 ù
  []
 
-
-Overfull \hbox (29.24171pt too wide) in paragraph at lines 325--326
-[][]\C19/rm/bx/n/12.05/61 ⁄ \C19/rm/bx/n/12.05/48 n \OT1/ptm/b/n/12.05 4.12. []
-\C19/rm/m/it/12.05/40 $\OML/txmi/m/it/12.05 n \OMS/txsy/m/n/12.05  \OT1/txr/m
-/n/12.05 4$\C19/kai/bx/n/12.05/55 û|\C19/rm/m/it/12.05/26 ß| \C19/kai/bx/n/12.0
-5/55 $\OML/txmi/m/it/12.05 x; y; s; t; u; v; m; n$\C19/kai/bx/n/12.05/55 ¥$\OM
-L/txmi/m/it/12.05 AQ[]$\C19/rm/m/it/12.05/64 • \C19/rm/m/it/12.05/40 \OT1/ptm/
-m/it/12.05 8\C19/rm/m/it/12.05/42 á \C19/rm/m/it/12.05/40 ∫ :|\C19/rm/m/it/12.0
-5/26 ß| \C19/kai/bx/n/12.05/54 X \C19/rm/m/it/12.05/43 J$\OML/txmi/m/it/12.05 A
-Q[]$\C19/rm/m/it/12.05/63 3$\OML/txmi/m/it/12.05 x; y; s; t; u; v; m; n$\C19/rm
-/m/it/12.05/36 ù
- []
-
-[44]
-Underfull \vbox (badness 5091) has occurred while \output is active []
-
- [45]
-Underfull \vbox (badness 1281) has occurred while \output is active []
+[45]
+Underfull \vbox (badness 1648) has occurred while \output is active []
 
  [46]
-[47] [48]
-Underfull \vbox (badness 6859) has occurred while \output is active []
+Underfull \vbox (badness 1924) has occurred while \output is active []
 
- [49]
-[50]
+ [47]
+Overfull \hbox (5.53784pt too wide) in paragraph at lines 431--432
+[]\C19/rm/m/n/12.05/37 ÿ \C19/rm/m/n/12.05/55 î \C19/rm/m/n/12.05/61 ò \C19/rm/
+m/n/12.05/36 Ñ \C19/rm/m/n/12.05/60 5|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/12.05
+/45 b \C19/rm/m/n/12.05/55  \C19/rm/m/n/12.05/40 ∫ :$\OML/txmi/m/it/12.05 v$\C
+19/rm/m/n/12.05/39  \C19/rm/m/n/12.05/63 3 \C19/rm/m/n/12.05/61 ò \C19/rm/m/n/
+12.05/42 á \C19/rm/m/n/12.05/49  \C19/rm/m/n/12.05/46 ÿ \C19/rm/m/n/12.05/40 ∫
+ :|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/12.05/42 T \C19/rm/m/n/12.05/49  \C19/r
+m/m/n/12.05/46 ÿ \C19/rm/m/n/12.05/40 ∫ : \C19/rm/m/n/12.05/55 · \C19/rm/m/n/12
+.05/62 u$\OML/txmi/m/it/12.05 L \OMS/txsy/m/n/12.05   \OML/txmi/m/it/12.05 S[] 
+\OMS/txsy/m/n/12.05   f\OML/txmi/m/it/12.05 x; y; s; t; u; v\OMS/txsy/m/n/12.05
+ g$|\C19/rm/m/n/12.05/25 "|
+ []
+
+[48] [49] [50] [51] [52]
 File: ./figures/AQ-EXTRA-DIAG-time-diagram.eps Graphic file (type eps)
- <./figures/AQ-EXTRA-DIAG-time-diagram.eps> [51]) [52]
-(D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap05.tex
+ <./figures/AQ-EXTRA-DIAG-time-diagram.eps>) [53]
+[54] (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap05.tex
 µ⁄ŒÂ’¬
 
 Underfull \hbox (badness 10000) in paragraph at lines 14--20
@@ -1684,21 +1703,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--35
 
  []
 
-[53
-
-
-
-]) [54] (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.bbl
 [55
 
 
 
-] [56] [57] [58]) [59]
+]) [56] (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.bbl
+[57
+
+
+
+] [58] [59] [60]) [61]
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\pub.tex
 
 LaTeX Warning: Empty `publications' environment on input line 2.
 
-) [60
+) [62
 
 
 ]
@@ -1713,13 +1732,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 1.
 
-) [61
+) [63
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 291.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 292.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 292.
  (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\MainFile.aux
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\abstract.aux)
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap01.aux)
@@ -1729,8 +1748,8 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\chap05.aux)
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\pub.aux)
 (D:\GitKraken\Â§ßËÆ∫Êñá\THESIS\Thesis\SUDAThesis_LaTeX\chapter\thanks.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 291.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 291.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 292.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 292.
 
 
 Package rerunfilecheck Warning: File `MainFile.out' has changed.
@@ -1738,8 +1757,8 @@ Package rerunfilecheck Warning: File `MainFile.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `MainFile.out':
-(rerunfilecheck)             Before: 3C27F9C7A0E11ECB7EFE2A7F9B3A6E81;6400
-(rerunfilecheck)             After:  C17BFB9710C2CE24720F4B3B7B01F828;2718.
+(rerunfilecheck)             Before: AC5836C9CAB2AD0D4DD66728B286A878;6392
+(rerunfilecheck)             After:  8F91DA1B2F3CD793F7036F7212142385;2716.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.66pt have occurred.
@@ -1750,12 +1769,12 @@ LaTeX Warning: There were multiply-defined labels.
  )
 (\end occurred when \iffalse on line 73 was incomplete) 
 Here is how much of TeX's memory you used:
- 20524 strings out of 495355
- 333386 string characters out of 3182817
+ 20527 strings out of 495355
+ 333442 string characters out of 3182817
  392066 words of memory out of 3000000
- 23084 multiletter control sequences out of 15000+200000
+ 23087 multiletter control sequences out of 15000+200000
  174498 words of font info for 571 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,12n,51p,1472b,1317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,12n,52p,1472b,1304s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on MainFile.dvi (73 pages, 374876 bytes).
+Output written on MainFile.dvi (75 pages, 380176 bytes).

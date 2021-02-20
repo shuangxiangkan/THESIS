@@ -33,7 +33,6 @@
 \usepackage{longtable}
 \usepackage{colortbl}
 \usepackage{graphicx}
-\usepackage{url}
 %%\usepackage{epstopdf}
 \usepackage[top=3.3cm, bottom=2.7cm, left=2.75cm, right=2.75cm]{geometry}
 \usepackage{CJKnumb}
