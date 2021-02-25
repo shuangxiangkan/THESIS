@@ -1,6 +1,6 @@
 
 \begin{abstract}
-随着社会信息化的发展，计算机应用深入到了各个行业，与此同时，网络资源和数据规模也不断扩大，对海量数据处理的要求也越来越高。在这样的背景下，云计算（Cloud Computing）迅速兴起。
+随着社会信息化的发展，计算机应用深入到了各个行业。与此同时，网络资源和数据规模也不断扩大，对海量数据处理的要求也越来越高。在这样的背景下，云计算（Cloud Computing）迅速兴起。
 作为云计算的基础设施和下一代网络技术的创新平台，数据中心网络的研究成为了近年来学术界和工业界关注的热点。数据中心网络的性能在很大程度上决定云计算的性能，因此，可以通过构建性能良好的数据中心网络来提升云计算的性能。但是随着数据中心网络规模的扩大和复杂性的提高，数据中心网络中的服务器数量变得越来越庞大。比如，腾讯在2019 年底的服务器的数量就已经达到100 万台\cite{tecent}。
 
 在拥有如此庞大数量服务器的数据中心网络中，如何将这些服务器连接起来，使其构成一个性能良好的数据中心网络，是提升云计算性能所面临的重要挑战之一。迄今为止，人们已经提出了多种网络拓扑结构，如传统的树型结构、Fat-Tree、DCell、BCube、VL2、CamCube和Ficonn等。
@@ -9,7 +9,7 @@
 决定网络性能的因素有很多，主要包括如下几个方面：
 
 \begin{itemize}
-  \item 可扩展性和成本：可扩展性是指网络应能够根据数据处理要求的提高而可以比较容易地增加节点的数量；
+  \item 可扩展性和成本：可扩展性是指网络应能够根据数据处理要求的提高而可以比较容易地增加服务器的数量；
   \item 通信性能：数据通信是指服务器之间的数据传输能力；
   \item 容错性能：容错是指当网络中的某些资源发生故障时，网络是否可以正常运行。
 \end{itemize}
@@ -46,7 +46,7 @@ In a data center network with such a large number of servers, how to connect the
 There are many factors that determine network performance, including the following aspects:
 
 \begin{itemize}
-    \item Scalability and Cost: Scalability means that the network should be able to increase the number of nodes relatively easily according to the improvement of data processing requirements;
+    \item Scalability and Cost: Scalability means that the network should be able to increase the number of servers relatively easily according to the improvement of data processing requirements;
     \item Communication performance: Data communication refers to the ability of data transmission between servers;
     \item Fault-tolerant performance: Fault-tolerant refers to whether the network can operate normally when some resources in the network fail.
 \end{itemize}

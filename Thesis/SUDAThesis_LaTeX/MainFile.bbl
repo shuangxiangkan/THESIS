@@ -193,13 +193,13 @@ Preparata~F P, Metze G and Chien~R T.
 \bibitem{MM}
 Maeng J and Malek M.
 \newblock A comparison connection assignment for self-diagnosis of
-  multiprocessors systems[J].
-\newblock Proceedings of IFTC, 1981, : 173--175.
+  multiprocessors systems[C].
+\newblock  Proceedings of IFTC, 1981: 173--175.
 
 \bibitem{MM*}
 Sengupta A and Dahbura~A T.
 \newblock On self-diagnosable multiprocessor systems: diagnosasis by the
-  comparison Approach[J].
+  comparison approach[J].
 \newblock IEEE Transactions on Computers, 1992, 41(11): 1386--1396.
 
 \bibitem{Conditional-Diagnosability-of-Augmented-Cubes}
@@ -229,7 +229,7 @@ Ma~M, Liu G and Xu~J M.
 Jiarong L, Fang C, Qian Z and Min X.
 \newblock $t/t$-diagnosability and $t/k$-diagnosability for augmented cube
   networks[J].
-\newblock IEEE Access, 2018, : 1--1.
+\newblock IEEE Access, 2018, 6: 35029--35041.
 
 \bibitem{Relationship-between-Conditional-and-extra}
 Hao~R X, Tian~Z X and Xu~J M.
