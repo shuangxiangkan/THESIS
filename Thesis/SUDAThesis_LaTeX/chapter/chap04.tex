@@ -1,56 +1,61 @@
-\chapter{扩展立方体的额外连通度和额外诊断度}
+\chapter{扩展立方体的$2$-额外连通度和诊断算法}
 %\chapter{扩展立方体的$2$-额外连通度和$MM^*$模型下的$2$-额外诊断度}
 
-在互联网络的容错性研究中，额外连通度是衡量网络稳定性和容错性的一个重要指标，
-额外连通度从更实际的角度考察了网络中可能发生故障的情形，对实际网络的性能评估提供了重要的依据。而诊断度是指当网络中的顶点发生故障时，最多可以被诊断出来的故障顶点数目，因此诊断度也是衡量网络容错性能的重要指标。在本章中，我们重点考察了扩展立方体的$2$- 额外连通度和$MM^*$ 模型下的$2$- 额外诊断度，以及相应的诊断算法，该算法可以帮助我们快速地定位故障顶点来保障网络的正常运行。
+%在互连网络的容错性研究中，额外连通度是衡量网络稳定性和容错性的一个重要指标，
+%额外连通度从更实际的角度考察了网络中可能发生故障的情形，对实际网络的性能评估提供了重要的依据。而诊断度是指当网络中的顶点发生故障时，最多可以被诊断出来的故障顶点数目，因此诊断度也是衡量网络容错性能的重要指标。在本章中，我们重点考察了扩展立方体的$2$-额外连通度和$MM^*$ 模型下的$2$-额外诊断度，以及相应的诊断算法，该算法可以帮助我们快速地定位故障顶点来保障网络的正常运行。
 
-本章针对扩展立方体所得到的相关结论如下：
-
-（1）扩展立方体的$2$-额外连通度是$6n-17$，其中$n \geq 6$；
-
-（2）扩展立方体在$MM^*$模型下的$2$-额外诊断度是$6n-5$，其中$n \geq 6$。
+在互连网络的容错性研究中，诊断度是衡量网络稳定性和容错性的一个重要指标，
+诊断度是指当网络中的顶点发生故障时，最多可以被诊断出来的故障顶点数目。
+在本章中，我们证明了$n$-维扩展立方体在$MM^*$模型下的$2$-额外诊断度是$6n-17$，
+并提出了相应的诊断算法，该算法可以帮助我们正确定位故障顶点来保障网络的正常运行。
+%
+%本章针对扩展立方体所得到的相关结论如下：
+%
+%（1）扩展立方体的$2$-额外连通度是$6n-17$，其中$n \geq 6$；
+%
+%（2）扩展立方体在$MM^*$模型下的$2$-额外诊断度是$6n-5$，其中$n \geq 6$。
 
 \section{预备知识}
 
-在给出扩展立方体的$2$-额外连通度和$MM^*$模型下的$2$-额外诊断度的证明和算法之前，我们先给出证明要用到的扩展立方体的一些性质。
+在给出扩展立方体在$MM^*$模型下的$2$-额外诊断度的证明和算法之前，我们先给出证明要用到的扩展立方体的一些性质。
 
 
 一对$AQ_n$中的顶点$(u,v)$被称为$AQ_n$中的一个补对如果$u=\bar{u}_n$。因为$AQ_n$中的任意两个补对都是两两不相交的，所以$AQ_n$中包含$2^{n-1}$个补对。
 
 \begin{lem}
-\cite{The-super-connectivity-of-augmented-cubes}
+\upcite{The-super-connectivity-of-augmented-cubes}
 \label{complement-pair}
 设$AQ_n=L \bigodot R$，其中$L \cong AQ^0_{n-1}$，$R \cong AQ^1_{n-1}$。如果$u$和$v$是$L$(或$R$)中的$2$个顶点且$(u,v)($即，$v=\bar{u}_{n-1})$是$L$(或$R$)中的一个补对，那么$(u,v)$ 在$R$(或$L$)中有两个相同的邻居顶点。否则，如果$(u,v)$不是$L$(或$R$)中的一个补对，则$(u,v)$在$R$(或$L$)中没有相同的邻居顶点。
 \end{lem}
 
 
 \begin{lem}
-\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\upcite{Conditional-Diagnosability-of-Augmented-Cubes}
 \label{5-vertices-2-complement-pairs}
 当$n \geq 4$时，设$x,y,s,t,u$是$AQ_n$中的5个顶点，如果$AQ_n$在$x,y,s,t,u$包含两个补对，那么$|N_{AQ_n}(\{x,y,s,t,u\})| \geq 10n-35$。
 \end{lem}
 
 \begin{lem}
-\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\upcite{Conditional-Diagnosability-of-Augmented-Cubes}
 \label{5-vertices-1-complement-pairs}
 当$n \geq 4$时，设$x,y,s,t,u$是$AQ_n$中的5个顶点，如果$AQ_n$在$x,y,s,t,u$包含一个补对，那么$|N_{AQ_n}(\{x,y,s,t,u\})| \geq 10n-39$。
 \end{lem}
 
 \begin{lem}
-\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\upcite{Conditional-Diagnosability-of-Augmented-Cubes}
 \label{6-vertices-3-complement-pairs}
 当$n \geq 4$时，设$x,y,s,t,u,v$是$AQ_n$中的6个顶点，如果$AQ_n$在$x,y,s,t,u,v$包含三个补对，那么$|N_{AQ_n}(\{x,y,s,t,u,v\})| \geq 12n-46$。
 \end{lem}
 
 \begin{lem}
-\cite{t/t-Diagnosability-and-t/k-Diagnosability}
+\upcite{t/t-Diagnosability-and-t/k-Diagnosability}
 \label{k-nodes}
 对于顶点集合$X \subset V(AQ_n)$，其中$|X|=k$，$0 \leq k \leq 2n-1$，那么$|N_{AQ_n}(X)| \geq 2kn- \frac{3k(k+1)}{2}+1$。
 \end{lem}
 
 
 \begin{thm}
-\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\upcite{Conditional-Diagnosability-of-Augmented-Cubes}
 \label{4n-9<=}
 设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 4n-9$，$n \geq 4$。那么$AQ_n-S$满足以下两个条件之一:
 
@@ -60,7 +65,7 @@
 \end{thm}
 
 \begin{thm}
-\cite{Conditional-Diagnosability-of-Augmented-Cubes}
+\upcite{Conditional-Diagnosability-of-Augmented-Cubes}
 \label{6n-18<=}
 设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 6n-18$, $n \geq 6$。那么, $AQ_n-S$满足以下四个条件之一:
 
@@ -75,59 +80,61 @@
 
 
 
-\section{扩展立方体的$2$-额外连通度}
+%\section{扩展立方体的$2$-额外连通度}
+%
+%我们首先给出额外连通度的定义：
+%
+%\begin{defn}
+%\label{extra diagnosability definition}
+%\upcite{FABREGA199649}
+%(1) 图$G$的一个$g$-额外集是一个顶点的集合，当从$G$中删除这个集合后，每个连通分支所包含的顶点个数大于等于$g+1$。
+%
+%(2) 图$G$的一个$g$-额外割是$G$的一个$g$-额外集，将其删除将会导致$G$变为不连通的。
+%
+%(3) 图$G$的$g$-额外连通度，记为$\kappa_g(G)$, 是$g$-额外割的最小基数。
+%\end{defn}
 
-我们首先给出额外连通度的定义：
+%因为条件诊断度和$2$-额外连通度具有密切的联系，在得到条件诊断度或者$2$-额外连通度的情况下，如果满足某些条件，另一个诊断度可以直接得到。Hao\upcite{Relationship-between-Conditional-and-extra}等人给出了的充分条件。
+%
+%%我们首先给出条件诊断度的定义：
+%
+%\begin{defn}
+%\upcite{Conditional-Diagnosability-Measures-for-Large}
+%一个系统$G$是条件$t$-可诊断的，当且仅当两个不同的条件故障集合$F_1$，$F_2 \subseteq V(G)$ 是可区分的，且$|F_1|$，$|F_2| \leq t$。
+%\end{defn}
+%
+%$G$的条件诊断度，记为$t_c(G)$，其中$t$为上述定义的最大值，使得$G$是条件$t$-诊断的。
+%
+%\begin{lem}
+%\upcite{Strong-diagnosability-and-conditional-diagnosability}
+%$t_c(AQ_3)=3$，$t_c(AQ_4)=7$，$t_c(AQ_5)=12$；当$n \geq 6$时，$t_c(AQ_n)=6n-17$。
+%\end{lem}
+%
+%
+%\begin{thm}
+%\label{conditional-and-extra}
+%\upcite{Relationship-between-Conditional-and-extra}
+%设$G$为$n$-正则图，其中$t=$min$\{|N(T)|:T$ 是$G$中一条长度为$3$的路径或者长度为$3$ 的圈$\}$。 如果$G$满足下面的条件：
+%
+%(1) 对于一个顶点集合$F \subset V(G)$且$|F|\leq t-1$，$G-F$有一个大的连通分支和小的
+%连通分支，且这些小的连通分支的所有顶点个数最多为$2$个；
+%
+%(2) 如果$G$中不包含长度为$5$的圈，$n \geq 2\gamma(G)+2$；否则$n \geq 3\gamma(G)+2$；
+%
+%(3) $|V(G)|>(n+1)(t-1)+4$；
+%
+%那么$t_c(G)=t=\kappa_2(G)$。
+%\end{thm}
+%
+%其中$\gamma(G)$的定义为：对于$G$中两个不相邻的顶点$x$和$y$，$\gamma(x,y)=|N(x) \cap N(y)|$，$\gamma(G)=$max$\{\gamma(x,y):x,y \in V(G)$且$xy \notin E(G)\}$。
+%
+%下面我们将根据扩展立方体的性质来逐一验证这$3$个条件。
+%
+%$AQ_n$是$(2n-1)$-正则图。设$u$是$AQ_n$中的任意一个顶点，$T=\{u,\bar{u}_{n-1},\bar{u}_{n-3}\}$，根据扩展立方体的定义，$T$是一条长度为$3$的路径且$t=|N(T)|=6n-17$。 根据引理\ref{6n-18<=}，可知$AQ_n$符合条件（1）；根据扩展立方体的定义，$AQ_n$ 包含长度为$5$ 的圈。根据引理\ref{common_verticles}，$\gamma(AQ_n)=4$。当$n \geq 8$时，$2n-1 \geq 3\gamma(G)+2$，条件（2）成立；当$n \geq 9$时，$|V(G)|=2^n>(n+1)(t-1)+4=(n+1)(6n-18)+4$。条件（3）成立。
+%
+%因为$AQ_n$满足定理\ref{conditional-and-extra}的条件，所以我们可以直接得到$AQ_n$的$2$- 额外连通度。
 
-\begin{defn}
-\label{extra diagnosability definition}
-\cite{FABREGA199649}
-(1) 图$G$的一个$g$-额外集是一个顶点的集合，当从$G$中删除这个集合后，每个连通分支所包含的顶点个数大于等于$g+1$。
-
-(2) 图$G$的一个$g$-额外割是$G$的一个$g$-额外集，将其删除将会导致$G$变为不连通的。
-
-(3) 图$G$的$g$-额外连通度，记为$\kappa_g(G)$, 是$g$-额外割的最小基数。
-\end{defn}
-
-因为条件诊断度和$2$-额外连通度具有密切的联系，在得到条件诊断度或者$2$-额外连通度的情况下，如果满足某些条件，另一个诊断度可以直接得到。Hao\cite{Relationship-between-Conditional-and-extra}等人给出了的充分条件。
-
-%我们首先给出条件诊断度的定义：
-
-\begin{defn}
-\cite{Conditional-Diagnosability-Measures-for-Large}
-一个系统$G$是条件$t$-可诊断的，当且仅当两个不同的条件故障集合$F_1$，$F_2 \subseteq V(G)$ 是可区分的，且$|F_1|$，$|F_2| \leq t$。
-\end{defn}
-
-$G$的条件诊断度，记为$t_c(G)$，其中$t$为上述定义的最大值，使得$G$是条件$t$-诊断的。
-
-\begin{lem}
-\cite{Strong-diagnosability-and-conditional-diagnosability}
-$t_c(AQ_3)=3$，$t_c(AQ_4)=7$，$t_c(AQ_5)=12$；当$n \geq 6$时，$t_c(AQ_n)=6n-17$。
-\end{lem}
-
-
-\begin{thm}
-\label{conditional-and-extra}
-\cite{Relationship-between-Conditional-and-extra}
-设$G$为$n$-正则图，其中$t=$min$\{|N(T)|:T$ 是$G$中一条长度为$3$的路径或者长度为$3$ 的圈$\}$。 如果$G$满足下面的条件：
-
-(1) 对于一个顶点集合$F \subset V(G)$且$|F|\leq t-1$，$G-F$有一个大的连通分支和小的
-连通分支，且这些小的连通分支的所有顶点个数最多为$2$个；
-
-(2) 如果$G$中不包含长度为$5$的圈，$n \geq 2\gamma(G)+2$；否则$n \geq 3\gamma(G)+2$；
-
-(3) $|V(G)|>(n+1)(t-1)+4$；
-
-那么$t_c(G)=t=\kappa_2(G)$。
-\end{thm}
-
-其中$\gamma(G)$的定义为：对于$G$中两个不相邻的顶点$x$和$y$，$\gamma(x,y)=|N(x) \cap N(y)|$，$\gamma(G)=$max$\{\gamma(x,y):x,y \in V(G)$且$xy \notin E(G)\}$。
-
-下面我们将根据扩展立方体的性质来逐一验证这$3$个条件。
-
-$AQ_n$是$(2n-1)$-正则图。设$u$是$AQ_n$中的任意一个顶点，$T=\{u,\bar{u}_{n-1},\bar{u}_{n-3}\}$，根据扩展立方体的定义，$T$是一条长度为$3$的路径且$t=|N(T)|=6n-17$。 根据引理\ref{6n-18<=}，可知$AQ_n$符合条件（1）；根据扩展立方体的定义，$AQ_n$ 包含长度为$5$ 的圈。根据引理\ref{common_verticles}，$\gamma(AQ_n)=4$。当$n \geq 8$时，$2n-1 \geq 3\gamma(G)+2$，条件（2）成立；当$n \geq 9$时，$|V(G)|=2^n>(n+1)(t-1)+4=(n+1)(6n-18)+4$。条件（3）成立。
-
-因为$AQ_n$满足定理\ref{conditional-and-extra}的条件，所以我们可以直接得到$AQ_n$的$2$-额外连通度。
+Ma等人在文献\cite{Fault-tolerant-analysis-of-augmented-cubes}给出了扩展立方体的$2$-额外连通度。
 
 \begin{thm}
 当$n \geq 9$时，$\kappa_2(AQ_n)=6n-17$。
@@ -136,7 +143,7 @@ $AQ_n$是$(2n-1)$-正则图。设$u$是$AQ_n$中的任意一个顶点，$T=\{u,\bar{u}_{n-1},\ba
 \section{扩展立方体在$MM^*$模型下的$2$-额外诊断度}
 
 \begin{lem}
-\cite{Conditional-Diagnosability-Measures-for-Large,On-self-diagnosable-multiprocessor}
+\upcite{Conditional-Diagnosability-Measures-for-Large,On-self-diagnosable-multiprocessor}
 \label{MM*-distinguable}
 对于图$G$中的两个不同的顶点子集$F_1$，$F_2 \subset V(G)$。$(F_1,F_2)$在$MM^*$模型下是可区分的当且仅当下面三个条件中的一个成立（见图\ref{MM*}）：
 
@@ -157,7 +164,7 @@ $AQ_n$是$(2n-1)$-正则图。设$u$是$AQ_n$中的任意一个顶点，$T=\{u,\bar{u}_{n-1},\ba
 
 
 \begin{defn}
-\cite{The-g-extra-conditional-sequential}
+\upcite{The-g-extra-conditional-sequential}
 \label{MM*-distinguishable}
 (1) 在$MM^*$模型下，一个图$G$是$g$-额外，$t$-可诊断的，当且仅当对任意两个不同的$g$-额外集$F_1 \subseteq V(G)$，$F_2 \subseteq V(G)$，其中$|F_1| \leq t$，$|F_2| \leq t$，且$F_1$和$F_2$是可区分的。
 
@@ -165,11 +172,11 @@ $AQ_n$是$(2n-1)$-正则图。设$u$是$AQ_n$中的任意一个顶点，$T=\{u,\bar{u}_{n-1},\ba
 \end{defn}
 
 
-在写这部分内容的时候，已经有两篇文章\cite{Lv-extra-connectivity-and-extra-diagnosability,A-New-Proof-for-Exact-Relationship} 在某些条件下将额外连通度和额外诊断度联系了起来。但是扩展立方体并不满足这两篇文章的条件。下面我们将对这两篇文章的条件进行逐一说明:
+在写这部分内容的时候，已经有两篇文章\upcite{Lv-extra-connectivity-and-extra-diagnosability,A-New-Proof-for-Exact-Relationship} 在某些条件下将额外连通度和额外诊断度联系了起来。但是扩展立方体并不满足这两篇文章的条件。下面我们将对这两篇文章的条件进行逐一说明:
 
-(1) \cite{Lv-extra-connectivity-and-extra-diagnosability}针对的是$n$-正则的网络来建立$MM^*$模型下额外连通度和额外诊断度的联系。但是扩展立方体的$(2n-1)$-正则的网络，因此不符合该论文的适用条件。
+(1) \upcite{Lv-extra-connectivity-and-extra-diagnosability}针对的是$n$-正则的网络来建立$MM^*$模型下额外连通度和额外诊断度的联系。但是扩展立方体的$(2n-1)$-正则的网络，因此不符合该论文的适用条件。
 
-(2) \cite{A-New-Proof-for-Exact-Relationship}中的定理1对于$MM^*$模型下将额外连通度和额外诊断度的联系起来有$3$个条件，其中扩展立方体满足其中的第$1$和第$2$个条件，但是对于第$3$个条件，并没有已知的定理满足，因此也无法将这三个条件适用于扩展立方体，以此来根据额外连通度直接得到扩展立方体的额外诊断度。
+(2) \upcite{A-New-Proof-for-Exact-Relationship}中的定理1对于$MM^*$模型下将额外连通度和额外诊断度的联系起来有$3$个条件，其中扩展立方体满足其中的第$1$和第$2$个条件，但是对于第$3$个条件，并没有已知的定理满足，因此也无法将这三个条件适用于扩展立方体，以此来根据额外连通度直接得到扩展立方体的额外诊断度。
 
 因为没有已知的条件将扩展立方体的$2$-额外连通度和$2$-额外诊断度联系起来，所以下面我们将自己来证明扩展立方体的$2$-额外诊断度。
 
@@ -474,13 +481,13 @@ $|H|>2^n - 2(6n-15) > 2$，
 \end{lem}
 
 \begin{defn}
-\cite{Reliability-analysis-of-data-center-networks}
+\upcite{Reliability-analysis-of-data-center-networks}
 一个系统$G=(V,E)$和由一个故障顶点集在$G$上产生的症状$\sigma$。设$i \subseteq V$，
 $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(i,j)_k=0\}$。$G$的$0$-比较子图，记为$T_0(G)$，是$G$的一个子图，定义为$V(T_0(G)) \subseteq V$和$E(T_0(G))=\{(i,j)\in E \mid j \in C_0(i),i \in C_0(j)\}$。
 \end{defn}
 
 \begin{lem}
-\cite{Reliability-analysis-of-data-center-networks}
+\upcite{Reliability-analysis-of-data-center-networks}
 \label{vertex-judge-principle}
 给定一个最多有$t$个故障顶点的系统$G=(V,E)$和一个在$MM^*$模型下的$G$上的症状$\sigma$。
 
@@ -492,7 +499,7 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
 \end{lem}
 
 
-接下来，我们将提出一个$MM^*$模型下$AQ_n$的$2$-额外，$(6n-15)$-可诊断算法。
+在参考文献\cite{Reliability-analysis-of-data-center-networks}中的诊断算法后，我们提出了扩展立方体在$MM^*$ 模型下$AQ_n$的$2$-额外，$(6n-15)$-可诊断算法。
 %该算法基于$AQ_n$ 的两个性质：(1) 对于$AQ_n$中的故障顶点集$|F| \leq 6n-15$，$AQ_n-F$只包含一个顶点个数至少为$2^n-6n-18$的连通分支；(2) $AQ_n$在$MM^*$模型下$AQ_n$的$2$-额外，
 %$(6n-15)$-可诊断的。
 该算法主要基于引理\ref{two-components}和引理\ref{vertex-judge-principle}，并且这个算法可以正确地诊断出$AQ_n$中的所有的故障顶点。对于一个扩展立方体，我们使用邻接矩阵去存储扩展立方体的结构。首先，我们先给出一个深度优先的算法AQ-DFS-MM*来确定$AQ_n$中具有同一症状（顶点都为故障或者无故障）的连通分支。
@@ -567,7 +574,7 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
   \item $AQ_n$的维数$n$；
   \item 故障顶点个数$f$；
   \item 随机生成故障顶点的集合$F$（用十进制表示）；
-  \item 算法找到的故障顶点集合$ST$（用十进制表示）；
+  %\item 算法找到的故障顶点集合$SF$（用十进制表示）；
   \item 实验运行时间的平均值$avg_t$。
 \end{itemize}
 
@@ -578,10 +585,18 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
 \begin{itemize}
     \item $n=3$
     \item $f=3$
-    \item $F=[0, 2, 1]$
-    \item $SF=[0, 1, 2]$
+    \item $F=[7, 1, 0]$
+    %\item $SF=[0, 1, 2]$
     \item $avg_t=0.00020$
 \end{itemize}
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result1.eps}\\
+  \caption{第一组测试数据和结果}
+  \label{result1}
+\end{figure}
 
 2. 第二组测试数据和结果$E(5,15)$
 
@@ -589,9 +604,17 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
     \item $n=5$
     \item $f=15$
     \item $F=[6, 25, 3, 28, 24, 22, 15, 23, 13, 21, 27, 19, 29, 7, 30]$
-    \item $SF=[3, 6, 7, 13, 15, 19, 21, 22, 23, 24, 25, 27, 28, 29, 30]$
+ %   \item $SF=[3, 6, 7, 13, 15, 19, 21, 22, 23, 24, 25, 27, 28, 29, 30]$
     \item $avg_t=0.00099$
 \end{itemize}
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result2.eps}\\
+  \caption{第二组测试数据和结果}
+  \label{result2}
+\end{figure}
 
 3. 第三组测试数据和结果$E(7,27)$
 
@@ -599,9 +622,17 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
     \item $n=7$
     \item $f=27$
     \item $F=[113, 40, 21, 35, 11, 108, 126, 94, 59, 16, 97, 89, 80, 127, 47, 112, 63, 23, 105, 60,\\ 87, 39, 107, 58, 15, 99, 10]$
-    \item $SF=[10, 11, 15, 16, 21, 23, 35, 39, 40, 47, 58, 59, 60, 63, 80, 87, 89, 94, 97, 99,\\ 105, 107, 108, 112, 113, 126, 127]$
+%    \item $SF=[10, 11, 15, 16, 21, 23, 35, 39, 40, 47, 58, 59, 60, 63, 80, 87, 89, 94, 97, 99,\\ 105, 107, 108, 112, 113, 126, 127]$
     \item $avg_t=0.00320$
 \end{itemize}
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result3.eps}\\
+  \caption{第三组测试数据和结果}
+  \label{result3}
+\end{figure}
 
 
 4. 第四组测试数据和结果$E(9,39)$
@@ -610,9 +641,17 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
     \item $n=9$
     \item $f=39$
     \item $F=[244, 240, 118, 163, 310, 138, 287, 83, 276, 28, 339, 358, 20, 435, 106,\\ 282, 423, 278, 309, 313, 368, 212, 125, 19, 334, 485, 43, 180, 65, 267,\\ 26, 480, 300, 16, 18, 249, 494, 320, 123]$
-    \item $SF=[16, 18, 19, 20, 26, 28, 43, 65, 83, 106, 118, 123, 125, 138, 163,\\ 180, 212, 240, 244, 249, 267, 276, 278, 282, 287, 300, 309, 310, 313, 320,\\ 334, 339, 358, 368, 423, 435, 480, 485, 494]$
+ %   \item $SF=[16, 18, 19, 20, 26, 28, 43, 65, 83, 106, 118, 123, 125, 138, 163,\\ 180, 212, 240, 244, 249, 267, 276, 278, 282, 287, 300, 309, 310, 313, 320,\\ 334, 339, 358, 368, 423, 435, 480, 485, 494]$
     \item $avg_t=0.02415$
 \end{itemize}
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result4.eps}\\
+  \caption{第四组测试数据和结果}
+  \label{result4}
+\end{figure}
 
 5. 第五组测试数据和结果$E(10,45)$
 
@@ -620,11 +659,17 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
     \item $n=10$
     \item $f=45$
     \item $F=[977, 74, 445, 408, 313, 603, 639, 126, 426, 721, 709, 127, 928, 976, 862,\\ 939, 788, 785, 235, 847, 907, 27, 829, 14, 13, 693, 25, 646, 529, 122,\\ 913, 146, 1023, 509, 217, 730, 180, 109, 660, 657, 317, 532, 344, 583, 821]$
-    \item $SF=[13, 14, 25, 27, 74, 109, 122, 126, 127, 146, 180, 217, 235, 313, 317,\\ 344, 408, 426, 445, 509, 529, 532, 583, 603, 639, 646, 657, 660, 693, 709,\\ 721, 730, 785, 788, 821, 829, 847, 862, 907, 913, 928, 939, 976, 977, 1023]$
+%    \item $SF=[13, 14, 25, 27, 74, 109, 122, 126, 127, 146, 180, 217, 235, 313, 317,\\ 344, 408, 426, 445, 509, 529, 532, 583, 603, 639, 646, 657, 660, 693, 709,\\ 721, 730, 785, 788, 821, 829, 847, 862, 907, 913, 928, 939, 976, 977, 1023]$
     \item $avg_t=0.07960$
 \end{itemize}
 
-
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result5.eps}\\
+  \caption{第五组测试数据和结果}
+  \label{result5}
+\end{figure}
 
 \begin{figure}
   \centering
@@ -642,5 +687,7 @@ $i$的$0$-比较集$C_0(i)$定义为$C_0(i)=\{k \in V \mid \exists j \in V$使得$\sigma(
 
 \section{本章小结}
 
-在本章中，我们研究了扩展立方体的$2$-额外连通度和$2$-额外诊断度。我们得到的
-结果为：（1）扩展立方体的$2$-额外连通度为$\kappa_2(AQ_2)=6n-17$；（2）扩展立方体的的$2$-额外诊断度为$t^{\tilde{m}}_2(AQ_n) = 6n-15$。同时，我们提出了$2$-额外诊断度下的诊断算法AQ-EXTRA-DIAG，实验结果表明，该诊断算法可以正确地诊断出所有的故障顶点。此外，该算法具有通用性，其并不局限于具体的网络拓扑结构，因此算法AQ-EXTRA-DIAG具有一定的应用意义。
+在本章中，我们研究了$n$-维扩展立方体$AQ_n$的$2$-额外诊断度为$6n-15$，
+其中$n \geq 8$。同时，我们给出了扩展立方体在$MM^*$模型下的$2$-额外诊断算法
+AQ-EXTRA-DIAG，该算法的复杂度为$O(N^2)$，其中$N$为扩展立方体的顶点个数。
+理论分析和实验结果表明，该诊断算法可以正确地诊断出所有的故障顶点。

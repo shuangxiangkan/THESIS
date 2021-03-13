@@ -88,7 +88,7 @@
 %10
 @article{GuoLLeeCW,
   title={Reliability analysis of the bijective connection networks for components},
-  author={Guo L and Lee C W},
+  author={Guo L and Lee C-W},
   journal={Mathematics},
   volume={7},
   number={6},
@@ -268,7 +268,7 @@
 %29
 @article{LvY2017,
   title={Hamiltonian cycle and path embeddings in $k$-ary $n$-cubes based on structure faults},
-  author={Lv Y and Lin C.K and Fan J},
+  author={Lv Y and Lin C-K and Fan J},
   journal={The Computer Journal},
   volume={60},
   number={2},
@@ -278,7 +278,7 @@
 %30
 @article{Conditional-Diagnosability-of-Augmented-Cubes,
   title={Conditional diagnosability of augmented cubes under the PMC model},
-  author={Chang N W and Hsieh S Y},
+  author={Chang N-W and Hsieh S-Y},
   journal={IEEE Transactions on Dependable $\&$ Secure Computing},
   volume={9},
   number={1},
@@ -287,8 +287,8 @@
 }
 %31
 @article{Conditional-Diagnosability-Measures-for-Large,
-  title={Diagnosability Measures for Large Multiprocessor Systems},
-  author={Lai P L and Tan J J M and Chang C P and Hsu L H},
+  title={Diagnosability measures for large multiprocessor systems},
+  author={Lai P-L and Tan J J M and Chang C-P and Hsu L-H},
   journal={IEEE Transactions on Computers},
   volume={54},
   number={2},
@@ -318,9 +318,10 @@
 %34
 @article{t/t-Diagnosability-and-t/k-Diagnosability,
   title={$t/t$-diagnosability and $t/k$-diagnosability for augmented cube networks},
-  author={Jiarong L and Fang C and Qian Z and Min X},
+  author={Liang J and Chen F and Zhang Q and Xie M},
   journal={IEEE Access},
-  pages={1-1},
+  volume={6},
+  pages={35029--35041},
   year={2018},
 }
 %35
@@ -412,7 +413,7 @@
 %46
 @article{mesh,
   title={An efficient algorithm for constructing hamiltonian paths in meshes},
-  author={Shao D C and Hong S and Topor R},
+  author={Chen S and Shen H and Topor R},
   journal={Parallel Computing},
   volume={28},
   number={9},
@@ -465,10 +466,10 @@
 }
 
 %51
-@article{MM,
+@inproceedings{MM,
   title={A comparison connection assignment for self-diagnosis of multiprocessors systems},
   author={Maeng J and Malek M},
-  journal={Proceedings of IFTC},
+  booktitle={Proceedings of IFTC},
   pages={173-175},
   year={1981},
 }
@@ -482,4 +483,78 @@
   number={11},
   pages={1386-1396},
   year={1992},
+}
+
+%53
+@article{A-survey-of-communication,
+  title={A survey of communication performance models for high-Performance computing},
+  author={Rico-Gallego J A and D\'{i}az-Mart\'{i}n J C and Manumachu R R and Lastovetsky A L},
+  journal={ACM Computing Surveys(CSUR)},
+  volume={51},
+  number={6},
+  pages={126},
+  year={2019},
+}
+
+%54
+@article{Wangxi,
+  title={超级局部扭立方体互联网络及其性质},
+  author={王喜，樊建席，韩月娟，周吴军，张书奎},
+  journal={计算机学报},
+  volume={35},
+  number={2},
+  pages={315-324},
+  year={2012},
+}
+
+@article{Fault-tolerant-analysis-of-augmented-cubes,
+title = {Fault-tolerant analysis of augmented cubes},
+author = {Ma M and Song Y and Xu J},
+year = {2012},
+}
+@article{Chen2015HighPerformance,
+author={陈国良，毛睿， 蔡晔},
+title={高性能计算及其相关新兴技术},
+journal={深圳大学学报(理工版)},
+year={2015},
+number={1},
+volume={32},
+pages={25-31},
+}
+
+
+@article{journals/cma/LeeTTH09,
+author={Lee C-M and Teng Y-H and Tan J and Hsu L-H},
+title={Embedding hamiltonian paths in augmented cubes with a required vertex in a fixed position},
+journal={Computers $\&$ Mathematics with Applications},
+year={2009},
+number={9},
+volume={58},
+pages={1762-1768},
+}
+
+@inproceedings{conf/ispan/HsuLTL09,
+  title={Efficient algorithms for embedding cycles in augmented cubes},
+  author={Hsu H-C and Lai P-L and Tsai C-H and Li T-K},
+  booktitle={The 10th International Symposium on Pervasive Systems, Algorithms,and Networks},
+  pages={596--600},
+  year={2009},
+}
+
+@inproceedings{conf/ispan/HsuCTH04,
+  title={Ring embedding in faulty augmented cubes},
+  author={Hsu H-C and Chiang L-C and Tan J and Hsu L-H},
+  booktitle={The 7th International Symposium on Parallel Architectures, Algorithms, and Networks},
+  pages={155--161},
+  year={2004},
+}
+
+@article{journals/amc/HsiehS07,
+author={Hsieh S-Y and Shiu J-Y},
+title={Cycle embedding of augmented cubes},
+journal={Applied Mathematics and Computation},
+year={2007},
+number={191},
+volume={2},
+pages={314--319},
 }

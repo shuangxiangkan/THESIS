@@ -1,34 +1,39 @@
 
 \begin{abstract}
-随着社会信息化的发展，计算机应用深入到了各个行业。与此同时，网络资源和数据规模也不断扩大，对海量数据处理的要求也越来越高。在这样的背景下，云计算（Cloud Computing）迅速兴起。
-作为云计算的基础设施和下一代网络技术的创新平台，数据中心网络的研究成为了近年来学术界和工业界关注的热点。数据中心网络的性能在很大程度上决定云计算的性能，因此，可以通过构建性能良好的数据中心网络来提升云计算的性能。但是随着数据中心网络规模的扩大和复杂性的提高，数据中心网络中的服务器数量变得越来越庞大。比如，腾讯在2019 年底的服务器的数量就已经达到100 万台\cite{tecent}。
+%随着社会信息化的发展，计算机应用深入到了各个行业。与此同时，网络资源和数据规模也不断扩大，对海量数据处理的要求也越来越高。在这样的背景下，云计算（Cloud Computing）迅速兴起。
+%作为云计算的基础设施和下一代网络技术的创新平台，数据中心网络的研究成为了近年来学术界和工业界关注的热点。数据中心网络的性能在很大程度上决定云计算的性能，因此，可以通过构建性能良好的数据中心网络来提升云计算的性能。但是随着数据中心网络规模的扩大和复杂性的提高，数据中心网络中的服务器数量变得越来越庞大。比如，腾讯在2019 年底的服务器的数量就已经达到100 万台\cite{tecent}。
+%
+%在拥有如此庞大数量服务器的数据中心网络中，如何将这些服务器连接起来，使其构成一个性能良好的数据中心网络，是提升云计算性能所面临的重要挑战之一。迄今为止，人们已经提出了多种网络拓扑结构，如传统的树型结构、Fat-Tree、DCell、BCube、VL2、CamCube和Ficonn等。
+%
+%
+%决定网络性能的因素有很多，主要包括如下几个方面：
+%
+%\begin{itemize}
+%  \item 可扩展性：可扩展性是指网络应能够根据数据处理要求的提高而可以比较容易地增加服务器的数量；
+%  \item 通信性能：数据通信是指服务器之间的数据传输能力；
+%  \item 容错性能：容错是指当网络中的某些资源发生故障时，网络是否可以正常运行。
+%\end{itemize}
 
-在拥有如此庞大数量服务器的数据中心网络中，如何将这些服务器连接起来，使其构成一个性能良好的数据中心网络，是提升云计算性能所面临的重要挑战之一。迄今为止，人们已经提出了多种网络拓扑结构，如传统的树型结构、Fat-Tree、DCell、BCube、VL2、CamCube和Ficonn等。
+随着我国在超级计算机方面取得的一系列丰硕成果，高性能计算受到了越来越多的关注。由于巨大的数据处理和数值计算能力，高性能计算被广泛应用于国防建设和国民经济，是衡量一个国家综合国力的重要标志之一。互连网络作为高性能计算的重要组成部分，其性能的好坏对于高性能计算至关重要。
 
-
-决定网络性能的因素有很多，主要包括如下几个方面：
-
-\begin{itemize}
-  \item 可扩展性：可扩展性是指网络应能够根据数据处理要求的提高而可以比较容易地增加服务器的数量；
-  \item 通信性能：数据通信是指服务器之间的数据传输能力；
-  \item 容错性能：容错是指当网络中的某些资源发生故障时，网络是否可以正常运行。
-\end{itemize}
-
-扩展立方体，是著名互联网络超立方体拓扑结构的一种重要变体。扩展立方体不仅保留了超立方体的许多优秀的性质，同时拥有超立方体和它的其他变体所不具备的优点。比如，扩展立方体的连通度是$2n-1$，几乎是超立方体的两倍。这也意味着扩展立方体的容错性能在一些方面远胜过超立方体。
-
-本文主要研究了扩展立方体的容错方面的性质，主要包括结构连通度，额外连通度以及额外诊断度。同时提出了容错路由算法和诊断算法。具体成果如下：
-
-（1）本文从故障结构而非故障顶点的角度研究了扩展立方体的结构连通度和子结构连通度，同时提出了在$K_{1,6}$子结构连通度下的容错路由算法，同时通过模拟实验验证了算法的有效性和准确性。
-
-（2）在额外连通度和额外诊断度的定义下，我们分别研究了扩展立方体的$2$-额外连通度和$2$-额外诊断度，并给出了详细的证明。同时我们基于$2$-额外诊断度提出了额外诊断算法。该算法可以帮助我们正确定位故障顶点来保证网络的的正常运行。
+决定互连网络性能的因素有很多，容错性能及可靠性是衡量一个互连网络性能的重要参考标准。一个具有好的容错性质的互连网络，即使网络中的一些服务器发生故障，也不会对整个网络的性能产生太大的影响。连通度是衡量一个网络的重要指标之一。但是传统的连通度往往假设网络中的顶点发生故障时，其对周围的顶点没有影响。然而在实际的运行环境中，当一个顶点发生故障时，其周围的顶点发生故障的概率也大大增加。为了弥补这种缺陷，结构连通度和子结构连通度从更实际的角度考察了互连网络发生故障的情形，这两种连通度从故障结构而不是故障顶点的角度来考虑网络的容错能力。另一方面，当网络中的顶点发生故障时，如何将这些故障顶点准确地诊断出来，并将故障顶点替换为无故障顶点以保证互连网络的正常运行，也是互连网络需要重点考虑的方面。一个互连网络所能确定的最大的故障顶点数叫做这个系统的诊断度。诊断度同样也是衡量互连网络容错性能的一个关键指标。
 
 
 
+扩展立方体，是著名互连网络超立方体拓扑结构的一种重要变体。扩展立方体不仅保留了超立方体的许多优秀的性质，同时拥有超立方体和它的其他变体所不具备的优点。比如，扩展立方体的连通度是$2n-1$，几乎是超立方体的两倍。这也意味着扩展立方体的容错性能在一些方面远胜过超立方体。
+
+本文主要研究了扩展立方体的容错方面的性质，主要包括结构连通度，子结构连通度以及额外诊断度。同时提出了容错路由算法和诊断算法。具体成果如下：
+
+（1）本文从故障结构而非故障顶点的角度研究了扩展立方体的结构连通度和子结构连通度，同时提出了在$K_{1,6}$子结构连通度下的容错路由算法，且通过模拟实验验证了算法的有效性和准确性。
+
+（2）在额外诊断度的定义下，我们研究了扩展立方体的$2$-额外诊断度，并给出了详细的证明。同时我们基于$2$-额外诊断度提出了额外诊断算法。该算法可以帮助我们正确定位故障顶点来保证网络的的正常运行。
 
 
-\keywords{云计算，高性能计算，扩展立方体，结构连通度，子结构连通度，额外连通度，额外诊断度，容错路由算法，诊断算法}
 
 
+
+
+\keywords{高性能计算，扩展立方体，结构连通度，子结构连通度，额外连通度，额外诊断度，容错路由算法，诊断算法}
 
 \end{abstract}
 
@@ -36,40 +41,45 @@
 
 \soochowtutor{樊建席\quad}
 
-\begin{englishabstract}
-With the development of social information, the application of computer has penetrated into every industry. At the same time, the scale of network resources and data are also expanding, and the requirements for massive data processing are getting higher and higher. In this context, Cloud Computing is rising rapidly.
-As the infrastructure of cloud computing and the innovation platform of the next generation network technology, the research of data center network has become the focus of academic and industrial circles in recent years. The performance of the data center network largely determines the performance of cloud computing, so we can improve the performance of cloud computing by building a well-performing data center network. However, with the increase of the scale and complexity of the data center network, the number of servers in the data center network becomes more and more huge. Tencent, for example, had 1 million servers at the end of 2019\cite{tecent}.
+%\begin{englishabstract}
+%With the development of social information, the application of computer has penetrated into every industry. At the same time, the scale of network resources and data are also expanding, and the requirements for massive data processing are getting higher and higher. In this context, Cloud Computing is rising rapidly.
+%As the infrastructure of cloud computing and the innovation platform of the next generation network technology, the research of data center network has become the focus of academic and industrial circles in recent years. The performance of the data center network largely determines the performance of cloud computing, so we can improve the performance of cloud computing by building a well-performing data center network. However, with the increase of the scale and complexity of the data center network, the number of servers in the data center network becomes more and more huge. Tencent, for example, had 1 million servers at the end of 2019\cite{tecent}.
+%
+%In a data center network with such a large number of servers, how to connect these servers to form a well-performing data center network is one of the important challenges to improve the performance of cloud computing. So far, many kinds of network topologies have been proposed, such as traditional tree structure, Fat Tree, DCell, BCube, VL2, CamCube and Ficonn, etc.
+%
+%
+%There are many factors that determine network performance, including the following aspects:
+%
+%\begin{itemize}
+%    \item Scalability: Scalability means that the network should be able to increase the number of servers relatively easily according to the improvement of data processing requirements;
+%    \item Communication performance: Data communication refers to the ability of data transmission between servers;
+%    \item Fault-tolerant performance: Fault-tolerant refers to whether the network can operate normally when some resources in the network fail.
+%\end{itemize}
 
-In a data center network with such a large number of servers, how to connect these servers to form a well-performing data center network is one of the important challenges to improve the performance of cloud computing. So far, many kinds of network topologies have been proposed, such as traditional tree structure, Fat Tree, DCell, BCube, VL2, CamCube and Ficonn, etc.
-
-
-There are many factors that determine network performance, including the following aspects:
-
-\begin{itemize}
-    \item Scalability: Scalability means that the network should be able to increase the number of servers relatively easily according to the improvement of data processing requirements;
-    \item Communication performance: Data communication refers to the ability of data transmission between servers;
-    \item Fault-tolerant performance: Fault-tolerant refers to whether the network can operate normally when some resources in the network fail.
-\end{itemize}
-
-The augmented cube is an important variant of the famous interconnection network hypercube. The augmented cube not only retains many of the great properties of the hypercube, but also has advantages that the hypercube and its other variants do not have. For example, the connectivity of the augmented cube is $2n-1$, almost twice that of the hypercube. This also means that the fault tolerance of the augmented cube is in some ways much better than that of the hypercube.
-
-In this paper, we mainly study the properties of fault tolerance of augmented cube, including structure connectivity, extra connectivity and extra diagnosability. At the same time, the fault-tolerant routing algorithm and diagnosis algorithm are proposed. Specific achievements are as follows:
-
-(1) In this paper, the structure connectivity and substructure connectivity of the augmented cube are studied from the point of view of the fault structure rather than the fault vertex. At the same time, a fault-tolerant routing algorithm is proposed under $K_{1,6}$-substructure connectivity. At the same time, the validity and accuracy of the algorithm are verified by simulation experiments.
-
-(2) Under the definition of extra connectivity and extra diagnosability, we study the $2$- extra connectivity and $2$-extra diagnosability of the augmented cube respectively, and give detailed proof. At the same time, we proposed an additional diagnosis algorithm based on $2$-extra diagnosability. This algorithm can help us locate the fault vertex correctly to ensure the normal operation of the network.
-
-
-
-
-
-\englishkeywords{Cloud computing, High performance computing, Augmented cube, Structure connectivity, Substructure connectivity, Extra connectivity, Extra diagnosability, Fault-tolerant routing algorithm, Diagnosis algorithm}
-
-\end{englishabstract}
-
-
-\ensoochowauthor{Shuangxiang Kan}
-
-\ensoochowtutor{Janxi Fan}
+%With a series of fruitful achievements in supercomputers in China, high performance computing has attracted more and more attention. Due to the huge data processing and numerical computing capacity, high performance computing is widely used in national defense construction and national economy, which is one of the important symbols to measure a country's comprehensive national strength. As an important part of high performance computing, the performance of interconnection network is very important for high performance computing.
+%
+%There are many factors that determine the performance of interconnection network. Fault tolerance and reliability are important reference standards to measure the performance of an interconnection network. An interconnection network with good fault tolerance will not affect the performance of the whole network even if some servers in the network fail. Connectivity is one of the important indexes to measure a interconnection network. But the traditional connectivity often assumes that when the fault vertex in the network fails, it has no effect on the surrounding vertices. However, in the actual running environment, when a vertex fails, the probability of the failure of its surrounding vertices is also greatly increased. In order to make up for this defect, structure connectivity and substructure connectivity consider the fault-tolerant ability of interconnection network from the perspective of fault structure rather than fault vertex. On the other hand, when the vertices in the network fail, how to diagnose them accurately and replace them with fault-free vertices to ensure the normal operation of the interconnection network is also an important aspect of the interconnection network. The maximum number of fault vertices that an interconnection network can determine is called the diagnosability. Diagnosability is also a key index to measure the fault tolerance performance of interconnection network.
+%
+%
+%The augmented cube is an important variant of the famous interconnection network hypercube. The augmented cube not only retains many of the great properties of the hypercube, but also has advantages that the hypercube and its other variants do not have. For example, the connectivity of the augmented cube is $2n-1$, almost twice that of the hypercube. This also means that the fault tolerance of the augmented cube is in some ways much better than that of the hypercube.
+%
+%In this paper, we mainly study the properties of fault tolerance of augmented cube, including structure connectivity, substructure connectivity and extra diagnosability. At the same time, the fault-tolerant routing algorithm and diagnosis algorithm are proposed. Specific achievements are as follows:
+%
+%(1) In this paper, the structure connectivity and substructure connectivity of the augmented cube are studied from the point of view of the fault structure rather than the fault vertex. At the same time, a fault-tolerant routing algorithm is proposed under $K_{1,6}$-substructure connectivity. At the same time, the validity and accuracy of the algorithm are verified by simulation experiments.
+%
+%(2) Under the definition of extra connectivity, we study the  $2$-extra diagnosability of the augmented cube and give detailed proof. At the same time, we proposed an additional diagnosis algorithm based on $2$-extra diagnosability. This algorithm can help us locate the fault vertex correctly to ensure the normal operation of the network.
+%
+%
+%
+%
+%
+%\englishkeywords{High performance computing, Augmented cube, Structure connectivity, Substructure connectivity, Extra connectivity, Extra diagnosability, Fault-tolerant routing algorithm, Diagnosis algorithm}
+%
+%\end{englishabstract}
+%
+%
+%\ensoochowauthor{Shuangxiang Kan}
+%
+%\ensoochowtutor{Janxi Fan}
 
 
