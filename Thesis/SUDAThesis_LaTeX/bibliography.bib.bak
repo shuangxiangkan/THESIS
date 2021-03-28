@@ -19,7 +19,7 @@
 }
 %3
 @article{Choudum2002,
-  title={Augmented Cubes},
+  title={Augmented cubes},
   author={Choudum S A and Sunitha V},
   journal={Networks},
   volume={40},
@@ -54,7 +54,6 @@
   journal={Concurrency and Computation: Practice and Experience},
   volume={31},
   number={10},
-  pages={e4787},
   year={2019},
 }
 %7
@@ -147,7 +146,7 @@
 @article{Yang2013,
   title={Reliability evaluation of BC networks in terms of the extra vertex-and edge-connectivity},
   author={Yang W and Lin H},
-  journal={IEEE transactions on computers},
+  journal={IEEE transactions on Computers},
   volume={63},
   number={10},
   pages={2540-2548},
@@ -185,8 +184,10 @@
   title={Structure and substructure connectivity of balanced hypercubes},
   author={L\"{u} H and Wu T},
   journal={The Bulletin of the Malaysian Mathematical Society Series},
-  volume={abs/1808.02375},
-  year={2018},
+  volume={43},
+  number={3},
+  pages={2659-2672},
+  year={2020},
 }
 %21
 @article{Dong2018Structur,
@@ -295,6 +296,14 @@
   pages={165-175},
   year={2005},
 }
+@article{WangS2017,
+  title={The $2$-good-neighbor($2$-extra) diagnosability of alternating group graph networks under the PMC model and MM$^*$ model},
+  author={Wang S and Yang Y},
+  journal={Applied Mathematics and Computation},
+  volume={305},
+  pages={241-250},
+  year={2017},
+}
 %32
 @article{On-self-diagnosable-multiprocessor,
   title={On self-diagnosable multiprocessor systems: diagnosis by the comparison approach},
@@ -344,7 +353,7 @@
 }
 %37
 @article{A-New-Proof-for-Exact-Relationship,
-  title={A new proof for exact relationship between extra connectivity and extra diagnosability of regular connected graphs under MM* model},
+  title={A new proof for exact relationship between extra connectivity and extra diagnosability of regular connected graphs under MM$^*$ model},
   author={Huang Y and Lin L and Xu L},
   journal={Theoretical Computer Science},
   volume={828-829},
@@ -363,7 +372,7 @@
 %39
 @article{The-super-connectivity-of-augmented-cubes,
   title={The super connectivity of augmented cubes},
-  author={Ma M and Liu G and Xu J M},
+  author={Ma M and Liu G and Xu J-M},
   journal={Information Processing Letters},
   volume={106},
   number={2},
@@ -403,7 +412,7 @@
 @article{hypercube,
   title={A survey of the theory of hypercube graphs},
   author={Harary F and Hayes J P and Wu H J},
-  journal={Computers Mathematics with Applications},
+  journal={Computers $\&$ Mathematics with Applications},
   volume={15},
   number={4},
   pages={277-289},
@@ -459,7 +468,7 @@
   title={On the connection assignment problem of diagnosable systems},
   author={Preparata F P and Metze G and Chien R T},
   journal={IEEE Transactions on Electronic Computers},
-  volume={EC-16},
+  volume={16},
   number={6},
   pages={848-854},
   year={2006},
@@ -469,7 +478,7 @@
 @inproceedings{MM,
   title={A comparison connection assignment for self-diagnosis of multiprocessors systems},
   author={Maeng J and Malek M},
-  booktitle={Proceedings of IFTC},
+  booktitle={Proceedings of the 7th Annual Symposium on Computer Architecture},
   pages={173-175},
   year={1981},
 }
@@ -487,7 +496,7 @@
 
 %53
 @article{A-survey-of-communication,
-  title={A survey of communication performance models for high-Performance computing},
+  title={A survey of communication performance models for high-performance computing},
   author={Rico-Gallego J A and D\'{i}az-Mart\'{i}n J C and Manumachu R R and Lastovetsky A L},
   journal={ACM Computing Surveys(CSUR)},
   volume={51},
@@ -498,7 +507,7 @@
 
 %54
 @article{Wangxi,
-  title={超级局部扭立方体互联网络及其性质},
+  title={超级局部扭立方体互连网络及其性质},
   author={王喜，樊建席，韩月娟，周吴军，张书奎},
   journal={计算机学报},
   volume={35},
@@ -509,7 +518,8 @@
 
 @article{Fault-tolerant-analysis-of-augmented-cubes,
 title = {Fault-tolerant analysis of augmented cubes},
-author = {Ma M and Song Y and Xu J},
+author = {Ma M and Song Y and Xu J-M},
+journal={Mathematics},
 year = {2012},
 }
 @article{Chen2015HighPerformance,
@@ -536,7 +546,7 @@ pages={1762-1768},
 @inproceedings{conf/ispan/HsuLTL09,
   title={Efficient algorithms for embedding cycles in augmented cubes},
   author={Hsu H-C and Lai P-L and Tsai C-H and Li T-K},
-  booktitle={The 10th International Symposium on Pervasive Systems, Algorithms,and Networks},
+  booktitle={The 10th International Symposium on Pervasive Systems, Algorithms, and Networks},
   pages={596--600},
   year={2009},
 }
@@ -557,4 +567,87 @@ year={2007},
 number={191},
 volume={2},
 pages={314--319},
+}
+
+@article{Zhang2019HighPerformance,
+author={张晓峰，李昭，陈鹏},
+title={高性能计算的发展现状分析},
+journal={信息通信},
+year={2019},
+number={01},
+volume={193},
+pages={41-43},
+}
+
+@article{ZhengHighPerformance,
+author={郑晓鸣},
+title={浅析高性能计算的现状与发展},
+journal={福建电脑},
+year={2007},
+volume={2},
+pages={211+190},
+}
+
+@article{5374420,
+author={Hsieh S-Y and Lee C-W},
+title={Diagnosability of two-matching composition networks under the MM$^*$ Model},
+journal={IEEE Transactions on Dependable and Secure Computing},
+year={2011},
+number={8},
+volume={2},
+pages={246-255},
+}
+
+@article{Peng2012,
+author={Peng S-L and Lin C-K and Tan J J M and Hsu L-H},
+title={The $g$-good-neighbor conditional diagnosability of hypercube under PMC model},
+journal={Applied Mathematics and Computation},
+year={2012},
+volume={218},
+number={21},
+pages={10406-10412},
+}
+
+@article{Liu2017,
+author={Liu A and Wang S and Yuan J and Li J},
+title={On $g$-extra conditional diagnosability of hypercubes and folded hypercubes},
+journal={Theoretical Computer Science},
+year={2017},
+volume={704},
+pages={62-73},
+}
+
+@article{Lv2019,
+author={Lv M and Zhou S and Sun X and Lian G and Liu J},
+title={Reliability of $(n,k)$-star network based on $g$-extra conditonal fault},
+journal={Theoretical Computer Science},
+year={2019},
+volume={757},
+pages={44-55},
+}
+
+@article{Lin2020,
+author={Lin C-K and Cheng E and Lipták L},
+title={Structure and substructure connectivity of hypercube-like networks},
+journal={Parallel Processing Letters},
+year={2020},
+volume={30},
+number={3}
+pages={1-23},
+}
+@book{Sun2004Geography,
+  title={图论及其应用},
+  author={孙惠泉},
+  publisher={科学出版社},
+  year={2004},
+}
+
+@article{HongW2012,
+  title={Strong diagnosability and conditional diagnosability of augmented cubes under the comparison diagnosis},
+  author={Hong W-S and Heish S-Y},
+  journal={IEEE Transactions on Reliability},
+  volume={61},
+  number={1},
+  pages={140-148},
+  year={2012},
 }

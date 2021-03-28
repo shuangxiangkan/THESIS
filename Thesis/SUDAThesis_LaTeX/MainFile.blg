@@ -10,6 +10,9 @@ The style file: sudabst.bst
 A level-1 auxiliary file: ./chapter/pub.aux
 A level-1 auxiliary file: ./chapter/thanks.aux
 Database file #1: bibliography.bib
-Warning--empty journal in Fault-tolerant-analysis-of-augmented-cubes
-Warning--empty journal in The-g-extra-conditional-sequential
-(There were 2 warnings)
+I was expecting a `,' or a `}'---line 636 of file bibliography.bib
+ : 
+ : pages={1-23},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+(There was 1 error message)

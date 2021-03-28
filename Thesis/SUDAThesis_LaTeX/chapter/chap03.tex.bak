@@ -1,51 +1,53 @@
 \chapter{À©Õ¹Á¢·½ÌåµÄ½á¹¹Á¬Í¨¶ÈºÍ×Ó½á¹¹Á¬Í¨¶È}
 \label{Chap03}
 
-Á¬Í¨¶ÈÊÇºâÁ¿»¥Á¬ÍøÂçÎÈ¶¨ĞÔµÄÒ»¸öÖØÒªÖ¸±ê¡£Ïà¶ÔÓÚ´«Í³Á¬Í¨¶ÈÖ»½«¶¥µã·¢Éú¹ÊÕÏµ±×öµ¥Ò»ÊÂ¼şÏà±È£¬»¥Á¬ÍøÂçÖĞµÄ½á¹¹·¢Éú¹ÊÕÏ¸üÄÜ·´Ó³ÕæÊµÔËĞĞ»·¾³ÖĞÍøÂçµÄ¹ÊÕÏÇé¿ö¡£ÔÚÕâÒ»ÕÂÖĞ£¬ÎÒÃÇÑĞ¾¿ÁËÀ©Õ¹Á¢·½ÌåµÄ$H$-½á¹¹Á¬Í¨¶ÈºÍ$H$-×Ó½á¹¹Á¬Í¨¶È£¬ÆäÖĞ$H \in \{K_{1,M}£¬P_L,C_N\}$£¬
+Á¬Í¨¶ÈÊÇºâÁ¿»¥Á¬ÍøÂçÎÈ¶¨ĞÔµÄÒ»¸öÖØÒªÖ¸±ê¡£Ïà¶ÔÓÚ´«Í³Á¬Í¨¶ÈÖ»½«¶¥µã·¢Éú¹ÊÕÏµ±×öµ¥Ò»ÊÂ¼ş¶øÑÔ£¬»¥Á¬ÍøÂçÖĞµÄ½á¹¹·¢Éú¹ÊÕÏ¸üÄÜ·´Ó³ÕæÊµÔËĞĞ»·¾³ÖĞÍøÂçµÄ¹ÊÕÏÇé¿ö¡£ÔÚÕâÒ»ÕÂÖĞ£¬ÎÒÃÇÑĞ¾¿ÁË
+$n$-Î¬À©Õ¹Á¢·½ÌåµÄ$H$-½á¹¹Á¬Í¨¶ÈºÍ$H$-×Ó½á¹¹Á¬Í¨¶È£¬ÆäÖĞ$H \in \{K_{1,M},P_L,C_N\}$£¬
 ÇÒ$1 \leq M \leq 6, 1 \leq L \leq 2n-1, 3 \leq N \leq 2n-1$¡£
-Í¬Ê±ÎÒÃÇ¸ø³öÁËÔÚÀ©Õ¹Á¢·½ÌåÖĞÑ°ÕÒÁ½¸öÎŞ¹ÊÕÏ¶¥µãµÄÈİ´íÂ·ÓÉËã·¨AQFRouting£¬µ±ÍøÂçÖĞµÄ¹ÊÕÏ¶¥µãÊıÁ¿ÔÚÒ»¶¨·¶Î§Ö®ÄÚ£¬¸ÃËã·¨¿ÉÒÔ°ïÖúÎÒÃÇÊµÏÖÁ½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÕı³£Í¨ĞÅ¡£
+Í¬Ê±ÎÒÃÇ¸ø³öÁËÔÚÀ©Õ¹Á¢·½ÌåÖĞÑ°ÕÒÁ½¸öÎŞ¹ÊÕÏ¶¥µãµÄÈİ´íÂ·ÓÉËã·¨AQFRouting£¬µ±ÍøÂçÖĞµÄ¹ÊÕÏ¶¥µãÊıÁ¿ÔÚÒ»¶¨·¶Î§Ö®ÄÚ£¬¸ÃËã·¨¿ÉÒÔÊµÏÖÁ½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÕı³£Í¨ĞÅ¡£
 
 \section{Ô¤±¸ÖªÊ¶}
 
 ÔÚ¸ø³öÀ©Õ¹Á¢·½Ìå½á¹¹Á¬Í¨¶ÈºÍ×Ó½á¹¹Á¬Í¨¶ÈµÄÖ¤Ã÷Ö®Ç°£¬ÎÒÃÇÏÈ¸ø³öÔÚ±¾½ÚĞèÒªÓÃµ½µÄÀ©Õ¹Á¢·½ÌåµÄÒ»Ğ©¶¨ÒåºÍĞÔÖÊ£º
 
-Éè$u$ ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£ÎªÁËÊ¹ÎÒÃÇµÄÖ¤Ã÷¸ü¼ÓµÄ¼ò±ã£¬
-ÎÒÃÇÒıÈëÁËÒ»Ğ©·ûºÅ$v^{[1]},v^{[2]},\ldots,v^{[2n-1]}$£¬
+Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£ÎªÁË¼ò»¯Ö¤Ã÷£¬
+ÎÒÃÇÒıÈë·ûºÅ$v^{[1]},v^{[2]},\ldots,v^{[2n-1]}$£¬
 ÆäÖĞ$ v^{[1]},v^{[2]},\ldots,v^{[2n-1]}$ºÍ$u$µÄËùÓĞÁÚ¾Ó¶¥µã
 $u^1,u^2,\bar{u}^{2},\ldots,u^{n},\bar{u}^{n}$ĞÎ³ÉÒ»Ò»¶ÔÓ¦µÄ¹ØÏµ¡£
-$u^j$ºÍ $v^{[i]}$ µÄ¶ÔÓ¦¹ØÏµÎª£º
-£¨1£©Èç¹û$i$ÊÇÅ¼Êı£¬Ôò$j=\frac{i}{2}+1$ºÍ$u^j=v^{[i]}$£»
-£¨2£©Èç¹û$i$ÊÇÆæÊı£¬Ôò$j=\lceil\frac{i}{2}\rceil$ºÍ$\bar{u}^j=v^{[i]}$¡£
-$(v^{[i]})^l$ ºÍ$(\overline{v^{[i]}})^l$µÄ¶¨ÒåÀàËÆÓÚ$u^l$ºÍ$\bar{u}^l$µÄ¶¨Òå¡£
-ÀıÈç£¬Èç¹û$u=000000$ ÊÇ$AQ_6$µÄÒ»¸ö¶¥µã£¬ÄÇÃ´$u^4=v^{[6]}=001000$,
-$\bar{u}^5=v^{[9]}=011111, (v^{[6]})^2=001010$ºÍ$(\overline{v^{[9]}})^3=011000$¡£
-ÔÚÕâÆªÎÄÕÂÖĞ£¬ÎÒÃÇ¶ÔÕâÁ½ÖÖ±íÊ¾·½·¨²»¼ÓÒÔÇø·Ö¡£
+$u^j$ºÍ$v^{[i]}$µÄ¶ÔÓ¦¹ØÏµÎª£º
+£¨1£©Èç¹û$i$ÊÇÅ¼Êı£¬Ôò$j=\frac{i}{2}+1$ÇÒ$u^j=v^{[i]}$£»
+£¨2£©Èç¹û$i$ÊÇÆæÊı£¬Ôò$j=\lceil\frac{i}{2}\rceil$ÇÒ$\bar{u}^j=v^{[i]}$¡£
+$(v^{[i]})^l$ºÍ$(\overline{v^{[i]}})^l$µÄ¶¨ÒåÀàËÆÓÚ$u^l$ºÍ$\bar{u}^l$µÄ¶¨Òå¡£
+ÀıÈç£¬Èç¹û$u=000000$ÊÇ$AQ_6$µÄÒ»¸ö¶¥µã£¬ÄÇÃ´$u^4=v^{[6]}=001000$£¬
+$\bar{u}^5=v^{[9]}=011111$£¬$(v^{[6]})^2=001010$ºÍ$(\overline{v^{[9]}})^3=011000$¡£
+ÔÚ±¾ÕÂÖĞ£¬ÎÒÃÇ¶ÔÕâÁ½ÖÖ±íÊ¾·½·¨²»¼ÓÒÔÇø·Ö¡£
+
+%\begin{thm}
+%\upcite{Choudum2002}
+%\label{k(AQ123)}
+%$\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$£¬ ¶ÔÓÚ  $ n \geq 4,\kappa(AQ_n) = 2n-1$¡£
+%\end{thm}
+
+¸ù¾İ\ref{connectivity}µÄĞÔÖÊ£¨5£©£¬ÎÒÃÇ¿ÉÒÔµÃµ½ÏÂÃæµÄ¶¨Àí¡£
 
 \begin{thm}
-\upcite{Choudum2002}
-\label{k(AQ123)}
-$\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$£¬ ¶ÔÓÚ  $ n \geq 4,\kappa(AQ_n) = 2n-1$¡£
+¶ÔÓÚ$n \geq 4$£¬ÓĞ$\kappa(AQ_n,K_1)=\kappa^s(AQ_n,K_1)=2n-1$¡£
 \end{thm}
 
-¸ù¾İ¶¨Àí\ref{k(AQ123)}£¬ÎÒÃÇ¿ÉÒÔµÃµ½ÏÂÃæµÄ¶¨Àí¡£
+ÏÂÃæÎÒÃÇ¸ø³ö±¾ÕÂÒªÓÃµ½µÄÒ»Ğ©¶¨ÀíºÍÒıÀí¡£
 
 \begin{thm}
-¶ÔÓÚ$n \geq 4$£¬$\kappa(AQ_n,K_1)=\kappa^s(AQ_n,K_1)=2n-1$¡£
-\end{thm}
-
-
-\begin{thm}
-\upcite{Ma2008}
+\textnormal{\upcite{Ma2008}}
 \label{1_extraconnectivity}
-¶ÔÓÚ$n \geq 6$£¬$\kappa_1(AQ_n)= 4n - 8$¡£
+¶ÔÓÚ$n \geq 6$£¬ÓĞ$\kappa_1(AQ_n)= 4n - 8$¡£
 \end{thm}
 
 
 %ÏÂÃæ¼¸¸öÓ¦¸ÃÊÇĞÔÖÊ£¬¶ø²»ÊÇÒıÀí
 \begin{lem}
-\upcite{Ma2008}
+\textnormal{\upcite{Ma2008}}
 \label{hypercube_edge}
-Èç¹û$(u,u^i)$ÊÇ$AQ_n$µÄ$i$-Î¬µÄÒ»Ìõ³¬Á¢·½Ìå±ß$(1 \leq i \leq n)$£¬ÄÇÃ´
+Èç¹û$(u,u^i)$ÊÇ$AQ_n$µÄÒ»Ìõ$i$-Î¬µÄ³¬Á¢·½Ìå±ß$(1 \leq i \leq n)$£¬ÄÇÃ´
 \[
 {N_{AQ_n}(u)}\cap {N_{AQ_n}(u^i)}=\left\{
              \begin{array}{lcr}
@@ -55,13 +57,13 @@ $\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$£¬ ¶ÔÓÚ  $ n \geq 4,\kappa
 \right.
 \]
 
-Ò²¾ÍÊÇ$u$ºÍ$u^i$ÔÚ$AQ_n$ÖĞÓĞ$2$¸ö¹²Í¬µÄÁÚ¾Ó¶¥µã²¢ÇÒ$|{N_{AQ_n}}(\{u,u^i\})|= 4n-6$¡£
+%Ò²¾ÍÊÇËµ£¬$u$ºÍ$u^i$ÔÚ$AQ_n$ÖĞÓĞ$2$¸ö¹²Í¬µÄÁÚ¾Ó¶¥µãÇÒ$|{N_{AQ_n}}(\{u,u^i\})|= 4n-6$¡£
 \end{lem}
 
 \begin{lem}
-\upcite{Ma2008}
+\textnormal{\upcite{Ma2008}}
 \label{complement_edge}
-Èç¹û$(u,\bar{u}^i)$ÊÇ$AQ_n$µÄ$i$-Î¬µÄÒ»Ìõ²¹±ß$(2 \leq i \leq n)$£¬ÄÇÃ´
+Èç¹û$(u,\bar{u}^i)$ÊÇ$AQ_n$µÄÒ»Ìõ$i$-Î¬µÄ²¹±ß$(2 \leq i \leq n)$£¬ÄÇÃ´
 \[
 {N_{AQ_n}(u)}\cap {N_{AQ_n}(\bar{u}^i)}=\left\{
              \begin{array}{lcr}
@@ -71,20 +73,20 @@ $\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$£¬ ¶ÔÓÚ  $ n \geq 4,\kappa
 \right.
 \]
 
-Ò²¾ÍÊÇ$u$ºÍ$\bar{u}^i$ÔÚ$AQ_n$ÖĞÓĞ$4$¸ö¹²Í¬µÄÁÚ¾Ó¶¥µã£¬¶ÔÓÚ$2 \leq i \leq n-1$£¬$|{N_{AQ_n}}(\{u,\bar{u}^i\})|= 4n-8$¡£ÀàËÆµÄ£¬$u$ºÍ$\bar{u}^n$ÔÚ$AQ_n$ÖĞÓĞ$2$ ¸ö¹²Í¬µÄÁÚ¾Ó¶¥µã£¬ÇÒ$|{N_{AQ_n}}(\{u,\bar{u}^n\})|= 4n-6$¡£
+%µ±$2 \leq i \leq n-1$Ê±£¬$u$ºÍ$\bar{u}^i$ÔÚ$AQ_n$ÖĞÓĞ$4$¸ö¹²Í¬µÄÁÚ¾Ó¶¥µã£¬¼´$|{N_{AQ_n}}(\{u,\bar{u}^i\})|= 4n-8$¡£ÀàËÆµØ£¬$u$ºÍ$\bar{u}^n$ÔÚ$AQ_n$ÖĞÓĞ$2$¸ö¹²Í¬µÄÁÚ¾Ó¶¥µãÇÒ$|{N_{AQ_n}}(\{u,\bar{u}^n\})|= 4n-6$¡£
 \end{lem}
 
 \begin{lem}
-\upcite{Ma2008}
+\textnormal{\upcite{Ma2008}}
 \label{common_verticles}
 ¶ÔÓÚ$n \geq 3$£¬ $AQ_n$ÖĞµÄÈÎÒâÁ½¸ö¶¥µã×î¶àÓĞ$4$¸ö¹²Í¬µÄÁÚ¾Ó¶¥µã¡£
 \end{lem}
 
-¸ù¾İ¶¨Òå\ref{AugmentedCube1}£¬ÎÒÃÇ¿ÉÒÔºÜÈİÒ×µØµÃµ½ÏÂÃæµÄ¹ØÓÚÀ©Õ¹Á¢·½ÌåµÄĞÔÖÊ£º
+¸ù¾İ¶¨Òå\ref{AugmentedCube1}£¬ÎÒÃÇ¿ÉÒÔºÜÈİÒ×µØµÃµ½ÏÂÃæ¹ØÓÚÀ©Õ¹Á¢·½ÌåµÄĞÔÖÊ£º
 
 \begin{lem}
-\label{two_hypercube_edges}
-Èç¹û$(u,u^i)$ºÍ$(u,u^j)$ÊÇ$AQ_n$µÄ$i$-Î¬ºÍ$j$-Î¬µÄÁ½Ìõ³¬Á¢·½Ìå±ß$(1 \leq i \neq j \leq n)$¡£ ²»Ê§Ò»°ãĞÔ£¬Éè$i < j$£¬ÓĞ
+\textnormal{\label{two_hypercube_edges}}
+Èç¹û$(u,u^i)$ºÍ$(u,u^j)$ÊÇ$AQ_n$µÄÁ½Ìõ$i$-Î¬ºÍ$j$-Î¬µÄ³¬Á¢·½Ìå±ß$(1 \leq i \neq j \leq n)$¡£ ²»Ê§Ò»°ãĞÔ£¬Éè$i < j$£¬ÓĞ
 \[
 {N_{AQ_n}(u^i)}\cap {N_{AQ_n}(u^j)}=\left\{
              \begin{array}{lcr}
@@ -98,7 +100,7 @@ $\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$£¬ ¶ÔÓÚ  $ n \geq 4,\kappa
 
 \begin{lem}
 \label{two_complement_edges}
-Èç¹û$(u,\bar{u}^i)$ºÍ$(u,\bar{u}^j)$ÊÇ$AQ_n$µÄ$i$-Î¬ºÍ$j$-Î¬µÄÁ½Ìõ²¹±ß$(1 \leq i \neq j \leq n)$¡£ ²»Ê§Ò»°ãĞÔ£¬Éè$i < j$£¬ÓĞ
+Èç¹û$(u,\bar{u}^i)$ºÍ$(u,\bar{u}^j)$ÊÇ$AQ_n$µÄÁ½Ìõ$i$-Î¬ºÍ$j$-Î¬µÄ²¹±ß$(1 \leq i \neq j \leq n)$¡£ ²»Ê§Ò»°ãĞÔ£¬Éè$i < j$£¬ÓĞ
 \[
 {N_{AQ_n}(\bar{u}^i)}\cap {N_{AQ_n}(\bar{u}^j)}=\left\{
              \begin{array}{lcr}
@@ -117,13 +119,13 @@ $\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$£¬ ¶ÔÓÚ  $ n \geq 4,\kappa
              \begin{array}{lcr}
              \{u,(u^i)^{i-1},(\bar{u}^i)^{i-1},\bar{u}^{i-1}\}  & & i=j\quad\textnormal{ ÇÒ }\quad i>1,\\
 
-             \{u,\bar{u}^i,(\bar{u}^j)^{i+1},({u}^i)^{i+1}\}  & & i=j+1\quad\textnormal\quad { ÇÒ }i<n,\\
+             \{u,\bar{u}^i,(\bar{u}^j)^{i+1},({u}^i)^{i+1}\}  & & i=j+1\quad\textnormal{ ÇÒ}\quad i<n,\\
              \{u,\bar{u}^i\}  & & i=n\quad\textnormal{ ÇÒ }\quad j=n-1,\\
              \{u,(u^i)^{i-1},(\bar{u}^i)^{i-1},\bar{u}^{i-1}\}  & & \quad i=j+2,\\
              \{u,(\bar{u}^j)^i\}  & & |i-j|>2,\\
              \{u,(u^j)^i,(\bar{u}^j)^i,\bar{u}^i\}  & & j=i+1\quad\textnormal{ ÇÒ }\quad i>1,\\
              \{u,(u)^2\}  & & i = 1\quad\textnormal{ ÇÒ }\quad j = 2,\\
-             \{u,(\bar{u}^j)^i\}  & & j=i+2\quad\textnormal{ and }\quad i>1,\\
+             \{u,(\bar{u}^j)^i\}  & & j=i+2\quad\textnormal{ ÇÒ }\quad i>1,\\
              \{u,\bar{u}^2,(\bar{u}^3)^1,(u^1)^3\}  & & i = 1\quad\textnormal{ ÇÒ }\quad j = 3.
              \end{array}
 \right.
@@ -132,34 +134,36 @@ $\kappa(AQ_1) = 1, \kappa(AQ_2) = 3, \kappa(AQ_3) = 4$£¬ ¶ÔÓÚ  $ n \geq 4,\kappa
 
 
 \section{À©Õ¹Á¢·½ÌåµÄ$K_{1,M}-$½á¹¹Á¬Í¨¶ÈºÍ×Ó½á¹¹Á¬Í¨¶È}
+\label{K1m}
 
-¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå¡¢ĞÔÖÊ\ref{hypercube_edge}ºÍĞÔÖÊ\ref{complement_edge}£¬
-Èç¹û$u$ÊÇ$AQ_n$ µÄÈÎÒâÒ»¸ö¶¥µãÇÒ$(u,\bar{u}^i)$ÊÇ$AQ_n$µÄ$i$- Î¬$(2\leq i \leq n-1)$ µÄ²¹±ß£¬
-ÄÇÃ´$N_{AQ_n}(u)\cap N_{AQ_n}(\bar{u}^i)=\{\bar{u}^{i-1},u^i,u^{i+1},\bar{u}^{i+1}\}$¡£
+¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬ÒıÀí\ref{hypercube_edge}ºÍÒıÀí\ref{complement_edge}£¬
+Èç¹û$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µãÇÒ$(u,\bar{u}^i)$ÊÇ$AQ_n$µÄ$i$-Î¬$(2\leq i \leq n-1)$µÄ²¹±ß£¬
+ÄÇÃ´$N_{AQ_n}(u)\cap N_{AQ_n}(\bar{u}^i)=\{\bar{u}^{i-1},u^i,u^{i+1},\bar{u}^{i+1}\}$ÇÒ\\
 $\{\bar{u}^i,\bar{u}^{i-1},u^i,u^{i+1}, \bar{u}^{i+1}\}$ $(2\leq i \leq n-1)$µÄµ¼³ö×ÓÍ¼
 Óë$K_{1,4}$Í¬¹¹¡£Èç¹û$(u,\bar{u}^n)$ÊÇ$AQ_n$µÄ$n$-Î¬µÄ²¹±ß£¬
 ÄÇÃ´$N_{AQ_n}(u)\cap N_{AQ_n}(\bar{u}^n)=\{\bar{u}^{n-1},u^n\}$
 ÇÒ$\{\bar{u}^n,\bar{u}^{n-1},u^n\}$µÄµ¼³ö×ÓÍ¼Óë$K_{1,2}$Í¬¹¹¡£
 %{\color{red}
-ÀàËÆµÄ£¬
-Èç¹û$(u,u^i)$ÊÇ$AQ_n$ µÄ$i$-Î¬$(1\leq i \leq n)$µÄ³¬Á¢·½Ìå±ß£¬
+ÀàËÆµØ£¬
+Èç¹û$(u,u^i)$ÊÇ$AQ_n$µÄ$i$-Î¬$(1\leq i \leq n)$µÄ³¬Á¢·½Ìå±ß£¬
 ÄÇÃ´$N_{AQ_n}(u)\cap N_{AQ_n}(u^i)=\{\bar{u}^{i},\bar{u}^{i-1}\}(2\leq i \leq n)$
-ºÍ$N_{AQ_n}(u)\cap N_{AQ_n}(u^1)=\{u^{2},\bar{u}^{2}\}$¡£$\{u^i,\bar{u}^i$,$\bar{u}^{i-1}\}(2\leq i \leq n)$
+ÇÒ$N_{AQ_n}(u)\cap N_{AQ_n}(u^1)=\{u^{2},\bar{u}^{2}\}$¡£ÏÔÈ»$\{u^i,\bar{u}^i$,$\bar{u}^{i-1}\}(2\leq i \leq n)$
 µÄµ¼³ö×ÓÍ¼Óë$K_{1,2}$Í¬¹¹¡£
 %}
 ½ÓÏÂÀ´£¬ÎÒÃÇ½«ÌÖÂÛ$\kappa(AQ_n,K_{1,M})$ºÍ$\kappa^s(AQ_n,K_{1,M})$£¬
 ÆäÖĞ$1 \leq M \leq 3$£¬$4 \leq M \leq 6$¡£
 
-\subsection{$1 \leq M \leq 3$}
-\label{1<=M<=3}
+%\subsection{$1 \leq M \leq 3$}
+%\label{1<=M<=3}
+ÎÒÃÇÊ×ÏÈÖ¤Ã÷µ±$1 \leq M \leq 3$Ê±£¬$AQ_n$µÄ½á¹¹Á¬Í¨¶È$\kappa(AQ_n,K_{1,M})$ºÍ×Ó½á¹¹Á¬Í¨¶È$\kappa^s(AQ_n,K_{1,M})$¡£
 
 \begin{lem}
 \label{1<=M<=3(1)}
-µ±$n \geq 4$ºÍ$1 \leq M \leq 3$Ê±£¬$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$£¬$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$¡£
+µ±$n \geq 4$ÇÒ$1 \leq M \leq 3$Ê±£¬ÓĞ$\kappa(AQ_n,K_{1,M})\leq\lceil\frac{2n-1}{1+M}\rceil$ÇÒ$\kappa^s(AQ_n,K_{1,M})\leq \lceil\frac{2n-1}{1+M}\rceil$¡£
 \end{lem}
 
 \begin{proof}
-Éè$u$ÊÇ$AQ_n$µÄÈÎÒâÒ»¸ö¶¥µã¡£½ÓÏÂÀ´£¬ÎÒÃÇ½«¸ù¾İ$M$ºÍ$n$µÄÖµÀ´·ÖÎªÏÂÃæ¼¸ÖÖÇé¿ö£º
+Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£½ÓÏÂÀ´£¬ÎÒÃÇ½«¸ù¾İ$M$ºÍ$n$µÄÖµÀ´ÌÖÂÛÏÂÃæ¼¸ÖÖÇé¿ö£º
 
 \textbf{ÇéĞÎ1}. $M=1$¡£Éè
 \begin{flushleft}
@@ -169,16 +173,17 @@ v^{[(M+1)i+1]},
 v^{[(M+1)i+2]}
 \}
 \mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$£¬\\
-$S_2=\{\{
+$S_2=\{
 v^{[2n-1]},
 (v^{[2n-1]})^1
-\}\}$¡£
+\}$¡£
 
 \end{flushleft}
 
 \textbf{ÇéĞÎ2.} $M=2$¡£
 
-\textbf{ÇéĞÎ2.1.} $n\equiv0$(Ä£3)¡£ Éè
+%\textbf{ÇéĞÎ2.1.} $n\equiv0$(Ä£3)¡£ Éè
+\textbf{ÇéĞÎ2.1.} $n($Ä£$3)=0$¡£ Éè
 \begin{flushleft}
 $S_1=\{\{
 v^{[(M+1)i+1]},
@@ -189,7 +194,8 @@ v^{[(M+1)i+3]}
 
 \end{flushleft}
 
-\textbf{ÇéĞÎ2.2.} $n\equiv1$(Ä£3)¡£Éè
+%\textbf{ÇéĞÎ2.2.} $n\equiv1$(Ä£3)¡£Éè
+\textbf{ÇéĞÎ2.2.} $n($Ä£$3)=1$¡£Éè
 \begin{flushleft}
 $S_1=\{\{
 v^{[(M+1)i+1]},
@@ -197,15 +203,16 @@ v^{[(M+1)i+2]},
 v^{[(M+1)i+3]}
 \}
 \mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$£¬\\
-$S_2=\{\{
+$S_2=\{
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2
-\}\}$¡£
+\}$¡£
 
 \end{flushleft}
 
-\textbf{ÇéĞÎ2.3.} $n\equiv2$(Ä£3)¡£Éè
+%\textbf{ÇéĞÎ2.3.} $n\equiv2$(Ä£3)¡£Éè
+\textbf{ÇéĞÎ2.3.} $n($Ä£$3)=2$¡£Éè
 \begin{flushleft}
 $S_1=\{\{
 v^{[(M+1)i+1]},
@@ -213,17 +220,18 @@ v^{[(M+1)i+2]},
 v^{[(M+1)i+3]}
 \}
 \mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$£¬\\
-$S_2=\{\{
+$S_2=\{
 v^{[2n-2]},
 v^{[2n-1]},
 (v^{[2n-1]})^1
-\}\}$¡£
+\}$¡£
 
 \end{flushleft}
 
 \textbf{ÇéĞÎ3.} $M=3$¡£
 
-\textbf{ÇéĞÎ3.1.} $n\equiv1$(Ä£4)¡£Éè
+%\textbf{ÇéĞÎ3.1.} $n\equiv1$(Ä£4)¡£Éè
+\textbf{ÇéĞÎ3.1.} $n($Ä£$4)=1$¡£Éè
 \begin{flushleft}
 $S_1=\{\{
 v^{[(M+1)i+1]},
@@ -232,16 +240,17 @@ v^{[(M+1)i+3]},
 v^{[(M+1)i+4]}
 \}
 \mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$£¬\\
-$S_2=\{\{
+$S_2=\{
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2,
 (v^{[2n-1]})^3
-\}\}$¡£
+\}$¡£
 
 \end{flushleft}
 
-\textbf{ÇéĞÎ3.2.} $n\equiv3$(Ä£4)¡£Éè
+%\textbf{ÇéĞÎ3.2.} $n\equiv3$(Ä£4)¡£Éè
+\textbf{ÇéĞÎ3.2.} $n($Ä£$4)=3$¡£Éè
 \begin{flushleft}
 $S_1=\{\{
 v^{[(M+1)i+1]},
@@ -250,19 +259,19 @@ v^{[(M+1)i+3]},
 v^{[(M+1)i+4]}
 \}
 \mid 0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor\}$£¬\\
-$S_2=\{\{
+$S_2=\{
 v^{[2n-3]},
 v^{[2n-2]},
 v^{[2n-1]},
 (v^{[2n-1]})^1
-\}\}$¡£
+\}$¡£
 
 \end{flushleft}
 
-µ±$M = 2$ÇÒ$n \equiv 0($Ä£$3)$Ê±£¬Éè$S=S_1$£¬·ñÔò$S=S_1 \cup S_2$¡£ÏÔÈ»£¬Èç¹û$M=1$£¬$S_1 \cup S_2$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$K_{1,1}$Í¬¹¹£»Èç¹û$M=2$£¬µ±$0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor$Ê±£¬¶¥µã$v^{[(M+1)i+2]}$ÁÚ½ÓÓÚ¶¥µã$v^{[(M+1)i+1]}$ºÍ$v^{[(M+1)i+3]}$¡£´ËÍâ£¬¶¥µã$v^{[2n-1]}$ ÁÚ½ÓÓÚ¶¥µã$v^{[2n-2]}$¡¢$(v^{[2n-1]})^1$ºÍ $(v^{[2n-1]})^2$¡£ Òò´Ë£¬$S$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$K_{1,2}$Í¬¹¹£»Èç¹û$M=3$£¬µ±$0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor$Ê±£¬¶¥µã$v^{[(M+1)i+3]}$ÁÚ½ÓÓÚ¶¥µã$v^{[(M+1)i+1]}$¡¢$v^{[(M+1)i+2]}$ºÍ$v^{[(M+1)i+4]}$¡£´ËÍâ£¬¶¥µã$v^{[2n-1]}$ÁÚ½ÓÓÚ$v^{[2n-3]}$¡¢$v^{[2n-2]}$¡¢$(v^{[2n-1]})^1$¡¢$(v^{[2n-1]})^2$ ºÍ$(v^{[2n-1]})^3$¡£ÕâÑù£¬$S$ ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$K_{1,3}$ Í¬¹¹¡£ÏÔÈ»£¬$|S|$ = $\lceil\frac{2n-1}{1+M}\rceil$¡£Éè$Y(S)=\bigcup_{f \in S}f$£¬ÒòÎª$AQ_n-Y(S)$ÊÇ²»Á¬Í¨µÄÇÒÆäÖĞÒ»¸öÁ¬Í¨·ÖÖ§ÊÇ\{$u$\}£¬ËùÒÔ$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$ºÍ$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$¡£
+µ±$M = 2$ÇÒ$n = 0($Ä£$3)$Ê±£¬Éè$S=S_1$£¬·ñÔòÉè$S=S_1 \cup S_2$¡£ÏÔÈ»£¬Èç¹û$M=1$£¬ÄÇÃ´$S_1 \cup S_2$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼Óë$K_{1,1}$Í¬¹¹£»Èç¹û$M=2$£¬µ±$0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor$Ê±£¬¶¥µã$v^{[(M+1)i+2]}$ÁÚ½ÓÓÚ¶¥µã$v^{[(M+1)i+1]}$ºÍ$v^{[(M+1)i+3]}$¡£´ËÍâ£¬¶¥µã$v^{[2n-1]}$ÁÚ½ÓÓÚ¶¥µã$v^{[2n-2]}$£¬$(v^{[2n-1]})^1$ºÍ$(v^{[2n-1]})^2$¡£Òò´Ë£¬$S$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼Óë$K_{1,2}$Í¬¹¹¡£Èç¹û$M=3$£¬µ±$0 \leq i < \lfloor\frac{2n-1}{M+1}\rfloor$Ê±£¬¶¥µã$v^{[(M+1)i+3]}$ÁÚ½ÓÓÚ¶¥µã$v^{[(M+1)i+1]}$£¬$v^{[(M+1)i+2]}$ºÍ$v^{[(M+1)i+4]}$¡£´ËÍâ£¬¶¥µã$v^{[2n-1]}$ÁÚ½ÓÓÚ$v^{[2n-3]}$£¬$v^{[2n-2]}$£¬$(v^{[2n-1]})^1$£¬$(v^{[2n-1]})^2$ºÍ$(v^{[2n-1]})^3$¡£ÕâÑù£¬$S$ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼¶¼Óë$K_{1,3}$Í¬¹¹¡£ÏÔÈ»£¬$|S|$ = $\lceil\frac{2n-1}{1+M}\rceil$¡£Éè$Y(S)=\bigcup_{f \in S}f$£¬ÒòÎª$AQ_n-Y(S)$ÊÇ²»Á¬Í¨µÄÇÒÆäÖĞÒ»¸öÁ¬Í¨·ÖÖ§ÊÇÒ»¸öÆ½·²Í¼£¬ËùÒÔ$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$ºÍ$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{2n-1}{1+M}\rceil$¡£
 \end{proof}
 
-Í¼~\ref{K_1_1 and K_1_2}ÏÔÊ¾ÁË$AQ_5$µÄ$K_{1,1}$-½á¹¹¸îºÍ$AQ_6$ µÄ$K_{1,2}$-½á¹¹¸î¡£
+Í¼~\ref{K_1_1 and K_1_2}ÏÔÊ¾ÁË$AQ_5$µÄ$K_{1,1}$-½á¹¹¸îºÍ$AQ_6$µÄ$K_{1,2}$-½á¹¹¸î¡£
 
 
 \begin{figure}[htbp]
@@ -288,7 +297,7 @@ v^{[2n-1]},
 
 \begin{lem}
 \label{1<=M<=3(2)}
-µ±$n\geq4$ºÍ$1 \leq M \leq 3$Ê±£¬$\kappa^s(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{2n-1}{1+M}\rceil$¡£
+µ±$n\geq4$ÇÒ$1 \leq M \leq 3$Ê±£¬ÓĞ$\kappa^s(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{2n-1}{1+M}\rceil$¡£
 \end{lem}
 
 \begin{proof}
@@ -302,26 +311,28 @@ v^{[2n-1]},
 
 \begin{thm}
 \label{smallerthan}
-µ±$n \geq 4$ºÍ$1 \leq M \leq 3$Ê±£¬$\kappa(AQ_n,K_{1,M})=\lceil\frac{2n-1}{1+M}\rceil$£¬$\kappa^s(AQ_n,K_{1,M})=\lceil\frac{2n-1}{1+M}\rceil$¡£
+µ±$n \geq 4$ÇÒ$1 \leq M \leq 3$Ê±£¬ÓĞ$\kappa(AQ_n,K_{1,M})=\lceil\frac{2n-1}{1+M}\rceil$ÇÒ$\kappa^s(AQ_n,K_{1,M})=\lceil\frac{2n-1}{1+M}\rceil$¡£
 \end{thm}
 
 
-\subsection{$4 \leq M \leq 6$}
+%\subsection{$4 \leq M \leq 6$}
+ÏÂÃæÎÒÃÇÖ¤Ã÷µ±$4 \leq M \leq 6$Ê±£¬$AQ_n$µÄ½á¹¹Á¬Í¨¶È$\kappa(AQ_n,K_{1,M})$ºÍ×Ó½á¹¹Á¬Í¨¶È$\kappa^s(AQ_n,K_{1,M})$¡£
+
 
 \begin{lem}
 \label{4<=M<=6(1)}
-µ±$n \geq 6$ºÍ$4 \leq M \leq 6$Ê±£¬$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$£¬$\kappa^s(AQ_n,K_{1,M})\leq \lceil\frac{n-1}{2}\rceil$¡£
+µ±$n \geq 6$ÇÒ$4 \leq M \leq 6$Ê±£¬ÓĞ$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$ÇÒ$\kappa^s(AQ_n,K_{1,M})\leq \lceil\frac{n-1}{2}\rceil$¡£
 \end{lem}
 
 \begin{proof}
-Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£½ÓÏÂÀ´£¬ÎÒÃÇ½«¸ù¾İ$M$ºÍ$n$µÄÖµÀ´·ÖÎªÏÂÃæ¼¸ÖÖÇé¿ö£º
+Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£½ÓÏÂÀ´£¬ÎÒÃÇ½«¸ù¾İ$M$ºÍ$n$µÄÖµÀ´ÌÖÂÛÏÂÃæ¼¸ÖÖÇé¿ö£º
 
 \textbf{ÇéĞÎ1.} $M=4$¡£
 
 \textbf{ÇéĞÎ1.1.} $n$ÊÇÆæÊı¡£Éè
 
 \begin{flushleft}
-$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]}\}\}$£¬
+$S_1=\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]}\}$£¬
 
 $S_2=\{\{
 v^{[5+4i+1]},
@@ -336,7 +347,7 @@ v^{[5+4i+4]},
 \textbf{ÇéĞÎ1.2.} $n$ÊÇÅ¼Êı¡£Éè
 
 \begin{flushleft}
-$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]}\}\}$£¬
+$S_1=\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]}\}$£¬
 
 $S_2=\{\{
 v^{[5+4i+1]},
@@ -346,13 +357,13 @@ v^{[5+4i+4]},
 (v^{[5+4i+2]})^1
 \} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}ºÍ\\
 
-$S_3=\{\{
+$S_3=\{
 v^{[2n-2]},
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2,
 (v^{[2n-1]})^3
-\}$\}¡£\\
+\}$¡£\\
 
 \end{flushleft}
 
@@ -362,7 +373,7 @@ v^{[2n-1]},
 \textbf{ÇéĞÎ2.1.} $n$ÊÇÆæÊı¡£Éè
 
 \begin{flushleft}
-$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n\}\}$£¬
+$S_1=\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n\}$£¬
 
 $S_2=\{\{
 v^{[5+4i+1]},
@@ -377,7 +388,7 @@ v^{[5+4i+4]},
 
 \textbf{ÇéĞÎ2.2.} $n$ÊÇÅ¼Êı¡£Éè
 \begin{flushleft}
-$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n\}\}$£¬
+$S_1=\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n\}$£¬
 
 $S_2=\{\{
 v^{[5+4i+1]},
@@ -388,14 +399,14 @@ v^{[5+4i+4]},
 (v^{[5+4i+2]})^2
 \} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}ºÍ\\
 
-$S_3=\{\{
+$S_3=\{
 v^{[2n-2]},
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2,
 (v^{[2n-1]})^3,
 (v^{[2n-1]})^4
-\}$\}¡£\\
+\}$¡£\\
 
 \end{flushleft}
 
@@ -404,7 +415,7 @@ v^{[2n-1]},
 \textbf{ÇéĞÎ3.1.} $n$ÊÇÆæÊı¡£Éè
 
 \begin{flushleft}
-$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n,(\overline{v^{[3]}})^n\}\}$£¬
+$S_1=\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n,(\overline{v^{[3]}})^n\}$£¬
 
 $S_2=\{\{
 v^{[5+4i+1]},
@@ -421,7 +432,7 @@ v^{[5+4i+4]},
 \textbf{ÇéĞÎ3.2.} $n$ÊÇÅ¼Êı¡£Éè
 
 \begin{flushleft}
-$S_1=\{\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n,(\overline{v^{[3]}})^n\}\}$£¬
+$S_1=\{v^{[1]},v^{[2]},v^{[3]},v^{[4]},v^{[5]},(v^{[3]})^n,(\overline{v^{[3]}})^n\}$£¬
 
 $S_2=\{\{
 v^{[5+4i+1]},
@@ -433,7 +444,7 @@ v^{[5+4i+4]},
 (v^{[5+4i+2]})^3
 \} \mid 0\leq i< \lfloor\frac{n-1}{2}\rfloor-1 $\}ºÍ\\
 
-$S_3=\{\{
+$S_3=\{
 v^{[2n-2]},
 v^{[2n-1]},
 (v^{[2n-1]})^1,
@@ -441,12 +452,12 @@ v^{[2n-1]},
 (v^{[2n-1]})^3,
 (v^{[2n-1]})^4,
 (v^{[2n-1]})^5
-\}$\}¡£\\
+\}$¡£\\
 
 \end{flushleft}
 
 
-ÏÔÈ»£¬$S_1$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$K_{1,M}$Í¬¹¹¡£¶ÔÓÚ$0\leq i< \lfloor\frac{n-1}{2}\rfloor-1$, ¶¥µã$v^{[5+4i+2]}$ÁÚ½ÓÓÚ¶¥µã$v^{[{5+4i}+j]}$ ºÍ$(v^{[5+4i+2]})^p$£¬ÆäÖĞ$j=1,3$ºÍ$4$£¬$1\leq p \leq 1+M-4$¡£ËùÒÔ$S_2$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$K_{1,M}$ Í¬¹¹¡£¶¥µã$v^{[2n-1]}$ÁÚ½ÓÓÚ¶¥µã$v^{[2n-2]}$ºÍ$(v^{([2n-1]})^q$£¬ÆäÖĞ$1\leq q\leq 1+M-(2n-2-4\times\lfloor\frac{n-1}{2}\rfloor)$¡£ÕâÑù£¬$S_3$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$K_{1,M}$Í¬¹¹¡£¼ÙÉèµ±$n$ÎªÆæÊıÊ±£¬$S=S_1\cup S_2$£¬·ñÔò$S=S_1\cup S_2\cup S_3$£¬²¢ÇÒ$|S|=\lceil\frac{n-1}{2}\rceil$¡£Éè$Y(S)=\bigcup_{f \in S}f$¡£ ÒòÎª$AQ_n - Y(S)$ÊÇ²»Á¬Í¨µÄÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§ÊÇ$\{u\}$£¬ÄÇÃ´$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$ ºÍ$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$¡£
+ÏÔÈ»£¬$S_1$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼Óë$K_{1,M}$Í¬¹¹¡£¶ÔÓÚ$0\leq i< \lfloor\frac{n-1}{2}\rfloor-1$, ¶¥µã$v^{[5+4i+2]}$ÁÚ½ÓÓÚ¶¥µã$v^{[{5+4i}+j]}$ºÍ$(v^{[5+4i+2]})^p$£¬ÆäÖĞ$j=1,3$ºÍ$4$£¬$1\leq p \leq 1+M-4$¡£ËùÒÔ$S_2$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼Óë$K_{1,M}$Í¬¹¹¡£¶¥µã$v^{[2n-1]}$ÁÚ½ÓÓÚ¶¥µã$v^{[2n-2]}$ºÍ$(v^{([2n-1]})^q$£¬ÆäÖĞ$1\leq q\leq 1+M-(2n-2-4\times\lfloor\frac{n-1}{2}\rfloor)$¡£ÕâÑù£¬$S_3$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼Óë$K_{1,M}$Í¬¹¹¡£¼ÙÉèµ±$n$ÎªÆæÊıÊ±£¬$S=S_1\cup S_2$£¬·ñÔòÉè$S=S_1\cup S_2\cup S_3$£¬²¢ÇÒ$|S|=\lceil\frac{n-1}{2}\rceil$¡£Éè$Y(S)=\bigcup_{f \in S}f$£¬ÒòÎª$AQ_n - Y(S)$ÊÇ²»Á¬Í¨µÄÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§ÊÇÒ»¸öÆ½·²Í¼£¬ÄÇÃ´$\kappa(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$ºÍ$\kappa^s(AQ_n,K_{1,M})$ $\leq$ $\lceil\frac{n-1}{2}\rceil$¡£
 \end{proof}
 
 Í¼~\ref{K_1_5}ÏÔÊ¾ÁË$AQ_6$µÄÒ»¸ö$K_{1,5}$-½á¹¹¸î¡£
@@ -461,78 +472,79 @@ v^{[2n-1]},
 
 \begin{lem}
 \label{min_K_1_M}
-µ±$n \geq 6$ºÍ$4 \leq M \leq 6$Ê±£¬Éè$F_n$ÊÇ$AQ_n$ÖĞµÄÒ»¸ö$K_{1,M}$-×Ó½á¹¹¼¯£¬Èç¹ûÔÚ$AQ_n - V(F_n)$´æÔÚÒ»¸ö¹ÂÁ¢µÄ¶¥µã£¬ÄÇÃ´$|F_n|\geq \lceil\frac{n-1}{2}\rceil$¡£
+µ±$n \geq 6$ÇÒ$4 \leq M \leq 6$Ê±£¬Éè$F_n$ÊÇ$AQ_n$ÖĞµÄÒ»¸ö$K_{1,M}$-×Ó½á¹¹¼¯£¬Èç¹ûÔÚ$AQ_n - V(F_n)$ÖĞ´æÔÚÒ»¸ö¹ÂÁ¢µÄ¶¥µã£¬ÄÇÃ´$|F_n|\geq \lceil\frac{n-1}{2}\rceil$¡£
 \end{lem}
 
 \begin{proof}
 Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£
-ÎÒÃÇÉè$W=\{x \mid (x,u)$ÊÇÒ»Ìõ³¬Á¢·½Ìå±ß£¬$x \in V(G)\}$ºÍ$Z=\{y \mid (y,u)$ÊÇÒ»Ìõ²¹±ß£¬$y \in V(G)\}$¡£ÏÔÈ»£¬$|W|=n$£¬$|Z|=n-1$¡£¸ù¾İĞÔÖÊ\ref{complement_edge}ºÍĞÔÖÊ\ref{common_verticles}£¬$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄ$5$ ¸ö¶¥µã£¬¼´ $\bar{u}^i,\bar{u}^{i-1},u^i,u^{i+1}$ºÍ$\bar{u}^{i+1}$£¬ÆäÖĞ$2 \leq i \leq n-1$¡£ÒòÎª $\{(\bar{u}^i,\bar{u}^{i-1}),(\bar{u}^i,u^i),(\bar{u}^i,u^{i+1}),(\bar{u}^i,\bar{u}^{i+1})\} \subseteq E(AQ_n)$£¬ËùÒÔ$\{\bar{u}^i,\bar{u}^{i-1},u^i,\\u^{i+1},\bar{u}^{i+1}\}$µÄµ¼³ö×ÓÍ¼ºÍ$K_{1,4}$Í¬¹¹¡£ÎÒÃÇÉè$B=\{b_i\mid b_i\in F_n \textnormal{ÇÒ} \{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)\cap N(u)\}$¡£ ÒòÎªÃ¿¸ö$V(b_i)$°üº¬$Z$ÖĞµÄ$3$ ¸ö¶¥µãºÍ$W$ÖĞµÄ$2$¸ö¶¥µã£¬ËùÒÔ $|B|<\lfloor\frac{2n-1}{5}\rfloor$¡£
+ÎÒÃÇÉè$W=\{x \mid (x,u)$ÊÇÒ»Ìõ³¬Á¢·½Ìå±ß£¬$x \in V(G)\}$ÇÒ$Z=\{y \mid (y,u)$ÊÇÒ»Ìõ²¹±ß£¬$y \in V(G)\}$¡£ÏÔÈ»£¬$|W|=n$ÇÒ$|Z|=n-1$¡£¸ù¾İÒıÀí\ref{complement_edge}ºÍÒıÀí\ref{common_verticles}£¬$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄ$5$ ¸ö¶¥µã£¬¼´ $\bar{u}^i,\bar{u}^{i-1},u^i,u^{i+1}$ºÍ$\bar{u}^{i+1}$£¬ÆäÖĞ$2 \leq i \leq n-1$¡£ÒòÎª $\{(\bar{u}^i,\bar{u}^{i-1}),(\bar{u}^i,u^i),(\bar{u}^i,u^{i+1}),(\bar{u}^i,\bar{u}^{i+1})\} \subseteq E(AQ_n)$£¬ËùÒÔ$\{\bar{u}^i,\bar{u}^{i-1},u^i,\\u^{i+1},\bar{u}^{i+1}\}$µÄµ¼³ö×ÓÍ¼Óë$K_{1,4}$Í¬¹¹¡£ÎÒÃÇÉè$B=\{b_i\mid b_i\in F_n \textnormal{ÇÒ} \{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq \{V(b_i)\cap N(u)\}$¡£ÒòÎªÃ¿¸ö$V(b_i)$°üº¬$Z$ÖĞµÄ$3$¸ö¶¥µãºÍ$W$ÖĞµÄ$2$¸ö¶¥µã£¬ËùÒÔ $|B|<\lfloor\frac{2n-1}{5}\rfloor$¡£
 ½ÓÏÂÀ´£¬ÎÒÃÇ½«¸ù¾İ$|B|$µÄÖµÀ´·ÖÎªÏÂÃæ¼¸ÖÖÇé¿ö£º
 
-\textbf{ÇéĞÎ1.} \quad $|B|=0$¡£ÒòÎª$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄ$4$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq \lceil \frac{2n-1}{4} \rceil$¡£
+\textbf{ÇéĞÎ1.} $|B|=0$¡£ÒòÎª$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄ$4$ ¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq \lceil \frac{2n-1}{4} \rceil$¡£
 
-\textbf{ÇéĞÎ2.} \quad $|B|=1$¡£¼ÙÉè$\{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$£¬ÆäÖĞ$2 \leq i \leq n-1$¡£ÒòÎª$F_n-B$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)$ÖĞµÄ$4$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 1+\lceil \frac{2n-6}{4} \rceil=\lceil \frac{n-1}{2} \rceil$¡£
+\textbf{ÇéĞÎ2.} $|B|=1$¡£¼ÙÉè$\{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$£¬ÆäÖĞ$2 \leq i \leq n-1$¡£ÒòÎª$F_n-B$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)$ÖĞµÄ$4$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 1+\lceil \frac{2n-6}{4} \rceil=\lceil \frac{n-1}{2} \rceil$¡£
 
-\textbf{ÇéĞÎ3.} \quad $|B|=2$¡£¼ÙÉè$\{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$£¬$
-\{\bar{u}^{j-1},u^j,\bar{u}^j,u^{j+1},\bar{u}^{j+1}\} \subseteq V(b_j)$£¬ÆäÖĞ$2 \leq i,j \leq n-1$£¬ÇÒ$|i-j|\geq 3$¡£ ²»Ê§Ò»°ãĞÔ£¬ÎÒÃÇÉè$j>i$¡£
+\textbf{ÇéĞÎ3.} $|B|=2$¡£¼ÙÉè$\{\bar{u}^{i-1},u^i,\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$£¬$
+\{\bar{u}^{j-1},u^j,\bar{u}^j,u^{j+1},\bar{u}^{j+1}\} \subseteq V(b_j)$£¬ÆäÖĞ$2 \leq i,j \leq n-1$ÇÒ$|i-j|\geq 3$¡£²»Ê§Ò»°ãĞÔ£¬ÎÒÃÇÉè$j>i$¡£
 
 \textbf{ÇéĞÎ3.1.} $j-i=3$¡£
 ÄÇÃ´$\{\bar{u}^{j-1},u^j,\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+2},u^{i+3},\bar{u}^{i+3},u^{i+4},\bar{u}^{i+4}\}$¡£
-¼ÙÉè$w_1,w_2 \in N(u)-V(B)-\{u^{i+2}\}$ÇÒ$w_1 \neq w_2$¡£¸ù¾İÒıÀí\ref{two_hypercube_edges}¡¢\ref{two_complement_edges}ºÍ\ref{hypercube_edge_and_complement_edge}£¬$N(u^{i+2}) \cap N(w_1) \cap N(w_2)=\emptyset$¡£
-´ËÍâ£¬¶¥µã$u^{i+2}$²»Óë$N(u)-V(B)$ÖĞµÄ¶¥µãÏàÁ¬¡£
+¼ÙÉè$w_1,w_2 \in N(u)-V(B)-\{u^{i+2}\}$ÇÒ$w_1 \neq w_2$¡£¸ù¾İÒıÀí\ref{two_hypercube_edges}£¬\ref{two_complement_edges}ºÍ\ref{hypercube_edge_and_complement_edge}£¬$N(u^{i+2}) \cap N(w_1) \cap N(w_2)=\emptyset$¡£
+´ËÍâ£¬¶¥µã$u^{i+2}$²»Óë$N(u)-V(B)$ÖĞµÄÈÎºÎ¶¥µãÏàÁÚ¡£
 Òò´Ë£¬´æÔÚÒ»¸öÔªËØ$a \in F_n-B$Ê¹µÃ$u^{i+2} \in V(a)$ÇÒ$|V(a) \cap \{N(u)-V(B)\}| \leq 2$¡£ÒòÎª$F_n-B-\{a\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a)$ÖĞµÄËÄ¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+\lceil\frac{2n-13}{4}\rceil=\lceil\frac{2n-1}{4}\rceil$¡£
 
 \textbf{ÇéĞÎ3.2.} $j-i=4$¡£ÄÇÃ´$\{\bar{u}^{j-1},u^j,\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+3},u^{i+4},\bar{u}^{i+4},u^{i+5},\bar{u}^{i+5}\}$¡£
-ÏÂÃæ£¬ÎÒÃÇ½«¸ù¾İ$F_n-B$ÖĞ°üº¬Èı¸ö¶¥µã$u^{i+2}$¡¢$\bar{u}^{i+2}$ºÍ$u^{i+3}$µÄÔªËØ¸öÊıÀ´ÌÖÂÛÏÂÃæ¼¸ÖÖÇé¿ö¡£ÎÒÃÇÓÃ$S$À´±íÊ¾ÕâÑùµÄÔªËØ¸öÊı¡£
+ÏÂÃæ£¬ÎÒÃÇ½«¸ù¾İ$F_n-B$ÖĞ°üº¬Èı¸ö¶¥µã$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$µÄÔªËØ¸öÊıÀ´ÌÖÂÛÏÂÃæ¼¸ÖÖÇé¿ö¡£ÎÒÃÇÓÃ$t$À´±íÊ¾ÕâÑùµÄÔªËØ¸öÊı¡£
 
-\textbf{ÇéĞÎ3.2.1.} $S=3$¡£ÄÇÃ´ÔÚ$N(u)-V(B)$ÖĞÓĞ$3$¸ö²»Í¬µÄÔªËØ·Ö±ğ°üº¬×ÅÈı¸ö¶¥µã$u^{i+2}$¡¢$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄÒ»¸ö¡£¼ÙÉè$w_1,w_2 \in N(u)-V(B)-\{u^{i+2},\bar{u}^{i+2},u^{i+3}\}$ÇÒ$w_1 \neq w_2$£¬¸ù¾İÒıÀí\ref{two_hypercube_edges}¡¢\ref{two_complement_edges} ºÍ \ref{hypercube_edge_and_complement_edge}£¬$N(u^{i+2}) \cap N(w_1) \cap N(w_2)=\emptyset$¡£¶¥µã$u^{i+2}$²»Óë$N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}$ÖĞµÄ¶¥µãÏàÁ¬¡£Òò´Ë£¬´æÔÚÒ»¸öÔªËØ$a_1 \in F_n-B$Ê¹µÃ$u^{i+2} \in V(a_1)$ÇÒ$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\}| \leq 2$¡£¶ÔÓÚ¶¥µã$\bar{u}^{i+2}$ºÍ$u^{i+3}$ µÄÇé¿ö£¬Ö¤Ã÷ºÍ¶¥µã$u^{i+2}$ÀàËÆÇÒÎÒÃÇÉè$\bar{u}^{i+2}\in a_2$, $u^{i+3}\in a_3$¡£ÒòÎª$F_n-B-\{a_1,a_2,a_3\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)-V(a_3)$ÖĞµÄËÄ¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+3+\lceil\frac{2n-17}{4}\rceil=\lceil\frac{2n+3}{4}\rceil$¡£
+\textbf{ÇéĞÎ3.2.1.} $t=3$¡£ÄÇÃ´ÔÚ$N(u)-V(B)$ÖĞÓĞ$3$¸ö²»Í¬µÄÔªËØ·Ö±ğ°üº¬×Å$3$¸ö¶¥µã$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄÒ»¸ö¡£¼ÙÉè$w_1,w_2 \in N(u)-V(B)-\{u^{i+2},\bar{u}^{i+2},u^{i+3}\}$ÇÒ$w_1 \neq w_2$£¬¸ù¾İÒıÀí\ref{two_hypercube_edges}£¬\ref{two_complement_edges}ºÍ \ref{hypercube_edge_and_complement_edge}£¬$N(u^{i+2}) \cap N(w_1) \cap N(w_2)=\emptyset$¡£ ¶¥µã$u^{i+2}$²»Óë$N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}$ÖĞµÄÈÎºÎ¶¥µãÏàÁÚ¡£Òò´Ë£¬´æÔÚÒ»¸öÔªËØ$a_1 \in F_n-B$£¬Ê¹µÃ$u^{i+2} \in V(a_1)$ÇÒ$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\}| \leq 2$¡£¶ÔÓÚ¶¥µã$\bar{u}^{i+2}$ºÍ$u^{i+3}$ µÄÇé¿ö£¬Ö¤Ã÷Óë¶¥µã$u^{i+2}$µÄÇéĞÎÀàËÆ£¬½øÒ»²½£¬ÎÒÃÇÉè$\bar{u}^{i+2}\in a_2$, $u^{i+3}\in a_3$¡£ÒòÎª$F_n-B-\{a_1,a_2,a_3\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)-V(a_3)$ÖĞµÄËÄ¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+3+\lceil\frac{2n-17}{4}\rceil=\lceil\frac{2n+3}{4}\rceil$¡£
 
-\textbf{ÇéĞÎ3.2.2.} $S=2$¡£ÄÇÃ´$N(u)-V(B)$ÖĞ´æÔÚ$2$¸öÔªËØ£¬ÆäÖĞÒ»¸öÔªËØ°üº¬$u^{i+2}$¡¢$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄ$1$¸ö¶¥µã£¬ÁíÒ»¸öÔªËØ°üº¬ÁíÍâ$2$¸ö¶¥µã¡£ÎÒÃÇ¼ÙÉè$a_1$°üº¬$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ\\$u^{i+3}$ÖĞµÄ$1$¸ö¶¥µã£¬$a_2$°üº¬ÁíÍâ$2$¸ö¶¥µã¡£
+\textbf{ÇéĞÎ3.2.2.} $t=2$¡£ÄÇÃ´$N(u)-V(B)$ÖĞ´æÔÚ$2$¸öÔªËØ£¬ÆäÖĞÒ»¸öÔªËØ°üº¬$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄ$1$¸ö¶¥µã£¬ÁíÒ»¸öÔªËØ°üº¬ÁíÍâ$2$¸ö¶¥µã¡£²»Ê§Ò»°ãĞÔ£¬ÎÒÃÇ¼ÙÉè$a_1$°üº¬$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄ$1$¸ö¶¥µã£¬$a_2$°üº¬ÁíÍâ$2$ ¸ö¶¥µã¡£
 
 \textbf{ÇéĞÎ3.2.2.1.} $u^{i+2} \in V(a_1)$ºÍ$\{\bar{u}^{i+2}, u^{i+3}\} \subseteq V(a_2)$¡£ÀàËÆÓÚÇéĞÎ3.2.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ
-$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\}|\leq 2$¡£ÒòÎª$N(\bar{u}^{i+2}) \cap N(u^{i+3})-\{u,\bar{u}^{i+3}\}=$$\{(\bar{u}^{i+2})^{i+4},\\(u^{i+3})^{i+4}\}$£¬ÇÒ$\{(\bar{u}^{i+2})^{i+4},(u^{i+3})^{i+4}\}$ÖĞµÄÃ¿¸ö¶¥µã²»Óë$N(u)-V(B)-\{u^{i+2},\bar{u}^{i+2},u^{i+3}\}$ÖĞµÄ¶¥µãÏàÁ¬£¬´ËÍâ$\{\bar{u}^{i+2},u^{i+3}\}$ÖĞµÄÃ¿¸ö¶¥µãÒ²²»Óë$N(u)-V(B)-\{u^{i+2}\}$ÖĞµÄ¶¥µãÏàÁ¬£¬ÇÒ$|V(a_2) \cap \{N(u)-V(B)-\{u^{i+2}\}\}|=2$ºÍ$\{\bar{u}^{i+2},u^{i+3}\} \subseteq V(a_2)$¡£
+$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\}|\leq 2$¡£ÒòÎª$N(\bar{u}^{i+2}) \cap N(u^{i+3})-\{u,\bar{u}^{i+3}\}=$$\{(\bar{u}^{i+2})^{i+4},\\(u^{i+3})^{i+4}\}$£¬ÇÒ$\{(\bar{u}^{i+2})^{i+4},(u^{i+3})^{i+4}\}$ÖĞµÄÃ¿¸ö¶¥µã²»Óë$N(u)-V(B)-\{u^{i+2},\bar{u}^{i+2},u^{i+3}\}$ÖĞµÄÈÎºÎ¶¥µãÏàÁÚ£¬´ËÍâ$\{\bar{u}^{i+2},u^{i+3}\}$ ÖĞµÄÃ¿¸ö¶¥µãÒ²²»Óë$N(u)-V(B)-\{u^{i+2}\}$ÖĞµÄÈÎºÎ¶¥µãÏàÁÚ£¬ÇÒ$|V(a_2) \cap \{N(u)-V(B)-\{u^{i+2}\}\}|=2$ºÍ$\{\bar{u}^{i+2},u^{i+3}\} \subseteq V(a_2)$¡£
 ÒòÎª$F_n-B-\{a_1,a_2\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)$ÖĞµÄ$4$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+1+\lceil\frac{2n-15}{4}\rceil=\lceil \frac{2n+1}{4} \rceil$¡£¶ÔÓÚ$u^{i+3} \in V(a_1)$ºÍ$\{\bar{u}^{i+2}$ $u^{i+2}\} \subseteq V(a_2)$ÕâÖÖÇé¿ö£¬Ö¤Ã÷ÀàËÆ£¬ÔÚ´Ë²»ÔÙ×¸Êö¡£
 
-\textbf{ÇéĞÎ3.2.2.2.} $\bar{u}^{i+2} \in V(a_1)$ºÍ$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$¡£ ÀàËÆÓÚÇéĞÎ3.2.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|V(a_1) \cap \{N(u)-V(B)-\{u^{i+2},u^{i+3}\}\}|\leq 2$¡£ ÒòÎª$N(u^{i+2}) \cap N(u^{i+3})-\{u,\bar{u}^{i+2}\}=\{(u^{i+2})^{i+3},(\bar{u}^{i+3})^{i+2}\}$£¬$\{(u^{i+2})^{i+3},(\bar{u}^{i+3})^{i+2}\}$ ÖĞµÄÃ¿¸ö¶¥µã²»Óë$N(u)-V(B)-\{\bar{u}^{i+2}\}$ ÖĞµÄ¶¥µãÏàÁ¬ÇÒ$(u^{i+2},u^{i+3}) \notin E(AQ_n)$£¬$|V(a_2) \cap \{N(u)-V(B)-\{\bar{u}^{i+2}\}\}|=2$ÒÔ¼°$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$¡£ÒòÎª$F_n-B-\{a_1,a_2\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)$ÖĞµÄ$4$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+1+\lceil\frac{2n-15}{4}\rceil=\lceil \frac{2n+1}{4} \rceil$¡£
+\textbf{ÇéĞÎ3.2.2.2.} $\bar{u}^{i+2} \in V(a_1)$ºÍ$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$¡£ ÀàËÆÓÚÇéĞÎ3.2.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|V(a_1) \cap \{N(u)-V(B)-\{u^{i+2},u^{i+3}\}\}|\leq 2$¡£ ÒòÎª$N(u^{i+2}) \cap N(u^{i+3})-\{u,\bar{u}^{i+2}\}=\{(u^{i+2})^{i+3},(\bar{u}^{i+3})^{i+2}\}$£¬$\{(u^{i+2})^{i+3},(\bar{u}^{i+3})^{i+2}\}$ ÖĞµÄÃ¿¸ö¶¥µã²»Óë$N(u)-V(B)-\{\bar{u}^{i+2}\}$ ÖĞµÄÈÎºÎ¶¥µãÏàÁÚÇÒ$(u^{i+2},u^{i+3}) \notin E(AQ_n)$£¬$|V(a_2) \cap \{N(u)-V(B)-\{\bar{u}^{i+2}\}\}|=2$ÒÔ¼°$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$¡£ÒòÎª$F_n-B-\{a_1,a_2\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)$ÖĞµÄ$4$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+1+\lceil\frac{2n-15}{4}\rceil=\lceil \frac{2n+1}{4} \rceil$¡£
 
-\textbf{ÇéĞÎ3.2.3.} $S=1$¡£¸ù¾İÇéĞÎ3.2.1ºÍÇéĞÎ3.2.2ÖĞµÄÌÖÂÛ£¬´æÔÚÒ»¸öÔªËØ$a \in F_n-B$Ê¹µÃ $|V(a) \cap \{N(u)-V(B)\}|= 3$ÇÒ$\{u^{i+2},\bar{u}^{i+2},u^{i+3}\} \subseteq V(a)$¡£ÒòÎª$F_n-B-\{a\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a)$ÖĞµÄËÄ¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+\lceil\frac{2n-14}{4}\rceil=\lceil \frac{n-1}{2} \rceil$¡£
+\textbf{ÇéĞÎ3.2.3.} $t=1$¡£¸ù¾İÇéĞÎ3.2.1ºÍÇéĞÎ3.2.2ÖĞµÄÌÖÂÛ£¬´æÔÚÒ»¸öÔªËØ$a \in F_n-B$Ê¹µÃ $|V(a) \cap \{N(u)-V(B)\}|= 3$ÇÒ$\{u^{i+2},\bar{u}^{i+2},u^{i+3}\} \subseteq V(a)$¡£ÒòÎª$F_n-B-\{a\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a)$ÖĞµÄËÄ¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+\lceil\frac{2n-14}{4}\rceil=\lceil \frac{n-1}{2} \rceil$¡£
 
 \textbf{ÇéĞÎ3.3.} $j-i\geq 5$¡£ÎÒÃÇÉè$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$¡£½ÓÏÂÀ´£¬ÎÒÃÇ½«¼ÆËã$F_n-B$ÖĞ°üº¬$U_{ij}$µÄÔªËØµÄÊıÁ¿¡£ÒòÎª$5 \leq |U_{ij}| \leq 2n-11$ÇÒÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)$ÖĞµÄ$4$¸ö¶¥µã£¬ÎÒÃÇ½«¸ù¾İ$|U_{ij}|$µÄÖµ½øĞĞÌÖÂÛ¡£
 
-\textbf{ÇéĞÎ3.3.1.} $|U_{ij}|\equiv1(\textnormal{Ä£}4)$¡£ÀàËÆÓÚÇéĞÎ3.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|F_n| \geq 2+1+\lceil\frac{2n-13}{4}\rceil=\lceil\frac{2n-1}{4}\rceil$¡£
+\textbf{ÇéĞÎ3.3.1.} $|U_{ij}|($Ä£$4)=1$¡£ÀàËÆÓÚÇéĞÎ3.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|F_n| \geq 2+1+\lceil\frac{2n-13}{4}\rceil=\lceil\frac{2n-1}{4}\rceil$¡£
 
-\textbf{ÇéĞÎ3.3.2.} $|U_{ij}|\equiv3(\textnormal{Ä£}4)$¡£ ÀàËÆÓÚÇéĞÎ3.2ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|F_n| \geq 2+1+\lceil\frac{2n-14}{4}\rceil=\lceil\frac{n-1}{2}\rceil$¡£
+\textbf{ÇéĞÎ3.3.2.} $|U_{ij}|($Ä£$4)=3$¡£ ÀàËÆÓÚÇéĞÎ3.2ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|F_n| \geq 2+1+\lceil\frac{2n-14}{4}\rceil=\lceil\frac{n-1}{2}\rceil$¡£
 
-\textbf{ÇéĞÎ4.} $|B| \geq 3$¡£If $b_i,b_j \in B$ÇÒ$B$ÖĞ²»´æÔÚ$b_k(i<k<j)$£¬ÎÒÃÇÉè$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,\\u^{j-1}\}$¡£¸ù¾İÇéĞÎ3 ÖĞÌÖÂÛ£¬Èç¹û$|U_{ij}|\equiv3(\textnormal{Ä£}4)$£¬ÄÇÃ´$F_n$µÄÖµ½«»áÊÇ×îĞ¡µÄ¡£ÕâÑù£¬$|F_n| \geq |B|+(|B|-1)+\lceil\frac{2n-1-5\times|B|-3\times(|B|-1)}{4}\rceil=\lceil\frac{n-1}{2}\rceil$¡£
+\textbf{ÇéĞÎ4.} $|B| \geq 3$¡£Èç¹û$b_i,b_j \in B$ÇÒ$B$ÖĞ²»´æÔÚ$b_k(i<k<j)$£¬ÎÒÃÇÉè$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$¡£¸ù¾İÇéĞÎ3ÖĞÌÖÂÛ£¬Èç¹û$|U_{ij}|\equiv3(\textnormal{Ä£}4)$£¬ÄÇÃ´$F_n$µÄÖµ½«»áÊÇ×îĞ¡µÄ¡£ÕâÑù£¬$|F_n| \geq |B|+(|B|-1)+\lceil\frac{2n-1-5\times|B|-3\times(|B|-1)}{4}\rceil \geq \lceil\frac{n-1}{2}\rceil$¡£
 
 ËùÒÔ£¬¶¨Àí³ÉÁ¢¡£
 \end{proof}
 
 \begin{lem}
 \label{4<=M<=6(2)}
-µ±$n \geq 6$ÇÒ$4 \leq M \leq 6$Ê±£¬$\kappa(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{n-1}{2}\rceil$£¬$\kappa^s(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{n-1}{2}\rceil$¡£
+µ±$n \geq 6$ÇÒ$4 \leq M \leq 6$Ê±£¬ÓĞ$\kappa(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{n-1}{2}\rceil$ÇÒ$\kappa^s(AQ_n,K_{1,M})$ $\geq$ $\lceil\frac{n-1}{2}\rceil$¡£
 \end{lem}
 
 \begin{proof}
-ÎÒÃÇ½«»áÓÃ·´Ö¤·¨À´Ö¤Ã÷Õâ¸öÒıÀí¡£Éè$F_n^*$ÊÇ$AQ_n$µÄÒ»¸ö$K_{1,M}$-×Ó½á¹¹¼¯ÇÒ$|F_n^*| \leq \lceil\frac{n-1}{2}\rceil-1$¡£Èç¹û$AQ_n-V(F_n^*)$ÊÇ²»Á¬Í¨µÄ£¬ÄÇÃ´ÎÒÃÇÉè$R$ÊÇ$AQ_n-V(F_n^*)$ÖĞ×îĞ¡µÄÒ»¸öÁ¬Í¨·ÖÖ§¡£×¢Òâµ½$|V(F_n^*)| \leq (1+M)\times(\lceil\frac{n-1}{2}\rceil-1) \leq 7\times(\lceil\frac{n-1}{2}\rceil-1)$¡£ ¸ù¾İÒıÀí\ref{1_extraconnectivity}£¬¶ÔÓÚ$n \geq 6$£¬ÎÒÃÇÓĞ$7\times(\lceil\frac{n-1}{2}\rceil-1) < 4n-8$£¬Òò´Ë$|V(R)|=1$¡£´ËÍâ£¬ÎÒÃÇ¼ÙÉè¶¥µã$u \in V(R)$¡£¸ù¾İÒıÀí\ref{min_K_1_M}£¬ÎÒÃÇÓĞ$|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$£¬ÕâÒâÎ¶×ÅÔÚ$AQ_n-V(F_n^*)$ÖĞ$u$´æÔÚÖÁÉÙÒ»¸öÁÚ¾Ó¶¥µã¡£Òò´Ë£¬ÎÒÃÇÓĞ$|V(R)| \geq 2$£¬Ã¬¶Ü¡£Òò´Ë£¬$AQ_n-V(F_n^*)$ÊÇÁ¬Í¨µÄ¡£ÒıÀí³ÉÁ¢¡£
+ÎÒÃÇ½«»áÓÃ·´Ö¤·¨À´Ö¤Ã÷Õâ¸öÒıÀí¡£Éè$F_n^*$ÊÇ$AQ_n$µÄÒ»¸ö$K_{1,M}$-×Ó½á¹¹¼¯ÇÒ$|F_n^*| \leq \lceil\frac{n-1}{2}\rceil-1$¡£Èç¹û$AQ_n-V(F_n^*)$ÊÇ²»Á¬Í¨µÄ£¬ÄÇÃ´ÎÒÃÇÉè$R$ÊÇ$AQ_n-V(F_n^*)$ÖĞ×îĞ¡µÄÒ»¸öÁ¬Í¨·ÖÖ§ÇÒ$|V(F_n^*)| \leq (1+M)\times(\lceil\frac{n-1}{2}\rceil-1) \leq 7\times(\lceil\frac{n-1}{2}\rceil-1)$¡£ ¸ù¾İÒıÀí\ref{1_extraconnectivity}£¬¶ÔÓÚ$n \geq 6$£¬ÎÒÃÇÓĞ$7\times(\lceil\frac{n-1}{2}\rceil-1) < 4n-8$£¬Òò´Ë$|V(R)|=1$¡£´ËÍâ£¬ÎÒÃÇ¼ÙÉè¶¥µã$u \in V(R)$¡£¸ù¾İÒıÀí\ref{min_K_1_M}£¬ÎÒÃÇÓĞ$|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$£¬ÕâÒâÎ¶×ÅÔÚ$AQ_n-V(F_n^*)$ÖĞ$u$´æÔÚÖÁÉÙÒ»¸öÁÚ¾Ó¶¥µã¡£Òò´Ë£¬ÎÒÃÇÓĞ$|V(R)| \geq 2$£¬Ã¬¶Ü¡£ËùÒÔ$AQ_n-V(F_n^*)$ÊÇÁ¬Í¨µÄ¡£ÒıÀí³ÉÁ¢¡£
 \end{proof}
 
-½áºÏÒıÀí\ref{4<=M<=6(1)}£¬ÎÒÃÇÓĞ$\kappa^s(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$¡£ ÒòÎª$\kappa(Q_n,K_{1,M})\geq \kappa^s(Q_n,K_{1,M})$£¬ËùÒÔ$\kappa(Q_n,K_{1,M})\geq \lceil\frac{2n-1}{1+M}\rceil$¡£¸ù¾İÒıÀí\ref{4<=M<=6(1)}ºÍÒıÀí\ref{4<=M<=6(2)}£¬ÎÒÃÇÓĞÏÂÃæµÄ¶¨Àí¡£
+½áºÏÒıÀí\ref{4<=M<=6(1)}£¬ÎÒÃÇÓĞ$\kappa^s(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$¡£ÒòÎª$\kappa(Q_n,K_{1,M})\geq \kappa^s(Q_n,K_{1,M})$£¬ËùÒÔ$\kappa(Q_n,K_{1,M})\geq \lceil\frac{2n-1}{1+M}\rceil$¡£¸ù¾İÒıÀí\ref{4<=M<=6(1)}ºÍÒıÀí\ref{4<=M<=6(2)}£¬ÎÒÃÇÓĞÏÂÃæµÄ¶¨Àí¡£
 
 \begin{thm}
-µ±$n \geq 6$ºÍ$4 \leq M \leq 6$Ê±£¬$\kappa(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$£¬ $\kappa^s(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$¡£
+µ±$n \geq 6$ºÍ$4 \leq M \leq 6$Ê±£¬ÓĞ$\kappa(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$ÇÒ $\kappa^s(AQ_n,K_{1,M})=\lceil\frac{n-1}{2}\rceil$¡£
 \end{thm}
 
 \section{À©Õ¹Á¢·½ÌåµÄ$P_L-$½á¹¹Á¬Í¨¶ÈºÍ×Ó½á¹¹Á¬Í¨¶È}
 
-Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã£¬¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬$(\bar{u}^{i-1},u^i)\in E(AQ)$ºÍ $(u^i,\bar{u}^i)\\\in E(AQ)$ $(2\leq i \leq n)$¡£ÕâÑù$( u^1,u^2,\bar{u}^{2},\ldots,u^{n},\bar{u}^{n})$¿ÉÒÔĞÎ³ÉÒ»Ìõ³¤¶ÈÎª$2n-2$µÄÂ·¾¶¡£
+Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã£¬¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬$(\bar{u}^{i-1},u^i)\in E(AQ)$ÇÒ $(u^i,\bar{u}^i)\\\in E(AQ)$ $(2\leq i \leq n)$¡£ÕâÑù$( u^1,u^2,\bar{u}^{2},\ldots,u^{n},\bar{u}^{n})$¿ÉÒÔĞÎ³ÉÒ»Ìõ³¤¶ÈÎª$2n-2$µÄÂ·¾¶¡£
 
-ÒòÎª$P_2(P_3)$Í¬¹¹ÓÚ$K_{1,1}(K_{1,2})$²¢ÇÒÎÒÃÇÒÑ¾­ÔÚ\ref{1<=M<=3}ÖĞ¸ø³öÁË$\kappa(AQ_n,K_{1,1})(\kappa(AQ_n,K_{1,2}))$\\
-ºÍ$\kappa^s(AQ_n,K_{1,1})(\kappa^s(AQ_n,K_{1,2}))$µÄÖ¤Ã÷£¬ËùÒÔÏÂÃæÎÒÃÇ¼ÙÉè$L \geq 4$¡£
+ÒòÎª$P_2(P_3)$Í¬¹¹ÓÚ$K_{1,1}(K_{1,2})$£¬²¢ÇÒÎÒÃÇÒÑ¾­ÔÚ\ref{K1m}ÖĞ¸ø³öÁË$\kappa(AQ_n,K_{1,1})(\kappa(AQ_n,K_{1,2}))$\\
+ºÍ$\kappa^s(AQ_n,K_{1,1})(\kappa^s(AQ_n,K_{1,2}))$µÄÖ¤Ã÷£¬ËùÒÔÏÂÃæÎÒÃÇÖ»ÑĞ¾¿µ±$L \geq 4$ Ê±£¬$AQ_n$µÄ$P_L$-½á¹¹Á¬Í¨¶ÈºÍ×Ó½á¹¹Á¬Í¨¶È¡£
 
 \begin{lem}
 \label{P_Q<=}
-µ±$n \geq 3$ºÍ$4 \leq L \leq 2n-1$Ê±£¬$\kappa(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$£¬$\kappa^s(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$¡£
+µ±$n \geq 3$ÇÒ$4 \leq L \leq 2n-1$Ê±£¬ÓĞ$\kappa(AQ_n,P_L)
+\leq \lceil\frac{2n-1}{L}\rceil$ÇÒ$\kappa^s(AQ_n,P_L)\leq \lceil\frac{2n-1}{L}\rceil$¡£
 \end{lem}
 
 \begin{proof}
@@ -542,13 +554,13 @@ $S_1 =
 \{\{v^{[i\times L+1)]},v^{[i\times L+2]},\ldots,v^{[i\times L+L]}\}\mid 0 \leq i < \lfloor\frac{2n-1}{L}\rfloor\}$¡£
 \end{flushleft}
 
-Èç¹û$(2n-1)\equiv0$(Ä£$L$)£¬Éè$S_2=\emptyset$£¬·ñÔò£¬¸ù¾İ$L$ºÍ$\lceil\frac{2n-1}{L}\rceil\times L-2n+1$µÄÖµ£¬ÎÒÃÇÓĞÏÂÃæµÄÌÖÂÛ£º
+Èç¹û$(2n-1)($Ä£$L)=0$£¬Éè$S_2=\emptyset$£¬·ñÔò£¬¸ù¾İ$L$ºÍ$\lceil\frac{2n-1}{L}\rceil\times L-2n+1$µÄÖµ£¬ÎÒÃÇÓĞÏÂÃæµÄÌÖÂÛ£º
 
 \textbf{ÇéĞÎ1.} $L$ÊÇÆæÊıÇÒ$L\leq 2n-3$¡£
 
 \textbf{ÇéĞÎ1.1.} $\lceil\frac{2n-1}{L}\rceil \times L-2n+1$ÊÇÅ¼Êı¡£Éè
 \begin{flushleft}
-$S_2=\{\{
+$S_2=\{
 v^{[
 \lfloor\frac{2n-1}{L}\rfloor\times L+1]},
 \ldots,
@@ -560,12 +572,12 @@ v^{[2n-1]},
 (\overline{v^{[2n-1]}})^3,
 \ldots,$\\
 $(v^{[2n-1]})^{\frac{\lceil\frac{2n-1}{L}\rceil\times L-2n+1}{2}+1}\}
-\}$¡£
+$¡£
 \end{flushleft}
 
 \textbf{ÇéĞÎ1.2.} $\lceil\frac{2n-1}{L}\rceil \times L-2n+1$ÊÇÆæÊı¡£Éè
 \begin{flushleft}
-$S_2=\{\{
+$S_2=\{
 v^{[\lfloor\frac{2n-1}{L}\rfloor\times L+1]},
 \ldots,
 v^{[2n-1]},
@@ -576,12 +588,12 @@ v^{[2n-1]},
 (\overline{v^{[2n-1]}})^3,
 \ldots,$\\
 $(\overline{v^{[2n-1]}})^{\frac{\lceil\frac{2n-1}{L}\rceil\times L-2n}{2}+1}\}
-$\}¡£
+$¡£
 \end{flushleft}
 
 \textbf{ÇéĞÎ2.} $L$ÊÇÅ¼ÊıÇÒ$L\leq 2n-4$¡£Éè
 \begin{flushleft}
-$S_2=\{\{
+$S_2=\{
 v^{[\lfloor\frac{2n-1}{L}\rfloor\times L+1]},
 \ldots,
 v^{[2n-1]},
@@ -592,12 +604,12 @@ v^{[2n-1]},
 (\overline{v^{[2n-1]}})^3,
 \ldots,$\\
 $(\overline{v^{[2n-1]}})^{\frac{\lceil\frac{2n-1}{L}\rceil\times L-2n}{2}+1}\}
-$\}¡£
+$¡£
 \end{flushleft}
 
 \textbf{ÇéĞÎ3.} $ L = 2n-2$¡£Éè
 \begin{flushleft}
-$S_2=\{\{
+$S_2=\{
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2,
@@ -605,135 +617,136 @@ v^{[2n-1]},
 (v^{[2n-1]})^3,
 (\overline{v^{[2n-1]}})^3,
 \ldots,
-(v^{[2n-1]})^{n-1},
-((v^{[2n-1]})^{n-1})^1
-\}$\}¡£
+(v^{[2n-1]})^{n-1},$\\
+$((v^{[2n-1]})^{n-1})^1
+\}$¡£
 \end{flushleft}
 
-¼ÙÉèµ±$(2n-1)  \equiv 0$ (Ä£$L$)Ê±£¬$S=S_1$£¬·ñÔò$S=S_1 \cup S_2$¡£ÏÔÈ»£¬$S$ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$P_L$Í¬¹¹ÇÒ$|S|$ = $\lceil\frac{2n-1}{L}\rceil$¡£Éè$Y(S)=\cup_{f \in S}f$¡£ÒòÎª$AQ_n-Y(S)$ÊÇ²»Á¬Í¨µÄ£¬ÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§ÊÇ\{$u$\}£¬ËùÒÔ$\kappa(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$£¬$\kappa^s(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$¡£
+¼ÙÉèµ±$(2n-1)$(Ä£$L$)$=0$Ê±£¬$S=S_1$£¬·ñÔòÉè$S=S_1 \cup S_2$¡£ÏÔÈ»£¬$S$ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼¶¼Óë$P_L$Í¬¹¹ÇÒ$|S|$ = $\lceil\frac{2n-1}{L}\rceil$¡£Éè$Y(S)=\cup_{f \in S}f$¡£ÒòÎª$AQ_n-Y(S)$ÊÇ²»Á¬Í¨µÄ£¬ÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§ÊÇÒ»¸öÆ½·²Í¼£¬ËùÒÔ$\kappa(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$£¬$\kappa^s(AQ_n,P_L)$ $\leq$ $\lceil\frac{2n-1}{L}\rceil$¡£
 \end{proof}
 
 \begin{lem}
 \label{P_Q>=}
-µ±$n \geq 3$ºÍ$4 \leq L \leq 2n-1$Ê±£¬$\kappa^s(AQ_n,P_L)$ $\geq$ $\lceil\frac{2n-1}{L}\rceil$¡£
+µ±$n \geq 3$ºÍ$4 \leq L \leq 2n-1$Ê±£¬ÓĞ$\kappa^s(AQ_n,P_L)$ $\geq$ $\lceil\frac{2n-1}{L}\rceil$¡£
 \end{lem}
 
 \begin{proof}
-Éè$F_n^*$ÊÇ$AQ_n$ÖĞÒ»¸öÁ¬Í¨×ÓÍ¼µÄ¼¯ºÏ£¬Õâ¸ö¼¯ºÏÖĞµÄÃ¿¸öÔªËØ¶¼Í¬¹¹ÓÚ$P_L$ÖĞµÄÒ»¸öÁ¬Í¨×ÓÍ¼ÇÒ$|F_n^*|\leq \lceil\frac{2n-1}{L}\rceil-1$¡£ÒòÎª$|V(F_n^*)|\leq L\times(\lceil\frac{2n-1}{L}\rceil-1)< 2n-1$ÇÒ$\kappa(AQ_n)= 2n-1$£¬ËùÒÔ$AQ_n-F_n^*$ ÊÇÁ¬Í¨µÄ¡£ÒıÀí³ÉÁ¢¡£
+Éè$F_n^*$ÊÇ$AQ_n$ÖĞÒ»¸öÁ¬Í¨×ÓÍ¼µÄ¼¯ºÏ£¬Õâ¸ö¼¯ºÏÖĞµÄÃ¿¸öÔªËØ¶¼Í¬¹¹ÓÚ$P_L$ÖĞµÄÒ»¸öÁ¬Í¨×ÓÍ¼ÇÒ$|F_n^*|\leq \lceil\frac{2n-1}{L}\rceil-1$¡£ ÒòÎª$|V(F_n^*)|\leq L\times(\lceil\frac{2n-1}{L}\rceil-1)< 2n-1$ÇÒ$\kappa(AQ_n)= 2n-1$£¬ËùÒÔ$AQ_n-F_n^*$ ÊÇÁ¬Í¨µÄ¡£ÒıÀí³ÉÁ¢¡£
 \end{proof}
 
 ¸ù¾İÒıÀí\ref{P_Q<=}ºÍÒıÀí\ref{P_Q>=}£¬ÎÒÃÇÓĞÏÂÃæµÄ¶¨Àí¡£
 
 \begin{thm}
 \label{P_Q}
-µ±$n \geq 3$ºÍ$4 \leq L \leq 2n-1$Ê±£¬$\kappa(AQ_n,P_L)=\kappa^s(AQ_n,P_L)=\lceil\frac{2n-1}{L}\rceil$¡£
+µ±$n \geq 3$ÇÒ$4 \leq L \leq 2n-1$Ê±£¬ÓĞ$\kappa(AQ_n,P_L)=\kappa^s(AQ_n,P_L)=\lceil\frac{2n-1}{L}\rceil$¡£
 \end{thm}
 
 \section{À©Õ¹Á¢·½ÌåµÄ$C_N-$½á¹¹Á¬Í¨¶ÈºÍ×Ó½á¹¹Á¬Í¨¶È}
 
 ÎÒÃÇÊ×ÏÈÖ¤Ã÷$\kappa^s(AQ_n,C_N)$£¬È»ºóÔÙÖ¤Ã÷$\kappa(AQ_n,C_N)$¡£
 
-\subsection{$\kappa^s(AQ_n,C_N),\quad 3 \leq N \leq 2n-1$}
+%\subsection{$\kappa^s(AQ_n,C_N)$£¬ÆäÖĞ$3 \leq N \leq 2n-1$}
 ÒòÎª$P_N$ÊÇ$C_N$µÄÒ»¸öÁ¬Í¨×ÓÍ¼£¬ËùÒÔÎÒÃÇÓĞÏÂÃæµÄÒıÀí¡£
 
 
 \begin{lem}
 \label{k_s(AQ_n,C_N)<=}
-µ±$n \geq 3$ºÍ$3 \leq N \leq 2n-1$Ê±£¬$\kappa^s(AQ_n,C_N)$ $\leq$ $\lceil\frac{2n-1}{N}\rceil$¡£
+µ±$n \geq 3$ÇÒ$3 \leq N \leq 2n-1$Ê±£¬ÓĞ$\kappa^s(AQ_n,C_N)$ $\leq$ $\lceil\frac{2n-1}{N}\rceil$¡£
 \end{lem}
 
 \begin{lem}
 \label{k_s(AQ_n,C_N)>=}
-µ±$n \geq 3$ºÍ$3 \leq N \leq 2n-1$Ê±£¬$\kappa^s(AQ_n,C_N)$ $\geq$ $\lceil\frac{2n-1}{N}\rceil$¡£
+µ±$n \geq 3$ÇÒ$3 \leq N \leq 2n-1$Ê±£¬ÓĞ$\kappa^s(AQ_n,C_N)$ $\geq$ $\lceil\frac{2n-1}{N}\rceil$¡£
 \end{lem}
 
 \begin{proof}
-Éè$F_n^*$ÊÇ$AQ_n$ÖĞÒ»¸öÁ¬Í¨×ÓÍ¼µÄ¼¯ºÏ£¬Õâ¸ö¼¯ºÏÖĞµÄÃ¿¸öÔªËØºÍ$C_N$µÄÒ»¸öÁ¬Í¨×ÓÍ¼Í¬¹¹ÇÒ$|F_n^*|\leq \lceil\frac{2n-1}{N}\rceil-1$¡£ÒòÎª$V(F_n^*)\leq N\times(\lceil\frac{2n-1}{N}\rceil-1)< 2n-1$ÇÒ$\kappa(AQ_n)$ = $2n-1$£¬ËùÒÔ  $AQ_n-F_n^*$ÊÇÁ¬Í¨µÄ¡£ÒıÀí³ÉÁ¢¡£
+Éè$F_n^*$ÊÇ$AQ_n$ÖĞÒ»¸öÁ¬Í¨×ÓÍ¼µÄ¼¯ºÏ£¬Õâ¸ö¼¯ºÏÖĞµÄÃ¿¸öÔªËØÓë$C_N$µÄÒ»¸öÁ¬Í¨×ÓÍ¼Í¬¹¹ÇÒ$|F_n^*|\leq \lceil\frac{2n-1}{N}\rceil-1$¡£ÒòÎª$V(F_n^*)\leq N\times(\lceil\frac{2n-1}{N}\rceil-1)< 2n-1$ÇÒ$\kappa(AQ_n)$ = $2n-1$£¬ËùÒÔ$AQ_n-F_n^*$ ÊÇÁ¬Í¨µÄ¡£ÒıÀí³ÉÁ¢¡£
 \end{proof}
 
 ¸ù¾İÒıÀí\ref{k_s(AQ_n,C_N)<=}ºÍÒıÀí\ref{k_s(AQ_n,C_N)>=}£¬ÎÒÃÇÓĞÏÂÃæµÄ¶¨Àí¡£
 
 \begin{thm}
-µ±$n \geq 3$ºÍ$3 \leq N \leq 2n-1$Ê±£¬ $\kappa^s(AQ_n,C_N) = \lceil\frac{2n-1}{N}\rceil$¡£\\
+µ±$n \geq 3$ÇÒ$3 \leq N \leq 2n-1$Ê±£¬ÓĞ$\kappa^s(AQ_n,C_N) = \lceil\frac{2n-1}{N}\rceil$¡£\\
 \end{thm}
 
-ÏÂÃæ£¬ÎÒÃÇ½«ÌÖÂÛ$\kappa(AQ_n,C_3)$ºÍ$\kappa(AQ_n,C_N)$£¬ÆäÖĞ$4 \leq N \leq 2n-1$¡£
+ÏÂÃæ£¬ÎÒÃÇ½«ÌÖÂÛ¹ÊÕÏ½á¹¹Îª$C_3$Ê±£¬$AQ_n$µÄ½á¹¹Á¬Í¨¶È$\kappa(AQ_n,C_3)$¡£
 
-\subsection{$\kappa(AQ_n,C_3)$}
+%\subsection{$\kappa(AQ_n,C_3)$}
 
 \begin{lem}
 \label{C_3<=}
-µ±$n \geq 6$Ê±£¬$\kappa(AQ_n,C_3) \leq n-1$¡£
+µ±$n \geq 6$Ê±£¬ÓĞ$\kappa(AQ_n,C_3) \leq n-1$¡£
 \end{lem}
 
 \begin{proof}
 Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸öÔªËØ¡£ÎÒÃÇÉè
 \begin{flushleft}
-$S_1=\{\{u^1,u^2,\bar{u}^2\}\}$£¬
+$S_1=\{u^1,u^2,\bar{u}^2\}$£¬
 
 $S_2=\{\{u^i,\bar{u}^i,(u^i)^{i-1}\}\mid 3\leq i \leq n\}$¡£
 \end{flushleft}
 
-ÏÔÈ»£¬$S_1$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$C_3$Í¬¹¹¡£µ±$3\leq i \leq n$Ê±£¬$\{\{u^i,\bar{u}^i\},
-\{\bar{u}^i,(u^i)^{i-1}\},\\\{(u^i)^{i-1},u^i\}\} \subseteq E(AQ_n)$¡£Òò´Ë£¬$S=S_1\cup S_2$ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$C_3$ Í¬¹¹ÇÒ$|S|$ = $n-1$¡£Éè$Y(S)=\cup_{f \in S}f$¡£ÒòÎª$AQ_n-Y(S)$ÊÇ²»Á¬Í¨µÄÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§ÊÇ
-\{$u$\}£¬ËùÒÔ$\kappa(AQ_n,C_3)$ $\leq$ $n-1$¡£
+ÏÔÈ»£¬$S_1$ÖĞµÄÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼Óë$C_3$Í¬¹¹¡£µ±$3\leq i \leq n$Ê±£¬$\{\{u^i,\bar{u}^i\},
+\{\bar{u}^i,(u^i)^{i-1}\},\\\{(u^i)^{i-1},u^i\}\} \subset E(AQ_n)$¡£Òò´Ë£¬$S=S_1\cup S_2$ ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼Óë$C_3$Í¬¹¹ÇÒ$|S|$ = $n-1$¡£Éè$Y(S)=\cup_{f \in S}f$£¬ÒòÎª$AQ_n-Y(S)$ ÊÇ²»Á¬Í¨µÄÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§
+ÊÇ\{$u$\}£¬ËùÒÔ$\kappa(AQ_n,C_3)$ $\leq$ $n-1$¡£
 \end{proof}
 
 \begin{lem}
 \label{min_C_3}
-µ±$n \geq 6$Ê±£¬Éè$F_n$ÊÇ$AQ_n$µÄÒ»¸ö$C_3$-½á¹¹¼¯¡£Èç¹û$AQ_n - V(F_n)$´æÔÚÒ»¸ö¹ÂÁ¢µÄ¶¥µã£¬ÄÇÃ´$|F_n|\geq n-1$¡£
+µ±$n \geq 6$Ê±£¬Éè$F_n$ÊÇ$AQ_n$µÄÒ»¸ö$C_3$-½á¹¹¼¯¡£Èç¹û$AQ_n - V(F_n)$ÖĞ´æÔÚÒ»¸ö¹ÂÁ¢µÄ¶¥µã£¬ÄÇÃ´$|F_n|\geq n-1$¡£
 \end{lem}
 
 \begin{proof}
-Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£ÎÒÃÇÉè$W=\{x \mid (x,u)\textnormal{ÊÇÒ»¸ö³¬Á¢·½Ìå±ß}, x \in V(G)\}$ºÍ
-$Z=\{y \mid (y,u)\textnormal{ÊÇÒ»¸ö²¹±ß}, y \in V(G)\}$¡£ÏÔÈ»£¬$|W|=n$£¬$|Z|=n-1$¡£
-¸ù¾İĞÔÖÊ\ref{hypercube_edge}ºÍĞÔÖÊ\ref{complement_edge}£¬
-$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄÈı¸ö¶¥µã£¬¼´$\bar{u}^i$¡¢$u^{i+1}$ºÍ$\bar{u}^{i+1}$£¬ÆäÖĞ$1 \leq i \leq n-1$¡£
+Éè$u$ÊÇ$AQ_n$ÖĞµÄÈÎÒâÒ»¸ö¶¥µã¡£ÎÒÃÇÉè$W=\{x \mid (x,u)\textnormal{ÊÇÒ»Ìõ³¬Á¢·½Ìå±ß}, x \in V(G)\}$ÇÒ
+$Z=\{y \mid (y,u)\textnormal{ÊÇÒ»Ìõ²¹±ß}, y \in V(G)\}$¡£ÏÔÈ»£¬$|W|=n$ÇÒ$|Z|=n-1$¡£
+¸ù¾İÒıÀí\ref{hypercube_edge}ºÍÒıÀí\ref{complement_edge}£¬
+$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄÈı¸ö¶¥µã£¬¼´$\bar{u}^i$£¬$u^{i+1}$ºÍ$\bar{u}^{i+1}$£¬ÆäÖĞ$1 \leq i \leq n-1$¡£
 ÒòÎª$\{(\bar{u}^i,u^{i+1}),(\bar{u}^i,\bar{u}^{i+1}),(u^{i+1},\bar{u}^{i+1})\} \subseteq E(AQ_n)$£¬
-ËùÒÔ$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\}$µÄµ¼³ö×ÓÍ¼ºÍ$C_3$Í¬¹¹¡£
-ÎÒÃÇÉè $B=\{b_i\mid b_i\in F_n \textnormal{ÇÒ} \{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i) \cap N(u)\}$¡£
+ËùÒÔ$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\}$µÄµ¼³ö×ÓÍ¼Óë$C_3$Í¬¹¹¡£
+ÎÒÃÇÉè $B=\{b_i\mid b_i\in F_n \textnormal{ÇÒ} \{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq \{V(b_i) \cap N(u)\}$¡£
 ÒòÎªÃ¿¸ö$V(b_i)$°üº¬$Z$ÖĞµÄÁ½¸ö¶¥µãºÍ$W$ÖĞµÄÒ»¸ö¶¥µã£¬ËùÒÔ$|B|<\lfloor\frac{2n-1}{3}\rfloor$¡£
 ÏÂÃæ£¬ÎÒÃÇ½«¸ù¾İ$|B|$µÄÖµÌÖÂÛÏÂÃæ¼¸ÖÖÇé¿ö£º
 
-\textbf{ÇéĞÎ1.} $|B|=0$¡£ÒòÎª$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄ$4$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq \lceil \frac{2n-1}{2} \rceil$¡£
+\textbf{ÇéĞÎ1.} $|B|=0$¡£ÒòÎª$F_n$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)$ÖĞµÄ2¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq \lceil \frac{2n-1}{2} \rceil$¡£
 
-\textbf{ÇéĞÎ2.} $|B|=1$¡£Éè$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$£¬ÆäÖĞ$1 \leq i \leq n-1$¡£ÒòÎª$F_n-B$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)$ÖĞµÄËÄ¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 1+\lceil \frac{2n-4}{2} \rceil= n-1$¡£
+\textbf{ÇéĞÎ2.} $|B|=1$¡£Éè$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$£¬ÆäÖĞ$1 \leq i \leq n-1$¡£ÒòÎª$F_n-B$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)$ÖĞµÄ2¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 1+\lceil \frac{2n-4}{2} \rceil= n-1$¡£
 
 \textbf{ÇéĞÎ3.} $|B|=2$¡£Éè$\{\bar{u}^i,u^{i+1},\bar{u}^{i+1}\} \subseteq V(b_i)$£¬
 $\{\bar{u}^j,u^{j+1},\bar{u}^{j+1}\} \subseteq V(b_j)$£¬ÆäÖĞ$1 \leq i,j \leq n-1$ÇÒ $|i-j|\geq 2$¡£²»Ê§Ò»°ãĞÔ£¬ÎÒÃÇÉè$j>i$¡£
 
-\textbf{ÇéĞÎ3.1.} $j-i=2$¡£ÄÇÃ´$\{\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+2},u^{i+3},\bar{u}^{i+3}\}$¡£¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬¶¥µã$u^{i+2}$²»ºÍ$N(u)-V(B)$ÖĞµÄ¶¥µãÁÚ½Ó¡£Òò´Ë£¬´æÔÚÒ»¸öÔªËØ$a\in F_n-B$Ê¹µÃ$u^{i+2} \in V(a)$ÇÒ$|V(a) \cap \{N(u)-V(B)\}|= 1$¡£ÒòÎª$F-B-\{a\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a)$ÖĞµÄ$2$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+\lceil\frac{2n-8}{2}\rceil=n-1$¡£
+\textbf{ÇéĞÎ3.1.} $j-i=2$¡£ÄÇÃ´$\{\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+2},u^{i+3},\bar{u}^{i+3}\}$¡£¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬¶¥µã$u^{i+2}$²»Óë$N(u)-V(B)$ ÖĞµÄÈÎÒ»¶¥µãÁÚ½Ó¡£Òò´Ë£¬´æÔÚÒ»¸öÔªËØ$a\in F_n-B$Ê¹µÃ$u^{i+2} \in V(a)$ÇÒ$|V(a) \cap \{N(u)-V(B)\}|= 1$¡£ÒòÎª$F-B-\{a\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a)$ÖĞµÄ$2$¸ö¶¥µã£¬ËùÒÔ$|F_n| \geq 2+1+\lceil\frac{2n-8}{2}\rceil=n-1$¡£
 
 \textbf{ÇéĞÎ3.2.} $j-i=3$¡£ÄÇÃ´$\{\bar{u}^j,u^{j+1},\bar{u}^{j+1}\}= \{\bar{u}^{i+3},u^{i+4},\bar{u}^{i+4}\}$¡£
-½ÓÏÂÀ´£¬ÎÒÃÇ½«¸ù¾İ$F_n-B$ÖĞ°üº¬Èı¸ö¶¥µã$u^{i+2}$¡¢$\bar{u}^{i+2}$ºÍ$u^{i+3}$µÄÔªËØ¸öÊıÀ´ÌÖÂÛÏÂÃæ¼¸ÖÖÇé¿ö¡£ÎÒÃÇÓÃ$S$À´±íÊ¾ÕâÑùµÄÔªËØ¸öÊı¡£
+½ÓÏÂÀ´£¬ÎÒÃÇ½«¸ù¾İ$F_n-B$ÖĞ°üº¬Èı¸ö¶¥µã$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$µÄÔªËØ¸öÊıÀ´ÌÖÂÛÏÂÃæ¼¸ÖÖÇé¿ö¡£ÎÒÃÇÓÃ$t$À´±íÊ¾ÕâÑùµÄÔªËØ¸öÊı¡£
 
-\textbf{ÇéĞÎ3.2.1.} $S=3$¡£ÄÇÃ´ÔÚ$N(u)-V(B)$ÖĞÓĞ$3$¸öÔªËØ·Ö±ğ°üº¬$3$¸ö¶¥µã$u^{i+2}$¡¢$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄÒ»¸ö¡£¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬¶¥µã$u^{i+2}$ ²»Óë $N(u)-V(B)-\{\bar{u}^{i+2}$,$u^{i+3}\}$ÖĞµÄ¶¥µãÏàÁ¬£¬ËùÒÔ´æÔÚÒ»¸öÔªËØ$a_1 \in F_n-B$ Ê¹µÃ$u^{i+2} \in V(a_1)$ÇÒ$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2}$,$u^{i+3}\}\}|= 1$¡£¶ÔÓÚ$\bar{u}^{i+2}$ºÍ$u^{i+3}$µÄÇé¿ö£¬Ö¤Ã÷ºÍ¶¥µã$u^{i+2}$µÄÇéĞÎÀàËÆÇÒÎÒÃÇÉè$\bar{u}^{i+2}\in a_2$, $u^{i+3}\in a_3$¡£ÒòÎª$F_n-B-\{a_1,a_2,a_3\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)-V(a_3)$ÖĞµÄ$2$ ¸öÔªËØ£¬ËùÒÔ$|F_n| \geq 2+3+\lceil\frac{2n-10}{2}\rceil=n$¡£
+\textbf{ÇéĞÎ3.2.1.} $t=3$¡£ÄÇÃ´ÔÚ$N(u)-V(B)$ÖĞÓĞ$3$¸öÔªËØ·Ö±ğ°üº¬¶¥µã$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$
+ÖĞµÄ¸÷Ò»¸ö¡£¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬¶¥µã$u^{i+2}$²»Óë$N(u)-V(B)-\{\bar{u}^{i+2}$£¬$u^{i+3}\}$ÖĞµÄÈÎºÎ¶¥µãÏàÁÚ£¬ËùÒÔ´æÔÚÒ»¸öÔªËØ$a_1 \in F_n-B$£¬Ê¹µÃ$u^{i+2} \in V(a_1)$ÇÒ$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2}$,$u^{i+3}\}\}|= 1$¡£¶ÔÓÚ$\bar{u}^{i+2}$ºÍ$u^{i+3}$µÄÇé¿ö£¬Ö¤Ã÷Óë¶¥µã$u^{i+2}$µÄÇéĞÎÀàËÆ¡£½øÒ»²½£¬ÎÒÃÇÉè$\bar{u}^{i+2}\in a_2$, $u^{i+3}\in a_3$¡£ÒòÎª$F_n-B-\{a_1,a_2,a_3\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)-V(a_3)$ÖĞµÄ$2$¸öÔªËØ£¬ËùÒÔ$|F_n| \geq 2+3+\lceil\frac{2n-10}{2}\rceil=n$¡£
 
-\textbf{ÇéĞÎ3.2.2}. $S=2$¡£ÄÇÃ´ÔÚ$N(u)-V(B)$ÖĞ´æÔÚ$2$ ¸öÔªËØ£¬ÆäÖĞÒ»¸öÔªËØ°üº¬$u^{i+2}$¡¢$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄÒ»¸ö¶¥µã£¬ÁíÒ»¸öÔªËØ°üº¬ÁíÍâ$2$¸ö¶¥µã¡£ÎÒÃÇ¼ÙÉè$a_1$ °üº¬$u^{i+2}$¡¢$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄÒ»¸ö¶¥µã£¬$a_2$°üº¬ÁíÍâ$2$¸ö¶¥µã¡£
+\textbf{ÇéĞÎ3.2.2}. $t=2$¡£ÄÇÃ´ÔÚ$N(u)-V(B)$ÖĞ´æÔÚ$2$ ¸öÔªËØ£¬ÆäÖĞÒ»¸öÔªËØ°üº¬$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄÒ»¸ö¶¥µã£¬ÁíÒ»¸öÔªËØ°üº¬ÁíÍâ$2$¸ö¶¥µã¡£²»Ê§Ò»°ãĞÔ£¬ÎÒÃÇ¼ÙÉè$a_1$°üº¬$u^{i+2}$£¬$\bar{u}^{i+2}$ºÍ$u^{i+3}$ÖĞµÄÒ»¸ö¶¥µã£¬$a_2$°üº¬ÁíÍâ$2$¸ö¶¥µã¡£
 
-\textbf{ÇéĞÎ3.2.2.1.} $u^{i+2}\in V(a_1)$ºÍ$\{\bar{u}^{i+2}, u^{i+3}\} \subseteq V(a_2)$¡£ ÀàËÆÓÚÇéĞÎ3.2.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\}|=1$¡£¶¥µã$\bar{u}^{i+2}$»ò$u^{i+3}$²»Óë$N(u)-V(B)-\{u^{i+2}\}$ºÍ$\{\bar{u}^{i+2},u^{i+3}\} \in E(AQ_n)$ÖĞµÄ¶¥µãÏàÁ¬½Ó£¬ÇÒ $\{\bar{u}^{i+2},u^{i+3}\} \subseteq a_2$ºÍ$|V(a_2) \cap \{N(u)-V(B)-\{u^{i+2}\}\}|=2$¡£ÒòÎª$F_n-B-\{a_1, a_2\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)$ÖĞµÄ$2$¸ö¶¥µã£¬ÄÇÃ´$|F_n| \geq 2+1+1+\lceil\frac{2n-10}{2}\rceil=n-1$¡£¶ÔÓÚ$u^{i+3} \in V(a_1)$ºÍ$\{\bar{u}^{i+2}$ $u^{i+2}\} \subseteq V(a_2)$ÇéĞÎ£¬Ö¤Ã÷ÀàËÆ£¬ÔÚ´Ë²»ÔÙ×¸Êö¡£
+\textbf{ÇéĞÎ3.2.2.1.} $u^{i+2}\in V(a_1)$ºÍ$\{\bar{u}^{i+2}, u^{i+3}\} \subseteq V(a_2)$¡£ ÀàËÆÓÚÇéĞÎ3.2.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|V(a_1) \cap \{N(u)-V(B)-\{\bar{u}^{i+2},u^{i+3}\}\}|=1$¡£ ¶¥µã$\bar{u}^{i+2}$»ò$u^{i+3}$²»Óë$N(u)-V(B)-\{u^{i+2}\}$ºÍ$\{\bar{u}^{i+2},u^{i+3}\} \in E(AQ_n)$ÖĞµÄÈÎºÎ¶¥µãÏàÁÚ£¬ÇÒ$\{\bar{u}^{i+2},u^{i+3}\} \subseteq a_2$ºÍ$|V(a_2) \cap \{N(u)-V(B)-\{u^{i+2}\}\}|=2$¡£ÒòÎª$F_n-B-\{a_1, a_2\}$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬$N(u)-V(B)-V(a_1)-V(a_2)$ÖĞµÄ$2$¸ö¶¥µã£¬ÄÇÃ´$|F_n| \geq 2+1+1+\lceil\frac{2n-10}{2}\rceil=n-1$¡£¶ÔÓÚ$u^{i+3} \in V(a_1)$ºÍ$\{\bar{u}^{i+2}$ $u^{i+2}\} \subseteq V(a_2)$µÄÇéĞÎ£¬Ö¤Ã÷ÀàËÆ£¬ÔÚ´Ë²»ÔÙ×¸Êö¡£
 
-\textbf{ÇéĞÎ3.2.2.2.} $\bar{u}^{i+2} \in V(a_1)$ºÍ$\{u^{i+2},u^{i+3}\} \subseteq V(a_2)$¡£ ÒòÎª$\{u^{i+2},u^{i+3}\} \notin E(AQ_n)$£¬ËùÒÔÕâÖÖÇéĞÎ²»´æÔÚ¡£
+\textbf{ÇéĞÎ3.2.2.2.} $\bar{u}^{i+2} \in V(a_1)$ÇÒ$(u^{i+2},u^{i+3}) \subseteq V(a_2)$¡£ ÒòÎª$(u^{i+2},u^{i+3}) \notin E(AQ_n)$£¬ËùÒÔÕâÖÖÇéĞÎ²»´æÔÚ¡£
 
-\textbf{ÇéĞÎ3.2.3.} $S=1$¡£ÒòÎª$\{u^{i+2},u^{i+3}\} \notin E(AQ_n)$¡£ËùÒÔÕâÖÖÇéĞÎ²»´æÔÚ¡£
+\textbf{ÇéĞÎ3.2.3.} $t=1$¡£ÒòÎª$(u^{i+2},u^{i+3}) \notin E(AQ_n)$¡£ËùÒÔÕâÖÖÇéĞÎ²»´æÔÚ¡£
 
-\textbf{ÇéĞÎ3.3.} $j-i \geq 4 $¡£ÎÒÃÇÉè$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$¡£ ÎÒÃÇ½«¼ÆËãÔÚ$F_n-B$ÖĞ°üº¬$U_{ij}$ ÔªËØµÄ¸öÊı¡£ÏÔÈ»£¬$5 \leq |U| \leq 2n-7$¡£ÒòÎªÃ¿¸öÔªËØ×î¶à°üº¬$F_n-B$ÖĞ$N(u)-V(B)$µÄ$2$¸ö¶¥µãÇÒ$U \equiv 1$(Ä£2)£¬ÀàËÆÓÚÇéĞÎ 3.2.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|F_n| \geq 2+1+\lceil\frac{2n-8}{2}\rceil=n-1$¡£
+\textbf{ÇéĞÎ3.3.} $j-i \geq 4 $¡£ÎÒÃÇÉè$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$¡£ ÎÒÃÇ½«¼ÆËãÔÚ$F_n-B$ÖĞ°üº¬$U_{ij}$ ÔªËØµÄ¸öÊı¡£ÏÔÈ»£¬$5 \leq |U| \leq 2n-7$¡£ÒòÎªÃ¿¸öÔªËØ×î¶à°üº¬$F_n-B$ÖĞ$N(u)-V(B)$µÄ$2$¸ö¶¥µãÇÒ$|U|($Ä£$2)=1$£¬ÀàËÆÓÚÇéĞÎ3.2.1ÖĞµÄÌÖÂÛ£¬ÎÒÃÇÓĞ$|F_n| \geq 2+1+\lceil\frac{2n-8}{2}\rceil=n-1$¡£
 
-\textbf{ÇéĞÎ4.} $|B| \geq 3$¡£Èç¹û$b_i,b_j \in B$ÇÒ²»´æÔÚ$b_k \in B(i<k<j)$£¬ÎÒÃÇÉè$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$¡£¸ù¾İÇéĞÎ3µÄÌÖÂÛ£¬°üº¬$F_n-B$ÖĞµÄ$U_{ij}$ËùÓĞ¶¥µãµÄ×îÉÙµÄÔªËØ¸öÊıÊÇ$\lceil\frac{|U_{ij}|}{2}\rceil$¡£Òò´Ë£¬$|F_n| \geq |B|+(|B|-1)+\lceil\frac{2n-1-3\times|B|-(|B|-1)}{2}\rceil=n-1$¡£
+\textbf{ÇéĞÎ4.} $|B| \geq 3$¡£Èç¹û$b_i,b_j \in B$ÇÒ²»´æÔÚ$b_k \in B(i<k<j)$£¬ÎÒÃÇÉè$U_{ij}=\{u^{i+2},\bar{u}^{i+2},\ldots,u^{j-1}\}$¡£ ¸ù¾İÇéĞÎ3µÄÌÖÂÛ£¬$F_n-B$ÖĞ°üº¬$U_{ij}$ ÖĞËùÓĞ¶¥µãµÄ×îÉÙµÄÔªËØ¸öÊıÊÇ$\lceil\frac{|U_{ij}|}{2}\rceil$¡£Òò´Ë£¬$|F_n| \geq |B|+(|B|-1)+\lceil\frac{2n-1-3\times|B|-(|B|-1)}{2}\rceil \geq n-1$¡£
 
 ËùÒÔÒıÀí³ÉÁ¢¡£
 \end{proof}
 
 \begin{lem}
 \label{C_3>=}
-µ±$n \geq 6$Ê±£¬$\kappa(AQ_n,C_3) \geq n-1$¡£
+µ±$n \geq 6$Ê±£¬ÓĞ$\kappa(AQ_n,C_3) \geq n-1$¡£
 \end{lem}
 
 \begin{proof}
-ÎÒÃÇ½«ÓÃ·´Ö¤·¨À´Ö¤Ã÷Õâ¸öÒıÀí¡£Éè$F_n^*$ÊÇ$AQ_n$ÖĞµÄÒ»¸ö$C_3$- ½á¹¹¼¯ÇÒ
+ÎÒÃÇ½«ÓÃ·´Ö¤·¨À´Ö¤Ã÷Õâ¸öÒıÀí¡£Éè$F_n^*$ÊÇ$AQ_n$ÖĞµÄÒ»¸ö$C_3$-½á¹¹¼¯ÇÒ
 $|F_n^*| \leq n-2$¡£Èç¹û$AQ_n-V(F_n^*)$ÊÇ²»Á¬Í¨µÄ£¬ÄÇÃ´ÎÒÃÇÉè$R$ÊÇ$AQ_n-V(F_n^*)$ÖĞµÄÒ»¸ö×îĞ¡µÄ
-Á¬Í¨·ÖÖ§ÇÒ $|V(F_n^*)| \leq 3\times(n-2) = 3n-6$¡£
-¸ù¾İÒıÀí\ref{1_extraconnectivity}£¬¶ÔÓÚ$n \geq 6$£¬ÎÒÃÇÓĞ$3n-6 < 4n-8$¡£
+Á¬Í¨·ÖÖ§ÇÒ$|V(F_n^*)| \leq 3\times(n-2) = 3n-6$¡£
+¸ù¾İÒıÀí\ref{1_extraconnectivity}£¬¶ÔÓÚ$n \geq 6$£¬ÎÒÃÇÓĞ$3n-6 < 4n-8$£¬
 Òò´Ë$|V(R)|=1$¡£´ËÍâ£¬ÎÒÃÇ¼ÙÉè¶¥µã$u \in V(R)$£¬
 ¸ù¾İÒıÀí\ref{min_C_3}£¬$|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$£¬
 ÕâÒâÎ¶×ÅÔÚ$AQ_n-V(F_n^*)$ÖĞµÄ$u$ÖÁÉÙ
@@ -744,7 +757,7 @@ $|F_n^*| \leq n-2$¡£Èç¹û$AQ_n-V(F_n^*)$ÊÇ²»Á¬Í¨µÄ£¬ÄÇÃ´ÎÒÃÇÉè$R$ÊÇ$AQ_n-V(F_n^*)
 ¸ù¾İÒıÀí\ref{C_3<=}ºÍÒıÀí\ref{C_3>=}£¬ÎÒÃÇÓĞÏÂÃæµÄ¶¨Àí¡£
 
 \begin{thm}
-µ±$n \geq 6$Ê±£¬$\kappa(AQ_n,C_3)=n-1$¡£
+µ±$n \geq 6$Ê±£¬ÓĞ$\kappa(AQ_n,C_3)=n-1$¡£
 \end{thm}
 %
 %\begin{proof}
@@ -765,11 +778,12 @@ $|F_n^*| \leq n-2$¡£Èç¹û$AQ_n-V(F_n^*)$ÊÇ²»Á¬Í¨µÄ£¬ÄÇÃ´ÎÒÃÇÉè$R$ÊÇ$AQ_n-V(F_n^*)
 %\end{thm}
 
 %\subsection{$\kappa(AQ_n,C_N )$ \textnormal{ÆäÖĞ} $4 \leq N \leq 2n-1$}
-\subsection{$\kappa(AQ_n,C_N) ,\quad 4 \leq N \leq 2n-1$}
+%\subsection{$\kappa(AQ_n,C_N)$£¬ÆäÖĞ$4 \leq N \leq 2n-1$}
+ÏÂÃæÎÒÃÇÖ¤Ã÷µ±$4 \leq N \leq 2n-1$Ê±£¬$AQ_n$µÄ½á¹¹Á¬Í¨¶È$\kappa(AQ_n,C_N)$¡£
 
 \begin{lem}
 \label{C_N<=}
-µ±$n \geq 6$ºÍ$4 \leq N \leq 2n-1$Ê±£¬$\kappa(AQ_n,C_N) \leq \lceil\frac{2n-1}{N-1}\rceil$¡£
+µ±$n \geq 6$ÇÒ$4 \leq N \leq 2n-1$Ê±£¬ÓĞ$\kappa(AQ_n,C_N) \leq \lceil\frac{2n-1}{N-1}\rceil$¡£
 \end{lem}
 
 \begin{proof}
@@ -784,10 +798,10 @@ v^{[(i+1)(N-1)]},
 (\overline{v^{[(i+1)(N-1)]}})^{\lfloor\frac{(N-1)i+1}{2}\rfloor+1}
 \}\mid 0 \leq i < \lfloor\frac{2n-1}{N-1}\rfloor\}$¡£
 
-\textbf{ÇéĞÎ1.1.} $(2n-1)\equiv1$(Ä£$(N-1)$)¡£
+\textbf{ÇéĞÎ1.1.} $(2n-1)($Ä£$(N-1))=1$¡£
 
 \textbf{ÇéĞÎ1.1.1.} $N \leq 2n-3$¡£Éè\\
-$S_2=\{\{
+$S_2=\{
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2,
@@ -796,10 +810,10 @@ v^{[2n-1]},
 (v^{[2n-1]})^{\lfloor\frac{N}{2}\rfloor},
 (\overline{v^{[2n-1]}})^{\lfloor\frac{N}{2}\rfloor},
 (v^{[2n-1]})^{\lceil\frac{N}{2}\rceil}
-\}\}$¡£
+\}$¡£
 
 \textbf{ÇéĞÎ1.1.2.} $N = 2n-1$¡£Éè\\
-$S_2=\{\{
+$S_2=\{
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2,
@@ -812,10 +826,11 @@ v^{[2n-1]},
 (\overline{(\overline{v^{[2n-1]}})^{n-2}})^{n-4},
 ((\overline{v^{[2n-1]}})^{n-2})^{n-3},
 (\overline{(\overline{v^{[2n-1]}})^{n-2}})^{n-3}
-\}\}$¡£
+\}$¡£
 
-\textbf{ÇéĞÎ1.2.} $(2n-1)\equiv3$(Ä£$(N-1)$)¡£Éè\\
-$S_2=\{\{
+%\textbf{ÇéĞÎ1.2.} $(2n-1)\equiv3$(Ä£$(N-1)$)¡£Éè\\
+\textbf{ÇéĞÎ1.2.} $(2n-1)($Ä£$(N-1))=3$¡£Éè\\
+$S_2=\{
 v^{[2n-1]},
 v^{[2n-3]},
 v^{[2n-2]},
@@ -825,10 +840,11 @@ v^{[2n-2]},
 \ldots,
 (v^{[2n-2]})^{n-2},\\
 (\overline{v^{[2n-2]}})^{n-2}
-\}\}$¡£
+\}$¡£
 
-\textbf{ÇéĞÎ1.3.} $(2n-1)>3$(Ä£$(N-1)$)¡£Éè\\
-$S_2=\{\{
+%\textbf{ÇéĞÎ1.3.} $(2n-1)>3$(Ä£$(N-1)$)¡£Éè\\
+\textbf{ÇéĞÎ1.3.} $(2n-1)($Ä£$(N-1))>3$¡£Éè\\
+$S_2=\{
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
 \ldots,
@@ -841,7 +857,7 @@ v^{[2n-2]},\\
 (\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+3-\frac{N-(2n-1-{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1))}{2}},\\
 \ldots,
 (\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
-\}\}$¡£
+\}$¡£
 
 \textbf{ÇéĞÎ2.} $N$ÊÇÅ¼Êı¡£Éè\\\\
 $
@@ -852,14 +868,14 @@ v^{[3i+1]},
 v^{[3i+3]},
 v^{[3i+2]},
 (v^{[3i+1]})^{\lfloor\frac{3i+1}{2}\rfloor+3}\}
-\mid {0\leq i<\lfloor\frac{2n-1}{N-1}\rfloor\textnormal{ºÍ}i \equiv0(\textnormal{Ä£ }2)\textnormal{ºÍ}N=4}\},\\
+\mid {0\leq i<\lfloor\frac{2n-1}{N-1}\rfloor\textnormal{ÇÒ}i(\textnormal{Ä£}2)=0\textnormal{ºÍ}N=4}\},\\
 \{\{
 v^{[(N-1)i+1]},
 v^{[(N-1)i+2]},
 \ldots,
 v^{[(i+1)(N-1)]},
 (\overline{{v^{[(i+1)(N-1)]}}})^{\lfloor\frac{(N-1)i+1}{2}\rfloor+1}\}
-\mid 0\leq i<\lfloor\frac{2n-1}{N-1}\rfloor\textnormal{ºÍ}\\i=0(\textnormal{Ä£ }2)\textnormal{ºÍ}N\neq4\}.\\
+\mid 0\leq i<\lfloor\frac{2n-1}{N-1}\rfloor\textnormal{ÇÒ}\\i(\textnormal{Ä£}2)=0\textnormal{ºÍ}N\neq4\}.\\
 \end{array}\right.
 $\\\\
 $S_2=\{\{
@@ -868,13 +884,13 @@ v^{[(N-1)i+2]},
 \ldots,
 v^{[(i+1)(N-1)]},
 ({v^{[(i+1)(N-1)]}})^{\lfloor\frac{(N-1)i+1}{2}\rfloor+1}
-\}\mid 0\leq i< \lfloor\frac{2n-1}{N-1}\rfloor$ºÍ$i=1$(Ä£2)$\}$¡£
+\}\mid 0\leq i< \lfloor\frac{2n-1}{N-1}\rfloor$ÇÒ\\$i($Ä£$2)=1\}$¡£
 
-Èç¹û$(2n-1)  \equiv 0$ (Ä£$(N-1)$)£¬ÄÇÃ´$S_3=\emptyset$£»·ñÔòµÄ»°£¬ÎÒÃÇ½«ÌÖÂÛÏÂÃæ¼¸ÖÖÇéĞÎ£º
+Èç¹û$(2n-1)($Ä£$(N-1))=0$£¬ÄÇÃ´$S_3=\emptyset$£»·ñÔò£¬ÎÒÃÇ½«ÌÖÂÛÏÂÃæ¼¸ÖÖÇéĞÎ£º
 
-\textbf{ÇéĞÎ2.1.}  $(2n-1)\equiv1$(Ä£$(N-1)$)¡£Éè\\
+\textbf{ÇéĞÎ2.1.}  $(2n-1)($Ä£$(N-1))=1$¡£Éè\\
 %´ËÊ±NµÄÈ¡ÖµÖ»ÄÜĞ¡ÓÚµÈÓÚn£¬N-1µÄÈ¡Öµ²»ÄÜµÈÓÚ2n-2£¬·ñÔòNÊÇÆæÊı£¬ÓëÇ°ÌáÌõ¼şÃ¬¶Ü
-$S_3=\{\{
+$S_3=\{
 v^{[2n-1]},
 (v^{[2n-1]})^1,
 (v^{[2n-1]})^2,
@@ -884,22 +900,22 @@ v^{[2n-1]},
 \ldots,
 (v^{[2n-1]})^{\frac{N}{2}},
 (\overline{v^{[2n-1]}})^{\frac{N}{2}}
-\}\}$¡£
+\}$¡£
 
-\textbf{ÇéĞÎ2.2.}  $(2n-1)\equiv2$(Ä£$(N-1)$)¡£
+\textbf{ÇéĞÎ2.2.}  $(2n-1)($Ä£$(N-1))=2$¡£
 
 \textbf{ÇéĞÎ2.2.1.}  $N < n$¡£Éè\\
-$S_3=\{\{
+$S_3=\{
 v^{[2n-1]},
 v^{[2n-2]},
 (v^{[2n-2]})^{n-1},
 ((v^{[2n-2]})^{n-1})^{n-2},
 \ldots,
 (((v^{[2n-2]})^{n-1})\ldots)^{n-(N-2)}
-\}\}$¡£
+\}$¡£
 
 \textbf{ÇéĞÎ2.2.2.}  $N = 2n-2$¡£Éè\\
-$S_3=\{\{
+$S_3=\{
 v^{[2n-1]},
 v^{[2n-2]},
 (v^{[2n-2]})^1,
@@ -911,11 +927,11 @@ v^{[2n-2]},
 (v^{[2n-2]})^{n-2},\\
 (\overline{(v^{[2n-2]}})^{n-2},
 (v^{[2n-2]})^{n-1}
-\}\}$¡£
+\}$¡£
 
 
-\textbf{ÇéĞÎ2.3.} $(2n-1)\equiv3$(Ä£$(N-1)$)¡£Éè\\
-$S_3=\{\{
+\textbf{ÇéĞÎ2.3.} $(2n-1)($Ä£$(N-1))=3$¡£Éè\\
+$S_3=\{
 v^{[2n-2)]},
 v^{[2n-3]},
 v^{[2n-1]},
@@ -923,12 +939,12 @@ v^{[2n-1]},
 (\overline{v^{[2n-1]}})^{3+n-N},
 \ldots,
 (\overline{v^{[2n-1]}})^{n-2}
-\}\}$¡£
+\}$¡£
 
-\textbf{ÇéĞÎ2.4.} $(2n-1)\equiv4$(Ä£$(N-1)$)¡£Éè
+\textbf{ÇéĞÎ2.4.} $(2n-1)($Ä£$(N-1))=4$¡£Éè
 
 \textbf{ÇéĞÎ2.4.1.}  $N < n$¡£Éè\\
-$S_3=\{\{
+$S_3=\{
 v^{[2n-4]},
 v^{[2n-3]},
 v^{[2n-1]},
@@ -937,10 +953,10 @@ v^{[2n-2]},
 (v^{[2n-2]})^{5+n-N},
 \ldots,
 (v^{[2n-2]})^{n-1}
-\}\}$¡£
+\}$¡£
 
 \textbf{ÇéĞÎ2.4.2.}  $N = 2n-4$¡£Éè\\
-$S_3=\{\{
+$S_3=\{
 v^{[2n-4]},
 v^{[2n-3]},
 v^{[2n-1]},
@@ -953,10 +969,10 @@ v^{[2n-2]},
 \ldots,\\
 (\overline{v^{[2n-2]}})^{n-2},
 (v^{[2n-2]})^{n-1}
-\}\}$¡£
+\}$¡£
 
-\textbf{ÇéĞÎ2.5.}  $(2n-1)$ÊÇÆæÊı(Ä£$(N-1)$)(³ıÁË1ºÍ3)¡£Éè\\
-$S_3=\{\{
+\textbf{ÇéĞÎ2.5.}  $(2n-1)$(Ä£$(N-1)$)ÊÇÆæÊı(³ıÁË1ºÍ3)¡£Éè\\
+$S_3=\{
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},\ldots,
 v^{[2n-3]},
@@ -966,12 +982,12 @@ v^{[2n-2]},\\
 (\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor-N+2n-\lfloor\frac{2n-1}{N-1}\rfloor(N-1)+2},\\
 \ldots,
 (\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
-\}\}$¡£
+\}$¡£
 
-\textbf{ÇéĞÎ2.6.}  $(2n-1)$ÊÇÅ¼Êı(Ä£$(N-1)$)(³ıÁË0£¬2ºÍ4)¡£Éè
+\textbf{ÇéĞÎ2.6.}  $(2n-1)$(Ä£$(N-1)$)ÊÇÅ¼Êı(³ıÁË0£¬2ºÍ4)¡£Éè
 
 \textbf{ÇéĞÎ2.6.1.}  $N < n$¡£Éè\\
-$S_3=\{\{
+$S_3=\{
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
 \ldots,
@@ -983,12 +999,12 @@ v^{[2n-2]},\\
 (\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor-N+2n-\lfloor\frac{2n-1}{N-1}\rfloor(N-1)+2},
 \ldots,\\
 (\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}
-\}\}$¡£
+\}$¡£
 
 \textbf{ÇéĞÎ2.6.2.}  $ n \leq N \leq 2n-6$¡£
 
 \textbf{ÇéĞÎ2.6.2.1.}  $ n = N -1$¡£Éè\\
-$S_3=\{\{
+$S_3=\{
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
 \ldots,
@@ -997,10 +1013,10 @@ v^{[2n-1]},
 v^{[2n-2]},
 (\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1},\\
 (v^{[2n-2]})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
-\}\}$¡£
+\}$¡£
 
 \textbf{ÇéĞÎ2.6.2.2.}  $ n \neq N -1$¡£Éè\\
-$S_3=\{\{
+$S_3=\{
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1]},
 v^{[{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+2]},
 \ldots,
@@ -1016,11 +1032,11 @@ v^{[2n-2]},\\
 ((\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-1},
 (\overline{(\overline{v^{[2n-2]}})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}})^{{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor}-1},\\
 (v^{[2n-2]})^{\lfloor\frac{{\lfloor\frac{2n-1}{N-1}\rfloor}(N-1)+1}{2}\rfloor+1}
-\}\}$¡£
+\}$¡£
 
-µ±$N$ÊÇÆæÊı»òÕß$(2n-1) \equiv 0$(Ä£$(N-1)$)Ê±£¬ÎÒÃÇÉè$S=S_1\cup S_2$£¬·ñÔò$S=S_1\cup S_2\cup S_3$¡£
-¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬ $S$ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$C_N$Í¬¹¹ÇÒ$|S|$ = $\lceil\frac{2n-1}{N-1}\rceil$¡£Éè$Y(S)=\cup_{f \in S}f$¡£
-ÒòÎª$AQ_n- Y(S)$ÊÇ²»Á¬Í¨µÄÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§ÊÇ\{$u$\}£¬ÄÇÃ´$\kappa(AQ_n,C_N)$ $\leq$ $\lceil\frac{2n-1}{N-1}\rceil$¡£
+µ±$N$ÊÇÆæÊı»òÕß$(2n-1)$(Ä£$(N-1)$)$=0$Ê±£¬ÎÒÃÇÉè$S=S_1\cup S_2$£¬·ñÔòÉè$S=S_1\cup S_2\cup S_3$¡£
+¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬$S$ÖĞÃ¿¸öÔªËØµÄµ¼³ö×ÓÍ¼ºÍ$C_N$Í¬¹¹ÇÒ$|S|$ = $\lceil\frac{2n-1}{N-1}\rceil$¡£Éè$Y(S)=\cup_{f \in S}f$£¬
+ÒòÎª$AQ_n- Y(S)$ÊÇ²»Á¬Í¨µÄÇÒËüµÄÒ»¸öÁ¬Í¨·ÖÖ§ÊÇÒ»¸öÆ½·²Í¼£¬ËùÒÔ$\kappa(AQ_n,C_N)$ $\leq$ $\lceil\frac{2n-1}{N-1}\rceil$¡£
 \end{proof}
 
 Í¼~\ref{C_5}Õ¹Ê¾ÁË$AQ_6$ÖĞµÄÒ»¸ö$C_5$½á¹¹¸î¡£
@@ -1034,26 +1050,26 @@ v^{[2n-2]},\\
 
 \begin{lem}
 \label{min_C_N}
-µ±$n \geq 6$ºÍ$4 \leq N \leq 2n-1$Ê±£¬Éè$F_n$ÊÇ$AQ_n$ÖĞµÄÒ»¸ö$C_N$-½á¹¹¼¯¡£
+µ±$n \geq 6$ÇÒ$4 \leq N \leq 2n-1$Ê±£¬Éè$F_n$ÊÇ$AQ_n$ÖĞµÄÒ»¸ö$C_N$- ½á¹¹¼¯¡£
 Èç¹û$AQ_n - V(F_n)$ÖĞ´æÔÚÒ»¸ö¹ÂÁ¢¶¥µã£¬ÄÇÃ´$|F_n|\geq \lceil\frac{2n-1}{N-1}\rceil$¡£
 \end{lem}
 
 \begin{proof}
-Éè$u$ÊÇ$AQ_n$ÖĞÈÎÒâÒ»¸ö¶¥µã¡£¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå¡¢ĞÔÖÊ\ref{hypercube_edge}ºÍĞÔÖÊ\ref{complement_edge}£¬$u$µÄÈÎÒâ$N$¸öÁÚ¾Ó¶¥µã¶¼²»ÄÜĞÎ³ÉÒ»¸ö$C_N$²¢ÇÒ$F$ÖĞµÄÃ¿¸öÔªËØ×î¶à°üº¬
-$N-1$¸ö$N(u)$ÖĞµÄ¶¥µã¡£Òò´Ë£¬$|F_n|\geq \lceil\frac{2n-1}{N-1}\rceil$¡£
+Éè$u$ÊÇ$AQ_n$ÖĞÈÎÒâÒ»¸ö¶¥µã¡£¸ù¾İÀ©Õ¹Á¢·½ÌåµÄ¶¨Òå£¬ÒıÀí\ref{hypercube_edge}ºÍÒıÀí\ref{complement_edge}£¬$u$µÄÈÎÒâ$N$¸öÁÚ¾Ó¶¥µã¶¼²»ÄÜĞÎ³ÉÒ»¸ö$C_N$²¢ÇÒ$F$ÖĞµÄÃ¿¸öÔªËØ×î¶à
+°üº¬$N-1$¸ö$N(u)$ÖĞµÄ¶¥µã¡£Òò´Ë£¬$|F_n|\geq \lceil\frac{2n-1}{N-1}\rceil$¡£
 \end{proof}
 
 \begin{lem}
 \label{C_N>=}
-µ±$n \geq 6$ºÍ$4 \leq N \leq 2n-1$Ê±£¬$\kappa(AQ_n,C_N) \geq \lceil\frac{2n-1}{N-1}\rceil$¡£
+µ±$n \geq 6$ÇÒ$4 \leq N \leq 2n-1$Ê±£¬ÓĞ$\kappa(AQ_n,C_N) \geq \lceil\frac{2n-1}{N-1}\rceil$¡£
 \end{lem}
 
 \begin{proof}
 ÎÒÃÇ½«Í¨¹ı·´Ö¤·¨À´Ö¤Ã÷Õâ¸öÒıÀí¡£Éè$F_n^*$ÊÇ$AQ_n$ÖĞµÄÒ»¸ö$C_N$-½á¹¹¼¯ÇÒ
-$|F_n|^* \leq \lceil\frac{2n-1}{N-1}\rceil-1$¡£Èç¹û$AQ_n-V(F_n^*)$ÊÇ²»Á¬Í¨µÄ£¬ÄÇÃ´ÎÒÃÇÉè$R$
-ÊÇ$AQ_n-V(F_n^*)$ÖĞµÄ×îĞ¡µÄÒ»¸öÁ¬Í¨·ÖÖ§¡£´ËÍâ$|V(F_n^*)| \leq N\times(\lceil\frac{2n-1}{N-1}\rceil-1)$¡£
-¸ù¾İÒıÀí\ref{1_extraconnectivity}£¬µ±$n \geq 6$Ê±£¬ÎÒÃÇÓĞ$N\times(\lceil\frac{2n-1}{N-1}\rceil-1) <4n-8$¡£
-Òò´Ë$|V(R)|=1$¡£½øÒ»²½µÄ£¬ÎÒÃÇ¼ÙÉè¶¥µã$u \in V(R)$¡£¸ù¾İÒıÀí\ref{min_C_N}£¬
+$|F_n|^* \leq \lceil\frac{2n-1}{N-1}\rceil-1$¡£Èç¹û$AQ_n-V(F_n^*)$ÊÇ²»Á¬Í¨µÄ£¬ÄÇÃ´ÎÒÃÇÉè
+$R$ÊÇ$AQ_n-V(F_n^*)$ÖĞµÄ×îĞ¡µÄÒ»¸öÁ¬Í¨·ÖÖ§ÇÒ$|V(F_n^*)| \leq N\times(\lceil\frac{2n-1}{N-1}\rceil-1)$¡£
+¸ù¾İÒıÀí\ref{1_extraconnectivity}£¬µ±$n \geq 6$Ê±£¬ÎÒÃÇÓĞ$N\times(\lceil\frac{2n-1}{N-1}\rceil-1) <4n-8$£¬
+Òò´Ë$|V(R)|=1$¡£½øÒ»²½£¬ÎÒÃÇ¼ÙÉè¶¥µã$u \in V(R)$¡£¸ù¾İÒıÀí\ref{min_C_N}£¬
 $|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$£¬ÕâÒâÎ¶×Å$AQ_n-V(F_n^*)$ÖĞµÄ¶¥µã$u$ÖÁÉÙ´æÔÚÒ»¸öÁÚ¾Ó¶¥µã¡£
 Òò´Ë£¬ÎÒÃÇÓĞ$|V(R)| \geq 2$£¬Ã¬¶Ü¡£ËùÒÔ$AQ_n-V(F_n^*)$ÊÇÁ¬Í¨µÄ£¬ÒıÀí³ÉÁ¢¡£
 \end{proof}
@@ -1061,7 +1077,7 @@ $|N(u) \cap V(F_n^*)| \leq 2n-2 < 2n-1$£¬ÕâÒâÎ¶×Å$AQ_n-V(F_n^*)$ÖĞµÄ¶¥µã$u$ÖÁÉÙ´
 ¸ù¾İÒıÀí\ref{C_N<=}ºÍÒıÀí\ref{C_N>=}£¬ÎÒÃÇÓĞÏÂÃæµÄ¶¨Àí¡£
 
 \begin{thm}
-µ±$n \geq 6$ºÍ$4 \leq N \leq 2n-1$Ê±£¬$\kappa(AQ_n,C_N)=\lceil\frac{2n-1}{N-1}\rceil$¡£
+µ±$n \geq 6$ÇÒ$4 \leq N \leq 2n-1$Ê±£¬ÓĞ$\kappa(AQ_n,C_N)=\lceil\frac{2n-1}{N-1}\rceil$¡£
 \end{thm}
 
 \section{À©Õ¹Á¢·½ÌåµÄÈİ´íÄÜÁ¦·ÖÎö}
@@ -1092,14 +1108,13 @@ $n$       &$\kappa(AQ_n)$  &$\kappa(AQ_n,K_{1,3})$  &$\kappa(AQ_n,K_{1,6})$ &$\k
 Òª´óµÃ¶à¡£ÓÈÆäµ±½á¹¹$H=K_{1,6}$Ê±£¬Ëæ×ÅÎ¬Êı$n$µÄ±ä´ó£¬¹ÊÕÏ½á¹¹$K_{1,6}$Ó°ÏìµÄ¶¥µãÊı½Ó½üÓÚ
 ´«Í³Á¬Í¨¶ÈµÄ$2$±¶¡£
 
-\section{$K_{1,M}$-½á¹¹Á¬Í¨¶ÈÏÂµÄÈİ´íÂ·ÓÉ}
+\section{$K_{1,M}$-×Ó½á¹¹Á¬Í¨¶ÈÏÂµÄÈİ´íÂ·ÓÉËã·¨}
 
-ÔÚ±¾½ÚÖĞ£¬ÎÒÃÇ½«¸ø³ö$K_{1,M}$-½á¹¹Á¬Í¨¶ÈÏÂµÄÈİ´íÂ·ÓÉËã·¨¡£Ïà¶ÔÓÚ½á¹¹$P_L$ºÍ$C_N$£¬$K_{1,M}$µÄ
-½á¹¹¸ü¾ßÓĞÆÕ±éĞÔºÍÊµ¼ÊÒâÒå¡£Òò´Ë£¬ÔÚÕâÀïÎÒÃÇ½«¸ø³ö$K_{1,6}$-×Ó½á¹¹Á¬Í¨¶ÈÏÂµÄÈİ´íÂ·ÓÉËã·¨¡£
-Í¬Ê±ÎÒÃÇ½«¸ø³öÏàÓ¦µÄËã·¨·ÖÎöÒÔ¼°Ä£ÄâÊµÑé¡£
-\subsection{$K_{1,M}$-½á¹¹Á¬Í¨¶ÈÏÂµÄÈİ´íÂ·ÓÉËã·¨}
+Ïà¶ÔÓÚ½á¹¹$P_L$ºÍ$C_N$£¬$K_{1,M}$µÄÖ±¾¶½ÏĞ¡£¬´Ó¶ø$K_{1,M}$µÄ½á¹¹¸ü¾ßÓĞÊµ¼ÊÒâÒå¡£Òò´ËÔÚ±¾½ÚÖĞ£¬ÎÒÃÇ½«¸ø³öÀ©Õ¹Á¢·½ÌåÔÚ$K_{1,M}$-×Ó½á¹¹Á¬Í¨¶ÈÏÂµÄÈİ´íÂ·ÓÉËã·¨¡£Í¬Ê±ÎÒÃÇ½«¸ø³öÏàÓ¦µÄËã·¨·ÖÎö¡£
+%ÒÔ¼°Ä£ÄâÊµÑé¡£
+%\subsection{$K_{1,M}$-½á¹¹Á¬Í¨¶ÈÏÂµÄÈİ´íÂ·ÓÉËã·¨}
 
-ChoudumµÈÈËÔÚ\upcite{Choudum2002}ÖĞ¸ø³öÁËÀ©Õ¹Á¢·½ÌåÖĞµÄÈÎÒâÁ½¸ö¶¥µã¼äµÄÂ·ÓÉËã·¨£¬ÒòÎªÎÒÃÇÒªÔÚºóÃæµÄ
+ChoudumµÈÈËÔÚ\cite{Choudum2002}ÖĞ¸ø³öÁËÀ©Õ¹Á¢·½ÌåÖĞÈÎÒâÁ½¸ö¶¥µã¼äµÄÂ·ÓÉËã·¨£¬ÒòÎªÎÒÃÇÒªÔÚºóÃæµÄ
 Èİ´íÂ·ÓÉËã·¨ÖĞµ÷ÓÃ¸ÃËã·¨£¬ËùÒÔÔÚ¸ø³öÈİ´íÂ·ÓÉËã·¨Ö®Ç°£¬ÎÒÃÇÏÈ¸ø³öÁ½¸ö¶¥µã¼äµÄÂ·ÓÉËã·¨£¬
 ²¢ÇÒÎÒÃÇ½«Õâ¸öËã·¨ÃüÃûÎªAQRouting¡£
 
@@ -1129,15 +1144,15 @@ ChoudumµÈÈËÔÚ\upcite{Choudum2002}ÖĞ¸ø³öÁËÀ©Õ¹Á¢·½ÌåÖĞµÄÈÎÒâÁ½¸ö¶¥µã¼äµÄÂ·ÓÉËã·¨£
 \end{breakablealgorithm}
 
 ÕâÀïµÄ$tag=u \bigoplus_2 v$±íÊ¾$u$ºÍ$v$µÄÃ¿Ò»¸ö¶ş½øÖÆÎ»Ïà¼Ó£¬È»ºó¶Ô$2$È¡Ä££¬$tag$ÊÇÒ»¸ö$n$ Î»µÄ
-¶ş½øÖÆ´®¡£ÀıÈç£¬$u=01001$£¬$v=11010$£¬Ôò$tag=10011$¡£
+¶ş½øÖÆ´®¡£ÀıÈç£¬$u=01001$£¬$v=11010$£¬Ôò$tag = u \bigoplus_2 v=10011$¡£
 
 ÒòÎªËã·¨AQRoutingÍ¨¹ıÑ­»·¶Ô¶¥µã$u$ºÍ¶¥µã$v$µÄÃ¿¸ö¶ş½øÖÆÎ»½øĞĞÔËËãÈ»ºó½øĞĞÏàÓ¦²Ù×÷£¬
 Òò´ËËã·¨AQRoutingµÄÊ±¼ä¸´ÔÓ¶ÈÊÇ$O(n)$¡£
 
 ÔÚ¸ø³öÀ©Õ¹Á¢·½ÌåÁ½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÈİ´íÂ·ÓÉËã·¨AQFRoutingÖ®Ç°£¬ÎÒÃÇÏÈ¸ø³öÁ½¸ö×ÓËã·¨
-AQMappingºÍAQBinding¡£Ëã·¨AQMappingÖ÷Òª»ùÓÚÀ©Õ¹Á¢·½ÌåµÄ¹¹Ôì·½Ê½¡¢ÒıÀí\ref{2nodes}ºÍÒıÀí\ref{3nodes}¡£
+AQMappingºÍAQBinding¡£Ëã·¨AQMappingÖ÷Òª»ùÓÚÀ©Õ¹Á¢·½ÌåµÄ¹¹Ôì·½Ê½£¬ÒıÀí\ref{2nodes}ºÍÒıÀí\ref{3nodes}¡£
 ¸ù¾İ¶¨Òå\ref{AugmentedCube1}£¬×ÓÍ¼$H$ÖĞµÄ¶¥µã$u$ÔÚ×ÓÍ¼$S$ÖĞÖ»ÓĞ$2$¸öÁÚ½Ó¶¥µã
-$u^i$ºÍ$\bar{u}^i$¡£Òò´ËËã·¨AQMappingµÄµÚ$2 \sim 3$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(1)$£»¶ø$u$ÔÚ$H$
+$u^i$ºÍ$\bar{u}^i$¡£Òò´ËËã·¨AQMappingµÄµÚ$2 \sim 3$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n)$£»¶ø$u$ÔÚ$H$
 ÖĞµÄ¶¥µã¸öÊıÎª$2n-3$£¬ÎÒÃÇ¿ÉÒÔºÜÈİÒ×µØµÃµ½Ëã·¨$5 \sim 9$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n)$£»
 $10 \sim 16$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£ËùÒÔ£¬Ëã·¨AQMappingµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£
 
@@ -1146,9 +1161,9 @@ $10 \sim 16$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£ËùÒÔ£¬Ëã·¨AQMappingµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡
 \label{AQMapping}
 \caption{\texttt{{AQMapping}}}
 \begin{algorithmic}[1]
-    \Require Ò»¸ö$n$-Î¬µÄÀ©Õ¹Á¢·½Ìå$AQ_n$µÄÁ½¸ö$(n-1)$-Î¬×ÓÍ¼$H$ºÍ$S$£¬
-    Ò»¸öÎŞ¹ÊÕÏ¶¥µã$u \in V(H)$£¬
-    Ò»¸ö¹ÊÕÏ¶¥µã¼¯$F\subset V(AQ_n)$ÇÒ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$¡£
+    \Require Ò»¸ö$n$-Î¬µÄÀ©Õ¹Á¢·½Ìå$AQ_n$µÄÁ½¸ö$(n-1)$-Î¬×ÓÍ¼$H$ºÍ$S$£»
+    Ò»¸ö¹ÊÕÏ¼¯ºÏ$F\subset V(AQ_n)$£¬Âú×ã¶ÔÓÚÈÎÒâÒ»¸öÔªËØ$x \in F$£¬$x \cong K_{1,M}$£¬ÆäÖĞ$1 \leq K \leq 6$£¬ÇÒ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$£»
+    Ò»¸öÎŞ¹ÊÕÏ¶¥µã$u \in V(H-F)$¡£
     \Ensure  Ò»Ìõ$AQ_n$ÖĞ´Ó¶¥µã$u$µ½×ÓÍ¼$S$µÄÎŞ¹ÊÕÏÂ·¾¶¡£
    %\Function{\texttt{AQMapping1}}{$u,G,F$}
 %   \For{ $v \in N_{S-F}(u)$ }
@@ -1156,7 +1171,7 @@ $10 \sim 16$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£ËùÒÔ£¬Ëã·¨AQMappingµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡
 %   \EndFor
 %   \EndFunction
    %\Function{\texttt{AQMapping2}}{$u, H, S, G, F$}
-   \Function{\texttt{AQMapping}}{$u, H, S$}
+   \Function{\texttt{AQMapping}}{$u, H, S, F$}
    \For{ $v \in N_{S-F}(u)$ }
    \State \Return($u,v$);
    \EndFor
@@ -1185,19 +1200,20 @@ $10 \sim 16$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£ËùÒÔ£¬Ëã·¨AQMappingµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡
   \end{algorithmic}
 \end{breakablealgorithm}
 
-ÔÚËã·¨AQBindingÖĞ£¬¸ø¶¨$2$¸öÎŞ¹ÊÕÏµÄ¶¥µã$u,v \in V(AQ_n)$£¬Ò»¸ö×ÓÍ¼$G \subset AQ_n$£¬
-Á½ÌõÂ·¾¶$P$ºÍ$Q$£¬ÆäÖĞ$u=P[1]$£¬$v=Q[1]$£¬ÒÔ¼°Ò»¸ö¹ÊÕÏ¶¥µã¼¯$F \subset V(AQ_n)$ÇÒ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$¡£
-ÎÒÃÇ½«ÔÚ$AQ_n-F$ÖĞ¹¹ÔìÒ»Ìõ´Ó$u$µ½$v$µÄÂ·¾¶¡£ÒòÎª¸ÃËã·¨½«»áÔÚËã·¨AQFRoutingÖĞ±»µ÷ÓÃ£¬ËùÒÔÎÒÃÇ½«»áÔÚ¸ø³öËã·¨AQFRoutingÖ®ºóÔÙÀ´·ÖÎöËã·¨AQBindingÖĞµÄµÚ$2 \sim 5$¡¢$13$ºÍ$19$ ĞĞµÄÊ±¼ä¸´ÔÓ¶È¡£ÔÚËã·¨AQBindingµÄµÚ$6$ºÍµÚ$7$ĞĞ£¬Ñ¡ÔñÁ½ÌõÂ·¾¶$P$ºÍ$Q$ÖĞµÄ¹²Í¬¶¥µãµÄÊ±¼ä¸´ÔÓ¶È
+ÔÚËã·¨AQBindingÖĞ£¬¸ø¶¨Ò»¸ö×ÓÍ¼$G \subset AQ_n$£¬
+Á½ÌõÎŞ¹ÊÕÏÂ·¾¶$P$ºÍ$Q$£¬ÆäÖĞ$u=P[1]$£¬$v=Q[1]$£¬Ò»¸ö¹ÊÕÏ¼¯ºÏ$F\subset V(AQ_n)$£¬Âú×ã¶ÔÓÚÈÎÒâÒ»¸öÔªËØ$x \in F$£¬$x \cong K_{1,M}$£¬ÆäÖĞ$1 \leq K \leq 6$£¬ÇÒ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$£¬ÒÔ¼°$2$¸öÎŞ¹ÊÕÏµÄ¶¥µã$u,v \in V(AQ_n)$¡£
+ÎÒÃÇ½«ÔÚ$AQ_n-F$ÖĞ¹¹ÔìÒ»Ìõ´Ó$u$µ½$v$µÄÂ·¾¶¡£ÒòÎª¸ÃËã·¨½«»áÔÚËã·¨AQFRoutingÖĞ±»µ÷ÓÃ£¬ËùÒÔÎÒÃÇ½«»áÔÚ¸ø³öËã·¨AQFRoutingÖ®ºóÔÙÀ´·ÖÎöËã·¨AQBindingÖĞµÄµÚ$2 \sim 5$¡¢$13$ºÍ$19$ ĞĞµÄÊ±¼ä¸´ÔÓ¶È¡£ÔÚËã·¨AQBindingµÄµÚ$6$ºÍµÚ$7$ĞĞ£¬Ñ¡ÔñÁ½ÌõÂ·¾¶$P$ºÍ$Q$ÖĞµÄ¹«¹²¶¥µãµÄÊ±¼ä¸´ÔÓ¶È
 ÊÇ$O(n)$£¬Á¬½Ó$P$ºÍ$Q$Á½ÌõÂ·¾¶µÄ×ÓÂ·¾¶»¨·ÑµÄÊ±¼äÊÇ$O(1)$¡£ÔÚËã·¨µÄ$10 \sim 12$ºÍ$16 \sim 18$ĞĞ£¬
-·µ»ØÒ»ÌõÓÉÖ±½Ó$P$£¨»ò$Q$£©¹¹³ÉµÄÂ·¾¶µÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(1)$¡£
+·µ»ØÒ»ÌõÖ±½ÓÓÉ$P$£¨»ò$Q$£©¹¹³ÉµÄÂ·¾¶µÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(1)$¡£
 
 \begin{breakablealgorithm}
 \footnotesize
 \label{AQBinding}
 \caption{\texttt{{AQBinding}}}
 \begin{algorithmic}[1]
-    \Require $2$¸öÎŞ¹ÊÕÏµÄ¶¥µã$u,v \in V(AQ_n)$£¬Ò»¸ö×ÓÍ¼$G \subset AQ_n$£¬
-Á½ÌõÂ·¾¶$P$ºÍ$Q$£¬ÆäÖĞ$u=P[1]$£¬$v=Q[1]$£¬ÒÔ¼°Ò»¸ö¹ÊÕÏ¶¥µã¼¯$F \subset V(AQ_n)$£¬ÆäÖĞ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$¡£
+    \Require Ò»¸ö×ÓÍ¼$G \subset AQ_n$£»Á½ÌõÎŞ¹ÊÕÏÂ·¾¶$P$ºÍ$Q$£¬ÆäÖĞ$u=P[1]$£¬$v=Q[1]$£»Ò»¸ö¹ÊÕÏ¼¯ºÏ$F\subset V(AQ_n)$£¬Âú×ã¶ÔÓÚÈÎÒâÒ»¸öÔªËØ$x \in F$£¬$x \cong K_{1,M}$£¬ÆäÖĞ$1 \leq K \leq 6$£¬ÇÒ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$£»$2$¸öÎŞ¹ÊÕÏµÄ¶¥µã$u,v \in V(AQ_n)$¡£
+    %$2$¸öÎŞ¹ÊÕÏµÄ¶¥µã$u,v \in V(AQ_n)$£¬Ò»¸ö×ÓÍ¼$G \subset AQ_n$£¬
+%Á½ÌõÂ·¾¶$P$ºÍ$Q$£¬ÆäÖĞ$u=P[1]$£¬$v=Q[1]$£¬ÒÔ¼°Ò»¸ö¹ÊÕÏ¶¥µã¼¯$F \subset V(AQ_n)$£¬ÆäÖĞ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$¡£
     \Ensure  Ò»Ìõ$AQ_n-F$ÖĞµÄ´Ó$u$µ½$v$µÄÂ·¾¶¡£
     \Function{\texttt{AQBinding1}}{$G,F,u,v,P,Q$}
     \If{$V(P) \cap V(Q) = \emptyset$}
@@ -1232,16 +1248,15 @@ $10 \sim 16$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£ËùÒÔ£¬Ëã·¨AQMappingµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡
 \caption{\texttt{AQFRouting}}
 \footnotesize
     \begin{algorithmic}[1]
-    \Require Ò»¸ö$n$-Î¬µÄÀ©Õ¹Á¢·½Ìå$AQ_n$£¬
-    Á½¸öÎŞ¹ÊÕÏ¶¥µã$u,v \in V(AQ_n)$£¬
-    Ò»¸ö¹ÊÕÏ¶¥µã¼¯$F\subset V(AQ_n)$£¬ÆäÖĞ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$¡£
+    \Require Ò»¸ö$n$-Î¬µÄÀ©Õ¹Á¢·½Ìå$AQ_n$£»
+    Ò»¸ö¹ÊÕÏ¼¯ºÏ$F\subset V(AQ_n)$£¬Âú×ã¶ÔÓÚÈÎÒâÒ»¸öÔªËØ$x \in F$£¬$x \cong K_{1,M}$£¬ÆäÖĞ$1 \leq K \leq 6$£¬ÇÒ$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$£»$2$¸öÎŞ¹ÊÕÏµÄ¶¥µã$u,v \in V(AQ_n)$¡£
     \Ensure  Ò»Ìõ$AQ_n-F$ÖĞµÄ´Ó$u$µ½$v$µÄÂ·¾¶¡£
     \Function{\texttt{AQFRouting}}{$AQ_n,F,u,v$}%
 %    \If{$u = v$}  \ \Return ($u$);
     \If{$(u,v)\in E(AQ_n)$}
         \State \Return ($u,v$);
     \ElsIf{$n = 2$}
-        \State \Return (·µ»Ø$AQ_n - F$ÖĞ$u$µ½$v$µÄÒ»ÌõÎŞ¹ÊÕÏÂ·¾¶);
+        \State \Return ($AQ_n - F$ÖĞ$u$µ½$v$µÄÒ»ÌõÎŞ¹ÊÕÏÂ·¾¶);
     \ElsIf{$|F| = 0 $}
         \State \Return \texttt{AQRouting}$(AQ_{n},u,v)$;
     %\ElsIf{$|F| \geq 2n-2$}
@@ -1296,10 +1311,9 @@ $10 \sim 16$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£ËùÒÔ£¬Ëã·¨AQMappingµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡
 ¶øÔÚµÚ$9$¡¢$10$ºÍ$12$ĞĞ£¬¹¹½¨$F_0$¡¢$F_1$¡¢$m$¡¢$B_0$ºÍ$B_1$µÄÊ±¼ä¸´ÔÓ¶ÈÊÇ$O(1)$¡£
 
 ÎÒÃÇÓÃ$U(u,v,n)$À´±íÊ¾ÔÚ$B_n-F$ÖĞÕÒµ½¶¥µã$u$µ½$v$µÄÒ»ÌõÎŞ¹ÊÕÏÂ·¾¶µÄÊ±¼ä¸´ÔÓ¶È¡£
-½øÒ»²½µÄ£¬
+½øÒ»²½£¬
 %ÎÒÃÇÉè$n$×ã¹»´ó£¬
 Éè
-
 \begin{equation}\label{time-complexity}
   T(n) = \textrm{max}\{U(u,v,n)|u,v \in V(AQ_n)\setminus F \ \textrm{ÇÒ} \ u \neq v \}.
 \end{equation}
@@ -1325,23 +1339,24 @@ $10 \sim 16$ĞĞµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡£ËùÒÔ£¬Ëã·¨AQMappingµÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(n^2)$¡
    \end{aligned}
 \end{equation}
 
-ËùÒÔ£¬¸ù¾İ²»µÈÊ½\ref{AQFRouting-result}£¬ÔÚ×î»µÇé¿öÏÂºÍ¹ÊÕÏ¶¥µãÊıÎª$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$Ê±£¬Ëã·¨AQFRoutingµÄÊ±¼ä¸´ÔÓ¶ÈÎª
+ËùÒÔ£¬¸ù¾İ²»µÈÊ½\ref{AQFRouting-result}£¬ÔÚ×î»µÇé¿öÏÂºÍ¹ÊÕÏ¶¥µãÊıÎª$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$Ê±£¬Ëã·¨AQFRouting µÄÊ±¼ä¸´ÔÓ¶ÈÎª
 $T(n) \leq O(\lceil \textrm{log}_2|F| \rceil n^3)$¡£¸ù¾İÇ°Ãæ¶ÔAQBindingËã·¨µÄ·ÖÎö£¬ÎÒÃÇÒ²¿ÉÒÔµÃµ½Ëã·¨AQBinding µÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(\lceil \textrm{log}_2|F| \rceil n^3)$¡£
 
 ÎªÁË·ÖÎöÓÉËã·¨AQFRoutingËù¹¹½¨µÄÈİ´íÂ·¾¶µÄ×î´ó³¤¶È£¬ÎÒÃÇ¸ø³öÁËÒÔÏÂµÄ¶¨Àí£º
 
 \begin{thm}
-µ±¹ÊÕÏ¶¥µã¼¯$F$Âú×ã$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$Ê±£¬Éè$m=\lceil \textrm{log}_2|F| \rceil$£¬Ëã·¨AQFRoutingËù¹¹½¨µÄÈİ´íÂ·¾¶µÄ×î´ó³¤¶È²»³¬¹ı$8m+\lceil \frac{n-m}{2} \rceil+1$¡£
+µ±¹ÊÕÏ¶¥µã¼¯$F$Âú×ã$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$ Ê±£¬Éè$m=\lceil \textrm{log}_2|F| \rceil$£¬ÔòËã·¨\textnormal{AQFRouting}\\
+Ëù¹¹½¨µÄÈİ´íÂ·¾¶µÄ×î´ó³¤¶È²»³¬¹ı$8m+\lceil \frac{n-m}{2} \rceil+1$¡£
 \end{thm}
 
 \begin{proof}
-ÎÒÃÇÓÃ$M(n)$À´±íÊ¾ÓÉËã·¨AQFRoutingÔÚ$AQ_n$ÖĞËù¹¹½¨µÄÔÚÁ½¸öÎŞ¹ÊÕÏ¶¥µã$u$ºÍ$v$Ö®¼äµÄÈİ´íÂ·¾¶µÄ³¤¶È¡£
+ÎÒÃÇÓÃ$M(n)$À´±íÊ¾ÓÉËã·¨AQFRoutingÔÚ$AQ_n$ÖĞËù¹¹½¨µÄÔÚÁ½¸öÎŞ¹ÊÕÏ¶¥µã$u$ºÍ$v$Ö®¼äµÄÎŞ¹ÊÕÏÂ·¾¶µÄ³¤¶È¡£
 ÏÔÈ»£¬Èç¹û$|F|=0$£¬ÎÒÃÇÓĞ$M(n) \leq \lceil \frac{n}{2} \rceil+1$¡£
 Èç¹û$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$£¬
 ÔÚËã·¨µÄ$13 \sim 14$ĞĞ£¬ÎÒÃÇÓĞ$M(n) \leq M(n-1)$£»
 ÔÚËã·¨µÄ$15 \sim 18$ĞĞ£¬ÎÒÃÇÓĞ$M(n) \leq M(n-1)+8$£»
 ÔÚËã·¨µÄ$19 \sim 24$ĞĞ£¬ÎÒÃÇÓĞ$M(n) \leq M(n-1)+4$£»
-Éè$m=\lceil \textrm{log}_2|F| \rceil$£¬ÎÒÃÇÓĞ
+Éè$m=\lceil \textrm{log}_2|F| \rceil$£¬Ôò
 \begin{equation}\label{AQFRouting-length}
   \begin{aligned}
     M(n) & \leq \textrm{max} \{ \sum_{i=1}^{m} 8 +  \lceil\frac{n-m}{2}  \rceil  + 1,  \lceil\frac{n}{2}  \rceil  + 1\}\\
@@ -1350,50 +1365,53 @@ $T(n) \leq O(\lceil \textrm{log}_2|F| \rceil n^3)$¡£¸ù¾İÇ°Ãæ¶ÔAQBindingËã·¨µÄ·ÖÎ
    \end{aligned}
 \end{equation}
 
-Òò´Ë£¬¸ù¾İ²»µÈÊ½\ref{AQFRouting-length}£¬ÔÚ×î»µÇé¿öÏÂ£¬µ±$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$ÇÒ
+Òò´Ë£¬ÔÚ×î»µÇé¿öÏÂ£¬¸ù¾İ²»µÈÊ½\ref{AQFRouting-length}£¬µ±$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$ÇÒ
 $m=\lceil \textrm{log}_2|F| \rceil$Ê±£¬
 ÓÉËã·¨AQFRoutingËù¹¹½¨µÄÔÚÁ½¸öÎŞ¹ÊÕÏ¶¥µã$u$ºÍ$v$Ö®¼äµÄÈİ´íÂ·¾¶µÄ³¤¶ÈÎª
 $M(n) \leq 8m+  \lceil\frac{n-m}{2} \rceil  + 1$¡£
 \end{proof}
 
-\subsection{Ä£ÄâÊµÑé}
+\section{Ä£ÄâÊµÑé}
 
 
-ÔÚ±¾½ÚÖĞ£¬ÎÒÃÇ½«Í¨¹ıÄ£ÄâÊµÑéÀ´±È½ÏËã·¨AQFRoutingºÍ´«Í³µÄÉî¶ÈÓÅÏÈËã·¨DFSÒÔ¼°¹ã¶ÈÓÅÏÈËã·¨BFSµÄĞÔÄÜ£¬
-ÎÒÃÇ½«Í¨¹ıPythonÓïÑÔÀ´ÊµÏÖ£¬°æ±¾Îª3.6£¬ÊµÑé»·¾³ÊÇÒ»Ì¨´¦ÀíÆ÷ÎªIntel(R) Core(TM) i5-6200U CPU @ 2.30GHz 2.40£¬
-ÄÚ´æ8GBµÄ¼ÆËã»ú¡£ÎÒÃÇ½«Í¨¹ıÕâÌ¨¼ÆËã·¨Ä£Äâ²»Í¬µÄËã·¨²¢¸ø³öÊµÑé½á¹û¡£
+ÔÚ±¾½ÚÖĞ£¬ÎÒÃÇ½«Í¨¹ıÄ£ÄâÊµÑéÀ´±È½ÏËã·¨AQFRoutingºÍ´«Í³µÄÉî¶ÈÓÅÏÈËã·¨DFSÒÔ¼°¹ã¶ÈÓÅÏÈËã·¨BFS µÄĞÔÄÜ£¬ÎÒÃÇ½«Í¨¹ıPythonÓïÑÔÀ´ÊµÏÖ£¬°æ±¾Îª3.6£¬ÊµÑé»·¾³ÊÇÒ»Ì¨´¦ÀíÆ÷ÎªIntel(R) Core(TM) i5-6200U CPU @ 2.30GHz 2.40£¬
+ÄÚ´æ8GBµÄ¼ÆËã»ú¡£ÎÒÃÇ½«Í¨¹ıÕâÌ¨¼ÆËã»úÄ£Äâ²»Í¬µÄËã·¨²¢¸ø³öÊµÑé½á¹û¡£
 
 ÎÒÃÇÑĞ¾¿ÁËÀ©Õ¹Á¢·½ÌåÖĞ¶àÖÖ²»Í¬µÄ¹ÊÕÏ½á¹¹£¬ÆäÖĞ°üÀ¨¶ş·ÖÍ¼¡¢Â·¾¶ºÍÈ¦¡£ÔÚÊµÑéÖĞÎÒÃÇ½«¶Ô
-ÆäÖĞ×î¸´ÔÓµÄÒ»ÖÖ½á¹¹$K_{1,6}$½øĞĞÊµÑé£¬$K_{1,6}$½á¹¹Éæ¼°µÄ¶¥µã½Ï¶à£¬ÇÒÒ²ÊÇÊµ¼ÊÖĞ×îÈİÒ×
-·¢Éú¹ÊÕÏµÄ½á¹¹¡£ÎÒÃÇ½«ÔÚÊµÑéÖĞÕÒµ½Á½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÎŞ¹ÊÕÏÂ·¾¶£¬¸ù¾İÎÒÃÇµÄÖ¤Ã÷½á¹û£¬
-ÎÒÃÇÉèÖÃ¹ÊÕÏ¶¥µã¸öÊıÎª
-$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$£¬ÕâÑù¿ÉÒÔ±£Ö¤Ã¿¸öÎŞ¹ÊÕÏ¶¥µãÖÁÉÙº¬ÓĞÒ»¸ö
-ÎŞ¹ÊÕÏÁÚ¾Ó¶¥µã¡£ÒòÎª¹ÊÕÏµÄĞÎÊ½ÊÇÒÔ¹ÊÕÏ½á¹¹µÄĞÎÊ½´æÔÚ£¬ËùÒÔÎÒÃÇÔÚÊµÑéÖĞ²»Ê¹ÓÃ¼òµ¥µÄËæ»úº¯Êı
-randomÀ´Éú³É¹ÊÕÏ¶¥µã£¬ÒòÎªÕâÑùÉú³ÉµÄ¹ÊÕÏ¶¥µãÊı´ó¶àÊı²»ÊÇÒÔ¹ÊÕÏ½á¹¹µÄĞÎÊ½´æÔÚ£¬¶øÊÇÒÔ
-µ¥¶ÀµÄ¹ÊÕÏ¶¥µãĞÎÊ½´æÔÚ£¬ÕâÑù¾Í²»Ì«ÄÜ´ïµ½ÏëÒªµÄÊµÑéĞ§¹û¡£ËùÒÔÎÒÃÇÔÚÉú³ÉËæ»ú¹ÊÕÏ¶¥µãµÄ¹ı³ÌÖĞ
+¶¥µãÊı×î¶àµÄ¶ş·ÖÍ¼$K_{1,6}$½øĞĞÊµÑé£¬$K_{1,6}$½á¹¹Éæ¼°µÄ¶¥µã½Ï¶à£¬ÇÒÒ²ÊÇÊµ¼ÊÖĞ×îÈİÒ×
+·¢Éú¹ÊÕÏµÄ½á¹¹¡£
+ÎÒÃÇ½«ÔÚÊµÑéÖĞÕÒµ½Á½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÎŞ¹ÊÕÏÂ·¾¶£¬¸ù¾İÎÒÃÇµÄÖ¤Ã÷½á¹û£¬
+ÎÒÃÇÉèÖÃ¹ÊÕÏ¶¥µã¸öÊıĞ¡ÓÚµÈÓÚ
+%$|F| \leq 7 \times \lceil \frac{n-1}{2} \rceil-1$£¬
+$7 \times \lceil \frac{n-1}{2} \rceil-1$£¬
+ÕâÑù¿ÉÒÔ±£Ö¤Ã¿¸öÎŞ¹ÊÕÏ¶¥µãÖÁÉÙº¬ÓĞÒ»¸ö
+ÎŞ¹ÊÕÏÁÚ¾Ó¶¥µã¡£
+ÒòÎª¹ÊÕÏÊÇÒÔ¹ÊÕÏ½á¹¹µÄĞÎÊ½´æÔÚ£¬ËùÒÔÎÒÃÇÔÚÊµÑéÖĞ²»Ê¹ÓÃ¼òµ¥µÄËæ»úº¯Êı
+randomÀ´Éú³É¹ÊÕÏ¶¥µã£¬ÒòÎªÕâÑùÉú³ÉµÄ¹ÊÕÏ¶¥µã¿ÉÄÜ²»ÒÔ¹ÊÕÏ½á¹¹µÄĞÎÊ½´æÔÚ£¬¶øÊÇÒÔ
+µ¥¶ÀµÄ¹ÊÕÏ¶¥µãĞÎÊ½´æÔÚ£¬ÕâÑù²»·ûºÏ×Ó½á¹¹Á¬Í¨¶ÈµÄ¶¨Òå¡£ËùÒÔÎÒÃÇÔÚÉú³ÉËæ»ú¹ÊÕÏ¶¥µãµÄ¹ı³ÌÖĞ
 ¿ØÖÆÉú³É¹ÊÕÏ¶¥µãµÄĞÎÊ½£¬Ê¹Æä¶¼ÊÇ$K_{1,6}$»òÕß$K_{1,6}$µÄ×Ó½á¹¹¡£
 
-ÔÚÊµÑéÖĞ£¬ÎÒÃÇ½«±È½ÏËã·¨AQFRoutingºÍÉî¶ÈÓÅÏÈËã·¨DFSÔÚÀ©Õ¹Á¢·½ÌåÉÏµÄÊµÑéĞ§¹û£¬Ö÷Òª¿¼²ì
+ÔÚÊµÑéÖĞ£¬ÎÒÃÇ½«±È½ÏËã·¨AQFRoutingÓëDFSºÍBFSÔÚÀ©Õ¹Á¢·½ÌåÉÏµÄÊµÑéĞ§¹û£¬Ö÷Òª¿¼²é
 Éú³ÉÒ»ÌõÎŞ¹ÊÕÏÂ·¾¶µÄÊ±¼äºÍ³¤¶È¡£ÕâÀïµÄÉî¶ÈÓÅÏÈËã·¨ÔÚÕÒµ½Ò»ÌõÎŞ¹ÊÕÏÂ·¾¶µÄÊ±ºò¼´Í£Ö¹£¬²»»á
-ÕÒµ½ËùÓĞ·ûºÏÌõ¼şµÄÎŞ¹ÊÕÏÂ·¾¶£¬È»ºó±È½Ï´óĞ¡£¬È¡Æä×î¶ÌÂ·¾¶À´ºÍËã·¨AQFRoutingµÄ½á¹û±È½Ï¡£ÔÚÊµÑé¹ı³ÌÖĞ£¬ÎÒÃÇ½«»áÓĞ
+ÕÒµ½ËùÓĞ·ûºÏÌõ¼şµÄÎŞ¹ÊÕÏÂ·¾¶£¬È»ºó±È½ÏÎŞ¹ÊÕÏÂ·¾¶µÄ³¤¶È´óĞ¡£¬È¡ÆäÖĞ×î¶ÌÂ·¾¶À´ºÍËã·¨AQFRouting ¼°BFS µÄ½á¹û±È½Ï¡£ÔÚÊµÑé¹ı³ÌÖĞ£¬ÎÒÃÇ½«»áÓĞ
 $5$¸öÊµÑé²ÎÊı£¬·Ö±ğÊÇ£º
 
 \begin{itemize}
   \item À©Õ¹Á¢·½ÌåµÄÎ¬Êı$n$£»
   \item ÎŞ¹ÊÕÏÔ´¶¥µã$u$£»
   \item ÎŞ¹ÊÕÏÄ¿µÄ¶¥µã$v$£»
-  \item ¹ÊÕÏ¶¥µã¸öÊı£»
-  \item ¹ÊÕÏ¶¥µã¼¯ºÏ¡£
+  \item ¹ÊÕÏ¶¥µã¸öÊı$f$£»
+  \item ¹ÊÕÏ¶¥µã¼¯ºÏ$F$¡£
 \end{itemize}
 
-ÎªÁË±£Ö¤ÊµÑéµÄ×¼È·ĞÔ£¬Ã¿´ÎÊµÑé¶ÔÓÚÁ½¸öËã·¨¶¼ÊäÈëÏàÍ¬µÄ²ÎÊı£¬È»ºó±È½ÏÔËËã½á¹û¡£
+ÎªÁË±£Ö¤ÊµÑéµÄ×¼È·ĞÔ£¬Ã¿´ÎÊµÑé¶ÔÓÚÈı¸öËã·¨¶¼ÊäÈëÏàÍ¬µÄ²ÎÊı£¬È»ºó±È½ÏÔËËã½á¹û¡£
 
-ÊµÑéÖĞÎÒÃÇÒ»¹²²ÉÓÃÁË$5$×éÊµÑéÊı¾İ£¬ÎÒÃÇÓÃ$E(i,n,u,v,f)$À´±íÊ¾ÊµÑéÊı¾İ£¬ÆäÖĞ
-$i$±íÊ¾µÚ$i$×éÊµÑé£¬$n$±íÊ¾Î¬Êı£¬$u$±íÊ¾ÎŞ¹ÊÕÏÔ´¶¥µã$u$£¬$v$±íÊ¾ÎŞ¹ÊÕÏÄ¿µÄ¶¥µã$v$£¬
+ÊµÑéÖĞÎÒÃÇÒ»¹²½øĞĞÁË$5$×éÊµÑé£¬ÎÒÃÇÓÃ$E(i,n,u,v,f)$À´±íÊ¾ÊµÑéÊı¾İ£¬ÆäÖĞ
+$i$±íÊ¾ÊµÑéµÄ×éÊı£¬$n$±íÊ¾Î¬Êı£¬$u$±íÊ¾ÎŞ¹ÊÕÏÔ´¶¥µã£¬$v$±íÊ¾ÎŞ¹ÊÕÏÄ¿µÄ¶¥µã£¬
 $f$±íÊ¾¹ÊÕÏ¶¥µã¸öÊı¡£ÎÒÃÇËù²ÉÓÃµÄ$5$×éÊµÑéÊı¾İ·Ö±ğÈçÏÂ£º
 
 \begin{itemize}
-  \item $E(1,5,0,17,6)$
+  \item $E(1,6,0,17,6)$
   \item $E(2,7,0,20,14)$
   \item $E(3,9,0,332,27)$
   \item $E(4,10,0,712,30)$
@@ -1410,27 +1428,30 @@ $f$±íÊ¾¹ÊÕÏ¶¥µã¸öÊı¡£ÎÒÃÇËù²ÉÓÃµÄ$5$×éÊµÑéÊı¾İ·Ö±ğÈçÏÂ£º
 \end{figure}
 
 ´ÓÍ¼~\ref{time-diagram}ÎÒÃÇ¿ÉÒÔ¿´µ½£¬Ëã·¨AQFRouting¡¢DFSºÍBFSÔÚÎ¬Êı½ÏĞ¡µÄÇé¿öÏÂÕÒµ½Ò»Ìõ
-ÎŞ¹ÊÕÏÂ·¾¶Ëù»¨·ÑµÄÊ±¼ä²î²»¶à£¨ÈçÍ¼ÖĞµÄ$5$Î¬ºÍ$7$Î¬£©¡£µ«ÊÇËæ×ÅÎ¬ÊıºÍ¹ÊÕÏ¶¥µãÊıµÄÔö¼Ó£¬
+ÎŞ¹ÊÕÏÂ·¾¶Ëù»¨·ÑµÄÊ±¼äÏàËÆ£¨ÈçÍ¼ÖĞµÄ$5$Î¬ºÍ$7$Î¬£©¡£µ«ÊÇËæ×ÅÎ¬ÊıºÍ¹ÊÕÏ¶¥µãÊıµÄÔö¼Ó£¬
 DFSºÍBFSËù»¨·ÑµÄÊ±¼äÔ¶±ÈËã·¨AQFRouting¶à£¬±ÈÈçµ±Î¬Êı$n=13$Ê±£¬Ëã·¨DFSËù»¨·ÑµÄÊ±¼ä
-ÊÇËã·¨AQFRoutingµÄ$10$±¶ÒÔÉÏ¡£Ô­ÒòÔÚÓÚ£¬Î¬ÊıÎª$n$µÄÀ©Õ¹Á¢·½ÌåËù°üº¬µÄ¶¥µã¸öÊıÎª$2^n$¡£
-DFSºÍBFS»áÖğ¸ö¶¥µãÈ¥²é¿´ÊÇ·ñÊÇÎŞ¹ÊÕÏ¶¥µã£¬ÒòÎªÎ¬ÊıÔ½´ó£¬¶¥µã¸öÊıÔ½¶à£¬ËùÒÔËã·¨DFSºÍBFSµÄÉî¶È
+ÊÇËã·¨AQFRoutingµÄ$10$±¶×óÓÒ£¬¶øËã·¨BFSËù»¨·ÑµÄÊ±¼ä
+Ò²ÊÇËã·¨AQFRoutingµÄ$5$±¶×óÓÒ¡£Ô­ÒòÔÚÓÚÎ¬ÊıÎª$n$µÄÀ©Õ¹Á¢·½ÌåËù°üº¬µÄ¶¥µã¸öÊıÎª$2^n$¡£
+DFSºÍBFS»áÖğ¸ö¶¥µãÈ¥¼ì²éÆäÊÇ·ñÊÇÎŞ¹ÊÕÏ¶¥µã£¬ÒòÎªÎ¬ÊıÔ½´ó£¬¶¥µã¸öÊıÔ½¶à£¬ËùÒÔËã·¨DFSºÍBFSµÄÉî¶È
 »áÔ½Éî£¬Ëù»¨·ÑµÄÊ±¼äÒ²Ô½¶à¡£
 
 \begin{figure}
   \centering
   % Requires \usepackage{graphicx}
   \includegraphics[scale=0.7]{length-diagram.eps}\\
-  \caption{Ëã·¨AQFRouting¡¢DFSºÍBFS¹¹Ôì¹¹ÔìÒ»ÌõÎŞ¹ÊÕÏÂ·¾¶³¤¶È}\label{length-diagram}
+  \caption{Ëã·¨AQFRouting¡¢DFSºÍBFS¹¹ÔìÒ»ÌõÎŞ¹ÊÕÏÂ·¾¶³¤¶È}\label{length-diagram}
 \end{figure}
 
-¸ù¾İ¹ã¶ÈÓÅÏÈËã·¨µÄÌØµã£¬Æä¿ÉÒÔÕÒµ½×î¶ÌµÄÎŞ¹ÊÕÏÂ·¾¶£¬´ÓÍ¼~\ref{length-diagram}¿ÉÒÔ¿´³ö£¬BFSºÍAQFRoutingËù¹¹ÔìµÄ×î¶ÌÂ·¾¶³¤¶È²î²»¶à¡£¶ÔÓÚDFS£¬Ö»ÓĞÔÚÎ¬ÊıºÍ¹ÊÕÏ¶¥µãÊıºÜĞ¡µÄÊ±ºòDFS²Å»áºÍAQFRoutingÒÔ¼°BFSÁ½¸öËã·¨ÔÚ¹¹Ôì³¤¶ÈÏà²î²»´óµÄÎŞ¹ÊÕÏÂ·¾¶£¬±ÈÈçÎ¬ÊıµÈÓÚ$5$ µÄÊ±ºò¡£
-È»ºóËæ×ÅÎ¬ÊıµÄÀ©´ó£¬Ëã·¨AQFRoutingËù¹¹ÔìµÄÎŞ¹ÊÕÏÂ·¾¶³¤¶È²¢Ã»ÓĞ²úÉúÌ«´óµÄ±ä»¯£¬
+¸ù¾İ¹ã¶ÈÓÅÏÈËã·¨µÄÌØµã£¬BFS¿ÉÒÔÕÒµ½×î¶ÌµÄÎŞ¹ÊÕÏÂ·¾¶£¬´ÓÍ¼~\ref{length-diagram}¿ÉÒÔ¿´³ö£¬BFSºÍAQFRoutingËù¹¹ÔìµÄ×î¶ÌÂ·¾¶³¤¶ÈÏà½ü¡£¶ÔÓÚDFS£¬
+Ö»ÓĞÔÚÎ¬ÊıºÍ¹ÊÕÏ¶¥µãÊıºÜĞ¡µÄÊ±ºò£¬DFS¹¹ÔìµÄÂ·¾¶³¤¶È²Å»áÓëAQFRouting ºÍBFSÁ½¸öËã·¨Ïà½ü£¬±ÈÈçÎ¬ÊıµÈÓÚ$5$µÄÊ±ºò¡£
+È»¶ø
+Ëæ×ÅÎ¬ÊıµÄÀ©´ó£¬Ëã·¨AQFRoutingËù¹¹ÔìµÄÎŞ¹ÊÕÏÂ·¾¶³¤¶È²¢Ã»ÓĞ²úÉúÌ«´óµÄ±ä»¯£¬
 µ«ÊÇËã·¨DFSËù¹¹ÔìµÄÂ·¾¶³¤¶ÈÈ´¼±¾çÔö³¤¡£ÎÒÃÇÈÏÎªÔ­ÒòºÍ¹¹ÔìÎŞ¹ÊÕÏÂ·¾¶Ëù»¨·ÑµÄÊ±¼äÔö³¤ÀàËÆ£¬
 Ò²ÊÇÓÉÓÚÎ¬ÊıÔ½´ó£¬¶¥µã¸öÊıÔ½¶à£¬ËùÒÔËã·¨DFSµÄÉî¶È
 »áÔ½Éî£¬Ëù¹¹ÔìµÄÂ·¾¶Ò²¾ÍÔ½³¤¡£
 
-×ÛÉÏËùÊö£¬ÎÒÃÇÉè¼ÆµÄËã·¨AQFRoutingÔÚ¹¹ÔìÁ½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÒ»ÌõÎŞ¹ÊÕÏÂ·¾¶Ê±£¬ÔÚ¹¹ÔìÎŞ¹ÊÕÏÂ·¾¶µÄ³¤¶ÈÉÏ½Ó½üÓÚBFS¹¹ÔìµÄ×î¶ÌµÄÎŞ¹ÊÕÏÂ·¾¶£¬µ«ÊÇËã·¨µÄÊ±¼äÒªÔ¶Ğ¡ÓÚBFS¡£¶ø¶ÔÓÚDFS£¬ÎŞÂÛÊÇ
-¹¹ÔìÊ±¼ä»¹ÊÇ¹¹Ôì³¤¶ÈËã·¨AQFRoutin¶¼Ô¶Ô¶ÓÅÔ½ÓÚ´«Í³µÄÉî¶ÈÓÅÏÈËã·¨DFS¡£
+×ÛÉÏËùÊö£¬ÎÒÃÇÉè¼ÆµÄËã·¨AQFRoutingËù¹¹ÔìµÄÎŞ¹ÊÕÏÂ·¾¶µÄ³¤¶È½Ó½üÓÚBFS ¹¹ÔìµÄ×î¶ÌµÄÎŞ¹ÊÕÏÂ·¾¶£¬µ«ÊÇËã·¨µÄÊ±¼äÒªÔ¶Ğ¡ÓÚBFS£¬¶øÎŞÂÛÊÇ
+¹¹ÔìÊ±¼ä»¹ÊÇ¹¹Ôì³¤¶ÈËã·¨AQFRoutin¶¼Ô¶Ô¶ÓÅÔ½ÓÚÉî¶ÈÓÅÏÈËã·¨DFS¡£
 
 \section{±¾ÕÂĞ¡½á}
 
@@ -1460,7 +1481,10 @@ n-1     &      &\textnormal{ÆäÖĞ} n \geq 6 \textnormal{ , } N=3,\\
 \end{array} \right. $\\
 
 ´Ó½á¹ûÖĞÎÒÃÇ¿ÉÒÔ¿´³ö£¬½á¹¹$H$·¢Éú¹ÊÕÏ¶ÔÀ©Õ¹Á¢·½ÌåµÄÓ°ÏìÏà±ÈÓÚ´«Í³Á¬Í¨¶È
-Òª´óµÃ¶à¡£ÓÈÆäµ±½á¹¹$H=K_{1,6}$Ê±£¬Ëæ×ÅÎ¬Êı$n$µÄ±ä´ó£¬¹ÊÕÏ½á¹¹$K_{1,6}$Ó°ÏìµÄ¶¥µãÊı½Ó½üÓÚ´«Í³Á¬Í¨¶ÈµÄ$2$±¶¡£Í¬Ê±ÎÒÃÇ¸ø³öÁËÔÚ$AQ_n$ÖĞÑ°ÕÒÁ½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÎŞ¹ÊÕÏÂ·¾¶µÄÈİ´íÂ·ÓÉËã·¨AQFRouting£¬¸ÃËã·¨µÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(\lceil \textrm{log}_2|F| \rceil n^3)$£¬ÇÒ¸ÃËã·¨µÄËù¹¹ÔìµÄ×î´óÎŞ¹ÊÕÏÂ·¾¶³¤¶ÈÎª$8m+  \lceil\frac{n-m}{2} \rceil  + 1$¡£¡£
+Òª´óµÃ¶à¡£ÓÈÆäµ±½á¹¹$H=K_{1,6}$Ê±£¬Ëæ×ÅÎ¬Êı$n$µÄ±ä´ó£¬ÔÚ±£Ö¤À©Õ¹Á¢·½Ìå¿É¿¿Í¨ĞÅµÄÇé¿öÏÂ£¬À©Õ¹Á¢·½Ìå¿ÉÒÔÈİĞíµÄ¹ÊÕÏ¶¥µãÊıÔÚÀíÏëÇé¿öÏÂ¼¸ºõÊÇ´«Í³Á¬Í¨¶ÈµÄÁ½±¶¡£
+%¹ÊÕÏ½á¹¹$K_{1,6}$Ó°ÏìµÄ¶¥µãÊı½Ó½üÓÚ´«Í³Á¬Í¨¶ÈµÄ$2$±¶¡£
+Í¬Ê±ÎÒÃÇ¸ø³öÁËÔÚ$AQ_n$ÖĞÑ°ÕÒÁ½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÎŞ¹ÊÕÏÂ·¾¶µÄÈİ´íÂ·ÓÉËã·¨AQFRouting£¬¸ÃËã·¨µÄÊ±¼ä¸´ÔÓ¶ÈÎª$O(\lceil \textrm{log}_2|F| \rceil n^3)$£¬ÇÒ¸ÃËã·¨µÄËù¹¹ÔìµÄ×î´óÎŞ¹ÊÕÏÂ·¾¶³¤¶È²»³¬¹ı$8m+  \lceil\frac{n-m}{2} \rceil  + 1$£¬ÆäÖĞ$m=\lceil \textrm{log}_2|F| \rceil$£¬$F$Îª¹ÊÕÏ¶¥µã¼¯ºÏ¡£Ä£ÄâÊµÑé½á¹û±íÃ÷£¬Ëã·¨AQFRouting¿ÉÒÔÊµÏÖÁ½¸öÎŞ¹ÊÕÏ¶¥µãÖ®¼äµÄÕı³£Í¨
+ĞÅ¡£
 
 %²¢Í¨¹ı·ÖÎöºÍÊµÑéÖ¤Ã÷ÁË¸ÃËã·¨µÄÓÅÁ¼ĞÔÖÊ¡£
 %µ±$M$±È½ÏĞ¡Ê±£¨$1\leq M\leq6$£©£¬ÎÒÃÇÑĞ¾¿ÁË$K_{1,M}$£¬ÔÚÈ·±£ÎÈ¶¨Í¨ĞÅºÍÀíÏëµÄÇé¿öÏÂ£¬
@@ -1470,4 +1494,4 @@ n-1     &      &\textnormal{ÆäÖĞ} n \geq 6 \textnormal{ , } N=3,\\
 
 Ïà¹Ø³É¹û·¢±íÔÚSCIÔ´ÆÚ¿¯
 ¡¶Journal of Internet Technology¡·
-ÉÏ(µÚÒ»×÷Õß£¬2020Äê·¢±í)¡£
+ÉÏ£¨µÚÒ»×÷Õß£¬2020Äê·¢±í£©¡£

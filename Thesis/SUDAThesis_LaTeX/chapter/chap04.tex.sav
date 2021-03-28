@@ -1,2168 +1,804 @@
-\chapter{广义超立方体的外连通度}
-\label{Chap04}
-在互连网络中，除了限制连通度以外，
-外连通度是衡量网络容错性的另外一个参数。
-本章针对广义超立方体，
-给出广义超体方体上的$1$-外连通度和$2$-外连通度，
-并且给出$2$-外连通度条件下的容错路由算法。
+\chapter{扩展立方体的$2$-额外诊断度和诊断算法}
+%\chapter{扩展立方体的$2$-额外连通度和MM$^*$模型下的$2$-额外诊断度}
 
-本章主要研究$r-$维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$
-的$2$-外连通度，主要结论如下：
-(1)对于$r-$维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$，
-其中$r \geq 5$且对于每个$i \in \langle r \rangle \setminus \{0\}$都有$m_{i}\geq 3$
-且$m_{i}\geq m_{i-1}$。
-若$m_{r}>m_{r-1}$，
-则广义超立方体的$2$-外连通度为$3\kappa(G) - 2m_{r}$；
-若$m_{r}=m_{r-1}$，
-则广义超立方体的$2$-外连通度为$3\kappa(G) - 2m_{r}-1$。
-(2)给出一个$2$-外连通度条件下的容错路由算法，
-其时间复杂度为$O(N\times\kappa(G(m_{r},m_{r-1},\ldots,m_{1})))$，
-其中$N$为$G(m_{r},m_{r-1},\ldots,m_{1})$的总顶点个数。
-\vspace{-1pt}
+%在互连网络的容错性研究中，额外连通度是衡量网络稳定性和容错性的一个重要指标，
+%额外连通度从更实际的角度考察了网络中可能发生故障的情形，对实际网络的性能评估提供了重要的依据。而诊断度是指当网络中的顶点发生故障时，最多可以被诊断出来的故障顶点数目，因此诊断度也是衡量网络容错性能的重要指标。在本章中，我们重点考察了扩展立方体的$2$-额外连通度和MM$^*$ 模型下的$2$-额外诊断度，以及相应的诊断算法，该算法可以帮助我们快速地定位故障顶点来保障网络的正常运行。
 
-\section{广义超立方体的$1$-外连通度和$2$-外连通度}
+在互连网络的容错性研究中，诊断度是衡量网络可靠性的一个重要指标，
+诊断度是指当网络中的顶点发生故障时，最多可以被诊断出来的故障顶点数目。
+文献
+\cite{Lv-extra-connectivity-and-extra-diagnosability}和
+\cite{ A-New-Proof-for-Exact-Relationship}给出了两类网络的额外连通度和额外诊断度之间的关系，但是扩展立方体不满足这两篇文献中给出的前提条件，因此不能由文献
+\cite{Lv-extra-connectivity-and-extra-diagnosability}和
+\cite{ A-New-Proof-for-Exact-Relationship}根据额外连通度直接得到扩展立方体的额外诊断度。
+在本章中，我们证明了$n$-维扩展立方体在MM$^*$模型下的$2$-额外诊断度是$6n-17$，
+并给出了相应的诊断算法，该算法可以帮助我们正确定位故障顶点来保障网络的正常运行。
+%
+%本章针对扩展立方体所得到的相关结论如下：
+%
+%（1）扩展立方体的$2$-额外连通度是$6n-17$，其中$n \geq 6$；
+%
+%（2）扩展立方体在MM$^*$模型下的$2$-额外诊断度是$6n-5$，其中$n \geq 6$。
 
-本节首先给出广义超立方体的$1$-外连通度，
-然后给出其$2$-外连通度证明相关的性质，
-最后给出广义超立方体的$2$-外连通度及其详细的证明过程。
+\section{预备知识}
 
-\subsection{广义超立方体的$1$-外连通度}
+在给出扩展立方体在MM$^*$模型下的$2$-额外诊断度的证明和算法之前，我们先给出扩展立方体的一些性质。
 
-图$G$的$1$-外连通度的定义是
-满足使$G$不连通
-且去掉$G$中所有故障顶点后的每个分支中至少有$2$个顶点，
-所需要去掉的最少故障顶点的数目，用$\kappa_{1}(G)$表示。
-分析可得，下面两个条件是等价的：
-
-(a) 去掉$G$中所有故障顶点后，每个顶点都至少有一个邻接点；
-
-(b) 去掉$G$中所有故障顶点后的每个分支中至少有$2$个顶点。
-
-根据定理\ref{smallerthan}可知$\kappa_{1}(G)=\kappa^{1}(G)=2\kappa(G)-n$，
-其中$n=\max\{m_{1},m_{2},\ldots,m_{r}\}$。
-显然，当一个故障的广义超立方体满足总故障顶点数$|F|<\kappa_{1}(G)$
-且$G-F$的每个分支中至少有$2$个顶点时，
-第三章所提出的容错路由算法GHCFP同样适用。
-
-%根据广义超立方体的定义，我们可以任意调整$m_{r},m_{r-1},\ldots,m_{1}$的次序，
-%都不会影响广义超立方体的结构。例如$G(4,3,2)$同构于$G(3,4,2)$。
-%在本小节中，我们默认图$G(m_{r},m_{r-1},\ldots,m_{1})$中有
-%$m_{i}>m_{i-1}$，其中$i \in \langle r \rangle \setminus \{0\}$。
-%同时，在不存在歧义的情况下，我们将$G(m_{r},m_{r-1},\ldots,m_{1})$
-%简化为$G$。
-
-%本小节中令$\kappa(G)$表示图$G(m_{r},m_{r-1},\ldots,m_{1})$ 的传统连通度，
-
-
-\subsection{广义超立方体上$2$-外连通度下的基本性质}
-%定理\ref{minNeighbors}，\ref{oneComponentConnectsToOthers}，\ref{oneComponentConnectsToOthers2}，
-%\ref{oneComponentConnectsone}和定理 \ref{oneComponentConnectsone2}及其证明。
-
-%关于广义超立方体的$2$-限制连通度，
-%我们得出结论：
-%在$G(m_{r},m_{r-1},\ldots,m_{1})$中，
-%$2$-限制连通度：
-%\begin{align*}
-%        \;  &\kappa_{2}(G)=
-%        \left\{\begin{array}{ll}
-%            3\kappa(G)-2m_{r}， \mbox{  若 }m_{r}>m_{r-1} \\
-%            3\kappa(G)-2m_{r}-1， \mbox{ 若 }m_{r}=m_{r-1} \\
-%        \end{array}\right.
-%\end{align*}
-因为在$G(m_{r},m_{r-1},\ldots,m_{1})$中，
-任意调整$m_{r},m_{r-1},\ldots,m_{1}$ 的次序都不会影响其结构，
-所以在本章中，我们假设对于任意一个$2 \leq i \leq r$都有$m_i \geq m_{i-1}$。
-在给出广义超立方体的$2$-外连通度的具体证明之前，
-本小节将先给出证明所需要的相关性质。
+$n$-维扩展立方体$AQ_n$中的一对顶点$(u,v)$被称为$AQ_n$中的一个补对如果$v=\bar{u}_n$。
+显然$AQ_n$中包含$2^{n-1}$个两两不相交的补对。
+%因为$AQ_n$中的任意两个补对都是两两不相交的，所以$AQ_n$中包含$2^{n-1}$个补对。
 
 \begin{lem}
-\label{minNeighbors}
-在$G(m_{r},m_{r-1},\ldots,m_{1})$中，
-对子图$G^k[j]$中的任意$3$个顶点$u,v,w$，
-满足$(u,v),$ $(u,w)\in $ $E(G^k[j])$，
-则：
-\begin{align*}
-        \;  &|N_{G^k[j]}(u,v,w)|\geq
-        \left\{\begin{array}{ll}
-            3\kappa(G)-3m_{k}-2m_{r}+3, \mbox{若 }m_{r}>m_{r-1}\mbox{} \\
-            3\kappa(G)-3m_{k}-2m_{r}+2, \mbox{若 }m_{r}=m_{r-1}
-        \end{array}\right.
-\end{align*}
-
+\textnormal{\upcite{Conditional-Diagnosability-of-Augmented-Cubes}}
+\label{complement-pair}
+设$AQ_n=L \bigodot R$，其中$L \cong AQ^0_{n-1}$，$R \cong AQ^1_{n-1}$。如果$u$和$v$是$L$(或$R$)中的$2$个顶点且$(u,v)($即，$v=\bar{u}_{n-1})$是$L$(或$R$)中的一个补对，那么$(u,v)$ 在$R$(或$L$)中有两个相同的邻居顶点。否则，如果$(u,v)$不是$L$(或$R$)中的一个补对，则$(u,v)$在$R$(或$L$)中没有相同的邻居顶点。
 \end{lem}
 
-\begin{proof}
-令$u=u_{r}u_{r-1}\dots u_{1}$，$v=v_{r}v_{r-1}\dots v_{1}$
-且$w=w_{r}w_{r-1}\dots w_{1}$。
-根据定义\ref{GeneralizedHypercube}可知
-存在唯一一个整数$l$使得$u_{l}\neq v_{l}$
-且对于任意一个$i \in \langle r \rangle \setminus \{l,0\}$，都有$u_{i}=v_{i}$，
-所以$N_{G^k[j]}(u)\cap N_{G^k[j]}(v)=\{y_{r}y_{r-1}\dots y_{1}\mid
-y_{l}\in \langle m_{l}-1 \rangle \setminus \{u_{l},v_{l}\}$，
-其中对任意一个$i \neq l$都有$y_{i}=u_{i}=v_{i}\}$。
-显然， $|N_{G^k[j]}(u)\cap N_{G^k[j]}(v)| = m_{l}-2$。
-类似地， 对于$u$和$v$，可以推出存在唯一一个整数$p$使得$u_{p}\neq w_{p}$，
-且对于每一个$i \in \langle r \rangle \setminus \{p,0\}$都有$u_{i}=u_{i}$。
-类似地，$|N_{G^k[j]}(v)\cap N_{G^k[j]}(w)| = m_{p}-2$。
-接下来，我们讨论以下$2$种情形。
-
-情形1. $(v,w) \in E(G^k[j])$。
-
-不失一般性，假设$v$和$w$在第$q$维不同，
-也就是$v_{q}\neq w_{q}$且对于任意一个$i \in \langle r \rangle \setminus \{q,0\}$，
-都有$v_{i}=w_{i}$。
-类似地，可以推出$|N_{G^k[j]}(v)\cap N_{G^k[j]}(w)| = m_{q}-2$。
-%且，可以推出$l=p=q$。
-%证明如下，相反地，
-假设$l \neq p$。
-因为$u_{l} \neq v_{l}$且$u_{p} \neq w_{p}$，
-所以$v_{l} \neq w_{l}$和$v_{p} \neq w_{p}$。
-该结论与$v$和$w$仅在第$q$维不同的假设矛盾。
-因此，$l = p$。
-类似地，可以推出$l=q$。
-进而，$m_{l}=m_{p}=m_{q}$。
-因为$|N_{G^k[j]}(u)\cap N_{G^k[j]}(v)\cap N_{G^k[j]}(w)|
-=|\{y_{r}y_{r-1}\dots y_{1}|
-y_{l}\in \langle m_{l}-1 \rangle \setminus \{u_{l},v_{l},w_{l}\}|= m_{l}-3$且对于任意一个 $i \neq l$ 都有$y_{i}=u_{i}=v_{i}\}$。
-因此，
-\begin{align*}
-        |N_{G^k[j]}(u,v,w)| = & |N_{G^k[j]}(u)| + |N_{G^k[j]}(v)| + |N_{G^k[j]}(w)|\\
-                              & - |N_{G^k[j]}(u)\cap N_{G^k[j]}(v)| -|N_{G^k[j]}(u)\cap N_{G^k[j]}(w)|-|N_{G^k[j]}(v)\cap N_{G^k[j]}(w)|\\
-                              & + |N_{G^k[j]}(u)\cap N_{G^k[j]}(v)\cap N_{G^k[j]}(w)|\\
-                              & - |\{u,v,w\}| \\
-                            = & 3(\kappa(G)-(m_{k}-1))-(m_{l}-2)-(m_{p}-2)-(m_{q}-2)+(m_{l}-3)-3  \\
-                            = & 3\kappa(G)-3m_{k}-2m_{l}+3\mbox{。}
-\end{align*}
-%$|N_{G^k[j]}(u,v,w)|
-%=|N_{G^k[j]}(u)| + |N_{G^k[j]}(v)| + |N_{G^k[j]}(w)|
-%- |N_{G^k[j]}(u)\cap N_{G^k[j]}(v)| -|N_{G^k[j]}(u)\cap N_{G^k[j]}(w)|-|N_{G^k[j]}(v)\cap N_{G^k[j]}(w)|
-%+ |N_{G^k[j]}(u)\cap N_{G^k[j]}(v)\cap N_{G^k[j]}(w)|
-%- |\{u,v,w\}|
-%= 3(\kappa(G)-(m_{k}-1))-(m_{l}-2)-(m_{p}-2)-(m_{q}-2)+(m_{l}-3)-3
-%= 3\kappa(G)-3m_{k}-2m_{l}+3$。
-因为$m_{l}\leq m_{k}$，
-所以$|N_{G^k[j]}(u,v,w)|\geq 3\kappa(G)-3m_{k}-2m_{k}+3$。
-
-情形 2. $(v,w) \notin E(G^k[j])$。
-
-因为$u_{l} \neq v_{l}$且$u_{p} \neq w_{p}$，
-所以$v_{l} \neq w_{l}$和$v_{p} \neq w_{p}$。
-因为$|N_{G^k[j]}(v)\cap N_{G^k[j]}(w)|=2$
-且$|N_{G^k[j]}(u)\cap N_{G^k[j]}(v)\cap N_{G^k[j]}(w)| = 0$，
-所以
-\begin{align*}
-        |N_{G^k[j]}(u,v,w)| = & 3(\kappa(G)-(m_{k}-1))-(m_{l}-2)-(m_{p}-2)-2+0-3\\
-                            = & 3\kappa(G)-3m_{k}-m_{l}-m_{p}+2\mbox{。}
-\end{align*}
-若$m_{r}>m_{r-1}$，
-则$m_{l}+m_{p} < 2m_{r}$。
-因此，$|N_{G^k[j]}(u,v,w)|> 3\kappa(G)-3m_{k}-2m_{r}+2$；
-若$m_{r}=m_{r-1}$，
-则$m_{l}+m_{p} \leq 2m_{r}$。
-因此，$|N_{G^k[j]}(u,v,w)| \geq 3\kappa(G)-3m_{k}-2m_{r}+2$。
-
-综合情形1和情形2可知本定理成立。
-\end{proof}
+\begin{lem}
+\textnormal{\upcite{Conditional-Diagnosability-of-Augmented-Cubes}}
+\label{5-vertices-1-complement-pairs}
+当$n \geq 4$时，设$x,y,s,t,u$是$AQ_n$中的5个顶点，如果$AQ_n$在$x,y,s,t,u$中包含一个补对，那么$|N_{AQ_n}(\{x,y,s,t,u\})| \geq 10n-39$。
+\end{lem}
 
 
-%\begin{lem}
-%\label{minNeighbors}
-%在广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$中，
-%令$u$为图$G-F$中的一个顶点，
-%如果故障集合$F$满足
-%当$m_{r}>m_{r-1}$时，$|F|\leq 3\kappa(G)-2m_{r}-1$；
-%或者当$m_{r}=m_{r-1}$时，$|F|\leq 3\kappa(G)-2m_{r}-1$，
-%图$G$中至多存在$3$个顶点$u$满足条件$deg(u)=1$。
-%\end{lem}
+\begin{lem}
+\textnormal{\upcite{Conditional-Diagnosability-of-Augmented-Cubes}}
+\label{5-vertices-2-complement-pairs}
+当$n \geq 4$时，设$x,y,s,t,u$是$AQ_n$中的5个顶点，如果$AQ_n$在$x,y,s,t,u$中包含两个补对，那么$|N_{AQ_n}(\{x,y,s,t,u\})| \geq 10n-35$。
+\end{lem}
 
+
+\begin{lem}
+\textnormal{\upcite{Conditional-Diagnosability-of-Augmented-Cubes}}
+\label{6-vertices-3-complement-pairs}
+当$n \geq 4$时，设$x,y,s,t,u,v$是$AQ_n$中的6个顶点，如果$AQ_n$在$x,y,s,t,u,v$中包含三个补对，那么$|N_{AQ_n}(\{x,y,s,t,u,v\})| \geq 12n-46$。
+\end{lem}
+
+\begin{lem}
+\textnormal{\upcite{t/t-Diagnosability-and-t/k-Diagnosability}}
+\label{k-nodes}
+对于顶点集合$X \subset V(AQ_n)$，其中$|X|=k$，$0 \leq k \leq 2n-1$，那么$|N_{AQ_n}(X)| \geq 2kn- \frac{3k(k+1)}{2}+1$。
+\end{lem}
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.25]{MM.eps}\\
+  \caption{MM$^*$模型下两个可区分的顶点集合$F_1$和$F_2$}\label{MM*}
+\end{figure}
+
+
+\begin{thm}
+\textnormal{\upcite{Conditional-Diagnosability-of-Augmented-Cubes}}
+\label{4n-9<=}
+设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 4n-9$，$n \geq 4$。那么$AQ_n-S$满足以下两个条件之一:
+
+\textnormal{(1)} $AQ_n-S$是连通的；
+
+\textnormal{(2)} $AQ_n-S$有两个分支，其中一个是$K_1$，另一个包含$2^n-|S|-1$个顶点。
+\end{thm}
+
+\begin{thm}
+\textnormal{\upcite{Conditional-Diagnosability-of-Augmented-Cubes}}
+\label{6n-18<=}
+设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 6n-18$, $n \geq 6$。那么, $AQ_n-S$满足以下四个条件之一:
+
+\textnormal{(1)} $AQ_n-S$是连通的；
+
+\textnormal{(2)} $AQ_n-S$有两个连通分支，其中一个是$K_1$，另一个包含$2^n-|S|-1$个顶点；
+
+\textnormal{(3)} $AQ_n-S$有两个连通分支，其中一个是$K_2$，另一个包含$2^n-|S|-2$个顶点；
+
+\textnormal{(4)} $AQ_n-S$有三个连通分支，其中有两个是$K_1$，且第三个包含$2^n-|S|-2$个顶点。
+\end{thm}
+
+
+
+%\section{扩展立方体的$2$-额外连通度}
+%
+%下面是额外连通度的定义：
+%
 \begin{defn}
-  \label{cn-number}
-令$cn_{G}(S_{1},S_{2})=|N_{G}(S_1)\cap N_{G}(S_1)|$，
-其中$S_{1}$和$S_2$为$G(m_{r},m_{r-1},\ldots,m_{1})$的子图。
-%$V(S_{1})\cap V(S_{2})=\emptyset$
-%且$S_{1} \not \subset N_{G}(S_{2})$。
+\label{extra diagnosability definition}
+\upcite{A-New-Proof-for-Exact-Relationship}
+(1) 图$G$的一个$g$-额外集是一个顶点的集合，当从$G$中删除这个集合后，每个连通分支所包含的顶点个数大于等于$g+1$。
+
+(2) 图$G$的一个$g$-额外割是$G$的一个$g$-额外集，将其删除将会导致$G$变为不连通的。
+
+(3) 图$G$的$g$-额外连通度，记为$\kappa_g(G)$, 是$g$-额外割的最小基数。
 \end{defn}
 
-%基于整数$n$，采用数学归纳法，很容易得到定理？。
-%It is not difficult to show the following lem using the
-%induction method on $n$.
-显然，根据定义\ref{GeneralizedHypercube}可推出引理\ref{cn1}。
-
-\begin{lem}
-\label{cn1}
-令$S_{1}$和$S_2$为$G(m_{r},m_{r-1},\ldots,m_{1})$的子图，
-满足$V(S_{1})\cap V(S_{2})=\emptyset$
-且$S_{1} \not \subset N_{G}(S_{2})$，
-其中$r\geq2$且对于任意一个$i \in \langle r \rangle \setminus \{0\}$，
-都有$m_{i}\geq 3$。
-若$S_{1} \cong K_{1}$且$S_{2} \cong K_{1}$，
-则$cn_{G}(S_{1},S_{2})\leq 2$。
-\end{lem}
-
-基于引理\ref{cn1}，我们可以扩展出以下引理。
-
-\begin{lem}
-\label{cn2}
-令$S_{1}$和$S_2$为$G(m_{r},m_{r-1},\ldots,m_{1})$的子图，
-满足$V(S_{1})\cap V(S_{2})=\emptyset$
-且$S_{1} \not \subset N_{G}(S_{2})$，
-其中$r\geq2$且对于任意一个$i \in \langle r \rangle \setminus \{0\}$，
-都有$m_{i}\geq 3$。
-若$S_{1} \cong K_{1}$且$S_{2} \cong P_{2}$，
-则$cn_{G}(S_{1},S_{2}) \leq 3$。
-\end{lem}
-
-\begin{proof}
-%我们根据$r$进行数学归纳。
-
-当$r=2$时，本引理显然成立。因此，我们将讨论$r\geq3$的情形。
-不失一般性，假设$V(S_1)=\{u\}$且$V(S_2)=\{x,y\}$，
-其中$(x,y)$是第$j$维的边。
-我们从第$j$个维度将$G$切分为$m_{j}$个子图
-$G^{j}[0],G^{j}[1],\dots,G^{j}[m_{j}-1]$。
-显然$x$和$y$不属于同一个子图。
-不失一般性，假设$u \in G^{j}[i]$，其中$i \in \langle m_{j}-1 \rangle$。
-根据$x$和$y$在$G$中的子图的不同，我们讨论以下两种情形。
-
-情形1. $x \in G^{j}[i]$或$y \in G^{j}[i]$。
-
-不失一般性，假设$x \in G^{j}[i]$且$y \in G^{j}[i+1]$。
-根据引理\ref{cn1}可知$cn_{G^{j}[i]}$ $(\{u\},$ $\{x\})$ $\leq 2$(如图\ref{cn2_figure}(a))。
-根据定义\ref{GeneralizedHypercube}可知，
-$cn_{G-G^{j}[i]}(\{u\},\{x\}) =0$且$cn_{G^{j}[i+1]}(\{u\},\{y\})$ $\leq 1$。
-若$N_{G-G^{j}[i+1]}$ $(u)$ $\cap $ $N_{G-G^{j}[i+1]}(y)$ $\neq \emptyset$，
-则$(u,y) \in E(G)$。
-因为该结论与$u \not\in N_{G}(y)$矛盾，
-所以$N_{G-G^{j}[i+1]}(u)\cap N_{G-G^{j}[i+1]}(y)=\emptyset$，
-即$cn_{G-G^{j}[i+1]}$ $(\{u\},$ $\{y\})=0$。
-因此，
-\begin{align*}
-            cn_{G}(S_1,S_2) = & cn_{G^{j}[i]}(\{u\},\{x\}) + cn_{G-G^{j}[i]}(\{u\},\{x\})\\
-                              & + cn_{G^{j}[i+1]}(\{u\},\{y\})+ cn_{G-G^{j}[i+1]}(\{u\},\{y\}) \\
-                         \leq & 2+0+1+0 \\
-                         \leq & 3\mbox{。}
-\end{align*}
-情形2. $x \notin G^{j}[i]$且$y \notin G^{j}[i]$。
-
-不失一般性，假设$x \in G^{j}[i+1]$且$y \in G^{j}[i+2]$。
-根据定义\ref{GeneralizedHypercube}可知，
-$cn_{G^{j}[i]}(\{u\},\{x,y\}) \leq 1$且$cn_{G^{j}[i+1]}(\{u\},\{x\}) \leq 1$
-且$cn_{G^{j}[i+2]}(\{u\},\{y\}) \leq 1$
-(如图\ref{cn2_figure}(b))。
-若$N_{G-(G^{j}[i]\cup G^{j}[i+1])}(u)\cap N_{G-(G^{j}[i]\cup G^{j}[i+1])}(x)\neq \emptyset$，
-则$(u,x) \in E(G)$。
-因为，该结论与$u \not\in N_{G}(x)$矛盾，
-所以$N_{G-(G^{j}[i]\cup G^{j}[i+1])}$ $(u)$ $\cap $ $N_{G-(G^{j}[i]\cup G^{j}[i+1])}$ $(x)$ $=\emptyset$，
-即$cn_{G-(G^{j}[i]\cup G^{j}[i+1])}$ $(\{u\},\{x\}) =0$。
-类似地，可以推出
-$cn_{G-(G^{j}[i]\cup G^{j}[i+2])}$ $
-(\{u\},\{y\}) =0$。
-因此，
-\begin{align*}
-            cn_{G}(S_1,S_2) = & cn_{G^{j}[i]}(\{u\},\{x,y\})+cn_{G^{j}[i+1]}(\{u\},\{x\})+cn_{G^{j}[i+1]}(\{u\},\{y\})\\
-                              & + cn_{G^{j}[i]}(\{u\},\{x,y\})+cn_{G^{j}[i+1]}(\{u\},\{x\})+cn_{G^{j}[i+1]}(\{u\},\{y\})\\
-                         \leq & 1+1+1+0+0 \\
-                         \leq & 3\mbox{。}
-\end{align*}
-综上所述，$cn_{G}(S_{1},S_{2}) \leq 3$。因此，本引理成立。
-\end{proof}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=14cm]{ch4_lemma1.eps}
-\smallcaption{$cn_{G}(S_{1},S_{2})$，其中$V(S_{1})=\{u\}$ 且$V(S_{2})=\{(x,y)\}$}
-\label{cn2_figure}
-\end{figure}
-
-
-\begin{lem}
-\label{cn3}
-令$S_{1}$和$S_2$为$G(m_{r},m_{r-1},\ldots,m_{1})$的子图，
-满足$V(S_{1})\cap V(S_{2})=\emptyset$
-且$S_{1} \not \subset N_{G}(S_{2})$，
-其中$r\geq2$且对于任意一个$i \in \langle r \rangle \setminus \{0\}$，
-都有$m_{i}\geq 3$。
-若$S_{1} \cong K_{1}$且$S_{2} \cong P_{3}$，
-则$cn_{G}(S_{1},S_{2}) \leq 4$。
-\end{lem}
-
-\begin{proof}
-当$r=2$时，本引理显然成立。
-因此，我们将讨论$r\geq3$的情形。
-不失一般性，假设$V(S_1)=\{u\}$且$V(S_2)=\{x,y,z\}$，
-其中$\{(x,y),(y,z)\}\subseteq E(G)$且$(x,y)$是第$j$维的边。
-我们从第$j$个维度将$G$切分为$m_{j}$个子图
-$G^{j}[0],$ $G^{j}[1],\ldots,$ $G^{j}$ $[m_{j}-1]$。
-显然，$x$和$y$不属于同一个子图。
-不失一般性，假设$u \in G^{j}[i]$，其中$i \in \langle m_{j}-1 \rangle$。
-根据$x$，$y$和$z$位置的不同，我们讨论以下两种情形。
-
-情形1. $z$和$y$在同一个子图。
-
-情形1.1. $x \in G^{j}[i]$且$y \in G^{j}[i+1]$。
-
-根据引理\ref{cn1}可知$cn_{G^{j}[i]}(\{u\},\{x\}) \leq 2$。
-%且因为$\{u\} \not \subset N_{G}(\{x\})$，
-%容易得到$cn_{G\setminus G^{j}[i]}(\{u\},\{x\})=0$。
-根据定义\ref{GeneralizedHypercube}可知
-$cn_{G^{j}[i]}(\{u\},\{y,z\})=cn_{G^{j}[i]}$ $(\{u\},$ $\{z\})$ $\leq 1$
-且$cn_{G^{j}[i+1]}(\{u\},\{y,z\})\leq 1$(如图\ref{ch4_lemma2_1}(a))。
-若$N_{G-G^{j}[i]}(u)\cap N_{G-G^{j}[i]}(x)\neq \emptyset$，
-则$(u,x)$ $ \in E(G)$。
-因为该结论与$ u \not\in N_{G}(x)$矛盾，
-所以$N_{G-G^{j}[i]}(u)$ $\cap $ $N_{G-G^{j}[i]}(x)=\emptyset$，
-即$cn_{G-G^{j}[i]}$ $(\{u\},\{x\}) =0$。
-类似地，$cn_{G-(G^{j}[i] \cup G^{j}[i+1])}(\{u\},\{y,z\}) =0$。
-因此，
-\begin{align*}
-            cn_{G}(S_1,S_2) = & cn_{G^{j}[i]}(\{u\},\{x\})+cn_{G^{j}[i]}(\{u\},\{y,z\})+cn_{G^{j}[i+1]}(\{u\},\{y,z\})\\
-                              & + cn_{G-G^{j}[i]}(\{u\},\{x\})+ cn_{G-(G^{j}[i] \cup G^{j}[i+1])}(\{u\},\{y,z\}) \\
-                         \leq & 2+1+1+0+0 \\
-                         \leq & 4\mbox{。}
-\end{align*}
-情形1.2. $x \in G^{j}[i+1]$且$y \in G^{j}[i+2]$。
-
-根据定义\ref{GeneralizedHypercube}可知，
-$cn_{G^{j}[i]}(\{u\},\{x\})=cn_{G^{j}[i]}(\{u\},\{y\})\leq 1$、
-$cn_{G^{j}[i+1]}(\{u\},\{x\})\leq 1$、
-$cn_{G^{j}[i]}(\{u\},\{z\})\leq 1$、
-且$cn_{G^{j}[i+2]}(\{u\},\{y,z\})\leq 1$(如图\ref{ch4_lemma2_1}(b))。
-若$N_{G-(G^{j}[i]\cup G^{j}[i+1])}(u)$ $\cap
-N_{G-(G^{j}[i]\cup G^{j}[i+1])}(x)$ $\neq \emptyset$，
-则$(u,x)\in E(G)$。
-因为该结论与$u \not\in N_{G}(x)$矛盾，
-所以$N_{G-(G^{j}[i]\cup G^{j}[i+1])}(u)\cap N_{G-(G^{j}[i]\cup G^{j}[i+1])}(x)=\emptyset$，
-即$cn_{G-(G^{j}[i]\cup G^{j}[i+1])}$ $(\{u\},\{x\}) $ $=0$。
-类似地，$cn_{G-(G^{j}[i]\cup G^{j}[i+2])}$ $(\{u\},\{y,z\})$ $=0$。
-因此，
-\begin{align*}
-            cn_{G}(S_1,S_2) = & cn_{G^{j}[i]}(\{u\},\{x\})+cn_{G^{j}[i+1]}(\{u\},\{x\})\\
-                              & +cn_{G^{j}[i]}(\{u\},\{z\})+ cn_{G^{j}[i+2]}(\{u\},\{y,z\})\\
-                              & +cn_{G-(G^{j}[i]\cup G^{j}[i+1])}(\{u\},\{x\})\\
-                              & +cn_{G-(G^{j}[i]\cup G^{j}[i+2])}(\{u\},\{y,z\})\\
-                         \leq & 1+1+1+1+0+0 \\
-                         \leq & 4\mbox{。}
-\end{align*}
-情形1.3. $x \in G^{j}[i+1]$且$y \in G^{j}[i]$。
-
-根据引理\ref{cn2}可知$cn_{G^{j}[i]}(\{u\},\{y,z\}) \leq 3$。
-根据定义\ref{GeneralizedHypercube}可知$cn_{G^{j}[i+1]}(\{u\},\{x\}) \leq 1$。
-若$N_{G-G^{j}[i+1]}(u)\cap N_{G-G^{j}[i+1]}(x)\neq \emptyset$，
-则$(u,x) \in E(G)$。
-因为该结论与$u \not \subset N_{G}(x)$矛盾，
-所以$N_{G-G^{j}[i+1]}(u)\cap N_{G-G^{j}[i+1]}(x)=\emptyset$，
-即$cn_{G-G^{j}[i+1]}(\{u\},\{x\}) =0$。
-类似地，$cn_{G-G^{j}[i]}(\{u\},$ $\{y,z\}) =0$。
-因此，
-\begin{align*}
-            cn_{G}(S_1,S_2) = & cn_{G^{j}[i]}(\{u\},\{x\})+cn_{G^{j}[i+1]}(\{u\},\{x\})\\
-                              & +cn_{G^{j}[i]}(\{u\},\{z\})+ cn_{G^{j}[i+2]}(\{u\},\{y,z\})\\
-                              & +cn_{G-(G^{j}[i]\cup G^{j}[i+1])}(\{u\},\{x\}) \\
-                              & +cn_{G-(G^{j}[i]\cup G^{j}[i+2])}(\{u\},\{y,z\})\\
-                         \leq & 1+1+1+1+0+0=4\mbox{。}
-\end{align*}
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=16cm]{ch4_lemma2_1.eps}
-%\smallcaption{$cn_{G}(S_{1},S_{2})$，其中$S_{1}=\{u\}$且$S_{2} = \{(x,y),(y,z)\}$ 中的情形：$z$和$y$在一个子图}
-\smallcaption{$z$和$y$在一个子图}
-\label{ch4_lemma2_1}
-\end{figure}
-
-情形2. $z$和$y$不在同一个子图。
-
-情形2.1. $x\in G^{j}[i-1]$，$y\in G^{j}[i]$且$y\in G^{j}[i+1]$。
-
-根据定义\ref{GeneralizedHypercube}可知$cn_{G^{j}[i]}(\{u\},\{y\}) \leq 2$，
-$cn_{G^{j}[i-1]}(\{u\},\{x\}) \leq 1$，
-且$cn_{G^{j}[i+1]}(\{u\},\{z\})\leq 1$(如图\ref{ch4_lemma2_2}(a))。
-若$N_{G-G^{j}[i]}(u)\cap N_{G-G^{j}[i]}(y)\neq \emptyset$，
-则$(u,y) \in E(G)$。
-因为该结论与$u\not\in N_{G}(y)$矛盾，
-所以$N_{G-G^{j}[i+1]}(u)\cap N_{G-G^{j}[i+1]}(y)=\emptyset$，
-即$cn_{G-G^{j}[i]}(\{u\},\{y\}) =0$。
-类似地，可以推出$cn_{G-G^{j}[i-1]}(\{u\},\{x\}) =0$
-且$cn_{G-G^{j}[i+1]}(\{u\},\{z\})=0$。
-因此，
-\begin{align*}
-            cn_{G}(S_1,S_2) = & cn_{G^{j}[i]}(\{u\},\{y\})+ cn_{G-(G^{j}[i]}(\{u\},\{y\})+\\
-                              & cn_{G^{j}[i-1]}(\{u\},\{x\})+cn_{G-(G^{j}[i-1]}(\{u\},\{x\})+\\
-                              & cn_{G^{j}[i+1]}(\{u\},\{z\})+cn_{G-(G^{j}[i+1]}(\{u\},\{z\}) \\
-                         \leq & 2+0+1+0+1 \\
-                         \leq & 4\mbox{。}
-\end{align*}
-情形2.2. $x \in G^{j}[i+1]$，$y \in G^{j}[i+2]$且$y \in G^{j}[i+3]$。
-
-需要声明的是，该情况发生于$m_j\geq4$。
-根据定义\ref{GeneralizedHypercube}可知$cn_{G^{j}[i+1]}(\{u\},\{x,y,z\})\leq 1$、
-$cn_{G^{j}[i+1]}(\{u\},\{x\}) \leq 1$、
-$cn_{G^{j}[i+2]}(\{u\},\{y\}) \leq 1$且
-$cn_{G^{j}[i+3]}(\{u\},\{z\})\leq 1$(如图\ref{ch4_lemma2_2}(b))。
-若$N_{G-(G^{j}[i]\cup G^{j}[i+1])}(u)\cap N_{G-(G^{j}[i]\cup G^{j}[i+1])}(x)\neq \emptyset$，
-则$(u,x) \in E(G)$。
-因为该结论与$u \not\in N_{G}(x)$矛盾，
-所以$N_{G-(G^{j}[i]\cup G^{j}[i+1])}(u)\cap N_{G-(G^{j}[i]\cup G^{j}[i+1])}(x)=\emptyset$，
-即$cn_{G-(G^{j}[i]\cup G^{j}[i+1])}(\{u\},\{x\}) =0$。
-类似地，可以推出$cn_{G-(G^{j}[i]\cup G^{j}[i+2])}(\{u\},\{y\}) =0$
-且$cn_{G-(G^{j}[i]\cup G^{j}[i+2])}(\{u\},\{z\}) =0$。
-因此，
-\begin{align*}
-            cn_{G}(S_1,S_2) = & cn_{G^{j}[i+1]}(\{u\},\{x,y,z\})+cn_{G^{j}[i+1]}(\{u\},\{x\})+\\
-                              & cn_{G-(G^{j}[i] \cup G^{j}[i+1])}(\{u\},\{x\})+cn_{G^{j}[i+2]}(\{u\},\{y\})+\\
-                              & cn_{G-(G^{j}[i] \cup G^{j}[i+2])}(\{u\},\{y\})+cn_{G^{j}[i+3]}(\{u\},\{z\})+ \\
-                              & cn_{G-(G^{j}[i] \cup G^{j}[i+3])}(\{u\},\{z\}) \\
-                         \leq & 1+1+0+1+0+1+0=4\mbox{。}
-\end{align*}
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=16cm]{ch4_lemma2_2.eps}
-\smallcaption{$z$和$y$不在一个子图}
-\label{ch4_lemma2_2}
-\end{figure}
-综上所述，$cn_{G}(S_{1},S_{2}) \leq 4$。因此，本引理成立。
-\end{proof}
-
-\begin{lem}
-\label{cn4}
-令$S_{1}$和$S_2$为$G(m_{r},m_{r-1},\ldots,m_{1})$的子图，
-满足$V(S_{1})\cap V(S_{2})=\emptyset$
-且$S_{1} \not \subset N_{G}(S_{2})$，
-其中$r\geq2$且对于任意一个$i \in \langle r \rangle \setminus \{0\}$，
-都有$m_{i}\geq 3$。
-若$S_{1} \cong K_{2}$且$S_{2} \cong P_{3}$，
-则$cn_{G}(S_{1},S_{2}) \leq 8$。
-\end{lem}
-
-\begin{proof}
-不失一般性，假设$V(S_1)=\{u,v\}$，$V(S_2)=\{x,y,z\}$且$(u,v),(x,y),(y,z)\in E(G)$。
-根据引理\ref{cn3}可知，$cn_{G}(S_{1},S_{2})\leq cn_{G}(\{u\},S_{2})+
-cn_{G}(\{v\},S_{2})
-=4+4=8$。
-\end{proof}
-
-\subsection{广义超立方体的$2$-外连通度}
-
-
-
-%根据定理~\ref{oneComponentConnectsone}，
-%和定理~\ref{oneComponentConnectsone2}，
-%我们可以推出如下定理。
+%因为条件诊断度和$2$-额外连通度具有密切的联系，在得到条件诊断度或者$2$-额外连通度的情况下，如果满足某些条件，另一个诊断度可以直接得到。Hao\upcite{Relationship-between-Conditional-and-extra}等人给出了的充分条件。
 %
-%在本小节，我们研究广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$的一些基本属性，
-%其中$m_{r}>$ max $\{m_{1},m_{2},\ldots,m_{r-1}\}$。
-
-\begin{lem}
-\label{oneComponentConnectsToOthers}
-令$F$为广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$中的一个故障顶点集合，
-若$G$和$F$满足：
-
-(a) 若$m_{r}>m_{r-1}$，$|F|\leq 3\kappa(G)-2m_{r}-1$；
-
-(b) 若$m_{r}=m_{r-1}$，$|F|\leq 3\kappa(G)-2m_{r}-2$；
-
-(c) $G-F$中的每个分支中都包含至少$3$个顶点。
-
-则对于每个$j \in \langle m_{k}-1 \rangle$，
-都有子图$G^{k}[j]-F_{j}$中的每个顶点可以连通到子图$G^{k}[J]-F_{J}$，
-其中$J=\langle m_{k}-1 \rangle \setminus \{j\}$。
-\end{lem}
-
-\begin{proof}
-令$u\in V(G^{k}[j]-F_{j})$。
-若$N_{G^{k}[J]}(u)\not\subseteq F$，
-则本定理得证。
-若$N_{G^{k}[J]}(u)\not\subseteq F$，
-因为$G-F$中不存在孤立点，
-所以存在一个顶点$v \in N_{G^{k}[j]}(u)-F_{j}$。
-若$N_{G^{k}[J]}(v)\not\subseteq F_{J}$，则本定理得证。
-若$N_{G^{k}[J]}(v)\subseteq F_{J}$，因为$G-F$中不存在孤立边，
-所以存在一个顶点$w \in N_{G^{k}[j]}(\{u,v\})-F_{j}$。
-若$N_{G^{k}[J]}(w)\not\subseteq F_{J}$，则本定理得证。
-若$N_{G^{k}[J]}(w)\subseteq F_{J}$，
-因为顶点$w$可能和顶点$u$或$v$相邻，
-所以不失一般性，假设$w$和$v$相邻。
-我们考虑以下两种情形。
-
-情形1. $m_{r}>m_{r-1}$。
-
-根据引理~\ref{minNeighbors}可知$|N_{G^k[j]}(\{u,v,w\})|\geq 3\kappa(G)-3m_{k}-2m_{r}+3$。
-令$N=N_{G^k[j]}(\{u,v,w\})\cup N_{G^k[J]}\{u,v,w\}$，
-则$|N|\geq (3\kappa(G)-3m_{k}-2m_{r}+3)+3(m_{k}-1)=3\kappa(G)-2m_{r}$。
-若$N$中的任何一个顶点都无法和子图$G^{k}[J]$连通。
-则可以推出$3\kappa(G)-2m_{r}-1\geq|F|\geq |N|$，
-该结论与$|N|\geq3\kappa(G)-2m_{r}>|F|$矛盾。
-因此，$N$中必定存在一个顶点和子图$G^{k}[J]$连通。
-
-情形2. $m_{r}=m_{r-1}$。
-
-类似地，根据引理~\ref{minNeighbors}可知$|N_{G^k[j]}(\{u,v,w\})|\geq 3\kappa(G)-3m_{k}-2m_{r}+2$。
-令$N=N_{G^k[j]}(\{u,v,w\})\cup N_{G^k[J]}\{u,v,w\}$，
-则$|N|\geq (3\kappa(G)-3m_{k}-2m_{r}+2)+3(m_{k}-1)=3\kappa(G)-2m_{r}-1$。
-若$N$中的任何一个顶点都无法和子图$G^{k}[J]$连通。
-则$3\kappa(G)-2m_{r}-2\geq|F|\geq |N|$，
-该结论与$|N|\geq3\kappa(G)-2m_{r}-1>|F|$矛盾。
-因此，$N$中必定存在一个顶点和子图$G^{k}[J]$连通。
-
-综上所述，子图$G^{k}[j]-F_{j}$中任意一个顶点$u$可以和子图$G^{k}[J]-F_{J}$连通。
-因此，本引理得证。
-\end{proof}
-
-\begin{lem}
-\label{oneComponentConnectsone}
-令$G^{k}[\alpha]$和$G^{k}[\beta]$为$G(m_{r},m_{r-1},\ldots,m_{1})$中的两个子图，
-且$F_{\alpha}$和$F_{\beta}$分别为
-$G^{k}[\alpha]$和$G^{k}[\beta]$两个子图中的故障集合，
-其中$|F_{\alpha}| \leq \kappa^{1}(G^{k}[\alpha])$
-$|F_{\beta}| \leq \kappa^{1}(G^{k}[\beta])$，
-且满足：
-
-(a) 当$m_{r}>m_{r-1}$时，$|F_{\alpha}|\cup F_{\beta}| \leq 3\kappa(G)-3m_{k}-2m_{r}+5$；
-
-(b) 当$m_{r}=m_{r-1}$时，$|F_{\alpha}|\cup F_{\beta}| \leq 3\kappa(G)-3m_{k}-2m_{r}+4$。
-
-若$G^{k}[\alpha]-F_{\alpha}$和$G^{k}[\beta]-F_{\beta}$中
-的每个顶点都至少有一个无故障邻居，
-则$G^{k}[\alpha]-F_{\alpha}$中的任意一个顶点可以和$G^{k}[\beta]-F_{\beta}$中的某些顶点相连。
-\end{lem}
-
-
-\begin{proof}
-令$u \in V(G^{k}[\alpha]-F_{\alpha})$。
-若$N_{G^{k}[\beta]}(u)\not\subseteq F_{\beta}$，则本定理得证。
-若$N_{G^{k}[\beta]}(u)\subseteq F_{\beta}$，
-因为$u$在$G^{k}[\alpha]-F_{\alpha}$中不是一个孤立点，
-所以存在一个顶点$v \subset N_{G^{k}[\alpha]-F_{\alpha}}(u)$。
-若$N_{G^{k}[\beta]}(v)\not\subseteq F_{\beta}$，则本引理得证。
-若$N_{G^{k}[\beta]}(v)\subseteq F_{\beta}$，
-因为$|F_{\alpha}| \leq \kappa^{1}(G^{k}[\alpha])$，
-且$(u,v)$不是子图$G^{k}[\alpha]-F_{\alpha}$一条孤立边，
-所以$G^{k}[\alpha]-F_{\alpha}$中必定存在一个无故障顶点$w \in N_{G^{k}[\alpha]}(u,v)$。
-若$N_{G^{k}[\beta]}(w)\not\subseteq F_{\beta}$，则本引理得证。
-若$N_{G^{k}[\beta]}(w)\subseteq  F_{\beta}$，我们讨论以下两种情形。
-
-情形1. $m_{r}>m_{r-1}$。
-
-根据引理~\ref{minNeighbors}可知$|N_{G^k[j]}(\{u,v,w\})|\geq 3\kappa(G)-3m_{1}-2m_{r}+3$。
-令$N=N_{G^k[\alpha]}(u,v,w)\cup N_{G^k[\beta]}(u,v,w)$。
-则$|N|\geq (3\kappa(G)-3m_{k}-2m_{r}+3)+3=3\kappa(G)-3m_{k}-2m_{r}+6$。
-若$N$中的任意一个顶点都无法连接到$G^{k}[\beta]-F_{\beta}$，
-则$|F_{\alpha}\cup F_{\beta}|\geq |N| \geq 3\kappa(G)-3m_{k}-2m_{r}+6$，
-该结论与$|F_{\alpha}\cup F_{\beta}|\leq 3\kappa(G)-3m_{k}-2m_{r}+5$矛盾。
-因此，$N$中必存在一个顶点和$G^{k}[\beta]-F_{\beta}$连通，则本引理得证。
-
-情形2. $m_{r}=m_{r-1}$。
-
-类似地，根据引理~\ref{minNeighbors}可知$|N_{G^k[j]}(\{u,v,w\})|\geq 3\kappa(G)-3m_{1}-2m_{r}+2$。
-令$N=N_{G^k[\alpha]}(u,v,w)\cup N_{G^k[\beta]}(u,v,w)$，
-则$|N|\geq (3\kappa(G)-3m_{k}-2m_{r}+2)+3=3\kappa(G)-3m_{k}-2m_{r}+5$。
-若$N$中的任意一个顶点都无法连接到$G^{k}[\beta]-F_{\beta}$。
-则$|F_{\alpha}\cup F_{\beta}|\geq |N| \geq 3\kappa(G)-3m_{k}-2m_{r}+4$，
-该结论与$|F_{\alpha}\cup F_{\beta}|\leq 3\kappa(G)-3m_{k}-2m_{r}+5$矛盾。
-因此，$N$中必定存在一个顶点和$G^{k}[\beta]-F_{\beta}$连通，则本引理得证。
-\end{proof}
-
-基于引理~\ref{oneComponentConnectsToOthers}和引理~\ref{oneComponentConnectsone}，
-我们可以推出定理\ref{ConnectivityLargerThan}。
-
-
-\begin{thm}
-  \label{ConnectivityLargerThan}
-对于$G(m_{r},m_{r-1},\ldots,m_{1})$，
-其中$r \geq 5$，且对于所有的$i \in \langle r \rangle \setminus \{0\}$，
-都有$m_{i} \geq 3$，则
-\begin{align*}
-        \;  &\kappa_{2}(G)\geq
-        \left\{\begin{array}{ll}
-            3\kappa(G)-2m_{r}, & \mbox{若 }m_{r}>m_{r-1}\mbox{；} \\
-            3\kappa(G)-2m_{r}-1, & \mbox{若 }m_{r}=m_{r-1}  \\
-        \end{array}\right.
-\end{align*}
-\end{thm}
-
-\begin{proof}
-令$F \subset V(G)$为一个故障顶点集合，
-且满足：
-
-(a)当$m_{r}>m_{r-1}$时，$|F|\leq 3\kappa(G)-2m_{r}-1$；
-
-(b)当$m_{r}=m_{r-1}$时，$|F|\leq 3\kappa(G)-2m_{r}-2$；
-
-(c)$G-F$满足每个分支至少包含$3$个顶点。
-
-证明本定理，等价于证明对于$G-F$中任意两个顶点$u$和$v$
-都存在一条从$x$到$v$的无故障路径。
-
-若$u$和$v$相邻，则本定理显然成立。
-因此，我们讨论$u$和$v$不相邻的情况。
-
-因为若$m_{r}>m_{r-1}$且$|F|\leq 3\kappa(G)-2m_{r}-1$，
-则$\frac{3\kappa(G)-2m_{r}-1}{\kappa(G)-1}\leq 3$；
-若$m_{r}=m_{r-1}$且$|F|\leq 3\kappa(G)-2m_{r}-2$，
-则$\frac{3\kappa(G)-2m_{r}-2}{\kappa(G)-1}\leq 3$。
-因此，$G-F$中至多存在$3$个度为$1$的顶点。
-若存在$3$个度为$1$的顶点，
-不失一般性，假设$3$个度为$1$的顶点的关联边
-分别为第$i,j,l$维的边，
-其中$\{i,j,l\}\subset \langle r \rangle \setminus \{0\}$。
-因为$r\geq5$，所以必定存在一个维度$k$使得$k\subset \langle r \rangle \setminus \{0,i,j,l\}$
-且$m_{k}=$ min$\{\{m_{1},m_{2}\ldots,m_{r}\}\setminus\{m_{i},m_{j},m_{l}\}\}$。
-类似地，若存在小于$3$个度为$1$的顶点时，必定存在这样的维度$k$。
-因此，我们从第$k$个维度将$G$切分为$m_{k}$个子图
-$G^{k}[0],$ $G^{k}[1],\ldots,$ $G^{k}$ $[m_{k}-1]$，
-显然，每个子图$G^{k}[j]$中不存在孤立点，其中$j\subset \langle m_{k}-1 \rangle$。
-
-令$u \in G^{r}[\alpha]$且$v \in G^{r}[\beta]$,
-其中$\alpha,\beta \in \langle m_{r}-1\rangle$。
-令$F_{\alpha}=V(G^{r}[\alpha]) \cap F$
-且$F_{\beta}=V(G^{r}[\beta])\cap F$。
-根据$u$和$v$所在的子图的不同， 我们讨论以下两种情形。
-
-情形1. $\alpha \neq \beta$。
-
-情形1.1. $|F_{\alpha}| \geq \kappa^1(G^{k}[\alpha])$或$|F_{\beta}| \geq \kappa^1(G^{k}[\beta])$。
-
-不失一般性，假设$|F_{\alpha}| \geq \kappa(G^{r}[\alpha])=2\kappa(G)-2m_{k}-m_r+2$。
-令$J=\langle m_r-1 \rangle\setminus \{\alpha\}$，
-$F_J = \bigcup_{j \in J}F_j$且$G^r[J]$为由$V(G)\setminus V(G^r[\alpha])$导出的子图。
-根据引理~\ref{oneComponentConnectsToOthers}可知，
-$G$中必定存在一条从$u$到子图$G^k[J]$中顶点$u'$的无故障路径$P_1$。
-若$m_{r}>m_{r-1}$，
-则$|F_{J}|=|F-F_{\alpha}|\leq (3\kappa-2m_r-1)-(2\kappa(G)-2m_{k}-m_r+2)
-=\kappa-m_r+2m_{k}-3$。
-因为$\kappa^1(G^k[J])=2(\kappa-1)-m_r=2\kappa(G)-m_r-2$，
-所以$\kappa^1(G^k[J])-|F_{J}|=\kappa-2m_{k}+1$。
-显然$\kappa-2m_{k}+1>0$。因此，$\kappa^1(G^k[J])>|F_{J}|$。
-类似地，若$m_{r}=m_{r-1}$，
-则$|F_{J}|=|F-F_{\alpha}|\leq (3\kappa-2m_r-2)-(2\kappa(G)-2m_{k}-m_r+2)=\kappa-m_r+2m_{k}-4$。
-因为$\kappa^1(G^k[J])=2(\kappa-1)-m_r=2\kappa(G)-m_r-2$，
-所以$\kappa^1(G^k[J])-|F_{J}|=\kappa-2m_{k}+1$。
-显然，$\kappa-2m_{k}>0$。因此，$\kappa^1(G^k[J])>|F_{J}|$。
-综合上述$m_{r}>m_{r-1}$和$m_{r}=m_{r-1}$的两个情况的讨论可知$\kappa^1(G^k[J])>|F_{J}|$。
-因为$G^k[J]$中每个无故障顶点都至少有一个无故障邻居，根据定理\ref{restricted}
-可知$G^r[J]-F_{J}$是连通的，
-也就是说$G^r[J]-F_{J}$中必定存在一条从$u'$到$v$的无故障路径$P_2$。
-因此，路径$(P_1,P_2)$是$u$和$v$在$G-F$中的一条无故障路径(如图\ref{example1_1})。
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=11cm]{1_1.eps}
-\smallcaption{情形$|F_{\alpha}| \geq \kappa^1(G^{k}[\alpha])$或$|F_{\beta}| \geq \kappa^1(G^{k}[\beta])$}
-\label{example1_1}
-\end{figure}
-
-情形1.2. $|F_{\alpha}| < \kappa^1(G^{k}[\alpha])$ 且 $|F_{\beta}| < \kappa^1(G^{k}[\beta])$。
-
-因为$|F_{\beta}| < \kappa^1(G^{k}[\beta])$且子图$G^k[\beta]-F_{\beta}$中
-不存在孤立点和孤立边，根据定理\ref{restricted}可知子图$G^k[\beta]-F_{\beta}$是连通的。
-若$N_{G^k[\beta]}(u) \not\subseteq F$，因为$G^r[\beta]-F_{\beta}$是连通的，
-所以子图$G^k[\beta]-F_{\beta}$中必定存在一条从$x$到$v$的无故障路径$P$。
-因此，路径$(x,P)$即为$u$和$v$在$G-F$中的一条无故障路径。
-若$N_{G^k[\beta]}(u) \subseteq F$，我们讨论以下两种情况。
-
-情形1.2.1. ($m_{r}>m_{r-1}$且$|F_{\alpha}\cup F_{\beta}|\leq 3\kappa(G)-2m_k-2m_r+5$)
-或($m_{r}=m_{r-1}$且$|F_{\alpha}\cup F_{\beta}|\leq 3\kappa(G)-2m_k-2m_r+4$)。
-
-因为$G^k[\alpha]$中无孤立点，
-所以$u$在$G^k[\alpha]$中至少有一个无故障邻居$y$。
-根据引理~\ref{oneComponentConnectsone}可知，
-$G$中必定存在一条从$u$到子图$G^k[\beta]$顶点$v$的无故障路径$P$。
-若$z=v$，那么$P$即为$u$和$v$在$G-F$中的一条无故障路径。
-若$z\neq v$，因为$G^r[\beta]$是连通的，且$z$和$v$都在子图$G^r[\beta]$中，
-所以$G^r[\beta]$中必定存在一条从$z$到$v$的无故障路径$P'$。
-因此，路径$(P,P')$即为$u$和$v$在$G-F$中的一条无故障路径(如图\ref{example1_2_1})。
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=11cm]{1_2_1.eps}
-\smallcaption{定理\ref{ConnectivityLargerThan}的情形1.2.1}
-\label{example1_2_1}
-\end{figure}
-
-情形1.2.2. ($m_{r}>m_{r-1}$且$|F_{\alpha}\cup F_{\beta}| \geq 3\kappa(G)-2m_k-2m_r+6$)
-或($m_{r}=m_{r-1}$且$|F_{\alpha}\cup F_{\beta}| \geq 3\kappa(G)-2m_k-2m_r+5$)。
-
-若$m_{r}>m_{r-1}$，
-则$|F\setminus (F_{\alpha}\cup F_{\beta})|\leq(3\kappa(G)-2m_r-1)-(3\kappa(G)-2m_r-2m_r+6)= 3m_k-7$；
-若$m_{r}=m_{r-1}$，
-则$|F\setminus (F_{\alpha}\cup F_{\beta})|\leq(3\kappa(G)-2m_r-2)-(3\kappa(G)-2m_r-2m_r+5)= 3m_k-7$。
-令$G\setminus (G^k[\alpha]\cup G^k[\beta])$中的每个子图为$G^k[i]$，
-其中$i\in \langle m_k\rangle\setminus \{0,\alpha,\beta\}$,
-则共有$m_k-2$个子图。
-若每个子图中的总故障顶点数都大于等于$3$，
-则$|F\setminus (F_{\alpha}\cup F_{\beta})|\geq 3(m_k-2)=3m_k-6>3m_k-7$，
-该结论与$|F\setminus (F_{\alpha}\cup F_{\beta})|\leq3m_k-7$矛盾。
-因此，$G-F$中必定存在一个子图的总故障顶点数小于等于$2$。
-不失一般性，假设子图$G^r[\gamma]$的总故障顶点数小于等于$2$，
-其中$\gamma \in \langle m_{r}-1\rangle \setminus \{\alpha,\beta\}$。
-因为子图$G^k[\beta]-F_{\beta}$中不存在孤立点和孤立边，
-所以必定存在顶点$u_1$和$u_2$使得$(u,u_1)\in E(G)$且$(u_1,u_2)\in E(G)$。
-令$N_{G^k[\gamma]}(\{u,u_1,u_2\})=\{u',u_1',u_2'\}$。
-因为$|F_{\gamma}|\leq 2$，
-所以$\{u',u_1',u_2'\}$中必定存在一个顶点是无故障的。
-%不失一般性，假设$u'$是无故障的，
-因此，$G$中必定存在以$u$为起点且以$\{u',u_1',u_2'\}$中的某个无故障顶点为终点的无故障路径为$P_1$。
-类似地，在$G$中必定存在以$v$为起点且以$\{v',v_1',v_2'\}$中的某个无故障顶点为终点的无故障路径为$P_3$。
-因为$|F_{\gamma}|<3m_k-7<\kappa^1(G^{k}[\gamma])$，
-且$G^{k}[\gamma]-F_{\gamma}$中每个顶点都有一个无故障邻居，
-根据定义\ref{restricted}可知$G^{k}[\gamma]$是连通的，
-也就是说，在$G^k[\gamma]-F_{\gamma}$中必定存在一条从$u'$到$v'$的无故障路径$P_2$。
-因此，路径$(P_1,P_2,P_3^{-1})$是$u$和$v$在$G-F$中的一条无故障路径(如图\ref{example1_2_2})。
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=11cm]{1_2_2.eps}
-\smallcaption{定理\ref{ConnectivityLargerThan}的情形1.2.2}
-\label{example1_2_2}
-\end{figure}
-
-情形2. $\alpha=\beta$。
-
-因为$G^r[\alpha]-F_\alpha$中无孤立点，
-所以$G^r[\alpha]-F_\alpha$中的每个顶点都至少有一个无故障顶点，
-若$|F_{\alpha}|<\kappa^1(G^{r}[\alpha])$，
-则根据定义\ref{restricted}可知$G^r[\alpha]-F_\alpha$是连通的，本定理得证。
-因此，我们讨论$|F_{\alpha}|\geq \kappa^1(G^{k}[\alpha])=2\kappa(G)-2m_{k}-m_r+2$的情况。
-
-令$J=\langle m_r-1 \rangle \setminus \{\alpha\}$且
-$G^k[J]$由$V(G)-G^k[\alpha]$导出的子图。
-根据引理~\ref{oneComponentConnectsToOthers}可知，
-在$G-F$中必定存在一条从$u$到$G^k[J]$中顶点$u'$为终点的路径$P_1$。
-类似地，可以推出在$G-F$中必定存在一条从$v$到$G^k[J]$中顶点$v'$为终点的路径$P_3$。
-若$m_r>m_{r-1}$，
-则$|F_{J}|=|F-F_{\alpha}|\leq (3\kappa-2m_r-1)-(2\kappa(G)-2m_{k}-m_r+2)
-=\kappa-m_r+2m_{k}-3$且$\kappa^1(G^k[J])-|F_{J}|=\kappa-2m_{k}+1>0$。
-因此，$\kappa^1(G^k[J])>|F_{J}|$。
-若$m_r=m_{r-1}$，
-类似地，可以推出$|F_{J}|=|F-F_{\alpha}|\leq (3\kappa-2m_r-2)-(2\kappa(G)-2m_{k}-m_r+2)
-=\kappa-m_r+2m_{k}-4$且$\kappa^1(G^k[J])-|F_{J}|=\kappa-2m_{k}>0$。
-因此，$\kappa^1(G^k[J])>|F_{J}|$。
-综合上述$m_r>m_{r-1}$和$m_r=m_{r-1}$两个情形的讨论可知$\kappa^1(G^k[J])>|F_{J}|$。
-因为$G^k[J]$中每个顶点都至少有一个无故障邻居，
-根据定义\ref{restricted}可知$G^r[J]-F_{J}$是连通的，
-也就是说在$G^r[J]-F_{J}$中必定存在一条从$u'$到$v'$的无故障路径$P_2$。
-因此，路径$(P_1,P_2,P_3)$即为$u$和$v$在$G-F$中的一条无故障路径(如图\ref{example2})。
-
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=11cm]{2.eps}
-\smallcaption{定理\ref{ConnectivityLargerThan}的情形：$\alpha=\beta$且$|F_{\alpha}|\geq \kappa^1(G^{k}[\alpha])$}
-\label{example2}
-\end{figure}
-
-%\begin{figure}[b]
-%\centerline{\includegraphics[width=11cm]{illustrations}}
-%\vspace*{8pt}
-%\caption{Illustrations of path between $u$ and $v$ in $G$.}
-%\label{illu1}
-%\end{figure}
-
-综上所述，因为对于$G-F$中任意两个不同的顶点$u$和$v$，必定存在一条从$u$到$v$的无故障路径，
-所以$G-F$是连通的。
-因此，本定理得证。
-\end{proof}
+%%我们首先给出条件诊断度的定义：
 %
-%接下来，在给出定理\ref{smallerthan1}之前，我们先给出引理\ref{commonNeighbor}。
+%\begin{defn}
+%\upcite{Conditional-Diagnosability-Measures-for-Large}
+%一个系统$G$是条件$t$-可诊断的，当且仅当两个不同的条件故障集合$F_1$，$F_2 \subseteq V(G)$ 是可区分的，且$|F_1|$，$|F_2| \leq t$。
+%\end{defn}
+%
+%$G$的条件诊断度，记为$t_c(G)$，其中$t$为上述定义的最大值，使得$G$是条件$t$-诊断的。
 %
 %\begin{lem}
-% \label{commonNeighbor}
-%假设$u$和$x$是图$G(m_{r},m_{r-1},\ldots,m_{1})$中相邻的两个顶点，
-%$y$是图中的另外一个顶点，且有$y \notin N_{G}(\{u,x\})$。
-%则可以推出$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2,3\}$。
-%如果图$G(m_{r},m_{r-1},\ldots,m_{1})$同构于超立方体，
-%则有$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2\}$。
+%\upcite{Strong-diagnosability-and-conditional-diagnosability}
+%$t_c(AQ_3)=3$，$t_c(AQ_4)=7$，$t_c(AQ_5)=12$；当$n \geq 6$时，$t_c(AQ_n)=6n-17$。
 %\end{lem}
 %
-%\begin{proof}
 %
-%不失一般性,我们可以假设$dist(u,y)\geq$ $dist(x,y)$。
-%因为$y \notin N_{G}(\{u,x\})$,
-%我们可以推出$dist(u,y)\geq$ $dist(x,y)\geq 2$.
-%因此,我们讨论以下两种情形.
+%\begin{thm}
+%\label{conditional-and-extra}
+%\upcite{Relationship-between-Conditional-and-extra}
+%设$G$为$n$-正则图，其中$t=$min$\{|N(T)|:T$ 是$G$中一条长度为$3$的路径或者长度为$3$ 的圈$\}$。 如果$G$满足下面的条件：
 %
-%情形1. $dist(x,y)\geq 3$.
+%(1) 对于一个顶点集合$F \subset V(G)$且$|F|\leq t-1$，$G-F$有一个大的连通分支和小的
+%连通分支，且这些小的连通分支的所有顶点个数最多为$2$个；
 %
-%根据定义\ref{GeneralizedHypercube},可以推出$N_{G}(x) \cap N_{G}(y)=\emptyset$。
-%然后因为$dist(u,y)\geq$ $dist(x,y)\geq 3$,
-%所以$N_{G}(u) \cap N_{G}(y)=\emptyset$。
-%因此,可以推出$|N_{G}(y) \cap N_{G}(\{u,x\})|=
-%|(N_{G}(x) \cap N_{G}(y))\cup(N_{G}(u) \cap N_{G}(y))|=0$.
+%(2) 如果$G$中不包含长度为$5$的圈，$n \geq 2\gamma(G)+2$；否则$n \geq 3\gamma(G)+2$；
 %
-%情形2. $dist(x,y)=2$.
+%(3) $|V(G)|>(n+1)(t-1)+4$；
 %
-%令$u=u_{r}u_{r-1}\dots u_{1}$, $x=x_{r}x_{r-1}\dots x_{1}$,
-%$y=y_{r}y_{r-1}\dots y_{1}$。
-%若$\alpha$是图$G(m_{r},m_{r-1},\ldots,m_{1})$的一个顶点,
-%令$z^{j,\alpha}=z_{r}z_{r-1}\dots z_{1}$,
-%若$i \in \langle r \rangle \setminus \{0,j\}$,
-%其中$z_{i}=y_{i}$且$z_{j}=\alpha_{j}$。
-%因为$dist(x,y)=2$,
-%所以存在两个非负整数$w_{1},w_{2}$,
-%且它们满足$x_{w_{1}}\neq y_{w_{1}}$, $x_{w_{2}}\neq y_{w_{2}}$
-%和$x_{i}=y_{i}$,其中$i \in \langle r\rangle \setminus \{0,w_{1},w_{2}\}$。
-%根据定义\ref{GeneralizedHypercube}\ref{GeneralizedHypercube},我们可以得到
-%$|N_{G}(x)\cap N_{G}(y)|= |\{z^{w_{1},x}, z^{w_{2},x}\}|$。
-%接下来,我们讨论以下两种情形。
+%那么$t_c(G)=t=\kappa_2(G)$。
+%\end{thm}
 %
-%情形2.1. $dist(u,y)\geq 3$.
+%其中$\gamma(G)$的定义为：对于$G$中两个不相邻的顶点$x$和$y$，$\gamma(x,y)=|N(x) \cap N(y)|$，$\gamma(G)=$max$\{\gamma(x,y):x,y \in V(G)$且$xy \notin E(G)\}$。
 %
-%根据定义\ref{GeneralizedHypercube}\ref{GeneralizedHypercube},我们可以得到
-%$N_{G}(y)\cap N_{G}(u)=\emptyset$。
-%则$|N_{G}(y)\cap N_{G}(\{u,x\})|=
-%|\{z^{w_{1},x}, z^{w_{2},x}\}|=2$.
+%下面我们将根据扩展立方体的性质来逐一验证这$3$个条件。
 %
-%情形2.2. $dist(u,y)=2$.
+%$AQ_n$是$(2n-1)$-正则图。设$u$是$AQ_n$中的任意一个顶点，$T=\{u,\bar{u}_{n-1},\bar{u}_{n-3}\}$，根据扩展立方体的定义，$T$是一条长度为$3$的路径且$t=|N(T)|=6n-17$。 根据引理\ref{6n-18<=}，可知$AQ_n$符合条件（1）；根据扩展立方体的定义，$AQ_n$ 包含长度为$5$ 的圈。根据引理\ref{common_verticles}，$\gamma(AQ_n)=4$。当$n \geq 8$ 时，$2n-1 \geq 3\gamma(G)+2$，条件（2）成立；当$n \geq 9$时，$|V(G)|=2^n>(n+1)(t-1)+4=(n+1)(6n-18)+4$。条件（3）成立。
 %
-%既然$dist(u,y)=2$,
-%那么存在两个非负整数$s_{1}$和$s_{2}$,
-%且它们满足$u_{s_{1}}\neq y_{s_{1}}$, $u_{s_{2}}\neq y_{s_{2}}$,
-%和$u_{i}=y_{i}$,其中$i \in \langle r\rangle \setminus \{0,s_{1},s_{2}\}$。
-%然后又$(u,x)\in E(G)$,
-%根据定义\ref{GeneralizedHypercube}\ref{GeneralizedHypercube},我们可以得到,
-%存在一个非负整数$t$,该数满足$u_{t}\neq y_{t}$ and $u_{i}\neq y_{i}$,
-%其中$i \in \langle r\rangle \setminus \{0,t\}$。
-%假设$t \notin \{s_{1},s_{2}\}$,
-%则$y_{s_{1}}\neq u_{s_{1}} = x_{s_{1}}$,
-%$y_{s_{2}}\neq u_{s_{2}}=x_{s_{2}}$,
-%$y_{t}= u_{t} \neq x_{t}$。
-%继而有dist $(u,x)=3$,推出矛盾。
-%因此,可以得到$t \in \{s_{1},s_{2}\}$。
-%类似地,我们可以得到$t \in \{w_{1},w_{2}\}$。
-%不失一般性,假设$t =s_{1}=w_{1}$。
-%既然有$u_{s_{1}}\neq y_{s_{1}}$,
-%$u_{t}\neq x_{t}$和$x_{w_{1}}\neq y_{w_{1}}$,
-%那么可以得到$u_{t}\neq x_{t}\neq y_{t}$,
-%继而也可以得到$m_{t} \geq 3$。
-%同时,需要声明的是,当该图同构于超立方体,
-%若$dist(x,y)=2$,且$dist(u,y)=2$,
-%这种情况是不存在的。
-%因此,我们可以推出$|N_{G}(u)\cap N_{G}(y)|=
-%|\{z^{s_{1},u}, z^{s_{2},u}\}|$。
-%既然$u_{s_{2}}=x_{w_{2}}$,
-%则$z^{s_{2},u}=z^{w_{2},x}$。
-%因此,
-%$|N_{G}(y)\cap N_{G}(\{u,x\})|=|\{z^{w_{1},x}, z^{w_{2},x}, z^{s_{1},u}\}|=3$.
-%
-%综上, 可以得到$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2,3\}$,且
-%当图G同构于超立方体,则有
-%$|N_{G}(y) \cap N_{G}(\{u,x\})|\in \{0,2\}$。
-%\end{proof}
-%
-%接下来，借助于引理\ref{commonNeighbor},我们给出定理\ref{smallerthan1}。
+%因为$AQ_n$满足定理\ref{conditional-and-extra}的条件，所以我们可以直接得到$AQ_n$的$2$- 额外连通度。
+
+
+文献\cite{5374420}和\cite{Fault-tolerant-analysis-of-augmented-cubes}分别给出了扩展立方体的$2$-额外连通度$\kappa_2(AQ_n)$和在MM$^*$模型下的诊断度$d(AQ_n)$。
+
 \begin{thm}
-  \label{smallerthan11}
-对于$G(m_{r},m_{r-1},\ldots,m_{1})$，
-其中$r \geq 5$，且对于所有的$i \in \langle r \rangle \setminus \{0\}$，
-都有$m_{i} \geq 3$，
-则：
-\begin{align*}
-        &\kappa_{2}(G)\leq
-        \left\{\begin{array}{ll}
-            3\kappa(G)-2m_{r}, &\mbox{若 }m_{r}>m_{r-1} \\
-            3\kappa(G)-2m_{r}-1, & \mbox{若 }m_{r}=m_{r-1}  \\
-        \end{array}\right.
-\end{align*}
+当$n \geq 9$时，$\kappa_2(AQ_n)=6n-17$。
 \end{thm}
+
+\begin{thm}
+当$n \geq 5$时，$d(AQ_n)=2n-1$。
+\end{thm}
+
+
+
+
+\section{扩展立方体在MM$^*$模型下的$2$-额外诊断度}
+
+\begin{lem}
+\textnormal{\upcite{Conditional-Diagnosability-Measures-for-Large,On-self-diagnosable-multiprocessor}}
+\label{MM*-distinguable}
+对于图$G$中的两个不同的顶点子集$F_1$，$F_2 \subset V(G)$。$(F_1,F_2)$在\textnormal{MM}$^*$ 模型下是可区分的当且仅当下面三个条件中的一个成立（见图\ref{MM*}）：
+
+\textnormal{(1)} 存在$x,z \in V(G)-(F_1 \cup F_2)$和$y \in (F_1-F_2) \cup (F_2-F_1)$，使得$xz,yz \in E(G)$；
+
+\textnormal{(2)} 存在$x,y \in F_1-F_2$和$z \in V(G)-(F_1 \cup F_2)$，使得$xz,yz \in E(G)$；
+
+\textnormal{(3)} 存在$x,y \in F_2-F_1$和$z \in V(G)-(F_1 \cup F_2)$，使得$xz,yz \in E(G)$。
+\end{lem}
+
+
+
+
+\begin{defn}
+\textnormal{\upcite{A-New-Proof-for-Exact-Relationship}}
+\label{MM*-distinguishable}
+\textnormal{(1)} 在MM$^*$模型下，一个图$G$是$g$-额外，$t$-可诊断的，当且仅当对任意两个不同的$g$-额外集$F_1 \subseteq V(G)$，$F_2 \subseteq V(G)$，其中$|F_1| \leq t$，$|F_2| \leq t$，且$F_1$和$F_2$是可区分的。
+
+\textnormal{(2)} $G$在MM$^*$下的$g$-额外诊断度，记为$t^g_M(G)$，是$G$在$g$-额外，$t$-可诊断下$t$的最大值。
+\end{defn}
+
+
+\begin{lem}
+\label{2-extra diagnosability <=}
+对于$n \geq 6$，$t^2_M(AQ_n) \leq 6n-15$。
+\end{lem}
 
 \begin{proof}
-令$u=u_{r}u_{r-1}\dots u_{1}, v=v_{r}v_{r-1}\dots v_{1}, w=w_{r}w_{r-1}\dots w_{1}\in V(G)$
-其中$\{(u,v),(v,w),(v,w)\}\subset E(G)$，
-且对于任意$i \in \langle r \rangle \setminus \{0,r\}$，
-都有$u_{i}=v_{i}=w_{i}$且$u_r\neq v_r\neq w_r$。
-根据定义\ref{GeneralizedHypercube}可知，
-若$m_{r}>m_{r-1}$，则$|N_{G}(u,v,w)|=3(\kappa-(m_r-1))+(m_r-3)=3\kappa-2m_r$。
-若$m_{r}=m_{r-1}$，则$|N_{G}(u,v,w)|=3\kappa-2m_r-1$。
+设$S=\{u,\bar{u}_{n-1},\bar{u}_{n-3}\}$，$F_1=N(V(S))$且$F_2=N[(V(S))]$。根据引理
+\ref{3nodes}，我们有$|F_1|=6n-17$且$|F_2|=|N(V(S))|+|V(S)|=6n-14$。可得$AQ_n[S]$是一个连通子图，$AQ_n-F_1(AQ_n-F_2)$中的任意一个连通分支的顶点数都大于等于3。于是，我们有
 
-令$F=N_{G}(\{u,v,w\})$，
-显然$G-F$分为两个子图，
-其中一个是包含$u,v$和$w$三个顶点的子图，
-另一个是子图$G-(N_{G}(\{u,v,w\})\cup\{u,v,w\})$。
-显然，$G-F$是不连通的。
-接下来，我们证明$G-F$中的每个分支都至少有$3$个顶点。
+$|F_1| \leq 6n-14$，$|F_2| \leq 6n-14$。\\
+并且$F_1$和$F_2$都是$AQ_n$的$2$-额外集（见图\ref{F_1andF_2-extra-sets}）。
 
-\noindent\textbf{断言}
-\emph{$G-F$中的每个分支都至少有$3$个顶点。}
-
-已知$G-F$分为两个子图，
-其中一个是包含$u,v$和$w$三个顶点的子图，
-另一个是子图$G-(N_{G}(\{u,v,w\})\cup\{u,v,w\})$。
-显然对于前者，该断言成立。
-因此，我们讨论子图$G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$的情形。
-若$G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$中包含
-顶点个数小于$3$的分支，
-则其包含孤立点或孤立边。
-因此，我们考虑以下两种情况。
-
-情形1. $G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$中包含孤立点。
-
-不失一般性，假设$x$为孤立点。
-显然，$N_{G}(\{x\})\subset F$。
-因此，$N_{G}(\{x\})=N_{G}(\{x\})\cap F=N_{G}(\{x\})\cap N_{G}(\{u,v,w\})$。
-根据引理\ref{cn3}可知$N_{G}(\{x\})=|N_{G}(\{x\})\cap N_{G}(\{u,v,w\}|\leq4$。
-根据定义\ref{GeneralizedHypercube}可知$|N_{G}(\{x\})|=\kappa(G)\geq 10$。
-显然，$N_{G}(\{x\})\leq4$与$|N_{G}(\{x\})|\geq 10$矛盾。
-因此，$G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$中不包含孤立点。
-
-情形2. $G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$中包含孤立边。
-
-不失一般性，假设$(x,y)$为孤立边。
-显然，$N_{G}(\{x,y\})\subset F$。
-因此，$N_{G}(\{x,y\})=N_{G}(\{x,y\})\cap F=N_{G}(\{x,y\})\cap N_{G}(\{u,v,w\})$。
-根据引理\ref{cn4}可知$|N_{G}(\{x\})|=|N_{G}(\{x,y\})\cap N_{G}(\{u,v,w\}|\leq 8$，
-根据定义\ref{GeneralizedHypercube}可知$|N_{G}(\{x\})|=\kappa(G)\geq 17$。
-显然，$|N_{G}(\{x\})|\leq 8$与$|N_{G}(\{x\})|\geq 17$矛盾。
-因此，$G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$中不包含孤立边。
-
-综合情形1和情形2的讨论可知$G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$无孤立点和孤立边。
-因此，$G-(N_{G}(\{u,v,w\}) \cup \{u,v,w\})$包含至少$3$个顶点，断言得证。
-
-综上所述，
-当$m_{r}>m_{r-1}$且$|F|=|N_{G}(\{u,v,w\})|=3\kappa-2m_r$ 时；
-或当$m_{r}=m_{r-1}$且$|F|=|N_{G}(\{u,v,w\})|=3\kappa-2m_r-1$时，
-$G-F$是不连通的，且每个分支至少包含$3$个无故障顶点。
-因此，本定理得证。
+因为$F_1 \Delta F_2=V(S)$，所以$E[F_1 \Delta F_2,V(AQ_n)-(F_1 \cup F_2)]=\emptyset$。 根据引理\ref{MM*}，$(F_1,F_2)$在
+MM$^*$下是不可区分的。由定义\ref{MM*-distinguishable}，$AQ_n$不是MM$^*$下$2$-额外，$(6n-14)$-可诊断的，因此$t^2_M(AQ_n) \leq 6n-15$。
 \end{proof}
 
-综合定理\ref{largerthan}和定理\ref{smallerthan11}，我们可以得到定理\ref{smallerthan11}。
+
+
+接下来，我们证明$t^2_M(AQ_n) \geq 6n-15$。
+
+\begin{lem}
+\label{2-extra diagnosability >=}
+对于$n \geq 8$，$t^2_M(AQ_n) \geq 6n-15$。
+\end{lem}
+
+\begin{proof}
+我们将用反证法来证明$t^2_M(AQ_n) \geq 6n-15$。假设$t^2_M(AQ_n) \leq 6n-16$。设$F_1$和$F_2$ 是两个不同的$2$-额外集且$|F_1|=|F_2| = 6n-15$。那么在MM$^*$模型下，$F_1$和$F_2$是不可区分的。另外，当$n \geq 8$时，有
+\begin{align*}
+|V(AQ_n)|-|F_1 \cup F_2| &\geq |V(AQ_n)|-|F_1|-|F_2|\\
+                          &\geq |V(AQ_n)|-2(6n-15)\\
+                          &\geq 2^n-2(6n-15)\\
+                          &> 0.
+\end{align*}
+因此，$V(AQ_n)-(F_1 \cup F_2) \neq \emptyset$。
+
+\textbf{断言：}$AQ_n-(F_1 \cup F_2)$不包含孤立顶点。
+
+假设在$AQ_n-(F_1 \cup F_2)$中存在一个孤立顶点$w$。设$W$是$AQ_n-(F_1 \cup F_2)$中孤立顶点的集合，并且$H$是$AQ_n-(F_1 \cup F_2)$的导出子图。
+因为$F_1$是$AQ_n$的一个$2$-额外集且$(F_1,F_2)$在MM$^*$模型下是不可区分的，
+那么在$F_2 - F_1$中存在唯一一个顶点$u$使得$uw \in E(AQ_n)$。类似地，因为$F_2$是$AQ_n$的一个$2$-额外集且$(F_1,F_2)$在MM$^*$模型下是不可区分的，所以在$F_1 - F_2$中存在唯一一个顶点$v$使得$vw \in E(AQ_n)$。因为$AQ_n$是$(2n-1)$-正则图，则$w$剩下的$2n-3$个邻居顶点都在$F_1 \cap F_2$中。此外，因为还有其他边把$F_1 \cap F_2$中的顶点与$W$外的其他顶点连接起来，所以我们有下面的不等式：
+\begin{align*}
+(2n-3)|W| &\leq \sum_{s\in F_1 \cap F_2}|N(s)|\\
+          &= |F_1 \cap F_2| \times (2n-1)\\
+          &\leq (6n-16) \times (2n-1).
+\end{align*}
+从而
+\begin{align*}
+|W| &\leq \frac{(6n-16) \times (2n-1)}{2n-3}\\
+   % &= \frac{(6n-16) \times (2n-3+2)}{2n-3}\\
+    &= \frac{(6n-16) \times (2n-3)+(6n-16) \times 2}{2n-3}\\
+    %&= 6n-16+ \frac{6(2n-3)-14}{2n-3}\\
+    &= 6n-10-\frac{14}{2n-3}\\
+    &\leq 6n-10.
+\end{align*}
+
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.18]{F_1andF_2-extra-sets.eps}\\
+  \caption{$G$的两个$2$-额外集}\label{F_1andF_2-extra-sets}
+\end{figure}
+
+
+假设$V(H)=\emptyset$，我们有
+\begin{align*}
+|V(AQ_n)| &= |F_1 \cup F_2|+ |W|\\
+       &= |F_1| + |F_2| - |F_1 \cap F_2| + |W|\\
+       &\leq 2 \times (6n-15) - (2n-3) + 6n-10\\
+       &= 16n-37.
+\end{align*}
+当$n \geq 8$时，$2^n > 16n-37$。因此，$V(H)\neq \emptyset$。
+
+因为$W$是$AQ_n-(F_1 \cup F_2)$中所有孤立顶点的集合，并且$H$是$V(AQ_n)-(F_1 \cup F_2)$ 中的导出子图，所以$N(V(H))\cap W=\emptyset$。
+
+假设$N(V(H)) \cap (F_1 \Delta F_2)\neq \emptyset$，那么在$V(H)$中存在一个顶点$z$，使得
+$z$在$F_1 \Delta F_2$中至少有1个邻居顶点$y$。因为在$V(H)$中的任意一个顶点在$AQ_n-(F_1 \cup F_2)$中都不是一个孤立的顶点，所以$z$在$V(H)$中也存在一个邻居顶点$x$。因此, $x,z \in V(G)-(F_1 \cup F_2)\neq \emptyset$，$y \in F_1 \Delta F_2$ 且$xz,yz \in E(AQ_n)$。根据引理\ref{MM*-distinguable}，$F_1$和$F_2$是可区分的，这与$(F_1,F_2)$在MM$^*$模型下是不可区分的相矛盾。因此$N(V(H)) \cap (F_1 \Delta F_2)= \emptyset$。
+
+如果$F_1 \cap F_2 = \emptyset$，那么$F_1 \Delta F_2=F_1 \cup F_2$。
+所以，$N(V(H)) \cap F_1 = \emptyset$且$N(V(H)) \cap F_2 = \emptyset$。
+进一步，$N(V(H)) \cap (F_1 \cup F_2 \cup W) = \emptyset$，
+因此$V(AQ_n)=N(V(H)) \cup F_1 \cup F_2 \cup W$，这意味着$AQ_n$是不连通的，
+这与$AQ_n$是连通图相矛盾。因此，$F_1 \cap F_2 \neq \emptyset$。
+
+因为$F_1 \neq F_2$，不失一般性，设$F_1 - F_2 \neq \emptyset$。
+因为$F_2$是$AQ_n$的一个额外集，因此存在一个顶点$u \in F_1 - F_2$使得$uw \in E(AQ_n)$。
+因为$(F_1,F_2)$不满足引理\ref{MM*-distinguable}中的条件，
+所以$u$是$F_1 - F_2$中使得$uw \in E(AQ_n)$的唯一顶点。
+如果$F_1 - F_2 = \emptyset$，那么$F_2 \subseteq F_1$，
+所以$AQ_n-(F_1 \cup F_2)=AQ_n-F_1$，并且$w$是$AQ_n-F_1$中的一个孤立顶点。
+这与$F_1$是$AQ_n$中的一个$2$-额外集相矛盾，因此，$F_2 - F_1 \neq \emptyset$。
+类似地，存在一个顶点$v\in F_2 - F_1$使得$vw \in E(AQ_n)$。当从$AQ_n$中删除$F_2 \cap F_1$ 时，因为$N(V(H))\cap W = \emptyset$和$N(V(H))\cap (F_1 \triangle F_2) = \emptyset$，所以$AQ_n - F_1 \cap F_2$是不连通的。显然$AQ_n-(F_1 \cap F_2)$包含一个非$H$的连通分支$Y$且$|V(Y)| \geq 4$（如图\ref{component>=4}）。根据$|V(Y)|$的大小，我们有以下两种情况：
+
+\textbf{情形1.} $4 \leq |V(Y)| \leq 6$。因为$N(V(Y)) \subseteq F_1 \cap F_2$，根据引理\ref{k-nodes}，有$|F_1 \cap F_2| \geq |N(V(Y))| \geq 6n-15$。因为$F_2 \cap F_1 \neq \emptyset$，我们有$|F_2|=|F_1 \cap F_2|+|F_2 - F_1| \geq 6n-15+1$，这
+与$|F_2| \leq 6n-15$相矛盾。因此，$AQ_n-(F_1 \cup F_2)$不包含孤立顶点。
+
+\textbf{情形2.} $|V(Y)| \geq 7$。因为$W$中的顶点在$F_1$和$F_2$中各仅有一个邻居顶点，所以$|F_1-F_2| \geq 3$或者$|F_2-F_1| \geq 3$。 不失一般性，我们设$|F_1-F_2| \geq 3$。 因为$|F_1|=6n-15$，所以$|F_1 \cap F_2| =|F_1|-|F_1-F_2| \leq 6n-18$。 根据定理\ref{6n-18<=}，$AQ_n-F_1 \cap F_2$只包含一个顶点个数大于2的连通分支。但是当$n \geq 8$ 时，
+%$|H|>2^n - (18n-45) > 2$，
+$|H|>2^n - 2(6n-15) > 2$，
+且$|V(Y)|>2$。 这意味着$AQ_n-F_1 \cap F_2$中包含两个顶点个数大于2的连通分支，与定理\ref{6n-18<=}矛盾。因此，$AQ_n-(F_1 \cup F_2)$不包含孤立顶点。
+
+对于顶点$x \in V(G)-(F_1 \cup F_2)$，根据断言，$N(x) \cap (V(G)-(F_1 \cup F_2))\neq \emptyset$。因为$(F_1, F_2)$不满足引理\ref{MM*} 中的条件，也就是说$x$在$F_1 \Delta F_2$ 中没有邻居顶点。因为$x$是任意选取的，所以$E[V(G)-(F_1 \cap F_2),F_1 \Delta F_2]=\emptyset$。 因为$F_1-F_2 \neq \emptyset$ 和$F_2$是$AQ_n$的一个$2$-额外集，所以$|F_1-F_2| \geq 3$。因为$F_1$ 和$F_2$是两个不同的$2$-额外集，所以$AQ_n-F_1$和$AQ_n-F_2$ 的任意分量的顶点数都大于$3$。当从$AQ_n$中删除$F_1 \cap F_2$时，$AQ_n-(F_1 \cap F_2)$ 是不连通的且其中的每个连通分支的顶点数都大于等于$3$。根据定义\ref{extra diagnosability definition}(2)，$F_1 \cap F_2$ 是$AQ_n$的一个2-额外割。根据定义\ref{extra diagnosability definition}(3)，$|F_1 \cap F_2| \geq 6n-17$。那么，$|F_1|=|F_1 \cap F_2|+|F_1 - F_2| \geq 6n-17+3 =6n-14 > 6n-15$，矛盾。
+
+因此，$t^2_M(AQ_n) \geq 6n-15$。
+\end{proof}
+
+根据引理\ref{2-extra diagnosability <=}和引理\ref{2-extra diagnosability >=}，我们可以得到以下的定理:
 
 \begin{thm}
-  \label{smallerthan11}
-对于$G(m_{r},m_{r-1},\ldots,m_{1})$，
-若$r \geq 5$，且对于所有的$i \in \langle r \rangle \setminus \{0\}$，
-都有$m_{i} \geq 3$。
-那么，当$m_{r}>m_{r-1}$时，有$\kappa_{2}(G)=3\kappa(G)-2m_{r}$；
-当$m_{r}=m_{r-1}$时，有$\kappa_{2}(G)=3\kappa(G)-2m_{r}-1$。
+对于$n \geq 8$，$t^2_M(AQ_n) = 6n-15$。
 \end{thm}
-\section{广义超立方体的$2$-外连通度下的容错路由}
 
-我们在第三章给出的GHCFP可以在$G(m_{r},m_{r-1},\ldots,m_{1})$的总故障顶点数小于其$1$-限制连通度，
-且每个无故障顶点都至少有一个无故障邻居时，
-得到$G$中任意两个无故障顶点之间的一条无故障路径\ref{alg:ghcfp}。
 
-在本小节中，我们给出当$G$的总故障顶点数小于其$2$-外连通度，
-且除去故障顶点后的每个分支中至少包含$3$个无故障顶点条件下的容错路由算法GHCFP2。
-之后，我们会分析该算法的时间复杂度。
 
-\subsection{$2$-外连通度条件下的容错路由算法}
-%\algnewcommand\AND{\textbf{and~}}
-%\algnewcommand\OR{\textbf{or~}}
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.2]{a-big-compoent-with-at-last-4-vertices.eps}\\
+  \caption{$G-F_1 \cap F_2$包含一个顶点个数大于等于$4$的连通分支}
+  \label{component>=4}
+\end{figure}
+
+\section{扩展立方体在MM$^*$模型下的诊断算法}
+
+\begin{lem}
+\label{6-vertices-2-complement-pairs}
+当$n \geq 4$时，设$x,y,s,t,u,v$是$AQ_n$中的6个不同顶点，如果$AQ_n$在$x,y,s,t,u,v$中包含2个补对，那么$|N_{AQ_n}(\{x,y,s,t,u,v\})| \geq 12n-48$。
+\end{lem}
+
+\begin{proof}
+设$(x,y)$，$(s,t)$是$AQ_n=L \bigodot R$中的2个补对，其中$L \cong AQ^0_{n-1}$，$R \cong AQ^1_{n-1}$。不失一般性，我们设$x,s \in V(L)$，$y,t\in V(R)$。我们有下面几种情况：
+
+\textbf{情形1}：$u,v \in L$或$u,v \in R$。不失一般性，我们假设$u,v \in L$，根据引理\ref{2nodes}和引理\ref{4nodes}，我们有$|N_L(\{x,s,u,m\})| \geq 8(n-1)-28=8n-36$且$|N_L(\{y,t\})|=4(n-1)-8$。因此
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v\})| &\geq |N_L(\{x,s,u,v\})|+|N_R(\{y,t\})|\\
+                        &\geq (8n-36)+(4n-12)=12n-48.
+\end{align*}
+
+\textbf{情形2}：$u,v$其中一个在$L$中，另一个在$R$中。不失一般性，我们假设$u \in L$，$v \in R$。
+根据引理\ref{3nodes}，我们有$|N_L(\{x,s,u\})| = |N_R(\{y,t,v\})| \geq 6(n-1)-17=6n-23$，因此
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v\})| &\geq |N_L(\{x,s,u\})|+|N_R(\{y,t,v\})|\\
+                            &\geq 2(6n-23)=12n-46.
+\end{align*}
+\end{proof}
+
+
+
+\begin{lem}
+\label{7-vertices-3-complement-pairs}
+当$n \geq 4$时，设$x,y,s,t,u,v,m$是$AQ_n$中的7个顶点，如果$AQ_n$在$x,y,s,t,u,v,m$中包含$3$ 个补对，那么$|N_{AQ_n}(\{x,y,s,t,u,v,m\})| \geq 14n-59$。
+\end{lem}
+
+
+\begin{proof}
+设$(x,y)$，$(s,t)$和$(u,v)$是$AQ_n=L \bigodot R$中的3个补对，其中$L \cong AQ^0_{n-1}$，$R \cong AQ^1_{n-1}$。不失一般性，我们设$x,s,u \in V(L)$，$y,t,v\in V(R)$。$m$属于$L$和$R$ 中的一个，不失一般性，我们设$m \in V(L)$。根据引理\ref{3nodes}和引理\ref{4nodes}，我们有$|N_L(\{x,s,u,m\})| \geq 8(n-1)-28=8n-36$，$|N_L(\{y,t,v\})|=6(n-1)-17=6n-23$。因此
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v,m\})| &\geq |N_L(\{x,s,u,m\})|+|N_R(\{y,t,v\})|\\
+                        &\geq (8n-36)+(6n-23)=14n-59.
+\end{align*}
+\end{proof}
+
+\begin{lem}
+\label{8-vertices-4-complement-pairs}
+当$n \geq 4$时，设$x,y,s,t,u,v,m,n$是$AQ_n$中的8个顶点，如果$AQ_n$在$x,y,s,t,u,v,\\m,n$中包含4 个补对，则$|N_{AQ_n}(\{x,y,s,t,u,v,m,n\})| \geq 16n-72$。
+\end{lem}
+
+\begin{proof}
+设$(x,y)$，$(s,t)$，$(u,v)$和$(m,n)$是$AQ_n=L \bigodot R$中的4个补对，其中$L \cong AQ^0_{n-1}$，$R \cong AQ^1_{n-1}$。不失一般性，我们设$x,s,u,m \in V(L)$，$y,t,v,n \in V(R)$。根据引理\ref{4nodes}，我们有$|N_L(\{x,s,u,m\})| = |N_R(\{y,t,v,n\})| \geq 8(n-1)-28=8n-36$，因此
+\begin{align*}
+|AQ_n(\{x,y,s,t,u,v,m,n\})| &\geq |N_L(\{x,s,u,m\})|+|N_R(\{y,t,v,n\})|\\
+                            &\geq 2(8n-36)=16n-72.
+\end{align*}
+\end{proof}
+
+
+对于$AQ_n$中的一个顶点集合$S$，设$AQ_n=L \bigodot R$，
+其中$L \cong AQ^0_{n-1}$，$R \cong AQ^1_{n-1}$。设$S_L=S \cap V(L)$且$S_R=S \cap V(R)$。
+$L-S_L$中的一个顶点$u$被称为是孤单顶点，
+如果$S_R$包含$u$的两个在$R$中的邻居顶点。否则称$u$为非孤单顶点。
+
+\begin{lem}
+\label{<=6n-15}
+设$S$是$AQ_n$的一个顶点集合，其中$|S| \leq 6n-15$，$n \geq 8$，则$AQ_n-S$包含一个顶点个数至少为$2^n-6n+12$ 的连通分支。
+\end{lem}
+\begin{proof}
+%我们用数学归纳法来证明这个引理。当$n=6$时，该引理成立。假设当$n \geq 7$时，该引理对于$AQ_{n-1}$成立。现在，我们考虑
+设$AQ_n=L \bigodot R$，其中$L \cong AQ^0_{n-1}$，$R \cong AQ^1_{n-1}$。设$S_L=S \cap V(L)$，$S_R=S \cap V(R)$。对于$L-S_L$和$R-S_R$是否连通，我们有下面几种情况:
+
+\textbf{情形1.} $L-S_L$和$R-S_R$都是不连通的。我们有$2n-3 \leq |S_L| \leq 4n-12$且$2n-3 \leq |S_R| \leq 4n-12$。根据定理\ref{4n-9<=}，我们有以下几种情形。
+
+\textbf{情形1.1.} $L-S_L(R-S_R)$包含两个分量，其中一个是孤立顶点，另一个是包含顶点个数为$2^{n-1}-|S_L|-1$ 的连通分支，记为$C_0(C_1)$。因为对于$n \geq 8$，所以
+\begin{align*}
+|V(C_0)|-(|S_R+1|) &= 2^{n-1}-|S_L|-1-|S_R|-1\\
+                   &= 2^{n-1} - |S| - 2\\
+                   &\geq 2^{n-1}-(6n-15)-2\\
+                   &= 2^{n-1}-6n+13 >0.
+\end{align*}
+那么$C_0$与$C_1$连通。因此，$AQ_n-S$有一个连通分支，其顶点个数至少为：
+\begin{align*}
+(2^{n-1}-|S_L|-1)+(2^{n-1}-|S_R|-1)=2^n-|S|-2=2^n-6n+13.
+\end{align*}
+%\textbf{情形1.2.} $L-S_L$包含两个分量，其中一个是孤立的顶点，另一个是包含顶点个数为$2^{n-1}-|S_L|-1$ 的连通分支$C_0$；$R-S_R$包含两个分量，其中一个是$K_2$，另一个是包含顶点个数为$2^{n-1}-|S_R|-2$ 的连通分支$C_1$。因为对于$n \geq 5$，有
+%\begin{align*}
+%|V(C_0)|-(|S_R+1|) &= 2^{n-1}-|S_L|-1-|S_R|-2\\
+%                   &= 2^{n-1} - |S| - 3\\
+%                   &\geq 2^{n-1}-(6n-18)-3\\
+%                   &= 2^{n-1}-6n+15 >0
+%\end{align*}
+%那么$C_0$连接于$C_1$。因此，$AQ_n-S$有一个连通分支，其顶点个数至少为：
+%\begin{align*}
+%(2^{n-1}-|S_L|-1)+(2^{n-1}-|S_R|-2)=2^n-|S|-2=2^n-6n-18
+%\end{align*}
+%$R-S_R$包含两个分量，其中一个是孤立的顶点，另一个是包含顶点个数为$2^{n-1}-|S_R|-1$ 的连通分支$C_1$；$L-S_L$包含两个分量，其中一个是$K_2$，另一个是包含顶点个数为$2^{n-1}-|S_L|-2$ 的连通分支$C_L$，这种情形的证明过程与上面一样。
+
+%\textbf{情形1.3.} 那么$L-S_L(R-S_R)$包含两个分量，其中一个是$K_2$，另一个是包含顶点个数为$2^{n-1}-|S_L|-2$ 的连通分支，记为$C_0(C_1)$。这种情形不存在，如果存在这种情形的话，有$|S_L|=|S_R| \geq 4(n-1)-8=4n-12$，也就是$S=|S_L|+|S_R| \geq (4n-12)+(4n-12)=8n-24>6n-15$，对于$n \geq 6$。矛盾。
+%
+\textbf{情形2.} $L-S_L$和$R-S_R$都是连通的。设$C_0=L-S_L$且$C_1=R-S_R$。
+在$L$和$R$的$2^n$条边中，最多有$2|S|$条边与$S$中的顶点关联。因为$2^n \geq 2(6n-15)$，所以$C_0$和$C_1$连通。于是，$AQ_n-S$是连通的，且其顶点个数为$2^n-6n+15$。
+
+\textbf{情形3.} 在$L-S_L$和$R-S_R$中，其中一个是连通的，另一个是不连通的。不失一般性，我们假设$L-S_L$是不连通的，$R-S_R$是连通的。根据$S_L$中的故障顶点个数，我们有下面几种情况。
+
+\textbf{情形3.1.} $2n-3 \leq |S_L| \leq 6n-24$。根据定理\ref{6n-18<=}，$|S_L| \leq 6n-24=6(n-1)-18$，从而$L-S_L$中存在一个顶点个数不少于$2^{n-1}-|S_L|-2$的连通分支，记为$C_0$。又因为对于$n \geq 6$，
+\begin{align*}
+|V(C_0)|-(|S_R|) &= 2^{n-1}-|S_L|-2-|S_R|\\
+                   &= 2^{n-1} - |S| - 2\\
+                   &\geq 2^{n-1}-(6n-15)-2\\
+                   &= 2^{n-1}-6n+13 >0.
+\end{align*}
+则$C_0$与$R-S_R$连通，因此$AQ_n-S$有一个连通分支，其顶点个数至少为：
+\begin{align*}
+(2^{n-1}-|S_L|-2)+(2^{n-1}-|S_R|)=2^n-|S|-2=2^n-6n+13.
+\end{align*}
+
+\textbf{情形3.2.} $6n-23 \leq |S_L| \leq 6n-15$。那么$|S_R| \leq 8$。根据引理\ref{complement-pair}，$L-S_L$中最多有8个孤单顶点。根据孤单顶点的个数，我们有下面几种情况：
+
+\textbf{情形3.2.1.} $L-S_L$中包含最多3个孤单顶点。显然，$L-S_L$含有至少$2^{n-1}-|S_L|-3$个非孤单顶点。因此，$AQ_n-S$中存在一个连通分支，其顶点个数至少为：
+\begin{align*}
+(2^{n-1}-|S_L|-3)+(2^{n-1}-|S_R|)=2^n-|S|-2=2^n-6n+13.
+\end{align*}
+
+\textbf{情形3.2.2.} $L-S_L$中包含4个孤单顶点。设$x,y,s,t$为$L-S_L$中的4个孤单顶点。显然，$L-S_L$中含有$2^{n-1}-|S_L|-4$个非孤单顶点。根据引理
+\ref{4nodes}，$4 \leq |S_R| \leq 8$，对于$n \geq 8$，有$|N_L(\{x,y,s,t\})| \geq 8(n-1)-24=8n-32>6n-15-4$。从而$x,y,s,t$中至少存在一个顶点，使得该顶点在$L-S_L-\{x,y,s,t\}$ 中存在一个邻居顶点。因此，$AQ_n-S$中存在一个连通分支，其顶点个数为：
+\begin{align*}
+(2^{n-1}-|S_L|-3)+(2^{n-1}-|S_R|)=2^n-|S|-3=2^n-6n+12.
+\end{align*}
+
+\textbf{情形3.2.3.} $L-S_L$中包含5个孤单顶点，设$x,y,s,t,u$为$L-S_L$中的5个孤单顶点。显然，$L-S_L$含有$2^{n-1}-|S_L|-5$个非孤单顶点。因为$R-S_R$是连通的，所以$AQ_n-S$中存在一个连通分支，其顶点个数为：
+\begin{align*}
+(2^{n-1}-|S_L|-5)+(2^{n-1}-|S_R|)=2^n-|S|-5=2^n-6n+10.
+\end{align*}
+根据引理
+\ref{complement-pair}，$x,y,s,t,u$包含一个或两个补边。根据引理\ref{5-vertices-2-complement-pairs}和引理\ref{5-vertices-1-complement-pairs}，对于$n \geq 8$，有$|N_L(\{x,y,s,t,u\})| \geq 10(n-1)-39=10n-49>6n-15-6$，于是$x,y,s,t,u$中至少存在一个顶点，使得该顶点在$L-S_L-\{x,y,s,t,u\}$中存在一个邻居顶点。则$AQ_n-S$中存在一个连通分支，其顶点个数为$2^n-6n+10+1=2^n-6n+11$。
+
+不失一般性，假设顶点$u$存在一个邻居顶点，该邻居顶点属于$L-S_L-\{x,y,s,t,u\}$。另外，根据引理
+\ref{4nodes}，因为$4 \leq |S_R| \leq 8$，对于$n \geq 8$，有$|N_L(\{x,y,s,t\})| \geq 8(n-1)-24=8n-32>6n-15-4$，从而$x,y,s,t$中至少存在一个顶点，使得该顶点也在$L-S_L-\{x,y,s,t\}$ 中存在一个邻居顶点。因此，$AQ_n-S$中存在一个连通分支，其顶点个数为$2^n-6n+11+1=2^n-6n+12$。
+
+%因此，$L-S_L$中最多包含$4$个孤单顶点，不失一般性，设这$4$个顶点为$x,y,s,t$
+%%且$N_L(x,y,s,t) \subseteq S_L$
+%。此时该情形类似情形3.2.2。在此不再赘述。
+
+
+%\textbf{情形3.2.3.} $L-S_L$中包含5个孤单顶点，设$x,y,s,t,u$为$L-S_L$中的5个孤单顶点。显然，$L-S_L$含有$2^{n-1}-|S_L|-5$个非孤单顶点。根据引理
+%\ref{complement-pair}，$x,y,s,t,u$包含一个或两个补边。根据引理\ref{5-vertices-2-complement-pairs}和引理\ref{5-vertices-1-complement-pairs}，对于$n \geq 8$，有$N_L(\{x,y,s,t,u\}) \geq 10(n-1)-39=10n-49>6n-15-6$，则在$x,y,s,t,u$中至少存在一个顶点，该顶点在$L-S_L-\{x,y,s,t,u\}$中存在一个邻居顶点。因此，$L-S_L$中最多包含$4$个孤单顶点，不失一般性，设这$4$个顶点为$x,y,s,t$
+%%且$N_L(x,y,s,t) \subseteq S_L$
+%。此时该情形类似情形3.2.2。在此不再赘述。
+
+\textbf{情形3.2.4.} $L-S_L$中包含6个孤单顶点，设$x,y,s,t,u,v$为$L-S_L$中的6个孤单顶点。显然，$L-S_L$含有$2^{n-1}-|S_L|-6$个非孤单顶点。因为$R-S_R$是连通的，所以$AQ_n-S$中存在一个连通分支，其顶点个数为：
+\begin{align*}
+(2^{n-1}-|S_L|-6)+(2^{n-1}-|S_R|)=2^n-|S|-5=2^n-6n+9.
+\end{align*}
+根据引理
+\ref{complement-pair}，$x,y,s,t,u,v$包含$2$个或$3$个补边。根据引理\ref{6-vertices-3-complement-pairs}和引理\ref{6-vertices-2-complement-pairs}，对于$n \geq 8$，有$|N_L(\{x,y,s,t,u\})| \geq 12(n-1)-48=12n-60>6n-15-6$，从而在$x,y,s,t,u,v$中至少存在一个顶点，使得该顶点在$L-S_L-\{x,y,s,t,u,v\}$中存在一个邻居顶点。于是$AQ_n-S$中存在一个连通分支，其顶点个数为$2^n-6n+9+1=2^n-6n+10$。
+
+不失一般性，假设顶点$v$存在一个邻居顶点，使得该邻居顶点属于$L-S_L-\{x,y,s,t,u,v\}$。另外，根据引理\ref{5-vertices-1-complement-pairs}和引理\ref{5-vertices-2-complement-pairs}，对于$n \geq 8$，有$|N_L(\{x,y,s,t,u\})| \geq 10(n-1)-39=10n-49>6n-15-6$，则在$x,y,s,t,u$中至少存在一个顶点，使得该顶点在$L-S_L-\{x,y,s,t,u\}$中存在一个邻居顶点。于是$AQ_n-S$中存在一个连通分支，其顶点个数为$2^n-6n+10+1=2^n-6n+11$。
+
+
+不失一般性，假设顶点$u$存在一个邻居顶点，使得该邻居顶点属于$L-S_L-\{x,y,s,t,u\}$。另外，根据引理
+\ref{4nodes}，因为$4 \leq |S_R| \leq 8$，对于$n \geq 8$，有$|N_L(\{x,y,s,t\})| \geq 8(n-1)-24=8n-32>6n-15-4$，则在$x,y,s,t$中至少存在一个顶点，使得该顶点也在$L-S_L-\{x,y,s,t\}$中存在一个邻居顶点。因此，$AQ_n-S$中存在一个连通分支，其顶点个数为$2^n-6n+11+1=2^n-6n+12$。
+
+对于$L-S_L$中包含7个或者8个孤单顶点的情况，证明方法与情形3.2.3和3.2.4类似，在此不再赘述。
+\end{proof}
+
+引理\ref{6n-15}可以由引理\ref{<=6n-15}直接得到。
+
+\begin{lem}
+\label{6n-15}
+设$S$是$AQ_n$的一个顶点子集，其中$|S| \leq 6n-15$, $n \geq 8$。那么, $AQ_n-S$满足以下$7$个条件之一:
+
+\textnormal{(1)} $AQ_n-S$是连通的；
+
+\textnormal{(2)} $AQ_n-S$有两个连通分支，其中一个是$K_1$，另一个包含$2^n-|S|-1$个顶点；
+
+\textnormal{(3)} $AQ_n-S$有两个连通分支，其中一个是$K_2$，另一个包含$2^n-|S|-2$个顶点；
+
+\textnormal{(4)} $AQ_n-S$有两个连通分支，其中一个包含$3$个顶点，另一个包含$2^n-|S|-3$个顶点；
+
+\textnormal{(5)} $AQ_n-S$有三个连通分支，其中有两个是$K_1$，且第三个包含$2^n-|S|-2$个顶点。
+
+\textnormal{(6)} $AQ_n-S$有三个连通分支，其中一个是$K_1$，另一个是$K_2$，且第三个包含$2^n-|S|-3$个顶点。
+
+\textnormal{(7)} $AQ_n-S$有四个连通分支，其中有三个是$K_1$，且第三个包含$2^n-|S|-3$个顶点。
+\end{lem}
+
+根据引理\ref{6n-15}，我么可以得到下面的定理：
+
+\begin{lem}
+\label{two-components}
+
+设$F$是$AQ_n$的一个$2$-额外集，其中$|F| \leq 6n-15$, $n \geq 8$。那么，$AQ_n-S$满足以下$2$ 个条件之一:
+
+\textnormal{(1)} $AQ_n-F$是连通的；
+
+\textnormal{(2)} $AQ_n-F$包含两个连通分支，其中一个是包含顶点个数为$3$的连通分支，另一个是包含顶点个数为$2^n-|F|-3$的连通分支。
+\end{lem}
+
+\begin{defn}
+\upcite{Reliability-analysis-of-data-center-networks}
+一个系统$G=(V,E)$和一个由故障顶点集在$G$上产生的症状$\sigma$。设$u \subseteq V$，
+$u$的$0$-比较集$C_0(u)$定义为$C_0(u)=\{k \in V \mid \exists v \in V$使得$\sigma(u,v)_k=0\}$。$G$的$0$-比较子图，记为$T_0(G)$，是$G$的一个子图，定义为$V(T_0(G)) \subseteq V$和$E(T_0(G))=\{(u,v)\in E \mid v \in C_0(u),u \in C_0(v)\}$。
+\end{defn}
+
+\begin{lem}
+\textnormal{\upcite{Reliability-analysis-of-data-center-networks}}
+\label{vertex-judge-principle}
+给定一个最多有$t$个故障顶点的系统$G=(V,E)$和一个在\textnormal{MM}$^*$模型下的$G$上的症状$\sigma$。
+
+\textnormal{(1)} 对于任意两个顶点$u,v \in V$，$(u,v) \in E$，其中$v \in C_0(u)$，$u \in C_0(v)$，那么$u$和$v$有相同的状态（故障或无故障）。
+
+\textnormal{(2)} 对于任意一个连通分支$R \subseteq T_0(G)$，那么在$R$中的所有顶点，要么都是故障顶点，要么都是无故障顶点。
+
+\textnormal{(3)} 如果$T_0(G)$的连通分支$R$的顶点个数$|V(R)| \geq t+1$，那么$R$中的所有顶点都是无故障的。
+\end{lem}
+
+
+在参考文献\cite{Reliability-analysis-of-data-center-networks}中的诊断算法后，我们给出了扩展立方体在MM$^*$模型下$AQ_n$的$2$-额外，$(6n-15)$-可诊断算法。
+%该算法基于$AQ_n$ 的两个性质：(1) 对于$AQ_n$中的故障顶点集$|F| \leq 6n-15$，$AQ_n-F$只包含一个顶点个数至少为$2^n-6n-18$的连通分支；(2) $AQ_n$在MM$^*$模型下$AQ_n$的$2$-额外，
+%$(6n-15)$-可诊断的。
+该算法主要基于引理\ref{two-components}和引理\ref{vertex-judge-principle}，
+并且这个算法可以正确地诊断出$AQ_n$中的所有的故障顶点。
+%对于一个扩展立方体，我们使用邻接矩阵去存储扩展立方体的结构。
+首先，我们给出一个深度优先的算法AQ-DFS-MM*来确定$AQ_n$中具有同一症状（顶点都为故障或者无故障）的连通分支。
+
+%\begin{breakablealgorithm}
+%\footnotesize
+%\label{AQ-DFS-MM*}
+%\caption{\texttt{{AQ-DFS-MM$^*$}}}
+%\begin{algorithmic}[1]
+%    \Require 一个$n$-维的扩展立方体$AQ_n$；一个$2$-额外故障顶点集$F$生成的症状$\sigma$，其中$|F| \leq 6n-15$；两个无故障的顶点$u,v \in V(AQ_n)$，其中$(u,v)\in E(AQ_n)$。
+%    \Ensure  一个无故障顶点集合$T$。
+%   \State $T \leftarrow \{u,v\}$;
+%   \Function{\texttt{DFS-MM$^*$}}{$AQ_n,\sigma,u,v$}
+%   \For{$j \in N_{AQ_n}(v)- T$}
+%        \If{$\sigma(u,j)_v=0$}
+%            \State $T \leftarrow T \cup \{j\}$;
+%            \State \texttt{AQ-DFS-MM$^*$}($AQ_n,\sigma,v,j$);
+%        \EndIf
+%   \EndFor\\
+%   \Return $T$;
+%   \EndFunction
+%  \end{algorithmic}
+%\end{breakablealgorithm}
+
 
 \begin{breakablealgorithm}
-\small
-\label{alg:ghcfp2}
-    \caption{GHCFP2($r,u,v,F,G(m_{r},m_{r-1},\ldots,m_{1})$)}
+\footnotesize
+\label{AQ-DFS-MM*}
+\caption{\texttt{{AQ-DFS-MM$^*$}}}
 \begin{algorithmic}[1]
-    \Require
-    $r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$，
-    故障顶点集合$F \subset V(G)$，
-    两个不同的顶点$u=u_{r}u_{r-1}\dots u_{1}$且$v=v_{r}v_{r-1}\dots v_{1}$。
-    \Ensure 一条在$G-F$中以$u$起点为且$v$为终点的无故障路径。
-    \Function{GHCFP2}{$r,u,v,F,G(m_{r},m_{r-1},\ldots,m_{1})$} %\GHCHP
-    \State $G\gets G(m_{r},m_{-1},\ldots,m_{1})$;
-    \If{$F= \emptyset $}  \ \Return GHCP$(r,u,v,G,F)$;
-    \ElsIf{$(u,v)\in E(G)$}   \ \Return ($u,v$);
-    \EndIf
-    %\State $n\gets$ max $\{m_{1},m_{2},\ldots, m_{r}\}$;
-    \State $k \gets$ GetDimension$(G)$;
-    \State $k_1 \gets \sum^{r}_{i=0}(m_{i}-1)$, $\kappa_{2} \gets 2 \kappa - m_r$, $\alpha \gets u_{k}$, $\beta \gets v_{k}$;
-    \State $F_{\alpha}\gets F \cap V(G^{k}[\alpha])$, $F_{\beta}\gets F \cap V(G^{k}[\beta])$;
-    \If{$ \alpha \neq \beta $}
-        \If {$|F_{\alpha}|\geq k_2$}
-            \State $P_1\gets$ PATHSEQ $(u, F, G^k[\alpha],G - V(G^{k}[\alpha]))$;
-            \State 令$z$为$P_1$的最后一个顶点;
-            \If{$z=v$} \ \Return $P_1$;
-            \EndIf
-            \State \ \Return ($P_1$, GHCFP$(r,z,v,G - V(G^{k}[\alpha]),F\setminus F_{\alpha})$);
-        \ElsIf{$|F_{\beta}|\geq k_2$}
-            \State $P_1\gets$ PATHSEQ $(v, F, G^k[\beta],G - V(G^{k}[\beta]))$;
-            \State 令$z$为$P_1$的最后一个顶点;
-            \If{$z=v$} \ \Return $P_1$;
-            \EndIf
-            \State \ \Return (GHCFP$(r,u,z,G - V(G^{k}[\beta]),F\setminus F_{\beta})$, $P_1^{-1}$);
-        \ElsIf{($m_{r}>m_{r-1}$且$|F_{\alpha}|+|F_{\beta}|\leq 3k_1-2m_{k}-2m_{r}+5$)或($m_{r}=m_{r-1}$ 且 $|F_{\alpha}|+|F_{\beta}|\leq 3k_1-2m_{k}-2m_{r}+4$)}
-            \State $P_1\gets$ PATHSEQ $(u, F_{\alpha}\cup F_{\beta},G^k[\alpha],G^k[\beta])$;
-            \State 令$z$为$P_1$的最后一个顶点;
-            \If{$z=v$} \ \Return $P_1$;
-            \EndIf
-            \State \Return($P_1$, GHCFP$(r,z,v,G^k[\beta],F_{\beta}$));
+    \Require 一个$n$-维的扩展立方体$AQ_n$；一个$2$-额外故障顶点集$F$生成的症状$\sigma$，其中$|F| \leq 6n-15$；两个无故障的顶点$u,v \in V(AQ_n)$，其中$(u,v)\in E(AQ_n)$。
+    \Ensure  一个无故障顶点集合$T$，一个故障顶点集合$F$。
+   \State $T \leftarrow \{u,v\},F \leftarrow \emptyset$;
+   \Function{\texttt{DFS-MM$^*$}}{$AQ_n,\sigma,u,v$}
+   \For{$j \in N_{AQ_n}(v)- T$}
+        \If{$\sigma(u,j)_v=0$}
+            \State $T \leftarrow T \cup \{j\}$;
+            \State \texttt{AQ-DFS-MM$^*$}($AQ_n,\sigma,v,j$);
         \Else
-            \State 选取一个子图$G^k[\gamma]$，使得$|F\cap G^k[\gamma]|=$ min $\{|F\cap G^k[i]|\}$，其中$\gamma, i \in \langle m_k-1 \rangle\setminus \{\alpha,\beta\}$;
-            \State $F_{\gamma}\gets F \cap V(G^{k}[\gamma])$;
-            \State $P_1\gets$ PATHSEQ $(u, F_{\alpha}\cup F_{\gamma}, G^k[\alpha], G^k[\gamma])$;
-            \State 令$x$为$P_1$的最后一个顶点;
-            \State $P_2\gets$ PATHSEQ $(v, F_{\beta}\cup F_{\gamma}, G^k[\beta], G^k[\gamma])$;
-            \State 令$y$为$P_2$的最后一个顶点;
-            \If{$x=y$} \ \Return ($P_1$, $P_{2}^{-1}$);
-            \EndIf
-            \State \ \Return ($P_{1}$, GHCFP$(r,x,y,G_{1},F\cap V(G^k[\gamma]))$, $P_{2}^{-1})$;
+            \State $F \leftarrow F \cup \{j\}$;
         \EndIf
-    \ElsIf{$|F_{\alpha}|< k_2$} \ \Return (GHCFP$(r,u,v,G^k[\alpha],F_{\alpha})$);
-    \Else
-        \State $P_1\gets$ PATHSEQ $(u, F, G^k[\alpha], G - V(G^{k}[\alpha]))$;
-        \State 令$x$为$P_1$的最后一个顶点;
-        \State $P_2\gets$ PATHSEQ $(v, F, G^k[\alpha], G - V(G^{k}[\alpha]))$;
-        \State 令$y$为$P_2$的最后一个顶点;
-        \If{$z$为$P_{1}$和$P_{2}$的第一个公共顶点}
-        \State \ \Return (Path$(P_{1},u,z)$, Path$(P_{2}^{-1},z,v))$;
-        \EndIf
-        \State \ \Return ($P_1$,GHCFP$(r, x, y,G - V(G^{r}[\alpha]),F \setminus F_{\alpha})$, $P_{2}^{-1}$);
-   \EndIf
-\EndFunction%
-
- \Function{PATHSEQ}{$u,F,H_{1},H_{2}$} %\P
-    \If {$(N_{G}(u)\cap V(H_{2})) \setminus F \neq \emptyset$}
-        \State 从$(N_{G}(u)\cap V(H_{2})) \setminus F$中任选一个顶点$u_{1}$;
-        \State \Return $(u,u_{1})$;
-    \Else
-        \ForAll {$u_{1} \in (N_{G}(u)\cap V(H_{1}))\setminus F$}
-            \If {$(N_{G}(u)\cap V(H_{1})) \setminus F \neq \emptyset$}
-                \State 从$(N_{G}(u)\cap V(H_{1})) \setminus F$ 中$G-F$中一个顶点$u_{2}$;
-                \State \Return $(u,u_{1}, u_{2})$;
-            \EndIf
-        \EndFor
-    \EndIf
-    \State 从$(N_{G}(u)\cap V(H_{1})) \setminus F$中一个顶点$u_{1}$;
-    \State $S \gets (N_{G}(u_1)\cap V(H_{1}))\setminus (F \cup ((N_{G}(u)\cap V(H_{1})))$;
-    \ForAll {$u_{2} \in S$}
-        \If {$(N_{G}(u_{2})\cap V(H_{2})) \setminus F = \emptyset$}
-            \State 从$(N_{G}(u_{2})\cap V(H_{2})) \setminus F$中任选一个顶点$u_{3}$;
-            \State \Return $(u,u_{1},u_{2},u_{3})$;
-        \EndIf
-    \EndFor
-    \State 从$(N_{G}(u)\cap V(H_{1}))\setminus F$中任选一个顶点$u_{1}$;
-    \State 从$(N_{G}(u_1)\cap V(H_{1}))\setminus (F \cup ((N_{G}(u)\cap V(H_{1})))$中任选一个顶点$u_{2}$;
-    \State $S \gets (N_{G}(u_2)\cap V(H_{1}))\setminus (F \cup (N_{G}(\{u,u_1\})\cap V(H_{1})))$;
-    \ForAll {$u_{3} \in S$}
-        \If {$(N_{G}(u_{3})\cap V(H_{2})) \setminus F = \emptyset$}
-            \State 从$(N_{G}(u_{3})\cap V(H_{2})) \setminus F$中任选一个顶点$u_{4}$;
-            \State \Return $(u,u_{1},u_{2},u_{3},u_{4})$;
-        \EndIf
-    \EndFor
- \EndFunction%
-
-  \Function{GetDimension}{$G$} %\P
-    \State $S \gets \emptyset$;
-    \ForAll {$u \in V(G)$ }
-        \If{$|N_{G}(u)|= 1$}
-            \State 添加和$u$相关联的边所对应的维度到$S$;
-        \EndIf
-    \EndFor
-    \State \ \Return min$(\{m_{1},m_{2},...m_{r}\} \setminus S)$;
-  \EndFunction%
-\end{algorithmic}
+   \EndFor\\
+   \Return $T,F$;
+   \EndFunction
+  \end{algorithmic}
 \end{breakablealgorithm}
 
-\subsection{容错路由算法分析}
-在分析该算法的时间复杂度之前，
-我们首先分析函数GetDimension$(G)$，
-PATHSEQ$(u$ $,F$ $,H_{1}$ $,H_{2})$和
-函数GHCFP$(x,y,G,F)$的时间复杂度。
-首先，根据第三章的讨论结果可知，GHCFP的时间复杂度为$O(k(G)^3)$。
-接下来， 我们分析函数GetDimension$(G)$\\
-和PATHSEQ$(u$ $,F$ $,H_{1}$ $,H_{2})$。
+%算法AQ-DFS-MM$^*$的输入是两个无故障顶点$u,v$且$(u,v) \in E(AQ_n)$，然后根据引理
+%\ref{vertex-judge-principle}来得到$T_0(G)$。
+因为算法AQ-DFS-MM$^*$是通过递归的深度优先算法来实现，所以算法AQ-DFS-MM$^*$的时间复杂度为$O(N^2)$，其中$N$为扩展立方体的顶点个数。
 
-首先，我们分析函数GetDimension$(G)$，
-该函数最终会返回$G$中的一个维度。
-GetDimension会遍历$G$中的$N$个顶点，
-每次遍历进行$\kappa(G)$次判断来得到该顶点的度。
-若该顶点的度为$1$,
-则将该顶点相关联的边所对应的维度添加到集合$S$中，
-其时间复杂度为$O(1)$。
-因此，该过程的时间复杂度为$N \times \kappa(G)$。
-然后，GetDimension返回$\{m_{1},m_{2},...m_{r}\} \setminus S$的最小值，
-该过程的时间复杂度为$O(1)$。
-从而，GetDimension的时间复杂度为$O(N \times \kappa(G))+O(1)\leq O(N \times \kappa(G))$。
+\begin{breakablealgorithm}
+\footnotesize
+\label{AQ-EXTRA-DIAG}
+\caption{\texttt{{AQ-EXTRA-DIAG}}}
+\begin{algorithmic}[1]
+    %\Require 一个$n$-维的扩展立方体$AQ_n$和故障顶点集$F$在$AQ_n$上生成的症状$\sigma$，其中$|F| \leq 6n-15, n \geq 8$。
+    \Require 一个$n$-维的扩展立方体$AQ_n$；一个$2$-额外故障顶点集$F$生成的症状$\sigma$，其中$|F| \leq 6n-15$。
+    %\Ensure  集合$T,F',H$。
+    \Ensure  一个故障顶点集合$F'$。
+    \Function{\texttt{AQ-EXTRA-DIAG}}{$AQ_n,\sigma$}
+    \State $T \leftarrow \emptyset, F' \leftarrow \emptyset, R\leftarrow V(AQ_n)$;
+    \State 在$R$中选择$2$个无故障顶点$u,v$，其中$(u,v) \in E(AQ_n)$;
+    \State $T \leftarrow \texttt{AQ-DFS-MM*}(AQ_n,\sigma,u,v)$;
+    \If{$|T| \leq 3$}
+        %\State $F' \leftarrow N_{AQ_n}(T)$;
+        \State 重新选择$2$个无故障顶点$m,n$，其中$(m,n) \in E(AQ_n)$;
+        %\State $T \leftarrow \emptyset$;
+        \State $T \leftarrow T \cup \texttt{AQ-DFS-MM$^*$}(AQ_n,\sigma,m,n)$;
+        \State $F' \leftarrow R-T$;\\
+        \quad\quad\quad\Return $F'$;
+    \EndIf
+    \State $R \leftarrow R-T$;
+    \For{对于顶点$x \in N_{AQ_n}(T) \cap R,$，$y,r \in T$，其中$(x,r) \in E(AQ_n)$且$(y,r)\in E(AQ_n)$}
+            \If{$\sigma(x,y)_r=1$}
+                \State $F'=F' \cup \{x\}$;
+            \EndIf
+        \EndFor
+    \State $R=R - F'$;
+    \State $T \leftarrow T \cup R$;\\
+    \quad\Return $F'$;
+    \EndFunction
+   \end{algorithmic}
+\end{breakablealgorithm}
 
-然后，我们分析函数PATHSEQ$(u,F,H_{1},H_{2})$，
-该函数中$H_{1}$和$H_{2}$是$G$的两个子图且$u$在$H_{1}$中。
-依据不同的情况，PATHSEQ可能会给出$u$到子图$H_{2}$的路径$(u,u_1)$、$(u,u_1,u_2)$、$(u,u_1,u_2,u_3)$
-或$(u,u_1,u_2,u_3,u_4)$。
-PATHSEQ在不同的情形下的时间复杂度如下：
-情形1. 得到的路径为$(u,u_1)$。
-若$(N_{G}(u)\cap V(H_{2})) \setminus F \neq \emptyset$，
-则PATHSEQ需要从$(N_{G}(u)\cap V(H_{2})) \setminus F$中任选一个顶点$u_{1}$，
-然后返回路径$(u,u_1)$。
-该过程的时间复杂度为$O(1)$。
-情形2. 得到的路径为$(u,u_1,u_2)$。
-PATHSEQ首先会遍历集合$(N_{G}(u)\cap V(H_{1}))\setminus F$，
-取集合中每个顶点为$u_{1}$，然后从$(N_{G}(u)\cap V(H_{1})) \setminus F$中任选一个顶点$u_{2}$，
-最终，PATHSEQ返回路径$(u,u_1,u_2)$。
-该情况的时间复杂度为$O((N_{G}(u)\cap V(H_{1}))\setminus F)\leq O(\kappa(G))$。
-情形3. 得到的路径为$(u,u_1,u_2,u_3)$。
-在该情形下，PATHSEQ首先会从$(N_{G}(u)\cap V(H_{1})) \setminus F$中任选一个顶点$u_{1}$
-且得到集合$S \gets (N_{G}(u_1)\cap V(H_{1}))\setminus (F \cup (N_{G}(u)\cap V(H_{1}))$。
-因此，该过程的时间复杂度为$O((N_{G}(u)\cap V(H_{1})) \setminus F)\leq O(\kappa(G))$。
-然后，PATHSEQ会遍历集合$S$，取集合中每个顶点为$u_{2}$，
-然后从$(N_{G}(u_{2})\cap V(H_{2})) \setminus F$中任选一个顶点$u_{3}$，
-该过程的时间复杂度为$O(|S|)\leq O(\kappa(G))$。
-最后，PATHSEQ返回路径$(u,u_1,u_2,u_3)$。
-因此，该情况下PATHSEQ的时间复杂度为$O(\kappa(G))+O(\kappa(G))\leq  2 \times O(\kappa(G))$。
-情形4. 得到的路径为$(u,u_1,u_2,u_3,u_4)$。
-在该情形下， PATHSEQ首先会从$(N_{G}(u)\cap V(H_{1})) \setminus F$ 中任选一个顶点$u_{1}$
-且得到集合$S \gets (N_{G}(u_1)\cap V(H_{1}))\setminus (F \cup (N_{G}(u)\cap V(H_{1})))$。
-然后PATHSEQ会从$S$中任选一个顶点$u_{2}$
-且得到集合$S \gets (N_{G}(u_2)\cap V(H_{1}))\setminus (F \cup (N_{G}(\{u,u_1\})\cap V(H_{1})))$。
-该过程的时间复杂度为$2 \times O((N_{G}(u)\cap V(H_{1})) \setminus F)\leq  2 \times O(\kappa(G))$。
-接下来，PATHSEQ会遍历集合$S$，取集合中每个顶点为$u_{3}$，
-然后从$(N_{G}(u_{3})\cap V(H_{2})) \setminus F$中任选一个顶点$u_{4}$。
-该过程的时间复杂度为$O(|S|)\leq O(\kappa(G))$。
-最后，PATHSEQ返回路径$(u,u_1,u_2,u_3,u_4)$。
-因此，该情况下的时间复杂度为$2\times O(\kappa(G))+O(\kappa(G)\leq  O(\kappa(G))$。
-综合以上情况可知PATHSEQ$(u,F,H_{1},H_{2})$的时间复杂度为$O(\kappa(G)^2)$。
+\begin{breakablealgorithm}
+\footnotesize
+\label{AQ-EXTRA-DIAG}
+\caption{\texttt{{AQ-EXTRA-DIAG}}}
+\begin{algorithmic}[1]
+    %\Require 一个$n$-维的扩展立方体$AQ_n$和故障顶点集$F$在$AQ_n$上生成的症状$\sigma$，其中$|F| \leq 6n-15, n \geq 8$。
+    \Require 一个$n$-维的扩展立方体$AQ_n$；一个$2$-额外故障顶点集$F$生成的症状$\sigma$，其中$|F| \leq 6n-15$。
+    %\Ensure  集合$T,F',H$。
+    \Ensure  一个故障顶点集合$F'$。
+    \Function{\texttt{AQ-EXTRA-DIAG}}{$AQ_n,\sigma$}
+    \State $T \leftarrow \emptyset, F' \leftarrow \emptyset, R\leftarrow V(AQ_n)$;
+    %\State 在$R$中选择$2$个无故障顶点$u,v$，其中$(u,v) \in E(AQ_n)$;
+%    \State $T,F \leftarrow \texttt{AQ-DFS-MM*}(AQ_n,\sigma,u,v)$;
+    \While{$|R|>0$}
+        \State 在$R$中选择$2$个无故障顶点$u,v$，其中$(u,v) \in E(AQ_n)$;
+        \State $T',F'' \leftarrow \texttt{AQ-DFS-MM$^*$}(AQ_n,\sigma,u,v)$;
+        \State $T \leftarrow T \cup T'$;
+        \State $F' \leftarrow F' \cup F''$;
+        \State $R \leftarrow R - T - F'$;
+        \If{$|F'|=6n-15$}\\
+            \quad\quad\quad\quad\Return $F'$;
+        \ElIf{$|T|+|F'|=V(AQ_n)$}
+            \State execution;
+        \EndIf
+    \EndWhile
+    \If{$|T| \leq 3$}
+        %\State $F' \leftarrow N_{AQ_n}(T)$;
+        \State 重新选择$2$个无故障顶点$m,n$，其中$(m,n) \in E(AQ_n)$;
+        %\State $T \leftarrow \emptyset$;
+        \State $T \leftarrow T \cup \texttt{AQ-DFS-MM$^*$}(AQ_n,\sigma,m,n)$;
+        \State $F' \leftarrow R-T$;\\
+        \quad\quad\quad\Return $F'$;
+    \EndIf
+    \State $R \leftarrow R-T$;
+    \For{对于顶点$x \in N_{AQ_n}(T) \cap R,$，$y,r \in T$，其中$(x,r) \in E(AQ_n)$且$(y,r)\in E(AQ_n)$}
+            \If{$\sigma(x,y)_r=1$}
+                \State $F'=F' \cup \{x\}$;
+            \EndIf
+        \EndFor
+    \State $R=R - F'$;
+    \State $T \leftarrow T \cup R$;\\
+    \quad\Return $F'$;
+    \EndFunction
+   \end{algorithmic}
+\end{breakablealgorithm}
 
+因为算法AQ-EXTRA-DIAG主要以引理\ref{two-components}为基础，
+因此该算法主要分为$2$种情况：（1）$AQ_n-F$是不连通的，
+根据引理\ref{two-components}，且在第一次调用算法AQ-DFS-MM$^*$时，
+得到的是小的无故障连通分支$C$且$|V(C)|=3$，
+调用算法AQ-DFS-MM$^*$可以将$C$的所有无故障顶点都诊断出来，
+然后再次调用算法AQ-DFS-MM$^*$，这次可以得到另一个更大的无故障连通分支$H$且$|V(H)|=2^n-|F|-3$。
+这样我们就可以得到所有的无故障顶点，因此剩下的就都是故障顶点；
+（2）我们通过调用算法AQ-DFS-MM$^*$得到一个连通分支$H$且$|V(H)|>3$，
+根据引理\ref{two-components}，$AQ_n-F$只存在$1$个无故障顶点个数大于$3$的连通分支，
+因此剩下最多只有$3$个无故障顶点。我们通过与$H$相邻的顶点来判断其是否是故障顶点，
+如果该顶点不是故障顶点，则它属于无故障顶点。
+这样我们可以将所有故障顶点和无故障顶点诊断出来。
 
-%然后，$GHCP(u,v,G',F)$借用时间复杂度为$O(\kappa(G')^2)$的函数
-%$BuildPathSet(u,v)$ \cite{guo2009BCube}
-%在图$G'-F$ 中找到的$\kappa(G')$ 条路径中
-%选取一条无故障路径。
-%首先，它从函数$BuildPathSet(u,v)$返回的$\kappa(G')$条路径中选取一条无故障路径。
-%既然有$\kappa(G')$条路径，那么该过程至多执行$\kappa(G')$ 次 。
-%又有，该过程执行的每一次都要判断路径中的每个顶点是否在故障集合$F$ 中。
-%那么因为故障集合$|F|=O(2\times\kappa(G)-n-1)$，
-%且由于广义超立方体$G'$的故障直径为$O(\kappa(G')+1)$，
-%则每条路径中至多有$\kappa(G')+1$个顶点，
-%那么判断一条路径是否为无故障路径的
-%时间复杂度为$O(\kappa(G')\times (2\times\kappa(G)-n-1) )=O(\kappa(G)^2)$。
-%因此，函数$GHCP(u,v,G',F)$的时间复杂度为
-%$O(\kappa(G')^2+\kappa(G')\times \kappa(G)^2)\leq O(\kappa(G)^3)$，
-%其中$\kappa(G')\leq \kappa(G)$。
+因为算法AQ-EXTRA-DIAG的时间复杂度主要消耗在调用算法AQ-DFS-MM$^*$上，且算法AQ-EXTRA-DIAG的第$12-16$行的最大时间复杂度为$O(n^2)$。所以算法AQ-EXTRA-DIAG的时间复杂度是$O(N^2)$，其中$N$ 为扩展立方体的顶点个数。
 
-接下来，我们分析算法GHCFP2的时间复杂度。
+\section{模拟实验}
+在本节中，我们将通过模拟实验验证算法AQ-EXTRA-DIAG是否能够正确地找到所有故障顶点，
+我们将通过Python语言来实现，版本为3.6，实验环境是一台处理器为Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz 2.40，
+内存8GB的计算机。我们将通过这台计算机模拟算法并给出实验结果。
 
-情形1. $\alpha \neq \beta$。
+在实验中，我们将通过随机生成故障顶点，且保证生成的故障顶点的集合是$2$-额外集。
+我们将有$5$组实验数据，实验参数包括
 
-情形1.1. $F_{\alpha}\geq k_2$。
-GHCFP2首先会通过PATHSEQ$(u,G^k[\alpha],G - V(G^{r}[\alpha]))$
-得到一条从$u$到$G-V(G^{r}[\alpha])$中顶点$z$为终点的路径$P_{1}$，
-该过程的时间复杂度为$O(\kappa(G))$。
-若$z=v$，GHCFP2将返回$P_{1}$，
-那么得到$G-F$中一条从$u$到$v$的无故障路径$P_{1}$的时间复杂度为
-$O(\kappa(G)^3)$；
-若$z\neq v$，GHCFP2会返回路径$(P_{1},$GHCFP$(r,z,v,G - V(G^{r}[\alpha]),F\setminus F_{\beta})$。
-因为运行GHCFP$(r,z,v,G - V(G^{r}[\alpha],F\setminus F_{\beta})$的时间复杂度为$O(\kappa(G)^3)$，
-且拼接$P_{1}$和上述GHCFP$(r,z,v,G - V(G^{r}[\alpha]),F\setminus F_{\beta})$所建立的无故障路径的时间复杂度是$O(1)$，
-所以得到$G-F$中一条从$u$到$v$的路径的时间复杂度为
-$O(\kappa(G)^3+\kappa(G)^3+1)=O(\kappa(G)^3)$。
+\begin{itemize}
+  \item $AQ_n$的维数$n$；
+  \item 故障顶点个数$f$；
+  \item 随机生成故障顶点的集合$F$（用十进制表示）；
+  %\item 算法找到的故障顶点集合$SF$（用十进制表示）；
+  \item 实验运行时间的平均值$avg_t$。
+\end{itemize}
 
-情形1.2. $|F_{\beta}|\geq k_2$或$|F_{\alpha}+F_{\beta}|\leq  2k_1-2m_{r}-n+3$，
-类似于在情形1.1中的讨论，
-我们在$G-F$中得到一条以$u$为起点且$v$为终点的无故障路径的时间复杂度为
-$O(\kappa(G)^3)$。
+具体的实验结果如下：
 
-情形1.3. ($m_{r}>m_{r-1}$且$|F_{\alpha}|+|F_{\beta}|\leq  3k_1-2m_{k}-2m_{r}+5$)或 ($m_{r}=m_{r-1}$且$|F_{\alpha}|+|F_{\beta}|\leq  3k_1-2m_{k}-2m_{r}+4$)。
-首先，GHCFP2选择一个满足条件$|F\cap G^k[\gamma]|=1$的子图$G^k[\gamma]$，其中
-$i \in \langle m_r \rangle\setminus \{\alpha,\beta\}$。
-令$G_{1}=G^k[\gamma]$，
-因为$m_{k}-2\leq \kappa(G)$，
-所以得到$G_{1}$的时间复杂度为$O(m_{k}-2)\leq O(\kappa(G))$。
-然后，GHCFP2调用PATHSEQ得到一条从$u$到子图$G_{1}$顶点$x$为终点的无故障路径$P_{1}$
-以及一条从$v$到子图$G_{1}$中的顶点$u$的无故障路径$P_{2}$，
-得到这两条路径的时间按复杂度分别为$O(\kappa(G)^2)$。
-若$x=y$，GHCFP2得到一条从$u$到$v$的无故障路径的时间复杂度为
-$O(\kappa(G)+2\times\kappa(G)^2)=O(\kappa(G)^2)$；
-若$x\neq y$，GHCFP2得到$G-F$中一条从$u$到$v$的无故障路径的时间复杂度为
-$O(\kappa(G)+2\times \kappa(G)^2+\kappa(G)^3+1)=O(\kappa(G)^3)$。
+1. 第一组测试数据和结果$E(3,3)$
 
-情形2. $\alpha = \beta$。
+\begin{itemize}
+    \item $n=3$
+    \item $f=3$
+    \item $F=[7, 1, 0]$
+    %\item $SF=[0, 1, 2]$
+    \item $avg_t=0.00020$
+\end{itemize}
 
-情形2.1. $F_{\alpha}\leq  k_2$。
-GHCFP2将调用GHCFP$(u,v,G^k[\alpha],F_{\alpha})$，其时间复杂度为$O(\kappa(G)^3)$。
-
-情形2.2. $F_{\alpha}\geq k_2$。
-首先，GHCFP2将得到一条从$u$到子图$G-V(G^k[\alpha])$中顶点$x$的无故障路径$P_{1}$，
-以及一条从$v$到子图$G-V(G^k[\alpha])$中顶点$y$的无故障路径$P_{2}$，
-该过程的时间复杂度为$O(2\times\kappa(G)^2)$。
-然后，若$P_{1}$和$P_{2}$的第一个公共顶点为$z$，
-GHCFP2返回路径(Path$(P_{1},u,z)$, Path$(P_{2}^{-1},z,v))$。
-因为，得到路径$(P_{1},u,z)$的时间复杂度为$O(1)$，
-所以得到$u$和$v$在$G$中的时间复杂度为
-$O(2\times\kappa(G)^2)+O(1)=O(\kappa(G)^2)$。
-若$P_{1}$和$P_{2}$无公共顶点，
-算法GHCFP会返回路径
-$(P_{1},$GHCFP$(r,x,y,$ $G - V(G^{r}[\alpha]),F \setminus F_{\alpha}),$ $P_{2}^{-1})$。
-因为得到路径Path$(P_{1},u,z)$或Path$(P_{2}^{-1},z,v)$的时间复杂度为$O(1)$，
-且调用GHCFP$(r,x,y,G - V(G^{r}[\alpha]),F \setminus F_{\alpha})$
-的时间复杂度为$O(\kappa(G)^3)$。
-因此，在$G$中得到一条从$u$到$v$的无故障路径的时间复杂度为
-$O(2\times\kappa(G)^2)+O(\kappa(G)^3)+O(2\times 1)=O(\kappa(G)^3)$。
-
-综合以上所有情况，
-本章给出的GHCFP2的时间复杂度为$O(N\times \kappa(G)+\kappa(G)^3)\leq O(N\times \kappa(G))$。
-
-\subsection{模拟实验}
-
-本小节中对GHCFP2用Python语言编程实现，
-用一台配置为Intel Core i5-7200 CPU 2.71GHz与8 GB 内存的计算机进行模拟实验，
-并分析实验结果。
-类似于第三章的模拟实验，
-本实验针对改变维数和改变基数两种情况下，
-GHCFP2和BFS在执行效率和所获得路径长度两个方面的表现进行模拟实验。
-另外，GHCFP2给出的是给出当总故障顶点数小于其$2$-外连通度
-且除去故障顶点集合$F$后的每个分支都至少有$3$个无故障顶点条件时，
-$G(m_{r},m_{r-1},\ldots,m_{1})$中任意两个无故障顶点之间的一条无故障路径。
-本实验中，我们取故障结点集合$F \subset V(G)$且$|F|=\kappa_2(G)-1$。
-
-实验一：在$GHCFP2$中，
-使用$random$函数随机生成$F$，
-且保证$G-F$的每个分支至少存在$3$个顶点。
-在$G-F$中，
-随机生成一个无故障顶点$x$，
-然后利用GHCFP2和BFS分别构造出
-顶点$x$到$G$中其余所有无故障顶点之间的无故障路由。
-将该过程重复执行$100$次，
-然后计算GHCFP2和BFS得到一条无故障路径分别需要花费的平均时间并进行对比。
-实验结果如图\ref{test3_1}和图\ref{test4_1}所示。
-%根据实验结果，随着维度r的增加，两个算法得到一条无故障路由的所花费的平均CPU时长如图\ref{ch3_test3}所示，
-%同时相同维度下，随着每维顶点个数的增加，实验结果如图\ref{test4_1}所示。
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=15cm]{test3_1.eps}
-\smallcaption{改变维数的情况下，GHCFP2得到一条无故障路径需要花费的平均时间}
-\label{test3_1}
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result1.eps}\\
+  \caption{第一组测试数据和结果}
+  \label{result1}
 \end{figure}
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=15cm]{test4_1.eps}
-\smallcaption{(改变基数的情况下，BFS得到一条无故障路径需要花费的平均时间}
-\label{test4_1}
+2. 第二组测试数据和结果$E(5,15)$
+
+\begin{itemize}
+    \item $n=5$
+    \item $f=15$
+    \item $F=[6, 25, 3, 28, 24, 22, 15, 23, 13, 21, 27, 19, 29, 7, 30]$
+ %   \item $SF=[3, 6, 7, 13, 15, 19, 21, 22, 23, 24, 25, 27, 28, 29, 30]$
+    \item $avg_t=0.00099$
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result2.eps}\\
+  \caption{第二组测试数据和结果}
+  \label{result2}
 \end{figure}
 
-%正如我们对算法时间复杂度的理论分析，
-从实验结果\ref{test3_1}中可以看出GHCFP2所花费的平均时间小于BFS。
-尽管在维数较小时，
-GHCFP2的所花费的时间和BFS所花费的时间相差不大，
-如图\ref{test3_1}中的$3$-维$G(3,3,3)$和
-$4$-维$G(3,3,3,3)$两种情形的实验结果所示。
-但是，随着维数的增加，
-GHCFP2执行效率明显比BFS好。
-根据实验结果可知，当$r = 7$时，
-GHCFP2和BFS所花费的平均CPU时间分别为$0.4$毫秒和$16$毫秒。
-同时，从图\ref{test4_1}中很明显可以看出，
-在维数相同的情况下，
-随着基数逐渐增大，
-BFS增长速度要远大于GHCFP2。
-因此，从实验数据可以得到，本文算法的执行效率优于广度优先搜索算法的效率。
+3. 第三组测试数据和结果$E(7,27)$
 
-实验二：
-由于BFS所得到的路径是最短路径，因此它可以作为衡量GHCFP2得出的路径长度的优劣情况。
-因此本实验我们在GHCFP2中，
-用$random$函数随机生成$F$，
-且$|F|\leq  \kappa^1(G)$。
-随机生成一个无故障起点$x$，
-分别利用GHCFP2和BFS构造出从顶点$x$到$G-F$中其余所有无故障顶点之间的无故障路由。
-将该过程重复100次，
-然后分别计算GHCFP2和BFS所得到的所有路径的平均长度并进行对比，
-实验结果如图\ref{test3_2}和图\ref{test4_2}所示。
+\begin{itemize}
+    \item $n=7$
+    \item $f=27$
+    \item $F=[113, 40, 21, 35, 11, 108, 126, 94, 59, 16, 97, 89, 80, 127, 47, 112, 63, 23, 105, 60,\\ 87, 39, 107, 58, 15, 99, 10]$
+%    \item $SF=[10, 11, 15, 16, 21, 23, 35, 39, 40, 47, 58, 59, 60, 63, 80, 87, 89, 94, 97, 99,\\ 105, 107, 108, 112, 113, 126, 127]$
+    \item $avg_t=0.00320$
+\end{itemize}
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=15cm]{test3_2.eps}
-\smallcaption{改变维数的情况下，GHCFP2和BFS所得到的所有路径的平均长度}
-\label{test3_2}
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result3.eps}\\
+  \caption{第三组测试数据和结果}
+  \label{result3}
 \end{figure}
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=15cm]{test4_2.eps}
-\smallcaption{改变基数的情况下，GHCFP2和BFS所得到的所有路径的平均长度}
-\label{test4_2}
+
+4. 第四组测试数据和结果$E(9,39)$
+
+\begin{itemize}
+    \item $n=9$
+    \item $f=39$
+    \item $F=[244, 240, 118, 163, 310, 138, 287, 83, 276, 28, 339, 358, 20, 435, 106,\\ 282, 423, 278, 309, 313, 368, 212, 125, 19, 334, 485, 43, 180, 65, 267,\\ 26, 480, 300, 16, 18, 249, 494, 320, 123]$
+ %   \item $SF=[16, 18, 19, 20, 26, 28, 43, 65, 83, 106, 118, 123, 125, 138, 163,\\ 180, 212, 240, 244, 249, 267, 276, 278, 282, 287, 300, 309, 310, 313, 320,\\ 334, 339, 358, 368, 423, 435, 480, 485, 494]$
+    \item $avg_t=0.02415$
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result4.eps}\\
+  \caption{第四组测试数据和结果}
+  \label{result4}
 \end{figure}
 
-对比图中的数据可以看出，GHCFP2所得到的所有路径的平均长度略大于BFS的结果。
-随着维数的增加或基数的增大，
-两者的差值逐渐减小，并接近于0。
-也就是说，随着网络规模的扩大，
-GHCFP2所得到的路径长度很接近最短路径的长度或者等于最短路径的长度。
+5. 第五组测试数据和结果$E(10,45)$
 
-%实验3：
-%在保证$G$-条件连通且分别具有25到200 个故障顶点（以25递增）的前提下，
-%由任一无故障顶点出发，构建到网络中所有无故障顶点的路径，计算成功率。
-%该过程执行100次，得出三种算法的平均成功率。
-%实验结果如图\ref{fig:4_3}所示。
-%
-%
-%
-%由于$Q_{10}$保证连通，所以BFS总能得出任意两个无故障顶点之间的最短路径。
-%ABT算法和SPR算法在成功率上的表现差距不大。
-%$Q_{10}$中共有1024个顶点，在故障顶点数达到200时（接近20\%），两种算法都能保持97\%以上的成功率。
-%
-实验三：实验三的实验环境与实验二相同，
-本实验首先利用GHCFP和BFS分别构造从任意一个无故障顶点到$G$ 中其余所有无故障顶点间的无故障路径，
-将上述过程重复100次，
-然后计算两种算法获得的每一条路径的差值，最后得出所有路径的差值的最小值、平均值和最大值并进行对比。
-实验结果如图\ref{test3_3}和图\ref{test4_3}所示。
+\begin{itemize}
+    \item $n=10$
+    \item $f=45$
+    \item $F=[977, 74, 445, 408, 313, 603, 639, 126, 426, 721, 709, 127, 928, 976, 862,\\ 939, 788, 785, 235, 847, 907, 27, 829, 14, 13, 693, 25, 646, 529, 122,\\ 913, 146, 1023, 509, 217, 730, 180, 109, 660, 657, 317, 532, 344, 583, 821]$
+%    \item $SF=[13, 14, 25, 27, 74, 109, 122, 126, 127, 146, 180, 217, 235, 313, 317,\\ 344, 408, 426, 445, 509, 529, 532, 583, 603, 639, 646, 657, 660, 693, 709,\\ 721, 730, 785, 788, 821, 829, 847, 862, 907, 913, 928, 939, 976, 977, 1023]$
+    \item $avg_t=0.07960$
+\end{itemize}
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=15cm]{test3_3.eps}
-\smallcaption{改变维数的情况下，GHCFP2和BFS所构造的路径差值的最小值、平均值和最大值}
-\label{test3_3}
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{result5.eps}\\
+  \caption{第五组测试数据和结果}
+  \label{result5}
 \end{figure}
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=15cm]{test4_3.eps}
-\smallcaption{改变基数的情况下，GHCFP2和BFS所构造的路径差值的最小值、平均值和最大值}
-\label{test4_3}
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.7]{AQ-EXTRA-DIAG-time-diagram.eps}\\
+  \caption{算法AQ-EXTRA-DIAG找到所有无故障顶点所花费的时间}
+  \label{AQ-EXTRA-DIAG-time-diagram}
 \end{figure}
 
-从图中可以看出，
-GHCFP所构造路径长度与BFS所构造路径长度的差值
-的最小值始终为$0$，也就是说GHCFP所得到路径中的部分路径为最短路径。
-同时在较低维度时或者基数较小时，
-两个算法所构造路径差值的最大值会出现上下为$1$的波动幅度，
-该情况产生的原因是，当网络规模较小时，
-GHCFP给出的路径情况受随机生成的$F$的情况影响较大。
-随着网络维数的增加，GHCFP2构造路径长度和BFS构造路径长度的差值平均值和最大值都逐渐减小，
-也就是GHCFP2所得到的路径长度逐渐接近于最短路径。
-另外，明显可以看出两个算法路径长度差值的平均值接近于最小值，
-也就是说GHCFP2所构造的路径中路径长度等于或者接近于最短路径的比例较大。
-该实验结果表明，GHCFP2所得到的路径的路径长度整体是较优的。
+五组实验数据的运行时间如图~\ref{AQ-EXTRA-DIAG-time-diagram}。
+
+从实验结果可以看出，算法AQ-EXTRA-DIAG可以有效诊断出所有的故障顶点。而且
+图~\ref{AQ-EXTRA-DIAG-time-diagram}显示，算法的时间变化趋势也和我们在前面分析的算法时间
+复杂度类似。
 
 \section{本章小结}
 
-本章基于外连通度的定义，
-我们求出了广义超立方体的$1$-外连通度和$2$-外连通度，
-并给出了满足总故障顶点数小于$2$-外连通度，且故障网络中每个分支至少包含3个顶点条件的
-容错路由算法。
-并取得如下研究成果：
-
-1. $r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$
-的$1$-外连通度是$2\kappa(G(m_{r},m_{r-1},\ldots,m_{1}))-n$，
-其中$n=\max\{m_{1},m_{2},\ldots,m_{r}\}$。
-
-2. 对于$r$-维广义超立方体$G(m_{r},m_{r-1},\ldots,m_{1})$，
-其中$r \geq 5$，且对于每个$i \in \langle r \rangle \setminus \{0\}$都有$m_{i}\geq 3$
-且$m_{i}\geq m_{i-1}$。
-若$m_{r}>m_{r-1}$，
-则广义超立方体的$2$-外连通度为$3\kappa(G(m_{r},m_{r-1},\ldots,m_{1})) - 2m_{r}$；
-若$m_{r}=m_{r-1}$，
-则广义超立方体的$2$-外连通度为$3\kappa(G(m_{r},m_{r-1},\ldots,m_{1})) - 2m_{r}-1$。
-
-3. 给出了一个$2$-外连通度条件下的容错路由算法，
-该算法的时间复杂度为$O(N\times\kappa(G(m_{r},m_{r-1},\ldots,m_{1})))$，
-其中$N$为$G(m_{r},m_{r-1},\ldots,m_{1})$的总顶点数。
-%\section{网格网络的$k^{*}$-容器}
-%
-%在这一小节，我们讨论网格网络的$k^{*}$-容器。
-%我们得出的结果如下：
-%（1）假设$u$和$v$是$M_{m,n}$中的任意两个不同顶点，若$\{u, v\} \subseteq A_{m,n}$，则$u$ 和$v$之间存在一个$1^{*}$-容器，其中$m$和$n$是奇数且$\min \{m, n\} \geq 3$；
-%（2）假设$u$和$v$是$M_{m,n}$中的任意两个不同顶点，若$\{u, v\} \subseteq B_{m,n}$，则$u$ 和$v$之间必定存在一个$3^{*}$-容器，其中$m$和$n$是奇数且$\min \{m, n\} \geq 3$；
-%（3）$s\kappa^{L}(M_{m,n})=3$，其中$m$是偶数且$\min \{m, n\} \geq 4$；
-%（4）假设$u$和$v$是$\\M_{m,n}$中任意两个不同部的顶点，若$u \notin \{ (1,1), (1,n-2), (m-2,1), (m-2,n-2)\}$且$v \notin\{ (1,1), (1,n-2), (m-2,1), (m-2,n-2)\}$，则$u$和$v$ 之间存在一个$4^{*}$-容器，其中$m$是偶数且$\min \{m, n\} \geq 6$。
-%下面是本章所需的引理。
-%
-%\begin{lem}
-%\label{lem_hamiltoianPath_1}
-%在$m \geq 4$且$n \geq 4$ 的$M_{m,n}$中，若$|A_{m,n}|=|B_{m,n}|$，对于任意两个属于不同部的顶点$s$和顶点$t$，存在一条从$s$到$t$的哈密顿路；若$|A_{m,n}|=|B_{m,n}|+1$，对于属于$A_{m,n}$的任意两个顶点$s$ 和顶点$t$，存在一条从$s$ 到$t$ 的哈密顿路\upcite{Itali1982}。
-%\end{lem}
-%
-%\begin{lem}
-%\label{lem_hamiltoianPath_2}
-%  假设$u$和$v$是$M_{3,3}$中任意两个不同顶点，若$\{ u, v \} \subset A_{3,3}$，则$u$和$v$之间存在一个$1^{*}$-容器；若$\{ u, v \} \subset B_{3,3}$，则$u$ 和$v$之间存在一个$3^{*}$-容器。
-%\end{lem}
-%
-%\begin{proof}
-%假设$u$和$v$是$M_{3,3}$中任意两个不同顶点，若$\{ u, v \} \subset A_{3,3}$，则$u$和$v$之间的$1^*$-容器如图\ref{fig:1-pathIn3by3} 所示。
-%若$\{ u, v \} \subset B_{3,3}$，则$u$和$v$之间的$3^*$- 容器如图\ref{fig:3-pathIn3by3}所示。
-%\end{proof}
-%
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=\imgsize\textwidth]{1-pathIn3by3.eps}
-%\smallcaption{$M_{3,3}$中的顶点$u$和顶点$v$之间的$1^*$-容器}
-%\label{fig:1-pathIn3by3}
-%\end{figure}
-%
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=60mm]{3-pathIn3by3.eps}
-%\smallcaption{$M_{3,3}$中的顶点$u$和顶点$v$之间的$3^*$-容器}
-%\label{fig:3-pathIn3by3}
-%\vspace{-10pt}
-%\end{figure}
-%
-%
-%\begin{thm}
-%\label{thm_hamiltoianPath_3}
-% 假设$u$和$v$是$M_{m,n}$中任意两个不同顶点，若$\{ u, v \} \subset A_{m,n}$，则$u$和$v$之间存在一个$1^{*}$-容器，其中$m$ 和$n$均是奇数且$\min \{m, n\} \geq 3$。
-%\end{thm}
-%\begin{proof}
-%根据引理\ref{lem_hamiltoianPath_1}，可知当$\min \{m, n\} \geq 4$ 时定理成立。
-%接下来，只需要证明$m = 3$或$n = 3$时定理成立。
-%不失一般性，假设$m = 3$，对$n$进行归纳证明。
-%根据引理\ref{lem_hamiltoianPath_2}，可知当$m = 3$且$n = 3$ 时定理成立，所以我们使用$M_{3,3}$作为归纳基础。
-%
-%假设$M_{3,n-2}$中任意两个属于$A_{m,n}$的顶点之间存在一个$1^{*}$- 容器，
-%接下来，我们只需证明$M_{3,n}$中任意两个属于$A_{m,n}$的顶点之间存在一个$1^{*}$-容器定理成立即可，其中$n \geq 5$。
-%
-%
-%令$u = (u_{i},u_{j})$且$v = (v_{i},v_{j})$，不失一般性，假设$u_{j} \leq  v_{j}$。
-%根据$u$和$v$的位置分布情况，分为以下两种情形讨论。
-%
-%%情形1. 顶点$u$和顶点$v$的外面有两列。
-%%情形1. 有两个相邻的边界列。
-%情形1. $u_{j} \notin \{0, 1\}$且$v_{j} \notin \{0, 1\}$或$u_{j} \notin \{n-2, n-1\}$且$v_{j} \notin \{n-2, n-1\}$。
-%
-%不失一般性，假设$u_{j} \notin \{n-2, n-1\}$且$v_{j} \notin \{n-2, n-1\}$。
-%即$\{ u,v\} \cap \{ (x,y) \mid 0 \leq  x \leq  2 $ 且 $n-2 \leq  y \leq  n-1 \}= \emptyset $。
-%接下来，令$a_{1}=(0,n-3)$，$a_{2}=(1,n-3)$且$a_{3}=(2,n-3)$。
-%根据归纳假设, 我们可以得到顶点$u$和顶点$v$之间的一条路径$P$，且$P$覆盖$Mesh(0:2,0:n-3)$中的所有顶点。
-%因为$deg_{M_{3,n-2}}(a_{2}) = 3$且$a_{2} \in B_{3,n-2}$, 所以$\langle a_{1}, a_{2}\rangle$或$\langle a_{2}, a_{3}\rangle$是路径$P$中的一部分。
-%
-%若$\langle a_{1}, a_{2}\rangle$是路径$P$的一部分，那么我们设$\{ x, y\} = \{ a_{1}, a_{2}\}$；若$\langle a_{2}, a_{3}\rangle$是路径$P$中的一部分，那么设
-%$\{ x, y\} = \{ a_{2}, a_{3}\}$。
-%所以，我们可以得到路径$P = \langle u, R_{1}, x, y, R_{2}, v \rangle$（注意$R_{1}$和$R_{2}$是路径$P$的一部分，若$u = x$，则$R_{1} = \emptyset$；若$v = y$，则$R_{2} = \emptyset$）。
-%接下来，我们设$Q_{1} = \langle (0,n-2), (0,n-1), (1,n-1), (2,n-1), (2,n-2), (1,n-2) \rangle$， $Q_{2} = \langle (1,n-2), (2,n-2), (2,n-1), (1,n-1), (0,n-1), (0,n-2) \rangle$， $Q_{3} = \langle (1,n-2), (0,n-2), (0,n-1), (1,n-1), (2,n-1), (2,n-2) \rangle$和$Q_{4} = \langle (2,n-2), (2,n-1), (1,n-1), (0,n-1), (0,n-2), (1,n-2) \rangle$。
-%所以，我们可以得到$M_{3,n}$中的顶点$u$和顶点$v$之间的$1^*$- 容器：$\langle u, R_{1}, x, Q, y, R_{2}, v \rangle$，其中$Q$ 的取值如下所示：
-%\begin{align}
-%      Q = \left\{ \begin{array}{ll}\notag
-%       Q_{1}   \ \ \ \textrm{若} \ x = a_{1}  \ \textrm{且} y = a_{2} \\
-%       Q_{2}   \ \ \ \textrm{若} \ x = a_{2}  \ \textrm{且} y = a_{1} \\
-%       Q_{3}   \ \ \ \textrm{若} \ x = a_{2}  \ \textrm{且} y = a_{3} \\
-%       Q_{4}   \ \ \ \textrm{若} \ x = a_{3}  \ \textrm{且} y = a_{2} \\
-%    \end{array}\right.
-%\end{align}
-%
-%%%%%如图\ref{fig:example2_mesh}中所示，我们给出了$M_{3,5}$ 中$u = (0,0)$且$v = (0,2)$时的$1^{*}$-容器。
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=125mm]{example2_mesh.eps}
-%%%%%\smallcaption{$M_{3,5}$中$u = (0,0)$且$v = (0,2)$时的$1^{*}$- 容器}
-%%%%%\label{fig:example2_mesh}
-%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%
-%%情形2. 顶点$u$和顶点$v$的外面没有两列。
-%%情形2. 没有两个相邻的边界列。
-%情形2. $u_{j} \in \{0, 1\}$且$v_{j} \in \{n-2, n-1\}$。
-%即$u$位于$M_{3,n}$最左边的两列且$v$位于$M_{3,n}$最右边的两列。
-%
-%在此情形中，我们设$a=(0,n-3)$。
-%根据归纳假设，我们可以得到顶点$u$和顶点$a$之间的路径$P$，且$P$ 覆盖$Mesh(0:2,0:n-3)$中的所有顶点。
-%不失一般性，我们设$P = \langle u, R, a \rangle$。
-%接下来，我们设$Q_{1} = \langle (0,n-2), (1,n-2), (2,n-2), (2,n-1), (1,n-1)\rangle$，$Q_{2} = \langle (0,n-2), (0,n-1), (1,n-1), (1,n-2), (2,n-2)\rangle$ 和$Q_{3} = \langle (0,n-2), (0,n-1), (1,n-1), (2,n-1), (2,n-2)\rangle$。
-%所以，我们可以得到$M_{3,n}$中的顶点$u$和顶点$v$之间的$1^*$- 容器：$\langle u, R, a, Q, v \rangle$，其中$Q$的取值如下所示：
-%\begin{align}
-%      Q = \left\{ \begin{array}{ll}\notag
-%       Q_{1}   \ \ \ \textrm{若} \ v = (0,n-1) \\
-%       Q_{2}   \ \ \ \textrm{若} \ v = (2,n-1) \\
-%       Q_{3}   \ \ \ \textrm{若} \ v = (1,n-2) \\
-%    \end{array}\right.
-%\end{align}
-%
-%%%%%如图\ref{fig:example3_mesh}中所示，我们给出了$M_{3,5}$ 中$u = (0,0)$且$v = (0,4)$时的$1^{*}$-容器。
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=100mm]{example3_mesh.eps}
-%%%%%\smallcaption{$M_{3,5}$中$u = (0,0)$且$v = (0,4)$时的$1^{*}$- 容器}
-%%%%%\label{fig:example3_mesh}
-%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%综上所述，顶点$u$和顶点$v$之间存在一个$1^{*}$-容器，此定理得证。
-%\end{proof}
-%
-%%%接下来证明本章的第二个结果。
-%
-%\begin{thm}
-%\label{thm_hamiltoianPath_4}
-% 假设$u$和$v$是$M_{m,n}$中任意两个不同顶点，若$\{ u, v \} \subset B_{m,n}$，则$u$和$v$之间存在一个$3^{*}$-容器，其中$m$ 和$n$均是奇数且$\min \{m, n\} \geq 3$。
-%\end{thm}
-%
-%\begin{proof}
-%根据$m$和$n$的大小，我们分为以下两种情形证明。
-%
-%情形1. $m = 3$或$n = 3$。
-%
-%不失一般性，假设$m = 3$，对$n$进行归纳证明。
-%根据引理\ref{lem_hamiltoianPath_2}，可知当$m = 3$且$n = 3$ 时定理成立，所以我们使用$M_{3,3}$作为归纳基础。
-%假设$M_{3,n-2}$中任意两个属于$B_{m,n}$的顶点之间存在一个$3^{*}$- 容器。
-%接下来，我们只需证明$M_{3,n}$中任意两个属于$B_{m,n}$的顶点之间存在一个$3^{*}$-容器即可，其中$n \geq 5$。
-%
-%令$u = (u_{i},u_{j})$且$v = (v_{i},v_{j})$，不失一般性，假设$u_{j} \leq  v_{j}$。
-%%根据有没有两列在顶点$u$和顶点$v$的外面, 我们分成以下两种情形证明。
-%%%根据有没有两个相邻的边界列，我们分成以下两种情形证明。
-%根据$u$和$v$的位置分布情况，分为以下两种情形讨论。
-%
-%%情形1.1. 顶点$u$和顶点$v$的外面有两列。
-%%情形1.1. 有两个相邻的边界列。
-%情形1.1. $u_{j} \notin \{0, 1\}$且$v_{j} \notin \{0, 1\}$ 或$u_{j} \notin \{n-2, n-1\}$且$v_{j} \notin \{n-2, n-1\}$。
-%
-%此种情形和定理\ref{thm_hamiltoianPath_3}中的情形1.1类似。
-%不失一般性，假设$u_{j} \notin \{n-2, n-1\}$且$v_{j} \notin \{n-2, n-1\}$。
-%即$\{ u,v\} \cap \{ (x,y) \mid 0 \leq  x \leq  2 $ 且 $n-2 \leq  y \leq  n-1 \}= \emptyset $。
-%接下来，令$a_{1}=(0,n-3)$和$a_{2}=(1,n-3)$。
-%根据归纳假设, 我们可以得到顶点$u$和顶点$v$之间的三条路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，且这三条路径覆盖$Mesh(0:2,0:n-3)$中的所有顶点。
-%因为$deg_{M_{3,n-2}}(a_{1}) = 2$且$a_{1} \in A_{3,n-2}$, 所以$\langle a_{1}, a_{2}\rangle$一定是某条路径中的一部分。
-%不失一般性，假设$\langle a_{1}, a_{2}\rangle$是路径$P_{1}^{'}$ 的一部分，且设$\{ x, y\} = \{ a_{1}, a_{2}\}$。
-%所以，我们可以得到$P_{1}^{'} = \langle u, R_{1}, x, y, R_{2}, v \rangle$ （注意$R_{1}$和$R_{2}$是路径$P_{1}^{'}$ 的一部分，若$u = x$，则$R_{1} = \emptyset$；若$v = y$，则$R_{2} = \emptyset$。），$P_{2}^{'} = \langle u, R_{3}, v \rangle$和$P_{3}^{'} = \langle u, R_{4}, v \rangle$。
-%接下来，我们设$Q_{1} = \langle (0,n-2), (0,n-1), (1,n-1), (2,n-1), (2,n-2), (1,n-2) \rangle$和$Q_{2} = \langle (1,n-2), (2,n-2), (2,n-1), (1,n-1), (0,n-1), (0,n-2) \rangle$。
-%所以，我们可以得到$M_{3,n}$中的顶点$u$和顶点$v$之间的$3^*$- 容器$\{P_{1}, P_{2}, P_{3}\}$，其中$P_{1} = \langle u, R_{1}, x, Q, y, R_{2}, v \rangle$，$P_{2} = \langle u, R_{3}, v \rangle$，$P_{3} = \langle u, R_{3}, v \rangle$，而$Q$的取值如下所示：
-%\begin{align}
-%       Q = \left\{ \begin{array}{ll}\notag
-%       Q_{1}   \ \ \ \textrm{若} \ x = a_{1}  \ \textrm{且} y = a_{2} \\
-%       Q_{2}   \ \ \ \textrm{若} \ x = a_{2}  \ \textrm{且} y = a_{1} \\
-%    \end{array}\right.
-%\end{align}
-%
-%
-%%%%%如图\ref{fig:example4_mesh}中所示，我们给出了$M_{3,5}$ 中$u = (0,1)$且$v = (1,2)$时的$3^{*}$-容器。
-%
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=100mm]{example4_mesh.eps}
-%%%%%\smallcaption{$M_{3,5}$中$u = (0,1)$且$v = (1,2)$时的$3^{*}$- 容器}
-%%%%%\label{fig:example4_mesh}
-%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%
-%%情形1.2. 顶点$u$和顶点$v$的外面没有两列。
-%%情形1.2. 没有两个相邻的边界列。
-%情形1.2. $u_{j} \in \{0, 1\}$且$v_{j} \in \{n-2, n-1\}$。
-%即$u$位于$M_{3,n}$最左边的两列且$v$位于$M_{3,n}$最右边的两列。
-%
-%在这种情形中，设$a=(1,n-3)$，$b_{1}=(0,n-3)$，$b_{2}=(1,n-4)$和$b_{3}=(2,n-3)$。
-%根据归纳假设，我们可以得到顶点$u$和顶点$a$之间的三条路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，且它们覆盖$Mesh(0:2,0:n-3)$中的所有顶点。
-%不失一般性，设$P_{i}^{'} = \langle u, R_{i}, b_{i}, a \rangle$，其中$1 \leq  i \leq  3$（注意有可能$R_{i}= \emptyset$）。
-%根据$v$位置的不同，$M_{3,n}$中的顶点$u$和顶点$v$之间的$3^*$- 容器$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%
-%若$v = (0,n-2)$，那么我们得到$ P_{1}=\langle u, R_{1}, b_{1}, v \rangle $， $ P_{2}=\langle u, R_{2}, b_{2}, a, (1,n-2), v \rangle $和$P_{3}=\langle u, R_{3}, b_{3}, (2,n-2), R(2:0,n-1), v \rangle $。
-%
-%若$v =(2,n-2)$，那么我们得到$P_{1}=\langle u, R_{1}, b_{1}, (0,n-2), R(0:2,n-1), v \rangle$， $P_{2}=\langle u, R_{2}, b_{2}, a, (1,n-2), v \rangle$ 和$P_{3}=\langle u, R_{3}, b_{3}, v \rangle$。
-%
-%若$v = (1,n-1)$，那么我们得到$P_{1}=\langle u, R_{1}, b_{1}, (0,n-2), (0,n-1), v \rangle$， $P_{2}=\langle u, R_{2}, b_{2}, a, (1,n-2), v \rangle$ 和$P_{3}=\langle u, R_{3}, b_{3}, (2,n-2), (2,n-1), v \rangle$。
-%
-%%%%%如图\ref{fig:example5_mesh}中所示，我们给出了$M_{3,5}$ 中$u = (0,1)$且$v = (0,3)$时的$3^{*}$-容器。
-%%%%%
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=100mm]{example5_mesh.eps}
-%%%%%\smallcaption{$M_{3,5}$中$u = (0,1)$且$v = (0,3)$时的$3^{*}$- 容器}
-%%%%%\label{fig:example5_mesh}
-%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%
-%情形2. $m \geq 5$且$n \geq 5$。
-%
-%%根据对称性，我们可以通过旋转$M_{t,s}$得到$M_{s,t}$。
-%若$u$和$v$不在$M_{m,n}$中的最上面两行或最下面两行或最左面两列或最右面两列，我们可以和情形1.1中一样处理。
-%否则，顶点$u$和顶点$v$一定分别位于$M_{m,n}$中的最上面、最下面两行，且分别位于$M_{m,n}$中的最左面、最右面两列。
-%%否则，$\{u_{i}, u_{j}\} \subseteq \{0, 1\}$且$\{v_{i},v_{j}\} \subseteq \{m-2, m-1\}$。
-%不失一般性，假设$u_{i} \leq  v_{i}$且$u_{j} \leq  v_{j}$，则$u$ 一定是$(0,1)$和$(1,0)$中的一个，$v$一定是$(m-2,n-1)$和$(m-1,n-2)$ 中的一个。
-%设$a=(1,1)$和$b=(m-2,n-2)$。
-%显而易见，不论$u$是$(0,1)$还是$(1,0)$，$a$一定是$u$的邻居顶点。
-%同样地，$b$一定是$v$的邻居顶点。
-%因为$m-2 \geq 3$且$n-2 \geq 3$，根据定理\ref{thm_hamiltoianPath_3}，我们可以得到顶点$a$和顶点$b$之间的一条路径$P^{'}$，且$P^{'}$覆盖了$Mesh(1:m-2,1:n-2)$ 中所有的顶点。
-%不失一般性，设$P^{'} = \langle a, R, b \rangle$。
-%
-%若$u=(0,1)$，那么根据$v$的不同位置，$M_{m,n}$中顶点$u$和$v$之间的$3^*$-容器$\{ P_{1}, P_{2}, P_{3}\}\\$如下所示：
-%
-%若$v = (m-2,n-1)$，那么我们设$P_{1}=\langle u, R(0:m-1,0), R(m-1,1:n-1), v \rangle$，$P_{2}=\langle u, R(0,2:n-1), R(1:m-3,n-1), v \rangle$和$P_{3}=\langle u, a, R, b, v \rangle$。
-%
-%若$v = (m-1,n-2)$，那么我们设$P_{1}=\langle u, R(0:m-1,0), R(m-1,1:n-3), v \rangle$，$P_{2}=\langle u, R(0,2:n-1), R(1:m-1,n-1), v \rangle$和$P_{3}=\langle u, a, R, b, v \rangle$。
-%
-%若$u=(1,0)$，那么根据$v$的不同位置，$M_{m,n}$中顶点$u$和$v$之间的$3^*$-容器$\{ P_{1}, P_{2}, P_{3}\}\\$如下所示：
-%
-%若$v = (m-2,n-1)$，那么我们设$P_{1}=\langle u, R(2:m-1,0), R(m-1,1:n-1), v \rangle$，$P_{2}=\langle u, R(0,0:n-1), R(1:m-3,n-1), v \rangle$和$P_{3}=\langle u, a, R, b, v \rangle$。
-%
-%若$v = (m-1,n-2)$，那么我们设$P_{1}=\langle u, R(2:m-1,0), R(m-1,1:n-3), v \rangle$，$P_{2}=\langle u, R(0,0:n-1), R(1:m-1,n-1), v \rangle$和$P_{3}=\langle u, a, R, b, v \rangle$。
-%
-%%%%%如图\ref{fig:example6_mesh}中所示，我们给出了$M_{5,5}$ 中$u = (0,1)$且$v = (3,4)$时的$3^{*}$-容器。
-%%%%%
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=50mm]{example6_mesh.eps}
-%%%%%\smallcaption{$M_{5,5}$中$u = (0,1)$且$v = (3,4)$时的$3^{*}$- 容器}
-%%%%%\label{fig:example6_mesh}
-%%%%%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%
-%综上所述，顶点$u$和顶点$v$之间存在一个$3^{*}$-容器，此定理得证。
-%\end{proof}
-%
-%%%接下来证明本章的第三个结果。
-%
-%\begin{lem}
-%\label{lem_hamiltoianPath_5}
-%  假设$u$和$v$是$M_{m,n}$中任意两个不同顶点，若$u \in A_{m,n}$ 且$v \in B_{m,n}$，则$u$和$v$之间存在一个$3^{*}$- 容器，其中$m$ 是偶数且$\min \{m, n\} \geq 4$。
-%\end{lem}
-%\vspace{-10pt}
-%
-%\begin{proof}
-%根据$n$的奇偶性，我们分为以下两种情形讨论。
-%
-%情形1. $n$是偶数。
-%当$m = 4$且$n = 4$时，根据顶点$u$和顶点$v$的不同位置分布, 有6种情形。
-%这6种情形中顶点$u$和顶点$v$之间的$3^*$-容器$\{ P_{1}, P_{2}, P_{3}\}$如图\ref{fig:3-pathIn4by4}所示。
-%
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=90mm]{3-pathIn4by4.eps}
-%\smallcaption{$M_{4,4}$中顶点$u$和顶点$v$之间的$3^*$-容器}
-%\label{fig:3-pathIn4by4}
-%\vspace{-10pt}
-%\end{figure}
-%
-%%%\iffalse
-%%%我们原打算像前文所述一样通过判断有没有两行或两列在顶点$u$ 和顶点$v$的外面，从而分成两种情形证明。
-%%%但是，如图\ref{fig:counter_example1}所示，当$u = (0,2)$，$v = (0,n-3)$ 时，若$n \geq 6$，存在两列在$M_{4,n}$中的顶点$u$和顶点$v$的外面。
-%%%我们用最右边两列举例说明，显而易见，在由最左面$n - 2$列顶点构成的$M_{4,n-2}$中，因为$deg_{M_{4,n-2}}(v) = 2$，顶点$u$和顶点$v$之间是没有$3^*$ 容器的。
-%%%我们把这样的两列称作虚假列。
-%%%同样地，我们最左面两列也是虚假列。因为我们讨论的是$m \geq 4$ 的情形，所以也不能考虑存在两行在顶点$u$和顶点$v$的外面。
-%%%所以，这种$M_{4,n}$的情形是无法从归纳基础得到的，此情形中的顶点$u$和顶点$v$之间的$3^*$容器：$\{ P_{1}, P_{2}, P_{3}\}$分为以下两种情形。
-%
-%%%\begin{figure}
-%%%\centering
-%%%\includegraphics[width=\imgsize\textwidth]{counter_example1}
-%%%\smallcaption{情形1中无法通过归纳假设得到的$M_{4,n}$。}
-%%%\label{fig:counter_example1}
-%%%\end{figure}
-%
-%%%若$n = 6$，则$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%%%\begin{align}
-%%%       \left\{ \begin{array}{ll}\notag
-%%%       P_{1}=\langle u, v \rangle\\
-%%%       P_{2}=\langle u, (1,2), (1,1), R(2,1:4), (1,4), (1,3), v \rangle\\
-%%%       P_{3}=\langle u, (0,1), R(0:2,0), R(3,0:5), R(2:0,5), (0,4), v \rangle\\
-%%%       \end{array}\right.
-%%%\end{align}
-%
-%%%若$n \geq 8$，则$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%%%\begin{align}
-%%%       \left\{ \begin{array}{ll}\notag
-%%%       P_{1}=\langle u, Q(0:1,3:n-4), v \rangle\\
-%%%       P_{2}=\langle u, (1,2), (1,1), R(2,1:n-2), (1,n-2), (1,n-3), v \rangle\\
-%%%       P_{3}=\langle u, (0,1), R(0:2,0), R(3,0:n-1), R(2:0,n-1), (0,n-2), v \rangle\\
-%%%      \end{array}\right.
-%%%\end{align}
-%%%\fi
-%我们使用$M_{4,4}$作为归纳基础，假设$M_{m-2,n-2}$中任意两个不同部的顶点之间存在一个$3^{*}$-容器。
-%接下来，我们只需证明$M_{m,n}$中任意两个不同部的顶点之间存在一个$3^{*}$-容器即可，其中$m \geq 6$且$n \geq 6$。
-%设$u = (u_{i},u_{j})$和$v = (v_{i},v_{j})$，不失一般性，假设$u_{i} \leq  v_{i}$且$u_{j} \leq  v_{j}$。
-%%根据对称性，我们可以通过旋转$M_{t,s}$得到$M_{s,t}$。
-%%根据有没有两行或两列在$M_{m,n}$中顶点$u$和顶点$v$的外面，分成两种情形证明。
-%%根据$M_{m,n}$中有没有两个相邻的边界列或边界行，分成两种情形证明。
-%根据$u$和$v$的位置分布情况，分为以下两种情形讨论。
-%
-%%情形1.1. 有两行或两列在$M_{m,n}$中顶点$u$和顶点$v$的外面。
-%%情形1.1. $M_{m,n}$中有两个相邻的边界列或边界行。
-%情形1.1. $u_{j} \notin \{0, 1\}$且$v_{j} \notin \{0, 1\}$，或$u_{j} \notin \{n-2, n-1\}$且$v_{j} \notin \{n-2, n-1\}$，或$u_{i} \notin \{0, 1\}$且$v_{i} \notin \{0, 1\}$，或$u_{i} \notin \{m-2, m-1\}$且$v_{i} \notin \{m-2, m-1\}$。
-%不失一般性，假设$u_{i} \notin \{m-2, m-1\}$且$v_{i} \notin \{m-2, m-1\}$。
-%即$\{ u,v\} \cap \{ (x,y) \mid m-2 \leq  x \leq  m-1 $ 且 $0 \leq  y \leq  n-1 \}= \emptyset $。
-%
-%若$v = (m-3,0)$，那么令$v^{'} = (m-3,2)$。
-%根据归纳假设，我们可以得到$u$和$v^{'}$之间的三条不相交路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，且它们覆盖了$Mesh(0:m-3,0:n-1)$中的所有顶点。
-%显而易见，我们可以设$P_{1}^{'} = \langle u, R_{1}, (m-4,0), v, (m-3,1), v^{'} \rangle$，$P_{2}^{'} = \langle u, R_{2}, (m-4,2), v^{'} \rangle$和$P_{3}^{'} = \langle u, R_{3}, (m-3,3), v^{'} \rangle$。
-%接下来， 我们就可以得到$M_{m,n}$中$u$和$v$之间的$3^*$-容器$\{ P_{1}, P_{2}, P_{3}\}$，如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, (m-4,0), v \rangle\\
-%       P_{2}=\langle u, R_{2}, (m-4,2), v^{'}, (m-3,1), v \rangle\\
-%       P_{3}=\langle u, R_{3}, (m-3,3), R(m-2,3:n-1), R(m-1,n-1:3), (m-1,2), \\ \quad \quad \quad (m-2,2), (m-2,1), (m-1,1), (m-1,0), (m-2,0), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%若$v = (m-3,n-1)$，那么令$v^{'} = (m-3,n-3)$。
-%根据归纳假设，我们可以得到$u$和$v^{'}$之间的三条不相交路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，且它们覆盖了$Mesh(0:m-3,0:n-1)$中的所有顶点。
-%显而易见，我们可以设$P_{1}^{'} = \langle u, R_{1}, (m-4,n-1), v, (m-3,n-2), v^{'} \rangle$，$P_{2}^{'} = \langle u, R_{2}, (m-4,n-3), v^{'} \rangle$ 和$P_{3}^{'} = \langle u, R_{3}, (m-3,n-4), v^{'} \rangle$。
-%接下来， 我们就可以得到$M_{m,n}$中$u$和$v$之间的$3^*$-容器$\{ P_{1}, P_{2}, P_{3}\}$，如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, (m-4,n-1), v \rangle\\
-%       P_{2}=\langle u, R_{2}, (m-4,n-3), v^{'}, (m-3,n-2), v \rangle\\
-%       P_{3}=\langle u, R_{3}, (m-3,n-4), R(m-2,n-4:0), R(m-1,0:n-4), (m-1,n-3), \\ \quad \quad \quad (m-2,n-3), (m-2,n-2), (m-1,n-2), (m-1,n-1), (m-2,n-1), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%%%%%如图\ref{fig:example7_mesh}中所示，我们给出了$M_{6,4}$ 中当$u = (1,1)$ 且$v = (3,0)$时的$3^{*}$-容器。
-%%%%%
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=90mm]{example7_mesh.eps}
-%%%%%\smallcaption{$M_{6,4}$中$u = (1,1)$且$v = (3,0)$时的$3^{*}$- 容器}
-%%%%%\label{fig:example7_mesh}
-%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%
-%其他的情形和定理\ref{thm_hamiltoianPath_4}中的情形1.1类似，因此不再叙述。
-%接下来，令$a_{1}=(m-3,0)$且$a_{2}=(m-3,1)$。
-%根据归纳假设, 我们可以得到顶点$u$和顶点$v$之间的三条路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，且这三条路径覆盖$Mesh(0:m-3,0:n-1)$ 中的所有顶点。
-%因为$deg_{M_{m-2,n}}(a_{1}) = 2$, 所以$\langle a_{1}, a_{2}\rangle$一定是某条路径中的一部分。
-%不失一般性，假设$\langle a_{1}, a_{2}\rangle$是路径$P_{1}^{'}$ 的一部分，且设$\{ x, y\} = \{ a_{1}, a_{2}\}$。
-%
-%所以，我们可以得到$P_{1}^{'} = \langle u, R_{1}, x, y, R_{2}, v \rangle$ （注意$R_{1}$和$R_{2}$是路径$P_{1}^{'}$ 的一部分。若$v = y$，则$R_{2} = \emptyset$。），$P_{2}^{'} = \langle u, R_{3}, v \rangle$且$P_{3}^{'} = \langle u, R_{4}, v \rangle$。
-%接下来，我们设$Q_{1} = \langle (m-2,0), R(m-1,0:n-1), R(m-2,n-1:1) \rangle$ 和$Q_{2} = \langle R(m-2,1:n-1), R(m-1,n-1:0), (m-2,0) \rangle$。
-%
-%所以，我们可以得到$M_{m,n}$中顶点$u$和顶点$v$之间的$3^*$- 容器$\{P_{1}, P_{2}, P_{3}\}$，其中$P_{1} = \langle u, R_{1}, x, Q, y, R_{2}, v \rangle$，$P_{2} = \langle u, R_{3}, v \rangle$，$P_{3} = \langle u, R_{3}, v \rangle$，而$Q$的取值如下所示：
-%\begin{align}
-%      Q = \left\{ \begin{array}{ll}\notag
-%       Q_{1}   \ \ \ \textrm{若} \ x = a_{1}  \ \textrm{且} y = a_{2} \\
-%       Q_{2}   \ \ \ \textrm{若} \ x = a_{2}  \ \textrm{且} y = a_{1} \\
-%    \end{array}\right.
-%\end{align}
-%
-%%%%%如图\ref{fig:example8_mesh}中所示，我们给出了$M_{6,4}$ 中$u = (1,1)$且$v = (3,2)$时的$3^{*}$-容器。
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=95mm]{example8_mesh.eps}
-%%%%%\smallcaption{$M_{6,4}$中$u = (1,1)$且$v = (3,2)$时的$3^{*}$- 容器}
-%%%%%\label{fig:example8_mesh}
-%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%
-%%情形1.2. 没有两行或两列在$M_{m,n}$中顶点$u$和顶点$v$的外面。
-%%情形1.2. $M_{m,n}$中没有两个相邻的边界列或边界行。
-%情形1.2. $\{u_{i}, u_{j}\} \subseteq \{0, 1\}$且$\{v_{i},v_{j}\} \subseteq \{m-2, m-1\}$。
-%
-%%如果没有两行或两列在顶点$u$和顶点$v$的外面，
-%%$M_{m,n}$中没有两个相邻的边界列或边界行，
-%%我们设$u = (u_{i},u_{j})$且$v = (v_{i},v_{j})$，不失一般性，假设$u_{i} \leq  v_{i}$且$u_{j} \leq  v_{j}$。
-%此情形中$u$一定位于$M_{m,n}$中最上面两行且$v$一定位于$M_{m,n}$ 中最下面两行。
-%所以，我们可以将$M_{m,n}$分割成$M_{m-2,n}$和$M_{2,n}$两部分，使得$u \in V(M_{m-2,n})$且$v \in V(M_{2,n})$。
-%
-%若$v_{i} = m-1$，那么令$a = (m-3,v_{j})$，$b_{1} = (m-3,v_{j}-1)$，$b_{2} = (m-4,v_{j})$和$b_{3} = (m-3,v_{j}+1)$。
-%根据归纳假设，我们可以得到$M_{m-2,n}$中顶点$u$和顶点$a$之间的三条路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，且这三条路径覆盖$M_{m-2,n}$中的所有顶点。
-%
-%不失一般性，我们设$P_{i}^{'} = \langle u, R_{i}, b_{i}, a \rangle$，其中$1 \leq  i \leq  3$。
-%所以，我们可以得到$M_{m,n}$中顶点$u$和顶点$v$之间的$3^*$- 容器$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, b_{1}, R(m-2,v_{j}-1:0), R(m-1,0:v_{j}-1), v \rangle\\
-%       P_{2}=\langle u, R_{2}, b_{2}, a, (m-2,v_{j}), v \rangle\\
-%       P_{3}=\langle u, R_{3}, b_{3}, R(m-2,v_{j}+1:n-1), R(m-1,n-1:v_{j}+1), v \rangle\\
-%    \end{array}\right.
-%\end{align}
-%
-%若$v_{i} = m-2$且$v_{j} \leq  n-3$，那么令$a = (m-3,v_{j}+1)$，$b_{1} = (m-3,v_{j})$，$b_{2} = (m-4,v_{j}+1)$和$b_{3} = (m-3,v_{j}+2)$。
-%根据归纳假设，我们可以得到$M_{m-2,n}$中顶点$u$和顶点$a$之间的三条路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，这三条路径覆盖$M_{m-2,n}$中的所有顶点。
-%不失一般性，我们设$P_{i}^{'} = \langle u, R_{i}, b_{i}, a \rangle$，其中$1 \leq  i \leq  3$。
-%所以，我们可以得到$M_{m,n}$中顶点$u$和顶点$v$之间的$3^*$- 容器$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, b_{1}, v \rangle\\
-%       P_{2}=\langle u, R_{2}, b_{2}, a, (m-2,v_{j}+1), v \rangle\\
-%       P_{3}=\langle u, R_{3}, b_{3}, R(m-2,v_{j}+2:n-1), R(m-1,n-1:0), \\ \quad \quad \quad R(m-2,0:v_{j}-1), v \rangle\\
-%    \end{array}\right.
-%\end{align}
-%
-%若$v_{i} = m-2$且$v_{j} = n-1$，那么令$a = (m-3,v_{j}-1)$，$b_{1} = (m-3,v_{j}-2)$，$b_{2} = (m-4,v_{j}-1)$ 和 $b_{3} = (m-3,v_{j})$。
-%根据归纳假设，我们可以得到$M_{m-2,n}$中顶点$u$和顶点$a$之间的三条路径$P_{1}^{'}$，$P_{2}^{'}$和$P_{3}^{'}$，这三条路径覆盖$M_{m-2,n}$中的所有顶点。
-%不失一般性，我们设$P_{i}^{'} = \langle u, R_{i}, b_{i}, a \rangle$，其中$1 \leq  i \leq  3$。
-%所以，我们可以得到$M_{m,n}$中顶点$u$和顶点$v$之间的$3^*$- 容器$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, b_{1}, R(m-2,v_{j}-2:0), R(m-1,0:v_{j}), v \rangle\\
-%       P_{2}=\langle u, R_{2}, b_{2}, a, (m-2,v_{j}-1), v \rangle\\
-%       P_{3}=\langle u, R_{3}, b_{3}, v \rangle\\
-%    \end{array}\right.
-%\end{align}
-%
-%%%%%如图\ref{fig:example9_mesh}中所示，我们给出了$M_{6,4}$ 中$u = (1,1)$且$v = (4,1)$时的$3^{*}$-容器。
-%%%%%
-%
-%情形2. $n$是奇数。
-%当$m = 4$且$n = 5$时，根据顶点$u$和顶点$v$的不同位置分布, 有21 种情形。
-%这21种情形中顶点$u$和$v$之间的$3^*$-容器$\{ P_{1}, P_{2}, P_{3}\}$如图\ref{fig:3-pathIn4by5}所示。
-%我们使用$M_{4,5}$作为归纳基础，假设$M_{m-2,n-2}$中任意两个不同部的顶点之间存在一个$3^{*}$-容器。
-%接下来，我们只需证明$M_{m,n}$中任意两个不同部的顶点之间存在一个$3^{*}$-容器即可，其中$ m \geq 6$且$ n \geq 7$。
-%证明过程和情形1中类似，此处不作重复叙述。
-%\end{proof}
-%%%然而，和情形1中一样，\ref{fig:counter_example2}所示的三种情形也不能通过归纳基础得到。
-%%%对于这三种情形，分成以下三种情形讨论。
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=120mm]{3-pathIn4by5.eps}
-%\smallcaption{$M_{4,5}$中顶点$u$和顶点$v$之间的$3^*$-容器}
-%\label{fig:3-pathIn4by5}
-%\end{figure}
-
-%%%%\begin{figure}[!htbp]
-%%%%\centering
-%%%%\includegraphics[width=90mm]{example9_mesh.eps}
-%%%%\smallcaption{$M_{6,4}$中$u = (1,1)$且$v = (4,1)$时的$3^{*}$- 容器}
-%%%%\label{fig:example9_mesh}
-%%%%\vspace{-10pt}
-%%%%\end{figure}
-
-%%%%\begin{figure}[!htbp]
-%%%%\centering
-%%%%\includegraphics[width=95mm]{3-pathIn4by5-d(u,v)=1.eps}
-%%%%\smallcaption{$M_{4,5}$中顶点$u$和顶点$v$之间距离为1时的$3^*$-容器}
-%%%%\label{fig:3-pathIn4by5-d(u,v)=1}
-%%%%\vspace{-10pt}
-%%%%\end{figure}
-
-%%%%\begin{figure}[!htbp]
-%%%%\centering
-%%%%\includegraphics[width=120mm]{3-pathIn4by5-d(u,v)=3.eps}
-%%%%\smallcaption{$M_{4,5}$中顶点$u$和顶点$v$之间距离为3时的$3^*$-容器}
-%%%%\label{fig:3-pathIn4by5-d(u,v)=3}
-%%%%\vspace{-10pt}
-%%%%\end{figure}
-
-%%%%\begin{figure}[!htbp]
-%%%%\centering
-%%%%\includegraphics[width=120mm]{3-pathIn4by5-d(u,v)=5.eps}
-%%%%\smallcaption{$M_{4,5}$中顶点$u$和顶点$v$之间距离为5时的$3^*$-容器}
-%%%%\label{fig:3-pathIn4by5-d(u,v)=5}
-%%%%\vspace{-10pt}
-%%%%\end{figure}
-
-
-%%\begin{figure}
-%%\centering
-%%\includegraphics[width=\imgsize\textwidth]{counter_example2}
-%%\smallcaption{情形2中无法通过归纳假设得到的三种情形。}
-%%\label{fig:counter_example2}
-%%\end{figure}
-
-%%\iffalse
-%%情形2.1：\ref{fig:counter_example2}$(a)$中$M_{4,n}$的顶点$u$ 和顶点$v$的$3^*$容器：$\{ P_{1}, P_{2}, P_{3}\}$，如下所示，其中$u =(0,2)$，$v = (3,n-3)$且$n \geq 7$。
-
-%%\begin{align}
-%%       \left\{ \begin{array}{ll}\notag
-%%       P_{1}=\langle u, Q(0:3,1:0), R(3,2:n-4), v \rangle\\
-%%       P_{2}=\langle u, R(0,3:n-3), Q(0:3,n-2:n-1), v \rangle\\
-%%       %P_{2}=\langle u, R(0,3:n-1), R(1,n-1:n-2), R(2,n-2:n-1), R(3,n-1:n-2), v \rangle\\
-%%       P_{3}=\langle u, Q(1:2,2:n-4), (1,n-3), (2,n-3), v \rangle\\
-%%       \end{array}\right.
-%%\end{align}
-
-%%情形2.2：图\ref{fig:counter_example2}$(b)$中$M_{m,5}$的顶点$u$ 和顶点$v$的$3^*$容器：$\{ P_{1}, P_{2}, P_{3}\}$。
-%%若$m = 6$，$u = (2,4)$和$v = (3,0)$，$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%%\begin{align}
-%%       \left\{ \begin{array}{ll}\notag
-%%       P_{1}=\langle u, (1,4), R(0,4:0), (1,0), (2,0), v \rangle\\
-%%       P_{2}=\langle u, (3,4), (4,4), R(5,4:0), (4,0), v \rangle\\
-%%       P_{3}=\langle u, (2,3), R(1,3:1), (2,1), (2,2), (3,2), (3,3), R(4,3:1), (3,1), v \rangle\\
-%%       %P_{3}=\langle u, (2,3), (1,3), (1,2), (1,1), (2,1), (2,2), (3,2), (3,3), (4,3), (4,2), \\ \quad \quad \quad (4,1), (3,1), v \rangle\\
-%%       \end{array}\right.
-%%\end{align}
-
-%%若$m \geq 8$，$u = (2,4)$和$v = (m-3,0)$，$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%%\begin{align}
-%%       \left\{ \begin{array}{ll}\notag
-%%       P_{1}=\langle u, (1,4), R(0,4:0), (1,0), (2,0), Q(3:m-4,0:1), v \rangle\\
-%%       P_{2}=\langle u, Q(3:m-4,4:3), R(m-3:m-1,4), R(m-1,3:0), (m-2,0), v \rangle\\
-%%       P_{3}=\langle u, (2,3), R(1,3:1), (2,1), R(2:m-3,2), (m-3,3), R(m-2,3:1), \\ \quad \quad \quad (m-3,1), v \rangle\\
-%%       \end{array}\right.
-%%\end{align}
-
-%%情形2.3：图\ref{fig:counter_example2}$(c)$中$M_{m,5}$的顶点$u$ 和顶点$v$的$3^*$容器：$\{ P_{1}, P_{2}, P_{3}\}$。
-%%若$m = 6$，$u = (2,0)$和$v = (3,0)$，$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%%\begin{align}
-%%       \left\{ \begin{array}{ll}\notag
-%%       P_{1}=\langle u, v \rangle\\
-%%       P_{2}=\langle u, (1,0), R(0,0:4), R(1:5,4), R(5,3:0), (4,0), v \rangle\\
-%%       P_{3}=\langle u, (2,1), R(1,1:3), (2,3), (2,2), (3,2), (3,3), R(4,3:1), (3,1), v \rangle\\
-%%       \end{array}\right.
-%%\end{align}
-
-%%若$m \geq 8$，$u = (2,0)$和$v = (m-3,0)$，$\{ P_{1}, P_{2}, P_{3}\}$如下所示：
-%%\begin{align}
-%%       \left\{ \begin{array}{ll}\notag
-%%       P_{1}=\langle u, Q(3:m-4,0:1), v \rangle\\
-%%       %P_{1}=\langle u, (3,0), (3,1), (4,1), (4,0), \ldots, (m-5,0), (m-5,1), (m-4,1), \\ \quad \quad \quad (m-4,0), v \rangle\\
-%%       %P_{2}=\langle u, (1,0), R(0,0:4), R(1:2,4), R(3,4:3), R(4,3:4), \ldots, \\ \quad \quad \quad R(m-5,4:3), R(m-4,3:4), R(m-3:m-1,4), R(m-1,3:0), \\ \quad \quad \quad (m-2,0), v \rangle\\
-%%       P_{2}=\langle u, (1,0), R(0,0:4), R(1:2,4), Q(3:m-4,4:3), R(m-3:m-1,4), \\ \quad \quad \quad R(m-1,3:0), (m-2,0), v \rangle\\
-%%       P_{3}=\langle u, (2,1), R(1,1:3), (2,3), R(2:m-3,2), (m-3,3), R(m-2,3:1), \\ \quad \quad \quad (m-3,1), v \rangle\\
-%%       \end{array}\right.
-%%\end{align}
-%%\fi
-
-
-%\begin{lem}
-%\label{lem_hamiltoianPath_6}
-%若$m$或$n$是偶数，则$M_{m,n}$是哈密顿图。
-%\end{lem}
-%
-%\begin{proof}
-%不失一般性，假设$m = 2t$，其中$t \geq 1$。
-%我们设$P = R(m-1:1,0)$，$P_{2i} = R(2i,1:n-1)$，$P_{2i+1} = R(2i+1,n-1:1)$，其中$0 \leq  i \leq  t-1$。
-%则$\langle (0, 0), P_0, P_1, P_2, \ldots, P_{2t-1}, P,$
-%$(0, 0) \rangle$组成$M_{m,n}$中的一个哈密顿圈，所以$M_{m,n}$是哈密顿图。
-%\end{proof}
-%
-%\begin{thm}
-%\label{thm_hamiltoianPath_7}
-%对于任意的偶数$m$和整数$n$，有$s\kappa^{L}(M_{m,n})=3$，其中$\min \{m, n\} \geq 4$。
-%\end{thm}
-%
-%\begin{proof}
-%根据引理\ref{lem_hamiltoianPath_1}、引理\ref{lem_hamiltoianPath_5}和引理\ref{lem_hamiltoianPath_6}，我们容易推出$M_{m,n}$是增强$3^*$-交织的。
-%接下来，我们要证明$M_{m,n}$不是增强$4^*$-交织的。
-%令$u = (1,1)$和$v = (2,1)$，假设顶点$u$和顶点$v$之间的$4^{*}$容器是$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$。
-%因为$N_{M_{m,n}}(u) = \{ (0,1),(1,0),(2,1),(1,2)\}$和$N_{M_{m,n}}((0,\\0)) = \{ (0,1),(1,0)\}$, $(0,0) \notin \bigcup_{i=1}^{4} V(P_{i})$。
-%所以，$u$和$v$之间之间没有$4^{*}$-容器。
-%故$s\kappa^{L}(M_{m,n})=3$。
-%\end{proof}
-%
-%%%接下来证明本章的第四个结果。
-%
-%\begin{thm}
-%\label{lem_hamiltoianPath_8}
-%假设$u$和$v$是$M_{m,n}$中任意两个不同部的顶点，若$u \notin \{ (1,1), (1,n-2), (m-2,1), (m-2,n-2)\}$且$v \notin\{ (1,1), (1,n-2), (m-2,1), (m-2,n-2)\}$，则$u$ 和$v$之间存在一个$4^{*}$- 容器，其中$m$ 是偶数且$\min \{m, n\} \geq 6$。
-%\end{thm}
-%
-%\begin{proof}
-%不失一般性，假设$u \in A_{m,n}$且$v \in B_{m,n}$。
-%我们将$M_{m,n}$中的$(1,1)$，$(1,n-2)$，$(m-2,1)$和$(m-2,n-2)$四个顶点称作坏点。
-%根据$n$的奇偶性，分为以下两种情形讨论。
-%
-%情形1. $n$是偶数。
-%当$m = 6$和$n = 6$时，根据顶点$u$和顶点$v$的不同位置分布，有6种$M_{6,6}$情形。
-%这六种情形中顶点$u$和顶点$v$之间的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如图\ref{fig:4-pathIn6by6}所示。
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=95mm]{4-pathIn6by6.eps}
-%\smallcaption{$M_{6,6}$中顶点$u$和顶点$v$之间的$4^*$-容器}
-%\label{fig:4-pathIn6by6}
-%\vspace{-10pt}
-%\end{figure}
-%
-%%我们原打算像前文所述一样通过判断有没有两行或两列在顶点$u$ 和顶点$v$的外面，从而分成两种情形证明。
-%我们首先像前文所述一样判断$u$和$v$是否在$M_{m,n}$中的最上面两行，或最下面两行，或最左边两列，或最右边两列。
-%但是如图\ref{fig:counter_example3}所示，当$u = (1,3)$且$v = (1,n-4)$时，$u$ 和$v$不在$M_{6,n}$中的最左边两列和最右边两列，其中$n \geq 8$。
-%我们用最右边两列举例说明。
-%显而易见，在由最左面$n - 2$列顶点构成的$M_{6,n-2}$中，$v$ 是坏点且顶点$u$和顶点$v$之间是没有$4^*$-容器的。
-%我们把这样的两列称作虚假列。
-%同样地，最左面两列也是虚假列。
-%%因为我们讨论的是$m \geq 6$的情形，所以也不能考虑存在两行在顶点$u$和顶点$v$ 的外面。
-%所以，$M_{6,n}$中的这种情形是无法从归纳基础得到的，此情形中的顶点$u$和顶点$v$之间的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$ 分为以下两种情形。
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=65mm]{counter_example3.eps}
-%\smallcaption{情形1中不能由归纳基础得到的$M_{6,n}$}
-%\label{fig:counter_example3}
-%\end{figure}
-%
-%若$n = 8$，$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R(1:0,2), Q(0:5,1:0), R(5,2:5), Q(5:0,6:7), \\ \quad \quad \quad R(0:1,5), v \rangle\\
-%       P_{2}=\langle u, v \rangle\\
-%       P_{3}=\langle u, R(0,3:4), v \rangle\\
-%       P_{4}=\langle u, (2,3), R(2:4,2), R(4:3,3), R(3:4,4), R(4:2,5), (2,4), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%若$n \geq 10$，$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R(1:0,2), Q(0:5,1:0), R(5,2:n-3), Q(5:0,n-2:n-1), \\ \quad \quad \quad R(0:1,n-3), v \rangle\\
-%       P_{2}=\langle u, Q(1:2,4:n-5), v \rangle\\
-%       P_{3}=\langle u, R(0,3:n-4), v \rangle\\
-%       P_{4}=\langle u, (2,3), R(2:4,2), R(4:3,3), Q(3:4,4:n-5), R(3:4,n-4), \\ \quad \quad \quad R(4:2,n-3), (2,n-4), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%我们设$u = (u_{i},u_{j})$和$v = (v_{i},v_{j})$。
-%不失一般性，假设$u_{i} \leq  v_{i}$且$u_{j} \leq  v_{j}$。
-%根据对称性，我们可以通过旋转$M_{t,s}$得到$M_{s,t}$。
-%假设当$ m \geq 8$且$ n \geq 8$时，引理对$M_{m-2,n-2}$成立。
-%接下来，我们需要证明引理对$M_{m,n}$也成立。
-%%%根据有没有两行或两列在$M_{m,n}$中顶点$u$和顶点$v$的外面，分成两种情形证明。
-%%%根据$M_{m,n}$中没有两个相邻的边界列或边界行，分成两种情形讨论。
-%根据$u$和$v$的位置分布情况，分为以下两种情形讨论。
-%
-%%情形1.1. 没有两行或两列在$M_{m,n}$中顶点$u$和顶点$v$的外面。
-%%情形1.1. $M_{m,n}$中没有两个相邻的边界列或边界行。
-%情形1.1. $\{u_{i}, u_{j}\} \subseteq \{0, 1\}$且$\{v_{i},v_{j}\} \subseteq \{m-2, m-1\}$。
-%
-%
-%此种情形中顶点$v$位于$M_{m,n}$中的最下面两行，即$v_{i} = m-2$。
-%令$v^{'} = (m-4,v_{j})$，根据归纳假设，我们可以得到顶点$u$ 和顶点$v^{'}$之间的四条不相交路径$P_{1}^{'}$，$P_{2}^{'}$， $P_{3}^{'}$ 和$P_{4}^{'}$，且这四条路径覆盖$Mesh(0:m-3,0:n-1)$的顶点。
-%如果我们设$P_{1}^{'} = \langle u, R_{1}, (m-5,v_{j}), v^{'} \rangle$，$P_{2}^{'} = \langle u, R_{2}, (m-4,v_{j}+1), v^{'} \rangle$，$P_{3}^{'} = \langle u, R_{3}, (m-3,v_{j}-2),(m-3,v_{j}-1), (m-4,v_{j}-1), v^{'} \rangle$ 和$P_{4}^{'} = \langle u, R_{4}, (m-3,v_{j}+2), (m-3,v_{j}+1), (m-3,v_{j}), v^{'} \rangle$，
-%则$M_{m,n}$中顶点$u$和顶点$v$之间的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, (m-5,v_{j}), v^{'}, R(m-4:m-2,v_{j}-1), v \rangle\\
-%       P_{2}=\langle u, R_{2}, (m-4,v_{j}+1), R(m-3,v_{j}+1:v_{j}), v \rangle\\
-%       P_{3}=\langle u, R_{3}, (m-3,v_{j}-2), R(m-2,v_{j}-2:0), R(m-1,0:v_{j}), v \rangle\\
-%       P_{4}=\langle u, R_{4}, (m-3,v_{j}+2), R(m-2,v_{j}+2:n-1), R(m-1,n-1:v_{j}+1),\\ \quad \quad \quad (m-2,v_{j}+1), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%如果我们设$P_{1}^{'} = \langle u, R_{1}, (m-5,v_{j}), v^{'} \rangle$，$P_{2}^{'} = \langle u, R_{2}, (m-4,v_{j}-1), v^{'} \rangle$，$P_{3}^{'} = \langle u, R_{3}, (m-3,v_{j}-2),(m-3,v_{j}-1), (m-3,v_{j}), v^{'} \rangle$和$P_{4}^{'} = \langle u, R_{4}, (m-3,v_{j}+2), (m-3,v_{j}+1), (m-4,v_{j}+1), v^{'} \rangle$，
-%那么$M_{m,n}$中顶点$u$和顶点$v$之间的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, (m-5,v_{j}), v^{'}, R(m-4:m-2,v_{j}+1), v \rangle\\
-%       P_{2}=\langle u, R_{2}, (m-4,v_{j}-1), R(m-3,v_{j}-1:v_{j}), v \rangle\\
-%       P_{3}=\langle u, R_{3}, (m-3,v_{j}-2), R(m-2,v_{j}-2:0), R(m-1,0:v_{j}-1), (m-2,v_{j}-1), v \rangle\\
-%       P_{4}=\langle u, R_{4}, (m-3,v_{j}+2), R(m-2,v_{j}+2:n-1), R(m-1,n-1:v_{j}),\\ \quad \quad \quad R(m-1,n-1:v_{j}), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-
-
-%%%%如图\ref{fig:example10_mesh}中所示，我们给出了$M_{8,6}$ 中当$u = (1,3)$ 且$v = (6,3)$时的$4^{*}$-容器。
-%%%%\begin{figure}[!htbp]
-%%%%\centering
-%%%%\includegraphics[width=100mm]{example10_mesh.eps}
-%%%%\smallcaption{$M_{8,6}$中$u = (1,3)$且$v = (6,3)$时的$4^{*}$- 容器}
-%%%%\label{fig:example10_mesh}
-%%%%\vspace{-10pt}
-%%%%\end{figure}
-
-%情形1.2. 有两行或两列在$M_{m,n}$中顶点$u$和顶点$v$的外面。
-%情形1.2. $M_{m,n}$中有两个相邻的边界列或边界行。
-%情形1.2. $u_{j} \notin \{0, 1\}$且$v_{j} \notin \{0, 1\}$，或$u_{j} \notin \{n-2, n-1\}$且$v_{j} \notin \{n-2, n-1\}$，或$u_{i} \notin \{0, 1\}$且$v_{i} \notin \{0, 1\}$，或$u_{i} \notin \{m-2, m-1\}$且$v_{i} \notin \{m-2, m-1\}$。
-%不失一般性，假设$u_{i} \notin \{m-2, m-1\}$且$v_{i} \notin \{m-2, m-1\}$。
-%即$\{ u,v\} \cap \{ (x,y) \mid m-2 \leq  x \leq  m-1 $ 且 $0 \leq  y \leq  n-1 \}= \emptyset $。
-%
-%若$deg_{M_{m-2,n}}(v) = 3$，即在$M_{m,n}$中$v_{i} = m-3$，我们从$M_{m,n}$ 中的顶点$(m-4,v_{j}+1)$和$(m-4,v_{j}-1)$中选取一个作为$v^{'}$，
-%使得$deg_{M_{m-2,n}}(v^{'}) = 4$且$v^{'}$不是$M_{m-2,n}$ 中的坏点，其中$M_{m-2,n}$是由最上面的$m-2$行构成的。
-%不失一般性，在$M_{m,n}$中设$v^{'} = (m-4,v_{j}+1)$。
-%
-%根据归纳假设，我们可以得到顶点$u$和顶点$v^{'}$之间的四条不相交路径$P_{1}^{'}$，$P_{2}^{'}$，$P_{3}^{'}$和$P_{4}^{'}$，且这四条路径覆盖了$Mesh(0:m-3,0:n-1)$ 中的所有顶点。
-%如果我们设$P_{1}^{'} = \langle u, R_{1}, (m-5,v_{j}+1), v^{'} \rangle$，$P_{2}^{'} = \langle u, R_{2}, (m-4,v_{j}+2), v^{'} \rangle$，$P_{3}^{'} = \langle u, R_{3}, (m-3,v_{j}-1), v, (m-4,v_{j}), v^{'} \rangle$和$P_{4}^{'} = \langle u, R_{4}, (m-3,v_{j}+3), (m-3,v_{j}+2),(m-3,v_{j}+1), v^{'} \rangle$，
-%那么$M_{m,n}$中顶点$u$和顶点$v$之间的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, (m-5,v_{j}+1), v^{'}, (m-4,v_{j}), v \rangle\\
-%       P_{2}=\langle u, R_{2}, (m-4,v_{j}+2), R(m-3,v_{j}+2:v_{j}+1), v \rangle\\
-%       P_{3}=\langle u, R_{3}, (m-3,v_{j}-1), v \rangle\\
-%       P_{4}=\langle u, R_{4}, (m-3,v_{j}+3), R(m-2,v_{j}+3:n-1), R(m-1,n-1:v_{j}+2),\\ \quad \quad \quad R(m-2,v_{j}+2:v_{j}+1), R(m-1,v_{j}+1:0), R(m-2,0:v_{j}), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%如果我们设$P_{1}^{'} = \langle u, R_{1}, (m-5,v_{j}+1), v^{'} \rangle$，$P_{2}^{'} = \langle u, R_{2}, (m-4,v_{j}), v^{'} \rangle$，$P_{3}^{'} = \langle u, R_{3}, (m-3,v_{j}-1), v, (m-3,v_{j}+1), v^{'} \rangle$和$P_{4}^{'} = \langle u, R_{4}, (m-3,v_{j}+3), (m-3,v_{j}+2),(m-2,v_{j}+2), v^{'} \rangle$，那么$M_{m,n}$ 中顶点$u$和顶点$v$ 之间的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R_{1}, (m-5,v_{j}+1), v^{'}, (m-4,v_{j}+2), R(m-3,v_{j}+2:v_{j}+1), v \rangle\\
-%       P_{2}=\langle u, R_{2}, (m-4,v_{j}), v \rangle\\
-%       P_{3}=\langle u, R_{3}, (m-3,v_{j}-1), v \rangle\\
-%       P_{4}=\langle u, R_{4}, (m-3,v_{j}+3), R(m-2,v_{j}+3:n-1), R(m-1,n-1:v_{j}+2),\\ \quad \quad \quad R(m-2,v_{j}+2:v_{j}+1), R(m-1,v_{j}+1:0), R(m-2,0:v_{j}), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%
-%%%%%如图\ref{fig:example11_mesh}中所示，我们给出了$M_{8,6}$ 中当$u = (1,3)$ 且$v = (5,2)$时的$4^{*}$-容器。
-%%%%%
-%%%%%\begin{figure}[!htbp]
-%%%%%\centering
-%%%%%\includegraphics[width=100mm]{example11_mesh.eps}
-%%%%%\smallcaption{$M_{8,6}$中$u = (1,3)$且$v = (5,2)$时的$4^{*}$- 容器}
-%%%%%\label{fig:example11_mesh}
-%%%%%\vspace{-10pt}
-%%%%%\end{figure}
-%
-%若$deg_{M_{m-2,n}}(v) = 4$且$v$并不是$M_{m-2,n}$中的坏点，其中$M_{m-2,n}$ 是由最上面的$m-2$行构成。
-%这种情形和定理\ref{thm_hamiltoianPath_4}中情形1.1类似，此处不作重复叙述。
-%若$v$是由最上面$m - 2$行顶点构成的$M_{m-2,n}$中的坏点，不失一般性，假设$v$是$M_{m,n}$中的$(m-4,1)$。
-%接下来，我们考虑最上面两行，若$u$是由最下面的$m - 2$行顶点构成的$M_{m-2,n}$中的坏点, 我们设$u = (3,1)$。
-%若$n \geq 8$, 我们就可以找到除$u$和$v$所在列外的两列且它们不是虚假列。
-%$n = 6$的情形是前文所述的特例。
-%
-%情形2. $n$是奇数。
-%当$m = 6$和$n = 7$时，根据顶点$u$和顶点$v$的不同位置分布, 有21 种$M_{6,7}$情形。
-%$M_{6,7}$中顶点$u$和顶点$v$之间的$4^*$-容器如图\ref{fig:4-pathIn6by7-d(u,v)=1}，图\ref{fig:4-pathIn6by7-d(u,v)=3} 和图\ref{fig:4-pathIn6by7-d(u,v)=5} 所示。
-%
-%%%\begin{figure}
-%%%\centering
-%%%\includegraphics[width=120mm]{4-pathIn6by7-1}
-%%%\smallcaption{$M_{6,7}$中顶点$u$和顶点$v$之间的$4^*$-容器。}
-%%%\label{fig:4-pathIn6by7-1}
-%%%\end{figure}
-%
-%%%\begin{figure}
-%%%\centering
-%%%\includegraphics[width=120mm]{4-pathIn6by7-2}
-%%%\smallcaption{$M_{6,7}$中顶点$u$和顶点$v$之间的$4^*$-容器。}
-%%%\label{fig:4-pathIn6by7-2}
-%%%\end{figure}
-%
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=130mm]{4-pathIn6by7-d(u,v)=1.eps}
-%\smallcaption{$M_{6,7}$中顶点$u$和顶点$v$之间距离为1时的$4^*$- 容器}
-%\label{fig:4-pathIn6by7-d(u,v)=1}
-%\vspace{-10pt}
-%\end{figure}
-%
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=130mm]{4-pathIn6by7-d(u,v)=3.eps}
-%\smallcaption{$M_{6,7}$中顶点$u$和顶点$v$之间距离为3时的$4^*$- 容器}
-%\label{fig:4-pathIn6by7-d(u,v)=3}
-%\vspace{-10pt}
-%\end{figure}
-%
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=130mm]{4-pathIn6by7-d(u,v)=5.eps}
-%\smallcaption{$M_{6,7}$中顶点$u$和顶点$v$之间距离为5时的$4^*$- 容器}
-%\label{fig:4-pathIn6by7-d(u,v)=5}
-%\vspace{-10pt}
-%\end{figure}
-%
-%
-%然而，如图\ref{fig:counter_example4}所示，有三种情形是无法由归纳基础得到的。
-%对于这三种情形，分成以下三种情形讨论。
-%
-%\begin{figure}[!htbp]
-%\centering
-%\includegraphics[width=120mm]{counter_example4.eps}
-%\smallcaption{情形2中无法由归纳基础得到的三种情形}
-%\label{fig:counter_example4}
-%\vspace{-10pt}
-%\end{figure}
-%
-%情形2.1. 图\ref{fig:counter_example4}$(a)$中给出了$M_{6,n}$ 的顶点$u$和顶点$v$的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$。
-%若$n \geq 9$，$u =(1,3)$和$v = (4,n-4)$，那么$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R(1:0,2), Q(0:5,1:0), R(5,2:n-4), v \rangle\\
-%       P_{2}=\langle u, R(0,3:n-3), Q(0:5,n-2:n-1), R(5:4,n-3), v \rangle\\
-%       P_{3}=\langle u, R(2,3:2), Q(3:4,2:n-6), R(3:4,n-5), v \rangle\\
-%       P_{4}=\langle u, Q(1:2,4:n-4), R(1:3,n-3), (3,n-4), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%情形2.2. 图\ref{fig:counter_example4}$(b)$中给出了$M_{m,7}$ 的顶点$u$和顶点$v$的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$。
-%若$m = 8$，$u =(3,1)$和$v = (4,1)$，那么$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$ 如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R(3:4,0), v \rangle\\
-%       P_{2}=\langle u, v \rangle\\
-%       P_{3}=\langle u, (5,1), R(5:7,0), Q(7:6,1:4), Q(7:0,5:6), Q(0:1,4:1), \\ \quad \quad \quad R(0:2,0), (2,1), v \rangle\\
-%       P_{4}=\langle u, R(3:2,2), Q(2:5,3:4), R(5:4,2), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%若$m \geq 10$，$u =(3,1)$和$v = (m-4,1)$，那么$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, R(3:m-4,0), v \rangle\\
-%       P_{2}=\langle u, Q(4:m-5,1:2), v \rangle\\
-%       P_{3}=\langle u, (m-3,1), R(m-3:m-1,0), Q(m-1:m-2,1:4), \\ \quad \quad \quad Q(m-1:0,5:6), Q(0:1,4:1), R(0:2,0), (2,1), v \rangle\\
-%       P_{4}=\langle u, R(3:2,2), Q(2:m-3,3:4), R(m-3:m-4,2), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%情形2.3. 图\ref{fig:counter_example4}$(c)$中给出了$M_{m,7}$ 的顶点$u$和顶点$v$的$4^*$-容器$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$。
-%若$m \geq 8$，$u =(3,1)$和$v = (m-4,5)$，那么$\{ P_{1}, P_{2}, P_{3}, P_{4}\}$如下所示：
-%\begin{align}
-%       \left\{ \begin{array}{ll}\notag
-%       P_{1}=\langle u, Q(4:m-1,1:0), Q(m-1:m-2,2:5), R(m-1:m-4,6), v \rangle\\
-%       P_{2}=\langle u, R(3:0,0), Q(0:1,1:4), Q(0:m-5,5:6), v \rangle\\
-%       P_{3}=\langle u, Q(3:m-4,2:3), R(m-3,2:5), v \rangle\\
-%       P_{4}=\langle u, R(2,1:3), R(2:m-4,4), v \rangle\\
-%       \end{array}\right.
-%\end{align}
-%
-%我们用$M_{6,7}$作为归纳基础，假设定理对于$M_{m-2,n-2}$成立，其中$ m \geq 8$ 且$ n \geq 9$，我们需证明定理对于$M_{m,n}$也成立，证明过程和情形1中类似，此处不做赘述。
-%\end{proof}
-%
-%\section{本章小结}
-%本章提出了增强生成连通度和增强生成交织度的具体定义，
-%然后给出了$m$行$n$列的$M_{m,n}$的增强生成交织度的结果以及相应的证明，包括以下结论：
-%
-%（1）假设$u$和$v$是$M_{m,n}$中的任意两个不同顶点，若$\{u, v\} \subseteq A_{m,n}$，那么$u$ 和$v$之间存在一个$1^{*}$- 容器，其中$m$和$n$是奇数且$\min \{m, n\} \geq 3$；
-%
-%（2）假设$u$和$v$是$M_{m,n}$中的任意两个不同顶点，若$\{u, v\} \subseteq B_{m,n}$，那么$u$ 和$v$之间存在一个$3^{*}$- 容器，其中$m$和$n$是奇数且$\min \{m, n\} \geq 3$；
-%
-%（3）$s\kappa^{L}(M_{m,n})=3$，其中$m$是偶数且$\min \{m, n\} \geq 4$；
-%
-%（4）假设$u$和$v$是$M_{m,n}$中任意两个不同部的顶点，若$u \notin \{ (1,1), (1,n-2), (m-2,1), (m-2,n-2)\}$且$v \notin\{ (1,1), (1,n-2), (m-2,1), (m-2,n-2)\}$，那么$u$ 和$v$之间存在一个$4^{*}$- 容器，其中$m$ 是偶数且$\min \{m, n\} \geq 6$。
+在本章中，我们证明了$n$-维扩展立方体$AQ_n$的$2$-额外诊断度为$6n-15$，
+其中$n \geq 8$，其结果大约是经典诊断度的3倍。同时，我们给出了扩展立方体在MM$^*$模型下的$2$-额外诊断算法
+AQ-EXTRA-DIAG，该算法的复杂度为$O(N^2)$，其中$N$为扩展立方体的顶点个数。
+理论分析和实验结果表明，该诊断算法可以正确地诊断出所有的故障顶点。
